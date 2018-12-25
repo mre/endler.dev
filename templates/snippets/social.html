@@ -1,0 +1,27 @@
+{% if page.extra.excerpt %}
+{% set social_description = page.extra.excerpt | safe %}
+{% elif page.summary %}
+{% set social_description = page.summary | safe %}
+{% else %}
+{% set social_description = page.content | safe | truncate(length=50) %}
+{% endif %}
+
+{% if page.extra.social_img %}
+{% set relpath = current_path ~ page.extra.social_img %}
+{%- set social_img = get_url(path=relpath) %}
+{% else %}
+{%- set social_img = "/default.png" %}
+{%- endif %}
+
+<meta property="og:title" content="{{ page.title }} | Matthias Endler" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="{{ social_description }}" />
+<meta property="og:url" content="https://matthias-endler.de/{{ page.path }}" />
+<meta property="og:image" content="https://matthias-endler.de/img/social/{{ social_img }}" />
+
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ social_description }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@matthiasendler">
+<meta name="twitter:creator" content="@matthiasendler">
+<meta name="twitter:image" content="{{ social_img }}">

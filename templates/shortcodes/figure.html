@@ -1,0 +1,13 @@
+<figure>
+    <img src="{{ src }}" />
+    {% if caption or credits %}
+    <figcaption>
+        {% if caption %}
+        {{ caption }}
+        {% endif %}
+        {% if credits %}<br />
+        {{ credits | markdown(inline=true) }}
+        {% endif %}
+    </figcaption>
+    {% endif %}
+</figure>

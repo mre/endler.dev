@@ -1,0 +1,37 @@
+{% macro nicedate(daynum, date) %}
+{% if daynum == 1 %}
+{% set suffix = "st" %}
+{% elif daynum == 21 %}
+{% set suffix = "st" %}
+{% elif daynum == 31 %}
+{% set suffix = "st" %}
+{% elif daynum == 2 %}
+{% set suffix = "nd" %}
+{% elif daynum == 22 %}
+{% set suffix = "nd" %}
+{% elif daynum == 3 %}
+{% set suffix = "rd" %}
+{% elif daynum == 23 %}
+{% set suffix = "rd" %}
+{% else %}
+{% set suffix = "th" %}
+{% endif %}
+
+{{ daynum }}{{ suffix }} {{ date | date(format="%B, %Y") }}
+{% endmacro nicedate %}
+
+{% macro comments(comments) %}
+💬 Comments available on
+{% for comment in comments %}
+<a href="{{ comment.url }}">{{ comment.name }}</a>
+{%- if not loop.last %},{% else %}.{% endif %}
+{% endfor %}
+{% endmacro comments %}
+
+{% macro translations(translations) %}
+📖 Translated into
+{% for translation in translations %}
+<a href="{{ translation.url }}">{{ translation.name }}</a>
+{%- if not loop.last %},{% else %}.{% endif %}
+{% endfor %}
+{% endmacro translations %}

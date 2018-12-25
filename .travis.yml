@@ -1,0 +1,15 @@
+before_script:
+  - curl -s -L https://github.com/getzola/zola/releases/download/v0.5.0/zola-v0.5.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar xvzf - -C /usr/local/bin
+script:
+  - zola build
+after_success: |
+  [ $TRAVIS_BRANCH = source ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
+  zola build &&
+  sudo pip install ghp-import &&
+  ghp-import --no-jekyll \
+            --cname=matthias-endler.de \
+            --message="New release!" \
+            --branch=master \
+            public
+  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master

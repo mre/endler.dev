@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="160mm" height="90mm" viewBox="0 0 16000 9000" version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" stroke-width="28.222" stroke-linejoin="round" xml:space="preserve">
+ <path fill="rgb(255,255,255)" stroke="none" d="M 8000,8999 L 0,8999 0,0 15999,0 15999,8999 8000,8999 Z"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,8818 L 320,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,7090 L 320,7090"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,5362 L 320,5362"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,3635 L 320,3635"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,1907 L 320,1907"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,179 L 320,179"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 320,8968 L 320,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 320,8968 L 320,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 4160,8968 L 4160,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 4160,8968 L 4160,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 8000,8968 L 8000,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 8000,8968 L 8000,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 11839,8968 L 11839,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 11839,8968 L 11839,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,8968 L 15679,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 15679,8968 L 15679,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 320,8818 L 15679,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,8818 L 320,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,8818 L 320,8818"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,7090 L 320,7090"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,7090 L 320,7090"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,5362 L 320,5362"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,5362 L 320,5362"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,3635 L 320,3635"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,3635 L 320,3635"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,1907 L 320,1907"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,1907 L 320,1907"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,179 L 320,179"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 170,179 L 320,179"/>
+ <path fill="none" stroke="rgb(179,179,179)" stroke-linejoin="round" d="M 320,8818 L 320,179"/>
+ <path fill="rgb(108,214,255)" stroke="none" d="M 12799,8818 L 14719,8818 14719,7781 12799,7781 12799,8818 Z"/>
+ <path fill="rgb(255,103,95)" stroke="none" d="M 8959,8818 L 10879,8818 10879,8126 8959,8126 8959,8818 Z"/>
+ <path fill="rgb(80,80,80)" stroke="none" d="M 5120,8818 L 7040,8818 7040,1907 5120,1907 5120,8818 Z"/>
+ <path fill="rgb(69,201,70)" stroke="none" d="M 1280,8818 L 3200,8818 3200,7435 1280,7435 1280,8818 Z"/>
+</svg>

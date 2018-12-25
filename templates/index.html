@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% import "_macros.html" as macros %}
+
+<head>
+  <link rel="stylesheet" href="{{ get_url(path="main.css") }}" />
+  {% block header %}
+  {% endblock header %}
+  {% include "snippets/manifest.html" %}
+  <link rel="dns-prefetch" href="//www.google-analytics.com/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=m2llJQPQq8">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=m2llJQPQq8">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=m2llJQPQq8">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=m2llJQPQq8" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon.ico?v=m2llJQPQq8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Matthias Endler">
+  <meta name="description" content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go" />
+  <title>Matthias Endler</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      {% include "snippets/logo-winter.html" %}
+      <div class="bio">
+        <p>
+          Backend Engineer at trivago.
+          Likes just-in-time compilers and hot chocolate.
+          <a href="/about">About me.</a>
+        </p>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="https://twitter.com/matthiasendler">Twitter</a></li>
+            <li><a href="https://feedly.com/i/subscription/feed/https://matthias-endler.de/rss.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}
+      {% for page in paginator.pages %}
+      <article class="homepage">
+        <p class='post-meta'>{{ macros::nicedate(daynum=page.day, date=page.date) }}</p>
+        <a href="{{ page.permalink | safe }}">
+          <h1>{{ page.title }}</h1>
+        </a>
+        {% if page.summary %}
+        {{ page.summary | safe | striptags }}
+        {% elif page.extra.excerpt %}
+        {{ page.extra.excerpt | safe | striptags}}
+        {% else %}
+        {{ page.content | safe | striptags| truncate(length=300) }}
+        {% endif %}
+        <a href="{{ page.permalink }}">More »</a>
+      </article>
+      {% endfor %}
+      {% if paginator.previous %}
+      <div class="button"><a href="{{  paginator.previous}}">Next articles</a></div>
+      {% endif %}
+      {% if paginator.next %}
+      <div class="button"><a href="{{  paginator.next }}">Previous articles</a></div>
+      {% endif %}
+      {% endblock content %}
+    </main>
+  </div>
+  {% block teaser %}
+  {% endblock teaser %}
+  {% include "snippets/footer.html" %}
+</body>
+
+</html>

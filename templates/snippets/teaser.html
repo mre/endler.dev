@@ -1,0 +1,9 @@
+{% if page.earlier %}
+<section id="teaser">
+    <div class="body">
+        <h2>{{ page.earlier.title }}</h2>
+        <p>{{ page.earlier.content | safe | striptags | truncate(length=300) }} <a href="{{page.earlier.permalink}}">Continue
+                reading</a></p>
+    </div>
+</section>
+{% endif %}

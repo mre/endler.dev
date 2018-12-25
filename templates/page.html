@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block header %}
+{% if page.extra.css %}
+<link rel="stylesheet" href="./article.css" />
+{% endif %}
+{% include "snippets/social.html" %}
+{% endblock header %}
+
+{% block content %}
+<article>
+  <p class='post-meta'>Published on {{ macros::nicedate(daynum=page.day, date=page.date) }}</p>
+  <h1>{{ page.title }}</h1>
+  {%if page.extra.subtitle %}
+  <h3>&mdash; {{ page.extra.subtitle }}</h3>
+  {% endif %}
+  {{ page.content | safe }}
+
+  {% if page.extra.comments %}
+  <div>
+    {{ macros::comments(comments=page.extra.comments) }}
+  </div>
+  {% endif %}
+  {% if page.extra.translations %}
+  <div>
+    {{ macros::translations(translations=page.extra.translations) }}
+  </div>
+  {% endif %}
+</article>
+{% endblock content %}
+
+{% block teaser %}
+{% include "snippets/teaser.html" %}
+{% endblock teaser %}
