@@ -1,4 +1,4 @@
-My personal website; built with [zola](https://www.getzola.org/)  
+My personal website; built with [zola](https://www.getzola.org/).  
 
 ## Credits
 
