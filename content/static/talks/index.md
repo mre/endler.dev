@@ -8,8 +8,29 @@ Here's a list of previous events where I spoke.
 If you would like me to speak at your event, let's [get connected](mailto:matthias-endler@gmx.net)!
 
 
-Workshop: Write Your Own Shell in Rust
---------------------------------------
+## What is Rust doing behind the curtains?
+
+-   FOSDEM, February 2019
+-   Video available soon
+-   Slides available soon
+
+This is an hands-on talk, showing a journey from code with a lot of syntactic
+sugar to plain, veeery explicit Rust code.
+
+Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It
+is sometimes hard, however, to look behind the curtain and see what the compiler
+is really doing with our code. "It is good to know what these conveniences are,
+to avoid being mystified by what's going on under the hood... the less magical
+thinking we have of the world, the better." (Tshepang Lekhonkhobe). In this
+hands-on talk, we will go from code with a lot of syntactic sugar to extremely
+verbose Rust code.
+
+We will use a little tool called cargo-inspect, which was built for teaching
+Rust internals. The goal is to make the compiler more approachable to mere
+mortals.
+
+
+## Workshop: Write Your Own Shell in Rust
 
 ![](./2018-shell-workshop.jpg)
 
@@ -28,8 +49,7 @@ error handling, and syscalls, we invite you to participate in this
 workshop. Who knows, it could also be an opportunity to start your first
 mid-size Rust project!
 
-Hyperjson — The Journey Towards Faster Safer JSON Parsing in Python Using Rust
-------------------------------------------------------------------------------
+## Hyperjson — The Journey Towards Faster Safer JSON Parsing in Python Using Rust
 
 ![](./2018-hyperjson.jpg)
 
@@ -45,8 +65,7 @@ carefully as he tells the story of a little side-project that got out of
 hand and how Rust can help speed up even the most boring,
 highly-optimized tasks like parsing file formats in the future.
 
-Idiomatic Rust — Writing Concise and Elegant Rust Code
-------------------------------------------------------
+## Idiomatic Rust — Writing Concise and Elegant Rust Code
 
 ![](./2018-fosdem.jpg)
 
@@ -60,8 +79,7 @@ your Rust code more elegant and concise, and introduce you to my
 peer-reviewed collection of articles/talks/repos for writing idiomatic
 Rust code.
 
-Workshop: Live Coding Like No One's Watching!
----------------------------------------------
+## Workshop: Live Coding Like No One's Watching!
 
 ![](./2017-rustbeltrust.jpg)
 
@@ -74,8 +92,7 @@ programming tasks in Rust.
 Highlights: Nervous laughter, self-demeaning humor, browsing the Rust
 documentation for clues. I might explain a little Rust along the way.
 
-My Good Friend Rust — an introduction
--------------------------------------
+## My Good Friend Rust — an introduction
 
 ![](./2017-topconf.jpg)
 
@@ -89,8 +106,7 @@ abstractions that make Systems Programming both, easier and more fun.
 Let me show you what's in for you and why you should learn Rust, even
 though you might be a Web-Developer.
 
-What's So Hard About Writing a Slack Client in Rust?
-----------------------------------------------------
+## What's So Hard About Writing a Slack Client in Rust?
 
 ![](./slack-client.jpg)
 
@@ -105,8 +121,7 @@ to tell you my story about writing a Slack client in Rust. From
 documentation to testing and error handling there's a lot of pitfalls to
 avoid and laughs to share.
 
-Why Rust?
----------
+## Why Rust?
 
 ![](./why-rust.jpg)
 
@@ -121,8 +136,7 @@ memory safety without a Garbage Collector and makes low-level
 programming easier and more secure. I will give an introductory talk
 about Rust and show some of its nicest features.
 
-Rust Tooling
-------------
+## Rust Tooling
 
 ![](./2015-tooling.jpg)
 
@@ -132,8 +146,7 @@ Rust Tooling
 What tools are available for Rust development? This talk gives you an
 overview of ways to help you write better Rust code.
 
-The State of PyPy
------------------
+## The State of PyPy
 
 ![](./pypy.jpg)
 
