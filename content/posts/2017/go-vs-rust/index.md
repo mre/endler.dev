@@ -129,7 +129,7 @@ This was just a quick example, of course. I suggest, you browse some code on [Ro
 If you're more like a visual type, here is a video where I write a simple
 concurrent program in Go and Rust to compare both languages:
 
-{{ youtube(id="dQw4w9WgXcQ", class="video-container") }}
+{{ youtube(id="B5xYBrxVSiE", class="video-container") }}
 
 ## Some things I prefer in Go
 
