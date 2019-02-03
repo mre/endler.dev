@@ -10,9 +10,11 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 
 ## What is Rust doing behind the curtains?
 
+![](./2019-fosdem.jpg)
+
 -   FOSDEM, February 2019
 -   Video available soon
--   Slides available soon
+-   [Slides](https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains)
 
 This is an hands-on talk, showing a journey from code with a lot of syntactic
 sugar to plain, veeery explicit Rust code.
