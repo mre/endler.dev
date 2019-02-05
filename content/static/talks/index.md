@@ -13,7 +13,7 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 ![](./2019-fosdem.jpg)
 
 -   FOSDEM, February 2019
--   Video available soon
+-   [Recording](https://fosdem.org/2019/schedule/event/rust_cargo_inspect/)
 -   [Slides](https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains)
 
 This is an hands-on talk, showing a journey from code with a lot of syntactic
@@ -56,7 +56,7 @@ mid-size Rust project!
 ![](./2018-hyperjson.jpg)
 
 -   Rust Cologne, August 2018
--   [Video](https://www.youtube.com/watch?v=f1ln5j3aoSI)
+-   [Recording](https://www.youtube.com/watch?v=f1ln5j3aoSI)
 -   [Slides](https://speakerdeck.com/mre/hyperjson-the-journey-towards-faster-safer-json-parsing-in-python-using-rust)
 
 During a recent Python Hackathon in Düsseldorf, Matthias somehow managed
@@ -72,7 +72,7 @@ highly-optimized tasks like parsing file formats in the future.
 ![](./2018-fosdem.jpg)
 
 -   FOSDEM, February 2018
--   [Video](https://www.youtube.com/watch?v=P2mooqNMxMs)
+-   [Recording](https://www.youtube.com/watch?v=P2mooqNMxMs)
 -   [Slides](https://speakerdeck.com/mre/idiomatic-rust-writing-concise-and-elegant-rust-code)
 
 Rust is a big language and it gets bigger every day. Many beginners ask:
@@ -113,7 +113,7 @@ though you might be a Web-Developer.
 ![](./slack-client.jpg)
 
 -   Rust Usergroup Cologne, March 2017
--   [Video](https://www.youtube.com/watch?v=rrtJh1kz1Ms)
+-   [Recording](https://www.youtube.com/watch?v=rrtJh1kz1Ms)
 -   [Slides](https://speakerdeck.com/mre/whats-so-hard-about-writing-a-slack-client-in-rust)
 
 "I'll just write a simple API wrapper for that. Give me two hours." Does
@@ -128,7 +128,7 @@ avoid and laughs to share.
 ![](./why-rust.jpg)
 
 -   Codemotion Amsterdam, May 2016
--   [Video](https://www.youtube.com/watch?v=imtejBNbm0o)
+-   [Recording](https://www.youtube.com/watch?v=imtejBNbm0o)
 -   [Slides](https://speakerdeck.com/mre/why-rust)
 
 Rust is the new kid on the block. It's a system programming language
@@ -153,7 +153,7 @@ overview of ways to help you write better Rust code.
 ![](./pypy.jpg)
 
 -   Python Usergroup Düsseldorf, April 2015
--   [Video](https://www.youtube.com/watch?v=YEzuUJGcPqc)
+-   [Recording](https://www.youtube.com/watch?v=YEzuUJGcPqc)
 -   [Slides](https://speakerdeck.com/mre/the-state-of-pypy-april-2015)
 
 PyPy is a relatively new implementation of Python with a focus on
