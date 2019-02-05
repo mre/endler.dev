@@ -23,7 +23,8 @@ h2 {
 
 /* Style */
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -165,10 +166,7 @@ h3 {
 }
 
 // Anchor tags
-a:link,
-a:visited,
-a:hover,
-a:active {
+a {
   color: $pink;
   text-decoration: none;
 }
@@ -190,6 +188,12 @@ header nav li:not(:first-child):before {
 header nav li {
   list-style: none;
   display: inline;
+}
+
+.button {
+  background-color: $pink;
+  padding: 10px;
+  color: white;
 }
 
 figure {

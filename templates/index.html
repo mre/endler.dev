@@ -61,10 +61,10 @@
       </article>
       {% endfor %}
       {% if paginator.previous %}
-      <div class="button"><a href="{{  paginator.previous}}">Next articles</a></div>
+      <a class="button" href="{{  paginator.previous}}">« Next articles</a>
       {% endif %}
       {% if paginator.next %}
-      <div class="button"><a href="{{  paginator.next }}">Previous articles</a></div>
+      <a class="button" href="{{  paginator.next }}">Previous articles »</a>
       {% endif %}
       {% endblock content %}
     </main>
