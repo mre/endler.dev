@@ -4,7 +4,7 @@ date=2019-02-18
 path="2019/kubernetes-nomad"
 +++
 
-{{ figure(src="./scooter.svg", caption="A woman riding on a scooter",  credits="Car vector created by [freepik](https://www.freepik.com/free-photos-vectors/car)") }}
+{{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Car vector created by [freepik](https://www.freepik.com/free-photos-vectors/car)") }}
 
 Kubernetes is the 800-pound gorilla of container orchestration.  
 It powers some of the biggest microservice deployments worldwide, but it comes
