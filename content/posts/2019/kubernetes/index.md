@@ -50,12 +50,11 @@ implicitly relied on.
 As an example, Kubernetes allows embedding service configuration inside
 [ConfigMaps]. While this is convenient, the service configuration is now tightly
 coupled with the orchestrator. Especially when merging multiple config files or
-adding more services to a pod, this can lead to increased complexity. Kubernetes
-- or [helm] for that matter - allows injecting external configs dynamically to
-  ensure separation of concerns. But we found that injecting config files can
-  lead to tight, implicit coupling between two distinct locations in a project.
-  Moving config files also required adjustments in Kubernetes which should
-  ideally, be independent.
+adding more services to a pod, this can lead to increased complexity. Kubernetes - or [helm] for that matter - allows injecting external configs dynamically to
+ensure separation of concerns. But we found that injecting config files can
+lead to tight, implicit coupling between two distinct locations in a project.
+Moving config files also required adjustments in Kubernetes which should
+ideally, be independent.
 
 Rather than trying to design services that run as infrastructure, we were just
 deploying the infrastructure directly. It felt like working against
