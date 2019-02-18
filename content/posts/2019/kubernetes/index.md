@@ -2,6 +2,7 @@
 title="Maybe You Don't Need Kubernetes"
 date=2019-02-18
 path="2019/kubernetes-nomad"
+draft=true
 +++
 
 {{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Car vector created by [freepik](https://www.freepik.com/free-photos-vectors/car)") }}
@@ -50,15 +51,15 @@ implicitly relied on.
 As an example, Kubernetes allows embedding service configuration inside
 [ConfigMaps]. While this is convenient, the service configuration is now tightly
 coupled with the orchestrator. Especially when merging multiple config files or
-adding more services to a pod, this can lead to increased complexity. Kubernetes - or [helm] for that matter - allows injecting external configs dynamically to
+adding more services to a pod, this can lead to increased complexity. Kubernetes - or [helm], for that matter - allows injecting external configs dynamically to
 ensure separation of concerns. But we found that injecting config files can
 lead to tight, implicit coupling between two distinct locations in a project.
 Moving config files also required adjustments in Kubernetes which should
-ideally, be independent.
+ideally be independent.
 
 Rather than trying to design services that run as infrastructure, we were just
 deploying the infrastructure directly. It felt like working against
-service-oriented architecture. Not long until the simple task of configuring our
+the principles of service-oriented architecture. It wasn't too long until the simple task of configuring our
 infrastructure took a big share of our time estimates of projects.
 
 For example, in Kubernetes the project structure for our Logstash deployment
@@ -89,7 +90,7 @@ looked like this:
 
 You can see that the Logstash configuration (`logstash.conf`) was referenced as
 a ConfigMap in `kubernetes/charts/logstsash/templates/config.yaml`. That meant,
-there was tight coupling between a service's definition and its deployment.
+there was a tight coupling between a service's definition and its deployment.
 
 In Nomad, it’s a flat hierarchy:
 
@@ -134,23 +135,11 @@ Especially in our team, which runs most services on-premise (because of its
 close connection to trivago's core infrastructure), we didn't want to afford
 running our own Kubernetes cluster. We wanted to ship services instead.
 
-## With Nomad, deployments are boring
-
-We looked for a simpler alternative and gave Nomad a spin. By now, it has become
-the reliable backbone of our infrastructure and covers all points on our
-wishlist.
-
-The central part of our infrastructure are *services*, not machines.
-Consequently, every service simply has a separate folder in our monorepo (see structure above).
-
-Deployments always happen with a `make deploy` from either the local machine or
-triggered via Jenkins on every push. This way, we can manage dozens of services
-in our team.
-
 ## Batteries not included
 
-Nomad is the 80%. All it does is manage deployments. It takes care of your
-rollouts and restarts your containers in case of errors; and that's about it.
+Nomad is the 20% of service orchestration that gets you 80% of the way.  
+All it does is manage deployments. It takes care of your rollouts and restarts
+your containers in case of errors; and that's about it.
 
 If you want anything more, you have to bring it yourself.
 
@@ -193,7 +182,7 @@ Because it's so simple, Nomad can also be easily extended with other services
 through its API. For example, jobs can be tagged for service discovery. At
 trivago, we tag all services, which expose metrics, with `trv-metrics`. This
 way, Prometheus finds the services via Consul and periodically scrapes the
-`/metrics` endpoint for new data. Same can be done for logs by integrating
+`/metrics` endpoint for new data. The same can be done for logs by integrating
 [Loki] for example.
 
 There are many other examples for extensibility:
@@ -219,7 +208,7 @@ and the code quality is high.
 
 ## Summary
 
-The takeaway is, don't use Kubernetes just because everybody else does.
+The takeaway is: don't use Kubernetes just because everybody else does.
 Carefully evaluate your requirements and check which tool fits for what you're
 trying to achieve.
 
