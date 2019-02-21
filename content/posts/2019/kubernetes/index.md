@@ -52,15 +52,16 @@ As an example, Kubernetes allows embedding service configuration inside
 [ConfigMaps]. While this is convenient, the service configuration is now tightly
 coupled with the orchestrator. Especially when merging multiple config files or
 adding more services to a pod, this can lead to increased complexity. Kubernetes - or [helm], for that matter - allows injecting external configs dynamically to
-ensure separation of concerns. But we found that injecting config files can
-lead to tight, implicit coupling between two distinct locations in a project.
-Moving config files also required adjustments in Kubernetes which should
-ideally be independent.
+  ensure separation of concerns. But we found that injecting config files can
+  lead to tight, implicit coupling between two distinct locations in a project.
+  Moving config files also required adjustments in Kubernetes which should
+  ideally be independent.
 
 Rather than trying to design services that run as infrastructure, we were just
-deploying the infrastructure directly. It felt like working against
-the principles of service-oriented architecture. It wasn't too long until the simple task of configuring our
-infrastructure took a big share of our time estimates of projects.
+deploying the infrastructure directly. It felt like working against the
+principle of service-oriented architecture. It wasn’t too long until the simple
+task of configuring our infrastructure took a big share of our time estimates of
+projects.
 
 For example, in Kubernetes the project structure for our Logstash deployment
 looked like this:
@@ -112,16 +113,20 @@ Kubernetes ecosystem is still rapidly evolving. It takes a fair amount of time
 and energy to stay up-to-date with the best practices and latest tooling.
 Kubectl, minikube, kubeadm, helm, tiller, kops, oc - the list goes on and on.
 
+Not all tools are necessary to get started with Kubernetes, but it’s hard to
+know which ones are, so you have to be at least aware of them. Because of that,
+the learning curve is quite steep.
+
 ## When to use Kubernetes
 
 At trivago specifically, many teams use Kubernetes and are quite happy with it.
-We have people with tons of operations knowledge around here to tame the beast.
+These instances are managed by Google or Amazon however, which have the capacity to do so.
 
 Kubernetes comes with [amazing
 features](https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/),
 that make container orchestration at scale more manageable:
 
-* Fine-grained [authorization]
+* Fine-grained [rights management]
 * [Custom controllers] allow getting logic into the cluster. These are just
   programs that talk to the Kubernetes API
 * [Autoscaling]! Kubernetes can scale your services up and down on demand. It
@@ -137,20 +142,19 @@ running our own Kubernetes cluster. We wanted to ship services instead.
 
 ## Batteries not included
 
-Nomad is the 20% of service orchestration that gets you 80% of the way.  
-All it does is manage deployments. It takes care of your rollouts and restarts
-your containers in case of errors; and that's about it.
+Nomad is the 20% of service orchestration that gets you 80% of the way. All it
+does is manage deployments. It takes care of your rollouts and restarts your
+containers in case of errors; and that's about it.
 
 If you want anything more, you have to bring it yourself.
 
-The entire point of Nomad is, that it does *less*: there is no [Control Plane],
-no [DaemonSet], no [network policy]. Those components are provided by
-third-parties - or not at all.
+The entire point of Nomad is that it does *less*: there is no fine-grained rights management,
+no [DaemonSet], no [network policy]. Those components are provided by a third-party - or not at all.
 
 Nomad is *just* an orchestrator. By that, it follows the Unix philosophy: one
 tool to do a single job and do it well.
 
-The best part about Nomad is, that it's easy to *replace*. There is little to no
+The best part about Nomad is that it's easy to *replace*. There is little to no
 vendor lock-in because the functionality it provides can easily be integrated
 into any other system that manages services. It just runs as a plain old single
 binary on every machine in your cluster, that's it!
@@ -218,27 +222,28 @@ additional complexity and the maintenance costs. Some of these costs can be
 avoided by using a managed Kubernetes environment like [Google Kubernetes
 Engine] or [Amazon EKS].
 
-If you're just looking for a reliable orchestrator that is easy to maintain and
-extendable, why not give Nomad a try?
-
-If Kubernetes is a car, Nomad is a scooter.  
+If Kubernetes was a car, Nomad would be a scooter.  
+Sometimes you prefer one and sometimes the other.
+So the two solutions are not mutually exclusive.
 
 Just because both can get you from A to B, depending on where you want to go,
 one is more convenient than the other. Both have their right to exist.
 
+If you're just looking for a reliable orchestrator that is easy to maintain and
+extendable, why not give Nomad a try? You might be surprised by how far it'll get you.
+
 ## Credits
 
-Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], and [Perry
-Manuk] for reviewing drafts of this article.
+Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], [Perry Manuk], [Inga Feick], [Arne Claus], and [Simon Brüggen] for reviewing drafts of this article.
 
 [Amazon EKS]: https://aws.amazon.com/eks/
-[authorization]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+[rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 [Autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 [bugs]: https://github.com/hashicorp/nomad/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 [ConfigMaps]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 [Consul]: https://www.consul.io/
 [Control Plane]: https://kubernetes.io/docs/concepts/#kubernetes-control-plane
-[Custom controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
+[Controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
 [DaemonSet]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 [filebeat]: https://github.com/elastic/beats/tree/master/filebeat
 [Gollum]: https://github.com/trivago/gollum
@@ -253,5 +258,7 @@ Manuk] for reviewing drafts of this article.
 [Perry Manuk]: https://github.com/perrymanuk
 [Vault]: https://www.vaultproject.io/
 [Wolfgang Gassler]: https://twitter.com/schafele
-
+[Inga Feick]: https://twitter.com/lebkuchengewurz
+[Simon Brüggen]: https://github.com/m3t0r
+[Arne Claus]: https://twitter.com/arnecls
 
