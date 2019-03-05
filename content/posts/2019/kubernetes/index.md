@@ -1,6 +1,6 @@
 +++
 title="Maybe You Don't Need Kubernetes"
-date=2019-02-18
+date=2019-03-06
 path="2019/kubernetes-nomad"
 draft=true
 +++
@@ -48,74 +48,22 @@ When creating a prototype with Kubernetes, we noticed that we started adding
 ever-more complex layers of logic to operate our services. Logic on which we
 implicitly relied on.
 
-As an example, Kubernetes allows embedding service configuration inside
-[ConfigMaps]. While this is convenient, the service configuration is now tightly
-coupled with the orchestrator. Especially when merging multiple config files or
-adding more services to a pod, this can lead to increased complexity. Kubernetes - or [helm], for that matter - allows injecting external configs dynamically to
-  ensure separation of concerns. But we found that injecting config files can
-  lead to tight, implicit coupling between two distinct locations in a project.
-  Moving config files also required adjustments in Kubernetes which should
-  ideally be independent.
+As an example, Kubernetes allows embedding service configurations using
+[ConfigMaps]. Especially when merging multiple config files or
+adding more services to a pod, this can get quite confusing quickly.
+Kubernetes - or [helm], for that matter - allows injecting external configs
+dynamically to ensure separation of concerns. But this can
+lead to tight, implicit coupling between your project and Kubernetes.
+Helm and ConfigMaps are optional features so you don’t have to use them. You
+might as well just copy the config into the Docker image. However, it’s tempting
+to go down that path and build unnecessary abstractions that can later bite you.
 
-Rather than trying to design services that run as infrastructure, we were just
-deploying the infrastructure directly. It felt like working against the
-principle of service-oriented architecture. It wasn’t too long until the simple
-task of configuring our infrastructure took a big share of our time estimates of
-projects.
-
-For example, in Kubernetes the project structure for our Logstash deployment
-looked like this:
-
-```
-.
-├── docker
-│   └── logstash
-│       ├── Dockerfile
-│       ├── Makefile
-│       └── logstash.conf
-└── kubernetes
-    ├── charts
-    │   └── logstash
-    │       ├── Chart.yaml
-    │       ├── Makefile
-    │       ├── templates
-    │       │   ├── config.yaml
-    │       │   └── deployment.yaml
-    │       └── values.yaml
-    └── deployments
-        ├── datacenter1
-        ├── datacenter2
-        └── datacenter3
-```
-
-
-You can see that the Logstash configuration (`logstash.conf`) was referenced as
-a ConfigMap in `kubernetes/charts/logstsash/templates/config.yaml`. That meant,
-there was a tight coupling between a service's definition and its deployment.
-
-In Nomad, it’s a flat hierarchy:
-
-```
-logstash
-├── Dockerfile
-├── Makefile
-├── logstash.conf
-└── nomad.job
-```
-
-All the deployment logic is right next to the service itself. The job file can
-be templated to allow deploying to multiple datacenters/environments.
-
-Both approaches have their pros and cons. However, the added complexity
-introduced by Kubernetes was unnecessary for our small-scale services, which
-mostly consist of a few single, stateless containers. On top of that, the
-Kubernetes ecosystem is still rapidly evolving. It takes a fair amount of time
-and energy to stay up-to-date with the best practices and latest tooling.
-Kubectl, minikube, kubeadm, helm, tiller, kops, oc - the list goes on and on.
-
-Not all tools are necessary to get started with Kubernetes, but it’s hard to
-know which ones are, so you have to be at least aware of them. Because of that,
-the learning curve is quite steep.
+On top of that, the Kubernetes ecosystem is still rapidly evolving. It takes a
+fair amount of time and energy to stay up-to-date with the best practices and
+latest tooling. Kubectl, minikube, kubeadm, helm, tiller, kops, oc - the list
+goes on and on. Not all tools are necessary to get started with Kubernetes, but
+it’s hard to know which ones are, so you have to be at least aware of them.
+Because of that, the learning curve is quite steep.
 
 ## When to use Kubernetes
 
@@ -148,12 +96,14 @@ containers in case of errors; and that's about it.
 
 If you want anything more, you have to bring it yourself.
 
-The entire point of Nomad is that it does *less*: it doesn’t include fine-grained rights management or advanced [network policies] and that’s by design. Those components are provided as enterprise services, by a third-party - or not at all.
+The entire point of Nomad is that it does *less*: it doesn’t include
+fine-grained rights management or [advanced network policies] and that’s by
+design. Those components are provided as enterprise services, by a third-party -
+or not at all.
 
-I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good for small, mostly independent services. If you need more control, you'll have to build it yourself or use a different approach.
-
-Nomad is *just* an orchestrator. By that, it follows the Unix philosophy: one
-tool to do a single job and do it well.
+I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good
+for small, mostly independent services. If you need more control, you'll have to
+build it yourself or use a different approach. Nomad is *just* an orchestrator.
 
 The best part about Nomad is that it's easy to *replace*. There is little to no
 vendor lock-in because the functionality it provides can easily be integrated
@@ -194,7 +144,8 @@ There are many other examples for extensibility:
 
 * Trigger a Jenkins job using a webhook and Consul watches to redeploy your
   Nomad job on service config changes.
-* Use Ceph to add a distributed filesystem to Nomad.
+* Use Ceph to add a distributed file system to Nomad.
+* Use [fabio] for Load balancing
 
 All of this allowed us to grow our infrastructure organically without too much
 up-front commitment.
@@ -216,8 +167,7 @@ pull request merged in comparison to Kubernetes.
 ## Summary
 
 The takeaway is: don't use Kubernetes just because everybody else does.
-Carefully evaluate your requirements and check which tool fits for what you're
-trying to achieve.
+Carefully evaluate your requirements and check which tool fits the bill.
 
 If you're planning to deploy a fleet of homogenous services on a large-scale
 infrastructure, Kubernetes might be the way to go. Just be aware of the
@@ -237,17 +187,23 @@ extendable, why not give Nomad a try? You might be surprised by how far it'll ge
 
 ## Credits
 
-Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], [Perry Manuk], [Inga Feick], [Arne Claus], and [Simon Brüggen] for reviewing drafts of this article.
+Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], [Perry
+Manuk], [Inga Feick], [Simon Brüggen], [Arne Claus], [Esteban Barrios] and [Barnabas Kutassy] for reviewing drafts of this article.
 
+
+[Esteban Barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
+[Arne Claus]: https://twitter.com/arnecls
 [Amazon EKS]: https://aws.amazon.com/eks/
 [rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 [Autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+[Barnabas Kutassy]: https://twitter.com/kassybas
 [bugs]: https://github.com/hashicorp/nomad/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 [ConfigMaps]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 [Consul]: https://www.consul.io/
 [Control Plane]: https://kubernetes.io/docs/concepts/#kubernetes-control-plane
 [Controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
 [DaemonSet]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+[fabio]: https://github.com/fabiolb/fabio
 [filebeat]: https://github.com/elastic/beats/tree/master/filebeat
 [Gollum]: https://github.com/trivago/gollum
 [Google Kubernetes Engine]: https://cloud.google.com/kubernetes-engine/
@@ -255,13 +211,12 @@ Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], [Perry Manuk], 
 [Jakub Sacha]: http://jakubsacha.pl/
 [Loki]: https://grafana.com/loki
 [missing features]: https://github.com/hashicorp/nomad/issues/698
-[network policy]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+[advanced network policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+[service tags]: https://www.nomadproject.io/docs/job-specification/service.html#tags
 [Nomad]: https://www.nomadproject.io/
 [Patrick Pokatilo]: https://github.com/SHyx0rmZ
 [Perry Manuk]: https://github.com/perrymanuk
 [Vault]: https://www.vaultproject.io/
 [Wolfgang Gassler]: https://twitter.com/schafele
-[Inga Feick]: https://twitter.com/lebkuchengewurz
 [Simon Brüggen]: https://github.com/m3t0r
-[Arne Claus]: https://twitter.com/arnecls
 
