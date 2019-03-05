@@ -52,14 +52,15 @@ finally make the switch.
 
 Working as a Software Engineer, my biggest fear was, that the switch would slow
 down my daily work. This turned out not to be true. I was reasonably productive
-from day one and, nobody even noticed any difference. (That's a good thing,
+from day one and nobody even noticed any difference. (That's a good thing,
 right?)
 
 At first, I didn't like the *bar-shaped US-Return key*. I preferred the European
-layout with a *vertical enter key*. I was afraid that I would hit the long enter key by
-accident. After a while, I find that the US return key is even more convenient. I never hit it by accident.
+layout with a *vertical enter key*. I was afraid that I would hit the key by
+accident. After a while, I find that the US return key to be even more convenient. 
+I never hit it by accident.
 
-In about two weeks, I was back to 100% typing speed.
+Within two weeks, I was back to 100% typing speed.
 
 ## Did my programming speed improve noticeably?
 
@@ -101,7 +102,7 @@ me. It allows me to use a single Keyboard layout but insert German umlauts at wi
 {{ figure(src="./KB_United_States.svg", caption="US keyboard layout" credits="[Wikipedia](https://commons.wikimedia.org/wiki/File:KB_United_States.svg)") }}
 
 My built-in MacBook Pro keyboard layout is still German. I was afraid, that switching between
-the internal German and the external English keyboard would be confusing. This
+the internal German and the external English keyboard would confuse me. This
 turned out not to be a problem. I rarely look at the print anyway.
 
 ## Summary
