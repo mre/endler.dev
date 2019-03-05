@@ -148,8 +148,9 @@ containers in case of errors; and that's about it.
 
 If you want anything more, you have to bring it yourself.
 
-The entire point of Nomad is that it does *less*: there is no fine-grained rights management,
-no [DaemonSet], no [network policy]. Those components are provided by a third-party - or not at all.
+The entire point of Nomad is that it does *less*: it doesn’t include fine-grained rights management or advanced [network policies] and that’s by design. Those components are provided as enterprise services, by a third-party - or not at all.
+
+I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good for small, mostly independent services. If you need more control, you'll have to build it yourself or use a different approach.
 
 Nomad is *just* an orchestrator. By that, it follows the Unix philosophy: one
 tool to do a single job and do it well.
@@ -207,8 +208,10 @@ Kubernetes](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aiss
 
 Compared to Kubernetes, there is far less momentum behind Nomad. Kubernetes has
 seen around 75000 commits and 2000 contributors so far, while Nomad sports about
-14000 commits and 300 contributors. That said, the scope is also much smaller
-and the code quality is high.
+14000 commits and 300 contributors. It will be hard for Nomad to keep up with
+the velocity of Kubernetes, but maybe it doesn’t have to! The scope is much more
+narrow and the smaller community could also mean that it'll be easier to get a
+pull request merged in comparison to Kubernetes.
 
 ## Summary
 
@@ -218,7 +221,7 @@ trying to achieve.
 
 If you're planning to deploy a fleet of homogenous services on a large-scale
 infrastructure, Kubernetes might be the way to go. Just be aware of the
-additional complexity and the maintenance costs. Some of these costs can be
+additional complexity and the operational costs. Some of these costs can be
 avoided by using a managed Kubernetes environment like [Google Kubernetes
 Engine] or [Amazon EKS].
 
