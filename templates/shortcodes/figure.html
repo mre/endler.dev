@@ -1,3 +1,6 @@
+{% if link %}
+<a href="{{ link }}">
+{% endif %}
 <figure>
     <img src="{{ src }}" />
     {% if caption or credits %}
@@ -11,3 +14,6 @@
     </figcaption>
     {% endif %}
 </figure>
+{% if link %}
+</a>
+{% endif %}
