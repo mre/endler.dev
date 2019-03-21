@@ -1,3 +1,3 @@
-.PHONY: serve
-serve:
+.PHONY: run
+run:
 	zola serve
