@@ -17,7 +17,7 @@
 {% set suffix = "th" %}
 {% endif %}
 
-{{ daynum }}{{ suffix }} {{ date | date(format="%B, %Y") }}
+{{ daynum }}{{ suffix }} of {{ date | date(format="%B, %Y") }}
 {% endmacro nicedate %}
 
 {% macro comments(comments) %}
