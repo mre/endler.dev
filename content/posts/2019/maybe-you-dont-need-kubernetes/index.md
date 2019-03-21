@@ -3,6 +3,7 @@ title="Maybe You Don't Need Kubernetes"
 date=2019-03-21
 path="2019/maybe-you-dont-need-kubernetes"
 draft=false
+social_img="./scooter.png"
 +++
 
 {{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/).") }}
