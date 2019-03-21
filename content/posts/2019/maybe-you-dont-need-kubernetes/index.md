@@ -1,19 +1,19 @@
 +++
 title="Maybe You Don't Need Kubernetes"
-date=2019-03-06
-path="2019/kubernetes-nomad"
-draft=true
+date=2019-03-21
+path="2019/maybe-you-dont-need-kubernetes"
+draft=false
 +++
 
-{{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Car vector created by [freepik](https://www.freepik.com/free-photos-vectors/car)") }}
+{{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/).") }}
 
 Kubernetes is the 800-pound gorilla of container orchestration.  
-It powers some of the biggest microservice deployments worldwide, but it comes
+It powers some of the biggest deployments worldwide, but it comes
 with a price tag.
 
 Especially for smaller teams, it can be time-consuming to maintain and has a
 steep learning curve. For what our team of four wanted to achieve at trivago, it
-added too much overhead. So we looked into alternatives ...and fell in love with
+added too much overhead. So we looked into alternatives &mdash; and fell in love with
 [Nomad].
 
 ## The wishlist
@@ -35,7 +35,7 @@ We started with a list of requirements for container orchestration:
 On top of that, the following things were nice to have but not strictly
 required:
 
-* Tag machines by their capabilities (e.g. label machines with fast disks for
+* Tag machines by their capabilities (e.g., label machines with fast disks for
   I/O heavy services.)
 * Be able to run these services independently of any orchestrator (e.g. in
   development).
@@ -76,7 +76,7 @@ that make container orchestration at scale more manageable:
 
 * Fine-grained [rights management]
 * [Custom controllers] allow getting logic into the cluster. These are just
-  programs that talk to the Kubernetes API
+  programs that talk to the Kubernetes API.
 * [Autoscaling]! Kubernetes can scale your services up and down on demand. It
   uses service metrics to do this without manual intervention.
 
@@ -88,17 +88,17 @@ Especially in our team, which runs most services on-premise (because of its
 close connection to trivago's core infrastructure), we didn't want to afford
 running our own Kubernetes cluster. We wanted to ship services instead.
 
+{{ figure(src="./nuclear-kubernetes.png", link="https://twitter.com/QuinnyPig/status/1093261169614356490") }}
+
 ## Batteries not included
 
 Nomad is the 20% of service orchestration that gets you 80% of the way. All it
 does is manage deployments. It takes care of your rollouts and restarts your
-containers in case of errors; and that's about it.
-
-If you want anything more, you have to bring it yourself.
+containers in case of errors, and that's about it.
 
 The entire point of Nomad is that it does *less*: it doesn’t include
-fine-grained rights management or [advanced network policies] and that’s by
-design. Those components are provided as enterprise services, by a third-party -
+fine-grained rights management or [advanced network policies], and that’s by
+design. Those components are provided as enterprise services, by a third-party,
 or not at all.
 
 I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good
@@ -108,7 +108,7 @@ build it yourself or use a different approach. Nomad is *just* an orchestrator.
 The best part about Nomad is that it's easy to *replace*. There is little to no
 vendor lock-in because the functionality it provides can easily be integrated
 into any other system that manages services. It just runs as a plain old single
-binary on every machine in your cluster, that's it!
+binary on every machine in your cluster; that's it!
 
 ## The Nomad ecosystem of loosely coupled components
 
@@ -145,9 +145,9 @@ There are many other examples for extensibility:
 * Trigger a Jenkins job using a webhook and Consul watches to redeploy your
   Nomad job on service config changes.
 * Use Ceph to add a distributed file system to Nomad.
-* Use [fabio] for Load balancing
+* Use [fabio] for load balancing.
 
-All of this allowed us to grow our infrastructure organically without too much
+All of this allowed us to [grow our infrastructure organically](https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/) without too much
 up-front commitment.
 
 ## Fair warning
@@ -158,65 +158,62 @@ production right now. There are [bugs] and [missing features] of course - but
 Kubernetes](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fbug).
 
 Compared to Kubernetes, there is far less momentum behind Nomad. Kubernetes has
-seen around 75000 commits and 2000 contributors so far, while Nomad sports about
-14000 commits and 300 contributors. It will be hard for Nomad to keep up with
+seen around 75.000 commits and 2000 contributors so far, while Nomad sports about
+14.000 commits and 300 contributors. It will be hard for Nomad to keep up with
 the velocity of Kubernetes, but maybe it doesn’t have to! The scope is much more
-narrow and the smaller community could also mean that it'll be easier to get a
-pull request merged in comparison to Kubernetes.
+narrow and the smaller community could also mean that it'll be easier to get your 
+pull request accepted, in comparison to Kubernetes.
 
 ## Summary
 
 The takeaway is: don't use Kubernetes just because everybody else does.
 Carefully evaluate your requirements and check which tool fits the bill.
 
-If you're planning to deploy a fleet of homogenous services on a large-scale
+If you're planning to deploy a fleet of homogenous services on large-scale
 infrastructure, Kubernetes might be the way to go. Just be aware of the
-additional complexity and the operational costs. Some of these costs can be
+additional complexity and operational costs. Some of these costs can be
 avoided by using a managed Kubernetes environment like [Google Kubernetes
 Engine] or [Amazon EKS].
-
-If Kubernetes was a car, Nomad would be a scooter.  
-Sometimes you prefer one and sometimes the other.
-So the two solutions are not mutually exclusive.
-
-Just because both can get you from A to B, depending on where you want to go,
-one is more convenient than the other. Both have their right to exist.
 
 If you're just looking for a reliable orchestrator that is easy to maintain and
 extendable, why not give Nomad a try? You might be surprised by how far it'll get you.
 
+If Kubernetes were a car, Nomad would be a scooter. Sometimes you prefer one and
+sometimes the other. Both have their right to exist.
+
 ## Credits
 
-Thanks to [Jakub Sacha], [Wolfgang Gassler], [Patrick Pokatilo], [Perry
-Manuk], [Inga Feick], [Simon Brüggen], [Arne Claus], [Esteban Barrios] and [Barnabas Kutassy] for reviewing drafts of this article.
+Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Simon Brüggen], [Arne Claus], [Inga Feick], [Wolfgang Gassler], [Barnabas Kutassy], [Perry Manuk], [Patrick Pokatilo], and [Jakub Sacha] for reviewing drafts of this article.
 
 
-[Esteban Barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
-[Arne Claus]: https://twitter.com/arnecls
+[advanced network policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [Amazon EKS]: https://aws.amazon.com/eks/
-[rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 [Autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
-[Barnabas Kutassy]: https://twitter.com/kassybas
 [bugs]: https://github.com/hashicorp/nomad/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 [ConfigMaps]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 [Consul]: https://www.consul.io/
 [Control Plane]: https://kubernetes.io/docs/concepts/#kubernetes-control-plane
-[Controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
+[Custom controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
 [DaemonSet]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 [fabio]: https://github.com/fabiolb/fabio
 [filebeat]: https://github.com/elastic/beats/tree/master/filebeat
 [Gollum]: https://github.com/trivago/gollum
 [Google Kubernetes Engine]: https://cloud.google.com/kubernetes-engine/
 [helm]: https://helm.sh/
-[Jakub Sacha]: http://jakubsacha.pl/
 [Loki]: https://grafana.com/loki
 [missing features]: https://github.com/hashicorp/nomad/issues/698
-[advanced network policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
-[service tags]: https://www.nomadproject.io/docs/job-specification/service.html#tags
 [Nomad]: https://www.nomadproject.io/
+[rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+[service tags]: https://www.nomadproject.io/docs/job-specification/service.html#tags
+[Vault]: https://www.vaultproject.io/
+
+[Arne Claus]: https://twitter.com/arnecls
+[Barnabas Kutassy]: https://twitter.com/kassybas
+[Esteban Barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
+[Inga Feick]: https://github.com/IngaFeick
+[Jakub Sacha]: http://jakubsacha.pl/
 [Patrick Pokatilo]: https://github.com/SHyx0rmZ
 [Perry Manuk]: https://github.com/perrymanuk
-[Vault]: https://www.vaultproject.io/
-[Wolfgang Gassler]: https://twitter.com/schafele
 [Simon Brüggen]: https://github.com/m3t0r
-
+[Wolfgang Gassler]: https://twitter.com/schafele
+[Jorge-Luis Betancourt]: http://jorgelbg.github.io/
