@@ -6,6 +6,9 @@ draft=false
 
 [extra]
 social_img="scooter.png"
+comments = [
+  {name = "Hacker News", url = "https://news.ycombinator.com/item?id=19467067"},
+  {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, ]
 +++
 
 {{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/).") }}
