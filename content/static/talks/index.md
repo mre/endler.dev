@@ -16,9 +16,6 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 -   [Recording](https://fosdem.org/2019/schedule/event/rust_cargo_inspect/)
 -   [Slides](https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains)
 
-This is an hands-on talk, showing a journey from code with a lot of syntactic
-sugar to plain, veeery explicit Rust code.
-
 Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It
 is sometimes hard, however, to look behind the curtain and see what the compiler
 is really doing with our code. "It is good to know what these conveniences are,
