@@ -1,10 +1,10 @@
 +++
-title="cargo-inspect"
+title="What Is Rust Doing Behind the Curtains?"
 date=2018-12-02
 path="2018/cargo-inspect"
 
 [extra]
-subtitle="A Little Tool for Exploring Rust Internals"
+subtitle="Find out with cargo-inspect!"
 +++
 
 
