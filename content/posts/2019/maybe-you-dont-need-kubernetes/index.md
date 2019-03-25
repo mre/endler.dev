@@ -2,9 +2,9 @@
 title="Maybe You Don't Need Kubernetes"
 date=2019-03-21
 path="2019/maybe-you-dont-need-kubernetes"
-draft=false
 
 [extra]
+excerpt="Kubernetes is the 800-pound gorilla of container orchestration.  It powers some of the biggest deployments worldwide, but it comes with a price tag..."
 social_img="scooter.png"
 comments = [
   {name = "Hacker News", url = "https://news.ycombinator.com/item?id=19467067"},
