@@ -199,10 +199,14 @@ header nav li {
 figure {
   font-size: .9em;
   font-style: italic;
-  margin: 0 0 40px;
+  margin: 40px 0 40px;
   padding: 0;
   text-align: center;
   text-indent: 0;
+}
+
+figure img {
+  width: 100%;
 }
 
 figcaption {
