@@ -259,7 +259,7 @@ footer {
 footer .body {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
 }
 
 footer nav {
@@ -272,18 +272,17 @@ footer nav ul {
   padding-left: 0;
 }
 
+.email {
+  background-color: white;
+  width: 300px;
+}
+
+.submit {
+  background-color: $lighter-grey;
+}
+
 footer .field {
   padding: 10px;
   font-size: 0.8em;
   border: none;
-
-  .email {
-    background-color: white;
-    flex: 2;
-  }
-
-  .submit {
-    background-color: $lighter-grey;
-    flex: 1;
-  }
 }
