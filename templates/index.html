@@ -8,7 +8,9 @@
   {% block header %}
   {% endblock header %}
   {% include "snippets/manifest.html" %}
+  {% if config.extra.id %}
   <link rel="dns-prefetch" href="//www.google-analytics.com/" />
+  {% endif %}
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=m2llJQPQq8">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=m2llJQPQq8">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=m2llJQPQq8">
@@ -18,7 +20,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <meta name="author" content="Matthias Endler">
-  <meta name="description" content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go" />
+  <meta name="description"
+    content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go" />
   <title>Matthias Endler</title>
 </head>
 
@@ -72,7 +75,9 @@
   {% block teaser %}
   {% endblock teaser %}
   {% include "snippets/footer.html" %}
+  {% if config.extra.id %}
   {% include "snippets/analytics.html" %}
+  {% endif %}
 </body>
 
 </html>

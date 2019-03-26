@@ -17,4 +17,6 @@ highlight_code = true
 highlight_theme = "ayu-light"
 
 [extra]
-    author = "Matthias Endler"
+author = "Matthias Endler"
+# Enable Google analytics
+id = "UA-693428-1" 
