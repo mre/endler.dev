@@ -1,13 +1,14 @@
 {% extends "index.html" %}
 
-{% block header %}
-{% if page.extra.css %}
+{%- block header %}
+<title>{{ page.title }} | Matthias Endler</title>
+{%- if page.extra.css %}
 <link rel="stylesheet" href="./article.css" />
-{% endif %}
-{% include "snippets/social.html" %}
-{% endblock header %}
+{%- endif %}
+{%- include "snippets/social.html" %}
+{%- endblock header -%}
 
-{% block content %}
+{%- block content %}
 <article>
   <p class='post-meta'>Published on {{ macros::nicedate(daynum=page.day, date=page.date) }}</p>
   <h1>{{ page.title }}</h1>

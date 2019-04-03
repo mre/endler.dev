@@ -1,12 +1,12 @@
-{% if page.extra.excerpt %}
-{% set social_description = page.extra.excerpt | safe %}
-{% elif page.summary %}
-{% set social_description = page.summary | safe %}
-{% else %}
-{% set social_description = page.content | safe | truncate(length=50) %}
-{% endif %}
+{%- if page.extra.excerpt %}
+{%- set social_description = page.extra.excerpt | safe %}
+{%- elif page.summary %}
+{%- set social_description = page.summary | safe %}
+{%- else %}
+{%- set social_description = page.content | safe | truncate(length=50) %}
+{%- endif %}
 
-{% if page.extra.social_img %}
+{%- if page.extra.social_img %}
 {% set relpath = current_path ~ page.extra.social_img %}
 {%- set social_img = get_url(path=relpath) %}
 {% else %}
