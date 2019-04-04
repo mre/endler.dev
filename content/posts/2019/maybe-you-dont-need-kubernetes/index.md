@@ -10,7 +10,8 @@ comments = [
   {name = "Hacker News", url = "https://news.ycombinator.com/item?id=19467067"},
   {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, ]
 translations = [
-  {name = "Japanese", url = "https://yakst.com/ja/posts/5455"}
+  {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
+  {name = "Russian", url = "https://habr.com/ru/post/445030/"}
 ]
 +++
 
