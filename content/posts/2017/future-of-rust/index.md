@@ -1,7 +1,6 @@
 +++
 title="The Future of Rust"
 date=2017-04-27
-path="2017/future-of-rust"
 
 [extra]
 comments = [

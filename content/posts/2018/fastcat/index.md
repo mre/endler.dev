@@ -1,7 +1,6 @@
 +++
 title="fastcat - A Faster `cat` Implementation Using Splice"
 date=2018-07-31
-path="2018/fastcat"
 
 [extra]
 excerpt="""

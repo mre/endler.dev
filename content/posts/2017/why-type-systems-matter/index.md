@@ -1,7 +1,6 @@
 +++
 title="Why Type Systems Matter"
 date=2017-07-10
-path="2017/why-type-systems-matter"
 
 [extra]
 social_img="2017_why_type_systems_matter.png"

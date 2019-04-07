@@ -1,7 +1,6 @@
 +++
 title="Modern Day Annoyances - Digital Clocks"
 date=2017-11-07
-path="2017/digital-clocks"
 
 [extra]
 social_img="2017_digital_clocks.png"

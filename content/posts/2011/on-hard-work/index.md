@@ -1,7 +1,6 @@
 +++
 title="On Hard Work"
 date=2011-10-13
-path="2011/on-hard-work"
 +++
 
 

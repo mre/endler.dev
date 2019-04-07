@@ -1,7 +1,6 @@
 +++
 title="A Tiny `ls` Clone Written in Rust"
 date=2018-03-09
-path="2018/ls"
 
 [extra]
 comments = [

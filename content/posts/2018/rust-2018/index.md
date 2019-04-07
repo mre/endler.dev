@@ -1,7 +1,6 @@
 +++
 title="Rust in 2018"
 date=2018-01-09
-path="2018/rust-2018"
 
 [extra]
 subtitle="Streamline Collaboration and Empower Intermediate Users"

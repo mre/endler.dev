@@ -1,7 +1,6 @@
 +++
 title="Tools"
 date=2011-10-30
-path="2011/tools"
 +++
 
 For as long as I can think, religious flamewars have infected computer science.

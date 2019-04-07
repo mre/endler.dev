@@ -1,7 +1,6 @@
 +++
 title="A Little Story About the `yes` Unix Command"
 date=2017-10-10
-path="2017/yes"
 
 [extra]
 comments = [

@@ -1,17 +1,17 @@
 +++
 title="Maybe You Don't Need Kubernetes"
 date=2019-03-21
-path="2019/maybe-you-dont-need-kubernetes"
 
 [extra]
 excerpt="Kubernetes is the 800-pound gorilla of container orchestration.  It powers some of the biggest deployments worldwide, but it comes with a price tag..."
 social_img="scooter.png"
 comments = [
   {name = "Hacker News", url = "https://news.ycombinator.com/item?id=19467067"},
-  {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, ]
+  {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, 
+]
 translations = [
   {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
-  {name = "Russian", url = "https://habr.com/ru/post/445030/"}
+  {name = "Russian", url = "https://habr.com/ru/post/445030/"},
 ]
 +++
 

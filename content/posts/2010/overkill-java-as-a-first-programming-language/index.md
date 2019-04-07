@@ -1,7 +1,6 @@
 +++
 title="Overkill – Java as a First Programming Language"
 date=2010-02-12
-path="2010/overkill-java-as-a-first-programming-language"
 
 [extra]
 comments = [

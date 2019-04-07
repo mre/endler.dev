@@ -1,7 +1,6 @@
 +++
 title="Lightning Fast Image Previews with Pure CSS and LQIP"
 date=2017-09-18
-path="2017/image-previews"
 
 [extra]
 social_img="2017_image_previews.png"

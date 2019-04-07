@@ -1,7 +1,6 @@
 +++
 title="Switching from a German to a US Keyboard Layout - Is It Worth It?"
 date=2018-09-02
-path="2018/keyboard"
 
 [extra]
 subtitle="(For Programmers)"

@@ -1,7 +1,6 @@
 +++
 title="Why I Love Text Files"
 date=2010-01-10
-path="2010/why-i-love-text-files"
 
 [extra]
 comments = [

@@ -1,7 +1,6 @@
 +++
 title="What Is Rust Doing Behind the Curtains?"
 date=2018-12-02
-path="2018/cargo-inspect"
 
 [extra]
 subtitle="Find out with cargo-inspect!"

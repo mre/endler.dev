@@ -1,7 +1,6 @@
 +++
 title="Afraid of Makefiles? Don't be!"
 date=2017-08-15
-path="2017/makefiles"
 
 [extra]
 excerpt="In the last few years, I've had the pleasure to work with a lot of talented Software Engineers."

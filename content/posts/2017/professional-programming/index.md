@@ -1,7 +1,6 @@
 +++
 title="Being a Professional Programmer"
 date=2017-05-18
-path="2017/professional-programming"
 +++
 
 

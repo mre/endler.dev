@@ -1,7 +1,6 @@
 +++
 title="Launching a URL Shortener in Rust using Rocket"
 date=2017-04-09
-path="2017/rust-url-shortener"
 
 [extra]
 comments = [

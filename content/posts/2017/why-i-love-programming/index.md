@@ -1,7 +1,6 @@
 +++
 title="Why I Love Programming"
 date=2017-03-15
-path="2017/why-i-love-programming"
 
 [extra]
 comments = [

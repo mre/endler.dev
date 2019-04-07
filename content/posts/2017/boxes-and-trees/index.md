@@ -1,7 +1,6 @@
 +++
 title="Of Boxes and Trees - Smart Pointers in Rust"
 date=2017-08-12
-path="2017/boxes-and-trees"
 
 [extra]
 comments = [

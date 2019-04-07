@@ -1,7 +1,6 @@
 +++
 title="Rust for Rubyists"
 date=2017-12-17
-path="2017/rust-for-rubyists"
 
 [extra]
 subtitle="Idiomatic Patterns in Rust and Ruby"

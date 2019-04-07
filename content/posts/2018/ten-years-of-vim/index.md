@@ -1,7 +1,6 @@
 +++
 title="Ten Years of Vim"
 date=2018-05-20
-path="2018/ten-years-of-Vim"
 
 [extra]
 css=true

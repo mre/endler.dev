@@ -1,7 +1,6 @@
 +++
 title="Go vs Rust? Choose Go."
 date=2017-09-15
-path="2017/go-vs-rust"
 
 [extra]
 social_img="2017_gopher.png"

@@ -1,7 +1,6 @@
 +++
 title="Making Myself Obsolete"
 date=2017-12-10
-path="2017/obsolete"
 
 [extra]
 subtitle="Writing a Linter for Linting Linters"

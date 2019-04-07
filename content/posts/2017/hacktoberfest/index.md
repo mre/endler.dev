@@ -1,7 +1,6 @@
 +++
 title="Learn Some Rust During Hacktoberfest"
 date=2017-10-15
-path="2017/hacktoberfest"
 
 [extra]
 excerpt="October is the perfect time to contribute to Open Source &mdash; at least according to Github and DigitalOcean. Because that's when they organize Hacktoberfest, a global event where you get a free shirt and lots of street cred for creating pull requests."

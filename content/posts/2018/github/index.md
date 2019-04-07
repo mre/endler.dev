@@ -1,7 +1,6 @@
 +++
 title="That Octocat on the Wall"
 date=2018-06-09
-path="2018/github"
 
 [extra]
 social_img="octocat.jpg"

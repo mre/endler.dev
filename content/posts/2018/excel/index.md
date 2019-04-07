@@ -1,7 +1,6 @@
 +++
 title="The Unreasonable Effectiveness of Excel Macros"
 date=2018-11-05
-path="2018/excel"
 +++
 
 

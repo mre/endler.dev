@@ -1,7 +1,6 @@
 +++
 title="The Essence of Information"
 date=2017-03-18
-path="2017/the-essence-of-information"
 +++
 
 People look confused when I tell them about my passion for algorithms and data-structures.

@@ -1,7 +1,6 @@
 +++
 title="Running Legacy Code"
 date=2009-11-08
-path="2009/running-legacy-code"
 +++
 
 

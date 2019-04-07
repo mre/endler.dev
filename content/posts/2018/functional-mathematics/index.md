@@ -1,7 +1,6 @@
 +++
 title="Functional Programming for Mathematical Computing"
 date=2018-01-02
-path="2018/functional-mathematics"
 +++
 
 

@@ -1,7 +1,6 @@
 +++
 title="Are you a Programmer?"
 date=2011-10-20
-path="2011/are-you-a-programmer"
 +++
 
 My geography teacher once told the story of her first lecture at University.
