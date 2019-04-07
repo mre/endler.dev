@@ -84,4 +84,4 @@ You choose your own projects; nobody else.
 Don't let anybody tell you that you're not smart enough for this stuff. Ever.  
 Each program is a wonderful journey so join us and code the world around you.
 
-[1]: ./posts/2017/professional-programming/index.md
+[1]: ./2017/professional-programming/index.md

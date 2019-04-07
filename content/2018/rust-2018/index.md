@@ -8,7 +8,7 @@ social_img="2018_rust_2018.jpeg"
 +++
 
 
-I wrote about the [future of Rust](./posts/2017/future-of-rust/index.md) before and it seems like nobody stops me from doing it again! Quite the contrary: this time the Rust core team even [asked for it](https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html).
+I wrote about the [future of Rust](./2017/future-of-rust/index.md) before and it seems like nobody stops me from doing it again! Quite the contrary: this time the Rust core team even [asked for it](https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html).
 I'm a bit late to the party, but here are my 2 cents about the priorities for Rust in 2018.
 
 <!-- more -->

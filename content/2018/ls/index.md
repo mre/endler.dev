@@ -10,7 +10,7 @@ comments = [
 +++
 
 
-In my series of [useless Unix tools rewritten in Rust](./posts/2017/yes/index.md), today I'm going to be covering one of my all-time favorites: `ls`.
+In my series of [useless Unix tools rewritten in Rust](./2017/yes/index.md), today I'm going to be covering one of my all-time favorites: `ls`.
 
 First off, let me say that you probably don't want to use this code as a replacement for `ls` on your local machine (although you could!).
 As we will find out, `ls` is actually quite a powerful tool under the hood.
@@ -335,4 +335,4 @@ That's it! You can find the [final version of our toy `ls` on Github](https://gi
 We are still far away from a full-fledged `ls` replacement, but at least we learned a thing or two about its internals.
 
 If you're looking for a proper `ls` replacement written in Rust, go check out [`exa`](https://the.exa.website/).
-If, instead, you want to read another blog post from the same series, check out [*A Little Story About the `yes` Unix Command*](./posts/2017/yes/index.md).
+If, instead, you want to read another blog post from the same series, check out [*A Little Story About the `yes` Unix Command*](./2017/yes/index.md).

@@ -26,7 +26,7 @@ five to ten years from now. To make it big, we need both, [roots and wings](http
 Right now, the most popular languages for Data Science are Python, Java, R, and C++.
 
 <figure>
-  <img src="/img/posts/2017/future-of-rust/data-science-languages.png" alt="Programming language popularity for data science" />
+  <img src="/2017/future-of-rust/data-science-languages.png" alt="Programming language popularity for data science" />
   <figcaption>Programming language popularity for data science (<a href="https://www.ibm.com/developerworks/community/blogs/jfp/entry/What_Language_Is_Best_For_Machine_Learning_And_Data_Science?lang=en">Source</a>).
   </figcaption>
 </figure>

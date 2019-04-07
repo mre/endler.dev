@@ -83,7 +83,7 @@ Since we don't know how many subtrees our tree will have, there is no way to tel
 Rust tells us how to fix that: by inserting an *indirection* like `Box`, `Rc`, or `&`.
 These are different "pointer types" in Rust. They all point to places in memory. So, instead of knowing the total size of our tree structure, we just know the *point* in memory where the tree is located. But that's enough to define the tree structure.
 These pointer types allow us to do that safely and without manual memory management.
-They all offer different guarantees and you should [choose the one that fits your requirements best](./posts/2017/why-type-systems-matter/index.md).
+They all offer different guarantees and you should [choose the one that fits your requirements best](./2017/why-type-systems-matter/index.md).
 
 * `&` is called a `borrow` in Rust speech. It's the most common of the three. It's a reference to some place in memory, but it does not **own** the data it points to. As such, the lifetime of the borrow depends on its owner.
 Therefore we would need to add lifetime parameters here. This can make it tedious to use.

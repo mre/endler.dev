@@ -202,7 +202,7 @@ CMD ["--help"]
 The first part would build a static binary, the second part would run it at container startup.
 Well, that didn't work, because `zeit` [does not support multi-stage builds yet](https://github.com/zeit/now-cli/issues/962).
 
-The workaround was to split up the Dockerfile into two and [connect them both with a Makefile](https://github.com/mre/awesome-static-analysis-ci/blob/master/Makefile). Makefiles are pretty powerful, [you know](./posts/2017/makefiles/index.md)?
+The workaround was to split up the Dockerfile into two and [connect them both with a Makefile](https://github.com/mre/awesome-static-analysis-ci/blob/master/Makefile). Makefiles are pretty powerful, [you know](./2017/makefiles/index.md)?
 
 With that, I had all the parts for deployment together.
 
@@ -247,7 +247,7 @@ The last step was to add `check.now.sh` as a webhook inside the awesome-static-a
 
 Now, whenever a new pull request is coming in, you see that little bot getting active!
 
-![A successful pull request, which was checked by the bot](/img/posts/2017/obsolete/pull_request_success.jpg)
+![A successful pull request, which was checked by the bot](/2017/obsolete/pull_request_success.jpg)
 
 ## Outcome and future plans
 

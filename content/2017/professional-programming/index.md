@@ -15,7 +15,7 @@ Was I wasting my time by pursuing this career?
 Only later I found the answer &mdash; but I had to become a professional programmer myself.
 This article aims to save you from a few years of uncertainty.
 
-Before you dig into this, be sure to read the first part of this series titled ["Why I love Programming"](./posts/2017/why-i-love-programming/index.md).
+Before you dig into this, be sure to read the first part of this series titled ["Why I love Programming"](./2017/why-i-love-programming/index.md).
 
 ## What's the difference between "professional" and "hobby" programming?
 

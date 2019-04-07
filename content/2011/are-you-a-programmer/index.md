@@ -12,7 +12,7 @@ She had seen thousands of images of Germany (her mother country) but
 wasn't able to reproduce it from her blurry memory. She would have to look it up.
 
 Doesn't this sound familiar? We rely on machines to manage large portions
-of our knowledge. There's [hard work](./posts/2011/on-hard-work/index.md) involved to learn something by heart.
+of our knowledge. There's [hard work](./2011/on-hard-work/index.md) involved to learn something by heart.
 
 Here is a similar test for programmers:
 
