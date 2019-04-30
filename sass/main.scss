@@ -286,3 +286,46 @@ footer .field {
   font-size: 0.8em;
   border: none;
 }
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 210px;
+}
+
+.autocomplete input {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-top: none;
+  top: 100%;
+  width: 230px;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}

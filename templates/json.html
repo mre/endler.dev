@@ -1,0 +1,11 @@
+{% set section = get_section(path="_index.md") %}
+
+[
+{%- for post in section.pages -%}
+{
+"title": {{ post.title | safe | striptags | json_encode }},
+"url": {{ post.permalink | safe | json_encode }},
+"body": {{ post.content | safe | striptags | json_encode }}
+}{% if not loop.last %},{% endif %}
+{%- endfor -%}
+]
