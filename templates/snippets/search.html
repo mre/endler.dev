@@ -1,22 +1,24 @@
-<form autocomplete="off">
-    <div class="autocomplete">
-        <input id="myInput" type="text" placeholder="&#x1F50D; Search for...">
-    </div>
-</form>
-
 <script type="module">
     import { search, default as init } from '/tinysearch_engine.js';
-      window.search = search;
 
-      async function run() {
+    async function run() {
         await init('/tinysearch_engine_bg.wasm');
-      }
-      run();
+    }
+
+    var loaded = false;
 
     function autocomplete(inp) {
         var currentFocus;
 
+        inp.addEventListener("click", function (e) {
+            if (!loaded) {
+                run();
+                loaded = true;
+            }
+        });
+
         inp.addEventListener("input", function (e) {
+
             var a, b, i, val = this.value;
 
             /*close any already open lists of autocompleted values*/
@@ -106,6 +108,11 @@
             closeAllLists(e.target);
         });
     }
-
-    autocomplete(document.getElementById("myInput"));
+    autocomplete(document.getElementById("tinysearch"));
 </script>
+
+<form autocomplete="off">
+    <div class="autocomplete">
+        <input id="tinysearch" type="text" placeholder="&#x1F50D; Search for...">
+    </div>
+</form>
