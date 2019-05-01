@@ -2,9 +2,16 @@
 content:
 	zola build
 
-.PHONY: build index 
-build index: content
+.PHONY: index
+index:
 	tinysearch --optimize --path static public/json/index.html
+
+.PHONY: minify
+minify:
+	terser --compress --mangle --output static/search_min.js -- static/search.mjs static/tinysearch_engine.js
+
+.PHONY: build 
+build: content index minify
 
 .PHONY: run
 run:
