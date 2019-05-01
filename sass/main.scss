@@ -1,10 +1,13 @@
-$pink: #c35;
-$light-pink: #f5b2c8;
-$light-grey: #888;
-$lighter-grey: rgb(185, 185, 185);
-$light-blue: #9fd6fa;
-$dark-blue: #234;
-$light-bg: #fafafa;
+$pink-400: #c35;
+$pink-200: #f5b2c8;
+
+$blue-300: #9fd6fa;
+$blue-500: #234;
+
+$grey-400: #888;
+$grey-300: #b9b9b9;
+$grey-200: #fafafa;
+$grey-100: #ddd;
 
 /* Tiny reset */
 
@@ -32,7 +35,7 @@ body {
   font-family: Georgia, Times, serif;
   font-size: 120%;
   line-height: 1.58;
-  border-top: 0.5em solid $pink;
+  border-top: 0.5em solid $pink-400;
 }
 
 .container {
@@ -104,7 +107,7 @@ caption {
 }
 
 .post-meta {
-  color: $light-grey;
+  color: $grey-400;
   font-style: italic;
   margin: 0px;
   font-size: 90%;
@@ -115,7 +118,7 @@ caption {
 }
 
 code {
-  background: $light-bg;
+  background: $grey-200;
   // border: 1px solid $code-border;
   border-radius: 6px;
   display: inline-block;
@@ -134,7 +137,7 @@ code {
 }
 
 blockquote {
-  border-left: 4px solid $light-blue;
+  border-left: 4px solid $blue-300;
   font-style: italic;
   margin: 4px 10px;
   padding: 3px 20px;
@@ -167,7 +170,7 @@ h3 {
 
 // Anchor tags
 a {
-  color: $pink;
+  color: $pink-400;
   text-decoration: none;
 }
 
@@ -191,7 +194,7 @@ header nav li {
 }
 
 .button {
-  background-color: $pink;
+  background-color: $pink-400;
   padding: 10px;
   color: white;
 }
@@ -238,8 +241,8 @@ figcaption {
 }
 
 #teaser {
-  background: $pink;
-  color: $light-pink;
+  background: $pink-400;
+  color: $pink-200;
 }
 
 #teaser a {
@@ -251,8 +254,8 @@ figcaption {
 }
 
 footer {
-  background: $dark-blue;
-  color: $lighter-grey;
+  background: $blue-500;
+  color: $grey-300;
 }
 
 #teaser .body,
@@ -278,7 +281,7 @@ footer nav ul {
 }
 
 .submit {
-  background-color: $lighter-grey;
+  background-color: $grey-300;
 }
 
 footer .field {
@@ -294,7 +297,7 @@ footer .field {
 }
 
 .autocomplete input {
-  border: 1px solid #ddd;
+  border: 1px solid $grey-100;
   padding: 10px;
   border-radius: 20px;
   left: 0;
@@ -307,7 +310,7 @@ input[type=submit] {
 }
 
 .autocomplete-items {
-  border: 1px solid #ddd;
+  border: 1px solid $grey-100;
   border-bottom: none;
   border-top: none;
   top: 100%;
@@ -318,14 +321,14 @@ input[type=submit] {
   padding: 10px;
   cursor: pointer;
   background-color: white;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid $grey-300;
 }
 
 .autocomplete-items div:hover {
-  background-color: #e9e9e9;
+  background-color: $grey-200;
 }
 
 .autocomplete-active {
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+  background-color: $pink-400 !important;
+  color: white;
 }
