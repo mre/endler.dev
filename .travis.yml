@@ -7,9 +7,9 @@ addons:
     sources:
       - debian-sid
 before_script:
-  - apt-get install -y --allow-unauthenticated binaryen
+  - sudo apt-get install -y --allow-unauthenticated binaryen
   - curl -sL https://deb.nodesource.com/setup_12.x | bash -
-  - apt-get install -y nodejs
+  - sudo apt-get install -y nodejs
   - curl -s -L https://github.com/getzola/zola/releases/download/v0.6.0/zola-v0.6.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar xvzf - -C /usr/local/bin
   - cargo install --force wasm-pack 
   - wasm-pack --version
