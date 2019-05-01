@@ -7,6 +7,7 @@ addons:
     sources:
       - debian-sid
     packages:
+      - dpkg
       - --allow-unauthenticated binaryen
 before_script:
   - curl -sL https://deb.nodesource.com/setup_12.x | bash -
