@@ -3,7 +3,7 @@ content:
 	zola build
 
 .PHONY: index
-index:
+index: content
 	tinysearch --optimize --path static public/json/index.html
 
 .PHONY: minify
