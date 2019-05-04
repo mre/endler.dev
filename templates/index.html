@@ -29,20 +29,24 @@
   <div class="container">
     <header>
       {% include "snippets/logo.html" %}
-      <div class="bio">
-        <p>
-          Backend Engineer at trivago.
-          Likes just-in-time compilers and hot chocolate.
-          <a href="/about">About me.</a>
-        </p>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="https://twitter.com/matthiasendler">Twitter</a></li>
-            <li><a href="https://feedly.com/i/subscription/feed/https://matthias-endler.de/rss.xml">RSS</a></li>
-          </ul>
-        </nav>
-      </div>
+      <p class="bio">
+        Backend Engineer at trivago.
+        Likes just-in-time compilers and hot chocolate.
+        <a href="/about">About me.</a>
+      </p>
+      <nav>
+        <ul>
+          <li>
+            <a class="icon home-icon" href="/" title="Go to homepage" alt="Home">Home</a>
+          </li>
+          <a class="icon twitter-icon" href="https://twitter.com/matthiasendler" title="My Twitter profile"
+            alt="Twitter">Twitter</a>
+          <li>
+            <a class="icon rss-icon" href="https://feedly.com/i/subscription/feed/https://matthias-endler.de/rss.xml"
+              title="My RSS feed" alt="RSS feed">RSS</a>
+          </li>
+        </ul>
+      </nav>
       {% include "snippets/search.html" %}
     </header>
 

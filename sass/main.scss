@@ -58,6 +58,7 @@ header {
 .bio {
   width: 210px;
   margin: auto;
+  padding: 16px;
 }
 
 main {
@@ -66,14 +67,19 @@ main {
   max-width: 650px;
 }
 
-main a {
+a {
   border-bottom: 1px dashed $pink-400;
 }
 
-main a:hover {
+a:hover {
   border-bottom: 2px solid $pink-400;
 }
 
+.logo a,
+nav a,
+nav a:hover {
+  border-bottom: none;
+}
 
 main article {
   margin-bottom: 40px;
@@ -185,17 +191,38 @@ a {
 
 header nav ul {
   display: inline-block;
-  text-align: initial;
   padding-left: 0px;
-}
-
-header nav li:not(:first-child):before {
-  content: " · ";
 }
 
 header nav li {
   list-style: none;
   display: inline;
+}
+
+.icon {
+  text-indent: -9999px;
+  height: 14px;
+  width: 14px;
+  opacity: 0.4;
+  float: left;
+  padding: 5px;
+  margin: 5px;
+}
+
+.icon:hover {
+  opacity: 1.0;
+}
+
+.home-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 61 58'%3E%3Cpath stroke='%23fff' stroke-linecap='square' stroke-width='.52916' d='M7 21v36h16V38h15v19h15V21z'/%3E%3Cpath d='M61 26H0l15-13L30 0l15 13z'/%3E%3C/svg%3E ");
+}
+
+.twitter-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 612 612'%3E%3Cpath fill='%23010002' d='M612 116c-23 10-47 17-72 20 26-15 46-40 55-69-24 14-51 24-80 30a125 125 0 0 0-217 86c0 10 1 19 3 29-104-6-196-56-258-132a125 125 0 0 0 39 168c-21-1-40-6-57-16v2c0 61 43 111 100 123a127 127 0 0 1-56 2c16 50 62 86 117 87A252 252 0 0 1 0 498a355 355 0 0 0 550-301l-1-16c25-17 46-40 63-65z'/%3E%3C/svg%3E ");
+}
+
+.rss-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 1280 1280'%3E%3Cpath d='M264 224l-1 79v79h8a660 660 0 0 1 438 174 665 665 0 0 1 218 492h156l1-26a820 820 0 0 0-715-792c-37-5-103-9-105-6z'/%3E%3Cpath d='M263 504l-1 78 1 79 14 2a383 383 0 0 1 369 368l1 17h158v-19a536 536 0 0 0-98-293 546 546 0 0 0-444-232zM353 830a110 110 0 0 0-77 160 110 110 0 1 0 188-114c-5-7-23-25-30-29-25-16-54-22-81-17z'/%3E%3C/svg%3E");
 }
 
 .button {
@@ -270,16 +297,6 @@ footer .body {
   padding: 40px;
 }
 
-footer nav {
-  float: left;
-  width: 7em;
-}
-
-footer nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-
 .email {
   background-color: white;
   width: 300px;
@@ -298,35 +315,24 @@ footer .field {
 .autocomplete {
   position: relative;
   display: inline-block;
-  width: 210px;
 }
 
 .autocomplete input {
   border: 1px solid $grey-100;
   padding: 10px;
   border-radius: 20px;
-  left: 0;
-  right: 0;
-  width: 100%;
+  width: 200px;
 }
 
 input[type=submit] {
   cursor: pointer;
 }
 
-.autocomplete-items {
-  border: 1px solid $grey-100;
-  border-bottom: none;
-  border-top: none;
-  top: 100%;
-  width: 230px;
-}
-
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
   background-color: white;
-  border-bottom: 1px solid $grey-300;
+  border: 1px solid $grey-100;
 }
 
 .autocomplete-items div:hover {
