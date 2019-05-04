@@ -107,4 +107,4 @@ turned out not to be a problem. I rarely look at the print anyway.
 ## Summary
 
 If you consider switching, just do it. I don't look back at all.  
-Thanks to [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of the article.
+Thanks to [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of this article.

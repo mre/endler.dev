@@ -291,7 +291,7 @@ That said, I still have no idea why GNU cat does not use splice on Linux. 🤔
 The [source code for fcat is on Github](https://github.com/mre/fcat).
 Contributions welcome!
 
-**Thanks** to [Olaf Gladis](https://twitter.com/hwmrocker) for helping me run the benchmarks on his Linux machine and to [Patrick Pokatilo](https://github.com/SHyx0rmZ) and [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of the article.
+**Thanks** to [Olaf Gladis](https://twitter.com/hwmrocker) for helping me run the benchmarks on his Linux machine and to [Patrick Pokatilo](https://github.com/SHyx0rmZ) and [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of this article.
 
 
 ## Footnotes

@@ -88,5 +88,4 @@ vacation to finish that tool because they said they would pay me for that, which
 ## Lessons learned
 
 * Never underestimate the power of Excel macros.
-* If you have a boring task at hand, make it a challenge for yourself by adding
-  a handicap.
+* If you have a boring task at hand, make it more challenging by adding constraints.
