@@ -66,6 +66,15 @@ main {
   max-width: 650px;
 }
 
+main a {
+  border-bottom: 1px dashed $pink-400;
+}
+
+main a:hover {
+  border-bottom: 2px solid $pink-400;
+}
+
+
 main article {
   margin-bottom: 40px;
 }
@@ -172,10 +181,6 @@ h3 {
 a {
   color: $pink-400;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 header nav ul {
