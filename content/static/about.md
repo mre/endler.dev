@@ -38,4 +38,4 @@ You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
 [Twitter]: https://twitter.com/matthiasendler
 [Stack Overflow]: http://stackoverflow.com/users/270334/mre
 [LinkedIn]: http://de.linkedin.com/in/endlermatthias
-[mail]: mailto:matthias-endler@gmx.net
+[e-mail]: mailto:matthias-endler@gmx.net
