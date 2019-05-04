@@ -25,7 +25,7 @@ Here's a list of [previous Talks][talks] I gave there and elsewhere.
 At home I feel like riding my motorcycle, playing guitar in Rock bands
 and drinking hot chocolate. (In that order.)
 
-You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me a [mail].
+You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me an [mail].
 
 [Universität Bayreuth]: https://www.uni-bayreuth.de/en/index.html
 [trivago]: http://tech.trivago.com/
