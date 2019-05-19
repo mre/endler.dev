@@ -13,6 +13,6 @@ minify:
 .PHONY: build 
 build: content index minify
 
-.PHONY: run
-run:
+.PHONY: run serve
+run serve:
 	zola serve
