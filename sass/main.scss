@@ -328,6 +328,15 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.autocomplete-items {
+  position: absolute;
+  left: 0;
+  top: 38px;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 100%;
+}
+
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
