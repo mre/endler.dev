@@ -1,0 +1,56 @@
+/* Adapted from 
+   Light YouTube Embeds by @labnol 
+   http://labnol.org/?p=27941 */
+
+.light-video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.light-video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: transparent;
+}
+
+.light-video-embed img {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: .4s all;
+    -moz-transition: .4s all;
+    transition: .4s all;
+}
+
+.light-video-embed img:hover {
+    -webkit-filter: brightness(75%);
+}
+
+.light-video-embed .play {
+    height: 72px;
+    width: 72px;
+    left: 50%;
+    top: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    background: url("/play.png") no-repeat;
+    cursor: pointer;
+}
