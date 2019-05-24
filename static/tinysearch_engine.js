@@ -18,29 +18,53 @@ let passStringToWasm;
 if (typeof cachedTextEncoder.encodeInto === 'function') {
     passStringToWasm = function(arg) {
 
+
         let size = arg.length;
         let ptr = wasm.__wbindgen_malloc(size);
-        let writeOffset = 0;
-        while (true) {
-            const view = getUint8Memory().subarray(ptr + writeOffset, ptr + size);
-            const { read, written } = cachedTextEncoder.encodeInto(arg, view);
-            writeOffset += written;
-            if (read === arg.length) {
-                break;
+        let offset = 0;
+        {
+            const mem = getUint8Memory();
+            for (; offset < arg.length; offset++) {
+                const code = arg.charCodeAt(offset);
+                if (code > 0x7F) break;
+                mem[ptr + offset] = code;
             }
-            arg = arg.substring(read);
-            ptr = wasm.__wbindgen_realloc(ptr, size, size += arg.length * 3);
         }
-        WASM_VECTOR_LEN = writeOffset;
+
+        if (offset !== arg.length) {
+            arg = arg.slice(offset);
+            ptr = wasm.__wbindgen_realloc(ptr, size, size = offset + arg.length * 3);
+            const view = getUint8Memory().subarray(ptr + offset, ptr + size);
+            const ret = cachedTextEncoder.encodeInto(arg, view);
+
+            offset += ret.written;
+        }
+        WASM_VECTOR_LEN = offset;
         return ptr;
     };
 } else {
     passStringToWasm = function(arg) {
 
-        const buf = cachedTextEncoder.encode(arg);
-        const ptr = wasm.__wbindgen_malloc(buf.length);
-        getUint8Memory().set(buf, ptr);
-        WASM_VECTOR_LEN = buf.length;
+
+        let size = arg.length;
+        let ptr = wasm.__wbindgen_malloc(size);
+        let offset = 0;
+        {
+            const mem = getUint8Memory();
+            for (; offset < arg.length; offset++) {
+                const code = arg.charCodeAt(offset);
+                if (code > 0x7F) break;
+                mem[ptr + offset] = code;
+            }
+        }
+
+        if (offset !== arg.length) {
+            const buf = cachedTextEncoder.encode(arg.slice(offset));
+            ptr = wasm.__wbindgen_realloc(ptr, size, size = offset + buf.length);
+            getUint8Memory().set(buf, ptr + offset);
+            offset += buf.length;
+        }
+        WASM_VECTOR_LEN = offset;
         return ptr;
     };
 }
@@ -76,8 +100,7 @@ export function search(query, num_results) {
     const len0 = WASM_VECTOR_LEN;
     return takeObject(wasm.search(ptr0, len0, num_results));
 }
-
-__exports.search = search;
+__exports.search = search
 
 let cachedTextDecoder = new TextDecoder('utf-8');
 
@@ -95,16 +118,12 @@ function addHeapObject(obj) {
 }
 
 function __wbindgen_json_parse(ptr, len) { return addHeapObject(JSON.parse(getStringFromWasm(ptr, len))); }
-
-__exports.__wbindgen_json_parse = __wbindgen_json_parse;
-
-function __wbindgen_object_drop_ref(i) { dropObject(i); }
-
-__exports.__wbindgen_object_drop_ref = __wbindgen_object_drop_ref;
+__exports.__wbindgen_json_parse = __wbindgen_json_parse
 
 function init(module) {
     let result;
     const imports = { './tinysearch_engine': __exports };
+
     if (module instanceof URL || typeof module === 'string' || module instanceof Request) {
 
         const response = fetch(module);
