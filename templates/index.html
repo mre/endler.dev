@@ -82,6 +82,8 @@
   {% include "snippets/footer.html" %}
   {% if config.extra.id %}
   {% include "snippets/analytics.html" %}
+  {% else %}
+  <img src="https://ping.matthias-endler.de/t.gif?url={{ current_path }}" />
   {% endif %}
 </body>
 

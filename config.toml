@@ -26,4 +26,5 @@ highlight_theme = "ayu-light"
 [extra]
 author = "Matthias Endler"
 # Enable Google analytics
+# (if disabled, uses a custom tracking pixel)
 id = "UA-693428-1" 
