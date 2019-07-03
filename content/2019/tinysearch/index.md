@@ -4,30 +4,33 @@ date=2019-04-07
 draft=true
 +++
 
-Static site generators have always fascinated me.
-They combine content and layout into static HTML without sacrificing performance.
+Static site generators are magical. They combine the best of both worlds: dynamic content without sacrificing performance.
 
-This website has been running on [Jekyll], [Cobalt], and [Zola] over the years and I'm very happy with my setup. Except I always disliked the fact that static websites didn't use "static search engines", too.
-Instead, they use [custom Google searches][google], dedicated search engines like [Algolia], or JavaScript based search engines like [lunr.js] or [elasticlunr].
+This website has been running on [Jekyll], [Cobalt], and (currently) [Zola] over the years and I'm very happy with the speed and flexibility. 
 
-That works well for most sites, but I never liked any of that.  
-I didn't want to add yet another dependency to Google, neither did I want to use a stand-alone web-backend like Algolia. 
+One thing I always disliked however was the fact that static websites don't support *static search engines*, too. Instead, we resort to [custom Google searches][google], external search engines like [Algolia], or pure JavaScript-based solutions like [lunr.js] or [elasticlunr]. 
+
+All of these work well for most sites, but it never felt like the final answer.  
+I didn't want to add yet another dependency on Google, neither did I want to use a stand-alone web-backend like Algolia. 
 
 On top of that, I'm not a huge fan of JavaScript-heavy websites.
 For example, just the search indices that lunr creates can be [multiple megabytes big](https://github.com/olivernn/lunr.js/issues/268#issuecomment-304490937).
-That feels lavish - even by today's generous bandwidth standards.
+That feels lavish - even by today's bandwidth standards.
 
-As a result, I didn't have any search functionality on my page for a long time.
+As a consequence, I refrained from adding search functionality to my homepage for a long time.
 That's unfortunate, because with a growing number of articles, it gets harder and harder to find relevant content.
 
 ## The idea
 
-Many years back in 2013, I read [Writing a full-text search engine using Bloom filters][stavros] &mdash; and it was a revelation.
+Many years back in 2013, I read ["Writing a full-text search engine using Bloom filters"][stavros] &mdash; and it was a revelation.
 
-The idea was simple:
-Run all articles through a generator that creates a tiny, self-contained search index using a magical datastructure called a ✨*Bloom Filter* ✨.
+The idea was simple: Let's run all articles through a generator that creates a tiny, self-contained search index using this magical datastructure called a ✨*Bloom Filter* ✨.
 
-A Bloom Filter doesn't store the words themselves, it just tells us if they likely exist. In other words, it can say with a certain *error rate* that a word is in an article. 
+## What's a Bloom filter?
+
+A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) can be used to check if an element is in a set.  
+
+The trick is that it doesn't store the elements themselves, it just knows if they likely exist. In our case, it can say with a certain *error rate* that a word is in an article. 
 
 Here's the Python code from the original article that generates the bloom filters for each post (courtesy of [Stavros Korokithakis](https://www.stavros.io)):
 
@@ -43,30 +46,30 @@ The memory footprint is extremely small thanks to `error_rate`, which allows for
 
 I immediately knew that I wanted something like this for my homepage.
 My idea was to directly ship the bloom filters and the search code to the browser.
-I could serve a small, static search engine without the need for a backend.
+I could finally serve a small, static search engine without the need for a backend!
 
 ## Headaches
 
 The disillusionment came quickly.
 
-I had no idea how to bundle and minimize the generated bloom filters, let alone run them on the clients.
+I had no idea how to bundle and minimize the generated bloom filters, let alone run them on clients.
 The original article briefly touches on this:
 
 > You need to implement a Bloom filter algorithm on the client side. This will probably not be much longer than the inverted index search algorithm, but it’s still probably a bit more complicated.
 
-I didn't feel confident enough with JavaScript to pull this off.
-Back then in 2013, NPM was three years old and WebPack just turned one, so I also didn't know where to look for existing solutions.
+I didn't feel confident enough in my JavaScript skills to pull this off.
+Back then in 2013, NPM was a mere three years old and WebPack just turned one, so I also didn't know where to look for existing solutions.
 
 Unsure what to do next, my idea remained a pipe dream.
 
 ## A new hope
 
-Five years later, in 2018, the web was a different place. Web bundlers were ubiquitous and the Node ecosystem was flourishing.
-One thing in particular revived my dreams about the tiny static search engine: the advent of [WebAssembly].
+Five years later, in 2018, the web had become a different place. Bundlers were ubiquitous and the Node ecosystem was flourishing.
+One thing in particular revived my dreams about that tiny static search engine: the advent of [WebAssembly].
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable target for compilation of high-level languages like C/C++/Rust, enabling deployment on the web for client and server applications. [[source][WebAssembly]]
 
-This meant that I could use a language that I was more familiar with to write the client-side code - Rust!
+This meant that I could use a language that I was more familiar with to write the client-side code &mdash; Rust!
 
 I started my journey with a [prototype back in January 2018](https://github.com/mre/tinysearch/commit/82c1d36835348718f04c9ca0dd2c1ebf8b19a312).
 It was just a direct port of the Python version above:
@@ -82,10 +85,7 @@ for (name, words) in split_posts {
 }
 ```
 
-While I managed to create the bloom filters per article and run searches, I *still* had no clue how to package that up for the web.
-...until wasm-pack [came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
-
-## Whoops! I shipped some Rust to your Browser.
+While I managed to create a Bloom filters per article and run some searches, I *still* had no clue how to package that up for the web... until [wasm-pack came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
 
 Now I finally had all the parts I needed:
 
@@ -93,12 +93,35 @@ Now I finally had all the parts I needed:
 * A working prototype that served as a proof-of-concept.
 * [wasm-pack] - A bundler for WebAssembly modules.
 
-There were still a few blockers to get this done.
+## Whoops! I shipped some Rust code to your Browser.
 
-## Bloom filter
+The search bar you see today runs on Rust. Try it now if you like.
+There were quite a few blockers to get it done.
 
-Tried https://github.com/jedisct1/rust-bloom-filter
-first, but it didn't implement serialize/deserialize
+## Bloom filter crates
+
+There are quite a few Rust libraries (crates) that implement Bloom filters these days.
+
+First I tried jedisct1's [rust-bloom-filter](https://github.com/jedisct1/rust-bloom-filter)
+but the types didn't implement [Serialize](https://docs.serde.rs/serde/trait.Serialize.html)/[Deserialize](https://docs.serde.rs/serde/trait.Deserialize.html). This meant that I could not store my generated Bloom filters on disk and load them again later.
+
+After trying a few others I found the [cuckoofilter](https://github.com/seiflotfy/rust-cuckoofilter) crate, which supported serialization. The behavior is similar to Bloom filters but if you're interested about the differences you can look at [this summary](https://brilliant.org/wiki/cuckoo-filter/).
+
+Here's how they work in Rust:
+
+```rust
+let mut cf = cuckoofilter::new();
+
+// Add data to the filter
+let value: &str = "hello world";
+let success = cf.add(value)?;
+
+// Lookup if data is in the filter
+let success = cf.contains(value);
+// success ==> true
+```
+
+
 
 
 cuckoofilter:
