@@ -43,7 +43,7 @@ function autocomplete(inp) {
             b.innerHTML = elem[0];
 
             b.addEventListener("click", function (e) {
-                window.location.href = elem[1];
+                window.location.href = `${elem[1]}?q=${encodeURIComponent(val)}`;
             });
             a.appendChild(b);
         }
