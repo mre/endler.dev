@@ -36,13 +36,15 @@
       <nav>
         <ul>
           <li>
-            <a class="icon home-icon" href="/" title="Go to homepage" alt="Home">Home</a>
+            <a class="icon home-icon" href="/" title="Go to homepage">Home</a>
           </li>
-          <a class="icon twitter-icon" href="https://twitter.com/matthiasendler" title="My Twitter profile"
-            alt="Twitter">Twitter</a>
+          <li>
+            <a class="icon twitter-icon" href="https://twitter.com/matthiasendler"
+              title="My Twitter profile">Twitter</a>
+          </li>
           <li>
             <a class="icon rss-icon" href="https://feedly.com/i/subscription/feed/https://matthias-endler.de/rss.xml"
-              title="My RSS feed" alt="RSS feed">RSS</a>
+              title="My RSS feed">RSS</a>
           </li>
         </ul>
       </nav>
@@ -82,7 +84,7 @@
   {% if config.extra.id %}
   {% include "snippets/analytics.html" %}
   {% endif %}
-  <img src="https://matthias-endler.de/x.gif" />
+  <img alt="Page view statistics" src="https://matthias-endler.de/x.gif" />
 </body>
 
 </html>
