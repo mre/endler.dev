@@ -98,7 +98,7 @@ Especially in our team, which runs most services on-premise (because of its
 close connection to trivago's core infrastructure), we didn't want to afford
 running our own Kubernetes cluster. We wanted to ship services instead.
 
-{{ figure(src="./nuclear-kubernetes.jpg", link="https://twitter.com/QuinnyPig/status/1093261169614356490") }}
+{{ figure(src="./nuclear-kubernetes.jpg", alt="Nuclear hot take: nobody will care about Kubernetes in five years. -A tweet by Corey Quinn" link="https://twitter.com/QuinnyPig/status/1093261169614356490") }}
 
 ## Batteries not included
 
