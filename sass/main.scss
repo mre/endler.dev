@@ -4,7 +4,7 @@ $pink-200: #f5b2c8;
 $blue-300: #9fd6fa;
 $blue-500: #234;
 
-$grey-400: #888;
+$grey-400: #555;
 $grey-300: #b9b9b9;
 $grey-200: #fafafa;
 $grey-100: #ddd;
@@ -82,7 +82,7 @@ nav a:hover {
 }
 
 main article {
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 main img {
@@ -95,6 +95,12 @@ main video {
 
 .homepage h1 {
   font-size: 130%;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    font-size: 110%;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -167,6 +173,7 @@ pre {
 
 h1 {
   font-size: 1.87em;
+  margin-bottom: 8px;
 }
 
 h2 {
