@@ -2,11 +2,13 @@
     {% if link %}
     <a href="{{ link }}">
         {% endif %}
+
         <img src="{{ src }}" {% if alt %} alt="{{ alt }}" {% endif %} />
-        {% if caption or credits %}
+
         {% if link %}
     </a>
     {% endif %}
+    {% if caption or credits %}
     <figcaption>
         {% if caption %}
         {{ caption }}
