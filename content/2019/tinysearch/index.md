@@ -65,14 +65,14 @@ Unsure what to do next, my idea remained a pipe dream.
 ## A new hope
 
 Five years later, in 2018, the web had become a different place. Bundlers were ubiquitous and the Node ecosystem was flourishing.
-One thing in particular revived my dreams about that tiny static search engine: the advent of [WebAssembly].
+One thing in particular revived my dreams about that tiny static search engine: the advent of [WebAssembly]!.
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable target for compilation of high-level languages like C/C++/Rust, enabling deployment on the web for client and server applications. [[source][WebAssembly]]
 
-This meant that I could use a language that I was more familiar with to write the client-side code &mdash; Rust!
+This meant that I could use a language that I was more familiar with to write the client-side code &mdash; Rust! 🎉
 
 I started my journey with a [prototype back in January 2018](https://github.com/mre/tinysearch/commit/82c1d36835348718f04c9ca0dd2c1ebf8b19a312).
-It was just a direct port of the Python version above:
+It was just a direct port of the Python version from above:
 
 ```rust
 let mut filters = HashMap::new();
@@ -85,9 +85,9 @@ for (name, words) in split_posts {
 }
 ```
 
-While I managed to create a Bloom filters per article and run some searches, I *still* had no clue how to package that up for the web... until [wasm-pack came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
+While I managed to create the Bloom filters for everyarticle, I *still* had no clue how I should package that up for the web... until [wasm-pack came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
 
-Now I finally had all the parts I needed:
+Now all the pieces of the puzzle finally fell into place:
 
 * Rust - A language I was comfortable with.
 * A working prototype that served as a proof-of-concept.
@@ -95,7 +95,7 @@ Now I finally had all the parts I needed:
 
 ## Whoops! I shipped some Rust code to your Browser.
 
-The search bar you see today runs on Rust. Try it now if you like.
+The search box you see on the top left corner runs on Rust. Try it now if you like.
 There were quite a few blockers to get it done.
 
 ## Bloom filter crates
@@ -124,13 +124,15 @@ let success = cf.contains(value);
 
 
 
+```
 cuckoofilter:
 ~/C/p/tinysearch ❯❯❯ l storage
 Permissions Size User    Date Modified Name
 .rw-r--r--   44k mendler 24 Mar 15:42  storage
+```
 
 
-# Binary size over time
+## Binary size over time
 
 "Vanilla WASM pack" 216316 
 
@@ -242,7 +244,7 @@ wasm-snip --snip-rust-fmt-code --snip-rust-panicking-code -o pkg/tinysearch_bg_s
 # Tips
 
 * This is still the wild west: unstable features, nightly rust, documentation gets outdated almost every day. I love it!
-* Rust is very good with removing dead code, so you usually don't pay for unused crates. 
+* Rust is very good at removing dead code, so you usually you don't pay for what you don't use. 
   I would still advise you to be very conservative about the dependencies you add, because it's tempting to add features which you don't need and which will add to the binary size.
   For example, I used Structopt during testing and I had a main function which was parsing these commandline arguments. This was not necessary for WASM, however. So I removed it later.
 
