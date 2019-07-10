@@ -75,6 +75,14 @@ a:hover {
   border-bottom: 2px solid $pink-400;
 }
 
+figure a {
+  border: none
+}
+
+figure a:hover {
+  border: none
+}
+
 .logo a,
 nav a,
 nav a:hover {

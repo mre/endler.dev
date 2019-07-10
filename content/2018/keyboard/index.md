@@ -19,7 +19,7 @@ a lemur on a piano when programming: reaching the special keys (`{`, `;`, or `/`
 required lots of finger-stretching.
 
 
-{{ figure(src='KB_Germany.svg', caption='German Keyboard Layout', credits='[Image by Wikipedia](https://commons.wikimedia.org/w/index.php?curid=1058095)') }}
+{{ figure(src="KB_Germany.svg", caption="German Keyboard Layout", credits="[Image by Wikipedia](https://commons.wikimedia.org/w/index.php?curid=1058095)") }}
 
 Here's [Wikipedia's polite
 explanation](https://en.wikipedia.org/wiki/German_keyboard_layout) why the

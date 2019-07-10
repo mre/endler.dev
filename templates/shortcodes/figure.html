@@ -1,19 +1,19 @@
-{% if link %}
-<a href="{{ link }}">
-    {% endif %}
-    <figure>
+<figure>
+    {% if link %}
+    <a href="{{ link }}">
+        {% endif %}
         <img src="{{ src }}" {% if alt %} alt="{{ alt }}" {% endif %} />
         {% if caption or credits %}
-        <figcaption>
-            {% if caption %}
-            {{ caption }}
-            {% endif %}
-            {% if credits %}<br />
-            {{ credits | markdown(inline=true) }}
-            {% endif %}
-        </figcaption>
+        {% if link %}
+    </a>
+    {% endif %}
+    <figcaption>
+        {% if caption %}
+        {{ caption }}
         {% endif %}
-    </figure>
-    {% if link %}
-</a>
-{% endif %}
+        {% if credits %}<br />
+        {{ credits | markdown(inline=true) }}
+        {% endif %}
+    </figcaption>
+    {% endif %}
+</figure>
