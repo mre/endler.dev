@@ -1,6 +1,7 @@
 +++
 title="A Tiny, Static Search Engine using Rust and WebAssembly"
 date=2019-04-07
+draft=true
 +++
 
 Static site generators are magical. They combine the best of both worlds: dynamic content without sacrificing performance.
