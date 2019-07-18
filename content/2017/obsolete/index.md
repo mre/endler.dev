@@ -172,11 +172,6 @@ Also, the provider would have to run binaries.
 For quite some time, I was following a product named [zeit](https://zeit.co/).
 It runs any Docker container using an intuitive command line interface called `now`.
 
-<video controls>
-  <source src="./now.mp4" type="video/mp4">
-Your browser does not support playing mp4 files.
-</video> 
-
 I fell in love the first time I saw their demo on the site, so I wanted to give it a try.
 
 So I added a [multi-stage Dockerfile](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) to my project:
