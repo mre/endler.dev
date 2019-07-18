@@ -11,10 +11,10 @@
     {% if caption or credits %}
     <figcaption>
         {% if caption %}
-        {{ caption }}
+        {{ caption | markdown(inline=true) | safe }}
         {% endif %}
         {% if credits %}<br />
-        {{ credits | markdown(inline=true) }}
+        {{ credits | markdown(inline=true)| safe }}
         {% endif %}
     </figcaption>
     {% endif %}
