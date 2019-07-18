@@ -33,9 +33,9 @@ You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
 [Rust Cologne]: http://www.meetup.com/de/Rust-Cologne-Bonn/
 [Web Engineering Düsseldorf]: https://www.meetup.com/de-DE/Web-Engineering-Duesseldorf/
 [Python Meeting Düsseldorf (PyDDF)]: https://www.pyddf.de/
-[talks]: /talks
+[talks]: @/static/talks/index.md
 [Github]: http://github.com/mre/
 [Twitter]: https://twitter.com/matthiasendler
 [Stack Overflow]: http://stackoverflow.com/users/270334/mre
-[LinkedIn]: http://de.linkedin.com/in/endlermatthias
+[LinkedIn]: https://www.linkedin.com/in/endlermatthias
 [e-mail]: mailto:matthias-endler@gmx.net

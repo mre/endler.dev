@@ -60,11 +60,11 @@
           <h1>{{ page.title }}</h1>
         </a>
         {% if page.summary %}
-        {{ page.summary | safe | striptags }}
+        {{ page.summary | striptags | safe }}
         {% elif page.extra.excerpt %}
-        {{ page.extra.excerpt | safe | striptags}}
+        {{ page.extra.excerpt | striptags | safe }}
         {% else %}
-        {{ page.content | safe | striptags| truncate(length=300) }}
+        {{ page.content | striptags| truncate(length=300) | safe }}
         {% endif %}
         <a href="{{ page.permalink }}">More »</a>
       </article>
@@ -77,6 +77,7 @@
       {% endif %}
       {% endblock content %}
     </main>
+    <img alt="Page view statistics" src="https://matthias-endler.de/x.gif" />
   </div>
   {% block teaser %}
   {% endblock teaser %}
@@ -84,7 +85,6 @@
   {% if config.extra.id %}
   {% include "snippets/analytics.html" %}
   {% endif %}
-  <img alt="Page view statistics" src="https://matthias-endler.de/x.gif" />
 </body>
 
 </html>

@@ -118,5 +118,5 @@ Because the real essence of what we're doing here is to find a general way to so
 whole *class* of problems. We think of the nature of objects and their properties.
 We don't sort socks; we try to answer the [fundamental questions of information](https://www.youtube.com/watch?v=2Op3QLzMgSY). Maybe now you can understand why I'm so passionate about this subject.
 
-Oh, and here's a related post about [why I love programming](./2017/why-i-love-programming/index.md).
+Oh, and here's a related post about [why I love programming](@/2017/why-i-love-programming/index.md).
 

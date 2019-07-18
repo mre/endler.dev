@@ -1,7 +1,6 @@
 +++
 title="A Tiny, Static Search Engine using Rust and WebAssembly"
 date=2019-04-07
-draft=true
 +++
 
 Static site generators are magical. They combine the best of both worlds: dynamic content without sacrificing performance.
@@ -31,6 +30,9 @@ The idea was simple: Let's run all articles through a generator that creates a t
 A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) can be used to check if an element is in a set.  
 
 The trick is that it doesn't store the elements themselves, it just knows if they likely exist. In our case, it can say with a certain *error rate* that a word is in an article. 
+
+{{ figure(src="./bloomfilter.svg", caption="A bloom filter stores a 'fingerprint' (a number of hash values) of all inputs values instead of the raw input. This results in a low memory footprint. Example with 'hello' as input.") }}
+
 
 Here's the Python code from the original article that generates the bloom filters for each post (courtesy of [Stavros Korokithakis](https://www.stavros.io)):
 
@@ -85,17 +87,18 @@ for (name, words) in split_posts {
 }
 ```
 
-While I managed to create the Bloom filters for everyarticle, I *still* had no clue how I should package that up for the web... until [wasm-pack came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
+While I managed to create the Bloom filters for every article, I *still* had no clue how I should package that up for the web... until [wasm-pack came into existence in February 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7). 
 
-Now all the pieces of the puzzle finally fell into place:
+## Whoops! I shipped some Rust code to your Browser.
+
+Now we had all the pieces of the puzzle:
 
 * Rust - A language I was comfortable with.
 * A working prototype that served as a proof-of-concept.
 * [wasm-pack] - A bundler for WebAssembly modules.
 
-## Whoops! I shipped some Rust code to your Browser.
+The search box you see on the top left corner is the outcome. It fully runs on Rust using Webassembly. Try it now if you like.
 
-The search box you see on the top left corner runs on Rust. Try it now if you like.
 There were quite a few blockers to get it done.
 
 ## Bloom filter crates
@@ -276,9 +279,8 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
 
 A lot of people dismiss WebAssembly as a toy technology.
 This cannot be further from the truth.
-WebAssembly will revolutionize the way we build web technology.
-Whenever there is a new technology, ask yourself: "What changed? What is possible now?".
-
+WebAssembly will revolutionize the way we build products for the web and beyond.
+I'm super excited about our WebAssembly future.
 
 Stop words
 https://gist.github.com/sebleier/554280

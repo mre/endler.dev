@@ -2,7 +2,7 @@
 <section id="teaser">
     <div class="body">
         <h2><a href="{{page.earlier.permalink}}">{{ page.earlier.title }}</a></h2>
-        <p>{{ page.earlier.content | safe | striptags | truncate(length=300) }} <a
+        <p>{{ page.earlier.content | striptags | truncate(length=300) | safe }} <a
                 href="{{page.earlier.permalink}}">Continue
                 reading</a></p>
     </div>

@@ -4,9 +4,9 @@
 {%- for post in section.pages -%}
 {% if not post.draft %}
 {
-"title": {{ post.title | safe | striptags | json_encode }},
-"url": {{ post.permalink | safe | json_encode }},
-"body": {{ post.content | safe | striptags | json_encode }}
+"title": {{ post.title | striptags | json_encode | safe }},
+"url": {{ post.permalink | json_encode | safe }},
+"body": {{ post.content | striptags | json_encode | safe }}
 }{% if not loop.last %},{% endif %}
 {% endif %}
 {%- endfor -%}

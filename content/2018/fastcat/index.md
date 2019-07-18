@@ -18,8 +18,8 @@ comments = [
 
 Lots of people asked me to write another piece about the internals of well-known
 Unix commands. Well, actually, nobody asked me, but it makes for a good
-intro. I'm sure you’ve read the previous parts about [`yes`](./2017/yes/index.md) and
-[`ls`](./2018/ls/index.md) &mdash; they are epic.
+intro. I'm sure you’ve read the previous parts about [`yes`](@/2017/yes/index.md) and
+[`ls`](@/2018/ls/index.md) &mdash; they are epic.
 
 Anyway, today we talk about `cat`, which is used to concatenate files - or, more
 commonly, abused to print a file's contents to the screen.
@@ -127,7 +127,7 @@ If you really want to dig deeper, here's the corresponding [source code from the
 Linux Kernel](
 https://github.com/torvalds/linux/blob/6ed0529fef09f50ef41d396cb55c5519e4936b16/fs/splice.c),
 but we don't need to know all the nitty-gritty details for now.
-Instead, we can just inspect the [header from the C implementation](http://www.sourcexr.com/articles/2014/02/23/avoid-data-copy-with-splice):
+Instead, we can just inspect the [header from the C implementation](http://webcache.googleusercontent.com/search?q=cache:OfSsRQea29gJ:www.sourcexr.com/articles/2014/02/23/avoid-data-copy-with-splice+&cd=1&hl=de&ct=clnk&gl=de):
 
 ```C
 #include <fcntl.h>

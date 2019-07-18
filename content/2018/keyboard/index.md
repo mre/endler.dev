@@ -92,7 +92,7 @@ texts. First, I used the macOS layout switcher.
 This turned out to be cumbersome and take time.
 
 Then I found the "[US with Umlauts via Option Key
-Layout](https://hci.rwth-aachen.de/USGermanKeyboard)". It works perfectly fine for
+Layout](https://hci.rwth-aachen.de/usgermankeyboard)". It works perfectly fine for
 me. It allows me to use a single Keyboard layout but insert German umlauts at will
 (e.g. ö is `Option`+`o`). There is probably a similar layout for other language combinations.
 

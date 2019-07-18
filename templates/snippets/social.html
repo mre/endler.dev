@@ -3,7 +3,7 @@
 {%- elif page.summary %}
 {%- set social_description = page.summary | safe %}
 {%- else %}
-{%- set social_description = page.content | safe | truncate(length=50) %}
+{%- set social_description = page.content | truncate(length=50) | safe %}
 {%- endif %}
 
 {%- if page.extra.social_img %}
