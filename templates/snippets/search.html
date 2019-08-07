@@ -1,4 +1,5 @@
-<script src="/search_min.js" type="module"></script>
+{% set search_min = load_data(path="static/search_min.js") %}
+<script type="module">{{ search_min | safe }}</script>
 <form autocomplete="off">
     <div class="autocomplete">
         <input id="tinysearch" type="text" placeholder="&#x1F50D; Search">

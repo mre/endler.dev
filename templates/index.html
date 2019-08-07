@@ -4,7 +4,8 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{ get_url(path="main.css") }}" />
+  {% set css = load_data(path="public/main.css") %}
+  <style>{{ css | safe }}</style>
   {%- block header %}
   <title>Matthias Endler</title>
   {%- endblock header %}
