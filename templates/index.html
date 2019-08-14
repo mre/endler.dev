@@ -65,7 +65,7 @@
         {% elif page.extra.excerpt %}
         {{ page.extra.excerpt | striptags | safe }}
         {% else %}
-        {{ page.content | striptags| truncate(length=300) | safe }}
+        {{ page.content | striptags | truncate(length=300) | safe }}
         {% endif %}
         <a href="{{ page.permalink }}">More »</a>
       </article>
