@@ -15,13 +15,13 @@
 
 <meta property="og:title" content="{{ page.title }} | Matthias Endler" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="{{ social_description }}" />
-<meta property="og:url" content="https://matthias-endler.de/{{ page.path }}" />
-<meta property="og:image" content="https://matthias-endler.de/img/social/{{ social_img }}" />
+<meta property="og:description" content="{{ social_description | striptags | safe }}" />
+<meta property="og:url" content="https://matthias-endler.de/{{ page.path | safe }}" />
+<meta property="og:image" content="https://matthias-endler.de/img/social/{{ social_img | safe }}" />
 
-<meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ social_description }}">
+<meta name="twitter:title" content="{{ page.title | safe }}">
+<meta name="twitter:description" content="{{ social_description | striptags | safe }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@matthiasendler">
 <meta name="twitter:creator" content="@matthiasendler">
-<meta name="twitter:image" content="{{ social_img }}">
+<meta name="twitter:image" content="{{ social_img | safe }}">
