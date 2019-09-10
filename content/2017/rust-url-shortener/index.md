@@ -119,11 +119,11 @@ After some compiling, you should get some lovely startup output from Rocket:
 Sweet! Let's call our service.
 
 ```
-> curl localhost:8000/shorten/www.matthias-endler.de
-💾 You shortened www.matthias-endler.de. Magnificient!
+> curl localhost:8000/shorten/www.endler.dev
+💾 You shortened www.endler.dev. Magnificient!
 
-> curl localhost:8000/www.matthias-endler.de
-⏩ You requested www.matthias-endler.de. Wonderful!
+> curl localhost:8000/www.endler.dev
+⏩ You requested www.endler.dev. Wonderful!
 ```
 
 So far so good.
@@ -371,7 +371,7 @@ cargo run
 In a new window, we can now store our first URL:
 
 ```
-curl --data "url=https://www.matthias-endler.de" http://localhost:8000/
+curl --data "url=https://www.endler.dev" http://localhost:8000/
 ```
 
 We get some ID back that we can use to retrieve the URL again. In my case, this was `gY`.
