@@ -14,5 +14,5 @@ export function search(query: string, num_results: number): any;
 *
 * @returns {Promise<any>}
 */
-export default function init (module_or_path: RequestInfo | BufferSource | WebAssembly.Module): Promise<any>;
+export default function init (module_or_path?: RequestInfo | BufferSource | WebAssembly.Module): Promise<any>;
         
