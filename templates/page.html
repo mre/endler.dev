@@ -2,6 +2,7 @@
 
 {%- block header %}
 <title>{{ page.title }} | Matthias Endler</title>
+<link rel="canonical" href="{{ page.permalink | safe }}">
 {%- if page.extra.css %}
 <link rel="stylesheet" href="./article.css" />
 {%- endif %}
