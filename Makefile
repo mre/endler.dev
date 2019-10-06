@@ -19,6 +19,9 @@ minify: ## Compress JavaScript assets
 .PHONY: build 
 build: content index minify ## Build static site and search index, minify JS
 
+.PHONY: build-quick
+build-quick: content ## Build static site
+
 .PHONY: run serve
 run serve: ## Serve website locally
 	zola serve
