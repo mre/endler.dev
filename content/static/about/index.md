@@ -14,7 +14,7 @@ path = "about"
 
 <img
 style = "padding:2px; border: 2px solid #c35; width:44%;"
-src="/matthias.jpg" alt="Matthias Endler's profile photo" />
+src="./matthias.jpg" alt="Matthias Endler's profile photo" />
 
 I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf, Germany.
 
