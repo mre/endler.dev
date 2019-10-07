@@ -7,14 +7,17 @@ path = "about"
     table {
         width: 100%;
     }
-    th, td {
-  border-bottom: 1px solid #ddd;
-}
-    </style>
 
-<img
-style = "padding:2px; border: 2px solid #c35; width:44%;"
-src="./matthias.jpg" alt="Matthias Endler's profile photo" />
+    th, td {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .fancy {
+        padding:2px; border: 2px solid #c35; width:44%;
+    }
+</style>
+
+<img class="fancy" src="./matthias.jpg" alt="Matthias Endler's profile photo" />
 
 I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf, Germany.
 

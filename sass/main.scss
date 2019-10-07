@@ -46,7 +46,7 @@ body {
 }
 
 header {
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -77,11 +77,11 @@ a:hover {
 }
 
 figure a {
-  border: none
+  border: none;
 }
 
 figure a:hover {
-  border: none
+  border: none;
 }
 
 .logo a,
@@ -149,12 +149,11 @@ caption {
 
 code {
   background: $grey-200;
-  // border: 1px solid $code-border;
   border-radius: 6px;
   display: inline-block;
   font-family: "Courier New", "Courier", monospace;
-  -moz-font-feature-settings: "liga"off;
-  font-feature-settings: "liga"off;
+  -moz-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
   font-size: 16px;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -226,7 +225,7 @@ header nav li {
 }
 
 .icon:hover {
-  opacity: 1.0;
+  opacity: 1;
 }
 
 .home-icon {
@@ -248,7 +247,7 @@ header nav li {
 }
 
 figure {
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
   margin: 40px 0 40px;
   padding: 0;
@@ -279,7 +278,7 @@ figcaption {
 }
 
 #teaser a::after {
-  content: '\a0»';
+  content: "\a0»";
 }
 
 footer {
@@ -323,7 +322,7 @@ footer .field {
   width: 200px;
 }
 
-input[type=submit] {
+input[type="submit"] {
   cursor: pointer;
 }
 
