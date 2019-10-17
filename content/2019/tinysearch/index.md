@@ -1,7 +1,6 @@
 +++
 title="A Tiny, Static Search Engine using Rust and WebAssembly"
 date=2019-10-17
-draft=true
 +++
 
 Static site generators are magical. They combine the best of both worlds:
@@ -27,7 +26,7 @@ That feels lavish - even by today's bandwidth standards. On top of that,
 [parsing JavaScript is still
 time-consuming](https://v8.dev/blog/cost-of-javascript-2019).
 
-I wanted some simple, lean and self-contained search, that could be deployed
+I wanted some simple, lean, and self-contained search, that could be deployed
 next to my other static content.
 
 As a consequence, I refrained from adding search functionality to my blog at
@@ -48,16 +47,16 @@ tiny, self-contained search index using this magical data structure called a
 Roughly speaking, a [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a space-efficient way to
 check if an element is in a set.
 
-The trick is that it doesn't store the elements themselves, it just knows with
+The trick is that it doesn't store the elements themselves; it just knows with
 some confidence that they were stored before. In our case, it can say with a
 certain _error rate_ that a word is in an article.
 
-{{ figure(src="./bloomfilter.svg", caption="A bloom filter stores a
+{{ figure(src="./bloomfilter.svg", caption="A Bloom filter stores a
 'fingerprint' (a number of hash values) of all inputs values instead of the raw
-input. The result is a low-memory-footprint datastructure. This is an example
+input. The result is a low-memory-footprint data structure. This is an example
 of 'hello' as an input.") }}
 
-Here's the Python code from the original article that generates the bloom
+Here's the Python code from the original article that generates the Bloom
 filters for each post (courtesy of [Stavros
 Korokithakis](https://www.stavros.io)):
 
@@ -73,14 +72,14 @@ The memory footprint is extremely small, thanks to `error_rate`, which allows
 for a negligible number of false positives.
 
 I immediately knew that I wanted something like this for my homepage. My idea
-was to directly ship the bloom filters and the search engine to the browser. I
+was to directly ship the Bloom filters and the search engine to the browser. I
 could finally have a small, static search without the need for a backend!
 
 ## Headaches
 
 The disillusionment came quickly.
 
-I had no idea how to bundle and minimize the generated bloom filters, let alone
+I had no idea how to bundle and minimize the generated Bloom filters, let alone
 run them on clients. The original article briefly touches on this:
 
 > You need to implement a Bloom filter algorithm on the client-side. This will
@@ -107,7 +106,7 @@ revived my dreams about the tiny static search engine: [WebAssembly].
 This meant that I could use a language that I was familiar with to write the
 client-side code &mdash; Rust! 🎉
 
-I started my journey with a [prototype back in January
+My journey started with a [prototype back in January
 2018](https://github.com/mre/tinysearch/commit/82c1d36835348718f04c9ca0dd2c1ebf8b19a312).
 It was just a direct port of the Python version from above:
 
@@ -129,11 +128,11 @@ February
 
 ## Whoops! I Shipped Some Rust Code To Your Browser.
 
-Now we had all the pieces of the puzzle:
+Now I had all the pieces of the puzzle:
 
-- Rust - A language I was comfortable with.
-- A working prototype that served as a proof-of-concept.
-- [wasm-pack] - A bundler for WebAssembly modules.
+- Rust - A language I am comfortable with
+- [wasm-pack] - A bundler for WebAssembly modules
+- A working prototype that served as a proof-of-concept
 
 The search box you see at the top of this page is the outcome. It fully runs on Rust using
 WebAssembly (a.k.a the [RAW stack](https://twitter.com/timClicks/status/1181822319620063237)). Try it now if you like.
@@ -148,7 +147,7 @@ First, I tried jedisct1's
 [rust-bloom-filter](https://github.com/jedisct1/rust-bloom-filter), but the types
 didn't implement
 [Serialize](https://docs.serde.rs/serde/trait.Serialize.html)/[Deserialize](https://docs.serde.rs/serde/trait.Deserialize.html).
-This meant that I could not store my generated Bloom filters on inside the binary and load
+This meant that I could not store my generated Bloom filters inside the binary and load
 them from the client-side.
 
 After trying a few others, I found the
@@ -200,8 +199,8 @@ By setting a few options in our `Cargo.toml`, we can shave off quite a few bytes
 "opt-level = 's'"  => 195950 bytes
 ```
 
-Setting `opt-level` to `s` means we trade size for speed;
-but we're preliminary interested in minimal size anyway.
+Setting `opt-level` to `s` means we trade size for speed,
+but we're preliminarily interested in minimal size anyway. After all, a small download size also improves performance.
 
 Next, we can try [wee_alloc](https://github.com/rustwasm/wee_alloc), an alternative Rust allocator
 producing a small `.wasm` code size.
@@ -276,7 +275,7 @@ For the search UI, I customized a few JavaScript and CSS bits from
 It even has keyboard support!
 Now when a user enters a search query, we go through the cuckoo filter of each
 article and try to match the words. The results are scored by the number of
-hits.
+hits. Thanks to my dear colleague [Jorge Luis Betancourt](https://github.com/jorgelbg/) for adding that part.
 
 ![Video of the search functionality](./anim-opt.gif)
 
@@ -354,16 +353,32 @@ I'm pretty sure that the Jekyll version looks quite similar.
   transpile to Wasm, or maybe you prefer PHP or Haskell. There is support for
   [many languages](https://github.com/appcypher/awesome-wasm-langs) already.
 - A lot of people dismiss WebAssembly as a toy technology. They couldn't be
-  further from the truth. WebAssembly will revolutionize the way we build
+  further from the truth. In my opinion, WebAssembly will revolutionize the way we build
   products for the web and beyond. What was very hard just two years ago is now
   easy: shipping code in any language to every browser. I'm super excited about
   its future.
 - If you're looking for a standalone, self-hosted search index for your company
-  website, check out
-  [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
+  website, check out [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
 
-The code for [tinysearch is on Github](https://github.com/mre/tinysearch) and I'm looking for maintainers.  
-If you're interested, please comment on [this issue](https://github.com/mre/tinysearch/issues/11).
+## Try it!
+
+The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
+
+Fair warning: the compile times are abysmal at the moment, mainly because I
+don’t know how to optimize that part. If you have an idea, feel free to add it
+to [this issue](https://github.com/mre/tinysearch/issues/12).
+
+The final Wasm code is laser-fast because we save the round trips to a
+search-server. The instant feedback loop feels more like filtering a list than
+searching through files.
+
+## Credits
+
+Thanks to [Jorge Luis Betancourt](https://github.com/jorgelbg/),
+[mh84](https://github.com/mh84), and [Schalk
+Neethling](https://github.com/schalkneethling) for their code contributions and
+to [Simon Br&uuml;ggen](https://github.com/m3t0r) and [Luca
+Pizzamiglio](https://github.com/pizzamig) for reviewing drafts of this article.
 
 [jekyll]: https://github.com/mre/mre.github.io.v1
 [cobalt]: https://github.com/mre/mre.github.io.v2
