@@ -1,5 +1,5 @@
 +++
-title="A Tiny, Static Search Engine using Rust and WebAssembly"
+title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
 date=2019-10-17
 +++
 
@@ -63,9 +63,9 @@ Korokithakis](https://www.stavros.io)):
 ```python
 filters = {}
 for name, words in split_posts.items():
-    filters[name] = BloomFilter(capacity=len(words), error_rate=0.1)
-    for word in words:
-        filters[name].add(word)
+  filters[name] = BloomFilter(capacity=len(words), error_rate=0.1)
+  for word in words:
+    filters[name].add(word)
 ```
 
 The memory footprint is extremely small, thanks to `error_rate`, which allows
@@ -178,14 +178,14 @@ Permissions Size User    Date Modified Name
 .rw-r--r--   44k mendler 24 Mar 15:42  storage
 ```
 
-**44k** doesn't sound too shabby, but these are just the cuckoo filters for ten
+**44kB** doesn't sound too shabby, but these are just the cuckoo filters for ten
 articles, serialized as a Rust binary. On top of that, we have to add the search
 functionality and the helper code. In total, the client-side code weighed in at
-**216kb** using vanilla wasm-pack. Too much.
+**216kB** using vanilla wasm-pack. Too much.
 
 ## Trimming Binary Size
 
-After the sobering first result of 216kb for our initial prototype, we have a
+After the sobering first result of 216kB for our initial prototype, we have a
 few options to bring the binary size down.
 
 The first is following [johnthagen's](https://github.com/johnthagen) advice on
@@ -194,9 +194,9 @@ The first is following [johnthagen's](https://github.com/johnthagen) advice on
 By setting a few options in our `Cargo.toml`, we can shave off quite a few bytes:
 
 ```
-"opt-level = 'z'"  => 249665 bytes
-"lto = true"       => 202516 bytes
-"opt-level = 's'"  => 195950 bytes
+"opt-level = 'z'" => 249665 bytes
+"lto = true"      => 202516 bytes
+"opt-level = 's'" => 195950 bytes
 ```
 
 Setting `opt-level` to `s` means we trade size for speed,
@@ -263,7 +263,7 @@ wasm-snip --snip-rust-fmt-code --snip-rust-panicking-code -o pkg/tinysearch_bg_s
 
 After tweaking with the parameters of the cuckoo filters a bit and removing
 [stop words](https://en.wikipedia.org/wiki/Stop_words) from the articles, I
-arrived at **121kb** (51kb gzipped) &mdash; not bad considering the average image size on the web is [around 900kb](https://httparchive.org/reports/state-of-images#bytesImg).
+arrived at **121kB** (51kB gzipped) &mdash; not bad considering the average image size on the web is [around 900kB](https://httparchive.org/reports/state-of-images#bytesImg).
 On top of that, the search functionality only gets loaded when a user clicks into the search field.
 
 ## Frontend and Glue Code
