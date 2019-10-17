@@ -313,19 +313,20 @@ This `corpus.json` contains the text you would like to index. The format is pret
 You can generate this JSON file with any static site generator.
 [Here's my version for Zola](https://github.com/mre/mre.github.io/tree/1c731717b48afb584e54ca4dd5fd649f9b74e51c/templates):
 
-```
+```t
 {% set section = get_section(path="_index.md") %}
 
 [
-{%- for post in section.pages -%}
-{% if not post.draft %}
-{
-"title": {{ post.title | striptags | json_encode | safe }},
-"url": {{ post.permalink | json_encode | safe }},
-"body": {{ post.content | striptags | json_encode | safe }}
-}{% if not loop.last %},{% endif %}
-{% endif %}
-{%- endfor -%}
+  {%- for post in section.pages -%}
+    {% if not post.draft %}
+      {
+        "title": {{ post.title | striptags | json_encode | safe }},
+        "url": {{ post.permalink | json_encode | safe }},
+        "body": {{ post.content | striptags | json_encode | safe }}
+      }
+      {% if not loop.last %},{% endif %}
+    {% endif %}
+  {%- endfor -%}
 ]
 ```
 
