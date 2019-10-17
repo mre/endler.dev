@@ -112,7 +112,7 @@ It was just a direct port of the Python version from above:
 
 ```rust
 let mut filters = HashMap::new();
-for (name, words) in split_posts {
+for (name, words) in articles {
   let mut filter = BloomFilter::with_rate(0.1, words.len() as u32);
   for word in words {
     filter.insert(&word);
