@@ -365,11 +365,20 @@ I'm pretty sure that the Jekyll version looks quite similar.
 
 The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
 
-Fair warning: the compile times are abysmal at the moment, mainly because I
-don’t know how to optimize that part. If you have an idea, feel free to add it
-to [this issue](https://github.com/mre/tinysearch/issues/12).
+Please be aware of these limitations:
 
-The final Wasm code is laser-fast because we save the round trips to a
+- **Only searches for entire words are supported.** There are no search
+  suggestions.
+- Since we bundle all search indices for all articles into one static binary, I
+  **only recommend to use it for low- to medium-size websites**. Expect around 4kB
+  (non-compressed) per article.
+- The **compile times are abysmal** at the moment (around 1.5 minutes after a
+  fresh install on my machine), mainly because we're compiling the Rust crate
+  from scratch every time we rebuild the index. If you have an idea on how to
+  improve that, feel free to add it to [this
+  issue](https://github.com/mre/tinysearch/issues/12).
+
+The final Wasm code is laser-fast because we save the roundtrips to a
 search-server. The instant feedback loop feels more like filtering a list than
 searching through files.
 
