@@ -6,7 +6,7 @@ date=2019-10-17
 {% tldr() %}
 I wrote a basic search module that you can add to your static website. It's very
 lightweight (around 50kB-100kB gzipped), should work with Hugo, Zola, and
-Jekyll. Only searching for whole words is supported. Try the search box on the left
+Jekyll. Only searching entire words is supported. Try the search box on the left
 side for a demo. [The code is on Github](https://github.com/mre/tinysearch).
 {% end %}
 
@@ -374,8 +374,7 @@ The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
 
 Please be aware of these limitations:
 
-- **Only searches for entire words are supported.** There are no search
-  suggestions.
+- **Only searches for entire words.** There are no search suggestions.
 - Since we bundle all search indices for all articles into one static binary, I
   **only recommend to use it for low- to medium-size websites**. Expect around 4kB
   (non-compressed) per article.
