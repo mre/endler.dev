@@ -3,6 +3,13 @@ title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
 date=2019-10-17
 +++
 
+{% tldr() %}
+I wrote a basic search module that you can add to your static website. It's very
+lightweight (around 50kB-100kB gzipped), should work with Hugo, Zola, and
+Jekyll. Only searching for whole words is supported. Try the search box on the left
+side for a demo. [The code is on Github](https://github.com/mre/tinysearch).
+{% end %}
+
 Static site generators are magical. They combine the best of both worlds:
 dynamic content without sacrificing performance.
 
@@ -96,7 +103,7 @@ Unsure what to do next, my idea remained a pipe dream.
 
 Five years later, in 2018, the web had become a different place. Bundlers were
 ubiquitous, and the Node ecosystem was flourishing. One thing, in particular,
-revived my dreams about the tiny static search engine: [WebAssembly].
+revived my dreams about the tiny static search engine: [1embly].
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a
 > stack-based virtual machine. Wasm is designed as a portable target for
