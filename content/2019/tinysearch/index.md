@@ -218,7 +218,7 @@ We shaved off another 4% from our binary.
 Out of curiosity, I tried to set [codegen-units](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units) to 1, meaning we only use a single thread for code generation. Surprisingly, this resulted in a slightly smaller binary size.
 
 ```
-"codegen-units = 1" 183294
+"codegen-units = 1" => 183294 bytes
 ```
 
 Then I got word of a Wasm optimizer called `binaryen`.
@@ -378,7 +378,7 @@ searching through files.
 Thanks to [Jorge Luis Betancourt](https://github.com/jorgelbg/),
 [mh84](https://github.com/mh84), and [Schalk
 Neethling](https://github.com/schalkneethling) for their code contributions and
-to [Simon Br&uuml;ggen](https://github.com/m3t0r) and [Luca
+to [Esteban Barrios](https://github.com/ebarriosjr), [Simon Br&uuml;ggen](https://github.com/m3t0r) and [Luca
 Pizzamiglio](https://github.com/pizzamig) for reviewing drafts of this article.
 
 [jekyll]: https://github.com/mre/mre.github.io.v1
