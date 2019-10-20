@@ -15,6 +15,12 @@ path = "about"
     .fancy {
         padding:2px; border: 2px solid #c35; width:44%;
     }
+
+    @media screen and (max-width: 640px) {
+        .fancy{
+            width: 100%;
+        }
+    }
 </style>
 
 <img class="fancy" src="./matthias.jpg" alt="Matthias Endler's profile photo" />
