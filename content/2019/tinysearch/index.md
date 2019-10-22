@@ -1,6 +1,11 @@
 +++
 title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
 date=2019-10-17
+
+[extra]
+comments = [
+  {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/dl1sw2/a_tiny_static_fulltext_search_engine_using_rust/"}
+]
 +++
 
 {% tldr() %}
