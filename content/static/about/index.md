@@ -65,4 +65,4 @@ Oh yeah, and I also [give talks][talks]. Let me know if you need a speaker.
 [twitter]: https://twitter.com/matthiasendler
 [stack overflow]: http://stackoverflow.com/users/270334/mre
 [linkedin]: https://www.linkedin.com/in/endlermatthias
-[e-mail]: mailto:matthias-endler@gmx.net
+[e-mail]: mailto:matthias@endler.dev
