@@ -352,3 +352,21 @@ input:focus::placeholder {
   background-color: $pink-400 !important;
   color: white;
 }
+
+.tldr {
+  padding: 65px 20px 20px 20px;
+  margin: 30px 0;
+  background-color: lightyellow;
+  border: 4px solid peachpuff;
+  position: relative;
+}
+
+.tldr:after {
+  content: "Summary";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.3em;
+  color: grey;
+  padding: 15px 20px;
+}

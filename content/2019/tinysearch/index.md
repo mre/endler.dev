@@ -9,10 +9,10 @@ comments = [
 +++
 
 {% tldr() %}
-I wrote a basic search module that you can add to your static website. It's very
-lightweight (around 50kB-100kB gzipped) and should work with Hugo, Zola, and
-Jekyll. Only searching entire words is supported. Try the search box on the left
-side for a demo. [The code is on Github](https://github.com/mre/tinysearch).
+I wrote a basic search module that you can add to a static website.
+It's very lightweight (50kB-100kB gzipped) and should work with Hugo, Zola, and
+Jekyll. Only searching for entire words is supported. Try the search box on the
+left for a demo. [The code is on Github](https://github.com/mre/tinysearch).
 {% end %}
 
 Static site generators are magical. They combine the best of both worlds:

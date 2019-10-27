@@ -1,8 +1,4 @@
-<div
-  style="padding:20px; margin:30px 0; background-color: lightyellow; border: 4px solid peachpuff;"
->
-  <h3>tl;dr</h3>
-  <p>
-    {{ body | markdown(inline=true) | safe }}
-  </p>
+
+<div class="tldr">
+  {{ body | markdown(inline=true) | safe }}
 </div>
