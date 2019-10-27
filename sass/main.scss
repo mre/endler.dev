@@ -314,13 +314,18 @@ footer .field {
 
 .autocomplete input {
   border: 1px solid $grey-100;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 20px;
-  width: 200px;
+  width: 150px;
+  font-size: 0.9em;
 }
 
 input[type="submit"] {
   cursor: pointer;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 .autocomplete-items {
