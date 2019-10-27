@@ -53,7 +53,7 @@ Here's a list of some Open Source projects I maintain:
 | prettyprint              |  151 ★ |
 | vscode-snippet           |   61 ★ |
 
-You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me an [e-mail].
+You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me an <a href="mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118; ">e-mail</a>.
 
 Oh yeah, and I also [give talks][talks]. Let me know if you need a speaker.
 
@@ -65,4 +65,3 @@ Oh yeah, and I also [give talks][talks]. Let me know if you need a speaker.
 [twitter]: https://twitter.com/matthiasendler
 [stack overflow]: http://stackoverflow.com/users/270334/mre
 [linkedin]: https://www.linkedin.com/in/endlermatthias
-[e-mail]: mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118;
