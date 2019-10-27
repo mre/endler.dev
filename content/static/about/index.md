@@ -29,8 +29,8 @@ I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf, Germa
 
 My interests are scalability, performance and distributed systems;
 but I also play around with embedded systems and console emulation.
-I got my M.Sc. in Computer Science from [Universität Bayreuth].
-At work, I improve the Backend infrastructure of [trivago] by making it
+I got an M.Sc. in Computer Science from [Universität Bayreuth].
+At work, I improve the backend infrastructure of [trivago] by making it
 faster and more reliable.
 
 Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
