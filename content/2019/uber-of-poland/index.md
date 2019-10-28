@@ -66,7 +66,7 @@ popular:
 > stored on from 1,000 to 2,000 of helium-filled 8TB hard drives, which amounts
 > to about 7 petabytes (PB) of data.
 
-## People find a way
+## People always find a way
 
 With creativity, you can provide great service even if the odds are against you.
 I salute to this entrepreneurial passion. The Cubans have a word for it:
