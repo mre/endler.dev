@@ -332,7 +332,7 @@ input:focus::placeholder {
   position: absolute;
   left: 0;
   top: 38px;
-  font-size: 14px;
+  font-size: 0.9em;
   line-height: 1.5;
   width: 100%;
 }
@@ -351,6 +351,21 @@ input:focus::placeholder {
 .autocomplete-active {
   background-color: $pink-400 !important;
   color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .autocomplete {
+    width: 100%;
+  }
+  .autocomplete input {
+    width: 90%;
+    margin: 0px 10px;
+    border-radius: 0px;
+    font-size: 1.1em;
+  }
+  .autocomplete-items {
+    font-size: 1.1em;
+  }
 }
 
 .tldr {

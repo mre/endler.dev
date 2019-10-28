@@ -1,5 +1,13 @@
 {% set search_min = load_data(path="static/search_min.js") %}
-<script type="module">{{ search_min | safe }}</script>
+<script defer type="module">{{ search_min | safe }}</script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        let inputBox = document.getElementById('tinysearch');
+        inputBox.onfocus = function () {
+            inputBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }
+    });
+</script>
 <form autocomplete="off">
     <div class="autocomplete">
         <input id="tinysearch" type="text" placeholder="&#x1F50D; Search">
