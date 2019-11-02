@@ -361,6 +361,10 @@ input:focus::placeholder {
     width: calc(100% - 100px);
     margin: 20px 10px;
   }
+
+  .autocomplete-items {
+    top: 58px;
+  }
 }
 
 .tldr {
