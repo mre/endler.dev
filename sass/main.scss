@@ -115,7 +115,7 @@ main video {
 @media screen and (min-width: 800px) {
   .container {
     flex-direction: row;
-    max-width: 900px;
+    justify-content: center;
   }
 
   main {
@@ -288,7 +288,6 @@ footer {
 
 #teaser .body,
 footer .body {
-  max-width: 800px;
   margin: 0 auto;
   padding: 40px;
 }
@@ -356,15 +355,11 @@ input:focus::placeholder {
 @media screen and (max-width: 800px) {
   .autocomplete {
     width: 100%;
+    font-size: 1.1em;
   }
   .autocomplete input {
-    width: 90%;
-    margin: 0px 10px;
-    border-radius: 0px;
-    font-size: 1.1em;
-  }
-  .autocomplete-items {
-    font-size: 1.1em;
+    width: calc(100% - 100px);
+    margin: 20px 10px;
   }
 }
 
