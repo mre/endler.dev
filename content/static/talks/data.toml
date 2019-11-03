@@ -115,7 +115,7 @@ though you might be a Web-Developer.
 
 [[talks]]
 title = "What's So Hard About Writing a Slack Client in Rust?"
-image = "slack-client.jpg"
+image = "2015-slack-client.jpg"
 event = "Rust Cologne"
 date = "March 2017"
 location = "Chaos Computer Club, Cologne, Germany"
@@ -133,7 +133,7 @@ avoid and laughs to share.
 
 [[talks]]
 title = "Why Rust?"
-image = "why-rust.jpg"
+image = "2015-why-rust.jpg"
 event = "Codemotion"
 date = "May 2016"
 location = "Amsterdam, Netherlands"
@@ -162,7 +162,7 @@ overview of ways to help you write better Rust code.
 
 [[talks]]
 title = "The State of PyPy"
-image = "pypy.jpg"
+image = "2015-pypy.jpg"
 event = "Python Usergroup"
 date = "April 2015"
 location = "Düsseldorf, Germany"
