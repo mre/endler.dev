@@ -14,11 +14,22 @@
 
 {% for talk in data.talks %}
 <article>
-    <h2>
+    <h2 id="{{ talk.title | slugify }}">
        {% if talk.type and talk.type != "Talk" %} {{ talk.type }}: {% endif %}{{ talk.title }}
     </h2>
     <p>
-    <img style="width:100%;" src="{{ talk.image }}" />
+        {% if talk.recording %}{% set link = talk.recording %}
+        {% elif talk.slides %}{% set link = talk.slides %}
+        {% else %}{% set link = "" %}
+        {% endif %}
+
+        {% if link %}
+        <a href="{{ link }}">
+        {% endif %}
+            <img style="width:100%;" src="{{ talk.image }}" />
+        {% if link %}
+        </a>
+        {% endif %}
     <ul>
         <li><b>Event:</b> {{ talk.event }}, {{ talk.date }}</li>
         <li><b>Location:</b> {{ talk.location }}</li>

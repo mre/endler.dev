@@ -1,7 +1,38 @@
 intro = """
 Good talks are fun and educational.
 Here's a list of previous events where I spoke.
-If you would like me to speak at your event, let's [get connected](mailto:matthias-endler@gmx.net)!
+If you would like me to speak at your event, let's [get connected](mailto:matthias@endler.dev)!
+"""
+
+[[talks]]
+title = "Everything is Broken (And That's Okay!)"
+image = "2019-localhost.jpg"
+event = "localhost conference"
+date = "October 2019"
+location = "Düsseldorf, Germany"
+slides = "https://speakerdeck.com/mre/everything-is-broken-and-thats-okay"
+description = """
+Our world is controlled by software. 
+As with everything that is created by humans, software is error-prone. 
+Everyone got annoyed by bugs and UI/UX issues before, but what exactly does "broken" 
+really mean and are there different kinds of brokenness? 
+Let's explore the fun, enthralling, and quirky state of our (digital) world 
+and see what we can do to make it better.
+"""
+
+[[talks]]
+title = "How Does Async Work?"
+image = "2019-async.jpg"
+event = "Web Meetup Cologne"
+date = "September 2019"
+location = "Cologne, Germany"
+slides = "https://speakerdeck.com/mre/how-does-async-work"
+description = """
+If you work with Node.js or Python you might have heard of asynchronous programming a.k.a. async/await.
+It lets you do something else while you wait on some work to be done in the background - like reading a file or sending some data over the network.
+But what is it, really? And are there differences between the programming languages?
+Let's go on a trip through async-land and discover callbacks, event loops, and state machines.
+We will look at Node's, Python's, and Rust's async features and how they work under the hood.
 """
 
 [[talks]]
