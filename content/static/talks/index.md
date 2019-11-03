@@ -11,7 +11,7 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 
 ## What is Rust doing behind the curtains?
 
-![](./2019-fosdem.jpg)
+![](2019-fosdem.jpg)
 
 -   FOSDEM, February 2019
 -   [Recording](https://fosdem.org/2019/schedule/event/rust_cargo_inspect/)
@@ -32,7 +32,7 @@ mortals.
 
 ## Workshop: Write Your Own Shell in Rust
 
-![](./2018-shell-workshop.jpg)
+![](2018-shell-workshop.jpg)
 
 -   RustBeltRust Ann Arbor, October 2018
 -   In collaboration with [Santiago
@@ -51,7 +51,7 @@ mid-size Rust project!
 
 ## Hyperjson — The Journey Towards Faster Safer JSON Parsing in Python Using Rust
 
-![](./2018-hyperjson.jpg)
+![](2018-hyperjson.jpg)
 
 -   Rust Cologne, August 2018
 -   [Recording](https://www.youtube.com/watch?v=f1ln5j3aoSI)
@@ -67,7 +67,7 @@ highly-optimized tasks like parsing file formats in the future.
 
 ## Idiomatic Rust — Writing Concise and Elegant Rust Code
 
-![](./2018-fosdem.jpg)
+![](2018-fosdem.jpg)
 
 -   FOSDEM, February 2018
 -   [Recording](https://www.youtube.com/watch?v=P2mooqNMxMs)
@@ -81,7 +81,7 @@ Rust code.
 
 ## Workshop: Live Coding Like No One's Watching!
 
-![](./2017-rustbeltrust.jpg)
+![](2017-rustbeltrust.jpg)
 
 -   Rust Belt Rust, October 2017
 
@@ -94,7 +94,7 @@ documentation for clues. I might explain a little Rust along the way.
 
 ## My Good Friend Rust — an introduction
 
-![](./2017-topconf.jpg)
+![](2017-topconf.jpg)
 
 -   Topconf Düsseldorf, October 2017
 -   [Slides](https://speakerdeck.com/mre/my-good-friend-rust-topconf-2017)
@@ -108,7 +108,7 @@ though you might be a Web-Developer.
 
 ## What's So Hard About Writing a Slack Client in Rust?
 
-![](./slack-client.jpg)
+![](slack-client.jpg)
 
 -   Rust Usergroup Cologne, March 2017
 -   [Recording](https://www.youtube.com/watch?v=rrtJh1kz1Ms)
@@ -123,7 +123,7 @@ avoid and laughs to share.
 
 ## Why Rust?
 
-![](./why-rust.jpg)
+![](why-rust.jpg)
 
 -   Codemotion Amsterdam, May 2016
 -   [Recording](https://www.youtube.com/watch?v=imtejBNbm0o)
@@ -138,7 +138,7 @@ about Rust and show some of its nicest features.
 
 ## Rust Tooling
 
-![](./2015-tooling.jpg)
+![](2015-tooling.jpg)
 
 -   Rust Cologne Meetup, October 2015
 -   [Slides](https://speakerdeck.com/mre/rust-tooling-october-2015)
@@ -148,7 +148,7 @@ overview of ways to help you write better Rust code.
 
 ## The State of PyPy
 
-![](./pypy.jpg)
+![](pypy.jpg)
 
 -   Python Usergroup Düsseldorf, April 2015
 -   [Recording](https://www.youtube.com/watch?v=YEzuUJGcPqc)
