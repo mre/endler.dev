@@ -23,7 +23,7 @@ The Ruby code samples are from the [original article](https://medium.com/the-ren
 The first example is a pretty basic iteration over elements of a container using `map`.
 
 <a class="example" href="https://gist.github.com/LeandroTk/64ca7d6f5279e08589e21d799544e878#file-map-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 user_ids = users.map { |user| user.id }
@@ -35,7 +35,7 @@ Compared to Ruby, we need to be a little more explicit here:
 If `users` is a vector of `User` objects, we first need to create an iterator from it:
 
 <a class="example" href="https://play.rust-lang.org/?gist=5a61b7b44ff01fabbc07dba9409d9b97&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let user_ids = users.iter().map(|user| user.id);
@@ -54,7 +54,7 @@ will the iterator take ownership of the vector, or will it not?
 The above Ruby code can be simplified like this:
 
 <a class="example" href="https://gist.github.com/LeandroTk/258652cbaea308ccfeddc5df5bb9f37b#file-each_vs_map_3-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 user_ids = users.map(&:id)
@@ -67,7 +67,7 @@ In Ruby, higher-order functions (like `map`) take [blocks or procs](http://awaxm
 Something similar could be done in Rust:
 
 <a class="example" href="https://play.rust-lang.org/?gist=131027a481d4691821315ad308d26dc9&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let id = |u: &User| u.id;
@@ -79,7 +79,7 @@ let user_ids = users.iter().map(id);
 This is probably not the most idiomatic way to do it, though. What you will see more often is the use of [Universal Function Call Syntax](https://doc.rust-lang.org/book/first-edition/ufcs.html) in this case:<sup><a href="#fn1" id="ref1">1</a></sup>
 
 <a class="example" href="https://play.rust-lang.org/?gist=51069ee76e5d534621ccd6633474b630&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let user_ids = users.iter().map(User::id);
@@ -99,7 +99,7 @@ If you want a collection, you would have to run [`collect()`](https://doc.rust-l
 Speaking of iteration, one pattern that I see a lot in Ruby code is this:
 
 <a class="example" href="https://gist.github.com/mre/f6552360a4c08f2c064da7f00d434d5c">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 ["Ruby", "Rust", "Python", "Cobol"].each do |lang|
@@ -112,7 +112,7 @@ end
 Since [Rust 1.21](https://blog.rust-lang.org/2017/10/12/Rust-1.21.html), this is now also possible:
 
 <a class="example" href="https://play.rust-lang.org/?gist=549d38bc43549fd5444c731d2bc3a47b&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 ["Ruby", "Rust", "Python", "Cobol"]
@@ -127,7 +127,7 @@ Since [Rust 1.21](https://blog.rust-lang.org/2017/10/12/Rust-1.21.html), this is
 Although, more commonly one would write that as a normal for-loop in Rust:
 
 <a class="example" href="https://play.rust-lang.org/?gist=a7691b56b1dfd1fb19aa00a91b39589d&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 for lang in ["Ruby", "Rust", "Python", "Cobol"].iter() {
@@ -142,7 +142,7 @@ for lang in ["Ruby", "Rust", "Python", "Cobol"].iter() {
 Let's say you want to extract only even numbers from a collection in Ruby.
 
 <a class="example" href="https://gist.github.com/LeandroTk/f341051889e27c99ddd66c075e5ef6d0#file-map_vs_select_1-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 even_numbers = [1, 2, 3, 4, 5].map { |element| element if element.even? } # [ni, 2, nil, 4, nil]
@@ -155,7 +155,7 @@ Well, in Rust there is no concept of `nil` or `Null`. You don't need a `compact`
 Also, `map` doesn't take predicates. You would use `filter` for that:
 
 <a class="example" href="https://play.rust-lang.org/?gist=494d6e3ff016c21931e3495b10c8f6ee&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let even_numbers = vec![1, 2, 3, 4, 5]
@@ -167,7 +167,7 @@ let even_numbers = vec![1, 2, 3, 4, 5]
 or, to make a vector out of the result
 
 <a class="example" href="https://play.rust-lang.org/?gist=45c6dbd2d35316c73165c5571d66df9d&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 // Result: [2, 4]
@@ -186,7 +186,7 @@ Some hints:
 In Rust, there is no `even` method on numbers, but that doesn't keep us from defining one!
 
 <a class="example" href="https://play.rust-lang.org/?gist=c289c2a1cf8bd870cbd5cc2cd60ea791&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let even = |x: &i64| x % 2 == 0;
@@ -197,7 +197,7 @@ let even_numbers = vec![1, 2, 3, 4, 5].into_iter().filter(even);
 In a real-world scenario, you would probably use a third-party package (crate) like [`num`](https://github.com/rust-num/num) for numerical mathematics:
 
 <a class="example" href="https://play.rust-lang.org/?gist=e4bbbf60b7b1cbbedfb363672731bf53&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 extern crate num;
@@ -221,7 +221,7 @@ The canonical type to express that is called [`Result`](https://doc.rust-lang.or
 Let's say you want to convert a vector of strings to integers.
 
 <a class="example" href="https://play.rust-lang.org/?gist=1365d177503ee2d32c4aa594263ee4d4&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let maybe_numbers = vec!["1", "2", "nah", "nope", "3"];
@@ -235,7 +235,7 @@ let numbers: Vec<_> = maybe_numbers
 That looks nice, but maybe the output is a little unexpected. `numbers` will also contain the parsing errors:
 
 <a class="example" href="https://play.rust-lang.org/?gist=1365d177503ee2d32c4aa594263ee4d4&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 [Ok(1), Ok(2), Err(ParseIntError { kind: InvalidDigit }), Err(ParseIntError { kind: InvalidDigit }), Ok(3)]
@@ -246,7 +246,7 @@ Sometimes you're just interested in the successful operations.
 An easy way to filter out the errors is to use [`filter_map`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter_map):
 
 <a class="example" href="https://play.rust-lang.org/?gist=afdc823ec2e165ac0a03948fb323d305&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let maybe_numbers = vec!["1", "2", "nah", "nope", "3"];
@@ -265,7 +265,7 @@ I changed two things here:
 The return value contains all successfully converted strings:
 
 <a class="example" href="https://play.rust-lang.org/?gist=afdc823ec2e165ac0a03948fb323d305&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 [1, 2, 3]
@@ -275,7 +275,7 @@ The return value contains all successfully converted strings:
 The `filter_map` is similar to the `select` method in Ruby:
 
 <a class="example" href="https://gist.github.com/LeandroTk/1ae24e0fece0207f814932b0ac6c4a5e#file-map_vs_select_2-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 [1, 2, 3, 4, 5].select { |element| element.even? }
@@ -289,7 +289,7 @@ The `filter_map` is similar to the `select` method in Ruby:
 Here's how to get a random number from an array in Ruby:
 
 <a class="example" href="https://play.rust-lang.org/?gist=a66785b44094bacb78fa8dd822bfeab5&version=stable">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 [1, 2, 3].sample
@@ -300,7 +300,7 @@ That's quite nice and idiomatic!
 Compare that to Rust:
 
 <a class="example" href="https://play.rust-lang.org/?gist=bed7fca31737bcbf4b9aed427cc22713&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let mut rng = thread_rng();
@@ -322,7 +322,7 @@ For instance, you could define a `Choose` [trait](https://doc.rust-lang.org/book
 
 
 <a class="example" href="https://play.rust-lang.org/?gist=a66785b44094bacb78fa8dd822bfeab5&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 extern crate rand;
@@ -345,7 +345,7 @@ This boilerplate could be put into a crate to make it reusable for others.
 With that, we arrive at a solution that rivals Ruby's elegance.
 
 <a class="example" href="https://play.rust-lang.org/?gist=a66785b44094bacb78fa8dd822bfeab5&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 [1, 2, 4, 8, 16, 32].choose()
@@ -357,7 +357,7 @@ With that, we arrive at a solution that rivals Ruby's elegance.
 Ruby methods automatically return the result of the last statement.
 
 <a class="example" href="https://gist.github.com/LeandroTk/9ede60f0898979f8f74d2869ed014c0c#file-return_2-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 def get_user_ids(users)
@@ -369,7 +369,7 @@ end
 Same for Rust. Note the missing semicolon.
 
 <a class="example" href="https://play.rust-lang.org/?gist=c7130debb2f712269380bd04819069ff&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 fn get_user_ids(users: &[User]) -> Vec<u64> {
@@ -383,7 +383,7 @@ The following block splits a string into characters, removes the `h`, and return
 This `HashSet` will be assigned to `x`.
 
 <a class="example" href="https://play.rust-lang.org/?gist=9ad54a58d3e5f1c06e795b5f7dca451e&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let x: HashSet<_> = {
@@ -398,7 +398,7 @@ let x: HashSet<_> = {
 Same works for conditions:
 
 <a class="example" href="https://play.rust-lang.org/?gist=cec96176079e8812ff62ad84a432ac9d&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let x = if 1 > 0 { "absolutely!" } else { "no seriously" };
@@ -408,7 +408,7 @@ let x = if 1 > 0 { "absolutely!" } else { "no seriously" };
 Since a [`match`](https://doc.rust-lang.org/1.2.0/book/match.html) statement is also an expression, you can assign the result to a variable, too!
 
 <a class="example" href="https://play.rust-lang.org/?gist=a6b32fae6257787432cf607f5772693e&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 enum Unit {
@@ -432,7 +432,7 @@ let length_in_meters = match unit {
 In Ruby you can assign multiple values to variables in one step:
 
 <a class="example" href="https://gist.github.com/LeandroTk/998bed8f8c20e487a1b8a638dd7563a1#file-multiple_assignment_1-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 def values
@@ -447,7 +447,7 @@ In Rust, you can only decompose tuples into tuples, but not a vector into a tupl
 So this will work:
 
 <a class="example" href="https://play.rust-lang.org/?gist=11b02c318ec35456b8247c3161cb341b&version=nightly">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let (one, two, three) = (1, 2, 3);
@@ -457,7 +457,7 @@ let (one, two, three) = (1, 2, 3);
 But this won't:
 
 <a class="example" href="https://play.rust-lang.org/?gist=11b02c318ec35456b8247c3161cb341b&version=nightly">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let (one, two, three) = [1, 2, 3];
@@ -468,7 +468,7 @@ let (one, two, three) = [1, 2, 3];
 Neither will this:
 
 <a class="example" href="https://play.rust-lang.org/?gist=11b02c318ec35456b8247c3161cb341b&version=nightly">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let (one, two, three) = [1, 2, 3].iter().collect();
@@ -479,7 +479,7 @@ let (one, two, three) = [1, 2, 3].iter().collect();
 But with nightly Rust, you can now do this:
 
 <a class="example" href="https://play.rust-lang.org/?gist=11b02c318ec35456b8247c3161cb341b&version=nightly">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let [one, two, three] = [1, 2, 3];
@@ -489,7 +489,7 @@ let [one, two, three] = [1, 2, 3];
 On the other hand, there's [a lot more you can do with destructuring](https://doc.rust-lang.org/book/second-edition/ch18-03-pattern-syntax.html) apart from multiple assignments. You can write beautiful, ergonomic code using pattern syntax.
 
 <a class="example" href="https://play.rust-lang.org/?gist=969612861bc6028e3b98345e21a4289e&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let x = 4;
@@ -512,7 +512,7 @@ To quote *[The Book](https://doc.rust-lang.org/book/second-edition/ch18-03-patte
 Ruby has [extensive string interpolation support](http://ruby-doc.org/docs/ruby-doc-bundle/ProgrammingRuby/book/ref_m_kernel.html#Kernel.sprintf).
 
 <a class="example" href="https://gist.github.com/LeandroTk/5125cab5e74d26460124c786ac5df534#file-interpolation-rb">
-<div class="ruby icon"></div>
+<div class="ruby lang-icon"></div>
 
 ```ruby
 programming_language = "Ruby"
@@ -523,7 +523,7 @@ programming_language = "Ruby"
 This can be translated like so:
 
 <a class="example" href="https://play.rust-lang.org/?gist=6920e723137e44c4befe3398721fafa1&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 let programming_language = "Rust";
@@ -534,7 +534,7 @@ format!("{} is also a beautiful programming language", programming_language);
 Named arguments are also possible, albeit much less common:
 
 <a class="example" href="https://play.rust-lang.org/?gist=6920e723137e44c4befe3398721fafa1&version=stable">
-<div class="rust icon"></div>
+<div class="rust lang-icon"></div>
 
 ```rust
 println!("{language} is also a beautiful programming language", language="Rust");

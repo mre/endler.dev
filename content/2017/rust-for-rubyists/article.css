@@ -1,4 +1,4 @@
-.icon {
+.lang-icon {
   display: block;
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgdmVyc2lvbj0iMSI+PHBhdGggZmlsbD0iIzFlMWUxZSIgZD0iTTEzOSAzMTBMMjUgMTc4bC00LTUgMjktNTQgMzAtNTRoMzQwbDMwIDU0IDI5IDU0LTQgNS0yMjUgMjU3LTExMS0xMjV6bTE1My0zMGw0Mi05NC00Mi0xaC04NGwtNDIgMSA0MiA5NCA0MiA5NSA0Mi05NXptLTEyMi0xOGwtMzQtNzYtMzQtMS0zMyAxIDEzNCAxNTQtMzMtNzh6bTE5NSAwbDY2LTc3aC0zNGwtMzMgMS0zNCA3Ni0zMyA3OCA2OC03OHpNMTIzIDE1N2MwLTItMjUtNTktMjctNjEtMS0xLTM0IDU4LTM0IDYxbDMwIDEgMzEtMXptMTkxIDBsLTY0LTU4LTY0IDU4YTE0NDYgMTQ0NiAwIDAgMCAxMjggMHptMTI0IDBjMC0zLTMzLTYyLTM0LTYxLTIgMi0yNyA1OS0yNyA2MWwzMSAxIDMwLTF6bS0yNTUtMzZsMzAtMjdoLTg2Yy0xIDEgMjMgNTUgMjUgNTRsMzEtMjd6bTE3OSAxbDExLTI4aC04NmwzMCAyNyAzMiAyOCAxMy0yN3oiLz48L3N2Zz4=) no-repeat;
   background-size: contain;
@@ -22,12 +22,12 @@
   text-decoration: none;
 }
 
-.example:hover .icon {
+.example:hover .lang-icon {
   opacity: 1.0;
 }
 
 @media (max-width: 520px) {
-  .icon {
+  .lang-icon {
     margin: 0;
     float: right;
   }
