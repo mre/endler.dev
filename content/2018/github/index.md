@@ -37,7 +37,7 @@ Only later I found out that Chris was one of the founders and the CEO of the com
 
 Before Github, there was [SourceForge](https://sourceforge.net/), and I only went there to download binaries.
 Github showed me, that there was an entire community of like-minded people
-out there who think alike and love to work on code in their free-time.
+out there, who ❤️ to work on code in their free-time.
 To me, Github is much more than a git interface; it's a social network.
 While other people browse Facebook or Instagram, I browse Github.
 
