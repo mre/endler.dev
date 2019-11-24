@@ -1,13 +1,16 @@
-$pink-400: #c35;
 $pink-200: #f5b2c8;
+$pink-400: #c35;
+$pink-500: #ff1c76;
 
 $blue-300: #9fd6fa;
 $blue-500: #234;
+$blue-800: #121f2d;
 
-$grey-400: #555;
-$grey-300: #b9b9b9;
-$grey-200: #fafafa;
 $grey-100: #ddd;
+$grey-200: #fafafa;
+$grey-300: #b9b9b9;
+$grey-400: #555;
+$grey-500: #111;
 
 /* Tiny reset */
 
@@ -66,14 +69,6 @@ main {
   padding: 20px;
   margin-bottom: 50px;
   max-width: 650px;
-}
-
-a {
-  border-bottom: 1px dashed $pink-400;
-}
-
-a:hover {
-  border-bottom: 2px solid $pink-400;
 }
 
 figure a {
@@ -137,7 +132,6 @@ caption {
 }
 
 .post-meta {
-  color: $grey-400;
   font-style: italic;
   margin: 0px;
   font-size: 90%;
@@ -202,6 +196,11 @@ h3 {
 a {
   color: $pink-400;
   text-decoration: none;
+  border-bottom: 1px dashed $pink-400;
+}
+
+a:hover {
+  border-bottom: 2px solid $pink-400;
 }
 
 header nav ul {
@@ -222,6 +221,7 @@ header nav li {
   float: left;
   padding: 5px;
   margin: 5px;
+  background-repeat: no-repeat;
 }
 
 .icon:hover {
@@ -387,4 +387,71 @@ input:focus::placeholder {
   font-size: 1.3em;
   color: grey;
   padding: 15px 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  .logo {
+    background: no-repeat url("/logo.svg");
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .logo {
+    background: no-repeat url("/logo_dark.svg");
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    // background-color: #444;
+    // background-color: rgb(18, 28, 38);
+    background: $blue-500;
+    color: white;
+    border-top: 0.5em solid $pink-500;
+  }
+
+  .post-meta {
+    color: $grey-300;
+  }
+
+  a {
+    color: $pink-500;
+    border-bottom: 1px dashed $pink-500;
+  }
+
+  a:hover {
+    border-bottom: 2px solid $pink-500;
+  }
+
+  .icon {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+  }
+
+  #tinysearchautocomplete-list {
+    color: black;
+  }
+
+  main img {
+    background-color: white;
+    border-radius: 6px;
+  }
+
+  code {
+    background-color: $grey-500;
+  }
+
+  pre {
+    background-color: #fff;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+
+  .tldr {
+    background-color: black;
+    border-color: $grey-400;
+  }
+
+  footer {
+    background: $blue-800;
+  }
 }
