@@ -4,7 +4,8 @@ $pink-500: #ff1c76;
 
 $blue-300: #9fd6fa;
 $blue-500: #234;
-$blue-800: #121f2d;
+// $blue-800: #121f2d;
+$blue-800: #141f2b;
 
 $grey-100: #ddd;
 $grey-200: #fafafa;
@@ -427,10 +428,6 @@ input:focus::placeholder {
     opacity: 1;
   }
 
-  #tinysearchautocomplete-list {
-    color: black;
-  }
-
   main img {
     background-color: white;
     border-radius: 6px;
@@ -447,8 +444,15 @@ input:focus::placeholder {
   }
 
   .tldr {
-    background-color: black;
+    background: $blue-800;
     border-color: $grey-400;
+  }
+
+  .autocomplete input,
+  .autocomplete-items div {
+    border: 0;
+    background: $blue-800;
+    color: white;
   }
 
   footer {
