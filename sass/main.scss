@@ -352,10 +352,7 @@ input:focus::placeholder {
   border: 1px solid $grey-100;
 }
 
-.autocomplete-items div:hover {
-  background-color: $grey-200;
-}
-
+.autocomplete-items div:hover,
 .autocomplete-active {
   background-color: $pink-400 !important;
   color: white;
