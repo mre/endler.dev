@@ -289,10 +289,16 @@ footer {
   color: $grey-300;
 }
 
+#teaser,
+footer {
+  display: flex;
+  justify-content: center;
+}
+
 #teaser .body,
 footer .body {
-  margin: 0 auto;
-  padding: 40px;
+  max-width: 800px;
+  margin: 40px auto;
 }
 
 .email {
