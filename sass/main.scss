@@ -4,7 +4,6 @@ $pink-500: #ff1c76;
 
 $blue-300: #9fd6fa;
 $blue-500: #234;
-// $blue-800: #121f2d;
 $blue-800: #141f2b;
 
 $grey-100: #ddd;
@@ -193,7 +192,6 @@ h3 {
   color: white;
 }
 
-// Anchor tags
 a {
   color: $pink-400;
   text-decoration: none;
@@ -403,8 +401,6 @@ input:focus::placeholder {
 
 @media (prefers-color-scheme: dark) {
   body {
-    // background-color: #444;
-    // background-color: rgb(18, 28, 38);
     background: $blue-500;
     color: white;
     border-top: 0.5em solid $pink-500;
