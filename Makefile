@@ -25,3 +25,7 @@ build-quick: content ## Build static site
 .PHONY: run serve
 run serve: ## Serve website locally
 	zola serve
+
+.PHONY: stars
+stars:
+	count-github-stars mre --repo-limit 100 --no-orgs --stargazer-threshold 50 --template .star-counter-template.md

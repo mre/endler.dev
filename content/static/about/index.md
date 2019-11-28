@@ -41,17 +41,18 @@ Here's a list of some Open Source projects I maintain:
 
 | Repository               |  Stars |
 | :----------------------- | -----: |
-| awesome-static-analysis  | 6184 ★ |
-| idiomatic-rust           | 1290 ★ |
-| the-coding-interview     |  940 ★ |
-| receipt-parser           |  420 ★ |
-| cargo-inspect            |  187 ★ |
-| kafka-influxdb           |  177 ★ |
-| hyperjson                |  170 ★ |
-| fcat                     |  157 ★ |
-| awesome-dynamic-analysis |  151 ★ |
-| prettyprint              |  151 ★ |
-| vscode-snippet           |   61 ★ |
+| awesome-static-analysis | 6506 ★ |
+| idiomatic-rust | 1348 ★ |
+| the-coding-interview | 979 ★ |
+| receipt-parser | 439 ★ |
+| cargo-inspect | 198 ★ |
+| hyperjson | 197 ★ |
+| tinysearch | 188 ★ |
+| kafka-influxdb | 183 ★ |
+| awesome-dynamic-analysis | 177 ★ |
+| fcat | 163 ★ |
+| prettyprint | 161 ★ |
+| vscode-snippet | 67 ★ |
 
 You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me an <a href="mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118; ">e-mail</a>.
 
