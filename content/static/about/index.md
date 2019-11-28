@@ -7,6 +7,10 @@ path = "about"
     table {
         width: 100%;
     }
+    
+    table a {
+        border: none;
+    }
 
     th, td {
         border-bottom: 1px solid #ddd;
@@ -39,20 +43,20 @@ language.
 
 Here's a list of some Open Source projects I maintain:
 
-| Repository               |  Stars |
-| :----------------------- | -----: |
-| [awesome-static-analysis](https://github.com/mre/awesome-static-analysis/) | 6506 ★ |
-| [idiomatic-rust](https://github.com/mre/idiomatic-rust/) | 1349 ★ |
-| [the-coding-interview](https://github.com/mre/the-coding-interview/) | 979 ★ |
-| [receipt-parser](https://github.com/mre/receipt-parser/) | 439 ★ |
-| [cargo-inspect](https://github.com/mre/cargo-inspect/) | 198 ★ |
-| [hyperjson](https://github.com/mre/hyperjson/) | 197 ★ |
-| [tinysearch](https://github.com/mre/tinysearch/) | 188 ★ |
-| [kafka-influxdb](https://github.com/mre/kafka-influxdb/) | 183 ★ |
-| [awesome-dynamic-analysis](https://github.com/mre/awesome-dynamic-analysis/) | 177 ★ |
-| [fcat](https://github.com/mre/fcat/) | 163 ★ |
-| [prettyprint](https://github.com/mre/prettyprint/) | 161 ★ |
-| [vscode-snippet](https://github.com/mre/vscode-snippet/) | 67 ★ |
+| Repository                                                                   |  Stars |
+| :--------------------------------------------------------------------------- | -----: |
+| [awesome-static-analysis](https://github.com/mre/awesome-static-analysis/)   | 6506 ★ |
+| [idiomatic-rust](https://github.com/mre/idiomatic-rust/)                     | 1349 ★ |
+| [the-coding-interview](https://github.com/mre/the-coding-interview/)         |  979 ★ |
+| [receipt-parser](https://github.com/mre/receipt-parser/)                     |  439 ★ |
+| [cargo-inspect](https://github.com/mre/cargo-inspect/)                       |  198 ★ |
+| [hyperjson](https://github.com/mre/hyperjson/)                               |  197 ★ |
+| [tinysearch](https://github.com/mre/tinysearch/)                             |  188 ★ |
+| [kafka-influxdb](https://github.com/mre/kafka-influxdb/)                     |  183 ★ |
+| [awesome-dynamic-analysis](https://github.com/mre/awesome-dynamic-analysis/) |  177 ★ |
+| [fcat](https://github.com/mre/fcat/)                                         |  163 ★ |
+| [prettyprint](https://github.com/mre/prettyprint/)                           |  161 ★ |
+| [vscode-snippet](https://github.com/mre/vscode-snippet/)                     |   67 ★ |
 
 You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send me an <a href="mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118; ">e-mail</a>.
 
