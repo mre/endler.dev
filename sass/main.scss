@@ -327,7 +327,7 @@ footer .field {
   border-radius: 20px;
   width: 150px;
   font-size: 0.9em;
-  box-shadow: 0 1px 0px rgba(255,255,255,0.25);
+  box-shadow: 0 1px 0px rgba(255, 255, 255, 0.25);
 }
 
 input[type="submit"] {
@@ -394,13 +394,14 @@ input:focus::placeholder {
 }
 
 @media (prefers-color-scheme: light) {
-  .logo {
-    background: no-repeat url("/logo.svg");
+  .logo_dark {
+    display: none;
   }
 }
+
 @media (prefers-color-scheme: dark) {
-  .logo {
-    background: no-repeat url("/logo_dark.svg");
+  .logo_light {
+    display: none;
   }
 }
 
