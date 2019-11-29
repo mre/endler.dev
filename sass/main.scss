@@ -213,34 +213,17 @@ header nav li {
 }
 
 .icon {
-  text-indent: -9999px;
-  height: 14px;
-  width: 14px;
+  height: 24px;
+  width: 24px;
   opacity: 0.4;
   float: left;
-  padding: 5px;
   margin: 5px;
   background-repeat: no-repeat;
 }
 
 .icon:hover {
   opacity: 1;
-}
-
-.home-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 61 58'%3E%3Cpath stroke='%23fff' stroke-linecap='square' stroke-width='.52916' d='M7 21v36h16V38h15v19h15V21z'/%3E%3Cpath d='M61 26H0l15-13L30 0l15 13z'/%3E%3C/svg%3E ");
-}
-
-.twitter-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 612 612'%3E%3Cpath fill='%23010002' d='M612 116c-23 10-47 17-72 20 26-15 46-40 55-69-24 14-51 24-80 30a125 125 0 0 0-217 86c0 10 1 19 3 29-104-6-196-56-258-132a125 125 0 0 0 39 168c-21-1-40-6-57-16v2c0 61 43 111 100 123a127 127 0 0 1-56 2c16 50 62 86 117 87A252 252 0 0 1 0 498a355 355 0 0 0 550-301l-1-16c25-17 46-40 63-65z'/%3E%3C/svg%3E ");
-}
-
-.github-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 578.3 578.3'%3E%3Cpath d='M533 160c1-26-5-53-10-79-1-9-5-18-8-27-2-6-10-10-16-9l-12 3c-39 13-76 32-111 54-5 3-11 4-17 3l-41-5c-33-1-67 0-100 6-5 1-11 0-15-3-38-24-77-46-122-57-7-2-14-1-15 1l-3 6c-5 16-10 33-13 51-4 20-7 42-5 62 1 13-3 21-10 30-24 31-34 66-35 104-1 33 4 65 14 97 15 48 45 84 90 108 36 19 76 27 117 28h111c37 1 73-3 109-14 35-12 66-30 90-60 34-42 45-92 47-145 2-40-6-78-30-111a65 65 0 01-15-43zm-71 310c-16 13-35 20-55 25-39 9-79 11-119 10-39 1-78-1-116-10-28-7-54-18-72-42-29-39-36-112 11-152 12-11 26-17 41-18l53-3 133 3c20 0 40-5 60-4 18 2 38 5 54 12 28 12 42 37 47 66 7 43-2 83-37 113z'/%3E%3Cellipse cx='390' cy='385.6' rx='42.1' ry='56.3'/%3E%3Cellipse cx='189' cy='385.6' rx='42.1' ry='56.3'/%3E%3C/svg%3E");
-}
-
-.rss-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 1280 1280'%3E%3Cpath d='M264 224l-1 79v79h8a660 660 0 0 1 438 174 665 665 0 0 1 218 492h156l1-26a820 820 0 0 0-715-792c-37-5-103-9-105-6z'/%3E%3Cpath d='M263 504l-1 78 1 79 14 2a383 383 0 0 1 369 368l1 17h158v-19a536 536 0 0 0-98-293 546 546 0 0 0-444-232zM353 830a110 110 0 0 0-77 160 110 110 0 1 0 188-114c-5-7-23-25-30-29-25-16-54-22-81-17z'/%3E%3C/svg%3E");
+  transition: opacity 200ms ease-in;
 }
 
 .button {
@@ -365,6 +348,7 @@ input:focus::placeholder {
     width: 100%;
     font-size: 1.1em;
   }
+
   .autocomplete input {
     width: calc(100% - 100px);
     margin: 20px 10px;
