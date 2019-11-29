@@ -1,7 +1,7 @@
 {% set logo_light = load_data(path="static/logo_light.svg") %}
 {% set logo_dark = load_data(path="static/logo_dark.svg") %}
 
-<a href="/">
+<a href="/" aria-label="Go back to homepage">
   <div class="logo">
     {{ logo_light | safe }}
     {{ logo_dark | safe }}

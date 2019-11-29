@@ -6,23 +6,24 @@
 <nav>
     <ul>
         <li>
-            <a class="icon" href="/" title="Go to homepage">
+            <a class="icon" href="/" title="Go to homepage" aria-label="Go to homepage">
                 {{ home | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://github.com/mre" title="My Github profile">
+            <a class="icon" href="https://github.com/mre" title="My Github profile" aria-label="My Github profile">
                 {{ github | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://twitter.com/matthiasendler" title="My Twitter profile">
+            <a class="icon" href="https://twitter.com/matthiasendler" title="My Twitter profile"
+                aria-label="My Twitter profile">
                 {{ twitter | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://feedly.com/i/subscription/feed/https://endler.dev/rss.xml"
-                title="My RSS feed">{{ rss | safe }}</a>
+            <a class="icon" href="https://feedly.com/i/subscription/feed/https://endler.dev/rss.xml" title="My RSS feed"
+                aria-label="My RSS feed">{{ rss | safe }}</a>
         </li>
     </ul>
 </nav>
