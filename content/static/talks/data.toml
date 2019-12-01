@@ -6,7 +6,7 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 """
 
 [[talks]]
-title = "Rust Embedded Workshop"
+title = "Rust Embedded"
 image = "2019-rustfest.jpg"
 event = "RustFest"
 date = "November 2019"
