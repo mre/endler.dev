@@ -6,12 +6,33 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 """
 
 [[talks]]
-title = "Everything is Broken (And That's Okay!)"
-image = "2019-localhost.jpg"
-event = "localhost conference"
-date = "October 2019"
-location = "Düsseldorf, Germany"
-slides = "https://speakerdeck.com/mre/everything-is-broken-and-thats-okay"
+title = "Rust Embedded Workshop"
+image = "2019-rustfest.jpg"
+event = "RustFest"
+date = "November 2019"
+location = "Barcelona, Spain"
+type = "Workshop"
+collaboration = "[Hanno Braun](https://braun-embedded.com/workshop/)"
+slides = "https://hackmd.io/ru4intliRlyJ9t8pU2F29A"
+description = """
+Rust is a great choice for embedded development! 
+It combines high-level abstractions with low-level control, safety with performance. 
+In this workshop, you will learn embedded development on a microcontroller, using Rust. 
+
+We’ll teach the basics, talk about pitfalls, and provide an environment 
+for experimentation. Experience with embedded development is not required, 
+but basic Rust experience would be helpful. 
+Every participant will be provided with a LPC845-BRK development board, 
+free of charge and for them to keep.
+"""
+
+[[talks]]
+title = "Wonderful WebAssembly"
+image = "2019-bristech.jpg"
+event = "Bristech"
+date = "November 2019"
+location = "Bristol, England"
+slides = "https://speakerdeck.com/mre/wonderful-webassembly"
 description = """
 Our world is controlled by software. 
 As with everything that is created by humans, software is error-prone. 
@@ -19,6 +40,27 @@ Everyone got annoyed by bugs and UI/UX issues before, but what exactly does "bro
 really mean and are there different kinds of brokenness? 
 Let's explore the fun, enthralling, and quirky state of our (digital) world 
 and see what we can do to make it better.
+"""
+
+[[talks]]
+title = "Everything is Broken (And That's Okay!)"
+image = "2019-localhost.jpg"
+event = "localhost conference"
+date = "October 2019"
+location = "Düsseldorf, Germany"
+slides = "https://speakerdeck.com/mre/everything-is-broken-and-thats-okay"
+recording = "https://www.youtube.com/watch?v=sEcbTYLtLSM"
+description = """
+WebAssembly is neither "web" nor "assembly" - but 100% amazing. 
+It is our one chance to build a fast, safe, and universal compilation target for all 
+languages and all platforms.
+
+Let me show you why this is cool and how to get started with 
+WebAssembly in Go, C, and Rust.
+
+We will also learn about up and coming features of WebAssembly (like WASI) 
+that will make it even faster and more versatile.  
+Let's change the way we write software forever!
 """
 
 [[talks]]
