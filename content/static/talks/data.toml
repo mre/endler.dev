@@ -7,7 +7,7 @@ If you would like me to speak at your event, let's [get connected](mailto:matthi
 
 [[talks]]
 title = "Rust Embedded"
-image = "2019-rustfest.jpg"
+image = "2019-rustfest.webp"
 event = "RustFest"
 date = "November 2019"
 location = "Barcelona, Spain"
@@ -28,7 +28,7 @@ free of charge and for them to keep.
 
 [[talks]]
 title = "Wonderful WebAssembly"
-image = "2019-bristech.jpg"
+image = "2019-bristech.webp"
 event = "Bristech"
 date = "November 2019"
 location = "Bristol, England"
@@ -44,7 +44,7 @@ and see what we can do to make it better.
 
 [[talks]]
 title = "Everything is Broken (And That's Okay!)"
-image = "2019-localhost.jpg"
+image = "2019-localhost.webp"
 event = "localhost conference"
 date = "October 2019"
 location = "Düsseldorf, Germany"
@@ -65,7 +65,7 @@ Let's change the way we write software forever!
 
 [[talks]]
 title = "How Does Async Work?"
-image = "2019-async.jpg"
+image = "2019-async.webp"
 event = "Web Meetup Cologne"
 date = "September 2019"
 location = "Cologne, Germany"
@@ -80,7 +80,7 @@ We will look at Node's, Python's, and Rust's async features and how they work un
 
 [[talks]]
 title = "What is Rust Doing Behind the Curtains?"
-image = "2019-fosdem.jpg"
+image = "2019-fosdem.webp"
 event = "FOSDEM"
 date = "February 2019"
 location = "Brussels, Belgium"
@@ -102,7 +102,7 @@ mortals.
 
 [[talks]]
 title = "Write Your Own Shell in Rust"
-image = "2018-shell-workshop.jpg"
+image = "2018-shell-workshop.webp"
 event = "RustBeltRust"
 date = "October 2019"
 location = "Ann Arbor, MI, US"
@@ -123,7 +123,7 @@ mid-size Rust project!
 
 [[talks]]
 title = "Hyperjson — The Journey Towards Faster Safer JSON Parsing in Python Using Rust"
-image = "2018-hyperjson.jpg"
+image = "2018-hyperjson.webp"
 event = "Rust Cologne"
 date = "August 2018"
 location = "Chaos Computer Club, Cologne, Germany"
@@ -141,7 +141,7 @@ highly-optimized tasks like parsing file formats in the future.
 
 [[talks]]
 title = "Idiomatic Rust — Writing Concise and Elegant Rust Code"
-image = "2018-fosdem.jpg"
+image = "2018-fosdem.webp"
 event = "FOSDEM"
 date = "February 2018"
 location = "Brussels, Belgium"
@@ -157,7 +157,7 @@ Rust code.
 
 [[talks]]
 title = "Live Coding Like No One's Watching!"
-image = "2017-rustbeltrust.jpg"
+image = "2017-rustbeltrust.webp"
 event = "RustBeltRust"
 date = "October 2017"
 location = "Columbus, OH, USA"
@@ -173,7 +173,7 @@ documentation for clues. I might explain a little Rust along the way.
 
 [[talks]]
 title = "My Good Friend Rust - An Introduction"
-image = "2017-topconf.jpg"
+image = "2017-topconf.webp"
 event = "Topconf"
 date = "October 2017"
 location = "Düsseldorf, Germany"
@@ -189,7 +189,7 @@ though you might be a Web-Developer.
 
 [[talks]]
 title = "What's So Hard About Writing a Slack Client in Rust?"
-image = "2015-slack-client.jpg"
+image = "2015-slack-client.webp"
 event = "Rust Cologne"
 date = "March 2017"
 location = "Chaos Computer Club, Cologne, Germany"
@@ -207,7 +207,7 @@ avoid and laughs to share.
 
 [[talks]]
 title = "Why Rust?"
-image = "2015-why-rust.jpg"
+image = "2015-why-rust.webp"
 event = "Codemotion"
 date = "May 2016"
 location = "Amsterdam, Netherlands"
@@ -224,7 +224,7 @@ about Rust and show some of its nicest features.
 
 [[talks]]
 title = "Rust Tooling"
-image = "2015-tooling.jpg"
+image = "2015-tooling.webp"
 event = "Rust Cologne"
 date = "October 2015"
 location = "Chaos Computer Club, Cologne, Germany"
@@ -236,7 +236,7 @@ overview of ways to help you write better Rust code.
 
 [[talks]]
 title = "The State of PyPy"
-image = "2015-pypy.jpg"
+image = "2015-pypy.webp"
 event = "Python Usergroup"
 date = "April 2015"
 location = "Düsseldorf, Germany"
