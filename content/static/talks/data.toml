@@ -33,6 +33,7 @@ event = "Bristech"
 date = "November 2019"
 location = "Bristol, England"
 slides = "https://speakerdeck.com/mre/wonderful-webassembly"
+recording = "https://www.youtube.com/watch?v=sEcbTYLtLSM"
 description = """
 Our world is controlled by software. 
 As with everything that is created by humans, software is error-prone. 
