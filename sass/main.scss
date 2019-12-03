@@ -139,8 +139,8 @@ code {
   border-radius: 6px;
   display: inline-block;
   font-family: "Courier New", "Courier", monospace;
-  -moz-font-feature-settings: "liga"off;
-  font-feature-settings: "liga"off;
+  -moz-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
   font-size: 16px;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -407,7 +407,6 @@ input:focus::placeholder {
 
   .icon {
     filter: brightness(0) invert(1);
-    opacity: 1;
   }
 
   main img {
