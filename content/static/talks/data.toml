@@ -85,7 +85,7 @@ image = "2019-fosdem.webp"
 event = "FOSDEM"
 date = "February 2019"
 location = "Brussels, Belgium"
-recording = "https://fosdem.org/2019/schedule/event/rust_cargo_inspect/"
+recording = "https://www.youtube.com/watch?v=ePiWBGh35q0"
 slides = "https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains"
 description = """
 Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It
