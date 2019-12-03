@@ -17,9 +17,9 @@ comments = [
 
 "Rust or Go, which one should I choose?" is a question I get quite often.
 Both languages seem to be competing for the same user base and they both seem to be
-*systems programming* languages, so there must be a clear winner, right?
+_systems programming_ languages, so there must be a clear winner, right?
 
-**tl;dr**: *It's not so easy. Both languages have a different scope. Golang shines for writing microservices and for typical "DevOps" tasks, but it is not a systems programming language. Rust is stronger for tasks where concurrency, safety and/or performance are important; but it has a steeper learning curve than Go.*
+**tl;dr**: _It's not so easy. Both languages have a different scope. Golang shines for writing microservices and for typical "DevOps" tasks, but it is not a systems programming language. Rust is stronger for tasks where concurrency, safety and/or performance are important; but it has a steeper learning curve than Go._
 
 ## Go: practical, pragmatic, plain
 
@@ -28,9 +28,9 @@ Both languages seem to be competing for the same user base and they both seem to
 I don't think Go is an elegant language. Its biggest feature is simplicity.
 Go is not even a systems programming language. While it's great for writing microservices and tooling around backend infrastructure, I would not want to write a kernel or a memory allocator with it.
 
-But with Go, you *get things done* &mdash; fast.  
+But with Go, you _get things done_ &mdash; fast.  
 Go is one of the most productive languages I've ever worked with.
-The mantra is: solve real problems today. 
+The mantra is: solve real problems today.
 
 ## Rust's strong guarantees come at a cost
 
@@ -39,22 +39,21 @@ The mantra is: solve real problems today.
 Rust in comparison is **hard**. It took me many months to become somewhat productive.
 You need to invest a serious amount of time to see any benefit.
 Rust is already a powerful language and it gets stronger every day.
-It feels much more like a *pragmatic Haskell* to me than a *safer C*.
+It feels much more like a _pragmatic Haskell_ to me than a _safer C_.
 
 Don't get me wrong: [I love Rust](https://www.youtube.com/channel/UCZ_EWaQZCZuGGfnuqUoHujw), and it helped me become a better programmer. It is certainly a nice language to learn. The big question is, if it is the right choice for your next major project.
 
 Here's the thing: if you choose Rust, usually you need the guarantees, that the language provides:
 
-* Safety against `Null` pointers, race conditions and all sorts of low-level threats.
-* Predictable runtime behavior (zero cost abstractions and no garbage collector).
-* (Almost) total control over the hardware (memory layout, processor features).
-* Seamless interoperability with other languages.
+- Safety against `Null` pointers, race conditions and all sorts of low-level threats.
+- Predictable runtime behavior (zero cost abstractions and no garbage collector).
+- (Almost) total control over the hardware (memory layout, processor features).
+- Seamless interoperability with other languages.
 
-If you don't *require* any of these features, Rust might be a poor choice for your next project.
+If you don't _require_ any of these features, Rust might be a poor choice for your next project.
 That's because these guarantees come with a cost: ramp-up time.
 You'll need to unlearn bad habits and learn new concepts.
 Chances are, you will [fight with the borrow checker](https://m-decoster.github.io/2017/01/16/fighting-borrowchk/) a lot when you start out.
-
 
 ## Case-study: Primality by trial division
 
@@ -103,10 +102,9 @@ pub fn is_prime(n: u64) -> bool {
 At first sight, both solutions look pretty similar.
 But if we look closer, we can spot some differences.
 
-
-* In Go, we use a simple switch-case statement. In Rust, we use a [`match`](https://doc.rust-lang.org/1.2.0/book/match.html) statement, which is much more powerful.
-* In Go, we use a simple for-loop to iterate over the numbers 2 to n. In Rust, we use a range expression (`2..n`).
-* In Go, we use two `return` statements, in Rust we have one `return` *expression*. In general, most things in Rust are expressions, which can be returned and assigned to a variable. Read more about expressions [here](https://doc.rust-lang.org/beta/reference/expressions.html).
+- In Go, we use a simple switch-case statement. In Rust, we use a [`match`](https://doc.rust-lang.org/1.2.0/book/match.html) statement, which is much more powerful.
+- In Go, we use a simple for-loop to iterate over the numbers 2 to n. In Rust, we use a range expression (`2..n`).
+- In Go, we use two `return` statements, in Rust we have one `return` _expression_. In general, most things in Rust are expressions, which can be returned and assigned to a variable. Read more about expressions [here](https://doc.rust-lang.org/beta/reference/expressions.html).
 
 In many areas, Rust is more functional than Golang. You could rewrite the above code using the [`any`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any) method, which is implemented for `Range`.
 
@@ -128,28 +126,28 @@ This was just a quick example, of course. I suggest, you browse some code on [Ro
 If you're more like a visual type, here is a video where I write a simple
 concurrent program in Go and Rust to compare both languages:
 
-{{ video(id="B5xYBrxVSiE") }}
+{{ video(id="B5xYBrxVSiE", preview="preview.jpg") }}
 
 ## Some things I prefer in Go
 
-* Fast compile times
-* Pragmatic problem-solving approach
-* Nice ecosystem for typical *DevOps* tasks
-* Batteries-included standard-library
-* IDE support
-* Simple error handling
-* The mascot 😉
+- Fast compile times
+- Pragmatic problem-solving approach
+- Nice ecosystem for typical _DevOps_ tasks
+- Batteries-included standard-library
+- IDE support
+- Simple error handling
+- The mascot 😉
 
 ## Some things I prefer in Rust
 
-* Safety: No null pointers, no data races,...
-* Fine-grained system control
-* Incredible runtime speed (comparable with C/C++)
-* Zero-cost abstractions
-* Awesome, open-minded community
-* Simple package management with cargo
-* Support for Generics in form of traits
-* C interop and FFI
+- Safety: No null pointers, no data races,...
+- Fine-grained system control
+- Incredible runtime speed (comparable with C/C++)
+- Zero-cost abstractions
+- Awesome, open-minded community
+- Simple package management with cargo
+- Support for Generics in form of traits
+- C interop and FFI
 
 ## Conclusion
 

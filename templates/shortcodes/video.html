@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="{{ get_url(path="video.css") }}" />
 <script src="/video.js"></script>
 <div class="light-video-embed" data-id="{{id}}">
-    <img src="preview.jpg" />
-    <div class="play"></div>
+  <img src="{{preview}}" />
+  <div class="play"></div>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        lightEmbedInit();
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+    lightEmbedInit();
+  });
 </script>
