@@ -134,6 +134,13 @@ caption {
   font-size: 80%;
 }
 
+.post-links {
+  list-style: none;
+  padding: 24px 0 0 0;
+  margin-top: 40px;
+  border-top: solid 1px white;
+}
+
 code {
   background: $grey-200;
   border-radius: 6px;
