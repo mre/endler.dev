@@ -138,7 +138,7 @@ caption {
   list-style: none;
   padding: 24px 0 0 0;
   margin-top: 40px;
-  border-top: solid 1px white;
+  border-top: solid 1px $grey-400;
 }
 
 code {
@@ -401,6 +401,10 @@ input:focus::placeholder {
   .bio,
   .post-meta {
     color: $grey-300;
+  }
+
+  .post-links {
+    border-top: solid 1px white;
   }
 
   a {
