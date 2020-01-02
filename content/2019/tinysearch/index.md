@@ -8,7 +8,7 @@ comments = [
 ]
 +++
 
-{% tldr() %}
+{% info() %}
 I wrote a basic search module that you can add to a static website.
 It's very lightweight (50kB-100kB gzipped) and should work with Hugo, Zola, and
 Jekyll. Only searching for entire words is supported. Try the search box on the
