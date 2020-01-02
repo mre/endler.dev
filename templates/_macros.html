@@ -21,7 +21,7 @@
 {% endmacro nicedate %}
 
 {% macro comments(comments) %}
-💬 Comments available on
+💬 Comments on
 {% for comment in comments %}
 <a href="{{ comment.url }}">{{ comment.name }}</a>
 {%- if not loop.last %},{% else %}.{% endif %}

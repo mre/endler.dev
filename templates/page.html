@@ -18,16 +18,21 @@
   {% endif %}
   {{ page.content | safe }}
 
-  {% if page.extra.comments %}
-  <div>
-    {{ macros::comments(comments=page.extra.comments) }}
-  </div>
-  {% endif %}
-  {% if page.extra.translations %}
-  <div>
-    {{ macros::translations(translations=page.extra.translations) }}
-  </div>
-  {% endif %}
+  <ul style="list-style: none; padding: 24px 0 0 0; margin-top: 40px; border-top: solid 1px white;">
+    <li>
+    💡Found an error in this article? Please <a href="https://github.com/mre/mre.github.io/edit/source/content/{{ page.path }}index.md">propose a change</a> on Github.
+    </li>
+    {% if page.extra.comments %}
+    <li>
+      {{ macros::comments(comments=page.extra.comments) }}
+    </li>
+    {% endif %}
+    {% if page.extra.translations %}
+    <li>
+      {{ macros::translations(translations=page.extra.translations) }}
+    </li>
+    {% endif %}
+  </ul>
 </article>
 {% endblock content %}
 
