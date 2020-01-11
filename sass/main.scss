@@ -45,7 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0px auto;
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 header {
@@ -104,10 +104,15 @@ main video {
   .container {
     flex-direction: row;
     justify-content: center;
+    margin-top: 70px;
   }
 
   main {
     padding: 0px 30px;
+  }
+
+  .bio span:after {
+    content: "Writes about Rust, low-level computing, and microwave clocks.";
   }
 }
 
@@ -204,6 +209,7 @@ a:hover {
 header nav ul {
   display: inline-block;
   padding-left: 0px;
+  margin-top: 0;
 }
 
 header nav li {

@@ -2,77 +2,92 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    {% set css = load_data(path="public/main.css") %}
+    <style>
+      {{ css | safe }}
+    </style>
+    {%- block header %}
+    <title>Matthias Endler</title>
+    {%- endblock header %} {%- if config.extra.id %}
+    <link rel="dns-prefetch" href="//www.google-analytics.com/" />
+    {%- endif %}
+    <link rel="canonical" href="{{ current_url | safe }}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=m2llJQPQq8"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=m2llJQPQq8"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=m2llJQPQq8"
+    />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg?v=m2llJQPQq8"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=m2llJQPQq8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="author" content="Matthias Endler" />
+    <meta
+      name="description"
+      content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go"
+    />
+  </head>
 
-<head>
-  {% set css = load_data(path="public/main.css") %}
-  <style>{{ css | safe }}</style>
-  {%- block header %}
-  <title>Matthias Endler</title>
-  {%- endblock header %}
-  {%- if config.extra.id %}
-  <link rel="dns-prefetch" href="//www.google-analytics.com/" />
-  {%- endif %}
-  <link rel="canonical" href="{{ current_url | safe }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=m2llJQPQq8">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=m2llJQPQq8">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=m2llJQPQq8">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=m2llJQPQq8" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon.ico?v=m2llJQPQq8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="author" content="Matthias Endler">
-  <meta name="description"
-    content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go" />
-</head>
+  <body>
+    <div class="container">
+      <header>
+        {% include "snippets/logo.html" %}
+        <p class="bio">
+          <span>
+            Backend engineer at trivago, open-source maintainer, speaker.
+          </span>
+          <a href="/about">About me.</a>
+        </p>
+        {% include "snippets/nav.html" %} {% include "snippets/search.html" %}
+      </header>
 
-<body>
-  <div class="container">
-    <header>
-      {% include "snippets/logo.html" %}
-      <p class="bio">
-        Backend engineer at trivago, open-source maintainer, speaker.
-        Writes about Rust, low-level computing, and microwave clocks.
-        <a href="/about">About me.</a>
-      </p>
-      {% include "snippets/nav.html" %}
-      {% include "snippets/search.html" %}
-    </header>
-
-    <main>
-      {% block content %}
-      {% for page in paginator.pages %}
-      <article class="homepage">
-        <p class='post-meta'>{{ macros::nicedate(daynum=page.day, date=page.date) }}</p>
-        <a href="{{ page.permalink | safe }}">
-          <h1>{{ page.title }}</h1>
-        </a>
-        {% if page.summary %}
-        {{ page.summary | striptags | safe }}
-        {% elif page.extra.excerpt %}
-        {{ page.extra.excerpt | striptags | safe }}
-        {% else %}
-        {{ page.content | striptags | truncate(length=300) | safe }}
-        {% endif %}
-        <a href="{{ page.permalink }}">More »</a>
-      </article>
-      {% endfor %}
-      {% if paginator.previous %}
-      <a class="button" href="{{  paginator.previous}}">« Next articles</a>
-      {% endif %}
-      {% if paginator.next %}
-      <a class="button" href="{{  paginator.next }}">Previous articles »</a>
-      {% endif %}
-      {% endblock content %}
-    </main>
-    <img alt="Page view statistics" style="display:none" src="https://ping.endler.dev/x.gif" />
-  </div>
-  {% block teaser %}
-  {% endblock teaser %}
-  {% include "snippets/footer.html" %}
-  {% if config.extra.id %}
-  {% include "snippets/analytics.html" %}
-  {% endif %}
-</body>
-
+      <main>
+        {% block content %} {% for page in paginator.pages %}
+        <article class="homepage">
+          <p class="post-meta">
+            {{ macros::nicedate(daynum=page.day, date=page.date) }}
+          </p>
+          <a href="{{ page.permalink | safe }}">
+            <h1>{{ page.title }}</h1>
+          </a>
+          {% if page.summary %} {{ page.summary | striptags | safe }} {% elif
+          page.extra.excerpt %} {{ page.extra.excerpt | striptags | safe }} {%
+          else %} {{ page.content | striptags | truncate(length=300) | safe }}
+          {% endif %}
+          <a href="{{ page.permalink }}">More »</a>
+        </article>
+        {% endfor %} {% if paginator.previous %}
+        <a class="button" href="{{  paginator.previous}}">« Next articles</a>
+        {% endif %} {% if paginator.next %}
+        <a class="button" href="{{  paginator.next }}">Previous articles »</a>
+        {% endif %} {% endblock content %}
+      </main>
+      <!-- <img
+        alt="Page view statistics"
+        style="display:none"
+        src="https://ping.endler.dev/x.gif"
+      /> -->
+    </div>
+    {% block teaser %} {% endblock teaser %} {% include "snippets/footer.html"
+    %} {% if config.extra.id %} {% include "snippets/analytics.html" %} {% endif
+    %}
+  </body>
 </html>
