@@ -2,6 +2,7 @@
 {% set github = load_data(path="static/icons/github.svg") %}
 {% set twitter = load_data(path="static/icons/twitter.svg") %}
 {% set rss = load_data(path="static/icons/rss.svg") %}
+{% set search = load_data(path="static/icons/search.svg") %}
 
 <nav>
     <ul>
@@ -22,8 +23,14 @@
             </a>
         </li>
         <li>
-            <a class="icon" href="https://feedly.com/i/subscription/feed/https://endler.dev/rss.xml" title="My RSS feed"
+            <a class="icon" href="https://feedly.com/i/subscription/feed/https%3A%2F%2Fendler.dev%2Frss.xml" title="My RSS feed"
                 aria-label="My RSS feed">{{ rss | safe }}</a>
+        </li>
+        <li>
+            <a class="searchicon icon" href="#searchbox" title="Search"
+                aria-label="Search through articles">
+                {{ search | safe }}
+            </a>
         </li>
     </ul>
 </nav>

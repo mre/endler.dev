@@ -350,7 +350,26 @@ input:focus::placeholder {
   color: white;
 }
 
+// Desktop
+@media not screen and (max-width: 800px) {
+  // The search box is hidden on mobile to safe space.
+  // This search icon can be clicked to expand the search box.
+  // It is only shown on mobile by default.
+  .searchicon {
+    display: none;
+  }
+}
+
+// Mobile
 @media screen and (max-width: 800px) {
+  #searchbox {
+    display: none;
+  }
+
+  #searchbox:target {
+    display: block;
+  }
+
   .autocomplete {
     width: 100%;
     font-size: 1.1em;
