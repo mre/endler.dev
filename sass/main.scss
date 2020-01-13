@@ -395,13 +395,13 @@ input:focus::placeholder {
 }
 
 @media (prefers-color-scheme: light) {
-  .logo_dark {
+  .logo_font_dark {
     display: none;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .logo_light {
+  .logo_font_light {
     display: none;
   }
 }

@@ -1,9 +1,12 @@
-{% set logo_light = load_data(path="static/logo_light.svg") %}
-{% set logo_dark = load_data(path="static/logo_dark.svg") %}
+{% set logo = load_data(path="static/logo.svg") %}
+{% set logo_font_light = load_data(path="static/logo_font_light.svg") %}
+{% set logo_font_dark = load_data(path="static/logo_font_dark.svg") %}
 
-<a href="/" aria-label="Go back to homepage">
-  <div style="position: relative; width: 175px; height: 153px; margin: auto;">
-    {{ logo_dark | safe }}
-    {{ logo_light | safe }}
-  </div>
-</a>
+  <a href="/" aria-label="Go back to homepage">
+    <div style="width: 110px; margin: auto;">
+      {{ logo | safe }}
+    </div>
+    <div style="width: 175px; margin: 10px auto 0px auto;">
+      {{ logo_font_light | safe }} {{ logo_font_dark | safe }}
+    </div>
+  </a>
