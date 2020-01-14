@@ -27,5 +27,5 @@ run serve: ## Serve website locally
 	zola serve
 
 .PHONY: stars
-stars:
+stars: ## Update Github stars statistics for my projects
 	count-github-stars mre --repo-limit 100 --no-orgs --stargazer-threshold 50 --template .star-counter-template.md
