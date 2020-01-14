@@ -401,12 +401,6 @@ input:focus::placeholder {
   margin: 0 auto;
 }
 
-.logo_font div {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 @media (prefers-color-scheme: light) {
   .logo_font_dark {
     display: none;
