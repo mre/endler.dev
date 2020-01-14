@@ -394,6 +394,19 @@ input:focus::placeholder {
   border-radius: 6px;
 }
 
+.logo_font {
+  position: relative;
+  width: 175px;
+  height: 34px;
+  margin: 0 auto;
+}
+
+.logo_font div {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media (prefers-color-scheme: light) {
   .logo_font_dark {
     display: none;
