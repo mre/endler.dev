@@ -383,11 +383,12 @@ Please be aware of these limitations:
 - Since we bundle all search indices for all articles into one static binary, I
   **only recommend to use it for low- to medium-size websites**. Expect around 4kB
   (non-compressed) per article.
-- The **compile times are abysmal** at the moment (around 1.5 minutes after a
+- <strike>The **compile times are abysmal** at the moment (around 1.5 minutes after a
   fresh install on my machine), mainly because we're compiling the Rust crate
-  from scratch every time we rebuild the index. If you have an idea on how to
-  improve that, feel free to add it to [this
-  issue](https://github.com/mre/tinysearch/issues/12).
+  from scratch every time we rebuild the index.</strike>  
+  Update: This is mostly fixed by now thanks to the awesome work of
+  [CephalonRho](https://github.com/CephalonRho) in PR
+  [#13](https://github.com/mre/tinysearch/pull/13). Thanks again!
 
 The final Wasm code is laser-fast because we save the roundtrips to a
 search-server. The instant feedback loop feels more like filtering a list than
