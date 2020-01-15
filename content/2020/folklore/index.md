@@ -8,6 +8,8 @@ All too often we use terminology without knowing the origin. The etymology of
 computer terms can be fascinating and entertaining. This project tries to
 preserve the surprising history of computing terms we use every day.
 
+Many know that spam comes from the meat or C++ is just C incremented, but few know...
+
 ## 404
 
 ## Log
@@ -141,3 +143,4 @@ https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-
 # Similar Projects
 
 - (awesome-computer-history)[https://github.com/watson/awesome-computer-history]
+- https://en.wikipedia.org/wiki/List_of_computer_term_etymologies
