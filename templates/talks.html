@@ -15,7 +15,8 @@
 {% for talk in data.talks %}
 <article>
     <h2 id="{{ talk.title | slugify }}">
-       {% if talk.type and talk.type != "Talk" %} {{ talk.type }}: {% endif %}{{ talk.title }}
+       {% if talk.type and talk.type != "Talk" %} {{ talk.type }}: {% endif %}
+       {{ talk.title }} [{{ talk.year }}]
     </h2>
     <p>
         {% if talk.recording %}{% set link = talk.recording %}
@@ -26,12 +27,13 @@
         {% if link %}
         <a aria-label="Link to talk" href="{{ link }}">
         {% endif %}
-            <img alt="Me speaking at {{ talk.event }} in {{ talk.date }}" style="width:100%;" src="{{ talk.image }}" />
+            <img alt="Me speaking at {{ talk.event }}, {{ talk.year }}" style="width:100%;" src="{{ talk.image }}" />
         {% if link %}
         </a>
         {% endif %}
     <ul>
-        <li><b>Event:</b> {{ talk.event }}, {{ talk.date }}</li>
+        <li><b>Event:</b> {{ talk.event }}</li>
+        <li><b>Date:</b> {{talk.month}} {{ talk.year }}</li>
         <li><b>Location:</b> {{ talk.location }}</li>
         {% if talk.collaboration %}<li>In collaboration with {{ talk.collaboration | markdown(inline=true) | safe }}</li>{% endif %}
         {% if talk.recording %}<li><a href="{{ talk.recording }}">Recording</a></li>{% endif %}
