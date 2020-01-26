@@ -24,6 +24,7 @@ presented some of the most beautiful features.
 We discussed possible use-cases for web assembly, cloud computing and more.
 """
 
+[[talks]]
 title = "Rust Embedded"
 image = "2019-rustfest.webp"
 event = "RustFest"
