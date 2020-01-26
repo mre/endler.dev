@@ -1,6 +1,6 @@
 # Hello!
 
-[![Build Status](https://travis-ci.org/mre/mre.github.io.svg?branch=source)](https://travis-ci.org/mre/mre.github.io)
+![Build Status](https://github.com/mre/mre.github.io/workflows/CI/badge.svg)
 
 This is the source of my personal website built with [zola](https://www.getzola.org/).  
 

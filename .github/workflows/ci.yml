@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches:
+      - source
+jobs:
+  build:
+    name: shalzz/zola-deploy-action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: shalzz/zola-deploy-action@master
+      env:
+        PAGES_BRANCH: master
+        BUILD_DIR: .
+        TOKEN: ${{ secrets.TOKEN }}
