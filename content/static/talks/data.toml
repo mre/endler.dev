@@ -1,11 +1,29 @@
 intro = """
-Good talks are fun and educational.
+Good talks are both, fun and educational.
 Here's a list of previous events where I spoke.
 I try to make every talk and every workshop as unique as possible.
 If you would like me to speak at your event, let's [get connected](mailto:matthias@endler.dev)!
 """
 
 [[talks]]
+title = "Introduction to Rust"
+image = "2020-programmierbar.webp"
+event = "programmier.bar"
+month = "January"
+year  = "2020"
+location = "Bad Nauheim, Germany"
+slides = "https://speakerdeck.com/mre/einfuhrung-in-rust"
+description = """
+Rust is a modern programming language that combines performance and security. 
+It is close to the system and offers powerful abstractions that are 
+strongly reminiscent of dynamic languages such as Ruby or Python. 
+Rust offers memory security without a garbage collector and makes 
+low-level programming easier and safer. 
+I gave an introductory lecture on Rust (in German) and 
+presented some of the most beautiful features. 
+We discussed possible use-cases for web assembly, cloud computing and more.
+"""
+
 title = "Rust Embedded"
 image = "2019-rustfest.webp"
 event = "RustFest"
