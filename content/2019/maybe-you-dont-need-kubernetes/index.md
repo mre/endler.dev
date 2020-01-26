@@ -6,7 +6,8 @@ date=2019-03-21
 excerpt="Kubernetes is the 800-pound gorilla of container orchestration.  It powers some of the biggest deployments worldwide, but it comes with a price tag..."
 social_img="scooter.png"
 comments = [
-  {name = "Hacker News", url = "https://news.ycombinator.com/item?id=19467067"},
+  {name = "Hacker News (March 2019)", url = "https://news.ycombinator.com/item?id=19467067"},
+  {name = "Hacker News (January 2020)", url = "https://news.ycombinator.com/item?id=22034291"},
   {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, 
 ]
 translations = [
@@ -33,24 +34,24 @@ analysis: API endpoints for metrics written in Go, Prometheus exporters, log
 parsers like Logstash or [Gollum], and databases like InfluxDB or Elasticsearch.
 Each of these services run in their own container. We needed a simple system to
 keep those jobs running.
- 
+
 We started with a list of requirements for container orchestration:
 
-* Run a fleet of services across many machines.
-* Provide an overview of running services.
-* Allow for communication between services.
-* Restart them automatically when they die.
-* Be manageable by a small team.
+- Run a fleet of services across many machines.
+- Provide an overview of running services.
+- Allow for communication between services.
+- Restart them automatically when they die.
+- Be manageable by a small team.
 
 On top of that, the following things were nice to have but not strictly
 required:
 
-* Tag machines by their capabilities (e.g., label machines with fast disks for
+- Tag machines by their capabilities (e.g., label machines with fast disks for
   I/O heavy services.)
-* Be able to run these services independently of any orchestrator (e.g. in
+- Be able to run these services independently of any orchestrator (e.g. in
   development).
-* Have a common place to share configurations and secrets.
-* Provide an endpoint for metrics and logging.
+- Have a common place to share configurations and secrets.
+- Provide an endpoint for metrics and logging.
 
 ## Why Kubernetes was not a good fit for us
 
@@ -84,10 +85,10 @@ Kubernetes comes with [amazing
 features](https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/),
 that make container orchestration at scale more manageable:
 
-* Fine-grained [rights management]
-* [Custom controllers] allow getting logic into the cluster. These are just
+- Fine-grained [rights management]
+- [Custom controllers] allow getting logic into the cluster. These are just
   programs that talk to the Kubernetes API.
-* [Autoscaling]! Kubernetes can scale your services up and down on demand. It
+- [Autoscaling]! Kubernetes can scale your services up and down on demand. It
   uses service metrics to do this without manual intervention.
 
 The question is if you really need all those features. You can't rely on these
@@ -106,16 +107,16 @@ Nomad is the 20% of service orchestration that gets you 80% of the way. All it
 does is manage deployments. It takes care of your rollouts and restarts your
 containers in case of errors, and that's about it.
 
-The entire point of Nomad is that it does *less*: it doesn’t include
+The entire point of Nomad is that it does _less_: it doesn’t include
 fine-grained rights management or [advanced network policies], and that’s by
 design. Those components are provided as enterprise services, by a third-party,
 or not at all.
 
 I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good
 for small, mostly independent services. If you need more control, you'll have to
-build it yourself or use a different approach. Nomad is *just* an orchestrator.
+build it yourself or use a different approach. Nomad is _just_ an orchestrator.
 
-The best part about Nomad is that it's easy to *replace*. There is little to no
+The best part about Nomad is that it's easy to _replace_. There is little to no
 vendor lock-in because the functionality it provides can easily be integrated
 into any other system that manages services. It just runs as a plain old single
 binary on every machine in your cluster; that's it!
@@ -152,10 +153,10 @@ way, Prometheus finds the services via Consul and periodically scrapes the
 
 There are many other examples for extensibility:
 
-* Trigger a Jenkins job using a webhook and Consul watches to redeploy your
+- Trigger a Jenkins job using a webhook and Consul watches to redeploy your
   Nomad job on service config changes.
-* Use Ceph to add a distributed file system to Nomad.
-* Use [fabio] for load balancing.
+- Use Ceph to add a distributed file system to Nomad.
+- Use [fabio] for load balancing.
 
 All of this allowed us to [grow our infrastructure organically](https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/) without too much
 up-front commitment.
@@ -171,7 +172,7 @@ Compared to Kubernetes, there is far less momentum behind Nomad. Kubernetes has
 seen around 75.000 commits and 2000 contributors so far, while Nomad sports about
 14.000 commits and 300 contributors. It will be hard for Nomad to keep up with
 the velocity of Kubernetes, but maybe it doesn’t have to! The scope is much more
-narrow and the smaller community could also mean that it'll be easier to get your 
+narrow and the smaller community could also mean that it'll be easier to get your
 pull request accepted, in comparison to Kubernetes.
 
 ## Summary
@@ -195,35 +196,33 @@ sometimes the other. Both have their right to exist.
 
 Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Simon Brüggen], [Arne Claus], [Inga Feick], [Wolfgang Gassler], [Barnabas Kutassy], [Perry Manuk], [Patrick Pokatilo], and [Jakub Sacha] for reviewing drafts of this article.
 
-
 [advanced network policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
-[Amazon EKS]: https://aws.amazon.com/eks/
-[Autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+[amazon eks]: https://aws.amazon.com/eks/
+[autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 [bugs]: https://github.com/hashicorp/nomad/issues?q=is%3Aopen+is%3Aissue+label%3Abug
-[ConfigMaps]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
-[Consul]: https://www.consul.io/
-[Control Plane]: https://kubernetes.io/docs/concepts/#kubernetes-control-plane
-[Custom controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
-[DaemonSet]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+[configmaps]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
+[consul]: https://www.consul.io/
+[control plane]: https://kubernetes.io/docs/concepts/#kubernetes-control-plane
+[custom controllers]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers
+[daemonset]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 [fabio]: https://github.com/fabiolb/fabio
 [filebeat]: https://github.com/elastic/beats/tree/master/filebeat
-[Gollum]: https://github.com/trivago/gollum
-[Google Kubernetes Engine]: https://cloud.google.com/kubernetes-engine/
+[gollum]: https://github.com/trivago/gollum
+[google kubernetes engine]: https://cloud.google.com/kubernetes-engine/
 [helm]: https://helm.sh/
-[Loki]: https://grafana.com/loki
+[loki]: https://grafana.com/loki
 [missing features]: https://github.com/hashicorp/nomad/issues/698
-[Nomad]: https://www.nomadproject.io/
+[nomad]: https://www.nomadproject.io/
 [rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 [service tags]: https://www.nomadproject.io/docs/job-specification/service.html#tags
-[Vault]: https://www.vaultproject.io/
-
-[Arne Claus]: https://twitter.com/arnecls
-[Barnabas Kutassy]: https://twitter.com/kassybas
-[Esteban Barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
-[Inga Feick]: https://github.com/IngaFeick
-[Jakub Sacha]: http://jakubsacha.pl/
-[Patrick Pokatilo]: https://github.com/SHyx0rmZ
-[Perry Manuk]: https://github.com/perrymanuk
-[Simon Brüggen]: https://github.com/m3t0r
-[Wolfgang Gassler]: https://twitter.com/schafele
-[Jorge-Luis Betancourt]: http://jorgelbg.github.io/
+[vault]: https://www.vaultproject.io/
+[arne claus]: https://twitter.com/arnecls
+[barnabas kutassy]: https://twitter.com/kassybas
+[esteban barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
+[inga feick]: https://github.com/IngaFeick
+[jakub sacha]: http://jakubsacha.pl/
+[patrick pokatilo]: https://github.com/SHyx0rmZ
+[perry manuk]: https://github.com/perrymanuk
+[simon brüggen]: https://github.com/m3t0r
+[wolfgang gassler]: https://twitter.com/schafele
+[jorge-luis betancourt]: http://jorgelbg.github.io/
