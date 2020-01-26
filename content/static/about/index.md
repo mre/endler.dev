@@ -28,7 +28,7 @@ path = "about"
     }
 </style>
 
-<img class="fancy" src="./matthias.jpg" alt="Matthias Endler's profile photo" />
+<img class="fancy" src="about/matthias.jpg" alt="Matthias Endler's profile photo" />
 
 I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf, Germany.
 

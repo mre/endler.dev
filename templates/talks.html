@@ -27,7 +27,7 @@
         {% if link %}
         <a aria-label="Link to talk" href="{{ link }}">
         {% endif %}
-            <img alt="Me speaking at {{ talk.event }}, {{ talk.year }}" style="width:100%;" src="{{ talk.image }}" />
+            <img alt="Me speaking at {{ talk.event }}, {{ talk.year }}" style="width:100%;" src="talks/{{ talk.image }}" />
         {% if link %}
         </a>
         {% endif %}
