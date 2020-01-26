@@ -28,4 +28,4 @@ run serve: ## Serve website locally
 
 .PHONY: stars
 stars: ## Update Github stars statistics for my projects
-	count-github-stars mre --repo-limit 100 --no-orgs --stargazer-threshold 50 --template .star-counter-template.md
+	count-github-stars mre --repo-limit 100 --no-orgs --stargazer-threshold 50 --template .star-counter-template.md > content/static/about/stars
