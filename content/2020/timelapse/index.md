@@ -127,10 +127,6 @@ okay with that. I doubt it, though. Here's to the next ten years!
 
 🎬 [Download timelapse on Github](https://github.com/mre/timelapse).
 
-## Credits
-
-Thanks to all past and future contributors: abnerpc, cmangla, gkpln3, Kerl1310, orcutt989, seleregb, ShaneCreedon, and ShreyaPrabhu.
-
 ## Bonus
 
 The video at the beginning is a timelapse of how I finish this article.  
