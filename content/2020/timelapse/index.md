@@ -4,7 +4,7 @@ date=2020-02-04
 social_img="timelapse.png"
 +++
 
-{{ video(id="_QEmxAZqQhE", preview="timelapse.png") }}
+{{ video(id="_QEmxAZqQhE", preview="timelapse.jpg") }}
 
 [Timelapse](https://github.com/mre/timelapse) is a little open-source screen
 recorder for macOS. It takes a screenshot every second and creates a movie in
