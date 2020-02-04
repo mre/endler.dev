@@ -1,49 +1,69 @@
 +++
-title="What Happened In The 2010s - Programmer Edition"
+title="What Happened To Programming In The 2010s?"
 date=2020-01-01
 draft=true
 +++
 
-Recently, I read an article titled ["What Happened In The
-2010s"](https://avc.com/2019/12/what-happened-in-the-2010s/) by Fred Wilson. It
-is covering quite a wide variety of topics from tech to business. This inspired
-me to share my impressions on a related subject: _How programming languages and
-tools changed over the last decade._
+A while ago, I read an article titled ["What Happened In The
+2010s"](https://avc.com/2019/12/what-happened-in-the-2010s/) by Fred Wilson. The
+article deals with the progress in technology and business in the last 10 years.
+This inspired me to share my impressions on a much smaller, but related topic:
+_What Happened To Programming In The 2010s?_
 
-## Where do we even start?
+## Where to start?
 
-From a bird's eye view, programming computers is still the same as in 2009: you
-write a program, feed it to a computer and get some output. But if we look
-closer, we find that _a lot_ has changed in the past decade. Many things on the
-list sound obvious becauswe we take them for granted now.
+From a mile-high perspective, programming is still the same as a decade ago: you
+write a program with an editor, feed it to a computer and receive some output.
+But if we look closer, we find that _a lot_ has changed in the past decade. Many
+things on the list sound obvious, because we take them for granted now.
 
 Thinking back to 2009, I still wrote [jQuery](https://jquery.com/) plugins, ran
-a few websites on shared hosting services and uploaded content via FTP. Version
-control was done with SVN &mdash; if at all. Code was copy-and-pasted from
-dubious forums, other websites, or hand-transcribed from books. StackOverflow
-was still in its infancy.
+a few websites on shared hosting services and sometimes uploaded content via
+FTP.
+Code was copy-and-pasted from dubious forums, other websites, or hand-transcribed from
+books. StackOverflow was still in its infancy.
+Version control was done with SVN &mdash; if at all.
+I joined Github on 3rd January 2010.
 
-## Explosion of new programming languages
+## An Explosion of New Programming Languages
 
-The last decade saw a big number of new and exciting programming languages: Go,
-Kotlin, Swift, Dart, Rust, Typescript, Julia, Elixir, Elm, Crystal, Nim to name
-a few.
+The last decade saw a huge number of new and exciting programming languages! Go,
+Kotlin, Swift, Dart, Rust, Typescript, Julia, Elixir, Elm, Crystal, Nim just to
+name a few.
 
 **ALL** of the above are developed in the open now and the source code is
-available on Github. That means, everyone can contribute development. Open
-Source is the default now!
+available on Github. That means, everyone can contribute to their development;
+Open Source is the default.
 
 Each of those languages brought something new to the table, that made them
 popular. Those features can be classified into a few categories:
 
 - Type system: Kotlin and Swift support [nullable types], Typescript brings
-  types to JavaScript,...
-- Performance: Go adds Goroutines and channels, Rust avoids Garbage Collector
-  overhead,...
+  types to JavaScript, Algebraic datatypes are available in
+  Kotlin, Swift, Typescript or Rust.
+- Performance: Go made Goroutines and channels mainstream, Rust avoids Garbage Collector
+  overhead.
 - Interoperability: Dart compiles to JavaScript, Elixir interfaces with
-  Erlang,...
+  Erlang, Kotlin with Java, and Swift with Objective-C.
 
 [nullable types]: https://en.wikipedia.org/wiki/Nullable_type
+
+## Moore's Law
+
+Cloud computing became the norm
+Kubernetes
+Nomad
+
+Async
+c10k problem
+parallel concurrent execution
+GPU 
+tensorflow
+machine learning
+iPython notebooks Data Science was born
+"DevOps"
+
+## Mobile First
 
 By 2020, [over 50% of global web pages are served to mobile
 phones](https://www.cleveroad.com/blog/discover-the-pros-and-cons-of-mobile-apps-vs-mobile-websites).
