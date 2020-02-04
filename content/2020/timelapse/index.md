@@ -1,7 +1,7 @@
 +++
 title="A Timelapse of Timelapse"
 date=2020-02-04
-social_img="timelapse.png"
+social_img="timelapse_social.png"
 [extra]
 excerpt="Timelapse is a little open-source screen recorder for macOS. It takes a screenshot every second and creates a movie in the end. To celebrate its unlikely 1.0 release today, I present here a timelapse of this project's journey. It just took ten years to get here."
 +++
