@@ -6,7 +6,7 @@ function lightEmbedInit() {
     v = document.getElementsByClassName("light-video-embed");
 
   for (n = 0; n < v.length; n++) {
-    v[n].onclick = function() {
+    v[n].onclick = function () {
       var id = this.dataset.id;
       var iframe = document.createElement("iframe");
       var embed = "https://www.youtube.com/embed/ID?autoplay=1";
