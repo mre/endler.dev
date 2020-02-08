@@ -9,6 +9,9 @@ computer terms can be fascinating and entertaining. This project tries to
 preserve the surprising history of computing terms we use every day.
 
 Many know that spam comes from the meat or C++ is just C incremented, but few know...
+C# = (C++)++ (four plusses)
+
+PNG: PNG's Not GIF
 
 ## 404
 
