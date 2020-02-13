@@ -74,7 +74,7 @@ reason why Vim is using `/` for search or why the pipe symbol is `|`: both are
 easy to reach! It all makes sense now!
 (For a fun time, try that on a German keyboard!)  
 
-I now understand why Mircosoft chose `\\` as a directory separator: it's easily
+I now understand why Mircosoft chose `\` as a directory separator: it's easily
 accessible from a US keyboard. On the German layout, it's&hellip; just&hellip; awful
 (`Alt Gr`+`ß` on Windows, `Shift` + `Option` + `7` on Mac).
 
