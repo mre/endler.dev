@@ -35,7 +35,7 @@ Along the way, they keep making the same basic mistakes:
 
 ## Makefiles are scary!
 
-If you think that `make` is scary, you probably think of complicated build machinery for [big](https://community.kde.org/Guidelines_and_HOWTOs/Build_from_source) [software](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/linux_build_instructions.md) projects.
+If you think that `make` is scary, you probably think of complicated build machinery for [big](https://community.kde.org/Guidelines_and_HOWTOs/Build_from_source) [software](https://chromium.googlesource.com/chromium/src/+/master/docs/linux/build_instructions.md) projects.
 It doesn't need to be that way. Let's hear what the author of `make`, [Stuart Feldman](https://en.wikipedia.org/wiki/Stuart_Feldman) has to say:
 
 > It began with an elaborate idea of a dependency analyzer, boiled down to something much simpler, and turned into Make that weekend. Use of tools that were still wet was part of the culture. Makefiles were text files, not magically encoded binaries because **that was the Unix ethos: printable, debuggable, understandable stuff.**  

@@ -21,7 +21,7 @@ low. These people are stemming their strong will from an intrinsic curiosity.
 Sure, I love what I do. I want to be a programmer for the rest of my life, but sometimes it seems simply too hard to finish a project.
 I get scared by the big picture and fear that I won't finish on time. What I need is a different mindset.
 
-Dhanji R. Prasanna, a former Google Wave team member [made this observation](http://rethrick.com/#mmm)
+Dhanji R. Prasanna, a former Google Wave team member [made this observation](https://web.archive.org/web/20150717074857/http://rethrick.com/p/mmm/)
 
 > And this is the essential broader point--as a programmer you must have a series of wins, every single day. It is the Deus Ex Machina of hacker success. It is what makes you eager for the next feature, and the next after that.
 

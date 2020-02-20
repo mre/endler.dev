@@ -19,7 +19,7 @@ There's a depressingly high chance that we've never met before &mdash; which is 
 For some context: I come from dynamically typed languages like Python and PHP.
 Rust was the first language that allowed me to write *real* low-level code without feeling like [arguing with a bouncer](https://www.youtube.com/watch?v=5uurT7yVWkQ). 
 
-To me, Rust is not a [fireflower](https://brson.github.io/fireflowers/), it's my own personal [Megazord](https://en.wikipedia.org/wiki/List_of_Zords)<sup><a href="#fn1" id="ref1">1</a></sup>.
+To me, Rust is not a [fireflower](https://brson.github.io/fireflowers/), it's my own personal [Megazord](https://en.wikipedia.org/wiki/Power_Rangers)<sup><a href="#fn1" id="ref1">1</a></sup>.
 I want Rust to win, but for that, we need to tick a few points off the list.
 
 ## Compiler documentation for easier contribution

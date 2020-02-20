@@ -127,7 +127,7 @@ If you really want to dig deeper, here's the corresponding [source code from the
 Linux Kernel](
 https://github.com/torvalds/linux/blob/6ed0529fef09f50ef41d396cb55c5519e4936b16/fs/splice.c),
 but we don't need to know all the nitty-gritty details for now.
-Instead, we can just inspect the [header from the C implementation](http://webcache.googleusercontent.com/search?q=cache:OfSsRQea29gJ:www.sourcexr.com/articles/2014/02/23/avoid-data-copy-with-splice+&cd=1&hl=de&ct=clnk&gl=de):
+Instead, we can just inspect the header from the C implementation:
 
 ```C
 #include <fcntl.h>

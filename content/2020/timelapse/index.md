@@ -97,7 +97,7 @@ One year passes by, and [Kyle Jones](https://github.com/Kerl1310) adds some
 contribution guidelines, while I move the CI pipeline to the newly released
 Github actions.
 
-[Chaitanya](github.com/cmangla) fixed a bug where the program would hang when
+[Chaitanya](https://github.com/cmangla) fixed a bug where the program would hang when
 the recording stopped by [moving the video creation from threads to a separate
 process](https://github.com/mre/timelapse/pull/24). He continued to make the
 codebase more robust and became a core contributor, reviewing pull requests and
