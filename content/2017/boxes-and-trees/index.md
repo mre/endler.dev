@@ -176,7 +176,7 @@ Depending on your point of view, you might say this is either verbose or explici
 Compared to the Python version, it looked a bit too cluttered.
 
 Can we do better?
-Chris McDonald (Github profile was closed) helped me to come up with the following representation:
+[Chris McDonald](https://github.com/deepinthebuild) helped me to come up with the following representation:
 
 ```rust
 Tree::new(15)
