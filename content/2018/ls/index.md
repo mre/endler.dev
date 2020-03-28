@@ -9,13 +9,13 @@ comments = [
 ]
 +++
 
-
 In my series of [useless Unix tools rewritten in Rust](@/2017/yes/index.md), today I'm going to be covering one of my all-time favorites: `ls`.
 
 First off, let me say that you probably don't want to use this code as a replacement for `ls` on your local machine (although you could!).
 As we will find out, `ls` is actually quite a powerful tool under the hood.
 I'm not going to come up with a full rewrite, but instead only cover the very basic output that you would expect from calling `ls -l` on your command line.
 What is this output? I'm glad you asked.
+
 
 ## Expected output
 
@@ -173,7 +173,7 @@ But the format that we would like to have is something like this:
 Mar  9 01:24
 ```
 
-Thankfully, there is a library called `chrono`, which can read this format and [convert it into any human readable output]() we like:
+Thankfully, there is a library called `chrono`, which can read this format and convert it into any human readable output we like:
 
 ```rust
 let current: DateTime<Local> = DateTime::from(SystemTime::now());
