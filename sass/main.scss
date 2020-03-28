@@ -12,6 +12,9 @@ $grey-300: #b9b9b9;
 $grey-400: #555;
 $grey-500: #111;
 
+$monospace: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
+  Courier, monospace;
+
 /* Tiny reset */
 
 html,
@@ -149,7 +152,7 @@ code {
   background: $grey-200;
   border-radius: 6px;
   display: inline-block;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: $monospace;
   -moz-font-feature-settings: "liga" off;
   font-feature-settings: "liga" off;
   font-size: 16px;
@@ -171,6 +174,8 @@ blockquote {
 }
 
 pre {
+  font-family: $monospace;
+  font-size: 16px;
   padding: 10px;
   border-radius: 6px;
   overflow-x: auto;
