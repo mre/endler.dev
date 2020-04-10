@@ -1,17 +1,60 @@
 +++
-title="Computer Terms History"
-date=2020-01-01
+title="Hacker Folklore"
+date=2020-04-10
 draft=true
 +++
 
-All too often we use terminology without knowing the origin. The etymology of
-computer terms can be fascinating and entertaining. This project tries to
-preserve the surprising history of computing terms we use every day.
+All too often, we use terminology without knowing its origin. The etymology of
+computer terms can be fascinating and entertaining. This post tries to collect
+the surprising history of computing terms we use every day.
 
-Many know that spam comes from the meat or C++ is just C incremented, but few know...
-C# = (C++)++ (four plusses)
+## Well-known examples
 
-PNG: PNG's Not GIF
+**Spam**
+
+The term goes back to a sketch by British comedy group Monty Python from 1970.
+In the sketch, a cafe is including
+[Spam](https://en.wikipedia.org/wiki/Spam_(food)) (a brand of canned cooked
+pork) in almost every dish. The excessive amount of Spam mentioned is a
+reference to the ubiquity of it and other imported canned meat products in the
+UK after World War II (a period of rationing in the UK) as the country struggled
+to rebuild its agricultural base. Today, the term also refers to unsolicited
+electronic communications, for example by sending mass-emails or posting in
+forums and chats. [Reference](https://en.wikipedia.org/wiki/Spamming#History)
+
+**C++**
+
+C++ is a programming language based on C by Bjarne Stroustrup. The name is a
+programmer pun by Rick Mascitti, a coworker of Stroustrup. The `++` refers to
+the post-increment operator, that is common in many C-like languages. It
+increases the value of a variable by 1. In that sense, C++ can be seen as the
+spiritual "successor" of C.
+
+[Reference](https://en.wikipedia.org/wiki/C%2B%2B#History)
+
+**C#**
+
+Similarly to C++, C# is a C-like programming language. The name again refers to
+"incremental" improvements on top of C++. The `#` in the name looks like four
+plus signs. Hence `C# == (C++)++`. But on top of that, the name was also
+inspired by the musical notation where a sharp indicates that the written note
+should be made a semitone higher in pitch.
+[Reference](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Name)
+
+
+**PNG**
+
+Officially, PNG stands for *Portable Network Graphics*. It was born out of
+frustration over a CompuServe announcement in 1994 that programs supporting GIF
+would have to pay licensing fees from now on. A working group lead by hacker
+[Thomas Boutell](https://boutell.dev/) created the `.png` file format, a
+patent-free replacement for GIF. Therefore I prefer the format's unofficial
+name: *PNG's Not GIF*.
+
+[Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF) [Great
+article on PNG's
+history](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designers/05_09_97_1.html)
+
 
 ## 404
 
