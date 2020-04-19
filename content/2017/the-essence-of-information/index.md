@@ -12,7 +12,7 @@ Imagine a pile of socks that need to get sorted.
 Not exactly the most exciting pastime.
 You've put off this task for so long, that it will inevitably take an hour to be done.
 
-{{ figure(src="./big_pile.jpg", caption="Yes, there is a game about sorting socks." credits="It's called [Sort the Socks](https://itunes.apple.com/app/sort-the-socks/id438108346) and you can get it for free on the App Store.") }}
+{{ figure(src="./big_pile.jpg", caption="Yes, there is a game about sorting socks." credits="It's called [Sort the Socks](https://apps.apple.com/app/sort-the-socks/id438108346) and you can get it for free on the App Store.") }}
 
 Considering your options, you decide to get some help.
 Together with a friend you get to work. You finish in roughly half the time.

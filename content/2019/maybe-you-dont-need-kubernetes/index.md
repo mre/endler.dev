@@ -210,19 +210,19 @@ Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Sim
 [gollum]: https://github.com/trivago/gollum
 [google kubernetes engine]: https://cloud.google.com/kubernetes-engine/
 [helm]: https://helm.sh/
-[loki]: https://grafana.com/loki
+[loki]: https://grafana.com/oss/loki
 [missing features]: https://github.com/hashicorp/nomad/issues/698
 [nomad]: https://www.nomadproject.io/
 [rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
-[service tags]: https://www.nomadproject.io/docs/job-specification/service.html#tags
+[service tags]: https://www.nomadproject.io/docs/job-specification/service/#tags
 [vault]: https://www.vaultproject.io/
 [arne claus]: https://twitter.com/arnecls
 [barnabas kutassy]: https://twitter.com/kassybas
-[esteban barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717
+[esteban barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717/
 [inga feick]: https://github.com/IngaFeick
-[jakub sacha]: http://jakubsacha.pl/
+[jakub sacha]: https://jakubsacha.pl/
 [patrick pokatilo]: https://github.com/SHyx0rmZ
 [perry manuk]: https://github.com/perrymanuk
 [simon brüggen]: https://github.com/m3t0r
 [wolfgang gassler]: https://twitter.com/schafele
-[jorge-luis betancourt]: http://jorgelbg.github.io/
+[jorge-luis betancourt]: http://jorgelbg.me/

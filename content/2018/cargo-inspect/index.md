@@ -44,7 +44,7 @@ To find out more, read this [detailed write-up by Nico Matsakis](https://github.
 
 Anyway, the output looked surprisingly readable (see below). With some syntax highlighting and formatting, this could be quite a handy tool.
 
-I tried to use [`rustfmt`](https://github.com/rust-lang-nursery/rustfmt) on it, and it worked unreasonably well.
+I tried to use [`rustfmt`](https://github.com/rust-lang/rustfmt) on it, and it worked unreasonably well.
 Motivated by this quick win, I wrapped it up in a cargo subcommand and called it [`cargo-inspect`](https://github.com/mre/cargo-inspect).
 
 Let's try cargo-inspect on some real code!

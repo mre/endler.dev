@@ -405,7 +405,7 @@ Pizzamiglio](https://github.com/pizzamig) for reviewing drafts of this article.
 [jekyll]: https://github.com/mre/mre.github.io.v1
 [cobalt]: https://github.com/mre/mre.github.io.v2
 [zola]: https://www.getzola.org/
-[google]: https://cse.google.com/cse/
+[google]: https://cse.google.com/about
 [algolia]: https://www.algolia.com/
 [lunr.js]: https://lunrjs.com/
 [elasticlunr]: http://elasticlunr.com/

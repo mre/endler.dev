@@ -8,10 +8,9 @@ comments = [
   {name = "Hacker News", url = "https://news.ycombinator.com/item?id=15454352"},
 ]
 translations = [
-  {name = "Japanese", url = "http://postd.cc/a-little-story-about-the-yes-unix-command/"}
+  {name = "Japanese", url = "https://postd.cc/a-little-story-about-the-yes-unix-command/"}
 ]
 +++
-
 
 What's the simplest Unix command you know?  
 There's `echo`, which prints a string to stdout and `true`, which always terminates with an exit code of 0.
@@ -27,7 +26,7 @@ y
 (...you get the idea)
 ```
 
-What seems to be pointless in the beginning turns out to be pretty helpful  :
+What seems to be pointless in the beginning turns out to be pretty helpful :
 
 ```
 yes | sh boring_installation.sh
@@ -35,7 +34,6 @@ yes | sh boring_installation.sh
 
 Ever installed a program, which required you to type "y" and hit enter to keep going?
 `yes` to the rescue! It will carefully fulfill this duty, so you can keep watching [Pootie Tang](https://www.youtube.com/watch?v=yhBExhldRXQ).
-
 
 ## Writing yes
 
@@ -54,7 +52,7 @@ while True:
 ```
 
 Simple, eh? Not so quick!  
-Turns out, that program is quite slow. 
+Turns out, that program is quite slow.
 
 ```
 python yes.py | pv -r > /dev/null
@@ -83,10 +81,9 @@ fn main() {
 
 Some explanations:
 
-* The string we want to print in a loop is the first command line parameter and is named *expletive*. I learned this word from the `yes` manpage.
-* I use `unwrap_or` to get the *expletive* from the parameters. In case the parameter is not set, we use "y" as a default.
-* The default parameter gets converted from a string slice (`&str`) into an *owned* string on the heap (`String`) using `into()`.
-
+- The string we want to print in a loop is the first command line parameter and is named _expletive_. I learned this word from the `yes` manpage.
+- I use `unwrap_or` to get the _expletive_ from the parameters. In case the parameter is not set, we use "y" as a default.
+- The default parameter gets converted from a string slice (`&str`) into an _owned_ string on the heap (`String`) using `into()`.
 
 Let's test it.
 
@@ -95,7 +92,7 @@ cargo run --release | pv -r > /dev/null
    Compiling yes v0.1.0
     Finished release [optimized] target(s) in 1.0 secs
      Running `target/release/yes`
-[2.35MiB/s] 
+[2.35MiB/s]
 ```
 
 Whoops, that doesn't look any better. It's even slower than the Python version!
@@ -114,13 +111,13 @@ char **argv;
 
 No magic here.
 
-Compare that to the [128-line-version from the GNU coreutils, which is mirrored on Github](https://github.com/coreutils/coreutils/blame/master/src/yes.c). After 25 years, *it is still under active development!*
+Compare that to the [128-line-version from the GNU coreutils, which is mirrored on Github](https://github.com/coreutils/coreutils/blame/master/src/yes.c). After 25 years, _it is still under active development!_
 The last code change happened around a [year ago](https://github.com/coreutils/coreutils/commit/4cdb1703aff044de44d27e0558714542197f6dad).
 That's quite fast:
 
 ```
 # brew install coreutils
-gyes | pv -r > /dev/null 
+gyes | pv -r > /dev/null
 [854MiB/s]
 ```
 
@@ -220,9 +217,9 @@ fn main() {
 
 Now that's a whole different ballgame!
 
-* We prepare a filled string buffer, which will be reused for each loop.
-* [Stdout is protected by a lock](https://doc.rust-lang.org/std/io/struct.Stdout.html#method.lock). So, instead of constantly acquiring and releasing it, we keep it all the time.
-* We use a the platform-native [`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html) and [`std::borrow::Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html) to avoid unnecessary allocations.
+- We prepare a filled string buffer, which will be reused for each loop.
+- [Stdout is protected by a lock](https://doc.rust-lang.org/std/io/struct.Stdout.html#method.lock). So, instead of constantly acquiring and releasing it, we keep it all the time.
+- We use a the platform-native [`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html) and [`std::borrow::Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html) to avoid unnecessary allocations.
 
 The only thing that I could contribute was [removing an unnecessary `mut`](https://github.com/cgati/yes/pull/3/files). 😅
 

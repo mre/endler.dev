@@ -16,9 +16,7 @@ As we will find out, `ls` is actually quite a powerful tool under the hood.
 I'm not going to come up with a full rewrite, but instead only cover the very basic output that you would expect from calling `ls -l` on your command line.
 What is this output? I'm glad you asked.
 
-
 ## Expected output
-
 
 ```
 > ls -l
@@ -30,16 +28,16 @@ drwxr-xr-x 2 mendler  staff    13468 Feb  4 11:19 Top Secret
 
 Your output may vary, but generally, there are a couple of notable things going on. From left to right, we've got the following fields:
 
-* The `drwx` things in the beginning are the *file permissions* (also called the file mode). If `d` is set, it's a directory. `r` means read, `w` means write and `x` execute.
+- The `drwx` things in the beginning are the _file permissions_ (also called the file mode). If `d` is set, it's a directory. `r` means read, `w` means write and `x` execute.
   This `rwx` pattern gets repeated three times for the current user, the group, and other computer users respectively.
-* Next we got the hardlink count when referring to a file, or the number of contained directory entries when referring to a directory. ([Reference](https://unix.stackexchange.com/a/43047))
-* Owner name
-* Group name
-* Number of bytes in the file
-* Date when the file was last modified
-* Finally, the path name
+- Next we got the hardlink count when referring to a file, or the number of contained directory entries when referring to a directory. ([Reference](https://unix.stackexchange.com/a/43047))
+- Owner name
+- Group name
+- Number of bytes in the file
+- Date when the file was last modified
+- Finally, the path name
 
-For more in-depth information, I can recommend reading the manpage of `ls` from the [GNU coreutils](http://man7.org/linux/man-pages/man1/ls.1.html) used in most Linux distributions and the one from [Darwin](https://web.archive.org/web/20170909164539/https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/ls.1.html) (which powers MacOS). 
+For more in-depth information, I can recommend reading the manpage of `ls` from the [GNU coreutils](https://linux.die.net/man/1/ls) used in most Linux distributions and the one from [Darwin](https://web.archive.org/web/20170909164539/https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/ls.1.html) (which powers MacOS).
 
 Whew, that's a lot of information for such a tiny tool.
 But then again, it can't be so hard to port that to Rust, right? Let's get started!
@@ -91,12 +89,11 @@ target
 It prints the files and exits. Simple enough.
 
 We should stop for a moment and celebrate our success, knowing that we just wrote our first little Unix utility from scratch.
-*Pro Tip*: You can install the binary with `cargo install` and call it like any other binary from now on.
+_Pro Tip_: You can install the binary with `cargo install` and call it like any other binary from now on.
 
 But we have higher goals, so let's continue.
 
-
-## Adding a parameter to specify the directory 
+## Adding a parameter to specify the directory
 
 Usually, if we type `ls mydir`, we expect to get the file listing of no other directory than `mydir`. We should add the same functionality to our version.
 
@@ -143,7 +140,6 @@ There are tons of configuration options, so it's worth checking out the [project
 
 Also note, that we changed the type of the path variable from `Path` to `PathBuf`. The difference is, that [`PathBuf` owns the inner path string](https://doc.rust-lang.org/src/std/path.rs.html#1107-1109), while `Path` [simply provides a reference to it](https://doc.rust-lang.org/src/std/path.rs.html#1629-1631). The relationship is similar to `String` and `&str`.
 
-
 ## Reading the modification time
 
 Now let's deal with the metadata.
@@ -188,7 +184,6 @@ this prints
 
 (Yeah, I know it's getting late.)
 
-
 Armed with that knowledge, we can now read our file modification time.
 
 ```
@@ -225,7 +220,6 @@ It means "right align this field with a space padding of 5" - just like our bigg
 
 Similarly, we retrieved the size in bytes with `metadata.len()`.
 
-
 ## Unix file permissions are a zoo
 
 Reading the file permissions is a bit more tricky.
@@ -234,9 +228,9 @@ There are even [differences between the Unix derivatives](https://en.wikipedia.o
 
 Wikipedia lists a few extensions to the file permissions that you might encounter:
 
-* \+ (plus) suffix indicates an [access control list](https://en.wikipedia.org/wiki/Access_control_list) that can control additional permissions.
-* . (dot) suffix indicates an [SELinux context](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts) is present. Details may be listed with the command ls -Z.
-* @ suffix indicates [extended file attributes](https://en.wikipedia.org/wiki/Extended_file_attributes) are present.
+- \+ (plus) suffix indicates an [access control list](https://en.wikipedia.org/wiki/Access_control_list) that can control additional permissions.
+- . (dot) suffix indicates an [SELinux context](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-selinux_contexts) is present. Details may be listed with the command ls -Z.
+- @ suffix indicates [extended file attributes](https://en.wikipedia.org/wiki/Extended_file_attributes) are present.
 
 That just goes to show, that there are a lot of important details to be considered when implementing this in real life.
 
@@ -247,19 +241,19 @@ For now, we just stick to the basics and assume we are on a platform that suppor
 Behind the `r`, the `w` and the `x` are in reality octal numbers. That's easier for computers to work with and many hardcore users even prefer to type the numbers over the symbols.
 The ruleset behind those octals is as follows. I took that from the `chmod` manpage.
 
-		Modes may be absolute or symbolic. 
-		An absolute mode is an octal number constructed 
-		from the sum of one or more of the following values
+    	Modes may be absolute or symbolic.
+    	An absolute mode is an octal number constructed
+    	from the sum of one or more of the following values
 
-		 0400    Allow read by owner.
-		 0200    Allow write by owner.
-		 0100    For files, allow execution by owner.
-		 0040    Allow read by group members.
-		 0020    Allow write by group members.
-		 0010    For files, allow execution by group members.
-		 0004    Allow read by others.
-		 0002    Allow write by others.
-		 0001    For files, allow execution by others.
+    	 0400    Allow read by owner.
+    	 0200    Allow write by owner.
+    	 0100    For files, allow execution by owner.
+    	 0040    Allow read by group members.
+    	 0020    Allow write by group members.
+    	 0010    For files, allow execution by group members.
+    	 0004    Allow read by others.
+    	 0002    Allow write by others.
+    	 0001    For files, allow execution by others.
 
 For example, to set the permissions for a file so that the owner can read, write and execute it and nobody else can do anything would be 700 (400 + 200 +100).
 
@@ -302,7 +296,6 @@ and calls `triplet` on it.
 For each flag `read`, `write`, and `execute`, it runs a binary `&` operation on `mode`.
 The output is matched exhaustively against all possible permission patterns.
 
-
 ```rust
 fn triplet(mode: u16, read: u16, write: u16, execute: u16) -> String {
 	match (mode & read, mode & write, mode & execute) {
@@ -335,4 +328,4 @@ That's it! You can find the [final version of our toy `ls` on Github](https://gi
 We are still far away from a full-fledged `ls` replacement, but at least we learned a thing or two about its internals.
 
 If you're looking for a proper `ls` replacement written in Rust, go check out [`exa`](https://the.exa.website/).
-If, instead, you want to read another blog post from the same series, check out [*A Little Story About the `yes` Unix Command*](@/2017/yes/index.md).
+If, instead, you want to read another blog post from the same series, check out [_A Little Story About the `yes` Unix Command_](@/2017/yes/index.md).

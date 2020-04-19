@@ -14,7 +14,7 @@ the surprising history of computing terms we use every day.
 
 The term goes back to a sketch by British comedy group Monty Python from 1970.
 In the sketch, a cafe is including
-[Spam](https://en.wikipedia.org/wiki/Spam_(food)) (a brand of canned cooked
+[Spam](<https://en.wikipedia.org/wiki/Spam_(food)>) (a brand of canned cooked
 pork) in almost every dish. The excessive amount of Spam mentioned is a
 reference to the ubiquity of it and other imported canned meat products in the
 UK after World War II (a period of rationing in the UK) as the country struggled
@@ -39,22 +39,20 @@ Similarly to C++, C# is a C-like programming language. The name again refers to
 plus signs. Hence `C# == (C++)++`. But on top of that, the name was also
 inspired by the musical notation where a sharp indicates that the written note
 should be made a semitone higher in pitch.
-[Reference](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Name)
-
+[Reference](<https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Name>)
 
 **PNG**
 
-Officially, PNG stands for *Portable Network Graphics*. It was born out of
+Officially, PNG stands for _Portable Network Graphics_. It was born out of
 frustration over a CompuServe announcement in 1994 that programs supporting GIF
 would have to pay licensing fees from now on. A working group lead by hacker
 [Thomas Boutell](https://boutell.dev/) created the `.png` file format, a
 patent-free replacement for GIF. Therefore I prefer the format's unofficial
-name: *PNG's Not GIF*.
+name: _PNG's Not GIF_.
 
 [Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF) [Great
 article on PNG's
 history](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designers/05_09_97_1.html)
-
 
 ## 404
 
@@ -85,7 +83,7 @@ Sources:
 
 - https://en.wikipedia.org/wiki/Law_of_triviality
 - (History behind the original bikeshed email on the FreeBSD mailing
-  list)[http://phk.freebsd.dk/sagas/bikeshed.html]
+  list)[http://phk.freebsd.dk/sagas/bikeshed/]
 
 ## Boilerplate
 
@@ -190,3 +188,4 @@ https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-
 
 - (awesome-computer-history)[https://github.com/watson/awesome-computer-history]
 - https://en.wikipedia.org/wiki/List_of_computer_term_etymologies
+- http://phk.freebsd.dk/sagas/

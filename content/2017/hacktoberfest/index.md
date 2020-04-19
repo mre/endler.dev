@@ -7,7 +7,7 @@ excerpt="October is the perfect time to contribute to Open Source &mdash; at lea
 social_img="2017_hacktoberfest.png"
 +++
 
-{{ figure(src="./hacktoberfest.svg", caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](http://www.freepik.com/free-vector/food-and-items-for-the-oktoberfest-festival_911290.htm)")}} 
+{{ figure(src="./hacktoberfest.svg", caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](https://www.freepik.com/free-vector/food-items-oktoberfest-festival_911290.htm)")}} 
 
 
 October is the perfect time to contribute to Open Source &mdash; at least according to Github and DigitalOcean.
@@ -26,7 +26,7 @@ We all want our work to be appreciated.
 Therefore I suggest to start contributing to medium-sized projects, because they gained some momentum but are still driven by a small number of maintainers, so help is always welcome. By contrast, tiny projects are mostly useful to the original author only, while large projects can be intimidating at first and have stricter guidelines.
 
 For now, let's look at repositories with 5-100 stars, which were updated within this year.
-Github supports [advanced search options based on Lucene syntax](https://help.github.com/articles/understanding-the-search-syntax/). 
+Github supports [advanced search options based on Lucene syntax](https://help.github.com/articles/understanding-the-search-syntax). 
 
 ```
 language:Rust stars:5..100 pushed:>2017-01-01
@@ -53,7 +53,7 @@ After the installation is done, we also need to get the nightly version of the c
 rustup install nightly
 ```
 
-Questions so far? Find more detailed installation instructions [here](http://asquera.de/blog/2017-03-03/setting-up-a-rust-devenv/).
+Questions so far? Find more detailed installation instructions [here](https://asquera.de/blog/2017-03-03/setting-up-a-rust-devenv/).
 
 ## 3. Fork the project and clone it to your computer
 
@@ -80,7 +80,7 @@ If not, you might want to consult the `README` for further instructions. (But fe
 
 ## 5. The magic sauce
 
-Here's the trick: we use a [linter](https://en.wikipedia.org/wiki/Lint_(software)) called [clippy](https://github.com/rust-lang-nursery/rust-clippy) to show us improvement areas in any Rust codebase.
+Here's the trick: we use a [linter](https://en.wikipedia.org/wiki/Lint_(software)) called [clippy](https://github.com/rust-lang/rust-clippy) to show us improvement areas in any Rust codebase.
 
 To get clippy, install it like so:
 
@@ -142,7 +142,7 @@ Congratulations! You've contributed to the Rust ecosystem. Thank you! 🎉
 ## Trophy case
 
 * [m4b/goblin](https://github.com/m4b/goblin/pull/55)
-* [fitzgen/cpp_demangle](https://github.com/fitzgen/cpp_demangle/pull/100)
+* [fitzgen/cpp_demangle](https://github.com/gimli-rs/cpp_demangle/pull/100)
 * [fdehau/tui-rs](https://github.com/fdehau/tui-rs/pull/19)
 * [christophertrml/rs-natural](https://github.com/christophertrml/rs-natural/pull/15)
 

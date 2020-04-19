@@ -25,7 +25,7 @@ worked.
 
 Uber and Lyft can't be everywhere from the start. While they grow their
 business, others have the opportunity to be faster. There's an Uber clone in
-China ([DiDi](http://didichuxing.com])) and one in Africa and the Middle East
+China ([DiDi](https://didichuxing.com])) and one in Africa and the Middle East
 ([Careem](https://www.careem.com/en-ae/)) and basically one for every
 [country](https://gett.com/il/)
 [in](https://www.cnbc.com/2019/04/11/uber-s-1-risk-factors-competitors-deleteuber-campaign-reputation.html)

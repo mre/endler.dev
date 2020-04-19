@@ -27,7 +27,7 @@ So I naively sent a mail to Github, asking if I could bag the name as it seemed 
 To my surprise, I got an answer.
 The response came from a guy named [Chris Wanstrath](https://github.com/defunkt).
 
-All he wrote was "it's yours." 
+All he wrote was "it's yours."
 
 That was the moment I fell in love with Github.
 I felt encouraged to collaborate on projects, that everybody could contribute something valuable.
@@ -49,16 +49,16 @@ After so many years, a pull-request still feels like the most personal gift anyo
 
 After a while, I started to admire some Github employees deeply:
 
-* [Zach Holman](https://zachholman.com/) (who is about my age) is a great [writer](https://zachholman.com/talk/utc-is-enough-for-everyone-right), [speaker](https://www.youtube.com/watch?v=YVb2GsJHejo), and one of the most [creative developers](https://github.com/holman/spark) I can think of.
-* [Scott Chacon](http://scottchacon.com/about.html), who [taught me a lot about git](https://git-scm.com/book/de/v2) and whose presentation tool, [showoff](https://github.com/puppetlabs/showoff), I've [used at University](https://github.com/mre/Talks/tree/master/cuda/Presentation).
-* [Tom Preston-Werner](https://github.com/mojombo), who I admire for refusing an offer from Microsoft to pursue his dream and build Github, for establishing a [super-nerdy company culture](https://www.wired.com/2013/09/github-office/), and for [Jekyll](https://jekyllrb.com/).
+- [Zach Holman](https://zachholman.com/) (who is about my age) is a great [writer](https://zachholman.com/talk/utc-is-enough-for-everyone-right), [speaker](https://www.youtube.com/watch?v=YVb2GsJHejo), and one of the most [creative developers](https://github.com/holman/spark) I can think of.
+- [Scott Chacon](https://scottchacon.com/about.html), who [taught me a lot about git](https://git-scm.com/book/de/v2) and whose presentation tool, [showoff](https://github.com/puppetlabs/showoff), I've [used at University](https://github.com/mre/Talks/tree/master/cuda/Presentation).
+- [Tom Preston-Werner](https://github.com/mojombo), who I admire for refusing an offer from Microsoft to pursue his dream and build Github, for establishing a [super-nerdy company culture](https://www.wired.com/2013/09/github-office/), and for [Jekyll](https://jekyllrb.com/).
 
 All three developers have since left the company.
 I can't help but notice that Github has changed.
 The harassment accusations and letting Zach Holman go are only part of the story.
 
 It has become a company like any other, maintaining a mature product.
-It doesn't *excite* me anymore.
+It doesn't _excite_ me anymore.
 
 ## An alternative reality
 
@@ -79,7 +79,7 @@ Would this be enough to pay the bills? Probably. Would it be enough to grow? Pro
 
 ## So what?
 
-I don't think the acquisition will kill the culture. Microsoft is a strong partner and [Nat Friedman](https://natfriedman.github.io/hello/) is one of us.
+I don't think the acquisition will kill the culture. Microsoft is a strong partner and [Nat Friedman](https://nat.github.io/hello/) is one of us.
 On the other side, I'm not as enthusiastic as I used to be.
 There's room for competitors now and I'm beginning to wonder what will be the next Github.
 That said, I will keep the Octocat on my office wall, in the hope that the excitement comes back.

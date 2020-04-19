@@ -13,7 +13,7 @@ comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/golang/comments/70iwcd/go_vs_rust_choose_go/"}]
 +++
 
-{{ figure(src="./hero.svg", credits="Gopher designed with [Gopherize.me](https://gopherize.me). Cogwheels designed by [Freepik](http://www.freepik.com/free-vector/gear-background-with-pieces-in-different-colors_966124.htm)") }}
+{{ figure(src="./hero.svg", credits="Gopher designed with [Gopherize.me](https://gopherize.me). Cogwheels designed by [Freepik](https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm)") }}
 
 "Rust or Go, which one should I choose?" is a question I get quite often.
 Both languages seem to be competing for the same user base and they both seem to be
@@ -119,7 +119,7 @@ fn is_prime(n: u64) -> bool {
 
 It might seem a little alien at first, but it will become second-nature after a while.
 
-This was just a quick example, of course. I suggest, you browse some code on [Rosetta Code](http://rosettacode.org/) to get a better feeling for both languages.
+This was just a quick example, of course. I suggest, you browse some code on [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code) to get a better feeling for both languages.
 
 ## Case study: Finding duplicate words in text files
 

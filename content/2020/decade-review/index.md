@@ -57,7 +57,7 @@ Nomad
 Async
 c10k problem
 parallel concurrent execution
-GPU 
+GPU
 tensorflow
 machine learning
 iPython notebooks Data Science was born
@@ -163,6 +163,6 @@ Crypto Currencies Garbage collection optional
 New threads like
 [Spectre](https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html)
 and [Meltdown](https://news.ycombinator.com/item?id=16065845)
-[Heartbleed](http://heartbleed.com/) Ransomware
+[Heartbleed](https://heartbleed.com/) Ransomware
 
 Software eats the world &mdash; and the speed is ever accelerating.

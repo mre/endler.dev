@@ -17,14 +17,14 @@ of our knowledge. There's [hard work](@/2011/on-hard-work/index.md) involved to 
 Here is a similar test for programmers:
 
 > Using a programming language of your choice, write a correct sorting
-> algorithm with an average runtime complexity of O(n*log n) (Heapsort,
+> algorithm with an average runtime complexity of O(n\*log n) (Heapsort,
 > Quicksort, Bucketsort, you name it) on a piece of paper without the help of any
 > external tools.
 
-And by *correct* I mean it must be free of bugs without any modifications when you type it in.
+And by _correct_ I mean it must be free of bugs without any modifications when you type it in.
 
 You would be surprised by the large percentage of professional software
-engineers who [can't pull this off](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html).
+engineers who [can't pull this off](https://blog.codinghorror.com/why-cant-programmers-program/).
 
 Some might argue that knowledge about details of programming language
 syntax is unimportant: "Why learn all the little nitpicks when you know
@@ -54,19 +54,19 @@ I don't want to read these books.
 
 What makes a programmer?
 
-* She has at least one programming language she knows inside out.
-* She can implement standard algorithms (i.e. for sorting, searching)
+- She has at least one programming language she knows inside out.
+- She can implement standard algorithms (i.e. for sorting, searching)
   and data-structures (i.e. trees, linked lists) which are robust and
-reasonably fast on the fly.
-* She has at least a basic understanding of complexity theory and
+  reasonably fast on the fly.
+- She has at least a basic understanding of complexity theory and
   programming concepts like recursion and pointers.
 
 But, to be a good programmer, you should
 
-* Be able to code in at least two fundamentally different programming
+- Be able to code in at least two fundamentally different programming
   paradigms (i.e. declarative, functional).
-* Have experience with big software architectures.
-* Be familiar with your programming environment like the operating system and a sophisticated text editor of your choice. Preferably one, that is
+- Have experience with big software architectures.
+- Be familiar with your programming environment like the operating system and a sophisticated text editor of your choice. Preferably one, that is
   easily extendable.
 
 And that is just the tip of the iceberg.
@@ -77,4 +77,4 @@ That's enough for day one.
 
 I realize that most of these essentials won't be taught during lectures.
 You have to learn a vast portion on your own.
-But let's face it: If you don't know this stuff, you are *not* a programmer, you're a freshman.
+But let's face it: If you don't know this stuff, you are _not_ a programmer, you're a freshman.

@@ -70,7 +70,7 @@ It's the compiler's job to find out how much memory to allocate for each item.
 In our case, it infers the following:
 
 A tree is a structure containing an `i64`, and two trees. Each of these trees is a structure containing an `i64`, and two trees. Each of these...  
-[You get the idea.](https://stackoverflow.com/a/25296420/270334)
+[You get the idea.](https://stackoverflow.com/questions/25296195/why-are-recursive-struct-types-illegal-in-rust/25296420#25296420)
 
 ```rust
 Tree { i64, Tree, Tree }
@@ -80,44 +80,44 @@ Tree { i64, Tree { ... }, Tree { ... } }
 
 Since we don't know how many subtrees our tree will have, there is no way to tell how much memory we need to allocate up front. We'll only know at runtime!
 
-Rust tells us how to fix that: by inserting an *indirection* like `Box`, `Rc`, or `&`.
-These are different "pointer types" in Rust. They all point to places in memory. So, instead of knowing the total size of our tree structure, we just know the *point* in memory where the tree is located. But that's enough to define the tree structure.
+Rust tells us how to fix that: by inserting an _indirection_ like `Box`, `Rc`, or `&`.
+These are different "pointer types" in Rust. They all point to places in memory. So, instead of knowing the total size of our tree structure, we just know the _point_ in memory where the tree is located. But that's enough to define the tree structure.
 These pointer types allow us to do that safely and without manual memory management.
 They all offer different guarantees and you should [choose the one that fits your requirements best](@/2017/why-type-systems-matter/index.md).
 
-* `&` is called a `borrow` in Rust speech. It's the most common of the three. It's a reference to some place in memory, but it does not **own** the data it points to. As such, the lifetime of the borrow depends on its owner.
-Therefore we would need to add lifetime parameters here. This can make it tedious to use.
+- `&` is called a `borrow` in Rust speech. It's the most common of the three. It's a reference to some place in memory, but it does not **own** the data it points to. As such, the lifetime of the borrow depends on its owner.
+  Therefore we would need to add lifetime parameters here. This can make it tedious to use.
 
-    ```rust
-    struct Tree<'a> {
-      root: i64,
-      left: &'a Tree<'a>,
-      right: &'a Tree<'a>,
-    }
-    ```
+      ```rust
+      struct Tree<'a> {
+        root: i64,
+        left: &'a Tree<'a>,
+        right: &'a Tree<'a>,
+      }
+      ```
 
-* [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html) is a **smart pointer** with zero runtime overhead. It owns the data it points to.
-We call it smart because when it goes out of scope, it will first drop the data it points to and then itself. No manual memory management required.
+- [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html) is a **smart pointer** with zero runtime overhead. It owns the data it points to.
+  We call it smart because when it goes out of scope, it will first drop the data it points to and then itself. No manual memory management required.
 
-    ```rust
-    struct Tree {
-      root: i64,
-      left: Box<Tree>,
-      right: Box<Tree>,
-    }
-    ```
+      ```rust
+      struct Tree {
+        root: i64,
+        left: Box<Tree>,
+        right: Box<Tree>,
+      }
+      ```
 
-* [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) is another smart pointer. It's short for "reference-counting". It keeps track of the number of references to a data structure. As soon as the number of references is down to zero, it cleans up after itself.
-Choose `Rc` if you need to have multiple owners of the same data in one thread.
-For multithreading, there's also [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomic reference count).
+- [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) is another smart pointer. It's short for "reference-counting". It keeps track of the number of references to a data structure. As soon as the number of references is down to zero, it cleans up after itself.
+  Choose `Rc` if you need to have multiple owners of the same data in one thread.
+  For multithreading, there's also [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomic reference count).
 
-    ```rust
-    struct Tree {
-      root: i64,
-      left: Rc<Tree>,
-      right: Rc<Tree>,
-    }
-    ```
+      ```rust
+      struct Tree {
+        root: i64,
+        left: Rc<Tree>,
+        right: Rc<Tree>,
+      }
+      ```
 
 ## Putting the tree into a box
 
@@ -134,7 +134,7 @@ point I would need an empty subtree.
 In the Python example, I used `None` to signal the end of my data structure.
 Thanks to Rust's [`Option`](https://doc.rust-lang.org/std/option/) type we can do the same:
 
-``` rust
+```rust
 struct Tree {
   root: i64,
   left: Option<Box<Tree>>,
@@ -235,7 +235,7 @@ root(15)
 
 Now you might be wondering, why our tree implementation worked so flawlessly in Python.
 The reason is that Python dynamically allocates memory for the tree object at runtime.
-Also, it wraps everything inside a [PyObject, which is kind of similar to `Rc` from above](http://pythonextensionpatterns.readthedocs.io/en/latest/refcount.html)
+Also, it wraps everything inside a [PyObject, which is kind of similar to `Rc` from above](https://pythonextensionpatterns.readthedocs.io/en/latest/refcount.html)
 &mdash; a reference counted smart pointer.
 
 Rust is more explicit here. It gives us more flexibility to express our needs.
@@ -244,4 +244,3 @@ If you can, then stay away from smart pointers and stick to simple borrows.
 If that's not possible, as seen above, choose the least invasive one for your
 use-case. The [Rust documentation](https://doc.rust-lang.org/book/second-edition/ch15-00-smart-pointers.html) is a good starting point here.
 Also, read ["Idiomatic tree and graph-like structures in Rust"](https://rust-leipzig.github.io/architecture/2016/12/20/idiomatic-trees-in-rust/) for some clever use of allocators.
-

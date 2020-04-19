@@ -11,7 +11,7 @@ recorder for macOS. It takes a screenshot every second and creates a movie in
 the end.
 
 To celebrate its unlikely 1.0 release today, I present here a "timelapse" of
-this project's journey. It just took *ten years* to get here. 
+this project's journey. It just took _ten years_ to get here.
 
 {{ video(id="_QEmxAZqQhE", preview="timelapse.jpg") }}
 
@@ -31,19 +31,18 @@ Among them are tools like a [random sandwich
 generator](https://github.com/mre/ihatesubways) for Subway (the American
 fast-food chain), [DrawRoom](https://github.com/mre/DrawRoom), a keyboard-driven
 drawing app inspired by
-[WriteRoom](http://www.hogbaysoftware.com/products/writeroom), and the
+[WriteRoom](https://www.hogbaysoftware.com/products/writeroom), and the
 [obligatory CMS software](https://github.com/mre/Creamy), that I sold to
 clients. Surprisingly, none of them were a great success.
 
-
 {{ figure(src="./drawroom.png", caption="DrawRoom, a tool that I wrote around the same time, is a real piece of art. To this day it has five commits and a single Github star (by myself, don't judge...).") }}
- 
-What I *do* know for sure is that I was unhappy with all existing screen
+
+What I _do_ know for sure is that I was unhappy with all existing screen
 recorders. They could roughly be categorized into these three groups:
 
-* Proprietary solutions that cost money or could call home.
-* Tools that didn't work on macOS.
-* Small, fragile, one-off scripts that people passed around in forums or as
+- Proprietary solutions that cost money or could call home.
+- Tools that didn't work on macOS.
+- Small, fragile, one-off scripts that people passed around in forums or as
   Github gists. They rarely worked as advertised.
 
 Among the remaining tools were none that provided any timelapse functionality;
@@ -69,16 +68,16 @@ the tool from mencoder to
 ffmpeg](https://github.com/mre/timelapse/commit/0b43515037670604143bf3b3eb06061ecfbbe108).
 
 After that, timelapse was ready for prime-time. 🎬 Here is some live action from
-her videos featuring timelapses: 
+her videos featuring timelapses:
 
 {{ video(id="vv2CCwEM8Ws", preview="preview.jpg") }}
 
 At that point, the tool was still very wobbly and could only be used from the
 commandline, but I began to see some potential for building a proper app from
-it; I just never found the *time*.
+it; I just never found the _time_.
 
 In October '18, I decided to ask for support during
-[Hacktoberfest](https://hacktoberfest.digitalocean.com/details). I created a few
+[Hacktoberfest](https://hacktoberfest.digitalocean.com/details/). I created a few
 tickets and labeled them with `hacktoberfest` to try and find contributors.
 
 And then, I waited.
@@ -91,7 +90,7 @@ Creedon](https://github.com/ShaneCreedon) created a basic test structure.
 [Gbenro Selere](https://github.com/seleregb) added a CI pipeline for Travis CI.
 It really worked, and the project was in much better shape after that!
 
-## 2019 
+## 2019
 
 One year passes by, and [Kyle Jones](https://github.com/Kerl1310) adds some
 contribution guidelines, while I move the CI pipeline to the newly released
@@ -111,7 +110,7 @@ configurations. The screen captured will always be the one with the mouse on it.
 
 ## 2020
 
-Fast forward to today, and after almost *ten years*, we finally created a true
+Fast forward to today, and after almost _ten years_, we finally created a true
 macOS app using the awesome [py2app](https://github.com/ronaldoussoren/py2app)
 bundler. This should make the tool usable by non-developers.
 

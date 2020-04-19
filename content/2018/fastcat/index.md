@@ -32,7 +32,6 @@ cat input1.txt input2.txt input3.txt > output.txt
 cat myfile
 ```
 
-
 ## Implementing cat
 
 Here's a naive `cat` in Ruby:
@@ -57,7 +56,7 @@ Easy peasy! But wait, how fast is this tool?
 I quickly created a random 2 GB file for the benchmark.
 
 Let's compare the speed of our naive implementation with the system one
-using the awesome [pv](http://www.ivarch.com/programs/pv.shtml) (Pipe Viewer) tool.
+using the awesome [pv](https://www.ivarch.com/programs/pv.shtml) (Pipe Viewer) tool.
 All tests are averaged over five runs on a warm cache (file in memory).
 
 ```
@@ -73,7 +72,7 @@ cat myfile | pv -r > /dev/null
 [1.90GiB/s]
 ```
 
-Uh oh, [GNU cat](http://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=blob;f=src/cat.c;h=3c319511c767f65d2e420b3bff8fa6197ddbb37b;hb=HEAD) is **ten times faster** than our little Ruby cat. 🐌
+Uh oh, [GNU cat](https://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=blob;f=src/cat.c;h=3c319511c767f65d2e420b3bff8fa6197ddbb37b;hb=HEAD) is **ten times faster** than our little Ruby cat. 🐌
 
 ## Making our Ruby cat a little faster
 
@@ -99,7 +98,7 @@ rubycat myfile | pv -r > /dev/null
 
 Wow... we didn't really try hard, and we're already approaching the speed of a
 tool that gets optimized [since
-1971](https://en.wikipedia.org/wiki/Cat_(Unix)). 🎉
+1971](<https://en.wikipedia.org/wiki/Cat_(Unix)>). 🎉
 
 But before we celebrate too much, let's see if we can go even faster.
 
@@ -111,21 +110,20 @@ HackerNews](https://news.ycombinator.com/item?id=15455897):
 
 > I'm surprised that neither GNU yes nor GNU cat uses splice(2).
 
-Could this *splice* thing make printing files even faster? &mdash; I was intrigued.
+Could this _splice_ thing make printing files even faster? &mdash; I was intrigued.
 
 Splice was first introduced to the Linux Kernel in 2006, and there is a nice
-[summary from Linus Torvalds himself](https://web.archive.org/web/20130305002825/http://kerneltrap.org/node/6505),
-but I prefer the description from the [manpage](http://man7.org/linux/man-pages/man2/splice.2.html):
+[summary from Linus Torvalds himself](https://web.archive.org/web/20130305002825/https://kerneltrap.org/node/6505),
+but I prefer the description from the [manpage](https://linux.die.net/man/2/splice):
 
 > **splice()** moves data between two file descriptors without copying
-> between kernel address space and user address space.  It transfers up
+> between kernel address space and user address space. It transfers up
 > to len bytes of data from the file descriptor fd_in to the file
 > descriptor fd_out, where one of the file descriptors must refer to a
 > pipe.
 
 If you really want to dig deeper, here's the corresponding [source code from the
-Linux Kernel](
-https://github.com/torvalds/linux/blob/6ed0529fef09f50ef41d396cb55c5519e4936b16/fs/splice.c),
+Linux Kernel](https://github.com/torvalds/linux/blob/6ed0529fef09f50ef41d396cb55c5519e4936b16/fs/splice.c),
 but we don't need to know all the nitty-gritty details for now.
 Instead, we can just inspect the header from the C implementation:
 
@@ -146,9 +144,9 @@ const ssize_t r = splice (src, NULL, dst, NULL, size, 0);
 The cool thing about this is that all of it happens inside the Linux kernel, which means we won't copy a single byte to userspace (where our program runs).
 Ideally, splice works by remapping pages and does not actually copy
 any data, which may improve I/O performance
-([reference](https://en.wikipedia.org/wiki/Splice_(system_call))).
+([reference](<https://en.wikipedia.org/wiki/Splice_(system_call)>)).
 
-{{ figure(src="./buffers.png", credits="File icon by Aleksandr Vector from the Noun Project. Terminal icon by useiconic.com from the Noun Project.") }} 
+{{ figure(src="./buffers.png", credits="File icon by Aleksandr Vector from the Noun Project. Terminal icon by useiconic.com from the Noun Project.") }}
 
 ## Using splice from Rust
 
@@ -168,7 +166,7 @@ pub fn splice(
 ```
 
 Now I didn't implement the Linux bindings myself. Instead, I just used a library called
-[nix](https://github.com/nix-rust/nix), which provides Rust friendly bindings to *nix APIs.
+[nix](https://github.com/nix-rust/nix), which provides Rust friendly bindings to \*nix APIs.
 
 There is one caveat, though:
 We cannot really copy the file directly to standard out, because splice
@@ -239,11 +237,11 @@ Holy guacamole. That's **over three times as fast as system cat**.
 
 ## Operating System support
 
-* **Linux** and **Android** are fully supported.
-* **[OpenBSD](https://stackoverflow.com/questions/12230316/do-other-operating-systems-implement-the-linux-system-call-splice?lq=1)**
+- **Linux** and **Android** are fully supported.
+- **[OpenBSD](https://stackoverflow.com/questions/12230316/do-other-operating-systems-implement-the-linux-system-call-splice?lq=1)**
   also has some sort of splice implementation called
-  [`sosplice`](http://man.openbsd.org/sosplice). I haven't tested that, though.
-* On **macOS**, the closest thing to splice is its bigger brother,
+  [`sosplice`](https://man.openbsd.org/sosplice). I haven't tested that, though.
+- On **macOS**, the closest thing to splice is its bigger brother,
   [sendfile](https://www.unix.com/man-page/osx/2/sendfile/), which can send a
   file to a socket within the Kernel. Unfortunately, it does not support sending
   from file to file.<sup><a href="#fn2" id="ref2">2</a></sup> There's also
@@ -251,9 +249,9 @@ Holy guacamole. That's **over three times as fast as system cat**.
   which has a similar interface, but unfortunately, it is not zero-copy. (I
   thought so in the beginning, but [I was
   wrong](https://github.com/rust-lang/libc/pull/886).)
-* **Windows** doesn't provide zero-copy file-to-file transfer
-  (only file-to-socket transfer using the [TransmitFile API](https://docs.microsoft.com/en-us/windows/desktop/api/mswsock/nf-mswsock-transmitfile)).
-  
+- **Windows** doesn't provide zero-copy file-to-file transfer
+  (only file-to-socket transfer using the [TransmitFile API](https://docs.microsoft.com/en-us/windows/win32/api/mswsock/nf-mswsock-transmitfile)).
+
 Nevertheless, in a production-grade
 implementation, the splice support could be activated on systems that support
 it, while using a generic implementation as a fallback.
@@ -278,23 +276,22 @@ In this case, if you notice that `cat` is the bottleneck try `fcat` (but first,
 [try to avoid `cat` altogether](http://porkmail.org/era/unix/award.html)).
 
 With some more work, `fcat` could also be used to directly route packets from one
-network card to another, [similar to netcat](http://nc110.sourceforge.net/). 
+network card to another, [similar to netcat](https://nc110.sourceforge.io/).
 
 ## Lessons learned
 
-* The closer we get to bare metal, the more our hard-won abstractions fall
+- The closer we get to bare metal, the more our hard-won abstractions fall
   apart, and we are back to low-level systems programming.
-* Apart from a fast cat, there's also a use-case for a slow cat: old computers.
+- Apart from a fast cat, there's also a use-case for a slow cat: old computers.
   For that purpose, there's... well.. [slowcat](https://grox.net/software/mine/slowcat/).
-  
+
 That said, I still have no idea why GNU cat does not use splice on Linux. 🤔
 The [source code for fcat is on Github](https://github.com/mre/fcat).
 Contributions welcome!
 
 **Thanks** to [Olaf Gladis](https://twitter.com/hwmrocker) for helping me run the benchmarks on his Linux machine and to [Patrick Pokatilo](https://github.com/SHyx0rmZ) and [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of this article.
 
-
 ## Footnotes
 
 <sup id="fn1">1. Thanks to reader <a href="https://www.reddit.com/r/rust/comments/93fbrj/fascat_a_faster_cat_implementation_using_splice/e3d2chn/">Freeky</a> for making this code more idiomatic.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>  
-<sup id="fn2">2. Thanks to reader <a href="https://www.reddit.com/r/rust/comments/93fbrj/fascat_a_faster_cat_implementation_using_splice/e3cu3rk/">masklinn</a> for the hint.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>  
+<sup id="fn2">2. Thanks to reader <a href="https://www.reddit.com/r/rust/comments/93fbrj/fascat_a_faster_cat_implementation_using_splice/e3cu3rk/">masklinn</a> for the hint.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>

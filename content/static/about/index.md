@@ -3,7 +3,6 @@ title = "Hi, I'm Matthias Endler!"
 path = "about"
 +++
 
-
 <style>
     table {
         width: 100%;
@@ -51,10 +50,10 @@ You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
 Oh yeah, and I also [give talks][talks]. Let me know if you need a speaker.
 
 [universität bayreuth]: https://www.uni-bayreuth.de/en/index.html
-[trivago]: http://tech.trivago.com/
+[trivago]: https://tech.trivago.com/
 [*hello, rust!*]: https://hello-rust.show
 [talks]: @/static/talks/index.md
-[github]: http://github.com/mre/
+[github]: https://github.com/mre/
 [twitter]: https://twitter.com/matthiasendler
-[stack overflow]: http://stackoverflow.com/users/270334/mre
-[linkedin]: https://www.linkedin.com/in/endlermatthias
+[stack overflow]: https://stackoverflow.com/users/270334/mre
+[linkedin]: https://www.linkedin.com/in/endlermatthias/

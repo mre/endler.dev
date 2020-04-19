@@ -9,7 +9,7 @@ template = "talks.html"
 ![](2019-fosdem.jpg)
 
 - FOSDEM, February 2019
-- [Recording](https://fosdem.org/2019/schedule/event/rust_cargo_inspect/)
+- [Recording](https://archive.fosdem.org/2019/schedule/event/rust_cargo_inspect/)
 - [Slides](https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains)
 
 Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It

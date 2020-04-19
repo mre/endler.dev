@@ -35,7 +35,7 @@ German keyboard sucks for programming:
 ## Why switch **now**?
 
 After many years of using a rubber-dome [Logitech Cordless Desktop
-Wave](https://support.logitech.com/en_us/product/cordless-desktop-wave), I
+Wave](https://support.logitech.com/en_us/product/cordless-desktop-wave/), I
 had to get a mechanical keyboard again. 
 
 Those rubber domes just feel too mushy to me now. In addition to that, I enjoy the
