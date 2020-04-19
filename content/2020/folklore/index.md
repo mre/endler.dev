@@ -121,7 +121,10 @@ There's a much longer list on
 
 ## Patch
 
-Bugs are fixed with patches.
+**Bugs are fixed with patches.**
+
+In the good old days, if you made a programming mistake you'd have to fix a punch card
+by putting a patch on top of a hole.
 
 ## PNG
 
@@ -176,14 +179,16 @@ https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-
 
 ## Radio Button
 
-https://twitter.com/themattcoady/status/988819505534009344
-
-## Ship it
+{{ figure(src="./radio-buttons.jpg",caption="An old car radio (left) and CSS radio buttons (right)", credits="[Matt Coady](https://twitter.com/themattcoady)") }}
 
 ## Uppercase and lowercase
 
-# Similar Projects
+{{ figure(src="./printers_cases.png",caption="A set of printers cases", credits="
+texts
+Printing types, their history, forms, and use; a study in survivals by
+    Updike, Daniel Berkeley, 1860-1941. [Freely available on archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
 
-- (awesome-computer-history)[https://github.com/watson/awesome-computer-history]
-- https://en.wikipedia.org/wiki/List_of_computer_term_etymologies
-- http://phk.freebsd.dk/sagas/
+## Related Projects
+
+- [Awesome Computer History](https://github.com/watson/awesome-computer-history)
+- [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
