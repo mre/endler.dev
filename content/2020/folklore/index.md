@@ -1,6 +1,7 @@
 +++
 title="Hacker Folklore"
-date=2020-04-10
+subtitle="(Because Computer Term Etymology sounds weird.)"
+date=2020-04-19
 draft=true
 +++
 
@@ -9,7 +10,7 @@ Most of the content comes from sources like Wikipedia (with reference where appr
 
 ## Bikeshed
 
-*Today's meaning: A useless discussion about trivial details*
+_Today's meaning: A useless discussion about trivial details_
 
 The term bike-shed effect or bike-shedding was coined as a metaphor to
 illuminate the law of triviality; it was popularised in the Berkeley Software
@@ -30,8 +31,8 @@ and show personal contribution.
 
 ## Boilerplate
 
-*Today's meaing: A chunk of code that is copied over and over again with little or no changes
-made to it in the process.*
+_Today's meaning: A chunk of code that is copied over and over again with little or no changes
+made to it in the process._
 
 "Boiler plate" originally referred to the rolled steel used to make water
 boilers but is used in the media to refer to hackneyed or unoriginal writing.
@@ -55,7 +56,7 @@ References:
 
 ## Bug
 
-*Today's meaning: A defect in a piece of code or hardware*
+_Today's meaning: A defect in a piece of code or hardware_
 
 One of the most well-known ones. Contrary to popular belief it predates the bug
 found by Grace Hopper in the Mark II computer.
@@ -90,39 +91,59 @@ should be made a semitone higher in pitch.
 
 ## Dashboard
 
-*Today's meaning: A user interface that provides a quick overview of a system's status.*
+_Today's meaning: A user interface that provides a quick overview of a system's status._
 
-Originally a plank of wood at the front of a horse-drawn carriage to protect the driver from mud 'dashed' backwards by a horses hooves. 
+Originally a plank of wood at the front of a horse-drawn carriage to protect the driver from mud 'dashed' backwards by a horses hooves.
 
-When automobiles were manfactured, the board in front of the driver was given the same name. That was the logical place to put the necessary gauges so the driver could see them easily. In time, the term became more associated with the readouts than then protection it offered. [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
+When automobiles were manufactured, the board in front of the driver was given the same name. That was the logical place to put the necessary gauges so the driver could see them easily. In time, the term became more associated with the readouts than then protection it offered. [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
 
 {{ figure(src="./dashboard.png",caption="A dashboard of a horse carriage.", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
 
 ## Firmware
 
-*Today's meaning: A class of computer software that provides the low-level control for the device's specific hardware*
+_Today's meaning: A class of computer software that provides the low-level control for the device's specific hardware_
 
-Ascher Opler coined the term "firmware" in a 1967 Datamation article. As
+[Ascher Opler](https://archive.org/details/TNM_4th_generation_software_hardware_-_Datamation_20171010_0125/mode/2up) coined the term "firmware" in a 1967 Datamation article. As
 originally used, firmware contrasted with hardware (the CPU itself) and software
 (normal instructions executing on a CPU). It existed on the boundary between
-hardware and software; thus the name "firmware". [References](https://en.wikipedia.org/wiki/Firmware)
+hardware and software; thus the name "firmware". [Reference](https://en.wikipedia.org/wiki/Firmware)
+The original article is available on the [Internet Archive](https://archive.org/details/TNM_4th_generation_software_hardware_-_Datamation_20171010_0125/mode/2up).
 
 ## Foo and Bar
 
 \*\*When a programmer quickly needs a placeholder variable name, sometimes the
 terms "foo" and "bar" are used.
 
-There's a much longer list on
-[Wikipedia](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
+The use of foo in a programming context is generally credited to the Tech Model Railroad Club (TMRC) of MIT from circa 1960.[1] In the complex model system, there were scram switches located at numerous places around the room that could be thrown if something undesirable was about to occur, such as a train going full-bore at an obstruction. [Reference](https://en.wikipedia.org/wiki/Foobar#History_and_etymology)
 
-## Log
+{{ figure(src="./scram.jpg",caption="A scram switch (button), that could be pressed to prevent inadvertent operation", credits="Source [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" ) }}
+
+A lot of additional research was done by user [Hugo on Stackoverflow](https://stackoverflow.com/a/6727104/270334):
+
+> "Foo" and "bar" as metasyntactic variables were popularised by MIT and DEC, the first references are in work on LISP and PDP-1 and Project MAC from 1964 onwards.
+> Many of these people were in MIT's Tech Model Railroad Club, where we find the first documented use of "foo" in tech circles in 1959 (and a variant in 1958).
+> Both "foo" and "bar" (and even "baz") were well known in popular culture, especially from Smokey Stover and Pogo comics, which will have been read by many TMRC members.
+> Also, it seems likely the military FUBAR contributed to their popularity.
+
+In summary: it's complicated.
+
+## Log / Logfile
+
+{{ figure(src="./log-seamen.jpg",caption="Sailors measuring ship speed with a log line", credits="[The Pilgrims & Plymouth Colony:1620 by Duane A. Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+
+{{ figure(src="./log-line.jpg",caption="The parts of a log-line", credits="[The Pilgrims & Plymouth Colony:1620 by Duane A. Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+
+{{ figure(src="./logfile.png",caption="Page from the log-file of the British Winchelsea. The second column denotes the number of knots measured with the log-line, which indicates the ship's speed", credits="[Navigation and Logbooks in the Age of Sail by Peter Reaveley](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm)") }}
+
+[Reference](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm).
 
 ## Patch
 
-**Bugs are fixed with patches.**
+_Today's meaning: A piece of code that can be applied to fix or improve a computer program._
 
-In the good old days, if you made a programming mistake you'd have to fix a punch card
-by putting a patch on top of a hole.
+In the early days of computing history, if you made a programming mistake you'd have to fix a paper tape or a punched card by putting a patch on top of a hole.
+
+{{ figure(src="./patch.jpg",caption="A program tape with physical patches used to correct punched holes by covering them.", credits="[Smithsonian Archives Center](https://americanhistory.si.edu/archives)") }}
 
 ## PNG
 
@@ -144,36 +165,47 @@ reference to the ubiquity of it and other imported canned meat products in the
 UK after World War II (a period of rationing in the UK) as the country struggled
 to rebuild its agricultural base. Today, the term also refers to unsolicited
 electronic communications, for example by sending mass-emails or posting in
-forums and chats. [Reference](https://en.wikipedia.org/wiki/Spamming#History)
+forums and chats. [Reference](https://en.wikipedia.org/wiki/Spamming#Etymology)
+
+{{ figure(src="./spam.jpg", caption="Vintage Ad: Look What You Can Do With One Can of Spam ", credits="By user [Jamie (jbcurio) on flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
+
+[Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from [Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com):
+
+<iframe src="https://player.vimeo.com/video/329001211" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## i18n
 
 Number of letters between the i and the n. Same for kubernetes (k8s) and
 localization (l10n).
 
-### Mac’s Command ⌘ And Option ⌥ Symbols
+## Apple Command ⌘ key symbol
+
+Directly quoting Wikipedia (emphasis mine):
 
 The ⌘ symbol came into the Macintosh project at a late stage. The development
 team originally went for their old Apple key, but Steve Jobs found it
 frustrating when "apples" filled up the Mac's menus next to the key commands,
-because he felt that this was an over-use of the company logo.[3] He then opted
+because he felt that this was an over-use of the company logo. He then opted
 for a different key symbol. With only a few days left before deadline, the
 team's bitmap artist Susan Kare started researching for the Apple logo's
 successor. She was browsing through a symbol dictionary when she came across the
 cloverleaf-like symbol, commonly used in Nordic countries as an indicator of
-cultural locations and places of interest[2][6] (it is the official road sign
-for tourist attraction in Denmark, Finland,[7] Iceland,[8] Norway,[9] and
-Sweden,[10] and the computer key has often been called Fornminne — ancient
-monument — by Swedish Mac users[11] and Seværdighedstegn by Danish users). When
+cultural locations and **places of interest** (it is the official road sign
+for tourist attraction in Denmark, Finland, Iceland, Norway, and Sweden and
+the computer key has often been called Fornminne — ancient
+monument — by Swedish Mac users and Seværdighedstegn by Danish users). When
 she showed it to the rest of the team, everyone liked it, and so it became the
-symbol of the 1984 Macintosh command key.[12][6] Susan Kare states that it has
+symbol of the 1984 Macintosh command key. Susan Kare states that it has
 since been told to her that the symbol had been picked for its Scandinavian
 usage due to its resembling the shape of a square castle with round corner
-towers as seen from above looking down, notably Borgholm Castle.[6]
+towers as seen from above looking down, notably Borgholm Castle.
 
-https://en.wikipedia.org/wiki/Command_key
+{{ figure(src="./severdighet.png", caption="Norwegian Severdighet road sign", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
 
-https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-%E2%8C%A5-symbols-supposed-to-represent/
+References:
+
+- [Wikipedia: Command Key](https://en.wikipedia.org/wiki/Command_key)
+- [Cult of Mac: What Are The Mac’s Command ⌘ And Option ⌥ Symbols Supposed To Represent?](https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-%E2%8C%A5-symbols-supposed-to-represent/)
 
 ## Radio Button
 
