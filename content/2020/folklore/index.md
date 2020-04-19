@@ -90,6 +90,12 @@ should be made a semitone higher in pitch.
 
 ## Dashboard
 
+*Today's meaning: A user interface that provides a quick overview of a system's status.*
+
+Originally a plank of wood at the front of a horse-drawn carriage to protect the driver from mud 'dashed' backwards by a horses hooves. 
+
+When automobiles were manfactured, the board in front of the driver was given the same name. That was the logical place to put the necessary gauges so the driver could see them easily. In time, the term became more associated with the readouts than then protection it offered. [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
+
 {{ figure(src="./dashboard.png",caption="A dashboard of a horse carriage.", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
 
 ## Firmware
