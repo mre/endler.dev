@@ -4,17 +4,12 @@ date=2020-04-10
 draft=true
 +++
 
-All too often, we use terminology without knowing its origin. The etymology of
-computer terms can be fascinating and entertaining. This post tries to collect
-the surprising history of computing terms we use every day.
-
-## 404
-
-**HTTP Status Code: File not found**
+This post tries to collect the surprising history of computing terms we use every day.
+Most of the content comes from sources like Wikipedia (with reference where appropriate), but the explanations are hard to find if you don't know what you're searching for.
 
 ## Bikeshed
 
-**A useless discussion about trivial details**
+*Today's meaning: A useless discussion about trivial details*
 
 The term bike-shed effect or bike-shedding was coined as a metaphor to
 illuminate the law of triviality; it was popularised in the Berkeley Software
@@ -35,8 +30,8 @@ and show personal contribution.
 
 ## Boilerplate
 
-**A chunk of code that is copied over and over again with little or no changes
-made to it in the process.**
+*Today's meaing: A chunk of code that is copied over and over again with little or no changes
+made to it in the process.*
 
 "Boiler plate" originally referred to the rolled steel used to make water
 boilers but is used in the media to refer to hackneyed or unoriginal writing.
@@ -60,7 +55,7 @@ References:
 
 ## Bug
 
-**A defect in a piece of code or hardware**
+*Today's meaning: A defect in a piece of code or hardware*
 
 One of the most well-known ones. Contrary to popular belief it predates the bug
 found by Grace Hopper in the Mark II computer.
@@ -95,19 +90,16 @@ should be made a semitone higher in pitch.
 
 ## Dashboard
 
+{{ figure(src="./dashboard.png",caption="A dashboard of a horse carriage.", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
+
 ## Firmware
 
-**A class of computer software that provides the low-level control for the
-device's specific hardware**
+*Today's meaning: A class of computer software that provides the low-level control for the device's specific hardware*
 
 Ascher Opler coined the term "firmware" in a 1967 Datamation article. As
 originally used, firmware contrasted with hardware (the CPU itself) and software
 (normal instructions executing on a CPU). It existed on the boundary between
-hardware and software; thus the name "firmware".
-
-References
-
-- https://en.wikipedia.org/wiki/Firmware
+hardware and software; thus the name "firmware". [References](https://en.wikipedia.org/wiki/Firmware)
 
 ## Foo and Bar
 
@@ -179,16 +171,38 @@ https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-
 
 ## Radio Button
 
-{{ figure(src="./radio-buttons.jpg",caption="An old car radio (left) and CSS radio buttons (right)", credits="[Matt Coady](https://twitter.com/themattcoady)") }}
+In HTML forms, you sometimes find a set of options, that only allow a single selection.
+These are called "radio buttons" after the analogous pendant of mechanical buttons
+that were used in radios.
+The UI concept has later been used in tape recorders, cassette recorders and wearable audio players (the famous "Walkman" and similar).
+And later in VCRs and video cameras. [Reference](https://www.jitbit.com/radio-button/)
+
+{{ figure(src="./radio-buttons.jpg",caption="An old car radio (left) and CSS radio buttons (right). Only a single option can be selected at any point in time. As a kid, I would push two buttons at once so they would interlock. Good times.", credits="Images by [Matt Coady](https://twitter.com/themattcoady)") }}
 
 ## Uppercase and lowercase
+
+Back when typesetting was a manual process where single letters made of led were
+"type set" to form words and sentences, upper- and lowercase letters were kept in separate cases to make this rather tedious process faster.
 
 {{ figure(src="./printers_cases.png",caption="A set of printers cases", credits="
 texts
 Printing types, their history, forms, and use; a study in survivals by
     Updike, Daniel Berkeley, 1860-1941. [Freely available on archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
 
-## Related Projects
+# Honorable mentions
+
+## 404
+
+_HTTP Status Code: File not found_
+
+There is a story that the number comes from the server room where the World Wide Web's central database was located.
+In there, administrators would manually locate the requested files and transfer them, over the network, to the person who made that request.
+If a file didn't exist, they'd return an error message: "Room 404: file not found".
+
+This, however, seems to be a myth and the status code was chosen rather arbitrarily based on the then well-established FTP status codes.
+[Reference](https://knowyourmeme.com/memes/404)
+
+# Related Projects
 
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history)
 - [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
