@@ -1,6 +1,6 @@
 +++
 title="Hacker Folklore"
-date=2020-04-20
+date=2020-04-22
 draft=true
 
 [extra]
@@ -173,7 +173,6 @@ Later, additional information was added &mdash; or logged &mdash; such as the di
 
 {{ figure(src="./logfile.png",caption="Page from the log-file of the British Winchelsea. The second column denotes the number of knots measured with the log-line, which indicates the ship's speed", credits="[Navigation and Logbooks in the Age of Sail by Peter Reaveley](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm)") }}
 
-
 ## Patch
 
 _Today's meaning: A piece of code that can be applied to fix or improve a computer program._
@@ -187,6 +186,32 @@ In the early days of computing history, if you made a programming mistake you'd 
 A terminal program originally written by Mike Muuss in 1983 that is included in every version of UNIX, Windows, and macOS.
 He named it "after the sound that a sonar makes, inspired by the whole principle of echo-location. [...] ping uses timed IP/ICMP ECHO_REQUEST and ECHO_REPLY packets to probe the "distance" to the target machine."
 The [reference](https://ftp.arl.army.mil/~mike/ping.html) is well worth a read.
+
+## Shell
+
+_Today's meaning: An interactive, commonly text-based runtime to interact with a computer system._
+
+The inventor of the term, Louis Pouzin, does not give an explanation for the name in his
+essay [The Origins of the Shell](https://www.multicians.org/shell.html).
+It can however be traced back to Unix' predecessor Multics.
+It is described in the [Multics glossary](https://www.multicians.org/mgs.html) like so:
+
+> [The shell] is passed a command line for execution by the **listener**.
+
+The _The New Hacker's Dictionary_, (also known as the _Jargon File_) by [Eric S. Raymond](http://www.catb.org/~esr/) contains [the following](http://www.catb.org/jargon/html/S/shell.html):
+
+> Historical note: Apparently, the original Multics shell (sense 1) was so called because it was a shell (sense 3);
+
+where sense 3 refers to
+
+> A skeleton program, created by hand or by another program (like, say, a parser generator), which provides the necessary incantations to set up some task and the control flow to drive it (the term driver is sometimes used synonymously). The user is meant to fill in whatever code is needed to get real work done. This usage is common in the AI and Microsoft Windows worlds, and confuses Unix hackers.
+
+Unfortunately, the book does not provide any evidence to back up this claim.
+
+I like the (possibly historically incorrect) analogy to a nut
+with the shell being on the outside, protecting the kernel.
+
+[Reference](https://unix.stackexchange.com/questions/14934/why-was-the-word-shell-used-to-descibe-a-command-line-interface)
 
 ## Spam
 
@@ -279,7 +304,13 @@ name: _PNG's Not GIF_. Here's a [great article](https://people.apache.org/~jim/N
 
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history)
 - [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
+- [Talk: The Etymology of Programming by Brittany Storoz - JSConf EU 2018](https://www.youtube.com/watch?v=2KTK2qD4-gs)
 
 # Reader submissions
 
 Do you know any other stories? Send me a message and I'll add them here.
+
+- Carriage Return and Line Feed
+- Slab allocator (https://blogs.oracle.com/bonwick/now-it-can-be-told)
+  https://www.youtube.com/watch?v=A8zYYg8wfmM
+- Core Dump https://www.youtube.com/watch?time_continue=1093&v=O1YP8QP9gLA&feature=emb_logo
