@@ -74,6 +74,35 @@ the 1870s and predates electronic computers and computer software; it may have
 originally been used in hardware engineering to describe mechanical
 malfunctions. [Reference](https://en.wikipedia.org/wiki/Software_bug#Etymology)
 
+## Carriage Return and Line Feed
+
+_Today's meaning: Set the cursor to the beginning of the next line._
+
+These two terms were adopted from typewriters.
+
+The carriage holds the paper and is moving from left to right to advance the
+typing position as the keys are pressed. It "carries" the paper with it. The
+carriage return is the operation when the carriage gets moved into its original
+position on the very left end side of the paper.
+
+Simply returning the carriage to the left is not enough to start with a new line,
+however. The carriage would still be on the same line than before &mdash; just
+at the beginning of the line. To go to a new line, a _line feed_ was needed. It
+would move the paper inside the typewriter up by one line.
+
+These two operations &mdash; carriage return (CR) and line feed (LF) &mdash;
+were commonly done at once by pushing the carriage return lever.
+
+{{ figure(src="./typewriter.jpg", caption="A mechanical typewriter. The lever is on the outer left side.", credits="Source: [piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
+
+On Unix systems (like Linux or macOS), a `\n` still stands for a carriage return (ASCII symbol: CR) or _newline_.
+On CP/M, DOS, and Windows, `\r\n` is used, where `\r` stands for *carriage *return\* and `\n` stands for line feed (CR+LF).
+[Reference](https://en.wikipedia.org/wiki/Newline)
+
+Here is an old video that shows the basic mechanics of carriage return and line-feed:
+
+{{ video(id="EWfElq1vgLA", start="842", preview="typewriter.png") }}
+
 ## Command key symbol (⌘)
 
 _Today's meaning: A meta-key available on Apple computers to provide additional keyboard combinations._
@@ -305,12 +334,12 @@ name: _PNG's Not GIF_. Here's a [great article](https://people.apache.org/~jim/N
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history)
 - [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
 - [Talk: The Etymology of Programming by Brittany Storoz - JSConf EU 2018](https://www.youtube.com/watch?v=2KTK2qD4-gs)
+- [Typewriter terminology that has survived into the personal computer era](https://en.wikipedia.org/wiki/Typewriter#Terminology)
 
 # Reader submissions
 
 Do you know any other stories? Send me a message and I'll add them here.
 
-- Carriage Return and Line Feed
 - Slab allocator (https://blogs.oracle.com/bonwick/now-it-can-be-told)
   https://www.youtube.com/watch?v=A8zYYg8wfmM
 - Core Dump https://www.youtube.com/watch?time_continue=1093&v=O1YP8QP9gLA&feature=emb_logo
