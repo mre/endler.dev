@@ -7,10 +7,14 @@ function lightEmbedInit() {
 
   for (n = 0; n < v.length; n++) {
     v[n].onclick = function () {
-      var id = this.dataset.id;
       var iframe = document.createElement("iframe");
       var embed = "https://www.youtube.com/embed/ID?autoplay=1";
-      iframe.setAttribute("src", embed.replace("ID", id));
+      embed = embed.replace("ID", this.dataset.id);
+      if (typeof this.dataset.start !== "undefined") {
+        embed = embed + "&start=" + this.dataset.start;
+      }
+      console.log(embed);
+      iframe.setAttribute("src", embed);
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "1");
       this.innerHTML = iframe.outerHTML;

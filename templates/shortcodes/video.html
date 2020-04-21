@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="{{ get_url(path="video.css") }}" />
 <script src="/video.js"></script>
-<div class="light-video-embed" data-id="{{id}}">
+<div 
+  class="light-video-embed" 
+  data-id="{{id}}"
+  {% if start %}
+    data-start="{{start}}"
+  {% endif %}
+>
   <img src="{{preview}}" />
   <div class="play"></div>
 </div>
