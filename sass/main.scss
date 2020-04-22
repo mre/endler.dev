@@ -1,3 +1,5 @@
+$black: #111;
+
 $pink-200: #f5b2c8;
 $pink-400: #c35;
 $pink-500: #ff1c76;
@@ -42,6 +44,7 @@ body {
   font-size: 120%;
   line-height: 1.58;
   border-top: 0.5em solid $pink-400;
+  color: $black;
 }
 
 .container {
@@ -189,6 +192,10 @@ h1 {
 
 h2 {
   font-size: 1.2em;
+}
+
+main h2 {
+  margin-top: 44px;
 }
 
 h3 {
