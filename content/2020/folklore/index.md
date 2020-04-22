@@ -17,7 +17,7 @@ you're looking for.
 This is a living document and I'm planning to update in case of reader
 submissions.
 
-## Bikeshed
+## Bike-Shedding
 
 _Today's meaning: A pointless discussion about trivial issues._
 
