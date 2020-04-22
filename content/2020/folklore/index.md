@@ -4,12 +4,12 @@ date=2020-04-22
 draft=true
 
 [extra]
-subtitle="(Because Computer-Term Etymology sounded weird.)"
+subtitle="Because Computer-Term Etymology sounded weird."
 +++
 
 Some computer terms have a surprising legacy.
-Many of them were derived from obsolete technologies.
-This post tries to collect the exciting history of some of these terms that we use every day but aren't quite sure of their origins.
+Many of them are derived from long obsolete technologies.
+This post tries to dust off the exciting history of some of these terms that we use every day but aren't quite sure about their origins.
 
 > You have to know the past to understand the present.  
 > &mdash; Dr. Carl Sagan (1980)
@@ -133,6 +133,16 @@ References:
 
 - [Wikipedia: Command Key](https://en.wikipedia.org/wiki/Command_key)
 - [Cult of Mac: What Are The Mac’s Command ⌘ And Option ⌥ Symbols Supposed To Represent?](https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-%E2%8C%A5-symbols-supposed-to-represent/)
+
+## Core Dump
+
+_Today's meaning: Retrieving a snapshot of a (crashed) program's state by storing all of its memory for offline analysis._
+
+The name comes from [magnetic core memory](https://en.wikipedia.org/wiki/Magnetic-core_memory), which is an early storage mechanism based on a grid of toroid magnets.
+It has since become obsolete, but the term is still used today for getting a snapshot of a computer process.
+[Reference](https://en.wikipedia.org/wiki/Core_dump)
+
+{{ figure(src="./corememory.jpg",caption="A 32 x 32 core memory plane storing 1024 bits (or 128 bytes) of data", credits="[Wikimedia Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.jpg)") }}
 
 ## Cursor
 
@@ -363,6 +373,5 @@ name: _PNG's Not GIF_. Here's a [great article](https://people.apache.org/~jim/N
 
 # Reader submissions
 
+I hope you enjoyed this trip down memory lane.
 Do you know any other stories? Send me a message and I'll add them here.
-
-- Core Dump https://www.youtube.com/watch?time_continue=1093&v=O1YP8QP9gLA&feature=emb_logo
