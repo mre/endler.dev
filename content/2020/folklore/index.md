@@ -242,6 +242,31 @@ with the shell being on the outside, protecting the kernel.
 
 [Reference](https://unix.stackexchange.com/questions/14934/why-was-the-word-shell-used-to-descibe-a-command-line-interface)
 
+## Slab allocator
+
+_Today's meaning: An efficient memory allocation technique, which reuses previous allocations._
+
+Slab allocation was invented by [John Bonwick](http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.ps) (Note: PDF file) in 1994 and has since been used by services like [Memcached](https://www.memcached.org/) and the Linux Kernel.
+
+> With slab allocation, a cache for a certain type or size of data object has a number of pre-allocated "slabs" of memory; within each slab there are memory chunks of fixed size suitable for the objects. ([Wikpedia](https://en.wikipedia.org/wiki/Slab_allocation#Basis))
+
+The name _slab_ comes from a teenage friend of Bonwick.
+He [tells the story](https://blogs.oracle.com/bonwick/now-it-can-be-told) on the Oracle blog:
+
+While watching TV together, a commercial by Kellogg's came on with the tag line, "Can you pinch an inch?"
+
+> The implication was that you were overweight if you could pinch more than an inch of fat on your waist -- and that hoovering a bowl of corn flakes would help.
+
+> Without missing a beat, Tommy, who weighed about 250 pounds, reached
+> for his midsection and offered his response: "Hell, I can grab a slab!"
+
+A decade later, Bonwick remembered that term when he was looking for a word
+to describe the allocation of a larger chunk of memory.
+
+Here is the original Kellogg's advertisement:
+
+{{ video(id="A8zYYg8wfmM", preview="kellogs.png") }}
+
 ## Spam
 
 _Today's meaning: Unsolicited electronic communications, for example by sending mass-emails or posting in forums and chats._
@@ -340,6 +365,4 @@ name: _PNG's Not GIF_. Here's a [great article](https://people.apache.org/~jim/N
 
 Do you know any other stories? Send me a message and I'll add them here.
 
-- Slab allocator (https://blogs.oracle.com/bonwick/now-it-can-be-told)
-  https://www.youtube.com/watch?v=A8zYYg8wfmM
 - Core Dump https://www.youtube.com/watch?time_continue=1093&v=O1YP8QP9gLA&feature=emb_logo
