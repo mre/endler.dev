@@ -4,7 +4,7 @@ date=2020-04-22
 draft=true
 
 [extra]
-subtitle="Because Computer-Term Etymology sounded weird."
+subtitle="Because Computer Etymology sounded boring."
 +++
 
 Some computer terms have a surprising legacy. Many of them are derived from long
@@ -103,15 +103,15 @@ needed. It would move the paper inside the typewriter up by one line.
 These two operations &mdash; carriage return (CR) and line feed (LF) &mdash;
 were commonly done at once by pushing the carriage return lever.
 
-{{ figure(src="./typewriter.jpg", caption="A mechanical typewriter. The lever is
+{{ figure(src="./typewriter.jpg", caption="A mechanical typewriter. The lever for the carriage return is
 on the outer left side.", credits="Source:
 [piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
 
-- On Unix systems (like Linux or macOS), a `\n` still stands for a carriage return
-  (ASCII symbol: CR) or _newline_.
-- On CP/M, DOS, and Windows, `\r\n` is used, where `\r` stands for *carriage *return\* and `\n` stands for line feed (CR+LF).
-
-[Reference](https://en.wikipedia.org/wiki/Newline)
+- On Unix systems (like Linux or macOS), a `\n` still stands for a   
+  *carriage return* (ASCII symbol: CR) or _newline_.
+- On CP/M, DOS, and Windows, `\r\n` is used, where `\r` stands for
+  *carriage return* and `\n` stands for line feed (CR+LF).
+- [Reference](https://en.wikipedia.org/wiki/Newline)
 
 Here is an old video that shows the basic mechanics of carriage return and
 line-feed:
@@ -165,7 +165,7 @@ obsolete, but the term is still used today for getting a snapshot of a computer
 process. [Reference](https://en.wikipedia.org/wiki/Core_dump)
 
 {{ figure(src="./corememory.jpg",caption="A 32 x 32 core memory plane storing
-1024 bits (or 128 bytes) of data", credits="[Wikimedia
+1024 bits (or 128 bytes) of data. The first core dumps were printed on paper, which sounds reasonable given these small amounts of bytes.", credits="[Wikimedia
 Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.jpg)") }}
 
 ## Cursor
@@ -208,7 +208,7 @@ control for the device's specific hardware_
 
 [Ascher
 Opler](https://archive.org/details/TNM_4th_generation_software_hardware_-_Datamation_20171010_0125/mode/2up)
-coined the term "firmware" in a 1967 Datamation article. As originally used,
+coined the term *firmware* in a 1967 Datamation article. As originally used,
 firmware contrasted with hardware (the CPU itself) and software (normal
 instructions executing on a CPU). It existed on the boundary between hardware
 and software; thus the name "firmware". The original article is available on the
@@ -295,7 +295,7 @@ _Today's meaning: A way to check the availability and response time of a compute
 Ping is a terminal program originally written by Mike Muuss in 1983 that is included in
 every version of UNIX, Windows, and macOS. He named it "after the sound that a
 sonar makes, inspired by the whole principle of echo-location. [...] ping uses
-timed IP/ICMP ECHO_REQUEST and ECHO_REPLY packets to probe the "distance" to the
+timed `IP/ICMP ECHO_REQUEST` and `ECHO_REPLY` packets to probe the "distance" to the
 target machine." The [reference](https://ftp.arl.army.mil/~mike/ping.html) is
 well worth a read.
 
@@ -439,7 +439,7 @@ This, however, seems to be a myth and the status code was chosen rather
 arbitrarily based on the then well-established FTP status codes.
 [Reference](https://knowyourmeme.com/memes/404)
 
-## Programming languages and Abbreviations
+# Programming languages and Abbreviations
 
 The etymology of programming language names and common abbreviations would
 probably warrant its own article, but I've decided to note down some of my
@@ -478,6 +478,14 @@ article](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designer
 on PNG's history.
 [Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF)
 
+# Reader submissions
+
+I hope you enjoyed this trip down memory lane. Do you know any other stories?
+Send me a message and I'll add them here.
+
+> You have to know the past to understand the present.  
+> &mdash; Dr. Carl Sagan (1980)
+
 # Related Projects
 
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history)
@@ -487,11 +495,3 @@ on PNG's history.
   2018](https://www.youtube.com/watch?v=2KTK2qD4-gs)
 - [Typewriter terminology that has survived into the personal computer
   era](https://en.wikipedia.org/wiki/Typewriter#Terminology)
-
-# Reader submissions
-
-I hope you enjoyed this trip down memory lane. Do you know any other stories?
-Send me a message and I'll add them here.
-
-> You have to know the past to understand the present.  
-> &mdash; Dr. Carl Sagan (1980)
