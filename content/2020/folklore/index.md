@@ -1,6 +1,6 @@
 +++
 title="Hacker Folklore"
-date=2020-04-23
+date=2020-04-24
 draft=true
 
 [extra]
@@ -109,7 +109,7 @@ on the outer left side.", credits="Source:
 [piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
 
 - On Unix systems (like Linux or macOS), a `\n` still stands for a  
-  _carriage return_ (ASCII symbol: CR) or _newline_.
+  _line feed_ (ASCII symbol: LF) or _newline_.
 - On CP/M, DOS, and Windows, `\r\n` is used, where `\r` stands for
   _carriage return_ and `\n` stands for line feed (CR+LF).
 - [Reference](https://en.wikipedia.org/wiki/Newline)
@@ -148,6 +148,10 @@ down, notably Borgholm Castle.
 credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
 
+{{ figure(src="./borgholm.jpg", caption="Aearial view of Borgholm Castle, which could have been the model for the symbol ",
+credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)") }}
+
 References:
 
 - [Wikipedia: Command Key](https://en.wikipedia.org/wiki/Command_key)
@@ -171,7 +175,7 @@ Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.jpg)") }}
 
 ## Cursor
 
-_Today's meaning: Indicates the current position on a computer screen._
+_Today's meaning: a visual cue (such as a flashing vertical line) on a video display that indicates position (as for data entry). [Merriam-Webster](https://www.merriam-webster.com/dictionary/cursor)_
 
 _Cursor_ is Latin for _runner_. A cursor is the name given to the transparent
 slide engraved with a hairline that is used for marking a point on a slide rule.
@@ -205,7 +209,7 @@ Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
 ## Firmware
 
 _Today's meaning: A class of computer software that provides the low-level
-control for the device's specific hardware_
+control for the device's specific hardware and closely tied to the hardware it runs on._
 
 [Ascher
 Opler](https://archive.org/details/TNM_4th_generation_software_hardware_-_Datamation_20171010_0125/mode/2up)
@@ -256,9 +260,7 @@ spaced knots in it. As the log would drift away, the sailors would count the
 number of knots that went out in a fixed time interval, and this would be the
 ship's speed &mdash; in knots.
 
-The ship's speed was important for navigation, so the sailors noted it down in a
-book, which was aptly called the _log book_. Later, additional information was
-added &mdash; or logged &mdash; such as the distance to landmarks.
+The ship's speed was important for navigation, so the sailors noted it down in a book, aptly called the *log book*, together with other information to establish the position of the ship more accurately, like landmark sightings and weather events. Later, additional information, more generally concerning the ship, was added &mdash; or logged &mdash; such as harbor fees and abnormal provision depletion.
 
 [Reference](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm).
 
@@ -396,7 +398,7 @@ flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
 
 ## Radio Button
 
-_Today's meaning: A GUI element that allows to choose from a predefined set of
+_Today's meaning: A UI element that allows to choose from a predefined set of
 mutually exclusive options_
 
 "Radio buttons" are named after the analogous pendant of mechanical buttons that
@@ -417,16 +419,16 @@ keyboard._
 
 Back when typesetting was a manual process where single letters made of led were
 "type set" to form words and sentences, upper- and lowercase letters were kept
-in separate cases to make this rather tedious process a little faster.
+in separate containers &mdash; or cases &mdash; to make this rather tedious process a little faster.
 
 {{ figure(src="./printers_cases.png",caption="A set of printers cases",
 credits=" texts Printing types, their history, forms, and use; a study in
 survivals by Updike, Daniel Berkeley, 1860-1941. [Freely available on
 archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
 
-# Honorable mentions
+## Honorable mentions
 
-## 404
+### 404
 
 _Today's meaning: HTTP Status Code for "File not found"._
 
@@ -440,13 +442,13 @@ This, however, seems to be a myth and the status code was chosen rather
 arbitrarily based on the then well-established FTP status codes.
 [Reference](https://knowyourmeme.com/memes/404)
 
-# Programming languages and Abbreviations
+## Programming languages and Abbreviations
 
 The etymology of programming language names and common abbreviations would
 probably warrant its own article, but I've decided to note down some of my
 favorites for the time being.
 
-## C++
+### C++
 
 C++ is a programming language based on C by Bjarne Stroustrup. The name is a
 programmer pun by Rick Mascitti, a coworker of Stroustrup. The `++` refers to
@@ -455,7 +457,7 @@ increases the value of a variable by 1. In that sense, C++ can be seen as the
 spiritual "successor" of C.
 [Reference](https://en.wikipedia.org/wiki/C%2B%2B#History)
 
-## C Sharp
+### C Sharp
 
 Similarly to C++, C# is a C-like programming language. The name again refers to
 "incremental" improvements on top of C++. The `#` in the name looks like four
@@ -467,7 +469,7 @@ should be made a semitone higher in pitch.
 {{ figure(src="./csharp.svg", caption="A C-Sharp note.", credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Treblecsharp5.svg)") }}
 
-## PNG
+### PNG
 
 Officially, PNG stands for _Portable Network Graphics_. It was born out of
 frustration over a CompuServe announcement in 1994 that programs supporting GIF
@@ -479,7 +481,7 @@ article](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designer
 on PNG's history.
 [Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF)
 
-# Reader submissions
+## Reader submissions
 
 I hope you enjoyed this trip down memory lane. Do you know any other stories?
 Send me a message, and I'll add them here.
@@ -487,7 +489,7 @@ Send me a message, and I'll add them here.
 > You have to know the past to understand the present.  
 > &mdash; Dr. Carl Sagan (1980)
 
-# Related Projects
+## Related Projects
 
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history)
 - [Wikipedia: List of computer term
@@ -496,3 +498,7 @@ Send me a message, and I'll add them here.
   2018](https://www.youtube.com/watch?v=2KTK2qD4-gs)
 - [Typewriter terminology that has survived into the personal computer
   era](https://en.wikipedia.org/wiki/Typewriter#Terminology)
+
+## Credits
+
+Thanks to [Simon Br&uuml;ggen](https://github.com/m3t0r) for editing and reviewing drafts of this article.
