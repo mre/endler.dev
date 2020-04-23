@@ -1,20 +1,21 @@
 +++
 title="Hacker Folklore"
-date=2020-04-22
+date=2020-04-23
 draft=true
 
 [extra]
 subtitle="Because Computer Etymology sounded boring."
 +++
 
-Some computer terms have a surprising legacy. Many of them are derived from long
-obsolete technologies. This post tries to dust off the exciting history of some
+Some computer terms have a surprising legacy. Many of them are derived from
+long-obsolete technologies. This post tries to dust off the exciting history of
+some
 of these terms that we use every day but aren't quite sure about their origins.
 
 Most of the content comes from sources like Wikipedia (with reference where
 appropriate), but the explanations are hard to hunt down if you don't know what
 you're looking for.  
-This is a living document and I'm planning to update in case of reader
+This is a living document, and I'm planning to update in case of reader
 submissions.
 
 ## Bike-Shedding
@@ -107,10 +108,10 @@ were commonly done at once by pushing the carriage return lever.
 on the outer left side.", credits="Source:
 [piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
 
-- On Unix systems (like Linux or macOS), a `\n` still stands for a   
-  *carriage return* (ASCII symbol: CR) or _newline_.
+- On Unix systems (like Linux or macOS), a `\n` still stands for a  
+  _carriage return_ (ASCII symbol: CR) or _newline_.
 - On CP/M, DOS, and Windows, `\r\n` is used, where `\r` stands for
-  *carriage return* and `\n` stands for line feed (CR+LF).
+  _carriage return_ and `\n` stands for line feed (CR+LF).
 - [Reference](https://en.wikipedia.org/wiki/Newline)
 
 Here is an old video that shows the basic mechanics of carriage return and
@@ -172,7 +173,7 @@ Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.jpg)") }}
 
 _Today's meaning: Indicates the current position on a computer screen._
 
-Cursor is Latin for _runner_. A cursor is the name given to the transparent
+_Cursor_ is Latin for _runner_. A cursor is the name given to the transparent
 slide engraved with a hairline that is used for marking a point on a slide rule.
 The term was then transferred to computers through analogy.
 [Reference](<https://en.wikipedia.org/wiki/Cursor_(user_interface)>)
@@ -189,12 +190,12 @@ _Today's meaning: A user interface that provides a quick overview of a system's
 status._
 
 Originally a plank of wood at the front of a horse-drawn carriage to protect the
-driver from mud 'dashed' backwards by a horses hooves.
+driver from mud 'dashed' backward by a horses hooves.
 
 When automobiles were manufactured, the board in front of the driver was given
 the same name. That was the logical place to put the necessary gauges so the
 driver could see them easily. In time, the term became more associated with the
-readouts than then protection it offered.
+readouts than the protection it offered.
 [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
 
 {{ figure(src="./dashboard.png",caption="A dashboard of a horse carriage.",
@@ -208,7 +209,7 @@ control for the device's specific hardware_
 
 [Ascher
 Opler](https://archive.org/details/TNM_4th_generation_software_hardware_-_Datamation_20171010_0125/mode/2up)
-coined the term *firmware* in a 1967 Datamation article. As originally used,
+coined the term _firmware_ in a 1967 Datamation article. As originally used,
 firmware contrasted with hardware (the CPU itself) and software (normal
 instructions executing on a CPU). It existed on the boundary between hardware
 and software; thus the name "firmware". The original article is available on the
@@ -252,7 +253,7 @@ _Today's meaning: A file that records events of a computer program or system._
 Sailors used so-called log lines to measure the speed of their ship. A flat
 piece of wood (the log) was attached to a long rope. The log had regularly
 spaced knots in it. As the log would drift away, the sailors would count the
-number of knots that went out in a fixed time interval and this would be the
+number of knots that went out in a fixed time interval, and this would be the
 ship's speed &mdash; in knots.
 
 The ship's speed was important for navigation, so the sailors noted it down in a
@@ -281,7 +282,7 @@ Reaveley](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_le
 _Today's meaning: A piece of code that can be applied to fix or improve a
 computer program._
 
-In the early days of computing history, if you made a programming mistake you'd
+In the early days of computing history, if you made a programming mistake, you'd
 have to fix a paper tape or a punched card by putting a patch on top of a hole.
 
 {{ figure(src="./patch.jpg",caption="A program tape with physical patches used
@@ -375,7 +376,7 @@ Here is the original Kellogg's advertisement:
 _Today's meaning: Unsolicited electronic communications, for example by sending
 mass-emails or posting in forums and chats._
 
-The term goes back to a sketch by British comedy group Monty Python from 1970.
+The term goes back to a sketch by the British comedy group Monty Python from 1970.
 In the sketch, a cafe is including
 [Spam](<https://en.wikipedia.org/wiki/Spam_(food)>) (a brand of canned cooked
 pork) in almost every dish. The excessive amount of Spam mentioned is a
@@ -481,7 +482,7 @@ on PNG's history.
 # Reader submissions
 
 I hope you enjoyed this trip down memory lane. Do you know any other stories?
-Send me a message and I'll add them here.
+Send me a message, and I'll add them here.
 
 > You have to know the past to understand the present.  
 > &mdash; Dr. Carl Sagan (1980)
