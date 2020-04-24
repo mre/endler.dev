@@ -1,10 +1,10 @@
 +++
 title="Hacker Folklore"
 date=2020-04-24
-draft=true
+draft=false
 
 [extra]
-subtitle="Because Computer Etymology sounded boring."
+subtitle="Because \"Computer Etymology\" sounded boring."
 +++
 
 Some computer terms have a surprising legacy. Many of them are derived from
@@ -37,8 +37,8 @@ reactor is so vastly expensive and complicated that an average person cannot
 understand it, so one assumes that those who work on it understand it. On the
 other hand, everyone can visualize a cheap, simple bicycle shed, so planning one
 can result in endless discussions because everyone involved wants to add a touch
-and show personal contribution. [Reference - Wikipedia: Law of
-Triviality](https://en.wikipedia.org/wiki/Law_of_triviality)
+and show personal contribution.  
+[Reference - Wikipedia: Law of Triviality](https://en.wikipedia.org/wiki/Law_of_triviality)
 
 ## Boilerplate
 
@@ -58,7 +58,7 @@ which could include advertisements pre-printed next to the conventional content.
 References:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Boilerplate_text)
-- [StackOverflow](https://stackoverflow.com/a/3997441/270334)
+- [Stack Overflow](https://stackoverflow.com/a/3997441/270334)
 - [StackExchange - English Language &
   Usage](https://english.stackexchange.com/questions/464924/boilerplate-versus-template/464929)
 
@@ -225,30 +225,27 @@ Archive](https://archive.org/details/TNM_4th_generation_software_hardware_-_Data
 
 _Today's meaning: Common placeholder variable names._
 
+Originally the term might comes from the military term _FUBAR_.
+There are a few variations, but a common meaning is [FUBAR: "f\*\*\*ed up beyond all recognition"](https://en.wikipedia.org/wiki/List_of_military_slang_terms#FUBAR).
+
 The use of `foo` in a programming context is generally credited to the Tech
 Model Railroad Club (TMRC) of MIT from circa 1960. In the complex model system,
 there were scram switches located at numerous places around the room that could
 be thrown if something undesirable was about to occur, such as a train going
 full-bore at an obstruction.
-[Reference](https://en.wikipedia.org/wiki/Foobar#History_and_etymology)
+
+The way I understood it was that they literally had emergency buttons labeled
+`foo` for lack of a better name.
+Maybe related to the original military meaning of FUBAR to indicate that something is going very very wrong.
 
 {{ figure(src="./scram.jpg",caption="A scram switch (button), that could be
-pressed to prevent inadvertent operation.", credits="Source [Wikimedia
+pressed to prevent inadvertent operation. Maybe the TMRC had buttons labeled `foo` instead", credits="Source [Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" ) }}
 
-A lot of additional research was done by user [Hugo on
-Stackoverflow](https://stackoverflow.com/a/6727104/270334):
+References:
 
-> "Foo" and "bar" as metasyntactic variables were popularised by MIT and DEC,
-> the first references are in work on LISP and PDP-1 and Project MAC from 1964
-> onwards. Many of these people were in MIT's Tech Model Railroad Club, where we
-> find the first documented use of "foo" in tech circles in 1959 (and a variant
-> in 1958). Both "foo" and "bar" (and even "baz") were well known in popular
-> culture, especially from Smokey Stover and Pogo comics, which will have been
-> read by many TMRC members. Also, it seems likely the military FUBAR
-> contributed to their popularity.
-
-In summary: it's complicated.
+- [Wikipedia](https://en.wikipedia.org/wiki/Foobar#History_and_etymology)
+- [Stack Overflow](https://stackoverflow.com/a/6727104/270334).
 
 ## Log / Logfile
 
@@ -260,7 +257,7 @@ spaced knots in it. As the log would drift away, the sailors would count the
 number of knots that went out in a fixed time interval, and this would be the
 ship's speed &mdash; in knots.
 
-The ship's speed was important for navigation, so the sailors noted it down in a book, aptly called the *log book*, together with other information to establish the position of the ship more accurately, like landmark sightings and weather events. Later, additional information, more generally concerning the ship, was added &mdash; or logged &mdash; such as harbor fees and abnormal provision depletion.
+The ship's speed was important for navigation, so the sailors noted it down in a book, aptly called the _log book_, together with other information to establish the position of the ship more accurately, like landmark sightings and weather events. Later, additional information, more generally concerning the ship, was added &mdash; or logged &mdash; such as harbor fees and abnormal provision depletion.
 
 [Reference](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm).
 
@@ -391,10 +388,10 @@ to rebuild its agricultural base.
 Can of Spam ", credits="By user [Jamie (jbcurio) on
 flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
 
-[Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from
-[Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com):
-
 <iframe src="https://player.vimeo.com/video/329001211" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+[Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from
+[Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com).
 
 ## Radio Button
 
@@ -422,8 +419,8 @@ Back when typesetting was a manual process where single letters made of led were
 in separate containers &mdash; or cases &mdash; to make this rather tedious process a little faster.
 
 {{ figure(src="./printers_cases.png",caption="A set of printers cases",
-credits=" texts Printing types, their history, forms, and use; a study in
-survivals by Updike, Daniel Berkeley, 1860-1941. [Freely available on
+credits="From the book 'Printing types, their history, forms, and use; a study in
+survivals' by Updike, Daniel Berkeley, 1860-1941. [Freely available on
 archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
 
 ## Honorable mentions
@@ -481,13 +478,13 @@ article](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designer
 on PNG's history.
 [Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF)
 
-## Reader submissions
-
-I hope you enjoyed this trip down memory lane. Do you know any other stories?
-Send me a message, and I'll add them here.
+## Conclusion
 
 > You have to know the past to understand the present.  
 > &mdash; Dr. Carl Sagan (1980)
+
+I hope you enjoyed this trip down memory lane. Now it's your turn!  
+👉 Do you know any other stories? Send me a message, and I'll add them here.
 
 ## Related Projects
 
