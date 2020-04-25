@@ -202,9 +202,21 @@ driver could see them easily. In time, the term became more associated with the
 readouts than the protection it offered.
 [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
 
-{{ figure(src="./dashboard.png",caption="A dashboard of a horse carriage.",
+{{ figure(src="./dashboard.jpg",caption="A dashboard of a horse carriage.",
 credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
+
+## Firewall
+
+_Today's meaning: A network security system that establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet._
+
+Fire walls are used mainly in terraced houses, but also in individual residential buildings. They prevent fire and smoke from spreading to another part of the building in the event of a fire. Large fires can thus be prevented. The term is used in computing since the 80s.
+[Reference](https://en.wikipedia.org/wiki/Firewall_(computing)#History)
+
+{{ figure(src="./firewall.jpg",caption="Firewall residential construction, separating the building into two separate residential units, and fire areas.", credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.jpg)")
+}}
+
 
 ## Firmware
 
@@ -499,3 +511,4 @@ I hope you enjoyed this trip down memory lane. Now it's your turn!
 ## Credits
 
 Thanks to [Simon Br&uuml;ggen](https://github.com/m3t0r) for editing and reviewing drafts of this article.
+Thanks to [Jakub Sacha](https://github.com/jakubsacha) for suggesting to add *Firewall*.
