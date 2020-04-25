@@ -88,11 +88,9 @@ main article {
   margin-bottom: 44px;
 }
 
-main img {
-  max-width: 100%;
-}
-
-main video {
+main img,
+main video,
+iframe {
   max-width: 100%;
 }
 
