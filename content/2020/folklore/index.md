@@ -62,12 +62,12 @@ References:
 - [StackExchange - English Language &
   Usage](https://english.stackexchange.com/questions/464924/boilerplate-versus-template/464929)
 
-{{ figure(src="./bending-roll.jpg",caption="An old machine that bended steel
+{{ figure(src="./bending-roll.webp",caption="An old machine that bended steel
 plates to water boilers.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).jpg)")
+Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).webp)")
 }}
 
-{{ figure(src="./boilerplate.jpg", caption="The man in the foreground is holding
+{{ figure(src="./boilerplate.webp", caption="The man in the foreground is holding
 a rounded printing plate. Plates like this were provided by companies such as
 Western Newspaper Union to many smaller newspapers.", credits="[Wikimedia
 Commons](https://english.stackexchange.com/a/464929)") }}
@@ -104,7 +104,7 @@ needed. It would move the paper inside the typewriter up by one line.
 These two operations &mdash; carriage return (CR) and line feed (LF) &mdash;
 were commonly done at once by pushing the carriage return lever.
 
-{{ figure(src="./typewriter.jpg", caption="A mechanical typewriter. The lever for the carriage return is
+{{ figure(src="./typewriter-photo.webp", caption="A mechanical typewriter. The lever for the carriage return is
 on the outer left side.", credits="Source:
 [piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
 
@@ -117,7 +117,7 @@ on the outer left side.", credits="Source:
 Here is an old video that shows the basic mechanics of carriage return and
 line-feed:
 
-{{ video(id="EWfElq1vgLA", start="842", preview="typewriter.png") }}
+{{ video(id="EWfElq1vgLA", start="842", preview="typewriter.webp") }}
 
 ## Command key symbol (⌘)
 
@@ -144,13 +144,13 @@ symbol had been picked for its Scandinavian usage due to its resembling the
 shape of a square castle with round corner towers as seen from above looking
 down, notably Borgholm Castle.
 
-{{ figure(src="./severdighet.png", caption="Norwegian Severdighet road sign",
+{{ figure(src="./severdighet.webp", caption="Norwegian Severdighet road sign",
 credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
 
-{{ figure(src="./borgholm.jpg", caption="Aearial view of Borgholm Castle, which could have been the model for the symbol ",
+{{ figure(src="./borgholm.webp", caption="Aearial view of Borgholm Castle, which could have been the model for the symbol ",
 credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)") }}
+Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.webp)") }}
 
 References:
 
@@ -169,9 +169,9 @@ storage mechanism based on a grid of toroid magnets. It has since become
 obsolete, but the term is still used today for getting a snapshot of a computer
 process. [Reference](https://en.wikipedia.org/wiki/Core_dump)
 
-{{ figure(src="./corememory.jpg",caption="A 32 x 32 core memory plane storing
+{{ figure(src="./corememory.webp",caption="A 32 x 32 core memory plane storing
 1024 bits (or 128 bytes) of data. The first core dumps were printed on paper, which sounds reasonable given these small amounts of bytes.", credits="[Wikimedia
-Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.jpg)") }}
+Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.webp)") }}
 
 ## Cursor
 
@@ -182,7 +182,7 @@ slide engraved with a hairline that is used for marking a point on a slide rule.
 The term was then transferred to computers through analogy.
 [Reference](<https://en.wikipedia.org/wiki/Cursor_(user_interface)>)
 
-{{ figure(src="./slide-rule.jpg", credits="A December 1951 advertisement for the
+{{ figure(src="./slide-rule.webp", credits="A December 1951 advertisement for the
 IBM 604 Electronic Calculating Punch that was first produced in 1948. The
 advertisement claims the IBM 604 can do the work of 150 engineers with slide
 rules. The cursor (or runner) is the transparent part in the middle of the
@@ -202,21 +202,20 @@ driver could see them easily. In time, the term became more associated with the
 readouts than the protection it offered.
 [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
 
-{{ figure(src="./dashboard.jpg",caption="A dashboard of a horse carriage.",
+{{ figure(src="./dashboard.webp",caption="A dashboard of a horse carriage.",
 credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
+Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).webp)") }}
 
 ## Firewall
 
 _Today's meaning: A network security system that establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet._
 
 Fire walls are used mainly in terraced houses, but also in individual residential buildings. They prevent fire and smoke from spreading to another part of the building in the event of a fire. Large fires can thus be prevented. The term is used in computing since the 80s.
-[Reference](https://en.wikipedia.org/wiki/Firewall_(computing)#History)
+[Reference](<https://en.wikipedia.org/wiki/Firewall_(computing)#History>)
 
-{{ figure(src="./firewall.jpg",caption="Firewall residential construction, separating the building into two separate residential units, and fire areas.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.jpg)")
+{{ figure(src="./firewall.webp",caption="Firewall residential construction, separating the building into two separate residential units, and fire areas.", credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.webp)")
 }}
-
 
 ## Firmware
 
@@ -250,14 +249,31 @@ The way I understood it was that they literally had emergency buttons labeled
 `foo` for lack of a better name.
 Maybe related to the original military meaning of FUBAR to indicate that something is going very very wrong.
 
-{{ figure(src="./scram.jpg",caption="A scram switch (button), that could be
+{{ figure(src="./scram.webp",caption="A scram switch (button), that could be
 pressed to prevent inadvertent operation. Maybe the TMRC had buttons labeled `foo` instead", credits="Source [Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" ) }}
+Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.webp)" ) }}
 
 References:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Foobar#History_and_etymology)
 - [Stack Overflow](https://stackoverflow.com/a/6727104/270334).
+
+## Freelancer
+
+_Today's meaning: A self-employed person, which is not committed to a particular employer long-term._
+
+The term first appears in the novel [Ivanhoe](https://en.wikipedia.org/wiki/Ivanhoe) by Sir Walter Scott. (The novel also had a [lasting influence](https://en.wikipedia.org/wiki/Ivanhoe#Lasting_influence_on_the_Robin_Hood_legend) on the Robin Hood legend.)
+
+{{ figure(src="./ivanhoe.webp",caption="Cover of a Classic Comics book", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CC_No_02_Ivanhoe_2.jpg)" ) }}
+
+In it, a Lord offers his paid army of 'free lances' to King Richard:
+
+> I offered Richard the service of my Free Lances, and he refused them
+> &mdash; I will lead them to Hull, seize on shipping, and embark for Flanders;
+> thanks to the bustling times, a man of action will always find employment.
+
+Therefore, a "free lancer" is someone who fights for whoever pays the most.
+Free does not mean "without pay", but refers to the additional freedom to work for any employer. [Reference](https://www.merriam-webster.com/words-at-play/freelance-origin-meaning)
 
 ## Log / Logfile
 
@@ -273,15 +289,15 @@ The ship's speed was important for navigation, so the sailors noted it down in a
 
 [Reference](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm).
 
-{{ figure(src="./log-seamen.jpg",caption="Sailors measuring ship speed with a
+{{ figure(src="./log-seamen.webp",caption="Sailors measuring ship speed with a
 log line", credits="[The Pilgrims & Plymouth Colony:1620 by Duane A.
 Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
 
-{{ figure(src="./log-line.jpg",caption="The parts of a log-line", credits="[The
+{{ figure(src="./log-line.webp",caption="The parts of a log-line", credits="[The
 Pilgrims & Plymouth Colony:1620 by Duane A.
 Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
 
-{{ figure(src="./logfile.png",caption="Page from the log-file of the British
+{{ figure(src="./logfile.webp",caption="Page from the log-file of the British
 Winchelsea. The second column denotes the number of knots measured with the
 log-line, which indicates the ship's speed", credits="[Navigation and Logbooks
 in the Age of Sail by Peter
@@ -296,7 +312,7 @@ computer program._
 In the early days of computing history, if you made a programming mistake, you'd
 have to fix a paper tape or a punched card by putting a patch on top of a hole.
 
-{{ figure(src="./patch.jpg",caption="A program tape with physical patches used
+{{ figure(src="./patch.webp",caption="A program tape with physical patches used
 to correct punched holes by covering them.", credits="[Smithsonian Archives
 Center](https://americanhistory.si.edu/archives)") }}
 
@@ -380,7 +396,7 @@ describe the allocation of a larger chunk of memory.
 
 Here is the original Kellogg's advertisement:
 
-{{ video(id="A8zYYg8wfmM", preview="kellogs.png") }}
+{{ video(id="A8zYYg8wfmM", preview="kellogs.webp") }}
 
 ## Spam
 
@@ -396,7 +412,7 @@ UK after World War II (a period of rationing in the UK) as the country struggled
 to rebuild its agricultural base.
 [Reference](https://en.wikipedia.org/wiki/Spamming#Etymology)
 
-{{ figure(src="./spam.jpg", caption="Vintage Ad: Look What You Can Do With One
+{{ figure(src="./spam.webp", caption="Vintage Ad: Look What You Can Do With One
 Can of Spam ", credits="By user [Jamie (jbcurio) on
 flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
 
@@ -416,7 +432,7 @@ cassette recorders and wearable audio players (the famous "Walkman" and
 similar). And later in VCRs and video cameras.
 [Reference](https://www.jitbit.com/radio-button/)
 
-{{ figure(src="./radio-buttons.jpg",caption="An old car radio (left) and CSS
+{{ figure(src="./radio-buttons.webp",caption="An old car radio (left) and CSS
 radio buttons (right). Only a single option can be selected at any point in
 time. As a kid, I would push two buttons at once so they would interlock. Good
 times.", credits="Images by [Matt Coady](https://twitter.com/themattcoady)") }}
@@ -430,7 +446,7 @@ Back when typesetting was a manual process where single letters made of led were
 "type set" to form words and sentences, upper- and lowercase letters were kept
 in separate containers &mdash; or cases &mdash; to make this rather tedious process a little faster.
 
-{{ figure(src="./printers_cases.png",caption="A set of printers cases",
+{{ figure(src="./printers_cases.webp",caption="A set of printers cases",
 credits="From the book 'Printing types, their history, forms, and use; a study in
 survivals' by Updike, Daniel Berkeley, 1860-1941. [Freely available on
 archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
@@ -483,7 +499,7 @@ Commons](https://commons.wikimedia.org/wiki/File:Treblecsharp5.svg)") }}
 Officially, PNG stands for _Portable Network Graphics_. It was born out of
 frustration over a CompuServe announcement in 1994 that programs supporting GIF
 would have to pay licensing fees from now on. A working group lead by hacker
-[Thomas Boutell](https://boutell.dev/) created the `.png` file format, a
+[Thomas Boutell](https://boutell.dev/) created the `.webp` file format, a
 patent-free replacement for GIF. Therefore I prefer the format's unofficial
 name: _PNG's Not GIF_. Here's a [great
 article](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designers/05_09_97_1.html)
@@ -501,19 +517,19 @@ I hope you enjoyed this trip down memory lane. Now it's your turn!
 ## Related Projects
 
 - [Awesome Computer History](https://github.com/watson/awesome-computer-history):
-  A curated list of computer history videos, documentaries and related folklore 
+  A curated list of computer history videos, documentaries and related folklore
   maintained by Thomas Watson.
-- [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies): 
+- [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies):
   List of the origins of computer-related terms or terms used in the computing world.
 - [Talk: The Etymology of Programming by Brittany Storoz - JSConf EU
   2018](https://www.youtube.com/watch?v=2KTK2qD4-gs): A talk that explains the background behind a few programming terms. Careful here: the explanation for "bug" is probably wrong as mentioned above.
 - [Typewriter terminology that has survived into the personal computer
-  era](https://en.wikipedia.org/wiki/Typewriter#Terminology): 
+  era](https://en.wikipedia.org/wiki/Typewriter#Terminology):
   A list of computer terms that have their origins from typewriters.
-- [Folklore - The Original Macintosh](https://www.folklore.org/index.py): 
+- [Folklore - The Original Macintosh](https://www.folklore.org/index.py):
   Anecdotes about the development of Apple's original Macintosh, and the people who made it.
 
 ## Credits
 
 Thanks to [Simon Br&uuml;ggen](https://github.com/m3t0r) for editing and reviewing drafts of this article.
-Thanks to [Jakub Sacha](https://github.com/jakubsacha) for suggesting to add *Firewall*.
+Thanks to [Jakub Sacha](https://github.com/jakubsacha) for suggesting to add _Firewall_.
