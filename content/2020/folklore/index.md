@@ -500,13 +500,18 @@ I hope you enjoyed this trip down memory lane. Now it's your turn!
 
 ## Related Projects
 
-- [Awesome Computer History](https://github.com/watson/awesome-computer-history)
-- [Wikipedia: List of computer term
-  etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies)
+- [Awesome Computer History](https://github.com/watson/awesome-computer-history):
+  A curated list of computer history videos, documentaries and related folklore 
+  maintained by Thomas Watson.
+- [Wikipedia: List of computer term etymologies](https://en.wikipedia.org/wiki/List_of_computer_term_etymologies): 
+  List of the origins of computer-related terms or terms used in the computing world.
 - [Talk: The Etymology of Programming by Brittany Storoz - JSConf EU
-  2018](https://www.youtube.com/watch?v=2KTK2qD4-gs)
+  2018](https://www.youtube.com/watch?v=2KTK2qD4-gs): A talk that explains the background behind a few programming terms. Careful here: the explanation for "bug" is probably wrong as mentioned above.
 - [Typewriter terminology that has survived into the personal computer
-  era](https://en.wikipedia.org/wiki/Typewriter#Terminology)
+  era](https://en.wikipedia.org/wiki/Typewriter#Terminology): 
+  A list of computer terms that have their origins from typewriters.
+- [Folklore - The Original Macintosh](https://www.folklore.org/index.py): 
+  Anecdotes about the development of Apple's original Macintosh, and the people who made it.
 
 ## Credits
 
