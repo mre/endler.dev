@@ -3,7 +3,14 @@
     <a href="{{ link }}">
         {% endif %}
 
-        <img src="{{ src }}" {% if alt %} alt="{{ alt }}" {% endif %}
+        <img src="{{ src }}" 
+        {% if alt %}
+            alt="{{ alt }}"
+        {% elif caption %}
+            alt="{{ caption | markdown(inline=true) | safe }}"
+        {% elif credits %}
+            alt="{{ credits | markdown(inline=true) | safe }}"
+        {% endif %}
         {% if width %} width="{{ width }}" {% endif %} {% if height %} height ="{{ height }}" {% endif %} 
         />
 
