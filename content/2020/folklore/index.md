@@ -15,7 +15,7 @@ of these terms that we use every day but aren't quite sure about their origins.
 Most of the content comes from sources like Wikipedia (with reference where
 appropriate), but the explanations are hard to hunt down if you don't know what
 you're looking for.  
-This is a living document, and I'm planning to update in case of reader
+This is a living document, and I'm planning to update it in case of reader
 submissions.
 
 ## Bike-Shedding
