@@ -236,7 +236,7 @@ Archive](https://archive.org/details/TNM_4th_generation_software_hardware_-_Data
 
 _Today's meaning: Common placeholder variable names._
 
-Originally the term might comes from the military term _FUBAR_.
+Originally the term might come from the military term _FUBAR_.
 There are a few variations, but a common meaning is [FUBAR: "f\*\*\*ed up beyond all recognition"](https://en.wikipedia.org/wiki/List_of_military_slang_terms#FUBAR).
 
 The use of `foo` in a programming context is generally credited to the Tech
