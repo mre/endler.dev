@@ -108,7 +108,7 @@ Unsure what to do next, my idea remained a pipe dream.
 
 Five years later, in 2018, the web had become a different place. Bundlers were
 ubiquitous, and the Node ecosystem was flourishing. One thing, in particular,
-revived my dreams about the tiny static search engine: [1embly].
+revived my dreams about the tiny static search engine: [webassembly].
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a
 > stack-based virtual machine. Wasm is designed as a portable target for
