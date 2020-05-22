@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - source
+  pull_request:
+    branches:
+      - source
 jobs:
   build:
     name: shalzz/zola-deploy-action
@@ -14,3 +17,11 @@ jobs:
         PAGES_BRANCH: master
         BUILD_DIR: .
         TOKEN: ${{ secrets.TOKEN }}
+    - name: Audit blog using Lighthouse
+      uses: treosh/lighthouse-ci-action@v2
+      with:
+        urls: |
+          https://endler.dev/
+          https://endler.dev/2019/maybe-you-dont-need-kubernetes/
+        uploadArtifacts: false
+        temporaryPublicStorage: true
