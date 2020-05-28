@@ -130,6 +130,13 @@ fn main() -> Result<(), Error> {
 
 We can see that the carrier operator `?` gets desugared into a `match` on the `Result` of `File::open`. In case of an error, We apply `std::convert::From::from` to convert between error types. Otherwise, we simply return the `Ok` value.
 
+## Talk
+
+Over at [FOSDEM](fosdem.org/) in Belgium, I was able to speak about the project in detail.
+Here is the recording:
+
+{{ video(id="ePiWBGh35q0", preview="/talks/2019-fosdem.webp") }}
+
 ## Future work
 
 I'm not planning to rewrite the compiler here. `rustc` is doing a far greater job than I could. All this functionality already existed before; I'm merely trying to make the compiler more approachable for learners like me.
