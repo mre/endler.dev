@@ -17,11 +17,3 @@ jobs:
         PAGES_BRANCH: master
         BUILD_DIR: .
         TOKEN: ${{ secrets.TOKEN }}
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-    - name: Audit blog using Lighthouse v6
-      run: |
-        npm install -g @lhci/cli@0.4.x
-        lhci autorun
