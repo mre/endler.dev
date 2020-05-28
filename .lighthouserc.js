@@ -1,3 +1,4 @@
+// For options, see https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md
 module.exports = {
   ci: {
     upload: {
