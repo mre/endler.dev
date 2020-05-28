@@ -17,14 +17,6 @@ jobs:
         PAGES_BRANCH: master
         BUILD_DIR: .
         TOKEN: ${{ secrets.TOKEN }}
-    - name: Audit blog using Lighthouse v5
-      uses: treosh/lighthouse-ci-action@v2
-      with:
-        urls: |
-          https://endler.dev/
-          https://endler.dev/2019/maybe-you-dont-need-kubernetes/
-        uploadArtifacts: false
-        temporaryPublicStorage: true
     - name: Use Node.js 10.x
       uses: actions/setup-node@v1
       with:
