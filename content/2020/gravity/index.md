@@ -3,9 +3,12 @@ title="Gravity"
 date=2020-05-29
 [extra]
 excerpt = "Here's a test to check your age: Do you still remember that funny JavaScript gravity effect, which Google used on their homepage ten years ago?"
+logo="foo.svg"
+css=true
 +++
 
-Here's a test to check your age:
+
+Here's a test to show your age:
 
 Do you still remember [that funny JavaScript gravity effect](https://josephpcohen.com/w/gravityscript/), which Google used on their homepage ten years ago? This one?
 
@@ -18,7 +21,7 @@ So, in good hacker fashion,  I quickly patched up the script (it's just a three-
 
 Test it here! (Caution: you'll have to reload the page after that. 😏)
 
-<a class="button" href='#' id='gravity'>⬇️ Add Gravity!</a>
+<a class="button" href='#' id='gravity'>Apply Gravity</a>
 
 <script type="text/javascript">
     var myLink = document.getElementById('gravity');
