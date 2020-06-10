@@ -64,7 +64,7 @@ some confidence that they were stored before. In our case, it can say with a
 certain _error rate_ that a word is in an article.
 
 {{ figure(src="./bloomfilter.svg", caption="A Bloom filter stores a
-'fingerprint' (a number of hash values) of all inputs values instead of the raw
+'fingerprint' (a number of hash values) of all input values instead of the raw
 input. The result is a low-memory-footprint data structure. This is an example
 of 'hello' as an input.") }}
 
@@ -142,7 +142,7 @@ February
 
 Now I had all the pieces of the puzzle:
 
-- Rust - A language I am comfortable with
+- Rust - A language I was comfortable with
 - [wasm-pack] - A bundler for WebAssembly modules
 - A working prototype that served as a proof-of-concept
 
@@ -291,7 +291,7 @@ hits. Thanks to my dear colleague [Jorge Luis Betancourt](https://github.com/jor
 
 ![Video of the search functionality](./anim-opt.gif)
 
-(Fun fact: this animation is about the same size as the Wasm search itself.)
+(Fun fact: this animation is about the same size as the uncompressed Wasm search itself.)
 
 Only whole words are matched. I would love to add prefix-search, but the
 binary became too big when I tried.
@@ -344,6 +344,8 @@ You can generate this JSON file with any static site generator.
 
 I'm pretty sure that the Jekyll version looks quite similar.
 [Here's a starting point](https://learn.cloudcannon.com/jekyll/output-json/).
+If you get something working for your static site generator, please let me know.  
+
 
 ## Observations
 
@@ -352,17 +354,17 @@ I'm pretty sure that the Jekyll version looks quite similar.
   Bring your thinking cap!
 - Creating a product out of a good idea is a lot of work. One has to pay
   attention to many factors: ease-of-use, generality, maintainability,
-  documentation and so on.
+  documentation, and so on.
 - Rust is very good at removing dead code, so you usually don't pay for what
   you don't use. I would still advise you to be very conservative about the
   dependencies you add to a Wasm binary because it's tempting to add features
   that you don't need and which will add to the binary size. For example, I
-  used Structopt during testing, and I had a `main()` function that was parsing
+  used [StructOpt](https://github.com/TeXitoi/structopt) during testing, and I had a `main()` function that was parsing
   these command-line arguments. This was not necessary for Wasm, so I
   removed it later.
-- I understand that not everyone wants to write Rust code. It's complicated to
-  get started with, but the cool thing is that you can do the same thing with
-  almost any other language, too. For example, you can write Go code and
+- I understand that not everyone wants to write Rust code. It's [complicated to
+  get started with](https://endler.dev/2017/go-vs-rust/), but the cool thing is that you can
+  use almost any other language, too. For example, you can write Go code and
   transpile to Wasm, or maybe you prefer PHP or Haskell. There is support for
   [many languages](https://github.com/appcypher/awesome-wasm-langs) already.
 - A lot of people dismiss WebAssembly as a toy technology. They couldn't be
@@ -380,13 +382,14 @@ The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
 Please be aware of these limitations:
 
 - **Only searches for entire words.** There are no search suggestions.
+  The reason is that prefix search blows up binary size like [Mentos and Diet Coke](https://www.youtube.com/watch?v=b6u9WJ01Oxs).
 - Since we bundle all search indices for all articles into one static binary, I
   **only recommend to use it for low- to medium-size websites**. Expect around 4kB
   (non-compressed) per article.
 - <strike>The **compile times are abysmal** at the moment (around 1.5 minutes after a
   fresh install on my machine), mainly because we're compiling the Rust crate
   from scratch every time we rebuild the index.</strike>  
-  Update: This is mostly fixed by now thanks to the awesome work of
+  Update: This is mostly fixed thanks to the awesome work of
   [CephalonRho](https://github.com/CephalonRho) in PR
   [#13](https://github.com/mre/tinysearch/pull/13). Thanks again!
 
