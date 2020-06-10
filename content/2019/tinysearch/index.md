@@ -395,7 +395,8 @@ Please be aware of these limitations:
 
 The final Wasm code is laser-fast because we save the roundtrips to a
 search-server. The instant feedback loop feels more like filtering a list than
-searching through files.
+searching through files.  It can even work fully offline, which might be nice if
+you like to bundle it with an app.
 
 ## Credits
 
