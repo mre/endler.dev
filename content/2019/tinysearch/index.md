@@ -4,6 +4,7 @@ date=2019-10-17
 
 [extra]
 comments = [
+  {name = "Hacker News", url="https://news.ycombinator.com/item?id=23473303"},
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/dl1sw2/a_tiny_static_fulltext_search_engine_using_rust/"}
 ]
 +++
