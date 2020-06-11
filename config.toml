@@ -3,7 +3,8 @@ base_url = "https://endler.dev"
 
 title = "Matthias Endler"
 description = "Backend Engineer at trivago. Likes just-in-time compilers and hot chocolate"
-generate_rss = true
+generate_feed = true
+feed_filename = "rss.xml"
 
 # Go through every links in all content and check if the links are valid
 check_external_links = false
