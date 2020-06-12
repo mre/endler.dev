@@ -14,7 +14,7 @@ comments = [
 ]
 +++
 
-![fastcat logo](./fastcat.svg)
+{{ figure(src="./fastcat.svg") }}
 
 Lots of people asked me to write another piece about the internals of well-known
 Unix commands. Well, actually, nobody asked me, but it makes for a good

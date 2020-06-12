@@ -13,7 +13,7 @@ comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/golang/comments/70iwcd/go_vs_rust_choose_go/"}]
 +++
 
-{{ figure(src="./hero.svg", credits="Gopher designed with [Gopherize.me](https://gopherize.me). Cogwheels designed by [Freepik](https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm)") }}
+{{ figure(src="./hero.svg", credits="Gopher designed with <a href='https://gopherize.me'>Gopherize.me</a>. Gears designed by <a href='https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm'>Freepik</a>") }}
 
 "Rust or Go, which one should I choose?" is a question I get quite often.
 Both languages seem to be competing for the same user base and they both seem to be

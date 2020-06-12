@@ -1,5 +1,5 @@
 +++
-title = "Faster Rust Compile Times in 2020"
+title = "Faster Rust Compile Times"
 date = 2020-05-29
 draft = true
 +++
@@ -12,7 +12,7 @@ Starting with medium-sized projects, the compilation costs are starting to becom
 
 Improving compilation times is up there at the top of the wishlist for many Rustaceans according to the 2019 survey:
 
-![How can we improhttps://blog.rust-lang.org/2020/04/17/Rust-survey-2019.htmlve Rust for better adoption](https://blog.rust-lang.org/images/2020-03-RustSurvey/45-improve-adoption.svg)
+![How can we improve Rust for better adoption](https://blog.rust-lang.org/images/2020-03-RustSurvey/45-improve-adoption.svg)
 
 ## Why is Rust compilation slow?
 

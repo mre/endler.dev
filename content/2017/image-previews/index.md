@@ -7,7 +7,7 @@ social_img="2017_image_previews.png"
 excerpt="My website is reasonably fast. There was one thing left which really annoyed me: layout reflow after images got loaded. The problem is, that the image dimensions are not known when the text is ready to be displayed. As a result, the text will be pushed down on the screen as soon as an image is loaded above. I decided to fix that once and for all."
 +++
 
-{{ figure(src="./factory.svg", credits="Adapted from [Freepik](https://www.freepik.com/free-vector/industrial-machine-vector_753558.htm)") }}
+{{ figure(src="./factory.svg", credits="Adapted from <a href='https://www.freepik.com/free-vector/industrial-machine-vector_753558.htm'>Freepik</a> ") }}
 
 My website is reasonably fast.
 

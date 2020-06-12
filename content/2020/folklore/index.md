@@ -42,6 +42,12 @@ and show personal contribution.
 
 ## Boilerplate
 
+{{ figure(src="./bending-roll.webp",caption="An old machine that bended steel
+plates to water boilers.", credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).webp)")
+}}
+
+
 _Today's meaning: A chunk of code that is copied over and over again with little
 or no changes made to it in the process._
 
@@ -61,11 +67,6 @@ References:
 - [Stack Overflow](https://stackoverflow.com/a/3997441/270334)
 - [StackExchange - English Language &
   Usage](https://english.stackexchange.com/questions/464924/boilerplate-versus-template/464929)
-
-{{ figure(src="./bending-roll.webp",caption="An old machine that bended steel
-plates to water boilers.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).webp)")
-}}
 
 {{ figure(src="./boilerplate.webp", caption="The man in the foreground is holding
 a rounded printing plate. Plates like this were provided by companies such as
