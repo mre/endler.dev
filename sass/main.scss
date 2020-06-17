@@ -462,10 +462,12 @@ input:focus::placeholder {
     border-radius: 6px;
   }
 
-  pre, code {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-  }
+  // TODO: Revisit this in the future
+  // To make the background less bright
+  // pre, code {
+    // -webkit-filter: invert(100%);
+    // filter: invert(100%);
+  // }
 
   .info {
     background: $blue-800;

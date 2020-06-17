@@ -5,9 +5,9 @@
 
         {# The decoder for WebP does not support the format features ALPH #}
         {% set meta_path = page.path~src %}
-        {% if not meta_path is ending_with(".webp") %}
-            {% set meta = get_image_metadata(path=meta_path) %}
-        {% endif %}
+        {# {% if not meta_path is ending_with(".webp") %} #}
+           {# {% set meta = get_image_metadata(path=meta_path) %} #}
+        {# {% endif %} #}
         <img src="{{ src }}" 
         loading="lazy"
         {% if alt %}
