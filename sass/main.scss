@@ -38,8 +38,8 @@ body {
 }
 
 body {
-  font-family: Georgia, Times, serif;
-  font-size: 120%;
+  font-family: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond", serif;
+  font-size: 1.2em;
   line-height: 1.58;
   border-top: 0.5em solid $pink-400;
   color: $grey-500;
@@ -153,7 +153,7 @@ code {
   font-family: $monospace;
   -moz-font-feature-settings: "liga" off;
   font-feature-settings: "liga" off;
-  font-size: 16px;
+  font-size: 0.8em;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   max-width: 100%;
@@ -179,7 +179,6 @@ blockquote {
 
 pre {
   font-family: $monospace;
-  font-size: 16px;
   padding: 10px;
   border-radius: 6px;
   overflow-x: auto;
@@ -462,11 +461,24 @@ input:focus::placeholder {
     border-radius: 6px;
   }
 
+  table {
+    width: 100%;
+  }
+
+  table a {
+    border: none;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+
   // TODO: Revisit this in the future
   // To make the background less bright
   // pre, code {
-    // -webkit-filter: invert(100%);
-    // filter: invert(100%);
+  // -webkit-filter: invert(100%);
+  // filter: invert(100%);
   // }
 
   .info {
