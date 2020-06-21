@@ -225,4 +225,4 @@ Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Sim
 [perry manuk]: https://github.com/perrymanuk
 [simon brüggen]: https://github.com/m3t0r
 [wolfgang gassler]: https://twitter.com/schafele
-[jorge-luis betancourt]: http://jorgelbg.me/
+[jorge-luis betancourt]: https://jorgelbg.me/

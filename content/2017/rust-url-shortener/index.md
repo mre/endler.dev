@@ -134,7 +134,7 @@ In a production scenario, we could use some NoSQL data store like Redis for that
 Since the goal is to play with Rocket and learn some Rust, we will simply use an
 in-memory store.
 
-Rocket has a feature called [managed state](http://rocket.rs/v0.4/guide/state/).
+Rocket has a feature called [managed state](https://rocket.rs/v0.4/guide/state/).
 
 In our case, we want to manage a _repository_ of URLs.
 
@@ -356,7 +356,7 @@ It makes our code a bit harder to read because whenever we want to access our re
 In our `lookup` method, you can see that we are returning a [Result](https://doc.rust-lang.org/std/result/enum.Result.html) type now. It has two cases: if we find an id in our repository, we return `Ok(Redirect::permanent(url))`, which will take care of the redirect. If we can't find the id, we return an `Error`.
 
 In our `shorten` method, we switched from a `get` to a `post` request.
-The advantage is, that we don't need to deal with URL encoding. We just create a struct `Url` and derive [FromForm](http://rocket.rs/v0.4/guide/requests/) for it, which will handle the deserialization for us. Fancy!
+The advantage is, that we don't need to deal with URL encoding. We just create a struct `Url` and derive [FromForm](https://rocket.rs/v0.4/guide/requests/) for it, which will handle the deserialization for us. Fancy!
 
 We're done. Let's fire up the service again and try it out!
 

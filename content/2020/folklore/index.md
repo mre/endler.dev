@@ -292,11 +292,11 @@ The ship's speed was important for navigation, so the sailors noted it down in a
 
 {{ figure(src="./log-seamen.webp",caption="Sailors measuring ship speed with a
 log line", credits="[The Pilgrims & Plymouth Colony:1620 by Duane A.
-Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
 
 {{ figure(src="./log-line.webp",caption="The parts of a log-line", credits="[The
 Pilgrims & Plymouth Colony:1620 by Duane A.
-Cline](http://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
 
 {{ figure(src="./logfile.webp",caption="Page from the log-file of the British
 Winchelsea. The second column denotes the number of knots measured with the
@@ -370,7 +370,7 @@ _Today's meaning: An efficient memory allocation technique, which reuses
 previous allocations._
 
 Slab allocation was invented by [John
-Bonwick](http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.ps)
+Bonwick](https://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.ps)
 (Note: PDF file) in 1994 and has since been used by services like
 [Memcached](https://www.memcached.org/) and the Linux Kernel.
 
