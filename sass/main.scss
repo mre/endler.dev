@@ -143,9 +143,7 @@ caption {
 
 .post-links {
   list-style: none;
-  padding: 24px 0 0 0;
-  margin-top: 40px;
-  border-top: solid 1px $grey-400;
+  padding: 0;
 }
 
 code {
@@ -308,7 +306,7 @@ footer .body {
   background-color: $grey-300;
 }
 
-footer .field {
+.field {
   padding: 10px;
   font-size: 0.8em;
   border: none;
@@ -437,10 +435,6 @@ input:focus::placeholder {
   .bio,
   .post-meta {
     color: $grey-300;
-  }
-
-  .post-links {
-    border-top: solid 1px white;
   }
 
   a {
