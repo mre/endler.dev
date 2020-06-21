@@ -1,6 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
-date = 2020-06-21
+date = 2020-06-18
+draft = true
 +++
 
 When it comes to runtime performance, Rust is one of the fastest guns in the west. It is [on par with the likes of C and C++](https://benchmarksgame-team.pages.debian.net/benchmarksgame/which-programs-are-fastest.html) and sometimes even surpasses them.   
@@ -20,7 +21,7 @@ Comparing across toolchains makes little sense here and for smaller projects, co
 
 Overall, there are a few features and design decisions that limit Rust compilation speed:
 
-- **Macros**: Code generation with macros can be quite expensive. Like hot sauce, use with care.
+- **Macros**: Code generation with macros can be quite expensive.
 - **Type checking**
 - **Monomorphization**: this is the process of generating specialized versions of generic functions. E.g. a function that takes an `Into<String>` will be converted into one that takes a `String` and another one that takes a `&str`. 
 - **LLVM**: that’s the default compiler backend for Rust, where a lot of the heavy-lifting (like code-optimizations) is taking place. LLVM is [notorious for being slow](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html).
@@ -237,7 +238,7 @@ $ cargo llvm-lines | head -20
 
 ## Avoid Procedural Macro Crates
 
-Procedural macros are quite expensive to compile (keyword: monomorphization).
+Procedural macros are the hot sauce of Rust development: they burn through CPU cycles so use with care (keyword: monomorphization).
 
 If you heavily use procedural macros in your project (e.g. if you use serde), you can try to sidestep their impact on compile times with [watt](https://github.com/dtolnay/watt), a tool that offloads macro compilation to Webassembly.
 
@@ -247,19 +248,21 @@ From the docs:
 >
 > Instead, what they compile is a small self-contained Wasm runtime (~3 seconds, shared by all macros) and a tiny proc macro shim for each macro crate to hand off Wasm bytecode into the Watt runtime (~0.3 seconds per proc-macro crate you depend on). This is much less than the 20+ seconds it can take to compile complex procedural macros and their dependencies.
 
-Note that this is still experimental.
+Note that this crate is still experimental.
 
-Oh, and did I mention that both, `watt` and `cargo-llvm-lines` are built by [David Tolnay](https://github.com/dtolnay/), who is actually not a human being but consists of 100% raw awesomeness?
+(Oh, and did I mention that both, `watt` and `cargo-llvm-lines` were built by [David Tolnay](https://github.com/dtolnay/), who is a frickin' steamroller of an engineer?)
 
 ## Compile on a Beefy Machine
 
 On portable devices, compiling can drain your battery and be slow.
 To avoid that, I’m using my machine at home, a 6-core AMD FX 6300 with 12GB RAM, as a build machine.
-If you don’t have a dedicated machine yourself, you can compile in the cloud instead.
+I can use it in combination with [Visual Studio Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
-Gitpod.io is nice for testing a cloud build as they provide you a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB RAM) for free for a limited period of time.
-Simply add `https://gitpod.io/#` in front of any github repository URL.
-Here is an [example workspace](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) from one of my [Hello Rust](https://hello-rust.show/) episodes.
+If you don’t have a dedicated machine yourself, you can compile in the cloud instead.  
+Gitpod.io is nice for testing a cloud build as they provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB RAM) for free during a limited time period.
+Simply add `https://gitpod.io/#` in front of any Github repository URL.
+Here is an from one of my [Hello Rust](https://hello-rust.show/) episodes:
+[https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9).  
 
 When it comes to buying hardware for build machines, [here](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/) are some tips.
 Generally, you should get a proper multicore CPU like an AMD Ryzen Threadripper plus at least 32 GB of RAM.
@@ -268,16 +271,28 @@ Generally, you should get a proper multicore CPU like an AMD Ryzen Threadripper 
 
 ⚠️ Warning: You can damage your hardware if you don’t know what you are doing. Proceed at your own risk.
 
-Here's an idea is for the desperate. I don’t even mean this half-seriously.
-Now I don’t recommend that to everyone but if you have a standalone desktop computer with a decent CPU, this might be a way to squeeze out the last bits of performance gains.
+Here's an idea for the desperate.
+Now I don’t recommend that to everyone but if you have a standalone desktop computer with a decent CPU, this might be a way to squeeze out the last bits of performance.
 
 Even though the Rust compiler is executing a lot of steps in parallel, single-threaded performance is still quite important.
 
-As a somewhat drastic measure, you can try to overclock your CPU. [Here's a tutorial for my processor](https://www.youtube.com/watch?v=gb1QDpRnOvw).
+As a somewhat drastic measure, you can try to overclock your CPU. [Here's a tutorial for my processor](https://www.youtube.com/watch?v=gb1QDpRnOvw). (I owe you some benchmarks from my machine.) 
 
-## Help Others: Upload Leaner Crates for Faster Build Times
+## Download ALL the crates
 
 If you have a slow internet connection, a big part of the initial compilation process is fetching all those shiny crates from crates.io.
+To mitigate that you can download all the crates on crates.io on a fast connection and use the mirror locally.
+[criner](https://github.com/the-lean-crate/criner) does that:
+
+```
+git clone https://github.com/the-lean-crate/criner
+cd criner
+cargo run --release -- mine
+```
+
+The archive size is surprisingly manageable with ~50GB of disk space required.
+
+## Help Others: Upload Leaner Crates for Faster Build Times
 
 [`cargo-diet`](https://github.com/the-lean-crate/cargo-diet) helps you build lean crates that significantly reduce download size (sometimes by 98%). This might not directly affect your own build time, but that of your users, which depend on your crate and will surely be thankful :)
 
@@ -286,13 +301,13 @@ If you have a slow internet connection, a big part of the initial compilation pr
 If compiler performance is something you're interested in, why not [collaborate on a tool to see what user code is causing rustc to use lots of time](https://github.com/rust-lang/measureme/issues/51
 )?
 
-Once you’re done with optimizing your build times, how about optimizing runtime next?
-My friend Pascal Hertleif has a [nice article](
+Also, once you’re done with optimizing your build times, how about optimizing runtime next?
+My friend [Pascal Hertleif](https://twitter.com/killercup/) has a [nice article](
 https://deterministic.space/high-performance-rust.html) on that.
 
 ## Conclusion
 
-Phew... that was a long list and I'm convinced If you like to help me out, please [create an issue here](https://github.com/mre/mre.github.io/issues) or edit the post directly. Thanks!
+Phew... that was a long list and I'm convinced I forgot something. If you like to help me out, please [create an issue here](https://github.com/mre/mre.github.io/issues) or edit the post directly. Thanks!
 
 ## Credits
 
