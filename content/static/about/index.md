@@ -4,18 +4,6 @@ path = "about"
 +++
 
 <style>
-    table {
-        width: 100%;
-    }
-    
-    table a {
-        border: none;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-    }
-
     .fancy {
         padding:2px; border: 2px solid #c35; width:44%;
     }
