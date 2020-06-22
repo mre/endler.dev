@@ -208,13 +208,13 @@ h3 {
 }
 
 a {
-  color: $pink-400;
+  color:$grey-500;
   text-decoration: none;
-  border-bottom: 1px dashed $pink-400;
+  border-bottom: 2px solid $pink-400;
 }
 
 a:hover {
-  border-bottom: 2px solid $pink-400;
+  border-bottom: 2px solid $grey-500;
 }
 
 header nav ul {
@@ -436,12 +436,12 @@ input:focus::placeholder {
   }
 
   a {
-    color: $pink-500;
-    border-bottom: 1px dashed $pink-500;
+    color: white;
+    border-bottom: 2px solid $pink-500;
   }
 
   a:hover {
-    border-bottom: 2px solid $pink-500;
+    border-bottom: 2px solid white;
   }
 
   .icon {
