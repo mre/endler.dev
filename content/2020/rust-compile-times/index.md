@@ -1,6 +1,11 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
+[extra]
+comments = [
+  {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
+  {name = "Twitter", url = "https://twitter.com/matthiasendler/status/1274703741485223936"}
+]
 +++
 
 When it comes to runtime performance, Rust is one of the fastest guns in the
@@ -151,8 +156,9 @@ Reddit](https://www.reddit.com/r/rust/comments/gi7v2v/is_it_wrong_of_me_to_think
    compatible version.
 2. Run `cargo outdated -wR` to find newer, possibly incompatible dependencies.
    Update those and fix code as needed.
-3. Find crates with multiple different versions of a dependency and figure out
-   where they come from using `cargo tree`.
+3. Find duplicate versions of a dependency and figure out
+   where they come from: `cargo tree --duplicate` shows dependencies which come in multiple versions.  
+   (Thanks to /u/dbdr for [pointing this out](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/fvm1r2w/).)
 
 ⭐ **Pro-tip**: Step 3 is a great way to contribute back to the community! Clone
 the repository and execute steps 1 and 2. Finally, send a pull request to the
@@ -200,7 +206,7 @@ Learn more about workspaces
 ## Disable Unused Features Of Crate Dependencies
 
 ⚠️ **Fair warning**: it seems that switching off features doesn't always improve
-compilation time. (See [tikv's experiences
+compile time. (See [tikv's experiences
 here](https://github.com/tikv/tikv/pull/4453#issuecomment-481789292).)
 
 Check the feature flags of your dependencies. A lot of library maintainers take
