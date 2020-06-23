@@ -7,6 +7,14 @@ comments = [
   {name = "Hacker News", url="https://news.ycombinator.com/item?id=23473303"},
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/dl1sw2/a_tiny_static_fulltext_search_engine_using_rust/"}
 ]
+credits = [
+  {name = "Esteban Barrios", url="https://github.com/ebarriosjr" },
+  {name = "Jorge Luis Betancourt", url="https://github.com/jorgelbg/" },
+  {name = "Luca Pizzamiglio", url="https://github.com/pizzamig" },
+  {name = "mh84", url="https://github.com/mh84" },
+  {name = "Schalk Neethling", url="https://github.com/schalkneethling" },
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+]
 +++
 
 {% info() %}
@@ -345,8 +353,7 @@ You can generate this JSON file with any static site generator.
 
 I'm pretty sure that the Jekyll version looks quite similar.
 [Here's a starting point](https://learn.cloudcannon.com/jekyll/output-json/).
-If you get something working for your static site generator, please let me know.  
-
+If you get something working for your static site generator, please let me know.
 
 ## Observations
 
@@ -396,16 +403,8 @@ Please be aware of these limitations:
 
 The final Wasm code is laser-fast because we save the roundtrips to a
 search-server. The instant feedback loop feels more like filtering a list than
-searching through files.  It can even work fully offline, which might be nice if
+searching through files. It can even work fully offline, which might be nice if
 you like to bundle it with an app.
-
-## Credits
-
-Thanks to [Jorge Luis Betancourt](https://github.com/jorgelbg/),
-[mh84](https://github.com/mh84), and [Schalk
-Neethling](https://github.com/schalkneethling) for their code contributions and
-to [Esteban Barrios](https://github.com/ebarriosjr), [Simon Br&uuml;ggen](https://github.com/m3t0r) and [Luca
-Pizzamiglio](https://github.com/pizzamig) for reviewing drafts of this article.
 
 [jekyll]: https://github.com/mre/mre.github.io.v1
 [cobalt]: https://github.com/mre/mre.github.io.v2

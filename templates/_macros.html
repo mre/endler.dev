@@ -35,3 +35,12 @@
 {%- if not loop.last %},{% else %}.{% endif %}
 {% endfor %}
 {% endmacro translations %}
+
+{% macro credits(credits) %}
+Thanks to the following people for 
+{% for credit in credits | sort(attribute="name") %}
+<a href="{{ credit.url }}">{{ credit.name }}</a>
+{%- if not loop.last %},{% endif %}
+{% endfor %}
+for reviewing drafts of this article.
+{% endmacro credits %}

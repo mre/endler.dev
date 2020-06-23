@@ -18,7 +18,6 @@
   {% endif %}
   {{ page.content | safe }}
 
-  <hr/>
   <ul class='post-links'>
     {% if page.extra.comments %}
     <li>
@@ -31,14 +30,11 @@
     </li>
     {% endif %}
   </ul>
-  <form action="https://tinyletter.com/mre" method="post" target="popupwindow"
-      onsubmit="window.open('https://tinyletter.com/mre', 'popupwindow', 'scrollbars=yes,width=800,height=600'); return true">
-      <p>
-          <input class="field email" type="email" name="email" id="tlemail" placeholder="E-Mail Address" />
-          <input type="hidden" value="1" name="embed" /><input class="field submit" type="submit"
-              value="Subscribe" />
-      </p>
-  </form>
+  {% include "snippets/newsletter.html" %}
+  {% if page.extra.credits %}
+  {{ macros::credits(credits=page.extra.credits) }}
+  {% endif %}
+
 </article>
 {% endblock content %}
 

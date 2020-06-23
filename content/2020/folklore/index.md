@@ -5,6 +5,10 @@ draft=false
 
 [extra]
 subtitle="Because \"Computer Etymology\" sounded boring."
+credits = [
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+  {name = "Jakub Sacha", url="https://github.com/jakubsacha" },
+]
 +++
 
 Some computer terms have a surprising legacy. Many of them are derived from
@@ -529,8 +533,3 @@ I hope you enjoyed this trip down memory lane. Now it's your turn!
   A list of computer terms that have their origins from typewriters.
 - [Folklore - The Original Macintosh](https://www.folklore.org/index.py):
   Anecdotes about the development of Apple's original Macintosh, and the people who made it.
-
-## Credits
-
-Thanks to [Simon Br&uuml;ggen](https://github.com/m3t0r) for editing and reviewing drafts of this article.
-Thanks to [Jakub Sacha](https://github.com/jakubsacha) for suggesting to add _Firewall_.

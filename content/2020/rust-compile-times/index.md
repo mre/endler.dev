@@ -6,6 +6,9 @@ comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
   {name = "Twitter", url = "https://twitter.com/matthiasendler/status/1274703741485223936"}
 ]
+credits = [
+  {name = "Luca Pizzamiglio", url= "https://github.com/pizzamig"},
+]
 +++
 
 When it comes to runtime performance, Rust is one of the fastest guns in the
@@ -458,8 +461,3 @@ time?
 Also, once you're done optimizing your build times, how about optimizing
 runtime next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
 [nice article](https://deterministic.space/high-performance-rust.html) on that.
-
-## Credits
-
-Thanks to [Luca Pizzamiglio](https://github.com/pizzamig) for reviewing drafts
-of this article.

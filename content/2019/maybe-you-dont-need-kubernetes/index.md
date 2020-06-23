@@ -14,6 +14,18 @@ translations = [
   {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
   {name = "Russian", url = "https://habr.com/ru/post/445030/"},
 ]
+credits = [
+  {name = "Arne Claus", url = "https://twitter.com/arnecls"},
+  {name = "Barnabas Kutassy", url = "https://twitter.com/kassybas"},
+  {name = "Esteban Barrios", url = "https://www.linkedin.com/in/esteban-barrios-a60a4717/"},
+  {name = "Inga Feick", url = "https://github.com/IngaFeick"},
+  {name = "Jakub Sacha", url = "https://jakubsacha.pl/"},
+  {name = "Jorge-Luis Betancourt", url = "https://jorgelbg.me/"},
+  {name = "Patrick Pokatilo", url = "https://github.com/SHyx0rmZ"},
+  {name = "Perry Manuk", url = "https://github.com/perrymanuk"},
+  {name = "Simon Brüggen", url = "https://github.com/m3t0r"},
+  {name = "Wolfgang Gassler", url = "https://twitter.com/schafele"},
+]
 +++
 
 {{ figure(src="./scooter.svg", caption="A woman riding a scooter",  credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/).") }}
@@ -192,10 +204,6 @@ extendable, why not give Nomad a try? You might be surprised by how far it'll ge
 If Kubernetes were a car, Nomad would be a scooter. Sometimes you prefer one and
 sometimes the other. Both have their right to exist.
 
-## Credits
-
-Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Simon Brüggen], [Arne Claus], [Inga Feick], [Wolfgang Gassler], [Barnabas Kutassy], [Perry Manuk], [Patrick Pokatilo], and [Jakub Sacha] for reviewing drafts of this article.
-
 [advanced network policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [amazon eks]: https://aws.amazon.com/eks/
 [autoscaling]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
@@ -216,13 +224,3 @@ Thanks to my awesome colleagues [Esteban Barrios], [Jorge-Luis Betancourt], [Sim
 [rights management]: https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 [service tags]: https://www.nomadproject.io/docs/job-specification/service/#tags
 [vault]: https://www.vaultproject.io/
-[arne claus]: https://twitter.com/arnecls
-[barnabas kutassy]: https://twitter.com/kassybas
-[esteban barrios]: https://www.linkedin.com/in/esteban-barrios-a60a4717/
-[inga feick]: https://github.com/IngaFeick
-[jakub sacha]: https://jakubsacha.pl/
-[patrick pokatilo]: https://github.com/SHyx0rmZ
-[perry manuk]: https://github.com/perrymanuk
-[simon brüggen]: https://github.com/m3t0r
-[wolfgang gassler]: https://twitter.com/schafele
-[jorge-luis betancourt]: https://jorgelbg.me/
