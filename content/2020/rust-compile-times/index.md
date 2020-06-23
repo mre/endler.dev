@@ -34,7 +34,7 @@ job here is done.
 > As is often cautioned in debates among their designers, programming language
 > design is full of tradeoffs. One of those fundamental tradeoffs is runtime
 > performance vs. compile-time performance, and the Rust team nearly always (if
-> not always) chose runtime over compile-time.   
+> not always) chose runtime over compile-time.  
 > &mdash; [Brian Anderson](https://pingcap.com/blog/rust-compilation-model-calamity/)
 
 Overall, there are a few features and design decisions that limit Rust
@@ -44,7 +44,7 @@ compilation speed:
 - **Type checking**
 - **Monomorphization**: this is the process of generating specialized versions
   of generic functions. E.g., a function that takes an `Into<String>` gets
-  converted into one that takes a `String` and one that takes a `&str`. 
+  converted into one that takes a `String` and one that takes a `&str`.
 - **LLVM**: that's the default compiler backend for Rust, where a lot of the
   heavy-lifting (like code-optimizations) takes place. LLVM is [notorious for
   being slow](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html).
@@ -63,8 +63,7 @@ Making the Rust compiler faster is an ongoing process, and many fearless people
 are [working on
 it](https://blog.mozilla.org/nnethercote/2020/04/24/how-to-speed-up-the-rust-compiler-in-2020/).
 Thanks to their hard work, compiler speed has improved [30-40% across the board
-year-to-date, with some projects seeing up to 45%+ improvements](
-https://www.reddit.com/r/rust/comments/cezxjn/compiler_speed_has_improved_3040_across_the_board/).
+year-to-date, with some projects seeing up to 45%+ improvements](https://www.reddit.com/r/rust/comments/cezxjn/compiler_speed_has_improved_3040_across_the_board/).
 On top of that, Rust tracks compile regressions on a [website dedicated to
 performance](https://perf.rust-lang.org/)
 
@@ -80,13 +79,13 @@ better.
 
 According to the [Rust 2019
 survey](https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html), improving
-compile times is #4 on the Rust wishlist: 
+compile times is #4 on the Rust wishlist:
 
-![Diagram showing that compilation times #4 on the developer
-wishlist](https://blog.rust-lang.org/images/2020-03-RustSurvey/45-improve-adoption.svg)
+{{ figure(src="https://blog.rust-lang.org/images/2020-03-RustSurvey/45-improve-adoption.svg",
+caption="Rust Survey results 2019. (<a href='https://xkcd.com/303/'>Obligatory xkcd</a>.)") }}
 
 But all hope is not lost! Below is a list of **tips and tricks on how to make
-your Rust project compile faster today**.  They are roughly ordered by
+your Rust project compile faster today**. They are roughly ordered by
 practicality, so start at the top and work your way down until you're happy.
 
 ## Use `cargo check` Instead Of `cargo build`
@@ -103,8 +102,7 @@ differences in the number of instructions between `cargo check` on the left and
 ![Speedup factors: check 1, debug 5, opt
 20](https://paper-attachments.dropbox.com/s_A57800B62E88AEE36F7155FD549213822584025ACDBC9DAC077AE34BEF6CE532_1590587846423_image.png)
 
-A sweet trick I use is to run it in the background with [`cargo
-watch`](https://github.com/passcod/cargo-watch). This way, it will `cargo check`
+A sweet trick I use is to run it in the background with [`cargo watch`](https://github.com/passcod/cargo-watch). This way, it will `cargo check`
 whenever you change a file.
 
 ⭐ **Pro-tip**: Use `cargo watch -c` to clear the screen before every run.
@@ -124,9 +122,9 @@ Switching to that alone might save your day.
 ## Remove Unused Dependencies
 
 So let's say you tried all of the above and find that compilation is still slow.
-What now?  
+What now?
 
-Dependencies sometimes become obsolete thanks to refactoring.  From time to time
+Dependencies sometimes become obsolete thanks to refactoring. From time to time
 it helps to check if all of them are still needed to save compile time.
 
 If this is your own project (or a project you like to contribute to), do a quick
@@ -170,7 +168,7 @@ From time to time, it helps to shop around for more lightweight alternatives to
 popular crates.
 
 Again, `cargo tree` is your friend here to help you understand which of your
-dependencies are quite *heavy*: they require many other crates, causing
+dependencies are quite _heavy_: they require many other crates, causing
 excessive network I/O and slow down your build. Then search for lighter
 alternatives.
 
@@ -191,7 +189,7 @@ where switching crates reduced compile times from 2:22min to 26 seconds.
 
 ## Use Cargo Workspaces
 
-Cargo has that neat feature called *workspaces*, which allow you to split one
+Cargo has that neat feature called _workspaces_, which allow you to split one
 big crate into multiple smaller ones. This code-splitting is great for avoiding
 repetitive compilation because only crates with changes have to be recompiled.
 Bigger projects like
@@ -230,7 +228,7 @@ The reason was that I kept my projects on a measly HDD. A more performant
 alternative would be SSDs, but they usually have [limited
 write-cycles](https://en.wikipedia.org/wiki/Solid-state_drive#Comparison_with_other_technologies).
 
-Ramdisks to the rescue!  These are like "virtual harddisks" that live in system
+Ramdisks to the rescue! These are like "virtual harddisks" that live in system
 memory.
 
 User [moschroe_de](https://www.reddit.com/user/moschroe_de/) shared the
@@ -255,7 +253,7 @@ Mozilla, which caches compiled crates to avoid repeated compilation.
 
 I had this running on my laptop for a while, but the benefit was rather
 negligible, to be honest. It works best if you work on a lot of independent
-projects that share dependencies (in the same version).  A common use-case is
+projects that share dependencies (in the same version). A common use-case is
 shared build servers.
 
 ## Cranelift &ndash; The Alternative Rust Compiler
@@ -278,9 +276,9 @@ The results were astonishing:
 - Rustc: **5m 45s**
 - Cranelift: **3m 13s**
 
-I could really feel the difference!  What's cool about this is that it creates
+I could really feel the difference! What's cool about this is that it creates
 fully working executable binaries. They won't be optimized as much, but they are
-great for testing. 
+great for testing.
 
 A more detailed write-up is on [Jason Williams'
 page](https://jason-williams.co.uk/a-possible-new-backend-for-rust), and the
@@ -330,14 +328,13 @@ profiler:
 ![Image of Chrome profiler with all
 crates](https://blog.rust-lang.org/images/inside-rust/2020-02-25-intro-rustc-self-profile/chrome_profiler3.png)
 
-There's also a [`cargo -Z
-timings`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#timings)
+There's also a [`cargo -Z timings`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#timings)
 feature that gives some information about how long each compilation step takes,
 and tracks concurrency information over time.
 
 Another golden one is
 [`cargo-llvm-lines`](https://github.com/dtolnay/cargo-llvm-lines), which shows
-the number of lines generated and objects copied in the LLVM backend: 
+the number of lines generated and objects copied in the LLVM backend:
 
 ```
 $ cargo llvm-lines | head -20
@@ -393,23 +390,23 @@ engineer?)
 
 ## Compile On A Beefy Machine
 
-On portable devices, compiling can drain your battery and be slow.  To avoid
+On portable devices, compiling can drain your battery and be slow. To avoid
 that, I'm using my machine at home, a 6-core AMD FX 6300 with 12GB RAM, as a
-build machine.  I can use it in combination with [Visual Studio Code Remote
+build machine. I can use it in combination with [Visual Studio Code Remote
 Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
 If you don't have a dedicated machine yourself, you can compile in the cloud
 instead.  
 [Gitpod.io](https://gitpod.io/) is superb for testing a cloud build as they
 provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
-RAM) for free during a limited period.  Simply add `https://gitpod.io/#` in
+RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github repository URL.
 [Here](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9)
 is an example for one of my [Hello Rust](https://hello-rust.show/) episodes.
 
 When it comes to buying dedicated hardware,
 [here](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/)
-are some tips.  Generally, you should get a proper multicore CPU like an AMD
+are some tips. Generally, you should get a proper multicore CPU like an AMD
 Ryzen Threadripper plus at least 32 GB of RAM.
 
 ## Drastic Measures: Overclock Your CPU? 🔥
@@ -417,7 +414,7 @@ Ryzen Threadripper plus at least 32 GB of RAM.
 ⚠️ Warning: You can damage your hardware if you don't know what you are doing.
 Proceed at your own risk.
 
-Here's an idea for the desperate.  Now I don't recommend that to everyone, but
+Here's an idea for the desperate. Now I don't recommend that to everyone, but
 if you have a standalone desktop computer with a decent CPU, this might be a way
 to squeeze out the last bits of performance.
 
@@ -426,13 +423,13 @@ single-threaded performance is still quite relevant.
 
 As a somewhat drastic measure, you can try to overclock your CPU. [Here's a
 tutorial for my processor](https://www.youtube.com/watch?v=gb1QDpRnOvw). (I owe
-you some benchmarks from my machine.) 
+you some benchmarks from my machine.)
 
 ## Download ALL The Crates
 
-If you have a slow internet connection, a big part of the initial build 
-process is fetching all those shiny crates from crates.io.  To mitigate that,
-you can download **all** crates in advance to cache them locally. 
+If you have a slow internet connection, a big part of the initial build
+process is fetching all those shiny crates from crates.io. To mitigate that,
+you can download **all** crates in advance to cache them locally.
 [criner](https://github.com/the-lean-crate/criner) does just that:
 
 ```
@@ -455,12 +452,11 @@ not directly affect your own build time, but your users will surely be thankful.
 Phew! That was a long list. If you have any additional tips, please [let me know](https://github.com/mre/mre.github.io/issues).
 
 If compiler performance is something you're interested in, why not [collaborate
-on a tool](https://github.com/rust-lang/measureme/issues/51
-) to see what user code is causing rustc to use lots of
+on a tool](https://github.com/rust-lang/measureme/issues/51) to see what user code is causing rustc to use lots of
 time?
 
 Also, once you're done optimizing your build times, how about optimizing
-runtime next?  My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
+runtime next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
 [nice article](https://deterministic.space/high-performance-rust.html) on that.
 
 ## Credits
