@@ -1,19 +1,15 @@
 $pink-200: #f5b2c8;
 $pink-400: #c35;
 $pink-500: #ff1c76;
-
 $blue-300: #9fd6fa;
 $blue-500: #234;
 $blue-800: #141f2b;
-
 $grey-100: #ddd;
 $grey-200: #fafafa;
 $grey-300: #b9b9b9;
 $grey-400: #555;
 $grey-500: #111;
-
-$monospace: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
-  Courier, monospace;
+$anim-duration: 200ms;
 
 /* Tiny reset */
 
@@ -42,8 +38,8 @@ body {
     serif;
   font-size: 1.2em;
   line-height: 1.58;
-  border-top: 0.5em solid $pink-400;
   color: $grey-500;
+  border-top: 0.5em solid $pink-400;
 }
 
 .container {
@@ -133,9 +129,14 @@ caption {
   padding: 0;
 }
 
+code,
+pre {
+  font-family: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
+    Courier, monospace;
+}
+
 code {
   display: inline-block;
-  font-family: $monospace;
   -moz-font-feature-settings: "liga" off;
   font-feature-settings: "liga" off;
   font-size: 0.8em;
@@ -163,7 +164,6 @@ blockquote {
 }
 
 pre {
-  font-family: $monospace;
   padding: 10px;
   border-radius: 6px;
   overflow-x: auto;
@@ -200,7 +200,7 @@ a {
   // Doesn't work in Chrome yet:
   text-decoration-thickness: 2px;
   // Only works on Firefox right now:
-  transition: text-decoration-color 0.5s;
+  transition: text-decoration-color $anim-duration;
 }
 
 a:hover {
@@ -229,13 +229,19 @@ header nav li {
 
 .icon:hover {
   opacity: 1;
-  transition: opacity 200ms ease-in;
+  transition: opacity $anim-duration ease-in;
 }
 
 .button {
   background-color: $pink-400;
+  text-decoration: none;
   padding: 10px;
   color: white;
+  transition: background-color $anim-duration;
+}
+
+.button:hover {
+  background-color: $blue-800;
 }
 
 figure {
@@ -428,7 +434,7 @@ input:focus::placeholder {
     color: white;
     text-decoration-color: $pink-500;
   }
-  
+
   a:hover {
     text-decoration-color: white;
   }
