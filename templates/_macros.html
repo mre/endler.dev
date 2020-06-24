@@ -37,7 +37,7 @@
 {% endmacro translations %}
 
 {% macro credits(credits) %}
-Thanks to the following people for 
+Thanks to  
 {% for credit in credits | sort(attribute="name") %}
 <a href="{{ credit.url }}">{{ credit.name }}</a>
 {%- if not loop.last %},{% endif %}
