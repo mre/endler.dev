@@ -262,6 +262,11 @@ figcaption {
   color: $pink-200;
 }
 
+#teaser a,
+footer a {
+  color: white;
+}
+
 #teaser a::after {
   content: "\a0»";
 }
