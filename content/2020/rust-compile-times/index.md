@@ -203,6 +203,35 @@ are using workspaces heavily to slim down compile times.
 Learn more about workspaces
 [here](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
 
+## Combine All Integration Tests In A Single Binary
+
+Have any [integration tests](https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html)? (These are the ones in your `tests`
+directory.)
+The Rust compiler will create a binary for every single one of them.
+This can take most of your build time because linking is slooow. 🐢
+The reason is that many system linkers (like `ld`) are [single
+threaded](https://stackoverflow.com/questions/5142753/can-gcc-use-multiple-cores-when-linking).
+
+{% info() %}
+👨‍🍳️💡‍️ A [linker](https://en.wikipedia.org/wiki/Linker_(computing)) is a tool that combines the
+output of a compiler and mashes that into one executable you can run.
+{% end %}
+
+To make the linker's job a little easier, you can put all your tests in one
+crate. (Basically create a `main.rs` in your test folder and add your
+test files as `mod` in there.)
+
+Then the linker will go ahead and build a single binary only. Sounds nice, but
+careful: it's still a trade-off as you'll need to expose your internal types and
+functions (i.e. make them `pub`).
+
+Might be worth a try, though because a recent [benchmark revealed a 1.9x
+speedup](https://azriel.im/will/2019/10/08/dev-time-optimization-part-1-1.9x-speedup-65-less-disk-usage/) for one project.
+
+*This tip was brought to you by [Luca Palmieri](https://twitter.com/algo_luca),
+[Lucio Franco](https://twitter.com/lucio_d_franco), and [Azriel
+Hoh](https://twitter.com/im_azriel). Thanks!*
+
 ## Disable Unused Features Of Crate Dependencies
 
 ⚠️ **Fair warning**: it seems that switching off features doesn't always improve
