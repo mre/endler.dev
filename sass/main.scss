@@ -28,11 +28,6 @@ h2 {
 
 /* Style */
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond",
     serif;
@@ -43,14 +38,15 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  margin: 10px auto 0px;
+  display: grid;
+  grid-template-columns: auto;
+  margin: 0 auto;
 }
 
 header {
   font-size: 0.8em;
   text-align: center;
+  padding-top: 30px;
 }
 
 .bio {
@@ -60,7 +56,7 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 5px;
   margin-bottom: 50px;
   max-width: 650px;
 }
@@ -80,21 +76,23 @@ iframe {
   font-size: 130%;
 }
 
-@media screen and (max-width: 640px) {
-  body {
-    font-size: 110%;
-  }
-}
-
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .container {
-    flex-direction: row;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 40px;
+    grid-template-columns: auto auto;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
   }
 
   main {
     padding: 0px 30px;
+    margin-top: 20px;
   }
 
   .bio span:after {
@@ -114,6 +112,35 @@ caption {
   font-weight: 400;
 }
 
+h1 {
+  font-size: 1.87em;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+main h2 {
+  margin-top: 60px;
+}
+
+h3 {
+  margin-top: 0px;
+  font-style: italic;
+}
+
+header nav ul {
+  display: inline-block;
+  padding-left: 0px;
+  margin-top: 0;
+}
+
+header nav li {
+  list-style: none;
+  display: inline;
+}
+
 .post-meta {
   font-style: italic;
   margin: 0px;
@@ -124,29 +151,28 @@ caption {
   font-size: 80%;
 }
 
-.post-links {
-  list-style: none;
-  padding: 0;
-}
-
-code,
-pre {
+pre,
+code
+{
   font-family: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
     Courier, monospace;
 }
 
+pre {
+  display: inline-grid;
+}
+
 code {
-  display: inline-block;
-  -moz-font-feature-settings: "liga" off;
-  font-feature-settings: "liga" off;
   font-size: 0.8em;
-  -moz-osx-font-smoothing: auto;
-  -webkit-font-smoothing: subpixel-antialiased;
+  overflow-x: scroll;
   max-width: 100%;
-  overflow-x: auto;
-  padding: 0 5px;
   vertical-align: middle;
-  word-wrap: normal;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+code.span {
+  overflow: scroll;
 }
 
 :not(pre) > code {
@@ -170,24 +196,6 @@ pre {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
-h1 {
-  font-size: 1.87em;
-  margin-bottom: 8px;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-main h2 {
-  margin-top: 60px;
-}
-
-h3 {
-  margin-top: 0px;
-  font-style: italic;
-}
-
 ::selection {
   background: black;
   color: white;
@@ -205,17 +213,6 @@ a {
 
 a:hover {
   text-decoration-color: $grey-500;
-}
-
-header nav ul {
-  display: inline-block;
-  padding-left: 0px;
-  margin-top: 0;
-}
-
-header nav li {
-  list-style: none;
-  display: inline;
 }
 
 .icon {
@@ -255,6 +252,11 @@ figure {
 
 figcaption {
   margin-top: 10px;
+}
+
+.post-links {
+  list-style: none;
+  padding: 0;
 }
 
 .comments {
