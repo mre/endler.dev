@@ -1,12 +1,10 @@
 {% import "_macros.html" as macros %}
+{% set css = load_data(path="public/main.css") %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% set css = load_data(path="public/main.css") %}
-    <style>
-      {{ css | safe }}
-    </style>
+    <style>{{ css | safe }}</style>
     {%- block header %}
     <title>Matthias Endler</title>
     {%- endblock header %}
