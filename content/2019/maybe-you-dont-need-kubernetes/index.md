@@ -8,7 +8,8 @@ social_img="scooter.png"
 comments = [
   {name = "Hacker News (March 2019)", url = "https://news.ycombinator.com/item?id=19467067"},
   {name = "Hacker News (January 2020)", url = "https://news.ycombinator.com/item?id=22034291"},
-  {name = "Reddit", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, 
+  {name = "Reddit - Kubernetes", url = "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"}, 
+  {name = "Reddit - Devops", url = "https://www.reddit.com/r/devops/comments/enphaw/maybe_you_dont_need_kubernetes/"}, 
 ]
 translations = [
   {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
