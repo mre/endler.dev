@@ -8,6 +8,7 @@ comments = [
 ]
 credits = [
   {name = "Luca Pizzamiglio", url= "https://github.com/pizzamig"},
+  {name = "DocWilco", url= "https://twitter.com/drwilco"},
 ]
 +++
 
@@ -257,8 +258,8 @@ no standard way to document them, but we'll get there eventually.
 
 When starting to compile heavy projects, I noticed that I was throttled on I/O.
 The reason was that I kept my projects on a measly HDD. A more performant
-alternative would be SSDs, but they usually have [limited
-write-cycles](https://en.wikipedia.org/wiki/Solid-state_drive#Comparison_with_other_technologies).
+alternative would be SSDs, but if that's not an option, don't throw in the
+sponge just yet.
 
 Ramdisks to the rescue! These are like "virtual harddisks" that live in system
 memory.
