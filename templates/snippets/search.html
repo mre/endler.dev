@@ -1,5 +1,5 @@
 {% set search_min = load_data(path="static/search_min.js") %}
-<script defer type="module">{{ search_min | safe }}</script>
+<script type="module">{{ search_min | safe }}</script>
 <form id="searchbox" autocomplete="off">
     <div class="autocomplete">
         <input id="tinysearch" type="text" aria-label="Search through articles" placeholder="&#x1F50D; Search">
