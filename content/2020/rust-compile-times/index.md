@@ -134,7 +134,7 @@ If this is your own project (or a project you like to contribute to), do a quick
 check if you can toss anything with
 [cargo-udeps](https://github.com/est31/cargo-udeps):
 
-```
+```bash
 cargo install cargo-udeps && cargo +nightly udeps
 ```
 
@@ -268,7 +268,7 @@ following snippet [over on
 Reddit](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/ev02hqy),
 which creates a ramdisk for your current Rust project (on Linux):
 
-```
+```bash
 mkdir -p target && \
 sudo mount -t tmpfs none ./target && \
 cat /proc/mounts | grep "$(pwd)" | sudo tee -a /etc/fstab
