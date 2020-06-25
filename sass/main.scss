@@ -76,30 +76,6 @@ iframe {
   font-size: 130%;
 }
 
-@media screen and (min-width: 600px) {
-  .container {
-    justify-content: center;
-    margin-top: 40px;
-    grid-template-columns: auto auto;
-  }
-
-  header {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    box-sizing: border-box;
-  }
-
-  main {
-    padding: 0px 30px;
-    margin-top: 20px;
-  }
-
-  .bio span:after {
-    content: "Writes about Rust, low-level computing, and microwave clocks.";
-  }
-}
-
 h1,
 h2,
 h3,
@@ -160,19 +136,19 @@ code
 
 pre {
   display: inline-grid;
+  border-radius: 6px;
+  width: 100%;
+  padding: 5px 0;
 }
 
 code {
   font-size: 0.8em;
-  overflow-x: scroll;
-  max-width: 100%;
-  vertical-align: middle;
-  display: inline-block;
-  padding: 10px 0;
+  padding: 2px;
 }
 
-code.span {
-  overflow: scroll;
+pre > code {
+  overflow-x: auto;
+  display: inline-block;
 }
 
 :not(pre) > code {
@@ -187,13 +163,6 @@ blockquote {
   font-style: italic;
   margin: 4px 10px;
   padding: 0px 20px;
-}
-
-pre {
-  padding: 10px;
-  border-radius: 6px;
-  overflow-x: auto;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
 ::selection {
@@ -350,6 +319,35 @@ input:focus::placeholder {
   background-color: $pink-400 !important;
   color: white;
 }
+
+@media screen and (min-width: 600px) {
+  .container {
+    justify-content: center;
+    margin-top: 40px;
+    grid-template-columns: auto auto;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  main {
+    padding: 0px 30px;
+    margin-top: 20px;
+  }
+
+  pre {
+    padding: 10px;
+  }
+
+  .bio span:after {
+    content: "Writes about Rust, low-level computing, and microwave clocks.";
+  }
+}
+
 
 // Desktop
 @media not screen and (max-width: 800px) {
