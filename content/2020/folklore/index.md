@@ -9,6 +9,9 @@ credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
   {name = "Jakub Sacha", url="https://github.com/jakubsacha" },
 ]
+comments = [
+  {name = "lobste.rs", url="https://lobste.rs/s/7yhwfu/hacker_folklore"}
+]
 +++
 
 Some computer terms have a surprising legacy. Many of them are derived from
