@@ -183,7 +183,7 @@ Here are a few examples:
 - [reqwests](https://github.com/seanmonstar/reqwest) is quite heavy. Maybe try
   [attohttpc](https://github.com/sbstp/attohttpc), which is more lightweight.
 - ~~[tokio](https://github.com/tokio-rs/tokio) dragging you down? How about [smol](https://github.com/stjepang/smol)?~~  
-  (Edit: This won't help much with build times. [More info](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/fvmayvh/))
+  (Edit: This won't help much with build times. [More info in this discussion on Reddit](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/fvmayvh/))
 - Swap out [clap](https://github.com/clap-rs/clap) with [pico-args](https://github.com/RazrFalcon/pico-args) if you only need basic argument parsing.
 
 [Here's an
