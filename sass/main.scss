@@ -10,6 +10,14 @@ $grey-300: #b9b9b9;
 $grey-400: #555;
 $grey-500: #111;
 $anim-duration: 200ms;
+$border-radius: 6px;
+// Default font
+$serif: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond", serif;
+// Button font
+$sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+  sans-serif, Apple Color Emoji, Segoe UI Emoji;
+$monospace: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
+  Courier, monospace;
 
 /* Tiny reset */
 
@@ -29,8 +37,7 @@ h2 {
 /* Style */
 
 body {
-  font-family: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond",
-    serif;
+  font-family: $serif;
   font-size: 1.2em;
   line-height: 1.58;
   color: $grey-500;
@@ -127,16 +134,49 @@ header nav li {
   font-size: 80%;
 }
 
+.btn {
+  color: $grey-500;
+  background-color: $grey-200;
+  display: inline-block;
+  font-weight: 500;
+  border-radius: $border-radius;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  font-family: $sans-serif;
+  padding: 5px 16px;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 3px 12px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.btn-ico {
+  margin-right: 4px;
+  vertical-align: text-bottom;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+  transform: scale(1);
+  color: $pink-500;
+  fill: currentColor;
+}
+
+.btn:hover .btn-ico {
+  transform: scale(1.1);
+}
+
 pre,
-code
-{
-  font-family: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
-    Courier, monospace;
+code {
+  font-family: $monospace;
 }
 
 pre {
   display: inline-grid;
-  border-radius: 6px;
+  border-radius: $border-radius;
   width: 100%;
   padding: 5px 0;
 }
@@ -154,7 +194,7 @@ pre > code {
 :not(pre) > code {
   color: $grey-500;
   background: $grey-200;
-  border-radius: 6px;
+  border-radius: $border-radius;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
@@ -196,18 +236,6 @@ a:hover {
 .icon:hover {
   opacity: 1;
   transition: opacity $anim-duration ease-in;
-}
-
-.button {
-  background-color: $pink-400;
-  text-decoration: none;
-  padding: 10px;
-  color: white;
-  transition: background-color $anim-duration;
-}
-
-.button:hover {
-  background-color: $blue-800;
 }
 
 figure {
@@ -348,7 +376,6 @@ input:focus::placeholder {
   }
 }
 
-
 // Desktop
 @media not screen and (max-width: 800px) {
   // The search box is hidden on mobile to safe space.
@@ -390,7 +417,7 @@ input:focus::placeholder {
   background-color: lightyellow;
   border: 4px solid peachpuff;
   position: relative;
-  border-radius: 6px;
+  border-radius: $border-radius;
 }
 
 .logo_font {
@@ -445,7 +472,7 @@ input:focus::placeholder {
 
   main img {
     background-color: white;
-    border-radius: 6px;
+    border-radius: $border-radius;
   }
 
   table {
@@ -461,16 +488,20 @@ input:focus::placeholder {
     border-bottom: 1px solid #ddd;
   }
 
-  // TODO: Revisit this in the future
-  // To make the background less bright
-  // pre, code {
-  // -webkit-filter: invert(100%);
-  // filter: invert(100%);
-  // }
+  pre,
+  code {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
 
   .info {
     background: $blue-800;
     border-color: $grey-400;
+  }
+
+  .btn {
+    background: $grey-500;
+    color: white;
   }
 
   .autocomplete input,

@@ -21,7 +21,7 @@ So, in good hacker fashion,  I quickly patched up the script (it's just a three-
 
 Test it here! (Caution: you'll have to reload the page after that. 😏)
 
-<a class="button" href='#' id='gravity'>Apply Gravity</a>
+<a class="btn" href='#' id='gravity'>Apply Gravity</a>
 
 <script type="text/javascript">
     var myLink = document.getElementById('gravity');
