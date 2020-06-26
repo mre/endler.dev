@@ -33,7 +33,7 @@ yes | sh boring_installation.sh
 ```
 
 Ever installed a program, which required you to type "y" and hit enter to keep going?
-`yes` to the rescue! It will carefully fulfill this duty, so you can keep watching [Pootie Tang](https://www.youtube.com/watch?v=yhBExhldRXQ).
+`yes` to the rescue! It will carefully fulfill its duty, so you can keep watching [Pootie Tang](https://www.youtube.com/watch?v=yhBExhldRXQ).
 
 ## Writing yes
 
