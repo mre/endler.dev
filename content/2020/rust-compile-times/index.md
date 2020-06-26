@@ -198,10 +198,8 @@ repetitive compilation because only crates with changes have to be recompiled.
 Bigger projects like
 [servo](https://github.com/servo/servo/blob/master/Cargo.toml) and
 [vector](https://github.com/timberio/vector/blob/1629f7f82e459ae87f699e931ca2b89b9080cfde/Cargo.toml#L28-L34)
-are using workspaces heavily to slim down compile times.
-
-Learn more about workspaces
-[here](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
+are using workspaces heavily to slim down compile times. 
+[Learn more about workspaces here](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
 
 ## Combine All Integration Tests In A Single Binary
 
@@ -432,12 +430,10 @@ instead.
 provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github repository URL.
-[Here](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9)
-is an example for one of my [Hello Rust](https://hello-rust.show/) episodes.
+[Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
 
 When it comes to buying dedicated hardware,
-[here](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/)
-are some tips. Generally, you should get a proper multicore CPU like an AMD
+[here are some tips](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/). Generally, you should get a proper multicore CPU like an AMD
 Ryzen Threadripper plus at least 32 GB of RAM.
 
 ## Drastic Measures: Overclock Your CPU? 🔥
