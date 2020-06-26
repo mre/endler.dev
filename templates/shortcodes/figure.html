@@ -37,7 +37,10 @@
         {% if caption %}
         {{ caption | markdown(inline=true) | safe }}
         {% endif %}
-        {% if credits %}<br />
+        {% if caption and credits %}
+        <br />
+        {% endif %}
+        {% if credits %}
         {{ credits | markdown(inline=true)| safe }}
         {% endif %}
     </figcaption>
