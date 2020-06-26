@@ -85,7 +85,7 @@ According to the [Rust 2019
 survey](https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html), improving
 compile times is #4 on the Rust wishlist:
 
-{{ figure(src="https://blog.rust-lang.org/images/2020-03-RustSurvey/45-improve-adoption.svg",
+{{ figure(src="rust-survey.svg",
 caption="Rust Survey results 2019. (<a href='https://xkcd.com/303/'>Obligatory xkcd</a>.)") }}
 
 But all hope is not lost! Below is a list of **tips and tricks on how to make
@@ -103,8 +103,7 @@ For that, cargo has a special treat for you: ✨ `cargo check` ✨. Consider the
 differences in the number of instructions between `cargo check` on the left and
 `cargo debug` in the middle. (Note that the scales are different.)
 
-![Speedup factors: check 1, debug 5, opt
-20](https://paper-attachments.dropbox.com/s_A57800B62E88AEE36F7155FD549213822584025ACDBC9DAC077AE34BEF6CE532_1590587846423_image.png)
+![Speedup factors: check 1, debug 5, opt 20](cargo-check.webp)
 
 A sweet trick I use is to run it in the background with [`cargo watch`](https://github.com/passcod/cargo-watch). This way, it will `cargo check`
 whenever you change a file.
@@ -214,7 +213,7 @@ The reason is that many system linkers (like `ld`) are [single
 threaded](https://stackoverflow.com/questions/5142753/can-gcc-use-multiple-cores-when-linking).
 
 {% info() %}
-👨‍🍳️💡‍️ A [linker](https://en.wikipedia.org/wiki/Linker_(computing)) is a tool that combines the
+👨‍🍳️💡‍️ A [linker](<https://en.wikipedia.org/wiki/Linker_(computing)>) is a tool that combines the
 output of a compiler and mashes that into one executable you can run.
 {% end %}
 
@@ -229,9 +228,9 @@ functions (i.e. make them `pub`).
 Might be worth a try, though because a recent [benchmark revealed a 1.9x
 speedup](https://azriel.im/will/2019/10/08/dev-time-optimization-part-1-1.9x-speedup-65-less-disk-usage/) for one project.
 
-*This tip was brought to you by [Luca Palmieri](https://twitter.com/algo_luca),
+_This tip was brought to you by [Luca Palmieri](https://twitter.com/algo_luca),
 [Lucio Franco](https://twitter.com/lucio_d_franco), and [Azriel
-Hoh](https://twitter.com/im_azriel). Thanks!*
+Hoh](https://twitter.com/im_azriel). Thanks!_
 
 ## Disable Unused Features Of Crate Dependencies
 
@@ -299,7 +298,7 @@ compiler that runs in parallel with `rustc` for every CI build:
 Here is a comparison between `rustc` and Cranelift for some popular crates (blue
 means better):
 
-![](https://lh4.googleusercontent.com/dGn56oGBSP2BTWq1qrP6GISfwZJOqXUC-KGKaSWQ1dw3smBoXY5klW6rXoWSJQrnOvc2bEX7E2muojG_3YRXlpwK-9lWsHuS1QL4kDyQnHF0mQhp6IYyfVaK9Kfz_zjm0lvX-UTB)
+![LLVM compile time comparison between rustc and cranelift in favor of cranelift](cranelift.webp)
 
 Somewhat unbelieving, I tried to compile
 [vector](https://github.com/timberio/vector) with both compilers.
@@ -358,8 +357,7 @@ If you like to dig deeper, Rust compilation can be profiled with [`cargo rustc -
 The resulting trace file can be visualized with a flamegraph or the Chromium
 profiler:
 
-![Image of Chrome profiler with all
-crates](https://blog.rust-lang.org/images/inside-rust/2020-02-25-intro-rustc-self-profile/chrome_profiler3.png)
+{{ figure(src="chrome_profiler.webp", caption="Image of Chrome profiler with all crates", credits="Rust Lang Blog") }}
 
 There's also a [`cargo -Z timings`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#timings)
 feature that gives some information about how long each compilation step takes,
