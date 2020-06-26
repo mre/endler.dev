@@ -335,6 +335,15 @@ timed `IP/ICMP ECHO_REQUEST` and `ECHO_REPLY` packets to probe the "distance" to
 target machine." The [reference](https://ftp.arl.army.mil/~mike/ping.html) is
 well worth a read.
 
+## Pixel
+
+_Today's meaning: The smallest controllable element of a picture represented on the screen._
+
+The word pixel is a combination of *pix* (from "pictures", shortened to "pics") and *el* (for "element"). 
+Similarly, *voxel* is a volume element and *texel* is a texture element.
+[Reference](https://en.wikipedia.org/wiki/Pixel)
+
+
 ## Shell
 
 _Today's meaning: An interactive, commonly text-based runtime to interact with a
