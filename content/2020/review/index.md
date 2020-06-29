@@ -6,11 +6,11 @@ draft=true
 
 A while ago, I read an article titled ["What Happened In The
 2010s"](https://avc.com/2019/12/what-happened-in-the-2010s/) by Fred Wilson. The
-article hightlights key changes in technology and business during the last ten years.
+article highlights key changes in technology and business during the last ten years.
 This inspired me to think about a related topic: _What Happened To Software Engineering In The 2010s?_
 
 {% info() %}
-🚓 Please don't sue me. I probably forgot like 90% of what really happened.
+🚓 Please don't sue me. I probably forgot like 90% of what actually happened.
 My goal is for you to reflect on the past so that you can make better predictions about the <u>future</u>.
 {% end %}
 
@@ -40,7 +40,7 @@ Nobody had heard of a [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi)
 The last decade saw a huge number of new and exciting programming
 languages.
 
-[Crystal], [Dart], [Elixir], [Elm], [Go], [Julia], [Kotlin], [Nim], [Rust], [Swift], [Typescript]
+[Crystal], [Dart], [Elixir], [Elm], [Go], [Julia], [Kotlin], [Nim], [Rust], [Swift], [TypeScript]
 all released their first stable version!
 
 Even more exciting: _all_ of the above languages are developed in the open now and the source code is
@@ -49,8 +49,8 @@ freely available on Github. That means, everyone can contribute to their develop
 Each of those languages introduced new ideas, that were not widespread before:
 
 - _Stronger Type Systems_: Kotlin and Swift made [optional null types]
-  mainstream, Typescript brought types to JavaScript, Algebraic datatypes are
-  common in Kotlin, Swift, Typescript, and Rust.
+  mainstream, TypeScript brought types to JavaScript, Algebraic datatypes are
+  common in Kotlin, Swift, TypeScript, and Rust.
 - _Interoperability_: Dart compiles to JavaScript, Elixir interfaces with
   Erlang, Kotlin with Java, and Swift with Objective-C.
 - _Better Performance_: Go promoted Goroutines and channels for easier
@@ -76,19 +76,19 @@ languages:
 | C++                     | ~ 3 years             |
 | Go                      | 6 months              |
 | Java                    | 6 months              |
-| JavaScript (Ecmascript) | 12 months             |
+| JavaScript (ECMAScript) | 12 months             |
 | PHP                     | 12 months             |
 | Python                  | 12 months             |
 | Ruby                    | 12 months             |
 | Swift                   | 6 months              |
 | Visual Basic .NET       | ~ 24 months           |
 
-At the beginning of the last decade, the latest PHP version was 5.3. We're at
+As an example, at the beginning of the last decade, the latest PHP version was 5.3. We're at
 7.4 now. (We actually skipped 6.0 but I'm not ready to talk about it.)
 Along the way it got over twice as fast.
 PHP is a truly modern programming language now with a thriving ecosystem.
 
-Heck, even Visual Basic has tuples now. (I couldn't resist.)
+Heck, even Visual Basic has tuples now. (Sorry, I couldn't resist.)
 
 ## The Slow Death Of Null
 
@@ -98,7 +98,7 @@ Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-
 
 A study by the Chromium project found that [70% of their serious security bugs were memory safety problems](https://www.chromium.org/Home/chromium-security/memory-safety) ([same for Microsoft](https://www.zdnet.com/article/microsoft-70-percent-of-all-security-bugs-are-memory-safety-issues/)). Fortunately the notion that our [memory safety problem isn't bad coders](https://medium.com/@sgrif/no-the-problem-isnt-bad-coders-ed4347810270)
 has finally gained more traction.  
-Mainstream languages finally embraced safer alternatives to `null`: nullable
+Mainstream languages embraced safer alternatives to `null`: nullable
 types, `Option`, and `Result` types. Languages like Haskell had these features
 before, but they only became mainstream in the 2010s.
 
@@ -106,7 +106,7 @@ before, but they only became mainstream in the 2010s.
 
 Closely related is the the [debate about type
 systems](https://www.johndcook.com/blog/2010/06/09/dynamic-typing-and-risk-homeostasis/).
-The past decade has seen type systems make their stage comeback. Typescript,
+The past decade has seen type systems make their stage comeback. TypeScript,
 Python, PHP (to name a few) started to embrace them.
 
 The trend goes towards type inference: add types to make your intent clearer for
@@ -195,14 +195,14 @@ New threads like
 and [Meltdown](https://news.ycombinator.com/item?id=16065845) have shown that modern hardware is exploitable on a machine-level,
 making computer security look like the set of a Mad Max film. Also see [Heartbleed](https://heartbleed.com/) [Ransomware](https://en.m.wikipedia.org/wiki/Ransomware).
 
-## Conclusion
+## Learnings
 
 If you're now thinking: _Matthias, you totally forgot X_, then I totally brought that point home.
 This is not even close to everything that happened.
 You'd roughly need a decade to talk about all of it.
 
 Knowing all this, I'm excited about the next ten years.
-Software eats the world &mdash; with ever accelerating speed.
+Software eats the world &mdash; with an ever faster pace.
 
 [crystal]: https://crystal-lang.org/
 [dart]: https://dart.dev/
