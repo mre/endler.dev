@@ -86,7 +86,7 @@ languages:
 As an example, at the beginning of the last decade, the latest PHP version was 5.3. We're at
 7.4 now. (We actually skipped 6.0 but I'm not ready to talk about it.)
 Along the way it got over twice as fast.
-PHP is a truly modern programming language now with a thriving ecosystem.
+[PHP is a truly modern programming language now](https://stephencoakley.com/2020/06/10/dumb-reasons-to-hate-php) with a thriving ecosystem.
 
 Heck, even Visual Basic has tuples now. (Sorry, I couldn't resist.)
 
