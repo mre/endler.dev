@@ -293,10 +293,6 @@ footer .body {
   padding: 20px;
 }
 
-.submit {
-  background-color: $grey-300;
-}
-
 .field {
   padding: 10px;
   font-size: 0.8em;
@@ -320,6 +316,7 @@ footer .body {
 
 input[type="submit"] {
   cursor: pointer;
+  background-color: $grey-300;
 }
 
 input:focus::placeholder {
