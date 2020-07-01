@@ -1,7 +1,7 @@
 +++
 title="What Happened To Programming In The 2010s?"
-date=2020-06-30
-draft=true
+date=2020-07-02
+draft=false
 +++
 
 A while ago, I read an article titled ["What Happened In The
@@ -123,25 +123,31 @@ before, but they only gained popularity in the 2010s.
 
 Closely related is the the [debate about type
 systems](https://www.johndcook.com/blog/2010/06/09/dynamic-typing-and-risk-homeostasis/).
-The past decade has seen type systems make their stage comeback. TypeScript,
-Python, PHP (to name a few) started to embrace them.
+The past decade has seen type systems make their stage comeback; TypeScript,
+Python, and PHP (just to name a few) started to embrace type systems.
 
 The trend goes towards type inference: add types to make your intent clearer for
 other humans and in the face of ambiguity &mdash; otherwise skip them. Java,
-C++, Kotlin, Swift, and Rust are popular examples with type inference support. I
+C++, Go, Kotlin, Swift, and Rust are popular examples with type inference support. I
 can only speak for myself, but I think writing Java has become a lot more
 ergonomic in the last few years.
 
 ## Exponential Growth Of Libraries and Frameworks
 
-As of today, npm hosts [1,320,921 packages](https://www.npmjs.com/). That's over a million
-packages that somebody else is maintaining for you. Add another [160,257 Ruby
-gems](https://rubygems.org/stats), [241,363 Python projects](https://pypi.org/),
-and top it off with [41,950 Rust crates](https://crates.io/).
+As of today, npm hosts [1,330,634 packages](https://www.npmjs.com/). That's over a million
+packages that somebody else is maintaining for you. Add another [160,488 Ruby
+gems](https://rubygems.org/stats), [243,984 Python projects](https://pypi.org/),
+and top it off with [42,547  Rust crates](https://crates.io/).
 
 {{ figure(src="module_counts.png", caption="Number of packages for popular programming languages.<br /> Don't ask me what happened to npm in 2019.", credits="<a href='http://www.modulecounts.com/'>Module Counts</a>" )}}
 
-Of course, there's the occasional [leftpad](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/), but overall this is a good thing. It means that we have to write less library code ourselves and can focus on business value instead.
+Of course, there's the occasional
+[leftpad](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/),
+but it also means that we have to write less library code ourselves and can
+focus on business value instead.  On the other hand there are more potential
+points of failure and auditing is difficult. [There is a big number of outdated
+packages](https://sambleckley.com/writing/npm.html). For a more in-depth discussion, I recommend the [Census II report by
+the Linux Foundation & Harvard](https://www.coreinfrastructure.org/wp-content/uploads/sites/6/2020/02/census_ii_vulnerabilities_in_the_core.pdf) [PDF].
 
 We also went a bit crazy on frontend frameworks:
 
@@ -163,7 +169,16 @@ Looking at single-core performance, the curve is flattening:
 
 {{ figure(src="moore_single.jpg" credits="<a href='https://web.stanford.edu/~hennessy/Future%20of%20Computing.pdf'>Standford University: The Future of Computing</a>") }}
 
-There is no free lunch anymore. Engineers have to find new ways of making their applications faster, e.g. by [embracing concurrent execution](https://en.wikipedia.org/wiki/Concurrent_computing).
+The new transistors prophesied by Moore don’t make our CPUs faster but instead
+add other kinds of processing capabilities like more parallelism or hardware
+encryption. 
+There is no free lunch anymore. Engineers have to find new ways of making their
+applications faster, e.g. by [embracing concurrent
+execution](https://en.wikipedia.org/wiki/Concurrent_computing).
+
+Callbacks, coroutines, and eventually async/await are becoming industry
+standards.
+
 Callbacks, coroutines, and eventually async/await became industry standards.
 
 GPUs (Graphical Processing Units) became very powerful allowing for massively
@@ -173,25 +188,25 @@ parallel computations, which caused a renaissance of Machine Learning for practi
 > integral to many widely used software services and applications.
 > &mdash; [Timeline of Machine Learning on Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_machine_learning)
 
-_Compute_ is ubiquitous, so in most cases energy consumption plays a bigger role now than raw performance.
+_Compute_ is ubiquitous, so in most cases energy efficiency plays a bigger role now than raw performance (at least for consumer devices).
 
 ## Unlikely Twists Of Fate
 
-- Microsoft is a cool kid now. It acquires Github, [open sources .NET](https://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/) announces the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows).
-  Even [Microsoft Calculator](https://github.com/Microsoft/calculator) is now open source.
+- Microsoft is a cool kid now. It acquired Github, [open sources .NET](https://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/) announced the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows).
+  Even the [Microsoft Calculator](https://github.com/Microsoft/calculator) is now open source.
   Oh yeah, and [MS-DOS](https://github.com/Microsoft/MS-DOS) and [.NET](http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/) too.
 - [IBM aquires Red Hat](https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider)
-- [Linus Torvalds apologizes for his behavior, takes time off](https://lore.kernel.org/lkml/CA+55aFy+Hv9O5citAawS+mVZO+ywCKd9NQ2wxUmGsz9ZJzqgJQ@mail.gmail.com/).
+- [Linus Torvalds apologized for his behavior, took time off](https://lore.kernel.org/lkml/CA+55aFy+Hv9O5citAawS+mVZO+ywCKd9NQ2wxUmGsz9ZJzqgJQ@mail.gmail.com/).
 - Open Source became the default for software development.
 
 ## Learnings
 
-If you're now thinking: _Matthias, you totally forgot X_, then I totally brought that point home.
-This is not even close to everything that happened.
-You'd roughly need a decade to talk about all of it.
+If you're now thinking: _Matthias, you totally forgot X_, then I totally brought
+that point home.  This is not even close to everything that happened.  You'd
+roughly need a decade to talk about all of it.
 
 Personally, I'm excited about the *next* ten years.
-Software eats the world &mdash; with ever faster pace.
+Software eats the world &mdash; with an ever faster pace.
 
 [crystal]: https://crystal-lang.org/
 [dart]: https://dart.dev/
