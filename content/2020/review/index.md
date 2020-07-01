@@ -2,18 +2,23 @@
 title="What Happened To Programming In The 2010s?"
 date=2020-07-02
 draft=false
+[extra]
+credits = [
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+  {name = "Jorge-Luis Betancourt", url = "https://jorgelbg.me/"},
+]
 +++
 
 A while ago, I read an article titled ["What Happened In The
 2010s"](https://avc.com/2019/12/what-happened-in-the-2010s/) by Fred Wilson. The
-article highlights key changes in technology and business during the last ten
+post highlights key changes in technology and business during the last ten
 years. This inspired me to think about a much smaller topic: _What Happened To
 Programming In The 2010s?_
 
 {% info() %} 
 🚓 I probably forgot like 90% of what actually happened. Please
-don't sue me. My goal is for you to reflect on the past so that you can make
-better predictions about the <u>future</u>.
+don't sue me.
+My goal is to reflect on the <u>past</u> so that you can better predict the <u>future</u>.
 {% end %}
 
 ## Where To Start?
@@ -47,18 +52,18 @@ Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) (which only got released in
 
 ## An Explosion Of New Programming Languages
 
-The last decade saw a huge number of new and exciting programming
+The last decade saw a vast number of new and exciting programming
 languages.
 
 [Crystal], [Dart], [Elixir], [Elm], [Go], [Julia], [Kotlin], [Nim], [Rust], [Swift], [TypeScript]
 all released their first stable version!
 
-Even more exciting: _all_ of the above languages are developed in the open now and the source code is
+Even more exciting: _all_ of the above languages are developed in the open now, and the source code is
 freely available on Github. That means, everyone can contribute to their development &mdash; a big testament to Open Source.
 
-Each of those languages introduced new ideas, that were not widespread before:
+Each of those languages introduced new ideas that were not widespread before:
 
-- _Stronger Type Systems_: Kotlin and Swift made [optional null types]
+- _Strong Type Systems_: Kotlin and Swift made [optional null types]
   mainstream, TypeScript brought types to JavaScript, Algebraic datatypes are
   common in Kotlin, Swift, TypeScript, and Rust.
 - _Interoperability_: Dart compiles to JavaScript, Elixir interfaces with
@@ -73,17 +78,17 @@ greatly accelerated.
 
 [optional null types]: https://en.wikipedia.org/wiki/Nullable_type
 
-## More Innovation in Older Langauges
+## More Innovation in Older Languages
 
 Established languages didn't stand still either. A few examples:
 
-C++ woke up from its long winter sleep an released C++11 after its last major
+C++ woke up from its long winter sleep and released C++11 after its last major
 release in 1998. It introduced numerous new features like Lambdas, `auto`
 pointers, and range-based loops to the language.
 
 At the beginning of the last decade, the latest PHP version was 5.3. We're at
-7.4 now. (We actually skipped 6.0 but I'm not ready to talk about it.) Along the
-way it got over twice as fast.  [PHP is a truly modern programming language
+7.4 now. (We skipped 6.0, but I'm not ready to talk about it yet.) Along the
+way, it got over twice as fast.  [PHP is a truly modern programming language
 now](https://stephencoakley.com/2020/06/10/dumb-reasons-to-hate-php) with a
 thriving ecosystem.
 
@@ -113,7 +118,7 @@ Close to the end of the last decade, in a talk from 25<sup>th</sup>of August 200
 Tony Hoare described the `null` pointer as his [Billion Dollar
 Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/).
 
-A study by the Chromium project found that [70% of their serious security bugs were memory safety problems](https://www.chromium.org/Home/chromium-security/memory-safety) ([same for Microsoft](https://www.zdnet.com/article/microsoft-70-percent-of-all-security-bugs-are-memory-safety-issues/)). Fortunately the notion that our [memory safety problem isn't bad coders](https://medium.com/@sgrif/no-the-problem-isnt-bad-coders-ed4347810270)
+A study by the Chromium project found that [70% of their serious security bugs were memory safety problems](https://www.chromium.org/Home/chromium-security/memory-safety) ([same for Microsoft](https://www.zdnet.com/article/microsoft-70-percent-of-all-security-bugs-are-memory-safety-issues/)). Fortunately, the notion that our [memory safety problem isn't bad coders](https://medium.com/@sgrif/no-the-problem-isnt-bad-coders-ed4347810270)
 has finally gained some traction.  
 Many mainstream languages embraced safer alternatives to `null`: nullable
 types, `Option`, and `Result` types. Languages like Haskell had these features
@@ -121,13 +126,13 @@ before, but they only gained popularity in the 2010s.
 
 ## Revenge of the Type System
 
-Closely related is the the [debate about type
+Closely related is the [debate about type
 systems](https://www.johndcook.com/blog/2010/06/09/dynamic-typing-and-risk-homeostasis/).
 The past decade has seen type systems make their stage comeback; TypeScript,
 Python, and PHP (just to name a few) started to embrace type systems.
 
 The trend goes towards type inference: add types to make your intent clearer for
-other humans and in the face of ambiguity &mdash; otherwise skip them. Java,
+other humans and in the face of ambiguity &mdash; otherwise, skip them. Java,
 C++, Go, Kotlin, Swift, and Rust are popular examples with type inference support. I
 can only speak for myself, but I think writing Java has become a lot more
 ergonomic in the last few years.
@@ -144,8 +149,8 @@ and top it off with [42,547  Rust crates](https://crates.io/).
 Of course, there's the occasional
 [leftpad](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/),
 but it also means that we have to write less library code ourselves and can
-focus on business value instead.  On the other hand there are more potential
-points of failure and auditing is difficult. [There is a big number of outdated
+focus on business value instead. On the other hand, there are more potential
+points of failure, and auditing is difficult. [There is also a large number of outdated
 packages](https://sambleckley.com/writing/npm.html). For a more in-depth discussion, I recommend the [Census II report by
 the Linux Foundation & Harvard](https://www.coreinfrastructure.org/wp-content/uploads/sites/6/2020/02/census_ii_vulnerabilities_in_the_core.pdf) [PDF].
 
@@ -181,32 +186,32 @@ standards.
 
 Callbacks, coroutines, and eventually async/await became industry standards.
 
-GPUs (Graphical Processing Units) became very powerful allowing for massively
+GPUs (Graphical Processing Units) became very powerful, allowing for massively
 parallel computations, which caused a renaissance of Machine Learning for practical use-cases:
 
 > Deep learning becomes feasible, which leads to machine learning becoming
 > integral to many widely used software services and applications.
 > &mdash; [Timeline of Machine Learning on Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_machine_learning)
 
-_Compute_ is ubiquitous, so in most cases energy efficiency plays a bigger role now than raw performance (at least for consumer devices).
+_Compute_ is ubiquitous, so in most cases, energy efficiency plays a more prominent role now than raw performance (at least for consumer devices).
 
 ## Unlikely Twists Of Fate
 
-- Microsoft is a cool kid now. It acquired Github, [open sources .NET](https://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/) announced the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows).
+- Microsoft is a cool kid now. It acquired Github, announced the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows), open sourced
+  [MS-DOS](https://github.com/Microsoft/MS-DOS) and [.NET](http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/).
   Even the [Microsoft Calculator](https://github.com/Microsoft/calculator) is now open source.
-  Oh yeah, and [MS-DOS](https://github.com/Microsoft/MS-DOS) and [.NET](http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/) too.
-- [IBM aquires Red Hat](https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider)
+- [IBM acquired Red Hat](https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider)
 - [Linus Torvalds apologized for his behavior, took time off](https://lore.kernel.org/lkml/CA+55aFy+Hv9O5citAawS+mVZO+ywCKd9NQ2wxUmGsz9ZJzqgJQ@mail.gmail.com/).
-- Open Source became the default for software development.
+- Open source became the default for software development.
 
 ## Learnings
 
-If you're now thinking: _Matthias, you totally forgot X_, then I totally brought
-that point home.  This is not even close to everything that happened.  You'd
+If you're now thinking: _Matthias, you totally forgot X_, then I brought
+that point home. This is not even close to everything that happened.  You'd
 roughly need a decade to talk about all of it.
 
 Personally, I'm excited about the *next* ten years.
-Software eats the world &mdash; with an ever faster pace.
+Software eats the world &mdash; at an ever-faster pace.
 
 [crystal]: https://crystal-lang.org/
 [dart]: https://dart.dev/
