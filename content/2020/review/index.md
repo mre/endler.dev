@@ -3,6 +3,7 @@ title="What Happened To Programming In The 2010s?"
 date=2020-07-02
 draft=false
 [extra]
+excerpt="How has programming changed in the 2010s? You'd roughly need a decade to talk about all of it, but let me pick out some highlights."
 credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
   {name = "Jorge-Luis Betancourt", url = "https://jorgelbg.me/"},
