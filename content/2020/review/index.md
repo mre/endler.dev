@@ -110,6 +110,7 @@ Most languages adopted a quicker release cycle. Here's a list for some popular l
 | PHP                     | 12 months             |
 | Python                  | 12 months             |
 | Ruby                    | 12 months             |
+| Rust                    | 6 weeks!              |
 | Swift                   | 6 months              |
 | Visual Basic .NET       | ~ 24 months           |
 
