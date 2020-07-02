@@ -186,8 +186,6 @@ execution](https://en.wikipedia.org/wiki/Concurrent_computing).
 Callbacks, coroutines, and eventually async/await are becoming industry
 standards.
 
-Callbacks, coroutines, and eventually async/await became industry standards.
-
 GPUs (Graphical Processing Units) became very powerful, allowing for massively
 parallel computations, which caused a renaissance of Machine Learning for practical use-cases:
 
