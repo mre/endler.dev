@@ -200,14 +200,14 @@ _Compute_ is ubiquitous, so in most cases, energy efficiency plays a more promin
 - Microsoft is a cool kid now. It acquired Github, announced the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows), open sourced
   [MS-DOS](https://github.com/Microsoft/MS-DOS) and [.NET](http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/).
   Even the [Microsoft Calculator](https://github.com/Microsoft/calculator) is now open source.
-- [IBM acquired Red Hat](https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider)
+- [IBM acquired Red Hat](https://www.redhat.com/en/blog/red-hat-ibm-creating-leading-hybrid-cloud-provider).
 - [Linus Torvalds apologized for his behavior, took time off](https://lore.kernel.org/lkml/CA+55aFy+Hv9O5citAawS+mVZO+ywCKd9NQ2wxUmGsz9ZJzqgJQ@mail.gmail.com/).
-- Open source became the default for software development.
+- Open source became the default for software development (?).
 
 ## Learnings
 
 If you're now thinking: _Matthias, you totally forgot X_, then I brought
-that point home. This is not even close to everything that happened.  You'd
+that point home. This is not even close to everything that happened. You'd
 roughly need a decade to talk about all of it.
 
 Personally, I'm excited about the *next* ten years.
