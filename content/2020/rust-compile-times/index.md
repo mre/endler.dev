@@ -181,7 +181,7 @@ Here are a few examples:
   [miniserde](https://github.com/dtolnay/miniserde) and maybe even
   [nanoserde](https://github.com/not-fl3/nanoserde).
 - [reqwests](https://github.com/seanmonstar/reqwest) is quite heavy. Maybe try
-  [attohttpc](https://github.com/sbstp/attohttpc), which is more lightweight.
+  [attohttpc](https://github.com/sbstp/attohttpc) or [ureq](https://github.com/algesten/ureq), which are more lightweight.
 - ~~[tokio](https://github.com/tokio-rs/tokio) dragging you down? How about [smol](https://github.com/stjepang/smol)?~~  
   (Edit: This won't help much with build times. [More info in this discussion on Reddit](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/fvmayvh/))
 - Swap out [clap](https://github.com/clap-rs/clap) with [pico-args](https://github.com/RazrFalcon/pico-args) if you only need basic argument parsing.
