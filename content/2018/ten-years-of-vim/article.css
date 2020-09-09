@@ -1,0 +1,23 @@
+.vim {
+    height: 300px;
+    max-width: 90%;
+    background-color: #1C1C1C;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 40px 0px;
+  }
+  
+  .cursor::after {
+    content: "";
+    position: absolute;
+    background-color: #43FF09;
+    width: 10px;
+    height: 24px;
+    animation: blink 2s ease-in-out infinite;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }

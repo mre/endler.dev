@@ -1,0 +1,285 @@
+intro = """
+Good talks are both, fun and educational.
+Here's a list of previous events where I spoke.
+I try to make every talk and every workshop as unique as possible.
+If you would like me to speak at your event, let's [get connected](mailto:matthias@endler.dev)!
+"""
+
+[[talks]]
+title = "Introduction to Rust"
+image = "2020-programmierbar.jpg"
+event = "programmier.bar"
+month = "January"
+year  = "2020"
+location = "Bad Nauheim, Germany"
+slides = "https://speakerdeck.com/mre/einfuhrung-in-rust"
+description = """
+Rust is a modern programming language that combines performance and security. 
+It is close to the system and offers powerful abstractions that are 
+strongly reminiscent of dynamic languages such as Ruby or Python. 
+Rust offers memory security without a garbage collector and makes 
+low-level programming easier and safer. 
+I gave an introductory lecture on Rust (in German) and 
+presented some of the most beautiful features. 
+We discussed possible use-cases for web assembly, cloud computing and more.
+"""
+
+[[talks]]
+title = "Rust Embedded"
+image = "2019-rustfest.jpg"
+event = "RustFest"
+month = "November"
+year = "2019"
+location = "Barcelona, Spain"
+type = "Workshop"
+collaboration = "[Hanno Braun](https://braun-embedded.com/workshop/)"
+slides = "https://hackmd.io/ru4intliRlyJ9t8pU2F29A"
+description = """
+Rust is a great choice for embedded development! 
+It combines high-level abstractions with low-level control, safety with performance. 
+In this workshop, you will learn embedded development on a microcontroller, using Rust. 
+
+We’ll teach the basics, talk about pitfalls, and provide an environment 
+for experimentation. Experience with embedded development is not required, 
+but basic Rust experience would be helpful. 
+Every participant will be provided with a LPC845-BRK development board, 
+free of charge and for them to keep.
+"""
+
+[[talks]]
+title = "Wonderful WebAssembly"
+image = "2019-bristech.jpg"
+event = "Bristech"
+month = "November"
+year  = "2019"
+location = "Bristol, England"
+slides = "https://speakerdeck.com/mre/wonderful-webassembly"
+recording = "https://www.youtube.com/watch?v=sEcbTYLtLSM"
+description = """
+Our world is controlled by software. 
+As with everything that is created by humans, software is error-prone. 
+Everyone got annoyed by bugs and UI/UX issues before, but what exactly does "broken" 
+really mean and are there different kinds of brokenness? 
+Let's explore the fun, enthralling, and quirky state of our (digital) world 
+and see what we can do to make it better.
+"""
+
+[[talks]]
+title = "Everything is Broken (And That's Okay!)"
+image = "2019-localhost.jpg"
+event = "localhost conference"
+month = "October"
+year = "2019"
+location = "Düsseldorf, Germany"
+slides = "https://speakerdeck.com/mre/everything-is-broken-and-thats-okay"
+recording = "https://www.youtube.com/watch?v=sEcbTYLtLSM"
+description = """
+WebAssembly is neither "web" nor "assembly" - but 100% amazing. 
+It is our one chance to build a fast, safe, and universal compilation target for all 
+languages and all platforms.
+
+Let me show you why this is cool and how to get started with 
+WebAssembly in Go, C, and Rust.
+
+We will also learn about up and coming features of WebAssembly (like WASI) 
+that will make it even faster and more versatile.  
+Let's change the way we write software forever!
+"""
+
+[[talks]]
+title = "How Does Async Work?"
+image = "2019-async.jpg"
+event = "Web Meetup Cologne"
+month = "September"
+year = "2019"
+location = "Cologne, Germany"
+slides = "https://speakerdeck.com/mre/how-does-async-work"
+description = """
+If you work with Node.js or Python you might have heard of asynchronous programming a.k.a. async/await.
+It lets you do something else while you wait on some work to be done in the background - like reading a file or sending some data over the network.
+But what is it, really? And are there differences between the programming languages?
+Let's go on a trip through async-land and discover callbacks, event loops, and state machines.
+We will look at Node's, Python's, and Rust's async features and how they work under the hood.
+"""
+
+[[talks]]
+title = "What is Rust Doing Behind the Curtains?"
+image = "2019-fosdem.jpg"
+event = "FOSDEM"
+month = "February"
+year = "2019"
+location = "Brussels, Belgium"
+recording = "https://www.youtube.com/watch?v=ePiWBGh35q0"
+slides = "https://speakerdeck.com/mre/what-is-rust-doing-behind-the-curtains"
+description = """
+Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It
+is sometimes hard, however, to look behind the curtain and see what the compiler
+is really doing with our code. "It is good to know what these conveniences are,
+to avoid being mystified by what's going on under the hood... the less magical
+thinking we have of the world, the better." (Tshepang Lekhonkhobe). In this
+hands-on talk, we will go from code with a lot of syntactic sugar to extremely
+verbose Rust code.
+
+We will use a little tool called cargo-inspect, which was built for teaching
+Rust internals. The goal is to make the compiler more approachable to mere
+mortals.
+"""
+
+[[talks]]
+title = "Write Your Own Shell in Rust"
+image = "2018-shell-workshop.jpg"
+event = "RustBeltRust"
+month = "October"
+year = "2019"
+location = "Ann Arbor, MI, US"
+type = "Workshop"
+collaboration = "[Santiago Pastorino](https://github.com/spastorino)"
+code = "https://gitlab.com/mre_/rush"
+slides = "https://speakerdeck.com/mre/workshop-write-your-own-shell-in-rust"
+description = """
+One of the things developers use every day is a shell. It comes in many
+flavors, like bash, fish or zsh. Depending on your background, writing
+your own shell from scratch might either sound intimidating or
+pointless. We like to believe that it can be a fun way to gain more
+hands-on Rust experience. If you want to play with concepts like I/O,
+error handling, and syscalls, we invite you to participate in this
+workshop. Who knows, it could also be an opportunity to start your first
+mid-size Rust project!
+"""
+
+[[talks]]
+title = "Hyperjson — The Journey Towards Faster Safer JSON Parsing in Python Using Rust"
+image = "2018-hyperjson.jpg"
+event = "Rust Cologne"
+month = "August"
+year = "2018"
+location = "Chaos Computer Club, Cologne, Germany"
+recording = "https://www.youtube.com/watch?v=f1ln5j3aoSI"
+slides = "https://speakerdeck.com/mre/hyperjson-the-journey-towards-faster-safer-json-parsing-in-python-using-rust"
+description = """
+During a recent Python Hackathon in Düsseldorf, Matthias somehow managed
+to sneak in some Rust code while writing a fast, safe Python module for
+encoding and decoding JSON. It passes (most of) the Python test suite
+for the JSON module and was unreasonably pleasant to write. Listen
+carefully as he tells the story of a little side-project that got out of
+hand and how Rust can help speed up even the most boring,
+highly-optimized tasks like parsing file formats in the future.
+"""
+
+[[talks]]
+title = "Idiomatic Rust — Writing Concise and Elegant Rust Code"
+image = "2018-fosdem.jpg"
+event = "FOSDEM"
+month = "February"
+year = "2018"
+location = "Brussels, Belgium"
+recording = "https://www.youtube.com/watch?v=P2mooqNMxMs"
+slides = "https://speakerdeck.com/mre/idiomatic-rust-writing-concise-and-elegant-rust-code"
+description = """
+Rust is a big language and it gets bigger every day. Many beginners ask:
+"What is idiomatic Rust?". This talk will highlight simple tips to make
+your Rust code more elegant and concise, and introduce you to my
+peer-reviewed collection of articles/talks/repos for writing idiomatic
+Rust code.
+"""
+
+[[talks]]
+title = "Live Coding Like No One's Watching!"
+image = "2017-rustbeltrust.jpg"
+event = "RustBeltRust"
+month = "October"
+year = "2017"
+location = "Columbus, OH, USA"
+type = "Workshop"
+description = """
+So, you’ve heard of this “Rust” last year. Still it feels a bit like
+self-assembly furniture: you don’t know how all the parts fit together.
+Watch me make a fool of myself by trying to solve some common
+programming tasks in Rust.
+Highlights: Nervous laughter, self-demeaning humor, browsing the Rust
+documentation for clues. I might explain a little Rust along the way.
+"""
+
+[[talks]]
+title = "My Good Friend Rust - An Introduction"
+image = "2017-topconf.jpg"
+event = "Topconf"
+month = "October"
+year = "2017"
+location = "Düsseldorf, Germany"
+slides = "https://speakerdeck.com/mre/my-good-friend-rust-topconf-2017"
+description = """
+Rust is more than a Systems Programming language; it's a new way of
+thinking about low-level code. It has strong safety and concurrency
+guarantees without sacrificing performance. It provides powerful
+abstractions that make Systems Programming both, easier and more fun.
+Let me show you what's in for you and why you should learn Rust, even
+though you might be a Web-Developer.
+"""
+
+[[talks]]
+title = "What's So Hard About Writing a Slack Client in Rust?"
+image = "2015-slack-client.jpg"
+event = "Rust Cologne"
+month = "March"
+year = "2017"
+location = "Chaos Computer Club, Cologne, Germany"
+code = "https://github.com/mre/slack"
+recording = "https://www.youtube.com/watch?v=rrtJh1kz1Ms"
+slides = "https://speakerdeck.com/mre/whats-so-hard-about-writing-a-slack-client-in-rust"
+description = """
+"I'll just write a simple API wrapper for that. Give me two hours." Does
+that sound oddly familiar? Don't be fooled: writing an easy to use,
+idiomatic abstraction layer is a lot of work - in any language. I want
+to tell you my story about writing a Slack client in Rust. From
+documentation to testing and error handling there's a lot of pitfalls to
+avoid and laughs to share.
+"""
+
+[[talks]]
+title = "Why Rust?"
+image = "2015-why-rust.jpg"
+event = "Codemotion"
+month = "May"
+year = "2016"
+location = "Amsterdam, Netherlands"
+recording = "https://www.youtube.com/watch?v=imtejBNbm0o"
+slides = "https://speakerdeck.com/mre/why-rust"
+description = """
+Rust is the new kid on the block. It's a system programming language
+that is blazingly fast and offers powerful high-level abstractions
+better known from dynamic languages like Ruby or Python. Rust offers
+memory safety without a Garbage Collector and makes low-level
+programming easier and more secure. I will give an introductory talk
+about Rust and show some of its nicest features.
+"""
+
+[[talks]]
+title = "Rust Tooling"
+image = "2015-tooling.jpg"
+event = "Rust Cologne"
+month = "October"
+year = "2015"
+location = "Chaos Computer Club, Cologne, Germany"
+slides = "https://speakerdeck.com/mre/rust-tooling-october-2015"
+description = """
+What tools are available for Rust development? This talk gives you an
+overview of ways to help you write better Rust code.
+"""
+
+[[talks]]
+title = "The State of PyPy"
+image = "2015-pypy.jpg"
+event = "Python Usergroup"
+month = "April"
+year = "2015"
+location = "Düsseldorf, Germany"
+recording = "https://www.youtube.com/watch?v=YEzuUJGcPqc"
+slides = "https://speakerdeck.com/mre/the-state-of-pypy-april-2015"
+description = """
+PyPy is a relatively new implementation of Python with a focus on
+performance. In this talk I give an overview of PyPy and how it works
+internally. Also I talk a bit about PyPy STM, a new approach for
+parallel code execution that can take advantage of modern multi-core
+hardware.
+"""

@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{%- block header %}
+<title>{{ page.title }} | Matthias Endler</title>
+<link rel="canonical" href="{{ page.permalink | safe }}">
+{%- if page.extra.css %}
+<link rel="stylesheet" href="./article.css" />
+{%- endif %}
+{%- include "snippets/social.html" %}
+{%- endblock header -%}
+
+{%- block content %}
+<article>
+  <p class='post-meta'>Published on {{ macros::nicedate(date=page.date) }}
+{%- if page.updated %}
+. Updated on {{ macros::nicedate(date=page.updated) }}
+{%- endif %}
+
+  </p>
+  <h1>{{ page.title }}</h1>
+  {%if page.extra.subtitle %}
+  <h3>&mdash; {{ page.extra.subtitle }}</h3>
+  {% endif %}
+  {{ page.content | safe }}
+
+  <ul class='post-links'>
+    {% if page.extra.comments %}
+    <li>
+      {{ macros::comments(comments=page.extra.comments) }}
+    </li>
+    {% endif %}
+    {% if page.extra.translations %}
+    <li>
+      {{ macros::translations(translations=page.extra.translations) }}
+    </li>
+    {% endif %}
+  </ul>
+  {% include "snippets/newsletter.html" %}
+  {% if page.extra.credits %}
+  {{ macros::credits(credits=page.extra.credits) }}
+  {% endif %}
+
+</article>
+{% endblock content %}
+
+{% block teaser %}
+{% include "snippets/teaser.html" %}
+{% endblock teaser %}

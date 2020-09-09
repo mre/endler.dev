@@ -1,0 +1,47 @@
+{% macro nicedate(date) %}
+{% set daynum = date | date(format="%-d") %}
+{% if daynum == "1" %}
+{% set suffix = "st" %}
+{% elif daynum == "21" %}
+{% set suffix = "st" %}
+{% elif daynum == "31" %}
+{% set suffix = "st" %}
+{% elif daynum == "2" %}
+{% set suffix = "nd" %}
+{% elif daynum == "22" %}
+{% set suffix = "nd" %}
+{% elif daynum == "3" %}
+{% set suffix = "rd" %}
+{% elif daynum == "23" %}
+{% set suffix = "rd" %}
+{% else %}
+{% set suffix = "th" %}
+{% endif %}
+
+{{ daynum }}{{ suffix }} of {{ date | date(format="%B, %Y") }}
+{% endmacro nicedate %}
+
+{% macro comments(comments) %}
+💬 Comments on
+{% for comment in comments %}
+<a href="{{ comment.url }}">{{ comment.name }}</a>
+{%- if not loop.last %},{% else %}.{% endif %}
+{% endfor %}
+{% endmacro comments %}
+
+{% macro translations(translations) %}
+📖 Translated into
+{% for translation in translations %}
+<a href="{{ translation.url }}">{{ translation.name }}</a>
+{%- if not loop.last %},{% else %}.{% endif %}
+{% endfor %}
+{% endmacro translations %}
+
+{% macro credits(credits) %}
+Thanks to  
+{% for credit in credits | sort(attribute="name") %}
+<a href="{{ credit.url }}">{{ credit.name }}</a>
+{%- if not loop.last %},{% endif %}
+{% endfor %}
+for reviewing drafts of this article.
+{% endmacro credits %}

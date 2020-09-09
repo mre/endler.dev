@@ -1,0 +1,71 @@
+$s-near: 10s;
+$s-mid: ($s-near * 2);
+$s-far: ($s-near * 3);
+
+$ease-out-quad: cubic-bezier(.25, .46, .450, .94);
+
+%on-top {
+    z-index: 100;
+    pointer-events: none;
+}
+
+.winter-wrapper {
+    position: relative;
+}
+
+.winter {
+    @extend %on-top;
+    overflow: hidden;
+}
+
+.snow {
+    @extend %on-top;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    animation: falling linear infinite both;
+    transform: translate3D(0, -100%, 0);
+
+    &-near {
+        animation-duration: $s-near;
+        background-image: url('/winter/snow-large.png');
+        background-size: contain;
+
+        &+.snow-alt {
+            animation-delay: ($s-near / 2);
+        }
+    }
+
+    &-mid {
+        animation-duration: $s-mid;
+        background-image: url('/winter/snow-medium.png');
+        background-size: contain;
+
+        &+.snow-alt {
+            animation-delay: ($s-mid / 2);
+        }
+    }
+
+    &-far {
+        animation-duration: $s-far;
+        background-image: url('/winter/snow-small.png');
+        background-size: contain;
+
+        &+.snow-alt {
+            animation-delay: ($s-far / 2);
+        }
+    }
+}
+
+@keyframes falling {
+    0% {
+        transform: translate3D(-7.5%, -100%, 0);
+    }
+
+    100% {
+        transform: translate3D(7.5%, 100%, 0);
+    }
+}

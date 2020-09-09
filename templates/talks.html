@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block header %}
+<title>{{ page.title }} | Matthias Endler</title>
+{% endblock header %}
+
+{% block content %}
+{% set data = load_data(path="content/static/talks/data.toml") %}
+
+<h1>{{ page.title }}</h1>
+<p>
+{{ data.intro | markdown | safe }}
+</p>
+
+{% for talk in data.talks %}
+<article>
+    <h2 id="{{ talk.title | slugify }}">
+       {% if talk.type and talk.type != "Talk" %} {{ talk.type }}: {% endif %}
+       {{ talk.title }} [{{ talk.year }}]
+    </h2>
+    <p>
+        {% if talk.recording %}{% set link = talk.recording %}
+        {% elif talk.slides %}{% set link = talk.slides %}
+        {% else %}{% set link = "" %}
+        {% endif %}
+
+        {% if link %}
+        <a aria-label="Link to talk" href="{{ link }}">
+        {% endif %}
+            <picture>
+                <source srcset="{{ talk.image | replace(from="jpg", to="avif")}}" type="image/avif" />
+                <source srcset="{{ talk.image | replace(from="jpg", to="webp")}}" type="image/webp" />
+                <img alt="Me speaking at {{ talk.event }}, {{ talk.year }}" style="width:100%;" src="{{ talk.image }}" />
+            </picture>
+        {% if link %}
+        </a>
+        {% endif %}
+    <ul>
+        <li><b>Event:</b> {{ talk.event }}</li>
+        <li><b>Date:</b> {{talk.month}} {{ talk.year }}</li>
+        <li><b>Location:</b> {{ talk.location }}</li>
+        {% if talk.collaboration %}<li>In collaboration with {{ talk.collaboration | markdown(inline=true) | safe }}</li>{% endif %}
+        {% if talk.recording %}<li><a href="{{ talk.recording }}">Recording</a></li>{% endif %}
+        {% if talk.slides %}<li><a href="{{ talk.slides }}">Slides</a></li>{%endif%}
+        {% if talk.code %}<li><a href="{{ talk.code}}">Code</a></li>{% endif %}
+    </ul>
+    {{ talk.description | markdown(inline=true) | safe }}
+    </p>
+</article>
+{% endfor %}
+This is just an excerpt. You can find all my other talks on
+<a href="https://speakerdeck.com/mre">Speakerdeck</a>.
+{% endblock content %}
+

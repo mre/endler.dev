@@ -1,0 +1,19 @@
+{% set logo = load_data(path="static/logo.svg") %}
+{% set logo_font_light = load_data(path="static/logo_font_light.svg") %}
+{% set logo_font_dark = load_data(path="static/logo_font_dark.svg") %}
+
+<a href="/" aria-label="Go back to homepage">
+  {# The logo class allows overwriting the image if needed #}
+  {# Inlining the width and margin here to avoid flashing content on render #}
+  <div class="logo" style="width: 110px; margin: auto;">
+    {{ logo | safe }}
+  </div>
+  <div class="logo_font">
+    <div class="logo_font_dark">
+    {{ logo_font_dark | safe }}
+    </div>
+    <div class="logo_font_light">
+    {{ logo_font_light | safe }}
+    </div>
+  </div>
+</a>
