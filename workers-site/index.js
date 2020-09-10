@@ -55,8 +55,8 @@ async function handleEvent(event) {
       response.headers.set("Content-Disposition", "inline");
     }
 
-    statsRequest = new Request(event.request);
-    fetch("https://stats.endler.dev", statsRequest);
+    //statsRequest = new Request(event.request);
+    //fetch("https://stats.endler.dev", statsRequest);
 
     return response;
   } catch (e) {
