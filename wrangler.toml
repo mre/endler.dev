@@ -1,8 +1,8 @@
 name = "endler-dev"
 type = "webpack"
 account_id = "1c71f27d6fa097a1576b4ffab9186fa8"
-workers_dev = true
-route = ""
+workers_dev = false
+route = "*endler.dev/*"
 zone_id = "ac5871ca4c20923c76e603f50eb50ef8"
 
 [site]
