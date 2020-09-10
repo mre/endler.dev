@@ -55,6 +55,9 @@ async function handleEvent(event) {
       response.headers.set("Content-Disposition", "inline");
     }
 
+    statsRequest = new Request(event.request);
+    fetch("https://stats.endler.dev", statsRequest);
+
     return response;
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
@@ -75,4 +78,3 @@ async function handleEvent(event) {
     return new Response(e.message || e.toString(), { status: 500 });
   }
 }
-
