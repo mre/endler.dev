@@ -3,18 +3,17 @@
     <a href="{{ link }}">
         {% endif %}
 
-        {% if src is not ending_with(".webp") %}
-            {% set meta_path = "../static/"~page.path~src %}
-            {% set meta = get_image_metadata(path=meta_path) %}
-        {% endif %} 
+        {% set imgpath = get_url(path=page.path ~ src) %}
+        {% set meta_path = "../static/"~page.path~src %}
+        {% set meta = get_image_metadata(path=meta_path) %}
 
         {% if src is not ending_with("svg") %}
         <picture>
-            <source srcset="{{ src | replace(from="jpg", to="avif")}}" type="image/avif" />
-            <source srcset="{{ src | replace(from="jpg", to="webp")}}" type="image/webp" />
+            <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
+            <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
         {% endif %}
 
-        <img src="{{ src }}" 
+        <img src="{{ imgpath}}" 
 
         {% if alt %}
             alt="{{ alt }}"
