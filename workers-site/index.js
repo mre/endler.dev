@@ -55,8 +55,9 @@ async function handleEvent(event) {
       response.headers.set("Content-Disposition", "inline");
     }
 
-    //statsRequest = new Request(event.request);
-    //fetch("https://stats.endler.dev", statsRequest);
+    const statsRequest = new Request(event.request);
+    // Offload stats from the main thread
+    event.waitUntil(fetch("https://dashflare.mre.workers.dev?forward=true", statsRequest));
 
     return response;
   } catch (e) {
