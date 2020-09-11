@@ -9,18 +9,20 @@ $grey-200: #fafafa;
 $grey-300: #b9b9b9;
 $grey-400: #555;
 $grey-500: #111;
+
 $anim-duration: 200ms;
 $border-radius: 6px;
+
 // Default font
 $serif: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond", serif;
 // Button font
 $sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji;
+// Code font
 $monospace: operator mono, sfmono-regular, Consolas, liberation mono, Menlo,
   Courier, monospace;
 
-/* Tiny reset */
-
+// Tiny reset
 html,
 body,
 div,
@@ -46,14 +48,37 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: auto;
-  margin: 0 auto;
+  grid-template-columns: auto 650px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 header {
   font-size: 0.8em;
   text-align: center;
   padding-top: 30px;
+  width: 242px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.logo {
+  width: 110px;
+  margin: auto;
+}
+
+.logo_font {
+  position: relative;
+  width: 165px;
+  height: 34px;
+  margin: 0 auto;
+}
+
+.logo_font svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .bio {
@@ -62,10 +87,15 @@ header {
   padding: 16px;
 }
 
+.bio span:after {
+  content: "Writes about Rust, engineering culture, and socks.";
+}
+
 main {
-  padding: 5px;
+  margin-top: 20px;
   margin-bottom: 50px;
   max-width: 650px;
+  padding: 0px 30px;
 }
 
 main article {
@@ -134,6 +164,15 @@ header nav li {
   font-size: 80%;
 }
 
+.info {
+  padding: 20px;
+  margin: 30px 0;
+  background-color: lightyellow;
+  border: 4px solid peachpuff;
+  position: relative;
+  border-radius: $border-radius;
+}
+
 .btn {
   color: $grey-500;
   background-color: $grey-200;
@@ -169,6 +208,10 @@ header nav li {
   transform: scale(1.1);
 }
 
+.searchicon {
+  display: none;
+}
+
 pre,
 code {
   font-family: $monospace;
@@ -178,7 +221,7 @@ pre {
   display: inline-grid;
   border-radius: $border-radius;
   width: 100%;
-  padding: 5px 0;
+  padding: 10px;
 }
 
 code {
@@ -345,47 +388,44 @@ input:focus::placeholder {
   color: white;
 }
 
-@media screen and (min-width: 600px) {
-  .container {
-    justify-content: center;
-    margin-top: 40px;
-    grid-template-columns: auto auto;
+// Styles for small screens
+@media (max-width: 920px) {
+  header {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
   }
 
-  header {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    box-sizing: border-box;
+  .navwrapper {
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;
   }
 
   main {
-    padding: 0px 30px;
-    margin-top: 20px;
+    padding: 0px 10px;
   }
 
-  pre {
-    padding: 10px;
+  .searchicon {
+    display: block;
   }
 
   .bio span:after {
-    content: "Writes about Rust, engineering culture, and socks.";
-  }
-}
-
-// Desktop
-@media not screen and (max-width: 800px) {
-  // The search box is hidden on mobile to safe space.
-  // This search icon can be clicked to expand the search box.
-  // It is only shown on mobile by default.
-  .searchicon {
     display: none;
   }
-}
 
-// Mobile
-@media screen and (max-width: 800px) {
+  .biowrapper {
+    margin-top: 26px;
+  }
+
   #searchbox {
+    width: 100%;
     display: none;
   }
 
@@ -393,41 +433,28 @@ input:focus::placeholder {
     display: block;
   }
 
-  .autocomplete {
-    width: 100%;
-    font-size: 1.1em;
+  .logo_font {
+    width: 141px;
   }
 
-  .autocomplete input {
-    width: calc(100% - 100px);
-    margin: 20px 10px;
+  .logo {
+    margin-top: 24px;
   }
 
-  .autocomplete-items {
-    top: 58px;
+  h1 {
+    font-size: 1.4em;
   }
-}
 
-.info {
-  padding: 20px;
-  margin: 30px 0;
-  background-color: lightyellow;
-  border: 4px solid peachpuff;
-  position: relative;
-  border-radius: $border-radius;
-}
+  .bio {
+    width: 220px;
+    // margin: auto;
+    padding: 0px;
+  }
 
-.logo_font {
-  position: relative;
-  width: 165px;
-  height: 34px;
-  margin: 0 auto;
-}
+  pre {
+    padding: 2px;
+  }
 
-.logo_font svg {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 @media (prefers-color-scheme: light) {

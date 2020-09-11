@@ -48,14 +48,37 @@ load_data(path="public/main.css") %}
   <body>
     <div class="container">
       <header>
-        {% include "snippets/logo.html" %}
-        <p class="bio">
-          <span>
-            Open-source maintainer, speaker, rebel.
-          </span>
-          <a href="/about">About me.</a>
-        </p>
-        {% include "snippets/nav.html" %} {% include "snippets/search.html" %}
+        <div class="navwrapper">
+          {% set logo = load_data(path="static/logo.svg") %}
+          {% set logo_font_light = load_data(path="static/logo_font_light.svg") %}
+          {% set logo_font_dark = load_data(path="static/logo_font_dark.svg") %}
+
+          <a href="/" aria-label="Go back to homepage">
+            {# The logo class allows overwriting the image if needed #}
+            {# Inlining the width and margin here to avoid flashing content on render #}
+            <div class="logo">
+              {{ logo | safe }}
+            </div>
+          </a>
+          <div class="biowrapper">
+            <a href="/" aria-label="Go back to homepage">
+              <div class="logo_font">
+                <div class="logo_font_dark">
+                {{ logo_font_dark | safe }}
+                </div>
+                <div class="logo_font_light">
+                {{ logo_font_light | safe }}
+                </div>
+              </div>
+            </a>
+            <p class="bio">
+              <span>Open-source maintainer, speaker, rebel.</span>
+              <a href="/about">About me.</a>
+            </p>
+            {% include "snippets/nav.html" %}
+          </div>
+        </div>
+        {% include "snippets/search.html" %}
       </header>
 
       <main>
@@ -75,7 +98,7 @@ load_data(path="public/main.css") %}
         </article>
         {% endfor %}
 
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between">
           {% if paginator.previous %}
           <a class="btn" href="{{  paginator.previous}}">« Next</a>
           {% endif %} {% if paginator.next %}
