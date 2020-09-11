@@ -18,23 +18,10 @@ jobs:
       - name: ⏬ Install zola
         run: sudo snap install --edge zola
 
-      # - name: 🤠 Configure wrangler
-      #   env:
-      #     CF_SECRET: ${{ secrets.CF_SECRET }}
-      #   run: |
-      #     echo ${CF_SECRET} | wrangler config
-
       - name: 📖 Build
         run: zola build
-        env:
-          CF_EMAIL: ${{ secrets.CF_EMAIL }}
-          CF_API_KEY: ${{ secrets.CF_API_KEY }}
 
-      - name: ⏬ Install wrangler
-        run: sudo npm i @cloudflare/wrangler -g
-
-      - name: 📖 Publish
-        run: wrangler whoami && wrangler publish --env production
-        env:
-          CF_EMAIL: ${{ secrets.CF_EMAIL }}
-          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      - name: 🤠 Publish
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
