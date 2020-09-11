@@ -35,5 +35,5 @@ stars: ## Update Github stars statistics for my projects
 	count-github-stars mre --repo-limit 100 --no-orgs --stargazer-threshold 50 --template .star-counter-template.md > content/static/about/stars
 
 .PHONY: deploy publish
-deploy publish: ## Deploy site on Cloudflare's Worker Sites using wrangler
+deploy publish: build ## Deploy site on Cloudflare's Worker Sites using wrangler
 	wrangler publish
