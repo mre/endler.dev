@@ -34,7 +34,7 @@ jobs:
         run: sudo npm i @cloudflare/wrangler -g
 
       - name: 📖 Publish
-        run: wrangler publish
+        run: wrangler whoami && wrangler publish --env production
         env:
           CF_EMAIL: ${{ secrets.CF_EMAIL }}
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
