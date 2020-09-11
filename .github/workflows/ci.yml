@@ -15,5 +15,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build and deploy 🚀
+      - name: ⏬ Install zola
+        run: curl -sL https://github.com/getzola/zola/releases/download/v0.12.0/zola-v0.12.0-x86_64-unknown-linux-gnu.tar.gz | tar zxv
+
+      - name: ⏬ Install wrangler
+        run: npm i @cloudflare/wrangler -g
+
+      # - name: 🤠 Configure wrangler
+      #   env:
+      #     CF_SECRET: ${{ secrets.CF_SECRET }}
+      #   run: |
+      #     echo ${CF_SECRET} | wrangler config
+
+      - name: 📖 Bild and publish
         run: make deploy
+        env:
+          CF_EMAIL: ${{ secrets.CF_EMAIL }}
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
