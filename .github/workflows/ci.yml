@@ -19,7 +19,7 @@ jobs:
         run: curl -sL https://github.com/getzola/zola/releases/download/v0.12.0/zola-v0.12.0-x86_64-unknown-linux-gnu.tar.gz | tar zxv
 
       - name: ⏬ Install wrangler
-        run: npm i @cloudflare/wrangler -g
+        run: sudo npm i @cloudflare/wrangler -g
 
       # - name: 🤠 Configure wrangler
       #   env:
