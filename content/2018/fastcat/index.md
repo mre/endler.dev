@@ -12,6 +12,12 @@ comments = [
   {name = "Lobsters", url = "https://lobste.rs/s/vmucxl/fastcat_faster_cat_implementation_using"},
   {name = "Hacker News", url = "https://news.ycombinator.com/item?id=17657485"},
 ]
+credits = [
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+  {name = "Olaf Gladis", url="https://twitter.com/hwmrocker"},
+  {name="Patrick Pokatilo", url="https://github.com/SHyx0rmZ"},
+]
+
 +++
 
 {{ figure(src="fastcat.svg") }}
@@ -288,8 +294,6 @@ network card to another, [similar to netcat](https://nc110.sourceforge.io/).
 That said, I still have no idea why GNU cat does not use splice on Linux. 🤔
 The [source code for fcat is on Github](https://github.com/mre/fcat).
 Contributions welcome!
-
-**Thanks** to [Olaf Gladis](https://twitter.com/hwmrocker) for helping me run the benchmarks on his Linux machine and to [Patrick Pokatilo](https://github.com/SHyx0rmZ) and [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of this article.
 
 ## Footnotes
 

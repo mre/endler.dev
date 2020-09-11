@@ -4,8 +4,10 @@ date=2018-09-02
 
 [extra]
 subtitle="(For Programmers)"
+credits = [
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+]
 +++
-
 
 For the first three decades of my life, I've used a German keyboard layout.
 A few months ago, I switched to a US layout.
@@ -14,10 +16,9 @@ I was looking for a similar article before jumping the gun, but I couldn't find 
 
 ## Why switch?
 
-I was reasonably efficient when writing prose, but felt like 
+I was reasonably efficient when writing prose, but felt like
 a lemur on a piano when programming: reaching the special keys (`{`, `;`, or `/`)
 required lots of finger-stretching.
-
 
 {{ figure(src="KB_Germany.svg", caption="German Keyboard Layout", credits="[Image by Wikipedia](https://commons.wikimedia.org/w/index.php?curid=1058095)") }}
 
@@ -36,7 +37,7 @@ German keyboard sucks for programming:
 
 After many years of using a rubber-dome [Logitech Cordless Desktop
 Wave](https://support.logitech.com/en_us/product/cordless-desktop-wave/), I
-had to get a mechanical keyboard again. 
+had to get a mechanical keyboard again.
 
 Those rubber domes just feel too mushy to me now. In addition to that, I enjoy the
 clicky sound of a mechanical keyboard and the noticeable tactile bump. (I'm using
@@ -54,9 +55,9 @@ down my daily work. This turned out not to be true. I was reasonably productive
 from day one and nobody even noticed any difference. (That's a good thing,
 right?)
 
-At first, I didn't like the *bar-shaped US-Return key*. I preferred the European
-layout with a *vertical enter key*. I was afraid that I would hit the key by
-accident. After a while, I find that the US return key to be even more convenient. 
+At first, I didn't like the _bar-shaped US-Return key_. I preferred the European
+layout with a _vertical enter key_. I was afraid that I would hit the key by
+accident. After a while, I find that the US return key to be even more convenient.
 I never hit it by accident.
 
 Within two weeks, I was back to 100% typing speed.
@@ -72,7 +73,7 @@ because my fingers stay at their dedicated positions now.
 Somehow the position of special characters feels right. I can now understand the
 reason why Vim is using `/` for search or why the pipe symbol is `|`: both are
 easy to reach! It all makes sense now!
-(For a fun time, try that on a German keyboard!)  
+(For a fun time, try that on a German keyboard!)
 
 I now understand why Mircosoft chose `\` as a directory separator: it's easily
 accessible from a US keyboard. On the German layout, it's&hellip; just&hellip; awful
@@ -106,5 +107,4 @@ turned out not to be a problem. I rarely look at the print anyway.
 
 ## Summary
 
-If you consider switching, just do it. I don't look back at all.  
-Thanks to [Simon Brüggen](https://github.com/m3t0r) for reviewing drafts of this article.
+If you consider switching, just do it. I don't look back at all.
