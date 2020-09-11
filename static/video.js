@@ -1,5 +1,5 @@
 // Adapted from Light YouTube Embeds by @labnol
-//  http://labnol.org/?p=27941
+// http://labnol.org/?p=27941
 
 function lightEmbedInit() {
   var n,
@@ -13,7 +13,6 @@ function lightEmbedInit() {
       if (typeof this.dataset.start !== "undefined") {
         embed = embed + "&start=" + this.dataset.start;
       }
-      console.log(embed);
       iframe.setAttribute("src", embed);
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "1");
