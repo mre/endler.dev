@@ -10,7 +10,7 @@ I'm maintaining _some_ kind of blog since around 20 years (I'm a bit shocked mys
 The first versions are lost in time. Actually no, I still got backups which I'm too shy to upload.
 The Internet Archive started indexing my page somewhere around 2005 and [that's glorious](https://web.archive.org/web/20050203114107/http://www.matthias-endler.de/).
 
-Some notable changes:
+Notable versions:
 
 - [Wordpress blog](https://web.archive.org/web/20070213064114/http://matthias-endler.de/)
 - [Static blog v1](https://github.com/mre/mre.github.io.v1) built with Jekyll (Ruby) + Github Pages, 2010-2015 [[Preview](https://web.archive.org/web/20120302065002/http://www.matthias-endler.de/)]
