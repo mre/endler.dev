@@ -42,7 +42,7 @@ Only if it's a photo I'll use JPEG or [WebP](https://developers.google.com/speed
 To be honest with you, I never really liked WebP.
 There is a long [debate on the Mozilla bug tracker](https://bugzilla.mozilla.org/show_bug.cgi?id=856375) if you want to read more.
 It might not even be smaller than JPEGs compressed with [MozJPEG](https://siipo.la/blog/is-webp-really-better-than-jpeg)!
-Safari [still doesn't support it](https://caniuse.com/#search=webp) to this day.
+Safari [still doesn't support it](https://caniuse.com/?search=webp) to this day.
 
 Meet [AVIF](https://aomediacodec.github.io/av1-avif/), the new next-gen image compression format.
 If WebP was the empire, AVIF would be the rebellion.

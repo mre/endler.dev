@@ -76,7 +76,7 @@ gifsicle -O3 < img.gif > img_mini.gif
 
 ## Comparison
 
-WebP is the smallest, but it's [not supported by all browsers](https://caniuse.com/#feat=webp).  
+WebP is the smallest, but it's [not supported by all browsers](https://caniuse.com/?search=webp).  
 Gif was second, but when resizing the image and applying the blur filter, I was not happy with the result.  
 In the end, I settled for PNG, which provided an excellent tradeoff between size and quality.
 I optimized the images even further using [oxipng](https://github.com/shssoichiro/oxipng), which supports zopfli compression.
