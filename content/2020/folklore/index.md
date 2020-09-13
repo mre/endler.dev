@@ -258,7 +258,7 @@ Maybe related to the original military meaning of FUBAR to indicate that somethi
 
 {{ figure(src="scram.jpg",caption="A scram switch (button), that could be
 pressed to prevent inadvertent operation. Maybe the TMRC had buttons labeled `foo` instead", credits="Source [Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.webp)" ) }}
+Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" ) }}
 
 References:
 

@@ -31,7 +31,7 @@ Among them are tools like a [random sandwich
 generator](https://github.com/mre/ihatesubways) for Subway (the American
 fast-food chain), [DrawRoom](https://github.com/mre/DrawRoom), a keyboard-driven
 drawing app inspired by
-[WriteRoom](https://www.hogbaysoftware.com/products/writeroom), and the
+[WriteRoom](http://www.hogbaysoftware.com/products/writeroom), and the
 [obligatory CMS software](https://github.com/mre/Creamy), that I sold to
 clients. Surprisingly, none of them were a great success.
 
