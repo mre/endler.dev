@@ -94,9 +94,9 @@ fn handle(path: PathBuf) -> Result<()> {
     );
     let out_file = out_dir.join(filename);
 
-    dbg!(&filename);
-    dbg!(&in_dir);
-    dbg!(&out_dir);
+    // dbg!(&filename);
+    // dbg!(&in_dir);
+    // dbg!(&out_dir);
 
     if filename == ".DS_Store" {
         return Ok(());
