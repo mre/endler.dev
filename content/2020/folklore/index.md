@@ -178,7 +178,7 @@ process. [Reference](https://en.wikipedia.org/wiki/Core_dump)
 
 {{ figure(src="corememory.jpg",caption="A 32 x 32 core memory plane storing
 1024 bits (or 128 bytes) of data. The first core dumps were printed on paper, which sounds reasonable given these small amounts of bytes.", credits="[Wikimedia
-Commons](https://de.wikipedia.org/wiki/Datei:KL_CoreMemory.webp)") }}
+Commons](https://commons.wikimedia.org/wiki/File:KL_CoreMemory.jpg)") }}
 
 ## Cursor
 
