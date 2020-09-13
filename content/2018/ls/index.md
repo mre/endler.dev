@@ -327,5 +327,5 @@ rwxr-xr-x   136  6 Mar 23:07 target
 That's it! You can find the [final version of our toy `ls` on Github](https://gist.github.com/mre/91ebb841c34df69671bd117ead621a8b).
 We are still far away from a full-fledged `ls` replacement, but at least we learned a thing or two about its internals.
 
-If you're looking for a proper `ls` replacement written in Rust, go check out [`exa`](https://the.exa.website/).
+If you're looking for a proper `ls` replacement written in Rust, go check out [`lsd`](https://github.com/Peltoche/lsd).
 If, instead, you want to read another blog post from the same series, check out [_A Little Story About the `yes` Unix Command_](@/2017/yes/index.md).
