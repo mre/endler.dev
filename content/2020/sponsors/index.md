@@ -34,7 +34,7 @@ Everyone likes business metrics. Here are some of ours:
   joined in May 2020 to finally make it a reality.
 
 {{ figure(src="star-history.jpg", caption="Github stars over time. That graph screams BUSINESS OPPORTUNITY.",
-credits="https://star-history.t9t.io") }}
+credits="[star-history.t9t.io](https://star-history.t9t.io)") }}
 
 "Why did it take five years to build a website!?", I hear you ask. Because I
 thought the idea was so obvious that others must have tried before and failed.
