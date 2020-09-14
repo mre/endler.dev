@@ -13,6 +13,7 @@ const INPUT_PATH: &'static str = "content/**/raw/*";
 
 fn main() -> Result<()> {
     let entries: Vec<PathBuf> = glob(INPUT_PATH)?.filter_map(Result::ok).collect();
+    println!("Inspecting {} images", entries.len());
     entries
         .into_par_iter()
         .map(|entry| handle(entry))
@@ -29,7 +30,6 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
         if ext == "svg" || ext == "gif" {
             // Simply copy over SVG to target directory for now.
             // In the future we could use svgo to optimize here.
-            println!("SVG");
             fs::copy(path, out_file)?;
         } else {
             cmd!(
@@ -76,8 +76,6 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
 }
 
 fn handle(path: PathBuf) -> Result<()> {
-    println!("{}", path.display());
-
     let filename = path
         .file_name()
         .ok_or(anyhow!("Unexpected file: {}", path.display()))?;
