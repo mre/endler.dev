@@ -61,7 +61,7 @@ Yes and no.
 
 I'm using [Zola](https://www.getzola.org/) for my blog, and
 [AVIF support for Zola](https://github.com/image-rs/image/issues/1152) is not yet there, but I want it now!
-So I whipped up an [ugly Rust script](https://github.com/mre/mre.github.io/tree/source/helpers/img) (as you do) that creates AVIF images from my old JPEG and PNG images. I keep the original raw files around just in case.
+So I whipped up an [ugly Rust script](https://github.com/mre/endler.dev/blob/master/helpers/img/src/main.rs) (as you do) that creates AVIF images from my old JPEG and PNG images. I keep the original raw files around just in case.
 
 Under the hood, it calls [cavif](https://github.com/kornelski/cavif) by [Kornel Lesiński](https://github.com/kornelski).
 
