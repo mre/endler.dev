@@ -18,9 +18,9 @@
         {% if alt %}
             alt="{{ alt }}"
         {% elif caption %}
-            alt="{{ caption | markdown(inline=true) | safe }}"
+            alt="{{ caption }}"
         {% elif credits %}
-            alt="{{ credits | markdown(inline=true) | safe }}"
+            alt="{{ credits }}"
         {% endif %}
 
         {# Give the browser a hand by telling it the image width upfront #}
@@ -52,7 +52,7 @@
         <br />
         {% endif %}
         {% if credits %}
-        {{ credits | markdown(inline=true)| safe }}
+        Source: {{ credits | markdown(inline=true) | safe }}
         {% endif %}
     </figcaption>
     {% endif %}
