@@ -16,7 +16,7 @@ Notable versions:
 - [Static blog v1](https://github.com/mre/mre.github.io.v1) built with Jekyll (Ruby) + Github Pages, 2010-2015 [[Preview](https://web.archive.org/web/20120302065002/http://www.matthias-endler.de/)]
 - [Static blog v2](https://github.com/mre/mre.github.io.v2) built with Cobalt (Rust) + Github Pages, 2017-2018 [[Preview](https://web.archive.org/web/20180402070633/https://matthias-endler.de/)]
 - [Static blog v3](https://github.com/mre/mre.github.io.v3) built with Zola (Rust) + Github Pages 2018-2020 [[Preview](https://web.archive.org/web/20200707132710/https://endler.dev/)]
-- [Static blog v4](https://github.com/mre/endler.dev) built with Zola (Rust) + Cloudflare Worker Sites (Edge) 2020+ _Current version_
+- [Static blog v4](https://github.com/mre/endler.dev) built with Zola (Rust) + Cloudflare Workers Sites (Edge) 2020+ _Current version_
 
 ## Credits
 

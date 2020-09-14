@@ -131,6 +131,8 @@ if (/\.avif$/.test(url)) {
 And bam, Bob's your uncle. Firefox is happy.
 You can read more about modifying response objects [here](https://developers.cloudflare.com/workers/examples/modify-response).
 
+Another side-effect of Workers Sites is that a production deployment takes [one minute](https://github.com/mre/endler.dev/actions) now.
+
 ## Performance Results After Moving To Cloudflare
 
 {{ figure(src="cdn_before.jpg", caption="Website response time before", credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)") }}
