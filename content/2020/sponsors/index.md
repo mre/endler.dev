@@ -11,6 +11,8 @@ open-source and backed by sponsors. If you like to do the same, keep reading!
 
 Yesterday we launched [analysis-tools.dev](https://analysis-tools.dev), and boy had I underestimated the response.
 
+{{figure(src="website.jpg", link="https://analysis-tools.dev")}}
+
 It's a side project about comparing static code analysis tools.
 Static analysis helps improve code quality by detecting bugs in source code
 without even running it.
@@ -230,7 +232,7 @@ long. Well, not anymore! The next success story is yours. So go out and build
 things.
 
 Oh wait! ...before you leave, would you mind checking out
-[analysis-tools.dev](https://analysis-tools.dev/) and hitting that upvote button
+[analysis-tools.dev](https://analysis-tools.dev/) and smashing that upvote button
 for a few tools you like? Hey, and if you feel super generous today
 (or you have a fabulous employer that cares about open-source), why not check out
 our [sponsorship page](https://github.com/sponsors/analysis-tools-dev/)?
