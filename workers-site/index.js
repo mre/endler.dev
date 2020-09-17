@@ -57,7 +57,8 @@ async function handleEvent(event) {
 
     const statsRequest = new Request(event.request);
     // Offload stats from the main thread
-    event.waitUntil(fetch("https://dashflare.mre.workers.dev?forward=true", statsRequest));
+    statsRequest.headers.set("X-Original-Url", url);
+    event.waitUntil(fetch("https://dashflare.mre.workers.dev", statsRequest));
 
     return response;
   } catch (e) {
