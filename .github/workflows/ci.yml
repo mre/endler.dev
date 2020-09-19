@@ -22,6 +22,7 @@ jobs:
         run: zola build
 
       - name: 🤠 Publish
+        if: github.ref == 'refs/heads/master'
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
