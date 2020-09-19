@@ -58,7 +58,7 @@ async function handleEvent(event) {
     const statsRequest = new Request(event.request);
     // Offload stats from the main thread
     statsRequest.headers.set("X-Original-Url", url);
-    statsRequest.headers.set("X-Original-Ip", request.headers.get('cf-connecting-ip'));
+    statsRequest.headers.set("X-Original-Ip", event.request.headers.get('cf-connecting-ip'));
     event.waitUntil(fetch("https://dashflare.mre.workers.dev", statsRequest));
 
     return response;
