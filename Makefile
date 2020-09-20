@@ -4,6 +4,10 @@ SHELL := /bin/bash
 help: ## This help message
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
+.PHONY: clean
+clean: ## Remove build files
+	rm -rf public/
+
 .PHONY: content
 content: ## Build the content of the static site with zola
 	zola build
@@ -35,5 +39,5 @@ stars: ## Update Github stars statistics for my projects
 	gh-stats --stars 50 --template .star-counter-template.md > content/static/about/stars
 
 .PHONY: deploy publish
-deploy publish: build ## Deploy site on Cloudflare's Workers Sites using wrangler
+deploy publish: clean build ## Deploy site on Cloudflare's Workers Sites using wrangler
 	wrangler publish
