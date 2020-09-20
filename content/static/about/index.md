@@ -25,7 +25,7 @@ You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
 
 Oh yeah, here is a list of my [previous talks][talks]. Let me know if you need a speaker.
 
-[Universit&auml;t bayreuth]: https://www.uni-bayreuth.de/en/index.html
+[Universit&auml;t Bayreuth]: https://www.uni-bayreuth.de/en/index.html
 [trivago]: https://tech.trivago.com/
 [*hello, rust!*]: https://hello-rust.show
 [talks]: @/static/talks/index.md
