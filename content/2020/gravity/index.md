@@ -23,7 +23,7 @@ Test it here! (Caution: you'll have to reload the page after that. 😏)
 
 <a class="btn" href='#' id='gravity'>Apply Gravity</a>
 
-<script type="text/javascript">
+<script defer type="text/javascript">
     var myLink = document.getElementById('gravity');
 
     myLink.onclick = function(){
