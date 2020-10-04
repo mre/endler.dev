@@ -135,7 +135,7 @@ We can see that the carrier operator `?` gets desugared into a `match` on the `R
 Over at [FOSDEM](fosdem.org/) in Belgium, I was able to speak about the project in detail.
 Here is the recording:
 
-{{ video(id="ePiWBGh35q0", preview="/talks/2019-fosdem.jpg") }}
+{{ video(url="https://www.youtube.com/embed/ePiWBGh35q0", preview="/talks/2019-fosdem.jpg") }}
 
 ## Future work
 

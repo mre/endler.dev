@@ -12,7 +12,7 @@ Here's a test to show your age:
 
 Do you still remember [that funny JavaScript gravity effect](https://josephpcohen.com/w/gravityscript/), which Google used on their homepage ten years ago? This one?
 
-{{ video(id="wskgClFNlJw", preview="gravity.jpg")}}
+{{ video(url="https://www.youtube.com/embed/wskgClFNlJw", preview="gravity.jpg")}}
 
 I wanted to have some fun and integrated it into a website I was building.
 Unfortunately, it didn't work out-of-the-box.

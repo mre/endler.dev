@@ -8,8 +8,7 @@ function lightEmbedInit() {
   for (n = 0; n < v.length; n++) {
     v[n].onclick = function () {
       var iframe = document.createElement("iframe");
-      var embed = "https://www.youtube.com/embed/ID?autoplay=1";
-      embed = embed.replace("ID", this.dataset.id);
+      var embed = this.dataset.url + "?autoplay=1";
       if (typeof this.dataset.start !== "undefined") {
         embed = embed + "&start=" + this.dataset.start;
       }

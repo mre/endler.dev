@@ -13,7 +13,7 @@ the end.
 To celebrate its unlikely 1.0 release today, I present here a "timelapse" of
 this project's journey. It just took _ten years_ to get here.
 
-{{ video(id="_QEmxAZqQhE", preview="timelapse.jpg") }}
+{{ video(url="https://www.youtube.com/embed/_QEmxAZqQhE", preview="timelapse.jpg") }}
 
 ## 2011 - How it all began
 
@@ -70,7 +70,7 @@ ffmpeg](https://github.com/mre/timelapse/commit/0b43515037670604143bf3b3eb06061e
 After that, timelapse was ready for prime-time. 🎬 Here is some live action from
 her videos featuring timelapses:
 
-{{ video(id="vv2CCwEM8Ws", preview="preview.jpg") }}
+{{ video(url="https://www.youtube.com/embed/vv2CCwEM8Ws", preview="preview.jpg") }}
 
 At that point, the tool was still very wobbly and could only be used from the
 commandline, but I began to see some potential for building a proper app from

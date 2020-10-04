@@ -124,7 +124,7 @@ on the outer left side.", credits="Source:
 Here is an old video that shows the basic mechanics of carriage return and
 line-feed:
 
-{{ video(id="EWfElq1vgLA", start="842", preview="typewriter.jpg") }}
+{{ video(url="https://www.youtube.com/embed/EWfElq1vgLA", start="842", preview="typewriter.jpg") }}
 
 ## Command key symbol (⌘)
 
@@ -411,7 +411,7 @@ describe the allocation of a larger chunk of memory.
 
 Here is the original Kellogg's advertisement:
 
-{{ video(id="A8zYYg8wfmM", preview="kellogs.jpg") }}
+{{ video(url="https://www.youtube.com/embed/A8zYYg8wfmM", preview="kellogs.jpg") }}
 
 ## Spam
 
@@ -431,7 +431,7 @@ to rebuild its agricultural base.
 Can of Spam ", credits="By user [Jamie (jbcurio) on
 flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
 
-<iframe  title="Monty Pythons Flying Circus (1974) - SPAM sketch" src="https://player.vimeo.com/video/329001211" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+{{ video(url="https://player.vimeo.com/video/329001211", preview="spam_preview.jpg") }}
 
 [Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from
 [Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com).
