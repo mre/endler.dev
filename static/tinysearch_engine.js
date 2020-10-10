@@ -1,6 +1,37 @@
 
 let wasm;
 
+let cachedTextDecoder = new TextDecoder('utf-8', { ignoreBOM: true, fatal: true });
+
+cachedTextDecoder.decode();
+
+let cachegetUint8Memory0 = null;
+function getUint8Memory0() {
+    if (cachegetUint8Memory0 === null || cachegetUint8Memory0.buffer !== wasm.memory.buffer) {
+        cachegetUint8Memory0 = new Uint8Array(wasm.memory.buffer);
+    }
+    return cachegetUint8Memory0;
+}
+
+function getStringFromWasm0(ptr, len) {
+    return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
+}
+
+const heap = new Array(32).fill(undefined);
+
+heap.push(undefined, null, true, false);
+
+let heap_next = heap.length;
+
+function addHeapObject(obj) {
+    if (heap_next === heap.length) heap.push(heap.length + 1);
+    const idx = heap_next;
+    heap_next = heap[idx];
+
+    heap[idx] = obj;
+    return idx;
+}
+
 let WASM_VECTOR_LEN = 0;
 
 let cachedTextEncoder = new TextEncoder('utf-8');
@@ -18,20 +49,20 @@ const encodeString = (typeof cachedTextEncoder.encodeInto === 'function'
     };
 });
 
-let cachegetUint8Memory = null;
-function getUint8Memory() {
-    if (cachegetUint8Memory === null || cachegetUint8Memory.buffer !== wasm.memory.buffer) {
-        cachegetUint8Memory = new Uint8Array(wasm.memory.buffer);
-    }
-    return cachegetUint8Memory;
-}
+function passStringToWasm0(arg, malloc, realloc) {
 
-function passStringToWasm(arg) {
+    if (realloc === undefined) {
+        const buf = cachedTextEncoder.encode(arg);
+        const ptr = malloc(buf.length);
+        getUint8Memory0().subarray(ptr, ptr + buf.length).set(buf);
+        WASM_VECTOR_LEN = buf.length;
+        return ptr;
+    }
 
     let len = arg.length;
-    let ptr = wasm.__wbindgen_malloc(len);
+    let ptr = malloc(len);
 
-    const mem = getUint8Memory();
+    const mem = getUint8Memory0();
 
     let offset = 0;
 
@@ -45,8 +76,8 @@ function passStringToWasm(arg) {
         if (offset !== 0) {
             arg = arg.slice(offset);
         }
-        ptr = wasm.__wbindgen_realloc(ptr, len, len = offset + arg.length * 3);
-        const view = getUint8Memory().subarray(ptr + offset, ptr + len);
+        ptr = realloc(ptr, len, len = offset + arg.length * 3);
+        const view = getUint8Memory0().subarray(ptr + offset, ptr + len);
         const ret = encodeString(arg, view);
 
         offset += ret.written;
@@ -56,15 +87,7 @@ function passStringToWasm(arg) {
     return ptr;
 }
 
-const heap = new Array(32);
-
-heap.fill(undefined);
-
-heap.push(undefined, null, true, false);
-
 function getObject(idx) { return heap[idx]; }
-
-let heap_next = heap.length;
 
 function dropObject(idx) {
     if (idx < 36) return;
@@ -83,76 +106,66 @@ function takeObject(idx) {
 * @returns {any}
 */
 export function search(query, num_results) {
-    const ret = wasm.search(passStringToWasm(query), WASM_VECTOR_LEN, num_results);
+    var ptr0 = passStringToWasm0(query, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len0 = WASM_VECTOR_LEN;
+    var ret = wasm.search(ptr0, len0, num_results);
     return takeObject(ret);
 }
 
-let cachedTextDecoder = new TextDecoder('utf-8', { ignoreBOM: true, fatal: true });
+async function load(module, imports) {
+    if (typeof Response === 'function' && module instanceof Response) {
 
-function getStringFromWasm(ptr, len) {
-    return cachedTextDecoder.decode(getUint8Memory().subarray(ptr, ptr + len));
-}
+        if (typeof WebAssembly.instantiateStreaming === 'function') {
+            try {
+                return await WebAssembly.instantiateStreaming(module, imports);
 
-function addHeapObject(obj) {
-    if (heap_next === heap.length) heap.push(heap.length + 1);
-    const idx = heap_next;
-    heap_next = heap[idx];
+            } catch (e) {
+                if (module.headers.get('Content-Type') != 'application/wasm') {
+                    console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
 
-    heap[idx] = obj;
-    return idx;
-}
+                } else {
+                    throw e;
+                }
+            }
+        }
 
-function init(module) {
-    if (typeof module === 'undefined') {
-        module = import.meta.url.replace(/\.js$/, '_bg.wasm');
+        const bytes = await module.arrayBuffer();
+        return await WebAssembly.instantiate(bytes, imports);
+
+    } else {
+
+        const instance = await WebAssembly.instantiate(module, imports);
+
+        if (instance instanceof WebAssembly.Instance) {
+            return { instance, module };
+
+        } else {
+            return instance;
+        }
     }
-    let result;
+}
+
+async function init(input) {
+    if (typeof input === 'undefined') {
+        input = import.meta.url.replace(/\.js$/, '_bg.wasm');
+    }
     const imports = {};
     imports.wbg = {};
     imports.wbg.__wbindgen_json_parse = function(arg0, arg1) {
-        const ret = JSON.parse(getStringFromWasm(arg0, arg1));
+        var ret = JSON.parse(getStringFromWasm0(arg0, arg1));
         return addHeapObject(ret);
     };
 
-    if ((typeof URL === 'function' && module instanceof URL) || typeof module === 'string' || (typeof Request === 'function' && module instanceof Request)) {
-
-        const response = fetch(module);
-        if (typeof WebAssembly.instantiateStreaming === 'function') {
-            result = WebAssembly.instantiateStreaming(response, imports)
-            .catch(e => {
-                return response
-                .then(r => {
-                    if (r.headers.get('Content-Type') != 'application/wasm') {
-                        console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
-                        return r.arrayBuffer();
-                    } else {
-                        throw e;
-                    }
-                })
-                .then(bytes => WebAssembly.instantiate(bytes, imports));
-            });
-        } else {
-            result = response
-            .then(r => r.arrayBuffer())
-            .then(bytes => WebAssembly.instantiate(bytes, imports));
-        }
-    } else {
-
-        result = WebAssembly.instantiate(module, imports)
-        .then(result => {
-            if (result instanceof WebAssembly.Instance) {
-                return { instance: result, module };
-            } else {
-                return result;
-            }
-        });
+    if (typeof input === 'string' || (typeof Request === 'function' && input instanceof Request) || (typeof URL === 'function' && input instanceof URL)) {
+        input = fetch(input);
     }
-    return result.then(({instance, module}) => {
-        wasm = instance.exports;
-        init.__wbindgen_wasm_module = module;
 
-        return wasm;
-    });
+    const { instance, module } = await load(await input, imports);
+
+    wasm = instance.exports;
+    init.__wbindgen_wasm_module = module;
+
+    return wasm;
 }
 
 export default init;
