@@ -55,7 +55,7 @@ async function handleEvent(event) {
       response.headers.set("Content-Disposition", "inline");
     }
 
-    if (/\.(avif|bmp|gif|jpg|jpeg|png|svg|tif|tiff|webp)$/.test(url)) {
+    if (/\.(avif|bmp|gif|jpg|jpeg|png|svg|tif|tiff|webp)(\?.*)$/.test(url)) {
       response.headers.set(
         "Content-Control",
         "public, max-age=15552000, immutable"
