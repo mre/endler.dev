@@ -55,10 +55,20 @@ async function handleEvent(event) {
       response.headers.set("Content-Disposition", "inline");
     }
 
+    if (/\.(avif|bmp|gif|jpg|jpeg|png|svg|tif|tiff|webp)$/.test(url)) {
+      response.headers.set(
+        "Content-Control",
+        "public, max-age=15552000, immutable"
+      );
+    }
+
     const statsRequest = new Request(event.request);
     // Offload stats from the main thread
     statsRequest.headers.set("X-Original-Url", url);
-    statsRequest.headers.set("X-Original-Ip", event.request.headers.get('cf-connecting-ip'));
+    statsRequest.headers.set(
+      "X-Original-Ip",
+      event.request.headers.get("cf-connecting-ip")
+    );
     event.waitUntil(fetch("https://dashflare.mre.workers.dev", statsRequest));
 
     return response;
