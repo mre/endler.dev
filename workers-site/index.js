@@ -42,23 +42,24 @@ async function handleEvent(event) {
     const page = await getAssetFromKV(event, options);
 
     // allow headers to be altered
-    const response = new Response(page.body, page);
+    let response = new Response(page.body, page);
 
     response.headers.set("X-XSS-Protection", "1; mode=block");
     response.headers.set("X-Content-Type-Options", "nosniff");
     response.headers.set("X-Frame-Options", "DENY");
     response.headers.set("Referrer-Policy", "unsafe-url");
-    response.headers.set("Feature-Policy", "none");
 
     if (/\.avif$/.test(url)) {
       response.headers.set("Content-Type", "image/avif");
       response.headers.set("Content-Disposition", "inline");
     }
 
-    if (/\.(avif|bmp|gif|jpg|jpeg|png|svg|tif|tiff|webp)(\?.*)$/.test(url)) {
+    if (
+      /\.(avif|bmp|css|gif|jpg|jpeg|js|png|svg|tif|tiff|webp)(\?.*)?$/.test(url)
+    ) {
       response.headers.set(
-        "Content-Control",
-        "public, max-age=15552000, immutable"
+        "Cache-Control",
+        "public, max-age=31536000, immutable"
       );
     }
 
