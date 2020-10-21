@@ -25,7 +25,7 @@ minify: ## Compress JavaScript assets
 	terser --compress --mangle --output static/search_min.js -- static/search.mjs static/tinysearch_engine.js
 
 .PHONY: build 
-build: content index minify ## Build static site and search index, minify JS
+build: content #index minify ## Build static site and search index, minify JS
 
 .PHONY: build-quick
 build-quick: content ## Build static site
@@ -36,7 +36,7 @@ run serve: ## Serve website locally
 
 .PHONY: stars
 stars: ## Update Github stars statistics for my projects
-	gh-stats --stars 50 --template .star-counter-template.md > content/static/about/stars
+	gh-stats --stars 50 --template .star-counter-template.md --output content/static/about/stars
 
 .PHONY: deploy publish
 deploy publish: clean build ## Deploy site on Cloudflare's Workers Sites using wrangler
