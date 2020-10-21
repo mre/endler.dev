@@ -46,7 +46,7 @@ clicky sound of a mechanical keyboard and the noticeable tactile bump. (I'm usin
 Most mechanical keyboards come with an ANSI US layout only, so I figured, I'd
 finally make the switch.
 
-{{ figure(src='durgod_taurus.jpg', caption='Picture of my lovely keyboard') }}
+{{ figure(src='durgod_taurus.jpg', caption='My lovely keyboard &mdash; [Durgod Taurus K320](https://www.amazon.de/gp/product/B07QK16RDQ/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B07QK16RDQ&linkId=fb0a782ecbc713f8266b90b941375a5f) (referral link). There also seems to be a [white-pink](https://www.amazon.de/gp/product/B081LZV2QM?ie=UTF8&tag=matthiasendle-21&camp=1638&linkCode=xm2&creativeASIN=B081LZV2QM) ISO version now.') }}
 
 ## How long did it take to get accustomed to the new layout?
 
