@@ -149,6 +149,7 @@ I don't have to hide from a comparison with well-known sites either:
 
 - [How to Use AVIF: The New Next-Gen Image Compression Format](https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/) &mdash; Nice introduction that highlights some common pitfalls when integrating AVIF. It inspired me to add AVIF support.
 - [AVIF has landed](https://jakearchibald.com/2020/avif-has-landed/) by Jake Archibald &mdash; Compares image sizes and qualities of different formats: SVG, JPEG, PNG, WebP, and AVIF.
-- [Squoosh](https://squoosh.app/) &mdash; image compression service built with WebAssembly that supports AVIF
+- [avif.io](https://avif.io/) &mdash; Fast, configurable, client-side image compression that works on desktop and mobile.
+- [Squoosh](https://squoosh.app/) &mdash; another image compression service built with WebAssembly that supports AVIF
 - [Tons of great examples on how to configure Cloudflare workers](https://developers.cloudflare.com/workers/examples)
 - [Cloudflare Workers Sites](https://workers.cloudflare.com/sites)
