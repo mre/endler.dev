@@ -1,6 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
+updated=2020-11-18
 [extra]
 comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
@@ -198,7 +199,7 @@ repetitive compilation because only crates with changes have to be recompiled.
 Bigger projects like
 [servo](https://github.com/servo/servo/blob/master/Cargo.toml) and
 [vector](https://github.com/timberio/vector/blob/1629f7f82e459ae87f699e931ca2b89b9080cfde/Cargo.toml#L28-L34)
-are using workspaces heavily to slim down compile times. 
+are using workspaces heavily to slim down compile times.
 [Learn more about workspaces here](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
 
 ## Combine All Integration Tests In A Single Binary
@@ -344,6 +345,8 @@ macOS, Rust support seems to be broken at the moment, and the work on fixing it
 has stalled (see
 [rust-lang/rust#39915](https://github.com/rust-lang/rust/issues/39915)).
 
+**Update**: I recently learned about another linker called [mold](https://github.com/rui314/mold), which claims a massive 12x performance bump over lld. Compared to GNU gold, it's said to be more than 50x. Would be great if anyone could verify and send me a message.
+
 ## Tweak Compiler Flags
 
 Rust comes with a huge set of [compiler
@@ -394,7 +397,23 @@ $ cargo llvm-lines | head -20
 ## Avoid Procedural Macro Crates
 
 Procedural macros are the hot sauce of Rust development: they burn through CPU
-cycles so use with care (keyword: monomorphization).
+cycles so use with care ~~(keyword: monomorphization)~~.
+
+**Update**: Over [on Twitter](https://twitter.com/ManishEarth/status/1308059185335037952)
+[Manish](https://twitter.com/ManishEarth) pointed out that "the reason proc macros
+are slow is that the (excellent) proc macro infrastructure &ndash; [`syn`](https://github.com/dtolnay/syn) and friends &ndash; are slow to compile. Using proc macros themselves does not have a huge impact on compile times."
+(This might [change in the future](https://twitter.com/CryZe107/status/1308059769362677760).)
+
+Manish goes on to say
+
+> This basically means that if you use one proc macro, the marginal compile time
+> cost of adding additional proc macros is insignificant. A lot of people end up
+> needing serde in their deptree anyway, so if you are forced to use serde, you
+> should not care about proc macros.
+>
+> If you are not forced to use serde, one thing a lot of folks do is have
+> `serde` be an optional dependency so that their types are still serializable
+> if necessary.
 
 If you heavily use procedural macros in your project (e.g., if you use serde),
 you can try to sidestep their impact on compile times with
@@ -474,6 +493,12 @@ space.
 [`cargo-diet`](https://github.com/the-lean-crate/cargo-diet) helps you build
 lean crates that significantly reduce download size (sometimes by 98%). It might
 not directly affect your own build time, but your users will surely be thankful. 😊
+
+## More Resources
+
+- [The Rust Perf Book](https://nnethercote.github.io/perf-book/compile-times.html) has a section on compile times.
+- Tons of [articles on performance on Read Rust](https://readrust.net/performance).
+- [8 Solutions for Troubleshooting Your Rust Build Times](https://medium.com/@jondot/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e) is a great article by Dotan Nahum that I fully agree with.
 
 ## What's Next?
 
