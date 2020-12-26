@@ -1,4 +1,4 @@
-name: CI
+name: Deploy
 
 on:
   push:
@@ -19,6 +19,15 @@ jobs:
 
       - name: ⏬ Install zola
         run: sudo snap install --edge zola
+
+      - name: ⏬ Install gh-stats
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: --git https://github.com/mre-early-access/gh-stats --branch main
+
+      - name: ⭐️ Stars
+        run: make stars
 
       - name: 📖 Build
         run: zola build
