@@ -26,11 +26,8 @@ jobs:
           command: install
           args: --git https://github.com/mre-early-access/gh-stats --branch main
 
-      - name: ⭐️ Stars
-        run: make stars
-
       - name: 📖 Build
-        run: zola build
+        run: make build
 
       - name: 🤠 Publish
         if: github.ref == 'refs/heads/master'
