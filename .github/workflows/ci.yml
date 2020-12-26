@@ -36,7 +36,7 @@ jobs:
         run: |
           set -e
           curl -L https://github.com/WebAssembly/binaryen/releases/download/1.39.1/binaryen-1.39.1-x86_64-linux.tar.gz | tar xzf -
-          echo "##[add-path]`pwd`/binaryen-1.39.1"
+          echo "`pwd`/binaryen-1.39.1" >> $GITHUB_PATH
       
       - name: ⏬ Install terser
         run: npm install terser
