@@ -46,6 +46,8 @@ jobs:
 
       - name: 📖 Build
         run: make build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🤠 Publish
         if: github.ref == 'refs/heads/master'
