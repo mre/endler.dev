@@ -10,7 +10,23 @@
   <picture>
     <source srcset="{{ preview | replace(from="jpg", to="avif") }}" type="image/avif" />
     <source srcset="{{ preview | replace(from="jpg", to="webp") }}" type="image/webp" />
-    <img src="{{preview}}" />
+    <img src="{{preview}}"
+    
+    {# Give the browser a hand by telling it the image width upfront #}
+    {# It will then use reserve the necessary space and avoid layout changes #}
+    {% if width %}
+        width="{{ width }}"
+    {% elif meta.width %}
+        width="{{ meta.width }}"
+    {% endif %}
+    {% if height %}
+        height ="{{ height }}"
+    {% elif meta.height %}
+        height="{{ meta.height }}"
+    {% endif %} 
+    
+    
+    />
   </picture>
   <div class="play"></div>
 </div>

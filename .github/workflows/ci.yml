@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [master]
   schedule:
-    - cron: '0 18 * * *'
+    - cron: "0 18 * * *"
   repository_dispatch:
   workflow_dispatch:
 
@@ -37,10 +37,13 @@ jobs:
           set -e
           curl -L https://github.com/WebAssembly/binaryen/releases/download/1.39.1/binaryen-1.39.1-x86_64-linux.tar.gz | tar xzf -
           echo "`pwd`/binaryen-1.39.1" >> $GITHUB_PATH
-      
+
       - name: ⏬ Install terser
         run: sudo npm install -g terser
-      
+
+      - name: 🔍 Tool versions
+        run: make version
+
       - name: 📖 Build
         run: make build
 
