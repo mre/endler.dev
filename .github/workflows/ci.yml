@@ -42,7 +42,7 @@ jobs:
         run: sudo npm install -g terser
 
       - name: 🔍 Tool versions
-        run: make version
+        run: make versions
 
       - name: 📖 Build
         run: make build
