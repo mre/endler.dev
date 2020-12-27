@@ -26,11 +26,23 @@ jobs:
           command: install
           args: --git https://github.com/mre-early-access/gh-stats --branch main
 
-      - name: ⭐️ Stars
-        run: make stars
+      - name: ⏬ Install tinysearch and friends
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: wasm-pack tinysearch
 
+      - name: ⏬ Install binaryen
+        run: |
+          set -e
+          curl -L https://github.com/WebAssembly/binaryen/releases/download/1.39.1/binaryen-1.39.1-x86_64-linux.tar.gz | tar xzf -
+          echo "`pwd`/binaryen-1.39.1" >> $GITHUB_PATH
+      
+      - name: ⏬ Install terser
+        run: sudo npm install -g terser
+      
       - name: 📖 Build
-        run: zola build
+        run: make build
 
       - name: 🤠 Publish
         if: github.ref == 'refs/heads/master'
