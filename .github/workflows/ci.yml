@@ -39,7 +39,7 @@ jobs:
           echo "`pwd`/binaryen-1.39.1" >> $GITHUB_PATH
       
       - name: ⏬ Install terser
-        run: npm install -g terser
+        run: sudo npm install -g terser
       
       - name: 📖 Build
         run: make build
