@@ -14,8 +14,16 @@ At work, I improve the backend infrastructure of [trivago] by making it
 faster and more reliable.
 
 Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
-I run [*Hello, Rust!*], a YouTube channel about the Rust programming
-language.
+
+## Side Projects
+
+* I run [*Hello, Rust!*], a YouTube channel about the Rust programming language.
+* codeprints.dev is a shop for printing your Github contributions to decorate
+  your office.
+* analysis-tools.dev is an open comparison platform for static/dynamic code
+  analysis software, listing 500+ tools.
+
+## Open Source
 
 Here's a list of some Open Source projects I maintain:
 
