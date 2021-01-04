@@ -31,7 +31,7 @@ minify: ## Compress JavaScript assets
 	terser --compress --mangle --output static/search_min.js -- static/search.mjs static/tinysearch_engine.js
 
 .PHONY: build 
-build: stars content index minify ## Build static site and search index, minify JS
+build: stars content #index minify ## Build static site and search index, minify JS
 
 .PHONY: build-quick
 build-quick: content ## Build static site
