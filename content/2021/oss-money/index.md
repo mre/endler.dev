@@ -3,21 +3,29 @@ title="So You Want To Earn Money With Open Source"
 date=2021-01-04
 +++
 
-This is my talk about earning money with Open Source, which I gave at the Web
-Engineering Meetup Aachen at the end of 2020. The organizers gladly allowed me
-to share it on my YouTube channel.
+I earned 0 Euros from maintaining OSS software for years, and I thought that's
+the way things are. I finally looked into ways to monetize my projects this year
+and In this talk I want to share what I learned along the way. It didn't make
+rich (yet!), but I built my first sustainable side-project with
+[analysis-tools.dev](analysis-tools.dev/).
 
-I'm talking about finding corporate sponsors for
-[analysis-tools.dev](analysis-tools.dev/) and the long road towards
-sustainability of Open Source maintenance.
+I'll talk about this and other projects and the mistakes I made on the road
+towards sustainability.
 
 {{ video(url="https://www.youtube.com/embed/NlKuICiT470", preview="maxresdefault.jpg") }}
 
-Find a transcript of the talk below. (Sorry for the wall of text.)
+Find a full transcript of the talk below. (Sorry for the wall of text.)
 
 ---
 
-This is a talk about those people that have
+This is my talk about earning money with Open Source, which I gave at the Web
+Engineering Meetup Aachen at the end of 2020. The organizers gladly allowed me
+to share it on my YouTube channel. I'm basically trying to answer the question:
+"Why am I not making 100k on Github?".  I'm talking about finding corporate
+sponsors for myself and the long road towards sustainability of open-source
+maintenance.
+
+You might not even want to start. This is a talk for those people that have
 the mindset that it's probably not worth it to spend that much effort on Open
 Source if it takes so long until you find success. Now, this talk turned out to
 be a little grim. I had this very motivational talk in mind, but in reality,

@@ -6,6 +6,25 @@ If you would like me to speak at your event, [let's chat](mailto:matthias@endler
 """
 
 [[talks]]
+title = "So You Want To Earn Money With Open Source"
+image = "2021-oss-money.jpg"
+event = "Web Engineering Meetup Aachen"
+month = "January"
+year  = "2021"
+location = "Aachen, Germany"
+slides = "https://speakerdeck.com/mre/so-you-want-to-earn-money-with-open-source"
+recording = "https://www.youtube.com/watch?v=NlKuICiT470"
+description = """
+I earned 0 Euros from maintaining OSS software for years, and I thought that's
+the way things are. I finally looked into ways to monetize my projects this year
+and In this talk I want to share what I learned along the way. It didn't make
+rich (yet!), but I built my first sustainable side-project with
+analysis-tools.dev.
+I'll talk about this and other projects and the mistakes I made on the road
+towards sustainability.
+"""
+
+[[talks]]
 title = "Introduction to Rust"
 image = "2020-programmierbar.jpg"
 event = "programmier.bar"
