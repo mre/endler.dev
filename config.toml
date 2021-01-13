@@ -20,7 +20,9 @@ compile_sass = true
 # default_language = "en"
 
 # Whether to do syntax highlighting
-# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
+# Theme can be customized by setting the `highlight_theme` variable to a theme
+# supported by Zola
+[markdown]
 highlight_code = true
 highlight_theme = "ayu-light"
 

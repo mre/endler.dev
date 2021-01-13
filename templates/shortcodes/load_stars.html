@@ -1,2 +1,6 @@
-{% set data = load_data(path="content/static/about/stars") %}
-{{ data | safe }}
+{% set data = load_data(path="content/static/about/stars.md") %}
+{# 
+Split and nth are needed because zola expects a frontmatter for included
+markdown files. See https://github.com/getzola/zola/issues/1105 
+#}
+{{ data | split(pat="+++") | nth(n=2) | markdown | safe }}

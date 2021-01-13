@@ -17,11 +17,11 @@ Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
 
 ## Side Projects
 
-* I run [*Hello, Rust!*], a YouTube channel about the Rust programming language.
-* codeprints.dev is a shop for printing your Github contributions to decorate
-  your office.
-* analysis-tools.dev is an open comparison platform for static/dynamic code
-  analysis software, listing 500+ tools.
+- I run [*Hello, Rust!*], a YouTube channel about the Rust programming language.
+- [codeprints.dev](https://codeprints.dev) is a shop for art prints from your
+  Github contributions to decorate your home-office.
+- [analysis-tools.dev](https://analysis-tools.dev) is an open comparison
+  platform for static/dynamic code analysis software, listing 500+ tools.
 
 ## Open Source
 
@@ -33,7 +33,7 @@ You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
 
 Oh yeah, here is a list of my [previous talks][talks]. Let me know if you need a speaker.
 
-[Universit&auml;t Bayreuth]: https://www.uni-bayreuth.de/en/index.html
+[universit&auml;t bayreuth]: https://www.uni-bayreuth.de/en/index.html
 [trivago]: https://tech.trivago.com/
 [*hello, rust!*]: https://hello-rust.show
 [talks]: @/static/talks/index.md
