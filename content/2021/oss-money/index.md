@@ -14,6 +14,11 @@ towards sustainability.
 
 {{ video(url="https://www.youtube.com/embed/NlKuICiT470", preview="maxresdefault.jpg") }}
 
+Additional links and resources:
+
+- [Caleb Porzio](https://calebporzio.com/) talking about why building
+  a business around Github sponsors is [so hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
+
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
 ---
@@ -21,7 +26,7 @@ Find a full transcript of the talk below. (Sorry for the wall of text.)
 This is my talk about earning money with Open Source, which I gave at the Web
 Engineering Meetup Aachen at the end of 2020. The organizers gladly allowed me
 to share it on my YouTube channel. I'm basically trying to answer the question:
-"Why am I not making 100k on Github?".  I'm talking about finding corporate
+"Why am I not making 100k on Github?". I'm talking about finding corporate
 sponsors for myself and the long road towards sustainability of open-source
 maintenance.
 
