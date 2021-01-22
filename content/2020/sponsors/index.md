@@ -188,7 +188,7 @@ open-source plan (which we didn't know existed). We were back on track!
 > with Gatsby was quick and easy.
 
 {{ figure(src="tweet.jpg", caption="We got quite a bit of buzz from that
-tweet: 55 retweets, 66 likes and counting",
+tweet: 63 retweets, 86 likes and counting",
 link="https://twitter.com/matthiasendler/status/1296162427797671936") }}
 
 Clearly, everyone knew that we were asking for support here, but we are thankful

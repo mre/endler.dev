@@ -126,7 +126,7 @@ fn handle(path: PathBuf) -> Result<()> {
     if !avif_file.exists() {
         cmd!(
             "cavif",
-            "--quality=80",
+            "--quality=90",
             "--speed=1",
             "--overwrite",
             "-o",
