@@ -14,10 +14,12 @@ towards sustainability.
 
 {{ video(url="https://www.youtube.com/embed/NlKuICiT470", preview="maxresdefault.jpg") }}
 
-Additional links and resources:
+Related links and resources:
 
-- [Caleb Porzio](https://calebporzio.com/) talking about why building
-  a business around Github sponsors is [so hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
+- Podcast by [Caleb Porzio](https://calebporzio.com/) about why building
+  a business around Github sponsors is [so
+  hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
+- [Nadia Eghbal](https://nadiaeghbal.com/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg)
 
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
