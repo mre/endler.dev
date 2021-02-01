@@ -496,9 +496,16 @@ not directly affect your own build time, but your users will surely be thankful.
 
 ## More Resources
 
-- [The Rust Perf Book](https://nnethercote.github.io/perf-book/compile-times.html) has a section on compile times.
-- Tons of [articles on performance on Read Rust](https://readrust.net/performance).
-- [8 Solutions for Troubleshooting Your Rust Build Times](https://medium.com/@jondot/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e) is a great article by Dotan Nahum that I fully agree with.
+- [The Rust Perf
+  Book](https://nnethercote.github.io/perf-book/compile-times.html) has a
+  section on compile times.
+- Tons of [articles on performance on Read
+  Rust](https://readrust.net/performance).
+- [8 Solutions for Troubleshooting Your Rust Build
+  Times](https://medium.com/@jondot/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e)
+  is a great article by Dotan Nahum that I fully agree with.
+- Improving the build times of a bigger Rust project (lemmy) [by
+  30%](https://lemmy.ml/post/50089).
 
 ## What's Next?
 
