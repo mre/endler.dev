@@ -13,24 +13,24 @@ It's my first "physical" product, so I decided to share my learnings.
 of our first customers and we are very thankful for this tweet promoting our
 service, which gave us a huge traffic boost.", link="https://twitter.com/KrauseFx/status/1348546742644580353") }}
 
-## Launching is hard
+## Launching Is Hard, So Launch Early
 
 Even though I knew that launching early was vital, I still didn't want to
 "commit" to the final design shortly before the planned go-live. There was always that last bug to fix or that little extra feature to implement.
 For example, I wanted to offer two designs/layouts: the classic Github contribution timeline and a graph-based design for repositories.
 In cases like that, it helps to have a co-founder.
-He convinced me that multiple layouts were not needed for the MVP and that whatever we'd come up with would probably be wrong anyway without getting early user feedback.
+Wolfgang convinced me that multiple layouts were not needed for the MVP and that whatever we'd come up with would probably be wrong anyway without getting early user feedback.
 He was right. Without Wolfgang, the shop would probably still not be live today.
 We have a much clearer vision now of what people want to see, thanks to launching early. Turns out users were not really interested in the graph-based design after all, and it would have been a waste of time to create it.
 
 **Lesson learned:**
 Even if you know all the rules for building products, it's
-different when applying them for the first in practice. We'll probably never be completely happy with the shop functionality, but it's better to launch early and make incremental improvements after.
+different when applying them in practice for the first time. We'll probably never be completely happy with the shop functionality, but it's better to launch early and make incremental improvements later.
 
-## Software development is easy
+## Software Development Is Easy
 
 When we started, my main concern was software development. The frontend and the
-backend needed to be coded and work together. We didn't want to run into Github rate limiting issues in case there were many users on the site. I was also
+backend needed to be coded and work together. We didn't want to run into Github rate-limiting issues in case there were many users on the site. I was also
 thinking a lot about which web frontend to use. Should we build it in Rust using
 [Yew](https://github.com/yewstack/yew) or better go with [Gatsby](https://www.gatsbyjs.com/)?
 
@@ -54,11 +54,13 @@ saved us sooo much development time.
 {{ figure(src="tweet_product.jpg", link="https://twitter.com/matthiasendler/status/1349308007839109122") }}
 
 **Lesson learned:**
-There are many "unknown unknowns" when starting a project.
+There are many [unknown
+unknowns](https://medium.com/datadriveninvestor/known-knowns-unknown-knowns-and-unknown-unknowns-b35013fb350d)
+&mdash; things we are neither aware of nor understand &mdash; when starting a project.
 Try to get to the root of the problem as soon as possible to save time and avoid
 the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost).
 
-## Great UI/UX is a must
+## Users Expect Great UI/UX
 
 Giants like Amazon, Facebook, and Netflix have raised customer
 expectations for great UX. They spend millions polishing their websites and getting every detail right. As a result, their sites work _just right_ for millions of customers and on every device.
@@ -73,21 +75,21 @@ Those things can only be found by watching real users use your product. I promis
 
 **Lesson learned:**
 Watch potential customers use your service. It will be
-painful at first but will improve the quality of your product. Use standard
+painful at first, but will improve the quality of your product. Use standard
 frameworks for shops if you can because they get many UI/UX details
 right out of the box. [WooCommerce](https://woocommerce.com/) or
 [Shopify](https://www.shopify.com/) come to mind.
 
-## Building products means being pragmatic
+## Building Products Means Being Pragmatic
 
 We have many ideas for future products. Many friends and customers tell us about
-potential features all the time but the problem is how to prioritize them.
+potential features all the time, but the problem is how to prioritize them.
 Most ideas won't work at scale: It's tricky to find a supplier that has a
 product on offer, is cheap, ships worldwide, and has a working integration with
-your shop-system. So we have to cut product features all the time, simply
+your shop-system. So we have to regularly scrap product ideas, simply
 because our suppliers' support is not there. On top of that, we run the
 business next to our day job and other
-responsibilities, so we need to make use of our time as well as possible.
+responsibilities, so we need to make use of our time as efficiently as possible.
 
 **Lesson learned:**
 Making services look effortless is hard work. Time is your biggest constraint.
@@ -95,18 +97,17 @@ You'll have to say "no" more often than you can say "yes".
 
 {{ figure(src="whereby.jpg", caption="Due to the pandemic, codeprints was
 entirely built remotely. More people should give [whereby](https://whereby.com/)
-a try") }}
+a try.") }}
 
-## Getting traction as a small business
+## Getting Traction As A Small Business
 
 It has never been easier to launch a shop. Services like Shopify, Stripe, and a
-host of suppliers make that a breeze. On the other hand, there is a lot
+host of suppliers make starting out a breeze. On the other hand, there is a lot
 more competition now that the barrier to entry is so low.
 
-**Thousands** of services are constantly fighting for our attention. On the
-other side, most
-customers just buy on big platforms like Amazon, AliExpress, or eBay these days,
-and search engines send a big chunk of traffic there.
+**Thousands** of services are constantly competing for our attention. On top of
+that, most customers just default to big platforms like Amazon, AliExpress, or eBay
+for their shopping needs these days, and search engines send a big chunk of the traffic there.
 
 Since our product is custom-made, we can not offer it on those bigger platforms.
 As an indie shop, we get most visitors through word of mouth, exceptional
@@ -114,11 +115,11 @@ customer support, and advertising where developers hang out:
 [Twitter](https://twitter.com/KrauseFx/status/1348546742644580353), [Reddit](https://www.reddit.com/r/github/comments/kvvd3j/i_just_got_my_github_contribution_wall_art_from/), [HackerNews](https://news.ycombinator.com/item?id=25749287), [Lobste.rs](https://lobste.rs/s/b5fbw8/create_personal_prints_from_your_github), and friends. It's essential to focus on
 providing value on those platforms; a plain marketing post won't get you any attention. Other
 platforms like LinkedIn, Facebook, ProductHunt, or IndieHackers could also work, but our target audience (OSS developers with an active Github profile) doesn't
-hang around there that much.
+hang out there that much.
 
 **Lesson learned:** Always know where your customers are and understand their needs.
 
-## Finding a niche is only half the job
+## Finding A Niche Is Only Half The Job
 
 [Common market wisdom](https://www.reddit.com/r/startups/comments/53fynp/niche_market_and_peter_thiels_monopoly_theory/) is to find niche and grow from within. With codeprints we definitely found our niche: the audience is very
 narrow but interested in our geeky products. There are 56 million developers on
@@ -146,7 +147,7 @@ Therox](https://orta.io/) are incredibly precious when starting out. Not
 everybody has a rockstar profile like that, though (and that's fine).",
 link="https://twitter.com/orta/status/1350058678418878465") }}
 
-## Make user feedback actionable
+## Make User Feedback Actionable
 
 Initial customer feedback is precious. You should focus on every word these
 customers say as they believe in your product and want you to win. (They voted
@@ -185,6 +186,8 @@ Both have an entirely different revenue model, but
 they have one thing in common: they were **super fun** to build! 🤩
 It's motivating to look back at those achievements sometimes...
 That print of 2020 pretty much encapsulates those feelings for me.
+(Note the greener spots in August and September, which is when we launched
+analysis-tools and the days in December when we built codeprints.)
 
 {{ figure(src="vertical.jpg", caption="My coding year in review using our new
 vertical layout.<br />Here's to

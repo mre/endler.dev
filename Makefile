@@ -36,8 +36,8 @@ build: stars content #index minify ## Build static site and search index, minify
 .PHONY: build-quick
 build-quick: content ## Build static site
 
-.PHONY: run serve
-run serve: ## Serve website locally
+.PHONY: dev run serve
+dev run serve: ## Serve website locally
 	zola serve
 
 .PHONY: stars
