@@ -23,9 +23,13 @@ Wolfgang convinced me that multiple layouts were not needed for the MVP and that
 He was right. Without Wolfgang, the shop would probably still not be live today.
 We have a much clearer vision now of what people want to see, thanks to launching early. Turns out users were not really interested in the graph-based design after all, and it would have been a waste of time to create it.
 
+{% info() %}
 **Lesson learned:**
 Even if you know all the rules for building products, it's
-different when applying them in practice for the first time. We'll probably never be completely happy with the shop functionality, but it's better to launch early and make incremental improvements later.
+different when applying them in practice for the first time. We'll probably
+never be completely happy with the shop functionality, but it's better to launch
+early and make incremental improvements later.
+{% end %}
 
 ## Software Development Is Easy
 
@@ -53,12 +57,14 @@ saved us sooo much development time.
 
 {{ figure(src="tweet_product.jpg", link="https://twitter.com/matthiasendler/status/1349308007839109122") }}
 
+{% info() %}
 **Lesson learned:**
 There are many [unknown
 unknowns](https://medium.com/datadriveninvestor/known-knowns-unknown-knowns-and-unknown-unknowns-b35013fb350d)
 &mdash; things we are neither aware of nor understand &mdash; when starting a project.
 Try to get to the root of the problem as soon as possible to save time and avoid
 the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost).
+{% end %}
 
 ## Users Expect Great UI/UX
 
@@ -73,12 +79,14 @@ many details wrong, and you lose a customer.
 
 Those things can only be found by watching real users use your product. I promise you, it will be eye-opening!
 
+{% info() %}
 **Lesson learned:**
 Watch potential customers use your service. It will be
 painful at first, but will improve the quality of your product. Use standard
 frameworks for shops if you can because they get many UI/UX details
 right out of the box. [WooCommerce](https://woocommerce.com/) or
 [Shopify](https://www.shopify.com/) come to mind.
+{% end %}
 
 ## Building Products Means Being Pragmatic
 
@@ -91,9 +99,11 @@ because our suppliers' support is not there. On top of that, we run the
 business next to our day job and other
 responsibilities, so we need to make use of our time as efficiently as possible.
 
+{% info() %}
 **Lesson learned:**
 Making services look effortless is hard work. Time is your biggest constraint.
 You'll have to say "no" more often than you can say "yes".
+{% end %}
 
 {{ figure(src="whereby.jpg", caption="Due to the pandemic, codeprints was
 entirely built remotely. More people should give [whereby](https://whereby.com/)
@@ -117,7 +127,9 @@ providing value on those platforms; a plain marketing post won't get you any att
 platforms like LinkedIn, Facebook, ProductHunt, or IndieHackers could also work, but our target audience (OSS developers with an active Github profile) doesn't
 hang out there that much.
 
+{% info() %}
 **Lesson learned:** Always know where your customers are and understand their needs.
+{% end %}
 
 ## Finding A Niche Is Only Half The Job
 
@@ -139,8 +151,10 @@ required level of Github activity for a cool print. We are also working on makin
 emptier profiles look more interesting and highlighting the value-producing part
 of open source contribution. Every contribution counts &mdash; no matter how tiny.
 
+{% info() %}
 **Lesson learned:**
 Make sure that your niche market is not too narrow so that you can make a sustainable business out of it.
+{% end %}
 
 {{ figure(src="tweet_orta.jpg", caption="Early adopters like [Orta
 Therox](https://orta.io/) are incredibly precious when starting out. Not
@@ -173,8 +187,10 @@ You could turn it around to make it constructive:
 And that is some valuable feedback. We could provide a downloadable version in
 the future!
 
+{% info() %}
 **Lesson learned:**
 It takes practice to extract actionable feedback from user input and make it fit your product vision.
+{% end %}
 
 ## Summary
 
