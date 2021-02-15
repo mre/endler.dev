@@ -65,6 +65,7 @@ async function handleEvent(event) {
 
     const statsRequest = new Request(event.request);
     // Offload stats from the main thread
+    statsRequest.headers.set("X-Original-Status-Code", response.status);
     statsRequest.headers.set("X-Original-Url", url);
     statsRequest.headers.set(
       "X-Original-Ip",
