@@ -178,7 +178,7 @@ differences between the different analysis tools, but that's for another day.
 
 Shortly before the official announcement, we noticed that the search
 functionality was broken (of course). Turns out, we hit the free quota limit on
-[Algolia](algolia.com/) a biiit earlier than expected. 😅 No biggie: quick
+[Algolia](https://algolia.com) a biiit earlier than expected. 😅 No biggie: quick
 exchange with Algolia's customer support, and they moved us over to the
 open-source plan (which we didn't know existed). We were back on track!
 

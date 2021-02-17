@@ -6,12 +6,11 @@ date=2018-12-02
 subtitle="Find out with cargo-inspect!"
 +++
 
-
 Rust allows for a lot of syntactic sugar, that makes it a pleasure to write. It is sometimes hard, however, to look behind the curtain and see what the compiler is really doing with our code.
 
 <!-- more -->
 
-At [Rust Belt Rust 2018](https://www.rust-belt-rust.com), I saw a talk by Tshepang Lekhonkhobe titled *Syntax conveniences afforded by the compiler* ([Recording here](https://www.youtube.com/watch?v=Xk5IZOtLUmE)).
+At [Rust Belt Rust 2018](https://www.rust-belt-rust.com), I saw a talk by Tshepang Lekhonkhobe titled _Syntax conveniences afforded by the compiler_ ([Recording here](https://www.youtube.com/watch?v=Xk5IZOtLUmE)).
 
 To quote the abstract:
 
@@ -19,12 +18,12 @@ To quote the abstract:
 
 He goes on to give a few examples of these conveniences:
 
-* lifetime elisions
-* type inference
-* syntactic sugar
-* implicit dereferencing
-* type coercions
-* hidden code (e.g. the [prelude](https://doc.rust-lang.org/std/prelude/index.html))
+- lifetime elisions
+- type inference
+- syntactic sugar
+- implicit dereferencing
+- type coercions
+- hidden code (e.g. the [prelude](https://doc.rust-lang.org/std/prelude/index.html))
 
 It was very educational and fun to see him compare code with and without these conveniences during the talk.
 
@@ -53,7 +52,7 @@ Let's try cargo-inspect on some real code!
 
 The following examples can also be found in the project's [`examples`](https://github.com/mre/cargo-inspect/tree/master/examples) folder.
 
-*Input:*
+_Input:_
 
 ```rust
 for n in 1..3 {
@@ -61,7 +60,7 @@ for n in 1..3 {
 }
 ```
 
-*Output of cargo-inspect:*
+_Output of cargo-inspect:_
 
 ![Range output](./range.svg)
 
@@ -85,7 +84,7 @@ assert_eq!((1..3), std::ops::Range { start: 1, end: 3 });
 
 ## Example - File handling
 
-*Input:*
+_Input:_
 
 ```rust
 use std::fs::File;
@@ -97,7 +96,7 @@ fn main() -> Result<(), Error> {
 }
 ```
 
-*Output:*
+_Output:_
 
 ```rust
 #[prelude_import]
@@ -132,7 +131,7 @@ We can see that the carrier operator `?` gets desugared into a `match` on the `R
 
 ## Talk
 
-Over at [FOSDEM](fosdem.org/) in Belgium, I was able to speak about the project in detail.
+Over at [FOSDEM](https://fosdem.org/) in Belgium, I was able to speak about the project in detail.
 Here is the recording:
 
 {{ video(url="https://www.youtube.com/embed/ePiWBGh35q0", preview="/talks/2019-fosdem.jpg") }}
@@ -142,16 +141,16 @@ Here is the recording:
 I'm not planning to rewrite the compiler here. `rustc` is doing a far greater job than I could. All this functionality already existed before; I'm merely trying to make the compiler more approachable for learners like me.
 
 Right now, the tool is quite fragile. It throws ugly error messages when things go wrong.
-It mostly shines, when you run it on small, isolated example snippets. 
+It mostly shines, when you run it on small, isolated example snippets.
 
 ## Get involved!
 
 Over on Github, I opened up a few issues for others to get involved.
 Namely, I wish there were options to:
 
-* ✅ [Make it work with cargo projects.](https://github.com/mre/cargo-inspect/issues/2)
-* ✅ [Show the original code above the desugared code.](https://github.com/mre/cargo-inspect/issues/5)
-* [Show only part of the full output](https://github.com/mre/cargo-inspect/issues/10)  
-* ...and [much more](https://github.com/mre/cargo-inspect/issues).
+- [X] [Make it work with cargo projects.](https://github.com/mre/cargo-inspect/issues/2)
+- [X] [Show the original code above the desugared code.](https://github.com/mre/cargo-inspect/issues/5)
+- [ ] [Show only part of the full output](https://github.com/mre/cargo-inspect/issues/10)
+- [ ] ...and [much more](https://github.com/mre/cargo-inspect/issues).
 
 Also, if you find a particularly exciting code example, don't be shy to contribute it to the examples folder.

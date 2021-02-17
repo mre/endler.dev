@@ -143,7 +143,7 @@ Another side-effect of Workers Sites is that a production deployment takes [one 
 
 I don't have to hide from a comparison with well-known sites either:
 
-{{ figure(src="speedcurve.png", caption="Comparison with some other blogs I read", credits="[Speedcurve](speedcurve.com)") }}
+{{ figure(src="speedcurve.png", caption="Comparison with some other blogs I read", credits="[Speedcurve](https://speedcurve.com)") }}
 
 ## Further reading
 

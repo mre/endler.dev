@@ -43,7 +43,7 @@ first: why am I entitled to talk about this? I've been doing Open Source for 10
 years over 10 years now. This is a talk dedicated to my former self maybe 15
 years ago. I work at trivago, which is a hotel search company based in
 Düsseldorf. I have a blog at endler.dev. Like everyone and their mom, I also
-have a YouTube channel. It's called [Hello, Rust!](hello-rust.show/) and I'm
+have a YouTube channel. It's called [Hello, Rust!](https://hello-rust.show/) and I'm
 extremely active with one video every two years. Hence, you definitely want to
 subscribe to not miss any updates. But today, I want to talk about Open Source,
 and I have a very sophisticated outline with two points my journey and revenue
@@ -314,7 +314,7 @@ Paid learning material is something that we are doing with analysis tools in the
 future with a video course. There are companies like tailwind that do that
 impressively well, so you can learn from them. For merchandising, you have to
 have a brand. Hence, it's not something that I could do, but someone like
-[Mozilla](mozilla.org/) or the [Coding Train](https://thecodingtrain.com/) on
+[Mozilla](https://mozilla.org/) or the [Coding Train](https://thecodingtrain.com/) on
 YouTube could definitely do something like that consulting is always an option.
 Still, it's also a lot more work and probably takes you away from what you
 really love, so it really becomes a job. You have to think about whether you

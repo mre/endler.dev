@@ -21,7 +21,7 @@ The Ruby code samples are from the [original article](https://medium.com/the-ren
 
 The first example is a pretty basic iteration over elements of a container using `map`.
 
-<a class="example" href="https://gist.github.com/LeandroTk/64ca7d6f5279e08589e21d799544e878#file-map-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/64ca7d6f5279e08589e21d799544e878">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -53,7 +53,7 @@ will the iterator take ownership of the vector, or will it not?
 
 The above Ruby code can be simplified like this:
 
-<a class="example" href="https://gist.github.com/LeandroTk/258652cbaea308ccfeddc5df5bb9f37b#file-each_vs_map_3-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/258652cbaea308ccfeddc5df5bb9f37b">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -137,7 +137,7 @@ for lang in ["Ruby", "Rust", "Python", "Cobol"].iter() {
 
 Let's say you want to extract only even numbers from a collection in Ruby.
 
-<a class="example" href="https://gist.github.com/LeandroTk/f341051889e27c99ddd66c075e5ef6d0#file-map_vs_select_1-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/f341051889e27c99ddd66c075e5ef6d0">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -279,7 +279,7 @@ The return value contains all successfully converted strings:
 
 The `filter_map` is similar to the `select` method in Ruby:
 
-<a class="example" href="https://gist.github.com/LeandroTk/1ae24e0fece0207f814932b0ac6c4a5e#file-map_vs_select_2-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/1ae24e0fece0207f814932b0ac6c4a5e">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -363,7 +363,7 @@ With that, we arrive at a solution that rivals Ruby's elegance.
 
 Ruby methods automatically return the result of the last statement.
 
-<a class="example" href="https://gist.github.com/LeandroTk/9ede60f0898979f8f74d2869ed014c0c#file-return_2-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/9ede60f0898979f8f74d2869ed014c0c">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -443,7 +443,7 @@ let length_in_meters = match unit {
 
 In Ruby you can assign multiple values to variables in one step:
 
-<a class="example" href="https://gist.github.com/LeandroTk/998bed8f8c20e487a1b8a638dd7563a1#file-multiple_assignment_1-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/998bed8f8c20e487a1b8a638dd7563a1">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -528,7 +528,7 @@ To quote _[The Book](https://doc.rust-lang.org/book/second-edition/ch18-03-patte
 
 Ruby has [extensive string interpolation support](https://ruby-doc.org/docs/ruby-doc-bundle/ProgrammingRuby/book/ref_m_kernel.html#Kernel.sprintf).
 
-<a class="example" href="https://gist.github.com/LeandroTk/5125cab5e74d26460124c786ac5df534#file-interpolation-rb">
+<a class="example" href="https://gist.github.com/LeandroTk/5125cab5e74d26460124c786ac5df534">
 <div class="ruby lang-icon"></div>
 
 ```ruby
