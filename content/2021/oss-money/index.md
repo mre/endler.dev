@@ -7,7 +7,7 @@ I earned 0 Euros from maintaining OSS software for years, and I thought that's
 the way things are. I finally looked into ways to monetize my projects last year
 and in this talk I want to share what I learned along the way. It didn't make me
 rich (yet!), but I built my first sustainable side-project with
-[analysis-tools.dev](analysis-tools.dev/).
+[analysis-tools.dev](https://analysis-tools.dev/).
 
 I'll talk about this and other projects and the mistakes I made on the road
 towards sustainability.
