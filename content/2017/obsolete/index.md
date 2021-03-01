@@ -255,4 +255,4 @@ Therefore I was thinking about turning the list of analysis tools into a structu
 While attending the [WeAreDevelopers conference in Vienna](https://www.wearedevelopers.com/) (can recommend that), I moved the CI pipeline from [zeit.co](https://zeit.co/) to [Travis CI](https://travis-ci.org/).
 The reason was, that I wanted the linting code next to the project, which greatly simplified things.
 First and foremost I don't need the web request handling code anymore, because travis takes care of that.
-If you like, you can compare the [old](https://github.com/mre/awesome-static-analysis-ci/blob/master/src/main.rs) and the [new](https://github.com/analysis-tools-dev/static-analysis/blob/master/ci/src/lib.rs) version.
+If you like, you can compare the [old](https://github.com/mre/awesome-static-analysis-ci/blob/master/src/main.rs) and the [new](https://github.com/analysis-tools-dev/static-analysis/blob/d03bd8a602b231205915a4403e2b6dc4159962f8/ci/src/lib.rs) version.
