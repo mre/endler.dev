@@ -123,6 +123,17 @@ For a long time, the default choice here was
 more feature-complete and way more snappy. It supports all major IDEs.
 Switching to that alone might save your day.
 
+{% info() %}
+✨**WOW!** This article is getting quite a bit of traction lately.✨‍
+
+I don't run ads on this website, but if this information is helping you, please
+consider [sponsoring me on Github](https://github.com/sponsors/mre/).
+This allows me to write content like this.
+
+Also, if you're interested in **hands-on Rust consulting**, [pick a date from my
+calendar](https://calendly.com/matthias-endler) and we can talk about how I can help .
+{% end %}
+
 ## Remove Unused Dependencies
 
 So let's say you tried all of the above and find that compilation is still slow.
