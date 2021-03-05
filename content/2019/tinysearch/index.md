@@ -20,7 +20,7 @@ credits = [
 
 {% info() %}
 I wrote a basic search module that you can add to a static website.
-It's very lightweight (50kB-100kB gzipped) and should work with Hugo, Zola, and
+It's very lightweight (50kB-100kB gzipped) and works with Hugo, Zola, and
 Jekyll. Only searching for entire words is supported. Try the search box on the
 left for a demo. [The code is on Github](https://github.com/mre/tinysearch).
 {% end %}
@@ -383,6 +383,17 @@ If you get something working for your static site generator, please let me know.
   its future.
 - If you're looking for a standalone, self-hosted search index for your company
   website, check out [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
+
+{% info() %}
+✨**WOW!** This tool getting quite a bit of traction lately.✨‍
+
+I don't run ads on this website, but if you like these kind of experiments, please
+consider [sponsoring me on Github](https://github.com/sponsors/mre/).
+This allows me to write more tools like this in the future.
+
+Also, if you're interested in **hands-on Rust consulting**, [pick a date from my
+calendar](https://calendly.com/matthias-endler) and we can talk about how I can help .
+{% end %}
 
 ## Try it!
 
