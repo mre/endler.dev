@@ -153,5 +153,7 @@ concurrent program in Go and Rust to compare both languages:
 
 99% of the time, Go is "good enough" and that 1% where it isn't, you'll know.
 And then take a look at Rust, because the two languages complement each other pretty well.
+If you're interested in **hands-on Rust consulting**, [pick a date from my
+calendar](https://calendly.com/matthias-endler) and we can talk about how I can help.
 
 After all is said and done, [Rust and Go are not really competitors](https://dave.cheney.net/2015/07/02/why-go-and-rust-are-not-competitors).
