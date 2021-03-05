@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2020-11-18
+updated=2021-03-05
 [extra]
 comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
@@ -91,7 +91,7 @@ caption="Rust Survey results 2019. (<a href='https://xkcd.com/303/'>Obligatory x
 
 But all hope is not lost! Below is a list of **tips and tricks on how to make
 your Rust project compile faster today**. They are roughly ordered by
-practicality, so start at the top and work your way down until you're happy.
+practicality, so start at the top and work your way down until you're happy and your compiler goes brrrrrrr.
 
 ## Use `cargo check` Instead Of `cargo build`
 
@@ -111,14 +111,14 @@ whenever you change a file.
 
 ⭐ **Pro-tip**: Use `cargo watch -c` to clear the screen before every run.
 
-## Use Rust Analyzer Instead Of Rust Language Server
+## Use Rust Analyzer Instead Of Rust Language Server (RLS)
 
 Another quick way to check if you set the codebase on fire is to use a "language
 server". That's basically a "linter as a service", that runs next to your
 editor.
 
 For a long time, the default choice here was
-[rls](https://github.com/rust-lang/rls), but lately, folks moved over to
+[RLS](https://github.com/rust-lang/rls), but lately, folks moved over to
 [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer), because it's
 more feature-complete and way more snappy. It supports all major IDEs.
 Switching to that alone might save your day.
@@ -172,9 +172,12 @@ From time to time, it helps to shop around for more lightweight alternatives to
 popular crates.
 
 Again, `cargo tree` is your friend here to help you understand which of your
-dependencies are quite _heavy_: they require many other crates, causing
+dependencies are quite _heavy_: they require many other crates, cause
 excessive network I/O and slow down your build. Then search for lighter
 alternatives.
+
+Also, [`cargo-bloat`](https://github.com/RazrFalcon/cargo-bloat) has a `--time`
+flag that shows you the per-crate build time. Very handy!
 
 Here are a few examples:
 
@@ -187,9 +190,9 @@ Here are a few examples:
   (Edit: This won't help much with build times. [More info in this discussion on Reddit](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/fvmayvh/))
 - Swap out [clap](https://github.com/clap-rs/clap) with [pico-args](https://github.com/RazrFalcon/pico-args) if you only need basic argument parsing.
 
-[Here's an
-example](https://blog.kodewerx.org/2020/06/the-rust-compiler-isnt-slow-we-are.html)
-where switching crates reduced compile times from 2:22min to 26 seconds.
+Here's an example where switching crates reduced compile times [from 2:22min to
+26
+seconds](https://blog.kodewerx.org/2020/06/the-rust-compiler-isnt-slow-we-are.html).
 
 ## Use Cargo Workspaces
 
@@ -205,8 +208,9 @@ are using workspaces heavily to slim down compile times.
 ## Combine All Integration Tests In A Single Binary
 
 Have any [integration tests](https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html)? (These are the ones in your `tests`
-directory.)
-The Rust compiler will create a binary for every single one of them.
+folder.)
+Did you know that the Rust compiler will create a binary for every single one of them?
+And every binary will have to be linked individually.
 This can take most of your build time because linking is slooow. 🐢
 The reason is that many system linkers (like `ld`) are [single
 threaded](https://stackoverflow.com/questions/5142753/can-gcc-use-multiple-cores-when-linking).
@@ -243,9 +247,9 @@ on demand. Maybe you don't need all the default functionality from every crate?
 
 For example, `tokio` has [a ton of
 features](https://github.com/tokio-rs/tokio/blob/2bc6bc14a82dc4c8d447521005e044028ae199fe/tokio/Cargo.toml#L26-L91)
-that you can disable if needed.
+that you can disable if not needed.
 
-A quick way to list the features of a crate is
+A quick way to list all features of a crate is
 [cargo-feature-set](https://github.com/badboy/cargo-feature-set).
 
 Admittedly, [features are not very discoverable at the
@@ -308,9 +312,9 @@ The results were astonishing:
 - Rustc: **5m 45s**
 - Cranelift: **3m 13s**
 
-I could really feel the difference! What's cool about this is that it creates
+I could really notice the difference! What's cool about this is that it creates
 fully working executable binaries. They won't be optimized as much, but they are
-great for testing.
+great for local development.
 
 A more detailed write-up is on [Jason Williams'
 page](https://jason-williams.co.uk/a-possible-new-backend-for-rust), and the
@@ -347,11 +351,17 @@ has stalled (see
 
 **Update**: I recently learned about another linker called [mold](https://github.com/rui314/mold), which claims a massive 12x performance bump over lld. Compared to GNU gold, it's said to be more than 50x. Would be great if anyone could verify and send me a message.
 
+**Update II**: Aaand another one called [zld](https://github.com/michaeleisel/zld), which is a drop-in replacement for Apple's `ld` linker and is targeting debug builds. [[Source](https://www.reddit.com/r/rust/comments/lv3eb2/hey_rustaceans_got_an_easy_question_ask_here_92021/gppyutx)]
+
+Which one you want to choose depends on your requirements. Which platforms do
+you need to support? Is it just for local testing or for production usage?
+
 ## Tweak Compiler Flags
 
 Rust comes with a huge set of [compiler
 flags](https://doc.rust-lang.org/rustc/codegen-options/index.html). For special
 cases, it can help to tweak them for your project.
+Here's [bevy's config for faster compilation](https://github.com/bevyengine/bevy/blob/3a2a68852c0a1298c0678a47adc59adebe259a6f/.cargo/config_fast_builds) for example.
 
 ## Profile Compile Times
 
@@ -486,7 +496,7 @@ cargo run --release -- mine
 ```
 
 The archive size is surprisingly reasonable, with roughly 50GB of required disk
-space.
+space (as of today).
 
 ## Help Others: Upload Leaner Crates For Faster Build Times
 
@@ -506,6 +516,8 @@ not directly affect your own build time, but your users will surely be thankful.
   is a great article by Dotan Nahum that I fully agree with.
 - Improving the build times of a bigger Rust project (lemmy) [by
   30%](https://lemmy.ml/post/50089).
+- [arewefastyet](https://arewefastyet.rs/) measures how long the Rust compiler
+  takes to compile common Rust programs.
 
 ## What's Next?
 
