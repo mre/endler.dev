@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-03-05
+updated=2021-03-09
 [extra]
 comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
@@ -30,11 +30,24 @@ which is the case for Rust or Swift). This has advantages (more options for
 tweaking the entire process, yay) and disadvantages (higher maintenance costs
 and less supported architectures).
 
-Comparing across toolchains makes little sense here, and compile times are
-mostly fine for smaller projects, so if your project builds fast enough, your
+Comparing across toolchains makes little sense, and compile times are
+mostly _fine_ for smaller projects, so if your project builds fast enough, your
 job here is done.
 
-## Choosing Runtime Over Compile-Time Performance
+## Why Bother?
+
+Overall, the Rust compiler is legitimately doing a great job.
+That said, above a certain project size, the compile times are... let's just say
+they could be better.
+
+According to the [Rust 2019
+survey](https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html), improving
+compile times is #4 on the Rust wishlist:
+
+{{ figure(src="rust-survey.svg",
+caption="Rust Survey results 2019. (<a href='https://xkcd.com/303/'>Obligatory xkcd</a>.)") }}
+
+## Compile-Time vs Runtime Performance
 
 > As is often cautioned in debates among their designers, programming language
 > design is full of tradeoffs. One of those fundamental tradeoffs is runtime
@@ -76,33 +89,24 @@ Work is also put into [optimizing the LLVM
 backend](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html). Rumor
 has it that there's still a lot of low-hanging fruit. 🍇
 
-## Why Bother?
+## What You Can Improve Right Away
 
-Overall, the Rust compiler is legitimately doing a great job. That said, above a
-certain project size, the compile times are... let's just say they could be
-better.
-
-According to the [Rust 2019
-survey](https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html), improving
-compile times is #4 on the Rust wishlist:
-
-{{ figure(src="rust-survey.svg",
-caption="Rust Survey results 2019. (<a href='https://xkcd.com/303/'>Obligatory xkcd</a>.)") }}
-
-But all hope is not lost! Below is a list of **tips and tricks on how to make
-your Rust project compile faster today**. They are roughly ordered by
+Upstream work takes time, but what if you have a performance problem **right
+now** and can't wait? Well, all hope is not lost! Below is a list of **tips and
+tricks on how to make your Rust project compile faster today**. They are roughly
+ordered by
 practicality, so start at the top and work your way down until you're happy and your compiler goes brrrrrrr.
 
 ## Use `cargo check` Instead Of `cargo build`
 
-Most of the time, you don't even have to compile your project at all; you just
-want to know if you messed up somewhere. Whenever you can, skip compilation
-altogether. What you want instead is laser-fast code linting, type- and
+Most of the time, you don't even have to *compile* your project at all; you just
+want to know if you messed up somewhere. Whenever you can, **skip compilation
+altogether**. What you need instead is laser-fast code linting, type- and
 borrow-checking.
 
 For that, cargo has a special treat for you: ✨ `cargo check` ✨. Consider the
 differences in the number of instructions between `cargo check` on the left and
-`cargo debug` in the middle. (Note that the scales are different.)
+`cargo debug` in the middle. (Pay attention to the different scales.)
 
 {{ figure(src="cargo-check.jpg", caption="Speedup factors: check 1, debug 5, opt 20") }}
 
@@ -261,7 +265,7 @@ features](https://github.com/tokio-rs/tokio/blob/2bc6bc14a82dc4c8d447521005e0440
 that you can disable if not needed.
 
 A quick way to list all features of a crate is
-[cargo-feature-set](https://github.com/badboy/cargo-feature-set).
+`[cargo-feature-set](https://github.com/badboy/cargo-feature-set)`.
 
 Admittedly, [features are not very discoverable at the
 moment](https://twitter.com/llogiq/status/1273875653822222337) because there is
