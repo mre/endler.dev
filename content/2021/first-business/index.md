@@ -22,7 +22,7 @@ pockets.
 
 In reality, most people just want something cool to work on and happy customers.
 It turns out, you don't have to run a startup for that. Instead, starting a side
-project is less risky and can grow organically into something bigger over time.
+project is less risky and can grow organically into a business over time.
 
 Usually, the solution is right in front of them: in some Excel spreadsheet on
 their computer.
