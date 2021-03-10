@@ -1,7 +1,7 @@
 +++
 title="Ten Years of Vim"
 date=2018-05-20
-aliases = [ "2018/ten-years-of-Vim" ]
+aliases = ["2018/ten-years-of-vim", "2018/ten-years-of-Vim" ]
 
 [extra]
 css=true
