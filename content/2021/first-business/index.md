@@ -1,6 +1,11 @@
 +++
 title = "Your First Business Should Be An Excel Sheet"
 date = 2021-03-10
+[extra]
+credits = [
+  {name = "Mischa Helfenstein", url= "https://themihel.me/"},
+  {name = "Wolfgang Gassler", url= "https://wolfgang.gassler.org/"},
+]
 +++
 
 One of the best decisions I made in 2020 was to open [my
@@ -44,27 +49,19 @@ It ticks all the boxes:
 ## Examples
 
 A few years ago, I looked for static code analysis tools. I did some boring
-research, [I started a list](/2017/obsolete), pushed it to Github, and that's
+research, [started a list](/2017/obsolete), pushed it to Github, and that's
 it. Fast forward a few years, and that side project is pulling in money from
 sponsors and attracts consulting gigs.
 
-A guy built a spreadsheet of places to work from remotely. He shared the
+Another example: a guy built a spreadsheet for places to work from remotely. He shared the
 spreadsheet on Twitter. People added more places, and he created a website from
 it. The website is [NomadList](https://nomadlist.com/), and the guy is [Pieter
 Levels](https://levels.io/). He pulls in 300k/year from that website.
 
-> Instead of building a site first, I simply made public Google spreadsheet to
+> Instead of building a site first, I simply made [a] public Google spreadsheet to
 > collect the first data and see if there’d be interest for this at all. &mdash;
 > Pieter Levels on [how he created
 > NomadList](https://levels.io/product-hunt-hacker-news-number-one/)
-
-In the early days, [Zalando](https://zalando.com) didn't have a backend. New
-orders were simply inserted into a spreadsheet. The company probably had
-hundreds of customers before they replaced it with a proper database. In 2019
-they had a revenue of [6.8 billion
-euros](https://www.statista.com/statistics/281651/zalando-quarterly-revenue/).
-(I heard that story at [codetalks](https://www.codetalks.de/) years ago, but I
-can't find a link to the recording.)
 
 **I left a spot for your story here.** Now brush up that spreadsheet (or that
 list), share it with your friends, iterate on their feedback, and build your
