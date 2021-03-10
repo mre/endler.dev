@@ -5,8 +5,8 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8328 ★ |
-| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2335 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8330 ★ |
+| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2337 ★ |
 | [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1481 ★ |
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1272 ★ |
 | [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 612 ★ |
