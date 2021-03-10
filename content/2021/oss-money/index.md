@@ -50,9 +50,9 @@ and I have a very sophisticated outline with two points my journey and revenue
 models.
 
 Let's go back all the way to 2010. The world definitely looked a bit different
-by then.
+back then.
 
-[Shows slide with a screenshot of the Github homepage]
+{{ figure(src="github.jpg", caption="Github in 2010") }}
 
 This was Github, and I was a bit late to the game. I joined in January 2010, and
 by then, Github was already two years old, so my username was taken. I usually
