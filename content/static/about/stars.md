@@ -5,7 +5,7 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8332 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8333 ★ |
 | [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2338 ★ |
 | [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1481 ★ |
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1272 ★ |

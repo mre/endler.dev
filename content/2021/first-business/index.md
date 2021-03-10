@@ -40,11 +40,11 @@ opportunity!
 
 It ticks all the boxes:
 
-- [x] Solves a real problem.
-- [x] It's boring, so people might pay for not having to do it themselves.
-- [x] No time wasted on design or infrastructure. It's the ultimate MVP.
-- [x] Low tech: no programming required.
-- [x] You spend less time building and more time talking to potential customers.
+- 💪 Solves a real problem.
+- 🥱 It's boring, so people might pay for not having to do it themselves.
+- ⚡️ No time wasted on design or infrastructure. It's the ultimate MVP.
+- 🐢 Low tech: no programming required.
+- 🚀 You spend less time building and more time talking to potential customers.
 
 ## Examples
 
