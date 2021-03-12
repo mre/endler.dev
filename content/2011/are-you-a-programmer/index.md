@@ -49,7 +49,7 @@ that observation.
 If you don't know how to use your tools without a manual, you are a lousy craftsman.
 If you need a dictionary to write a simple letter, you will have a hard
 time becoming a writer because it would already be challenging for you to form elegant, fluent
-sentences -- let alone engaging and original stories.
+sentences &mdash; let alone engaging and original stories.
 I don't want to read these books.
 
 What makes a programmer?

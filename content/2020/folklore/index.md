@@ -400,7 +400,7 @@ While watching TV together, a commercial by Kellogg's came on with the tag line,
 "Can you pinch an inch?"
 
 > The implication was that you were overweight if you could pinch more than an
-> inch of fat on your waist -- and that hoovering a bowl of corn flakes would
+> inch of fat on your waist &mdash; and that hoovering a bowl of corn flakes would
 > help.
 
 > Without missing a beat, Tommy, who weighed about 250 pounds, reached for his

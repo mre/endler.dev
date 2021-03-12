@@ -24,7 +24,7 @@ Dhanji R. Prasanna, a former Google Wave team member [made this observation](htt
 > And this is the essential broader point--as a programmer you must have a series of wins, every single day. It is the Deus Ex Machina of hacker success. It is what makes you eager for the next feature, and the next after that.
 
 While Google Wave has not been commercially successful, it sure was a
-technical breakthrough -- and it was a drag to push it out into public.
+technical breakthrough &mdash; and it was a drag to push it out into public.
 We always have to see our goal right in front of us, as we take a billion baby steps to reach it.
 This is true for any profession. Winners never give up.
 
@@ -32,7 +32,7 @@ This is true for any profession. Winners never give up.
 
 Today it is easier to accomplish something meaningful than ever before.
 
-If you are reading this, you have access to a powerful instrument -- a
+If you are reading this, you have access to a powerful instrument &mdash; a
 computer with an Internet connection. We live in a time where a single
 person can accomplish miracles without hard physical labor.
 A time where billions of people can grow a business from their desk, get famous in minutes,
@@ -69,7 +69,7 @@ On a report about [Quake's 3D-Engine](https://www.bluesnews.com/abrash/chap70.sh
 
 That last part has influenced me a lot.
 The dedication, the urgency to reach your aims must come from within you.
-It's your raw inner voice speaking -- don't let it fade away.
+It's your raw inner voice speaking &mdash; don't let it fade away.
 And when you are close to giving up, stop thinking so hard. Just try to
 push forward and make a tiny step in the right direction.
 You can't lose.

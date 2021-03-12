@@ -66,7 +66,7 @@ build a product that makes comparing objective and accessible.
 
 Sponsoring could be the antidote to soulless growth and instead allow us to build
 a lean, sustainable side business. We don't expect analysis-tools.dev ever to be
-a full-time job. The market might be too small for that -- and that's fine.
+a full-time job. The market might be too small for that &mdash; and that's fine.
 
 ## Tech
 
