@@ -1,6 +1,7 @@
 +++
 title="On Hard Work"
 date=2011-10-13
+updated=2020-03-12
 +++
 
 Great people get shaped by their achievements
@@ -53,7 +54,7 @@ Losing focus is just a click away.
 
 Everybody can start something. Few will finish anything.
 That's because getting things done is hard, even if you love what
-you're doing. (Watch the beginnings of _There Will Be Blood_ and _Primer_ for a
+you're doing. (Watch the beginnings of [_There Will Be Blood_](https://www.amazon.de/gp/product/B08QDFDRVY?ie=UTF8&tag=matthiasendle-21&camp=1638&linkCode=xm2&creativeASIN=B08QDFDRVY) and [_Primer_](https://www.amazon.de/gp/product/B08D5H2QTY/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B08D5H2QTY&linkId=5dc5fa7545b60138290abe114d7c527ehttps://www.amazon.de/gp/product/B08D5H2QTY/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B08D5H2QTY&linkId=5dc5fa7545b60138290abe114d7c527e) for a
 definition of _hard work_.)
 
 No matter what they tell you, achieving anything sustainable means hustling. It means making
@@ -72,4 +73,4 @@ The dedication, the urgency to reach your aims must come from within you.
 It's your raw inner voice speaking &mdash; don't let it fade away.
 And when you are close to giving up, stop thinking so hard. Just try to
 push forward and make a tiny step in the right direction.
-You can't lose.
+Ship it!
