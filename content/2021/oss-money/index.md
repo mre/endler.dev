@@ -5,9 +5,9 @@ date=2021-01-04
 
 I earned 0 Euros from maintaining OSS software for years, and I thought that's
 the way things are. I finally looked into ways to monetize my projects last year
-and in this talk I want to share what I learned along the way. It didn't make me
+and in this talk I want to share what I learned so far. It didn't make me
 rich (yet!), but I built my first sustainable side-project with
-[analysis-tools.dev](https://analysis-tools.dev/).
+[analysis-tools.dev](https://analysis-tools.dev/) ✨.
 
 I'll talk about this and other projects and the mistakes I made on the road
 towards sustainability.
@@ -19,7 +19,9 @@ Related links and resources:
 - Podcast by [Caleb Porzio](https://calebporzio.com/) about why building
   a business around Github sponsors is [so
   hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
-- [Nadia Eghbal](https://nadiaeghbal.com/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg)
+- The Changelog Podcast &mdash; [It’s OK to make money from your open source](https://changelog.com/podcast/405)
+  with [Zeno Rocha](https://zenorocha.com/).
+- [Nadia Eghbal](https://nadiaeghbal.com/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg).
 
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
@@ -56,7 +58,7 @@ back then.
 
 This was Github, and I was a bit late to the game. I joined in January 2010, and
 by then, Github was already two years old, so my username was taken. I usually
-go by the handle `more` on platforms, and I noticed that this handle was not
+go by the handle `mre` on platforms, and I noticed that this handle was not
 used by anyone, so I just sent a mail to support and asked if I could have it,
 and then I got an answer from this guy saying "go for it." It was Chris
 Wanstrath, who goes by the handle defunct, and he's the former CEO of Github,
@@ -90,7 +92,8 @@ At the same time, there's the elephant in the room, and that is it's just a pat
 on the back. We have earned zero dollars until now, and one question you might
 have is how do you monetize this effort.
 
-First off, is it an effort?  
+First off, is it an effort?
+
 Well, I don't know about you, but I probably spend two or three hours on average
 per day on Open Source: thinking about Open Source and creating new projects,
 but also maintaining and code review, so it really is work, and it's a lot of
@@ -315,7 +318,7 @@ future with a video course. There are companies like tailwind that do that
 impressively well, so you can learn from them. For merchandising, you have to
 have a brand. Hence, it's not something that I could do, but someone like
 [Mozilla](https://mozilla.org/) or the [Coding Train](https://thecodingtrain.com/) on
-YouTube could definitely do something like that consulting is always an option.
+YouTube could definitely do something like that. Consulting is always an option.
 Still, it's also a lot more work and probably takes you away from what you
 really love, so it really becomes a job. You have to think about whether you
 want to do that or not. Enterprise services are very advanced [and interesting]
