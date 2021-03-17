@@ -51,7 +51,7 @@ and show personal contribution.
 
 {{ figure(src="bending-roll.jpg",caption="An old machine that bended steel
 plates to water boilers.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).webp)")
+Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).jpg)")
 }}
 
 _Today's meaning: A chunk of code that is copied over and over again with little
@@ -157,7 +157,7 @@ Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
 
 {{ figure(src="borgholm.jpg", caption="Aearial view of Borgholm Castle, which could have been the model for the symbol ",
 credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.webp)") }}
+Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)") }}
 
 References:
 
@@ -211,7 +211,7 @@ readouts than the protection it offered.
 
 {{ figure(src="dashboard.jpg",caption="A dashboard of a horse carriage.",
 credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).webp)") }}
+Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
 
 ## Firewall
 
@@ -221,7 +221,7 @@ Fire walls are used mainly in terraced houses, but also in individual residentia
 [Reference](<https://en.wikipedia.org/wiki/Firewall_(computing)#History>)
 
 {{ figure(src="firewall.jpg",caption="Firewall residential construction, separating the building into two separate residential units, and fire areas.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.webp)")
+Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.jpg)")
 }}
 
 ## Firmware

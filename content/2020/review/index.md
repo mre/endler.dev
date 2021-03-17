@@ -16,7 +16,7 @@ post highlights key changes in technology and business during the last ten
 years. This inspired me to think about a much smaller topic: _What Happened To
 Programming In The 2010s?_
 
-{% info() %} 
+{% info() %}
 🚓 I probably forgot like 90% of what actually happened. Please
 don't sue me.
 My goal is to reflect on the <u>past</u> so that you can better predict the <u>future</u>.
@@ -89,7 +89,7 @@ pointers, and range-based loops to the language.
 
 At the beginning of the last decade, the latest PHP version was 5.3. We're at
 7.4 now. (We skipped 6.0, but I'm not ready to talk about it yet.) Along the
-way, it got over twice as fast.  [PHP is a truly modern programming language
+way, it got over twice as fast. [PHP is a truly modern programming language
 now](https://stephencoakley.com/2020/06/10/dumb-reasons-to-hate-php) with a
 thriving ecosystem.
 
@@ -144,7 +144,7 @@ ergonomic in the last few years.
 As of today, npm hosts [1,330,634 packages](https://www.npmjs.com/). That's over a million
 packages that somebody else is maintaining for you. Add another [160,488 Ruby
 gems](https://rubygems.org/stats), [243,984 Python projects](https://pypi.org/),
-and top it off with [42,547  Rust crates](https://crates.io/).
+and top it off with [42,547 Rust crates](https://crates.io/).
 
 {{ figure(src="module_counts.jpg", caption="Number of packages for popular programming languages.<br /> Don't ask me what happened to npm in 2019.", credits="<a href='http://www.modulecounts.com/'>Module Counts</a>" )}}
 
@@ -174,11 +174,11 @@ It has held up surprisingly well in the last decade:
 There's a catch, though.
 Looking at single-core performance, the curve is flattening:
 
-{{ figure(src="moore_single.jpg" credits="<a href='https://web.stanford.edu/~hennessy/Future%20of%20Computing.pdf'>Standford University: The Future of Computing</a>") }}
+{{ figure(src="moore_single.jpg" credits="<a href='https://www.youtube.com/watch?v=Azt8Nc-mtKM&'>Standford University: The Future of Computing (video)</a>") }}
 
 The new transistors prophesied by Moore don’t make our CPUs faster but instead
 add other kinds of processing capabilities like more parallelism or hardware
-encryption. 
+encryption.
 There is no free lunch anymore. Engineers have to find new ways of making their
 applications faster, e.g. by [embracing concurrent
 execution](https://en.wikipedia.org/wiki/Concurrent_computing).
@@ -210,7 +210,7 @@ If you're now thinking: _Matthias, you totally forgot X_, then I brought
 that point home. This is not even close to everything that happened. You'd
 roughly need a decade to talk about all of it.
 
-Personally, I'm excited about the *next* ten years.
+Personally, I'm excited about the _next_ ten years.
 Software eats the world &mdash; at an ever-faster pace.
 
 [crystal]: https://crystal-lang.org/
