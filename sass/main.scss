@@ -88,7 +88,7 @@ header {
 }
 
 .bio span:after {
-  content: "Writes about Rust, engineering culture, and socks.";
+  content: " Writes about Rust, engineering culture, and socks.";
 }
 
 main {
@@ -454,7 +454,6 @@ input:focus::placeholder {
   pre {
     padding: 2px;
   }
-
 }
 
 @media (prefers-color-scheme: light) {
