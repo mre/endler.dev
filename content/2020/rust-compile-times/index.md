@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-03-09
+updated=2021-03-26
 [extra]
 comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
@@ -10,6 +10,7 @@ comments = [
 credits = [
   {name = "Luca Pizzamiglio", url= "https://github.com/pizzamig"},
   {name = "DocWilco", url= "https://twitter.com/drwilco"},
+  {name = "Hendrik Maus", url= "https://github.com/hendrikmaus"},
 ]
 +++
 
@@ -20,25 +21,22 @@ and sometimes even surpasses them. Compile times, however? That's a different st
 
 ## Why Is Rust Compilation Slow?
 
-Wait a sec, slow in comparison to what? For example, if you compare it with Go,
+Wait a sec, slow **in comparison to what?** For example, if you compare it with Go,
 their compiler is doing a lot less work in general. It lacks support for
 generics and macros. Also, the Go compiler was [built from
 scratch](https://golang.org/doc/faq#What_compiler_technology_is_used_to_build_the_compilers)
 as a monolithic tool consisting of both, the frontend and the backend (rather
 than relying on, say, [LLVM](https://llvm.org/) to take over the backend part,
-which is the case for Rust or Swift). This has advantages (more options for
-tweaking the entire process, yay) and disadvantages (higher maintenance costs
-and less supported architectures).
+which is the case for Rust or Swift). This has advantages (more flexibility when
+tweaking the entire compilation process, yay) and disadvantages (higher overall maintenance cost
+and fewer supported architectures).
 
-Comparing across toolchains makes little sense, and compile times are
-mostly _fine_ for smaller projects, so if your project builds fast enough, your
-job here is done.
-
-## Why Bother?
-
-Overall, the Rust compiler is legitimately doing a great job.
+In general, **comparing across different programming languages makes little sense**
+and overall, the Rust compiler is legitimately doing a great job.
 That said, above a certain project size, the compile times are... let's just say
 they could be better.
+
+## Why Bother?
 
 According to the [Rust 2019
 survey](https://blog.rust-lang.org/2020/04/17/Rust-survey-2019.html), improving
@@ -99,7 +97,7 @@ practicality, so start at the top and work your way down until you're happy and 
 
 ## Use `cargo check` Instead Of `cargo build`
 
-Most of the time, you don't even have to *compile* your project at all; you just
+Most of the time, you don't even have to _compile_ your project at all; you just
 want to know if you messed up somewhere. Whenever you can, **skip compilation
 altogether**. What you need instead is laser-fast code linting, type- and
 borrow-checking.
@@ -481,10 +479,82 @@ When it comes to buying dedicated hardware,
 [here are some tips](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/). Generally, you should get a proper multicore CPU like an AMD
 Ryzen Threadripper plus at least 32 GB of RAM.
 
+## Download ALL The Crates
+
+If you have a slow internet connection, a big part of the initial build
+process is fetching all those shiny crates from crates.io. To mitigate that,
+you can download **all** crates in advance to have them cached locally.
+[criner](https://github.com/the-lean-crate/criner) does just that:
+
+```
+git clone https://github.com/the-lean-crate/criner
+cd criner
+cargo run --release -- mine
+```
+
+The archive size is surprisingly reasonable, with roughly **50GB of required disk
+space** (as of today).
+
+## Bonus: Speed Up Rust Docker Builds 🐳
+
+Building Docker images from your Rust code?
+These can be notoriously slow, because cargo doesn't support building only a
+project's dependencies yet, invalidating the Docker cache with every build if you
+don't pay attention.
+[`cargo-chef`](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) to the
+rescue! ⚡
+
+> `cargo-chef` can be used to fully leverage Docker layer caching, therefore
+> massively speeding up Docker builds for Rust projects. On our commercial
+> codebase (~14k lines of code, ~500 dependencies) we measured a **5x speed-up**: we
+> cut Docker build times from **~10 minutes to ~2 minutes.**
+
+Here is an example Dockerfile if you're interested:
+
+```Dockerfile
+# Step 1: Compute a recipe file
+FROM rust as planner
+WORKDIR app
+RUN cargo install cargo-chef
+COPY . .
+RUN cargo chef prepare --recipe-path recipe.json
+
+# Step 2: Cache project dependencies
+FROM rust as cacher
+WORKDIR app
+RUN cargo install cargo-chef
+COPY --from=planner /app/recipe.json recipe.json
+RUN cargo chef cook --release --recipe-path recipe.json
+
+# Step 3: Build the binary
+FROM rust as builder
+WORKDIR app
+COPY . .
+# Copy over the cached dependencies from above
+COPY --from=cacher /app/target target
+COPY --from=cacher /usr/local/cargo /usr/local/cargo
+RUN cargo build --release --bin app
+
+# Step 4:
+# Create a tiny output image.
+# It only contains our final binary.
+FROM rust as runtime
+WORKDIR app
+COPY --from=builder /app/target/release/app /usr/local/bin
+ENTRYPOINT ["./usr/local/bin/app"]
+```
+
+[`cargo-chef`](https://github.com/LukeMathWalker/cargo-chef) can help speed up
+your continuous integration with Github Actions or your deployment process to Google
+Cloud.
+
 ## Drastic Measures: Overclock Your CPU? 🔥
 
-⚠️ Warning: You can damage your hardware if you don't know what you are doing.
-Proceed at your own risk.
+<details>
+  <summary>
+    ⚠️ Warning: You can damage your hardware if you don't know what you are doing.
+    Proceed at your own risk.
+  </summary>
 
 Here's an idea for the desperate. Now I don't recommend that to everyone, but
 if you have a standalone desktop computer with a decent CPU, this might be a way
@@ -497,21 +567,7 @@ As a somewhat drastic measure, you can try to overclock your CPU. [Here's a
 tutorial for my processor](https://www.youtube.com/watch?v=gb1QDpRnOvw). (I owe
 you some benchmarks from my machine.)
 
-## Download ALL The Crates
-
-If you have a slow internet connection, a big part of the initial build
-process is fetching all those shiny crates from crates.io. To mitigate that,
-you can download **all** crates in advance to cache them locally.
-[criner](https://github.com/the-lean-crate/criner) does just that:
-
-```
-git clone https://github.com/the-lean-crate/criner
-cd criner
-cargo run --release -- mine
-```
-
-The archive size is surprisingly reasonable, with roughly 50GB of required disk
-space (as of today).
+</details>
 
 ## Help Others: Upload Leaner Crates For Faster Build Times
 
@@ -536,12 +592,12 @@ not directly affect your own build time, but your users will surely be thankful.
 
 ## What's Next?
 
-Phew! That was a long list. If you have any additional tips, please [let me know](https://github.com/mre/mre.github.io/issues).
+Phew! That was a long list. 😅 If you have any additional tips, please [let me know](https://github.com/mre/mre.github.io/issues).
 
 If compiler performance is something you're interested in, why not [collaborate
 on a tool](https://github.com/rust-lang/measureme/issues/51) to see what user code is causing rustc to use lots of
 time?
 
 Also, once you're done optimizing your build times, how about optimizing
-runtime next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
+_runtimes_ next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
 [nice article](https://deterministic.space/high-performance-rust.html) on that.
