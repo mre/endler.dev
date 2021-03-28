@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-03-26
+updated=2021-03-28
 [extra]
 comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/"},
@@ -21,11 +21,11 @@ and sometimes even surpasses them. Compile times, however? That's a different st
 
 ## Why Is Rust Compilation Slow?
 
-Wait a sec, slow **in comparison to what?** For example, if you compare it with Go,
-their compiler is doing a lot less work in general. It lacks support for
-generics and macros. Also, the Go compiler was [built from
+Wait a sec, slow **in comparison to what?** That is, if you compare Rust with Go,
+the Go compiler is doing a lot less work in general. For example, it lacks support for
+generics and macros. On top of that, the Go compiler was [built from
 scratch](https://golang.org/doc/faq#What_compiler_technology_is_used_to_build_the_compilers)
-as a monolithic tool consisting of both, the frontend and the backend (rather
+as a monolithic toolchain consisting of both, the frontend and the backend (rather
 than relying on, say, [LLVM](https://llvm.org/) to take over the backend part,
 which is the case for Rust or Swift). This has advantages (more flexibility when
 tweaking the entire compilation process, yay) and disadvantages (higher overall maintenance cost
@@ -369,12 +369,24 @@ has stalled (see
 Which one you want to choose depends on your requirements. Which platforms do
 you need to support? Is it just for local testing or for production usage?
 
-## Tweak Compiler Flags
+## Tweak Codegen Options / Compiler Flags
 
-Rust comes with a huge set of [compiler
-flags](https://doc.rust-lang.org/rustc/codegen-options/index.html). For special
-cases, it can help to tweak them for your project.
-Here's [bevy's config for faster compilation](https://github.com/bevyengine/bevy/blob/3a2a68852c0a1298c0678a47adc59adebe259a6f/.cargo/config_fast_builds) for example.
+Rust comes with a huge set of [settings for code
+generation](https://doc.rust-lang.org/rustc/codegen-options).  It can help to
+look through the list and tweak the parameters for your project.
+
+Here is an example setting for faster incremental debug builds on macOS.  It can
+make debug builds up to seconds faster depending on the use case:
+
+```toml
+[profile.dev]
+split-debuginfo = "unpacked"
+```
+
+There are **many more** such gems in the [full list of codegen
+options](https://doc.rust-lang.org/rustc/codegen-options).  For inspiration,
+here's [bevy's config for faster
+compilation](https://github.com/bevyengine/bevy/blob/3a2a68852c0a1298c0678a47adc59adebe259a6f/.cargo/config_fast_builds).
 
 ## Profile Compile Times
 
