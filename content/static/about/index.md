@@ -17,7 +17,7 @@ Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
 
 ## Side Projects
 
-- I run [*Hello, Rust!*], a YouTube channel about the Rust programming language.
+- [*Hello, Rust!*], a YouTube channel about the Rust programming language.
 - [codeprints.dev](https://codeprints.dev) is a shop for art prints from your
   Github contributions to decorate your home-office.
 - [analysis-tools.dev](https://analysis-tools.dev) is an open comparison
@@ -25,7 +25,8 @@ Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
 
 ## Open Source
 
-Here's a list of some Open Source projects I maintain:
+I started 100+ open source projects so far;  
+here's a list of the most popular ones:
 
 {{ load_stars() }}
 

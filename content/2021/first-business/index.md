@@ -1,7 +1,7 @@
 +++
 title = "Your First Business Should Be An Excel Sheet"
 date = 2021-03-10
-updated=2021-03-11
+updated=2021-03-31
 [extra]
 credits = [
   {name = "Mischa Helfenstein", url= "https://themihel.me/"},
@@ -43,8 +43,8 @@ This approach ticks all the boxes:
 - 💪 Solves a real problem.
 - 🥱 It's boring, so people might pay for not having to do it themselves.
 - ⚡️ No time wasted on design or infrastructure. It's the ultimate MVP.
-- 🐢 Low tech: no programming required.
-- 🐜 Niche market: if an established service existed, you'd use it. 
+- 🐢 Low tech: no programming required. You can start with [Notion](https://notion.so) + [Super.so](https://super.so).
+- 🐜 Niche market: if an established service existed, you'd use it.
   BigCorp ain't gonna eat your lunch.
 - 🚀 You spend less time building and more time talking to potential customers.
 
