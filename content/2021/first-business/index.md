@@ -1,7 +1,7 @@
 +++
 title = "Your First Business Should Be An Excel Sheet"
 date = 2021-03-10
-updated=2021-03-31
+updated=2021-04-01
 [extra]
 credits = [
   {name = "Mischa Helfenstein", url= "https://themihel.me/"},
@@ -18,7 +18,7 @@ suitable for startups. Things like using artificial intelligence to find clothes
 that fit or building a crowdfunding platform on the blockchain.
 
 These are all great ideas, but they require lots of persistence and deep
-pockets.
+pockets. It's probably easier and less risky to just join a startup in that field.
 
 In reality, most people just want something cool to work on and happy customers.
 It turns out, you don't have to run a startup for that. Instead, starting a side
