@@ -1,6 +1,7 @@
 +++
 title="Ten Years of Vim"
 date=2018-05-20
+updated=2021-04-01
 aliases = ["2018/ten-years-of-vim", "2018/ten-years-of-Vim" ]
 
 [extra]
@@ -47,7 +48,7 @@ This painful process is what Vim tries to make at least bearable. It helps you k
 It does that, by providing you sharp, effective tools to modify text.
 The core of Vim is a language for editing text.
 
-## Vim, the language
+## Vim, The Language
 
 The Vim commands are not cryptic, you already know them.
 
@@ -68,7 +69,7 @@ That's why, by default, you are in [normal mode](https://en.wikibooks.org/wiki/L
 
 Once you know this, Vim makes a lot more sense, and that's when you start to be productive.
 
-## How my workflow changed over the years
+## How My Workflow Changed Over The Years
 
 When I was a beginner, I was very interested in how people with more Vim experience would use the editor.
 Now that I'm a long-time user, here's my answer: there's no secret sauce.
@@ -100,7 +101,7 @@ Here are three concrete examples of how my workflow changed over the years:
 
 3. On my main working machine I use Vim for quick text editing and Visual Studio Code plus the awesome [Vim plugin](https://github.com/VSCodeVim/Vim) for projects. This way, I get the best of both worlds.
 
-## Workflow issues I still struggle with
+## Workflow Issues I Still Struggle With
 
 After all these years I'm still not a Vim master &mdash; far from it.
 As every other Vim user will tell you, we're all still learning.
@@ -119,7 +120,7 @@ That's a tough question to answer.
 On one side, I would say no.
 There's a steep learning curve in Vim and seeing all those modern IDEs become better at understanding the user's intent, editing text became way easier and faster in general.
 
-On the other side, Vim is the fastest way for me to write down my thoughts and code. As a bonus, it runs on every machine and might well be around in decades to come. In contrast, I don't know if the IntelliJ shortcuts will be relevant in ten years (note: if you read this in the future and ask yourself "What is IntelliJ?", the answer might be no).
+On the other side, Vim is the fastest way for me to write down my thoughts and code. As a bonus, it runs on every machine and might well be around for decades to come. In contrast, I don't know if the IntelliJ shortcuts will be relevant in ten years (note: if you read this in the future and ask yourself "What is IntelliJ?", the answer might be no).
 
 ## Takeaways
 
