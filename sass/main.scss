@@ -267,12 +267,6 @@ a:hover {
   text-decoration-color: $grey-500;
 }
 
-.post-meta a {
-  color: white;
-  text-decoration-color: initial;
-  text-decoration-thickness: inherit;
-}
-
 .post-meta a:hover {
   color: $pink-400;
   text-decoration-color: $pink-400;
@@ -573,6 +567,11 @@ h4 {
   }
 }
 
+.tag-headline {
+  margin-bottom: 40px;
+  font-size: 150%;
+}
+
 .tags {
   font-size: 80%;
   opacity: 0.5;
@@ -601,14 +600,23 @@ h4 {
   vertical-align: middle;
 }
 
-.tag:hover {
-  color: white;
-  background: $pink-400;
+.post-meta a {
+  text-decoration-color: initial;
+  text-decoration-thickness: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
   .tag {
     border: 1px solid white;
     background: $blue-800;
+  }
+
+  .tag:hover {
+    color: white;
+    background: $pink-400;
+  }
+
+  .post-meta a {
+    color: white;
   }
 }
