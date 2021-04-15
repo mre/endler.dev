@@ -7,7 +7,7 @@
 {% block content %}
 
 
-<h1>{{ term.pages | length }} articles tagged with <span class="tag">{{ term.name }}</span></h1>
+<h1 class="tag-headline">{{ term.pages | length }} articles tagged with <span class="tag">{{ term.name }}</span></h1>
     {% for page in paginator.pages %}
         {% include "snippets/article.html" %}
     {% endfor %}
