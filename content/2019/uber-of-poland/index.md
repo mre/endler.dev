@@ -2,6 +2,8 @@
 title="The Uber of Poland"
 date=2019-10-28
 draft=true
+[taxonomies]
+tags=["culture"]
 +++
 
 A couple of years ago, I was visiting a friend in Warsaw, Poland. Having a local

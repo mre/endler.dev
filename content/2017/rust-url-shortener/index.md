@@ -2,6 +2,8 @@
 title="Launching a URL Shortener in Rust using Rocket"
 date=2017-04-09
 updated=2020-08-26
+[taxonomies]
+tags=["dev", "oss", "rust"]
 
 [extra]
 comments = [

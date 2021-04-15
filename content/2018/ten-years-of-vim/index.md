@@ -3,6 +3,8 @@ title="Ten Years of Vim"
 date=2018-05-20
 updated=2021-04-01
 aliases = ["2018/ten-years-of-vim", "2018/ten-years-of-Vim" ]
+[taxonomies]
+tags=["dev", "culture", "oss"]
 
 [extra]
 css=true

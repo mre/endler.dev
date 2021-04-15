@@ -1,6 +1,8 @@
 +++
 title="Lightning Fast Image Previews with Pure CSS and LQIP"
 date=2017-09-18
+[taxonomies]
+tags=["dev", "oss", "rust"]
 
 [extra]
 social_img="2017_image_previews.png"

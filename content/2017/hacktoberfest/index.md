@@ -1,23 +1,24 @@
 +++
 title="Learn Some Rust During Hacktoberfest"
 date=2017-10-15
+[taxonomies]
+tags=["culture", "dev", "oss", "rust"]
 
 [extra]
 excerpt="October is the perfect time to contribute to Open Source &mdash; at least according to Github and DigitalOcean. Because that's when they organize Hacktoberfest, a global event where you get a free shirt and lots of street cred for creating pull requests."
 social_img="2017_hacktoberfest.png"
 +++
 
-{{ figure(src="hacktoberfest.svg", caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](https://www.freepik.com/free-vector/food-items-oktoberfest-festival_911290.htm)")}} 
-
+{{ figure(src="hacktoberfest.svg", caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](https://www.freepik.com/free-vector/food-items-oktoberfest-festival_911290.htm)")}}
 
 October is the perfect time to contribute to Open Source &mdash; at least according to Github and DigitalOcean.
-Because that's when they organize Hacktoberfest, a global event where you __get a free shirt and lots of street cred__ for creating pull requests. Read the official announcement [here](https://hacktoberfest.digitalocean.com/).
+Because that's when they organize Hacktoberfest, a global event where you **get a free shirt and lots of street cred** for creating pull requests. Read the official announcement [here](https://hacktoberfest.digitalocean.com/).
 
 Some people think they cannot contribute anything of value. Either because they lack the programming skills or because they don't know where to start.
 
-This guide is trying to change that!  
+This guide is trying to change that!
 
-Let me show you, how *everybody* can contribute code to [Rust](https://www.rust-lang.org/), a safe systems programming language.
+Let me show you, how _everybody_ can contribute code to [Rust](https://www.rust-lang.org/), a safe systems programming language.
 I was inspired to write this by a [tweet from llogiq](https://twitter.com/llogiq/status/915288482314178560).
 
 ## 1. Find a great Rust project to work on
@@ -26,7 +27,7 @@ We all want our work to be appreciated.
 Therefore I suggest to start contributing to medium-sized projects, because they gained some momentum but are still driven by a small number of maintainers, so help is always welcome. By contrast, tiny projects are mostly useful to the original author only, while large projects can be intimidating at first and have stricter guidelines.
 
 For now, let's look at repositories with 5-100 stars, which were updated within this year.
-Github supports [advanced search options based on Lucene syntax](https://help.github.com/articles/understanding-the-search-syntax). 
+Github supports [advanced search options based on Lucene syntax](https://help.github.com/articles/understanding-the-search-syntax).
 
 ```
 language:Rust stars:5..100 pushed:>2017-01-01
@@ -57,7 +58,7 @@ Questions so far? Find more detailed installation instructions [here](https://as
 
 ## 3. Fork the project and clone it to your computer
 
-First, click on the little *fork* button on the top right of the Github project page. Then clone your fork to your computer. 
+First, click on the little _fork_ button on the top right of the Github project page. Then clone your fork to your computer.
 
 ```
 git clone git@github.com:yourusername/project.git
@@ -77,10 +78,9 @@ cargo test
 
 If not, you might want to consult the `README` for further instructions. (But feel free to choose another project.)
 
-
 ## 5. The magic sauce
 
-Here's the trick: we use a [linter](https://en.wikipedia.org/wiki/Lint_(software)) called [clippy](https://github.com/rust-lang/rust-clippy) to show us improvement areas in any Rust codebase.
+Here's the trick: we use a [linter](<https://en.wikipedia.org/wiki/Lint_(software)>) called [clippy](https://github.com/rust-lang/rust-clippy) to show us improvement areas in any Rust codebase.
 
 To get clippy, install it like so:
 
@@ -121,7 +121,6 @@ Just try some of the suggestions and see if the project still compiles and the t
 Check out the links to the documentation in the help section to learn more.
 Start small to make your changes easier to review.
 
-
 ## 6. Creating a Pull Request
 
 If you're happy with your changes, now is the time to publish them!
@@ -134,17 +133,17 @@ git push --set-upstream origin codestyle
 ```
 
 Afterwards, go to the homepage of your fork on Github.
-There should be a button titled *Compare & pull request*.
+There should be a button titled _Compare & pull request_.
 Please add a meaningful description and then submit the pull request.
 
 Congratulations! You've contributed to the Rust ecosystem. Thank you! 🎉
 
 ## Trophy case
 
-* [m4b/goblin](https://github.com/m4b/goblin/pull/55)
-* [fitzgen/cpp_demangle](https://github.com/gimli-rs/cpp_demangle/pull/100)
-* [fdehau/tui-rs](https://github.com/fdehau/tui-rs/pull/19)
-* [christophertrml/rs-natural](https://github.com/christophertrml/rs-natural/pull/15)
+- [m4b/goblin](https://github.com/m4b/goblin/pull/55)
+- [fitzgen/cpp_demangle](https://github.com/gimli-rs/cpp_demangle/pull/100)
+- [fdehau/tui-rs](https://github.com/fdehau/tui-rs/pull/19)
+- [christophertrml/rs-natural](https://github.com/christophertrml/rs-natural/pull/15)
 
 ## Bonus!
 
@@ -153,4 +152,3 @@ If all of the manual fixing and checking sounds too dull, you can automate step 
 ```
 rustfix --yolo && cargo check
 ```
-

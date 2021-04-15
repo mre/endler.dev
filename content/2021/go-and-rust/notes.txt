@@ -1,0 +1,93 @@
+Everyone is talking about Go vs Rust.
+Heck, even I wrote an article about it once, that I don't necessarily agree with anymore.
+Comparing Go to Rust is the wrong approach
+
+But rarely anyone is talking about Go AND Rust. As in: a team
+
+
+Rust and Go is like Batman and Robin.
+Go is this amazing sidekick
+
+
+Different philosophies
+
+This becomes apparent when working on the boundary to the outside world, the system, the os.
+
+How to get the extension of a file in Go?
+
+https://ispycode.com/GO/Path-and-Filepath/Get-file-name-extension-used-by-path
+
+```
+package main
+ 
+import (
+   "fmt"
+   "path/filepath"
+)
+ 
+func main() {
+   extension := filepath.Ext("/tmp/hello.go")
+   fmt.Println("Extension 1:", extension)
+ 
+   extension = filepath.Ext("./hello.jpg")
+   fmt.Println("Extension 2:", extension)
+}
+ 
+
+Output:
+
+$ go run example.go
+Extension 1: .go
+Extension 2: .jpg
+```
+
+Straightforward, simple, and wrong.
+
+99% of the time, this will work.
+But what if the file does not have an extension?
+What if the file is not a string?
+In Rust, you have to deal with the fallability of operations.
+
+Rust does not trust input from the outside by default.
+Go does.
+
+
+
+```go
+token := os.Getenv("HOME")
+```
+
+token can be empty..
+can lead to dangerous situations
+(rm -rf / instead of rm -rf /\${HOME})
+
+```rust
+use std::env;
+
+let key = "HOME";
+match env::var(key) {
+    Ok(val) => println!("{}: {:?}", key, val),
+    Err(e) => println!("couldn't interpret {}: {}", key, e),
+}
+```
+
+https://doc.rust-lang.org/std/env/fn.var.html
+
+It's a bit like shell-scripting in that regard: incredibly powerful and productive
+when it works, extremely dangerous when it doesn't.
+Pick your poison.
+
+
+How to get a Path from a file?
+
+Not all files have paths and the path with which the file was opened isn't even guaranteed to still be valid.
+
+
+https://www.reddit.com/r/rust/comments/4sthxj/how_to_get_path_from_file/
+
+Go doesn't care!
+
+https://gobyexample.com/file-paths
+
+
+Worse is better

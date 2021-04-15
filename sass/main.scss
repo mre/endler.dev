@@ -10,7 +10,7 @@ $grey-300: #b9b9b9;
 $grey-400: #555;
 $grey-500: #111;
 
-$anim-duration: 200ms;
+$anim-duration: 150ms;
 $border-radius: 6px;
 
 // Default font
@@ -185,12 +185,12 @@ header nav li {
     inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   font-family: $sans-serif;
-  padding: 5px 16px;
+  padding: 7px 16px;
   white-space: nowrap;
 }
 
 .btn-sm {
-  padding: 3px 12px;
+  padding: 7px 12px;
   font-size: 15px;
   line-height: 20px;
 }
@@ -249,7 +249,7 @@ blockquote {
 }
 
 ::selection {
-  background: black;
+  background: $grey-500;
   color: white;
 }
 
@@ -267,6 +267,17 @@ a:hover {
   text-decoration-color: $grey-500;
 }
 
+.post-meta a {
+  color: white;
+  text-decoration-color: initial;
+  text-decoration-thickness: inherit;
+}
+
+.post-meta a:hover {
+  color: $pink-400;
+  text-decoration-color: $pink-400;
+}
+
 .icon {
   height: 24px;
   width: 24px;
@@ -274,11 +285,11 @@ a:hover {
   float: left;
   margin: 5px;
   background-repeat: no-repeat;
+  transition: opacity $anim-duration ease-in;
 }
 
 .icon:hover {
   opacity: 1;
-  transition: opacity $anim-duration ease-in;
 }
 
 figure {
@@ -559,5 +570,45 @@ h4 {
     .anchor:hover {
       fill: $grey-400;
     }
+  }
+}
+
+.tags {
+  font-size: 80%;
+  opacity: 0.5;
+  transition: $anim-duration ease-in;
+  margin-bottom: 12px;
+}
+
+.tags:hover {
+  opacity: 1;
+}
+
+.tag {
+  padding: 4px 10px;
+  margin-right: 4px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-style: italic;
+  border: 1px solid $grey-500;
+  background: $grey-200;
+  transition: $anim-duration ease-in;
+}
+
+.post-meta .tag {
+  font-size: 70%;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.tag:hover {
+  color: white;
+  background: $pink-400;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tag {
+    border: 1px solid white;
+    background: $blue-800;
   }
 }

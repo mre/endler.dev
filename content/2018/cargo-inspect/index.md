@@ -1,7 +1,8 @@
 +++
 title="What Is Rust Doing Behind the Curtains?"
 date=2018-12-02
-
+[taxonomies]
+tags=["dev", "rust"]
 [extra]
 subtitle="Find out with cargo-inspect!"
 +++

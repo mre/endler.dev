@@ -1,8 +1,9 @@
 +++
 title="The Unreasonable Effectiveness of Excel Macros"
 date=2018-11-05
+[taxonomies]
+tags=["culture", "dev"]
 +++
-
 
 I never was a big fan of internships, partially because all the exciting
 companies were far away from my little village in Bavaria and partially because
@@ -44,7 +45,7 @@ selected a field from an entry, copied it and pasted it into an Excel sheet. He
 did the same for the remaining fields. "That's it!", he said with a fake smile.
 We both knew that this would mean two boring weeks for me.
 
-*They wanted to keep me busy by letting me manually scrape the entirety of a web database.*
+_They wanted to keep me busy by letting me manually scrape the entirety of a web database._
 
 I could have taken that as an insult, but instead, I looked at it as a
 challenge.
@@ -87,5 +88,5 @@ vacation to finish that tool because they said they would pay me for that, which
 
 ## Lessons learned
 
-* Never underestimate the power of Excel macros.
-* If you have a boring task at hand, make it more challenging by adding constraints.
+- Never underestimate the power of Excel macros.
+- If you have a boring task at hand, make it more challenging by adding constraints.

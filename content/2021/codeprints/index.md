@@ -1,6 +1,8 @@
 +++
 title="Starting A Print-On-Demand Business As A Software Engineer"
 date=2021-01-22
+[taxonomies]
+tags=["business"]
 +++
 
 One day I had the idea to make a print of my Github timeline.

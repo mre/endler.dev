@@ -1,6 +1,8 @@
 +++
 title="So You Want To Earn Money With Open Source"
 date=2021-01-04
+[taxonomies]
+tags=["business"]
 +++
 
 I earned 0 Euros from maintaining OSS software for years, and I thought that's

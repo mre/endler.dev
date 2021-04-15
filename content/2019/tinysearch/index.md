@@ -1,6 +1,8 @@
 +++
 title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
 date=2019-10-17
+[taxonomies]
+tags=["dev", "oss", "rust"]
 
 [extra]
 comments = [

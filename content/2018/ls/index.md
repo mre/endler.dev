@@ -1,6 +1,8 @@
 +++
 title="A Tiny `ls` Clone Written in Rust"
 date=2018-03-09
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 comments = [

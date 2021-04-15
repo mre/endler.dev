@@ -1,6 +1,8 @@
 +++
 title="fastcat - A Faster `cat` Implementation Using Splice"
 date=2018-07-31
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 excerpt="""

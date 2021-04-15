@@ -1,6 +1,8 @@
 +++
 title="Maybe You Don't Need Kubernetes"
 date=2019-03-21
+[taxonomies]
+tags=["business", "culture", "dev", "oss"]
 
 [extra]
 excerpt="Kubernetes is the 800-pound gorilla of container orchestration.  It powers some of the biggest deployments worldwide, but it comes with a price tag..."

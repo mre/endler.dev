@@ -2,6 +2,8 @@
 title="Hacker Folklore"
 date=2020-04-24
 draft=false
+[taxonomies]
+tags=["culture"]
 
 [extra]
 subtitle="Because \"Computer Etymology\" sounded boring."

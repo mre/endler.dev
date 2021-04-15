@@ -1,6 +1,8 @@
 +++
 title="Modern Day Annoyances - Digital Clocks"
 date=2017-11-07
+[taxonomies]
+tags=["culture"]
 
 [extra]
 social_img="2017_digital_clocks.png"

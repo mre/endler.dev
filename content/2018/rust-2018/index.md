@@ -1,6 +1,8 @@
 +++
 title="Rust in 2018"
 date=2018-01-09
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 subtitle="Streamline Collaboration and Empower Intermediate Users"

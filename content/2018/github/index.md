@@ -1,6 +1,8 @@
 +++
 title="That Octocat on the Wall"
 date=2018-06-09
+[taxonomies]
+tags=["culture", "dev", "oss"]
 
 [extra]
 social_img="octocat.jpg"

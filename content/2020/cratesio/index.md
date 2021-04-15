@@ -2,6 +2,8 @@
 title="Name-squatting on crates.io - Do we have a problem?"
 date=2020-08-20
 draft=true
+[taxonomies]
+tags=["rust", "dev"]
 
 #[extra]
 #subtitle="Because \"Computer Etymology\" sounded boring."

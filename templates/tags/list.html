@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block header %}
+    <title>Topic | Matthias Endler</title>
+{% endblock header %}
+
+{% block content %}
+{% set section = get_section(path="_index.md") %}
+
+<h2>Articles by tag</h2>
+<ul>
+    {% for term in terms %}
+        <li>
+            <a href="{{ get_url(path="@/_index.md") }}tags/{{ term.name }}">{{ term.name }}</a>
+            <span class="tagcount">{{ term.pages | length }}</span>
+        </li>
+    {% endfor %}
+</ul>{% endblock content %}

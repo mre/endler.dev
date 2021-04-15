@@ -1,6 +1,8 @@
 +++
 title = "Launching a Side Project Backed by Github Sponsors"
 date = 2020-08-21
+[taxonomies]
+tags=["oss", "business"]
 [extra]
 excerpt="""
 Yesterday we launched analysis-tools.dev. It's a project about comparing static

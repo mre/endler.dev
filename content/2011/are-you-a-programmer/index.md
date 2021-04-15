@@ -1,6 +1,8 @@
 +++
 title="Are you a Programmer?"
 date=2011-10-20
+[taxonomies]
+tags=["culture", "dev"]
 +++
 
 My geography teacher once told the story of her first lecture at University.

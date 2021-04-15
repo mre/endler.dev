@@ -1,6 +1,8 @@
 +++
 title="Refactoring Go Code to Avoid File I/O in Unit Tests"
 date=2018-03-22
+[taxonomies]
+tags=["dev"]
 
 [extra]
 subtitle="Without Mocking or Temporary Files"

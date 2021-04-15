@@ -2,6 +2,8 @@
 title = "Your First Business Should Be An Excel Sheet"
 date = 2021-03-10
 updated=2021-04-01
+[taxonomies]
+tags=["business"]
 [extra]
 credits = [
   {name = "Mischa Helfenstein", url= "https://themihel.me/"},

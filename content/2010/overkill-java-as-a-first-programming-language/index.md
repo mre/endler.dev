@@ -2,6 +2,8 @@
 title="Overkill – Java as a First Programming Language"
 date=2010-02-12
 updated=2020-03-17
+[taxonomies]
+tags=["culture", "dev"]
 
 [extra]
 comments = [

@@ -1,7 +1,9 @@
 +++
 title = "My Blog Just Got Faster: Cloudflare Workers and AVIF Support"
 date = 2020-09-14
-draft = false
+updated= 2021-04-14
+[taxonomies]
+tags=["dev"]
 [extra]
 excerpt="""Did I mention that this website is fast?
 Oh yeah, I did, multiple times.
@@ -17,17 +19,17 @@ Oh yeah, [I did](/2019/tinysearch/), [multiple times](/2017/image-previews/).
 
 Few reasons (from ordinary to the first signs of creeping insanity):
 
-- Static site
-- Cached on Cloudflare CDN
-- HTTP/2 and HTTP/3 support
-- No web fonts (sadly)
-- No Google Analytics (got [something better...](https://jorgelbg.me/dashflare/))
-- Avoiding JavaScript whenever possible; CSS covers 90% of my use-cases.
-- Image width and height specified in HTML to avoid page reflows.
-- Inlined, [optimized SVG graphics](https://jakearchibald.github.io/svgomg/) and hand-rolled CSS
-- [Static WASM search](https://github.com/tinysearch/tinysearch) (lazy loaded)
-- The entire homepage is <10K (brotli-compressed), including graphics, thus should fit into the [first HTTP round-trip](https://www.tunetheweb.com/blog/critical-resources-and-the-first-14kb/).
-- Heck, even the favicon is optimized for size.
+- 📄 Static site
+- ☁️ Cached on Cloudflare CDN
+- 🔗 ️HTTP/2 and HTTP/3 support
+- 🚫 No web fonts (sadly)
+- ✅ [Edge-worker powered analytics](https://jorgelbg.me/dashflare/) (no Google Analytics)
+- 🌸 Avoiding JavaScript whenever possible; CSS covers 90% of my use-cases.
+- 🖼️ Image width and height specified in HTML to avoid page reflows.
+- 👍🏻 Inlined, [optimized SVG graphics](https://jakearchibald.github.io/svgomg/) and hand-rolled CSS
+- 🚅 [Static WASM search](https://github.com/tinysearch/tinysearch) (lazy loaded)
+- 🏎️ The entire homepage is <10K (brotli-compressed), including graphics, thus should fit into the [first HTTP round-trip](https://www.tunetheweb.com/blog/critical-resources-and-the-first-14kb/).
+- 💟 Heck, even the favicon is optimized for size.
 
 Then again, it's 2020: **everyone** is optimizing their favicons, right? [...right!?](http://www.p01.org/defender_of_the_favicon/)
 

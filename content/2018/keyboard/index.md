@@ -2,6 +2,8 @@
 title="Switching from a German to a US Keyboard Layout - Is It Worth It?"
 date=2018-09-02
 updated=2021-04-01
+[taxonomies]
+tags=["dev"]
 
 [extra]
 subtitle="(For Programmers)"

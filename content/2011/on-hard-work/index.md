@@ -2,6 +2,8 @@
 title="On Hard Work"
 date=2011-10-13
 updated=2020-03-12
+[taxonomies]
+tags=["culture", "dev"]
 +++
 
 Great people get shaped by their achievements

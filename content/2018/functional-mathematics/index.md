@@ -1,6 +1,8 @@
 +++
 title="Functional Programming for Mathematical Computing"
 date=2018-01-02
+[taxonomies]
+tags=["dev"]
 +++
 
 

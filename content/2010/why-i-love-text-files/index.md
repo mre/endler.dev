@@ -1,6 +1,8 @@
 +++
 title="Why I Love Text Files"
 date=2010-01-10
+[taxonomies]
+tags=["culture"]
 
 [extra]
 comments = [

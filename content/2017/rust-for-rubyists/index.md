@@ -1,6 +1,8 @@
 +++
 title="Rust for Rubyists"
 date=2017-12-17
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 subtitle="Idiomatic Patterns in Rust and Ruby"

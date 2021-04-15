@@ -1,6 +1,8 @@
 +++
 title="Afraid of Makefiles? Don't be!"
 date=2017-08-15
+[taxonomies]
+tags=["culture", "dev"]
 
 [extra]
 excerpt="In the last few years, I've had the pleasure to work with a lot of talented Software Engineers."

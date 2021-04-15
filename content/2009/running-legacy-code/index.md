@@ -1,6 +1,8 @@
 +++
 title="Running Legacy Code"
 date=2009-11-08
+[taxonomies]
+tags=["dev"]
 +++
 
 This short article deals with a severe problem in software development: bit rot.

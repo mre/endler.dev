@@ -1,6 +1,8 @@
 +++
 title="Tools"
 date=2011-10-30
+[taxonomies]
+tags=["dev"]
 +++
 
 For as long as I can think, religious flamewars have infected computer science.

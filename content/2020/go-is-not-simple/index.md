@@ -2,6 +2,8 @@
 title="Go is not Simple"
 date=2020-05-29
 draft=true
+[taxonomies]
+tags=["go", "dev"]
 +++
 
 When Go was first released, I was a university student
@@ -10,7 +12,7 @@ Started doing the tour of Go and for some reason I
 didn't like it but I couldn't point my finger at why.
 Ten years later I have a much clearer picture.
 
-The gist is that Go is not a simple.
+The gist is that Go is not simple.
 There are instead many inconsistencies and dogmas that
 lead to a lot of unnecessary complexity.
 
@@ -126,11 +128,10 @@ It can even be dangerous or misleading
 
 ```go
 var nilSlice []string
-emptySlice := make([]string, 1)
-
 fmt.Println(nilSlice)        // Output: []
 fmt.Println(nilSlice == nil) // Output: true
 
+emptySlice := make([]string, 1)
 fmt.Println(emptySlice)        // Output: []
 fmt.Println(emptySlice == nil) // Output: false
 
@@ -164,13 +165,12 @@ https://golang.org/doc/faq#nil_error
 
 Another example for "easy" abstractions: switch-case and enums.
 
-
 No enums
 You can forget cases
 You end up with brittle, stringy typed or integer typed code.
 
 Variables (mutable) by default
-In Rust: immuatibility
+In Rust: immutability
 functions and methods have special notations for `mut`. It's immediately clear
 that a function changes a parameter.
 leads to simple reasoning
@@ -394,37 +394,35 @@ Actually the opposite can be the case: simplicity often means having more things
 > Rich Hickey
 > I recommend you watch the whole talk as it's pure gold.
 
-
 The Go tooling is often praised as one of the best parts of the language.
 I think it was great for its time but it has not aged well.
 godoc: plain list of functions and no explanation and linking.
 https://youtu.be/RP6YE6ZlX2M
 no search
 
-gofmt: removes unused imports on save 
-
+gofmt: removes unused imports on save
 
 99% of the time you don't need it
-but every program needs the 1% 
+but every program needs the 1%
 HashSet
 Enum
 unsafe.Pointer
 
 shutdown handler
-open connections / files 
+open connections / files
 finish serving clients
 people learn from that
 
-
 // https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3
-```
+
+````
 type Activity intconst (
     Sleeping = iota
     Walking
     Running
 )func main() {
     var activity Activity
-    // activity initialized to 
+    // activity initialized to
     // its zero-value of int
     // which is Sleeping
 }```
@@ -433,3 +431,4 @@ type Activity intconst (
 Wait a sec, where did I hear that one before...!?
 
 ## Right, C.
+````

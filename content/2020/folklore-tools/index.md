@@ -2,6 +2,8 @@
 title="Hacker Folklore Pt2 - Tools"
 date=2020-08-20
 draft=true
+[taxonomies]
+tags=["culture"]
 +++
 
 - linter

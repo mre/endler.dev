@@ -1,13 +1,14 @@
 +++
 title="Being a Professional Programmer"
 date=2017-05-18
+[taxonomies]
+tags=["culture", "dev"]
 +++
 
-
 When I was around 12, I set myself the goal to become a professional programmer.  
-I can tell, because at this time I made the conscious decision to use my right hand to control the mouse &mdash; even though I'm left-handed.  
+I can tell, because at this time I made the conscious decision to use my right hand to control the mouse &mdash; even though I'm left-handed.
 
-My reasoning was, that if I ever had to help out a colleague with a computer problem I sure did not want to move her mouse to the other side before getting started.  That would be awkward. 
+My reasoning was, that if I ever had to help out a colleague with a computer problem I sure did not want to move her mouse to the other side before getting started. That would be awkward.
 (Of course I did not foresee the advent of the wireless mouse... As a matter of fact, I still use the right hand out of habit.)
 
 One thing I always wanted to know is how a typical workday of a programmer looked like.
@@ -19,7 +20,7 @@ Before you dig into this, be sure to read the first part of this series titled [
 
 ## What's the difference between "professional" and "hobby" programming?
 
-In one word: *accountability*.  
+In one word: _accountability_.  
 You are expected to be responsible.
 
 Programming in your free time is like throwing a party without having to clean up: pure fun!
@@ -43,7 +44,6 @@ Eventually, you'll understand that those neckbeards were not slower than you, bu
 more careful. You learn how to test your code, how to document it. You even begin to
 appreciate UML diagrams.
 
-
 ## Becoming obsolete
 
 "The world is moving too fast. What you learned today is obsolete tomorrow. Why bother?".
@@ -62,7 +62,6 @@ You need to adapt.
 One advice I can give you is not to take it too seriously.
 Drop the project, keep the wisdom.
 Embrace change.
-
 
 ## Writing software in a non-perfect world
 
@@ -92,7 +91,7 @@ One might say, you take the role of a mediator. Others might call you a manager.
 Once you know the ins and outs of the business, you are an essential asset for
 the company. You might get asked to become a manager, or at least managing projects will slowly feel like a natural extension of your responsibilities.
 But beware! This slow and gradual process is dangerous.
-Moving back to being a full-time programmer is not easy. 
+Moving back to being a full-time programmer is not easy.
 During the time you were busy with project management, others were busy improving their
 coding skills.
 You can try to keep up-to-date in your free time but that's hard.
@@ -116,18 +115,17 @@ While it can be tempting to base your career decisions on prospective salary,
 don't do it. You will be very unhappy. You will spend eight hours or more each day sitting in front of a blinking cursor.
 That's a lot of time, and time is much more valuable than money.
 
-Don't get me wrong. There's plenty of jobs that pay well. 
+Don't get me wrong. There's plenty of jobs that pay well.
 You will most likely not get rich, though. If you want
 to make it big, I can't help you. Maybe look into Real Estate or so...
 The only way to get rich as a developer is to work on something really hard, put in lots of hours and get
 lucky. Startups, basically. Keep in mind: One Bill Gates takes a thousand failed
 attempts.
-Another way is to stop being a programmer and become a manager instead. 
+Another way is to stop being a programmer and become a manager instead.
 I've already shared my opinion on that in the last section.
 
 ## Final words
 
 While you should learn to read (and maybe write) code, working as a professional programmer is not for everyone.
-You might ask: "Is it worth it?". 
+You might ask: "Is it worth it?".
 For me it was the right decision. Hopefully I could help you to make your own.
-

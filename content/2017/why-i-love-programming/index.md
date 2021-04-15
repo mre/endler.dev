@@ -1,6 +1,8 @@
 +++
 title="Why I Love Programming"
 date=2017-03-15
+[taxonomies]
+tags=["culture", "dev"]
 
 [extra]
 comments = [
@@ -8,10 +10,9 @@ comments = [
 ]
 +++
 
-
 Programming has many faces. It is the science of structured thinking.
 It is the art of eloquent expression.
-It teaches you to be humble when you look at other peoples' fascinating work. 
+It teaches you to be humble when you look at other peoples' fascinating work.
 Most of all, it teaches you a lot about yourself.  
 While the syntax may change, the concepts will not.
 
@@ -66,7 +67,7 @@ I'm baffled when I realize that these circuits can actually "understand" and int
 
 ## Standing on the shoulders of giants
 
-Talking to other programmers and watching them work is a fascinating inspiration. 
+Talking to other programmers and watching them work is a fascinating inspiration.
 The very system you are using to read this text relies on their work.
 Even if you're far apart, you can study their work on Open Source projects online.
 But if you get a chance, watch them giving talks at conferences and meet them at local user groups.

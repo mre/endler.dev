@@ -1,6 +1,8 @@
 +++
 title="Go vs Rust? Choose Go."
 date=2017-09-15
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 social_img="2017_gopher.png"

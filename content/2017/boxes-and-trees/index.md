@@ -1,6 +1,9 @@
 +++
 title="Of Boxes and Trees - Smart Pointers in Rust"
 date=2017-08-12
+updated=2020-04-15
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 comments = [
@@ -86,38 +89,38 @@ These pointer types allow us to do that safely and without manual memory managem
 They all offer different guarantees and you should [choose the one that fits your requirements best](@/2017/why-type-systems-matter/index.md).
 
 - `&` is called a `borrow` in Rust speech. It's the most common of the three. It's a reference to some place in memory, but it does not **own** the data it points to. As such, the lifetime of the borrow depends on its owner.
-  Therefore we would need to add lifetime parameters here. This can make it tedious to use.
+Therefore we would need to add lifetime parameters here. This can make it tedious to use.
 
-      ```rust
-      struct Tree<'a> {
-        root: i64,
-        left: &'a Tree<'a>,
-        right: &'a Tree<'a>,
-      }
-      ```
+  ```rust
+  struct Tree<'a> {
+    root: i64,
+    left: &'a Tree<'a>,
+    right: &'a Tree<'a>,
+  }
+  ```
 
-- [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html) is a **smart pointer** with zero runtime overhead. It owns the data it points to.
-  We call it smart because when it goes out of scope, it will first drop the data it points to and then itself. No manual memory management required.
+- [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html) is a **smart pointer** with zero runtime overhead. It owns the data it points to and stores it on the heap.
+  We call it *smart* because when it goes out of scope, it will first drop the data it points to and then itself. No manual memory management required, which is neat. ✨
 
-      ```rust
-      struct Tree {
-        root: i64,
-        left: Box<Tree>,
-        right: Box<Tree>,
-      }
-      ```
+  ```rust
+  struct Tree {
+    root: i64,
+    left: Box<Tree>,
+    right: Box<Tree>,
+  }
+  ```
 
-- [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) is another smart pointer. It's short for "reference-counting". It keeps track of the number of references to a data structure. As soon as the number of references is down to zero, it cleans up after itself.
+- [`Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) is another smart pointer. It's short for "reference-counting". It keeps track of the number of references to the data structure internally. As soon as the number of references is down to zero, it cleans up after itself.
   Choose `Rc` if you need to have multiple owners of the same data in one thread.
   For multithreading, there's also [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomic reference count).
 
-      ```rust
-      struct Tree {
-        root: i64,
-        left: Rc<Tree>,
-        right: Rc<Tree>,
-      }
-      ```
+  ```rust
+  struct Tree {
+    root: i64,
+    left: Rc<Tree>,
+    right: Rc<Tree>,
+  }
+  ```
 
 ## Putting the tree into a box
 
@@ -173,10 +176,10 @@ Tree {
 ```
 
 Depending on your point of view, you might say this is either verbose or explicit.
-Compared to the Python version, it looked a bit too cluttered.
+Compared to the Python version, it looked a bit too cluttered for my taste.
 
 Can we do better?
-[Chris McDonald](https://github.com/deepinthebuild) helped me to come up with the following representation:
+[Chris McDonald](https://github.com/deepinthebuild) helped me come up with the following representation:
 
 ```rust
 Tree::new(15)
@@ -227,20 +230,27 @@ we can support the following syntax by implementing [`From<i64> for Tree`](https
 
 ```rust
 root(15)
-  .left(root(12).right(13))
-  .right(root(22).left(18).right(100));
+  .left(
+    root(12)
+      .right(13)
+   )
+  .right(
+    root(22)
+      .left(18)
+      .right(100)
+  );
 ```
 
-## Why did it work in Python?
+## Why did it just work in Python?
 
-Now you might be wondering, why our tree implementation worked so flawlessly in Python.
-The reason is that Python dynamically allocates memory for the tree object at runtime.
+Now you might be wondering why our tree implementation worked so flawlessly in Python.
+The reason is that Python *dynamically* allocates memory for the tree object at *runtime*.
 Also, it wraps everything inside a [PyObject, which is kind of similar to `Rc` from above](https://pythonextensionpatterns.readthedocs.io/en/latest/refcount.html)
-&mdash; a reference counted smart pointer.
+&mdash; a reference-counted smart pointer.
 
-Rust is more explicit here. It gives us more flexibility to express our needs.
-Then again, we need to know about all the possible alternatives to make good use of them.
-If you can, then stay away from smart pointers and stick to simple borrows.  
-If that's not possible, as seen above, choose the least invasive one for your
-use-case. The [Rust documentation](https://doc.rust-lang.org/book/second-edition/ch15-00-smart-pointers.html) is a good starting point here.
-Also, read ["Idiomatic tree and graph-like structures in Rust"](https://rust-leipzig.github.io/architecture/2016/12/20/idiomatic-trees-in-rust/) for some clever use of allocators.
+Rust is more explicit here. It gives us more flexibility to express our needs
+but we also need to know about all the possible alternatives to make good use of them.
+My advice is to stay away from smart pointers if a simple borrow will do.
+
+If lifetimes get in the way however or you need additional guarantees like thread-safety, smart pointers are a great addition to your toolkit. The [Rust documentation](https://doc.rust-lang.org/book/second-edition/ch15-00-smart-pointers.html) is a good starting point to learn more about smart pointers.
+Also, read ["Idiomatic tree and graph-like structures in Rust"](https://rust-leipzig.github.io/architecture/2016/12/20/idiomatic-trees-in-rust/) for some clever use of allocators in case your tree needs to be mutable at runtime.

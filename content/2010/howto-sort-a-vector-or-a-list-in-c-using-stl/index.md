@@ -1,6 +1,8 @@
 +++
 title="Howto Sort a Vector or a List in C++ using STL"
 date=2010-01-27
+[taxonomies]
+tags=["dev"]
 +++
 
 

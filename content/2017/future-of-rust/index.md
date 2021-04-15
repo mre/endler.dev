@@ -1,6 +1,8 @@
 +++
 title="The Future of Rust"
 date=2017-04-27
+[taxonomies]
+tags=["dev", "rust"]
 
 [extra]
 comments = [

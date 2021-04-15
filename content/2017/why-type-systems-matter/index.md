@@ -1,6 +1,8 @@
 +++
 title="Why Type Systems Matter"
 date=2017-07-10
+[taxonomies]
+tags=["culture", "dev", "rust"]
 
 [extra]
 social_img="2017_why_type_systems_matter.png"

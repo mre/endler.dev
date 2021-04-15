@@ -1,6 +1,8 @@
 +++
 title="Making Myself Obsolete"
 date=2017-12-10
+[taxonomies]
+tags=["dev", "oss"]
 
 [extra]
 subtitle="Writing a Linter for Linting Linters"
