@@ -1,11 +1,13 @@
 {% extends "index.html" %}
 
 {% block header %}
-    <title>All {{ term.name }} posts | Matthias Endler</title>
+    <title>All {{ term.pages | length }} {{ term.name }} posts | Matthias Endler</title>
 {% endblock header %}
 
 {% block content %}
-<h1>All articles tagged with <span class="tag">{{ term.name }}</span></h1>
+
+
+<h1>{{ term.pages | length }} articles tagged with <span class="tag">{{ term.name }}</span></h1>
     {% for page in paginator.pages %}
         {% include "snippets/article.html" %}
     {% endfor %}
