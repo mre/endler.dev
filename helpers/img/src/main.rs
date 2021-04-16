@@ -9,22 +9,19 @@ use std::{
 
 // Width of images on blog.
 const MAX_IMAGE_WIDTH: u32 = 650; // pixels
-const INPUT_PATH: &'static str = "content/**/raw/*";
+const INPUT_PATH: &str = "content/**/raw/*";
 
 fn main() -> Result<()> {
     let entries: Vec<PathBuf> = glob(INPUT_PATH)?.filter_map(Result::ok).collect();
     println!("Inspecting {} images", entries.len());
-    entries
-        .into_par_iter()
-        .map(|entry| handle(entry))
-        .collect::<Vec<_>>();
+    entries.into_par_iter().map(handle).collect::<Vec<_>>();
     Ok(())
 }
 
 fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
     let ext = path
         .extension()
-        .ok_or(anyhow!("Cannot get extension for {}", path.display()))?;
+        .ok_or_else(|| anyhow!("Cannot get extension for {}", path.display()))?;
 
     if !out_file.exists() {
         if ext == "svg" || ext == "gif" {
@@ -78,23 +75,19 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
 fn handle(path: PathBuf) -> Result<()> {
     let filename = path
         .file_name()
-        .ok_or(anyhow!("Unexpected file: {}", path.display()))?;
+        .ok_or_else(|| anyhow!("Unexpected file: {}", path.display()))?;
     let in_dir = path
         .parent()
-        .ok_or(anyhow!("Unexpected dir: {}", path.display()))?;
+        .ok_or_else(|| anyhow!("Unexpected dir: {}", path.display()))?;
 
     // This is not so beautiful...
     let out_dir = Path::new("static").join(
         in_dir
             .strip_prefix("content/")?
             .parent()
-            .ok_or(anyhow!("Cannot get parent for {}", in_dir.display()))?,
+            .ok_or_else(|| anyhow!("Cannot get parent for {}", in_dir.display()))?,
     );
     let out_file = out_dir.join(filename);
-
-    // dbg!(&filename);
-    // dbg!(&in_dir);
-    // dbg!(&out_dir);
 
     if filename == ".DS_Store" {
         return Ok(());
@@ -102,7 +95,7 @@ fn handle(path: PathBuf) -> Result<()> {
 
     let orig_extension = path
         .extension()
-        .ok_or(anyhow!("Cannot get extension for {}", path.display()))?;
+        .ok_or_else(|| anyhow!("Cannot get extension for {}", path.display()))?;
 
     if orig_extension == "afdesign" {
         return Ok(());
