@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-03-28
+updated=2021-04-19
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -371,21 +371,29 @@ has stalled (see
 Which one you want to choose depends on your requirements. Which platforms do
 you need to support? Is it just for local testing or for production usage?
 
-## Tweak Codegen Options / Compiler Flags
+## Faster Incremental Debug Builds On Macos
 
-Rust comes with a huge set of [settings for code
-generation](https://doc.rust-lang.org/rustc/codegen-options). It can help to
-look through the list and tweak the parameters for your project.
-
-Here is an example setting for faster incremental debug builds on macOS. It can
-make debug builds up to seconds faster depending on the use case:
+Rust 1.51 added an interesting flag for faster incremental debug builds on
+macOS. It can make debug builds up to seconds faster (depending on your use-case).
+Just add this to your `Cargo.toml`:
 
 ```toml
 [profile.dev]
 split-debuginfo = "unpacked"
 ```
 
-There are **many more** such gems in the [full list of codegen
+Some engineers [report](https://jakedeichert.com/blog/reducing-rust-incremental-compilation-times-on-macos-by-70-percent/) that this flag alone reduces compilation times on macOS by **70%**.
+
+The flag might become the standard for macOS soon. It is already the [default
+on nightly](https://github.com/rust-lang/cargo/pull/9298).
+
+## Tweak More Codegen Options / Compiler Flags
+
+Rust comes with a huge set of [settings for code
+generation](https://doc.rust-lang.org/rustc/codegen-options). It can help to
+look through the list and tweak the parameters for your project.
+
+There are **many** gems in the [full list of codegen
 options](https://doc.rust-lang.org/rustc/codegen-options). For inspiration,
 here's [bevy's config for faster
 compilation](https://github.com/bevyengine/bevy/blob/3a2a68852c0a1298c0678a47adc59adebe259a6f/.cargo/config_fast_builds).
