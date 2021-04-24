@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-04-19
+updated=2021-04-24
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -17,13 +17,57 @@ credits = [
 +++
 
 When it comes to runtime performance, Rust is one of the fastest guns in the
-west. It is [on par with the likes of C and
+west. 🔫 It is [on par with the likes of C and
 C++](https://benchmarksgame-team.pages.debian.net/benchmarksgame/which-programs-are-fastest.html)
-and sometimes even surpasses them. Compile times, however? That's a different story.
+and sometimes even surpasses those. Compile times, however? That's another story.
+
+Below is a list of **tips and tricks on how to make your Rust project compile
+faster today**. They are roughly ordered by practicality, so start at the top
+and work your way down until you're happy and your compiler goes brrrrrrr.
+
+{% info() %}
+✨**WOW!** This article blew up lately.✨‍
+
+I don't run any ads on my blog, but if this information is helping you, please
+consider [sponsoring me on Github](https://github.com/sponsors/mre/).
+This allows me to write more content in the future.
+
+If you're interested in hands-on Rust consulting, [pick a date from my
+calendar](https://booktime.xyz/p/matthias).
+**I can help you with performance problems and reducing your build times.**
+{% end %}
+
+## Full List Of Tips
+
+- [Update The Rust Compiler And Toolchain](#update-the-rust-compiler-and-toolchain)
+- [Use Cargo Check Instead Of Cargo Build](#use-cargo-check-instead-of-cargo-build)
+- [Use Rust Analyzer Instead Of Rust Language Server](#use-rust-analyzer-instead-of-rust-language-server-rls)
+- [Remove Unused Dependencies](#remove-unused-dependencies)
+- [Update Remaining Dependencies](#update-remaining-dependencies)
+- [Replace Heavy Dependencies](#replace-heavy-dependencies)
+- [Use Cargo Workspaces](#use-cargo-workspaces)
+- [Combine All Integration Tests In A Single Binary](#combine-all-integration-tests-in-a-single-binary)
+- [Disable Unused Features Of Crate Dependencies](#disable-unused-features-of-crate-dependencies)
+- [Use A Ramdisk For Compilation](#use-a-ramdisk-for-compilation)
+- [Cache Dependencies With Sccache](#cache-dependencies-with-sccache)
+- [Cranelift &ndash; The Alternative Rust Compiler](#cranelift-the-alternative-rust-compiler)
+- [Switch To A Faster Linker](#switch-to-a-faster-linker)
+- [Faster Incremental Debug Builds On macOS](#faster-incremental-debug-builds-on-macos)
+- [Tweak More Codegen Options Compiler Flags](#tweak-more-codegen-options-compiler-flags)
+- [Profile Compile Times](#profile-compile-times)
+- [Avoid Procedural Macro Crates](#avoid-procedural-macro-crates)
+- [Compile On A Beefy Machine](#compile-on-a-beefy-machine)
+- [Download All The Crates](#download-all-the-crates)
+- [Bonus: Speed Up Rust Docker Builds Whale](#bonus-speed-up-rust-docker-builds-whale)
+- [Drastic Measures: Overclock Your Cpu Fire](#drastic-measures-overclock-your-cpu-fire)
+- [Upstream Work](#upstream-work)
+- [Help Others Upload Leaner Crates For Faster Build Times](#help-others-upload-leaner-crates-for-faster-build-times)
+- [More Resources](#more-resources)
+- [What's Next](#what-s-next)
 
 ## Why Is Rust Compilation Slow?
 
-Wait a sec, slow **in comparison to what?** That is, if you compare Rust with Go,
+Wait a sec, _slow in comparison to what_? That is, if you compare Rust with Go,
 the Go compiler is doing a lot less work in general. For example, it lacks support for
 generics and macros. On top of that, the Go compiler was [built from
 scratch](https://golang.org/doc/faq#What_compiler_technology_is_used_to_build_the_compilers)
@@ -75,27 +119,24 @@ If you're interested in all the gory details, check out [this blog
 post](https://pingcap.com/blog/rust-compilation-model-calamity/) by Brian
 Anderson.
 
-## Upstream Work
+## Update The Rust Compiler And Toolchain
 
 Making the Rust compiler faster is an ongoing process, and many fearless people
 are [working on
 it](https://blog.mozilla.org/nnethercote/2020/04/24/how-to-speed-up-the-rust-compiler-in-2020/).
 Thanks to their hard work, compiler speed has improved [30-40% across the board
 year-to-date, with some projects seeing up to 45%+ improvements](https://www.reddit.com/r/rust/comments/cezxjn/compiler_speed_has_improved_3040_across_the_board/).
+
+So make sure you use the latest Rust version:
+
+```
+rustup update
+```
+
 On top of that, Rust tracks compile regressions on a [website dedicated to
-performance](https://perf.rust-lang.org/)
-
-Work is also put into [optimizing the LLVM
-backend](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html). Rumor
-has it that there's still a lot of low-hanging fruit. 🍇
-
-## What You Can Improve Right Away
-
-Upstream work takes time, but what if you have a performance problem **right
-now** and can't wait? Well, all hope is not lost! Below is a list of **tips and
-tricks on how to make your Rust project compile faster today**. They are roughly
-ordered by
-practicality, so start at the top and work your way down until you're happy and your compiler goes brrrrrrr.
+performance](https://perf.rust-lang.org/). Work is also put into [optimizing
+the LLVM backend](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html).
+Rumor has it that there's still a lot of low-hanging fruit. 🍇
 
 ## Use `cargo check` Instead Of `cargo build`
 
@@ -126,17 +167,6 @@ For a long time, the default choice here was
 [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer), because it's
 more feature-complete and way more snappy. It supports all major IDEs.
 Switching to that alone might save your day.
-
-{% info() %}
-✨**WOW!** This article is getting quite a bit of traction lately.✨‍
-
-I don't run ads on this website, but if this information is helping you, please
-consider [sponsoring me on Github](https://github.com/sponsors/mre/).
-This allows me to write content like this.
-
-Also, if you're interested in **hands-on Rust consulting**, [pick a date from my
-calendar](https://booktime.xyz/p/matthias) and we can talk about how I can help .
-{% end %}
 
 ## Remove Unused Dependencies
 
@@ -484,6 +514,19 @@ engineer?)
 
 ## Compile On A Beefy Machine
 
+If you reached this point, the easiest way to improve compile times is to spend money on
+top-of-the-line hardware.
+
+Perhaps a bit surprisingly, the fastest machines for Rust compiles seems to be [Apple machines with M1 chip](https://twitter.com/rikarends/status/1328598935380910082) at the moment
+(as of April 2021).
+
+The [new 13 inch Macbook Pro laptop](https://amzn.to/3tSrsCs) has 16 hours of battery life, which is ridiculous; and the price is comparably low, given the compute power you'd get.
+
+If you prefer a desktop machine, the [new Mac Mini](https://amzn.to/3tSrsCs) has the same M1 processor for about half the price and **some people reported that it's a beast**.
+
+If you rather like to stick to Linux, people also had great success with a multicore CPU like an [AMD Ryzen
+Threadripper and 32 GB of RAM](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/).
+
 On portable devices, compiling can drain your battery and be slow. To avoid
 that, I'm using my machine at home, a 6-core AMD FX 6300 with 12GB RAM, as a
 build machine. I can use it in combination with [Visual Studio Code Remote
@@ -496,10 +539,6 @@ provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github repository URL.
 [Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
-
-When it comes to buying dedicated hardware,
-[here are some tips](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/). Generally, you should get a proper multicore CPU like an AMD
-Ryzen Threadripper plus at least 32 GB of RAM.
 
 ## Download ALL The Crates
 
@@ -591,6 +630,31 @@ you some benchmarks from my machine.)
 
 </details>
 
+## Upstream Work
+
+Making the Rust compiler faster is an ongoing process, and many fearless people
+are [working on
+it](https://blog.mozilla.org/nnethercote/2020/04/24/how-to-speed-up-the-rust-compiler-in-2020/).
+Thanks to their hard work, compiler speed has improved [30-40% across the board
+year-to-date, with some projects seeing up to 45%+ improvements](https://www.reddit.com/r/rust/comments/cezxjn/compiler_speed_has_improved_3040_across_the_board/).
+On top of that, Rust tracks compile regressions on a [website dedicated to
+performance](https://perf.rust-lang.org/)
+
+Work is also put into [optimizing the LLVM
+backend](https://nikic.github.io/2020/05/10/Make-LLVM-fast-again.html). Rumor
+has it that there's still a lot of low-hanging fruit. 🍇
+
+The Rust team is also continuously working to make the compiler faster.
+Here's an extract of the [2020 survey](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html#compile-times):
+
+> One continuing topic of importance to the Rust community and the Rust team is
+> improving compile times. Progress has already been made with **50.5% of
+> respondents saying they felt compile times have improved**. This improvement was
+> particularly pronounced with respondents with large codebases (10,000 lines of
+> code or more) where 62.6% citing improvement and only 2.9% saying they have
+> gotten worse. Improving compile times is likely to be the source of
+> significant effort in 2021, so stay tuned!
+
 ## Help Others: Upload Leaner Crates For Faster Build Times
 
 [`cargo-diet`](https://github.com/the-lean-crate/cargo-diet) helps you build
@@ -623,3 +687,9 @@ time?
 Also, once you're done optimizing your build times, how about optimizing
 _runtimes_ next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
 [nice article](https://deterministic.space/high-performance-rust.html) on that.
+
+{% info() %}
+
+- Consider [sponsoring me on Github](https://github.com/sponsors/mre/) for future articles.
+- I can help you with performance problems and reducing your build times. [Reach out here.](https://booktime.xyz/p/matthias)
+  {% end %}
