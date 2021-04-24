@@ -1,19 +1,25 @@
 Everyone is talking about Go vs Rust.
 Heck, even I wrote an article about it once, that I don't necessarily agree with anymore.
-Comparing Go to Rust is the wrong approach
+I since learned that comparing Go with Rust is the wrong approach.
+
+When talking about Go, people often claim that it is simple.
+Others criticize Go for selling ...
+I'd say both camps are missing the point.
+Go is rather a pragmatic language. It is not unaware of the fact that its assumptions are incorrect around edge-cases.
+Rather, it's okay with that and sees it as a tradeoff between productivity and maintenance costs.
+
+
 
 But rarely anyone is talking about Go AND Rust. As in: a team
-
-
 Rust and Go is like Batman and Robin.
 Go is this amazing sidekick
 
 
-Different philosophies
+## Different philosophies
 
 This becomes apparent when working on the boundary to the outside world, the system, the os.
 
-How to get the extension of a file in Go?
+Simple example: How to get the extension of a file in Go?
 
 https://ispycode.com/GO/Path-and-Filepath/Get-file-name-extension-used-by-path
 
@@ -42,15 +48,21 @@ Extension 2: .jpg
 ```
 
 Straightforward, simple, and wrong.
+It will work 99% of the time,
+but what if the file does not have an extension?
+What if the file is not even a string?
 
-99% of the time, this will work.
-But what if the file does not have an extension?
-What if the file is not a string?
 In Rust, you have to deal with the fallability of operations.
 
-Rust does not trust input from the outside by default.
-Go does.
 
+
+Another example: empty paths
+
+Given a path, should there be a method to check if it is empty?
+What is even considered an empty path? Is `/` empty?
+https://github.com/rust-lang/rust/issues/3420
+This approach is deeply rooted in Rust's core believes.
+TODO: how does golang handle that?
 
 
 ```go
@@ -73,9 +85,11 @@ match env::var(key) {
 
 https://doc.rust-lang.org/std/env/fn.var.html
 
-It's a bit like shell-scripting in that regard: incredibly powerful and productive
+It's a bit like shell-scripting in that regard: incredibly powerful and convenient
 when it works, extremely dangerous when it doesn't.
 Pick your poison.
+
+Rust does not trust input from the outside by default; Go does.
 
 
 How to get a Path from a file?
@@ -89,5 +103,7 @@ Go doesn't care!
 
 https://gobyexample.com/file-paths
 
-
-Worse is better
+It's not that Go is unaware of these limitations.
+Rather, it errs on the side of pragmatism at the cost of being incorrect when handling edge-cases in such situations.
+This is neither good nor bad. It is a trade-off between correctness and ergonomics.
+"Worse is better" is the mantra
