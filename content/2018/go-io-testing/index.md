@@ -1,6 +1,7 @@
 +++
 title="Refactoring Go Code to Avoid File I/O in Unit Tests"
 date=2018-03-22
+updated=2021-04-26
 [taxonomies]
 tags=["dev"]
 
@@ -175,6 +176,11 @@ On Reddit, user [soapysops](https://www.reddit.com/user/soapysops) made an [impo
 > So I probably would have eliminated the file name based API and only exposed one based on io.Reader. That way, you have complete code coverage, fast tests, and far fewer edge cases to worry about.
 
 I totally agree with that sentiment.  
-But often times you can't simply change the user-facing API easily, because the API might be public and might already have users.
-The refactoring above is just the first step towards better architecture. There is definitely a lot more you can do.
-If that got you interested, also check out [justforfunc #29: dependency injection in a code review](https://youtu.be/ifBUfIb7kdo), which talks about the same topic.
+But often times you **can't simply change the user-facing API easily**, because the API might be public and might already have users.
+The refactoring above is just the **first step towards better architecture**. There is definitely a lot more you can do to start writing robust, well-tested systems in Go.
+
+If that got you interested, also check out [justforfunc #29: dependency injection in a code review](https://youtu.be/ifBUfIb7kdo), which covers the same topic:
+
+{{ video(url="https://www.youtube.com/embed/ifBUfIb7kdo", preview="maxresdefault.jpg") }}
+
+A great resource that I can recommend is [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/). It teaches you test-driven development with Go and helps you get a grounding with TDD.
