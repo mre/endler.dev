@@ -514,15 +514,17 @@ engineer?)
 
 ## Compile On A Beefy Machine
 
-If you reached this point, the easiest way to improve compile times is to spend money on
-top-of-the-line hardware.
+If you reached this point, the easiest way to improve compile times even more is
+probably to spend money on top-of-the-line hardware.
 
-Perhaps a bit surprisingly, the fastest machines for Rust compiles seems to be [Apple machines with M1 chip](https://twitter.com/rikarends/status/1328598935380910082) at the moment
-(as of April 2021).
+Perhaps a bit surprisingly, the fastest machines for Rust compiles seem to be *Apple machines with a M1 chip*:
+
+{{ figure(src="tweet.png", link="https://twitter.com/rikarends/status/1328598935380910082"
+caption="Rik Arends on Twitter") }}
 
 The [new 13 inch Macbook Pro laptop](https://amzn.to/3tSrsCs) has 16 hours of battery life, which is ridiculous; and the price is comparably low, given the compute power you'd get.
 
-If you prefer a desktop machine, the [new Mac Mini](https://amzn.to/3tSrsCs) has the same M1 processor for about half the price and **some people reported that it's a beast**.
+If you prefer a desktop machine, the [new Mac Mini](https://amzn.to/3tSrsCs) has the same M1 processor for about half the price and people reported that it's a beast.
 
 If you rather like to stick to Linux, people also had great success with a multicore CPU like an [AMD Ryzen
 Threadripper and 32 GB of RAM](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/).
@@ -532,12 +534,12 @@ that, I'm using my machine at home, a 6-core AMD FX 6300 with 12GB RAM, as a
 build machine. I can use it in combination with [Visual Studio Code Remote
 Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
-If you don't have a dedicated machine yourself, you can compile in the cloud
+Finally, if you don't have a dedicated machine yourself, you can compile in the cloud
 instead.  
 [Gitpod.io](https://gitpod.io/) is superb for testing a cloud build as they
 provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
-front of any Github repository URL.
+front of any Github URL.
 [Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
 
 ## Download ALL The Crates
