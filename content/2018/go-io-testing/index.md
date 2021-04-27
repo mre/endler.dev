@@ -1,7 +1,7 @@
 +++
 title="Refactoring Go Code to Avoid File I/O in Unit Tests"
 date=2018-03-22
-updated=2021-04-26
+updated=2021-04-27
 [taxonomies]
 tags=["dev"]
 
@@ -179,8 +179,14 @@ I totally agree with that sentiment.
 But often times you **can't simply change the user-facing API easily**, because the API might be public and might already have users.
 The refactoring above is just the **first step towards better architecture**. There is definitely a lot more you can do to start writing robust, well-tested systems in Go.
 
+## More Resources
+
 If that got you interested, also check out [justforfunc #29: dependency injection in a code review](https://youtu.be/ifBUfIb7kdo), which covers the same topic:
 
 {{ video(url="https://www.youtube.com/embed/ifBUfIb7kdo", preview="maxresdefault.jpg") }}
 
 A great resource that I can recommend is [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/). It teaches you test-driven development with Go and helps you get a grounding with TDD.
+
+Another one is [The Go Programming Language](https://amzn.to/2QCHvWP) book, co-authored by Brian W. Kernighan (of Unix fame), which shows how to write clear and idiomatic Go to solve real-world problems. It contains a dedicated chapter on interfaces and testing. It also covers `io.Reader` in more detail.
+
+{{ figure(src="the_go_programming_language.jpg", caption="The Go Programming Language book co-authored by Brian W. Kernighan (affiliate link)", link="https://amzn.to/2QCHvWP") }}
