@@ -399,6 +399,8 @@ has stalled (see
 
 **Update II**: Aaand another one called [zld](https://github.com/michaeleisel/zld), which is a drop-in replacement for Apple's `ld` linker and is targeting debug builds. [[Source](https://www.reddit.com/r/rust/comments/lv3eb2/hey_rustaceans_got_an_easy_question_ask_here_92021/gppyutx)]
 
+{{ figure(src="zld_benchmark.svg", caption="The zld benchmarks are quite impressive.", link="https://github.com/michaeleisel/zld")}}
+
 Which one you want to choose depends on your requirements. Which platforms do
 you need to support? Is it just for local testing or for production usage?
 
@@ -540,7 +542,7 @@ Development](https://code.visualstudio.com/docs/remote/remote-overview).
 If you don't have a dedicated machine yourself, you can offload the compilation
 process to the cloud instead.  
 [Gitpod.io](https://gitpod.io/) is superb for testing a cloud build as they
-provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
+provide you with a beefy machine (currently 16 core Intel Xeon 2.80GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github URL.
 [Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
