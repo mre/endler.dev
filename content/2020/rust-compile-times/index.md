@@ -23,7 +23,7 @@ and sometimes even surpasses those. Compile times, however? That's another story
 
 Below is a list of **tips and tricks on how to make your Rust project compile
 faster today**. They are roughly ordered by practicality, so start at the top
-and work your way down until you're happy and your compiler goes brrrrrrr.
+and work your way down until you're happy and your compiler goes _brrrrrrr_.
 
 {% info() %}
 ✨**WOW!** This article blew up lately.✨‍
@@ -37,7 +37,7 @@ calendar](https://booktime.xyz/p/matthias).
 **I can help you with performance problems and reducing your build times.**
 {% end %}
 
-## Full List Of Tips
+## Full List Of Tips (Yeah, It's Long)
 
 - [Update The Rust Compiler And Toolchain](#update-the-rust-compiler-and-toolchain)
 - [Use Cargo Check Instead Of Cargo Build](#use-cargo-check-instead-of-cargo-build)
