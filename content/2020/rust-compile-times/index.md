@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-04-27
+updated=2021-04-28
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -56,7 +56,8 @@ calendar](https://booktime.xyz/p/matthias).
 - [Tweak More Codegen Options Compiler Flags](#tweak-more-codegen-options-compiler-flags)
 - [Profile Compile Times](#profile-compile-times)
 - [Avoid Procedural Macro Crates](#avoid-procedural-macro-crates)
-- [Compile On A Beefy Machine](#compile-on-a-beefy-machine)
+- [Compile On A Beefy Machine](#get-dedicated-hardware)
+- [Compile in the Cloud](#compile-in-the-cloud)
 - [Download All The Crates](#download-all-the-crates)
 - [Bonus: Speed Up Rust Docker Builds Whale](#bonus-speed-up-rust-docker-builds-whale)
 - [Drastic Measures: Overclock Your Cpu Fire](#drastic-measures-overclock-your-cpu-fire)
@@ -512,12 +513,12 @@ Note that this crate is still experimental.
 [David Tolnay](https://github.com/dtolnay/), who is a frickin' steamroller of an
 engineer?)
 
-## Compile On A Beefy Machine
+## Get Dedicated Hardware
 
 If you reached this point, the easiest way to improve compile times even more is
 probably to spend money on top-of-the-line hardware.
 
-Perhaps a bit surprisingly, the fastest machines for Rust compiles seem to be *Apple machines with a M1 chip*:
+Perhaps a bit surprisingly, the fastest machines for Rust compiles seem to be _Apple machines with a M1 chip_:
 
 {{ figure(src="tweet.png", link="https://twitter.com/rikarends/status/1328598935380910082"
 caption="Rik Arends on Twitter") }}
@@ -534,13 +535,29 @@ that, I'm using my machine at home, a 6-core AMD FX 6300 with 12GB RAM, as a
 build machine. I can use it in combination with [Visual Studio Code Remote
 Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
-Finally, if you don't have a dedicated machine yourself, you can compile in the cloud
-instead.  
+## Compile in the Cloud
+
+If you don't have a dedicated machine yourself, you can offload the compilation
+process to the cloud instead.  
 [Gitpod.io](https://gitpod.io/) is superb for testing a cloud build as they
 provide you with a beefy machine (currently 16 core Intel Xeon 2.30GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github URL.
 [Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
+
+Gitpod has a neat feature called [prebuilds](https://www.gitpod.io/docs/prebuilds). From their docs:
+
+> Whenever your code changes (e.g. when new commits are pushed to your
+> repository), Gitpod can prebuild workspaces.
+> Then, when you do create a new workspace on a branch, or Pull/Merge Request,
+> for which a prebuild exists, this workspace will load much faster, because **all
+> dependencies will have been already downloaded ahead of time, and your code
+> will be already compiled**.
+
+Especially when reviewing pull requests, this could give you a nice speedup.
+Prebuilds are quite customizable; take a look at the [`.gitpod.yml` config of
+nushell](https://github.com/nushell/nushell/blob/main/.gitpod.yml) to get an
+idea.
 
 ## Download ALL The Crates
 
