@@ -17,8 +17,8 @@ translations = [
 What's the simplest Unix command you know?  
 There's `echo`, which prints a string to stdout and `true`, which always terminates with an exit code of 0.
 
-Among the rows of simple Unix commands, there's also `yes`.
-If you run it without arguments, you get an infinite stream of y's, separated by a newline:
+Among the series of simple Unix commands, there's also `yes`.
+If you execute it without arguments, you get an infinite stream of y's, separated by a newline:
 
 ```
 y
