@@ -23,7 +23,8 @@ Related links and resources:
   hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
 - The Changelog Podcast &mdash; [It’s OK to make money from your open source](https://changelog.com/podcast/405)
   with [Zeno Rocha](https://zenorocha.com/).
-- [Nadia Eghbal](https://nadiaeghbal.com/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg).
+- [Nadia Eghbal](https://nadiaeghbal.com/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg). She also wrote a book on that topic:
+  {{figure(src="working_in_public.jpg", caption="Working in Public by Nadia Eghbal", link="https://amzn.to/3vAl43v")}}
 
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
