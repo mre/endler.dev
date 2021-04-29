@@ -1,6 +1,7 @@
 +++
 title="A Little Story About the `yes` Unix Command"
 date=2017-10-10
+updated=2021-04-29
 [taxonomies]
 tags=["dev", "rust"]
 
