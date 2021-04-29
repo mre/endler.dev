@@ -14,8 +14,8 @@ comments = [
   {name = "Reddit - Devops", url = "https://www.reddit.com/r/devops/comments/enphaw/maybe_you_dont_need_kubernetes/"}, 
 ]
 translations = [
-  {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
   {name = "Russian", url = "https://habr.com/ru/post/445030/"},
+  {name = "Japanese", url = "https://yakst.com/ja/posts/5455"},
 ]
 credits = [
   {name = "Arne Claus", url = "https://twitter.com/arnecls"},
