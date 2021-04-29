@@ -1,6 +1,7 @@
 +++
 title="Go vs Rust? Choose Go."
 date=2017-09-15
+updated=2021-04-29
 [taxonomies]
 tags=["dev", "rust"]
 
