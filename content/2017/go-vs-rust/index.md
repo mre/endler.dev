@@ -21,11 +21,13 @@ comments = [
 Both languages seem to be competing for the same user base and they both seem to be
 _systems programming_ languages, so there must be a clear winner, right?
 
+{% info() %}
 **tl;dr**: _It's not so easy. Both languages have a different scope. Golang shines for writing microservices and for typical "DevOps" tasks, but it is not a systems programming language. Rust is stronger for tasks where concurrency, safety and/or performance are important; but it has a steeper learning curve than Go._
+{% end %}
 
 ## Go: practical, pragmatic, plain
 
-<img src="go.jpg" alt="The Golang learning curve over time, a straight line."/>
+{{ figure( src="go.jpg" caption="The Golang learning curve over time, a straight line.") }}
 
 I don't think Go is an elegant language. Its biggest feature is simplicity.
 Go is not even a systems programming language. While it's great for writing microservices and tooling around backend infrastructure, I would not want to write a kernel or a memory allocator with it.
@@ -36,7 +38,7 @@ The mantra is: solve real problems today.
 
 ## Rust's strong guarantees come at a cost
 
-<img src="rust.jpg" alt="The Rust learning curve over time, a bumpy ride."/>
+{{ figure( src="rust.jpg" caption="The Rust learning curve over time, a bumpy ride.") }}
 
 Rust in comparison is **hard**. It took me many months to become somewhat productive.
 You need to invest a serious amount of time to see any benefit.
