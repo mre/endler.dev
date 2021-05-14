@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-04-28
+updated=2021-05-14
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -403,6 +403,9 @@ has stalled (see
 
 Which one you want to choose depends on your requirements. Which platforms do
 you need to support? Is it just for local testing or for production usage?
+
+`mold` is optimized for Linux, `zld` only works on macOS.
+For production use, `lld` might be the most mature option.
 
 ## Faster Incremental Debug Builds On Macos
 
