@@ -1,7 +1,6 @@
 +++
 title="Hacker Folklore"
 date=2020-04-24
-draft=false
 [taxonomies]
 tags=["culture"]
 
@@ -20,12 +19,7 @@ Some computer terms have a surprising legacy. Many of them are derived from
 long-obsolete technologies. This post tries to dust off the exciting history of
 some
 of these terms that we use every day but aren't quite sure about their origins.
-
-Most of the content comes from sources like Wikipedia (with reference where
-appropriate), but the explanations are hard to hunt down if you don't know what
-you're looking for.  
-This is a living document, and I'm planning to update it in case of reader
-submissions.
+Let's jump right in!
 
 ## Bike-Shedding
 
@@ -41,8 +35,9 @@ The concept was first presented as a corollary of his broader "Parkinson's law"
 spoof of management. He dramatizes this "law of triviality" with the example of
 a committee's deliberations on an atomic reactor, contrasting it to
 deliberations on a bicycle shed. As he put it: "The time spent on any item of
-the agenda will be in inverse proportion to the sum of money involved." A
-reactor is so vastly expensive and complicated that an average person cannot
+the agenda will be in inverse proportion to the sum of money involved."
+
+A reactor is so vastly expensive and complicated that an average person cannot
 understand it, so one assumes that those who work on it understand it. On the
 other hand, everyone can visualize a cheap, simple bicycle shed, so planning one
 can result in endless discussions because everyone involved wants to add a touch
@@ -86,6 +81,7 @@ Commons](https://english.stackexchange.com/a/464929)") }}
 _Today's meaning: A defect in a piece of code or hardware._
 
 The origins are unknown!
+
 Contrary to popular belief it _predates the bug
 found by Grace Hopper in the Mark II computer_.
 
@@ -153,7 +149,7 @@ symbol had been picked for its Scandinavian usage due to its resembling the
 shape of a square castle with round corner towers as seen from above looking
 down, notably Borgholm Castle.
 
-{{ figure(src="severdighet.jpg", caption="Norwegian Severdighet road sign",
+{{ figure(src="severdighet.png", caption="Norwegian Severdighet road sign",
 credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
 
@@ -523,6 +519,14 @@ article](https://people.apache.org/~jim/NewArchitect/webrevu/1997/05_09/designer
 on PNG's history.
 [Reference](https://encyclopedia2.thefreedictionary.com/PNG%27s+Not+GIF)
 
+## Credits
+
+Most of the content comes from sources like Wikipedia (with reference where
+appropriate), but the explanations are difficult to hunt down if you don't know
+what you're looking for.  
+This is a living document, and I'm planning to update it in case of reader
+submissions.
+
 ## Conclusion
 
 > You have to know the past to understand the present.  
@@ -543,5 +547,5 @@ I hope you enjoyed this trip down memory lane. Now it's your turn!
 - [Typewriter terminology that has survived into the personal computer
   era](https://en.wikipedia.org/wiki/Typewriter#Terminology):
   A list of computer terms that have their origins from typewriters.
-- [Folklore - The Original Macintosh](https://www.folklore.org/index.py):
+- [Folklore - The Original Macintosh](https://www.folklore.org):
   Anecdotes about the development of Apple's original Macintosh, and the people who made it.
