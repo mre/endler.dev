@@ -23,8 +23,9 @@ These are all great ideas, but they require lots of persistence and deep
 pockets. It's probably easier and less risky to just join a startup in that field.
 
 In reality, most people just want something cool to work on and happy customers.
-It turns out, you don't have to run a startup for that. Instead, starting a side
-project is less risky and can grow organically into a business over time.
+It turns out, you don't have to run a startup for that ([and you probably
+shouldn't](https://every.to/napkin-math/you-probably-shouldn-t-work-at-a-startup-9387b632-345c-4a22-bac0-3cb92f0eecf1)). Instead, starting a side project is less risky and can grow
+organically into a business over time.
 
 Usually, the solution is right in front of them: in some Excel spreadsheet on
 their computer.
