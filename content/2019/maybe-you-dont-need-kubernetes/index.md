@@ -42,7 +42,7 @@ steep learning curve. For what our team of four wanted to achieve at trivago, it
 added too much overhead. So we looked into alternatives &mdash; and fell in love with
 [Nomad].
 
-## The wishlist
+## The Wishlist
 
 Our team runs a number of typical services for monitoring and performance
 analysis: API endpoints for metrics written in Go, Prometheus exporters, log
@@ -68,7 +68,7 @@ required:
 - Have a common place to share configurations and secrets.
 - Provide an endpoint for metrics and logging.
 
-## Why Kubernetes was not a good fit for us
+## Why Kubernetes Was Not A Good Fit For Us
 
 When creating a prototype with Kubernetes, we noticed that we started adding
 ever-more complex layers of logic to operate our services. Logic on which we
@@ -91,7 +91,7 @@ goes on and on. Not all tools are necessary to get started with Kubernetes, but
 it’s hard to know which ones are, so you have to be at least aware of them.
 Because of that, the learning curve is quite steep.
 
-## When to use Kubernetes
+## When To Use Kubernetes
 
 At trivago specifically, many teams use Kubernetes and are quite happy with it.
 These instances are managed by Google or Amazon however, which have the capacity to do so.
@@ -112,11 +112,11 @@ hood](https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/).
 
 Especially in our team, which runs most services on-premise (because of its
 close connection to trivago's core infrastructure), we didn't want to afford
-running our own Kubernetes cluster. We wanted to ship services instead.
+running our own Kubernetes cluster; we wanted to ship services instead.
 
 {{ figure(src="nuclear-kubernetes.jpg", alt="Nuclear hot take: nobody will care about Kubernetes in five years. -A tweet by Corey Quinn" link="https://twitter.com/QuinnyPig/status/1093261169614356490") }}
 
-## Batteries not included
+## Batteries Not Included
 
 Nomad is the 20% of service orchestration that gets you 80% of the way. All it
 does is manage deployments. It takes care of your rollouts and restarts your
@@ -124,8 +124,8 @@ containers in case of errors, and that's about it.
 
 The entire point of Nomad is that it does _less_: it doesn’t include
 fine-grained rights management or [advanced network policies], and that’s by
-design. Those components are provided as enterprise services, by a third-party,
-or not at all.
+design. Those components are provided as enterprise services, by a third-party
+&mdash; or not at all.
 
 I think Nomad hit a sweet-spot between ease of use and expressiveness. It's good
 for small, mostly independent services. If you need more control, you'll have to
@@ -136,7 +136,7 @@ vendor lock-in because the functionality it provides can easily be integrated
 into any other system that manages services. It just runs as a plain old single
 binary on every machine in your cluster; that's it!
 
-## The Nomad ecosystem of loosely coupled components
+## The Nomad Ecosystem Of Loosely Coupled Components
 
 The real power of Nomad lies within its ecosystem. It integrates very well with
 other - completely optional - products like [Consul] (a key-value store) or
@@ -176,7 +176,7 @@ There are many other examples for extensibility:
 All of this allowed us to [grow our infrastructure organically](https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/) without too much
 up-front commitment.
 
-## Fair warning
+## Fair Warning
 
 No system is perfect. I advise you not to use any fancy new features in
 production right now. There are [bugs] and [missing features] of course - but
@@ -192,17 +192,17 @@ pull request accepted, in comparison to Kubernetes.
 
 ## Summary
 
-The takeaway is: don't use Kubernetes just because everybody else does.
+The takeaway is: **don't use Kubernetes just because everyone else does**.
 Carefully evaluate your requirements and check which tool fits the bill.
 
 If you're planning to deploy a fleet of homogenous services on large-scale
 infrastructure, Kubernetes might be the way to go. Just be aware of the
-additional complexity and operational costs. Some of these costs can be
+additional [complexity and operational costs](https://twitter.com/ka_szczepanski/status/1394296607806525440). Some of these costs can be
 avoided by using a managed Kubernetes environment like [Google Kubernetes
 Engine] or [Amazon EKS].
 
 If you're just looking for a reliable orchestrator that is easy to maintain and
-extendable, why not give Nomad a try? You might be surprised by how far it'll get you.
+extendable, why not give [Nomad](https://www.nomadproject.io/) a try? You might be surprised by how far it'll get you.
 
 If Kubernetes were a car, Nomad would be a scooter. Sometimes you prefer one and
 sometimes the other. Both have their right to exist.
