@@ -14,8 +14,7 @@ in Rust and throw it away again in the end as we uncover the truth.
 """
 +++
 
-{{ figure(src="hero_optim.svg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and
-and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
+{{ figure(src="hero_optim.svg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
 
 As the day is winding down, I have a good hour just for myself.
 Perfect time to listen to some [Billie Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billie Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
@@ -68,6 +67,8 @@ It turns out it's the **command duration**, and the entire thing is called the [
 : <beginning time>:<elapsed seconds>;<command>
 ```
 
+(Depending on your settings, your file might look different.)
+
 ## Hooking into history
 
 But still, how does `history` _really_ work.
@@ -100,7 +101,7 @@ promise we'll get to the bottom of things in the end.
 I found [add-zsh-hook](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html)
 and a usage example in [atuin's source code](https://github.com/ellie/atuin/blob/main/src/shell/atuin.zsh).
 
-I might not fully comprehend all of that is written here, but I'm a man of action, and I can take a solid piece of work and strip it down to its bare minimum for my own enjoyment.
+I might not fully comprehend all of that is written there, but I'm a man of action, and I can take a solid piece of work and tear it apart.
 
 It's not much, but here's what I got:
 
@@ -145,7 +146,7 @@ Actually, I just remember now that [I did the same thing](https://github.com/mre
 
 So what to do with our newly acquired power?
 
-## Let's Run Some Rust Code.
+## Let's Run Some Rust Code
 
 Here's the thing: only `preexec` gets the "real" command. `precmd` gets nothing:
 
@@ -309,7 +310,7 @@ We open a new shell and run a few commands followed by `history`:
  1013  it works
 ```
 
-✨ **Yay.** ✨
+✨ **Yay.** ✨ [The source code for `past` is on Github.](https://github.com/mre/past)
 
 ## How it _really_ _really_ works
 
