@@ -1,13 +1,17 @@
 +++
 title="How Does The Unix `history` Command Work?"
 date=2021-05-31
-draft=true
+draft=false
 [taxonomies]
 tags=["dev", "rust"]
 [extra]
 credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
 ]
+excerpt="""
+In which we learn about the intricacies of the Unix `history` command, rewrite it
+in Rust and throw it away again in the end as we uncover the truth.
+"""
 +++
 
 {{ figure(src="hero_optim.svg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and
@@ -23,7 +27,7 @@ Don't judge.
 
 ## How does history even work?
 
-Every command is tracked, so when I run history I see the last few commands on my machine.
+Every command is tracked, so I see the last few commands on my machine when I run `history`.
 
 ```sh
 ❯❯❯ history
@@ -38,7 +42,7 @@ Every command is tracked, so when I run history I see the last few commands on m
 
 The manpage on my mac is not really helpful &mdash; I also couldn't find much in the first place.
 
-What I found is [this](https://medium.com/macoclock/forced-to-use-zsh-by-macos-catalina-lets-fix-our-history-command-first-9ce86dca540e) article (it's good etiquette nowadays to warn you that this is a Medium link) and it describes a bit of what's going on.
+I found [this](https://medium.com/macoclock/forced-to-use-zsh-by-macos-catalina-lets-fix-our-history-command-first-9ce86dca540e) article (it's good etiquette nowadays to warn you that this is a Medium link) and it describes a bit of what's going on.
 
 Every command is stored in `$HISTFILE`, which points to `~/.zsh_history` for me.
 
@@ -58,7 +62,7 @@ to the end of the file. Not too hard to recreate.
 
 Hold on, what's that 0 about!?
 
-Turns out it's the **command duration** and the entire thing is called the [extended history format](https://zsh.sourceforge.io/Doc/Release/Options.html#History):
+It turns out it's the **command duration**, and the entire thing is called the [extended history format](https://zsh.sourceforge.io/Doc/Release/Options.html#History):
 
 ```sh
 : <beginning time>:<elapsed seconds>;<command>
@@ -78,26 +82,25 @@ Matthias from the future steps out of a blinding ball of light: _Waaait!
 That's not really how it works!_
 
 It turns out that shells like bash and zsh don't _actually_ call a hook for `history`.
-Why should they, when `history` is a shell builtin and they can just record the commands
+Why should they? When `history` is a shell builtin, they can just record the commands
 _internally_.
 
 Thankfully my editor-in-chief and resident Unix neckbeard [Simon Br&uuml;ggen](https://github.com/m3t0r)
 explained that to me &mdash; but only _after_ I sent him the first draft for this article. 🥲
 
-As such, the next section is a bit like _Lord of the Rings_: a sympathetic,
+As such, the next section is a bit like _Lord of the Rings_: a sympathetic
 but naive fellow on a questionable mission with no clue of what he's getting
 himself into.
 
-To my defense, one also enjoys Lord of the Rings mostly for its entertainment
-value and not for its _historical_ accuracy... and just like in that epic story,
-I promise we'll get to the bottom of things at the end.
-
+In my defense, Lord of the Rings is also enjoyed primarily for its entertainment
+value, not its _historical_ accuracy.... and just like in this epic story, I
+promise we'll get to the bottom of things in the end.
 {% end %}
 
 I found [add-zsh-hook](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html)
 and a usage example in [atuin's source code](https://github.com/ellie/atuin/blob/main/src/shell/atuin.zsh).
 
-I might not fully comprehend all of that is written here, but I'm a man of action and I can take a solid piece of work and strip it down to its bare minimum for my own enjoyment.
+I might not fully comprehend all of that is written here, but I'm a man of action, and I can take a solid piece of work and strip it down to its bare minimum for my own enjoyment.
 
 It's not much, but here's what I got:
 
@@ -179,7 +182,7 @@ Checking...
 preexec ls -l lsd -l lsd -l
 ```
 
-(Shout out to [lsd](https://github.com/Peltoche/lsd), the next gen ls command )
+(Shout out to [lsd](https://github.com/Peltoche/lsd), the next-gen ls command )
 
 Alright, good enough. Let's parse `$3` with some Rust code and write it to our own history file.
 
@@ -242,7 +245,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Now if we squint a little, it sorta kinda writes our command in my history format.
+Now, if we squint a little, it sorta kinda writes our command in my history format.
 (That part about the Unix timestamp was taken [straight from the docs](https://doc.rust-lang.org/std/time/struct.SystemTime.html). Zero regrets.)
 
 Remember when I said that `precmd` gets nothing?
@@ -264,9 +267,9 @@ add-zsh-hook preexec _past_preexec
 ```
 
 Now here comes the dangerous part!
-Step back while I replace the real history command with my own.
+Step back while I replace the original `history` command with my own.
 Never try this at home.
-Actually I'm exaggerating a bit. Feel free to try it. Worst thing that will happen is that you'll lose a bit of history, but don't sue me.
+(Actually I'm exaggerating a bit. Feel free to try it. Worst thing that will happen is that you'll lose a bit of history, but don't sue me.)
 
 First, let's change the path to the history file to my real one:
 
@@ -282,8 +285,8 @@ Then let's install `past`:
 # bleep bloop...
 ```
 
-After that it's ready to use.
-Let's add that badboy to my `~/.zshrc`:
+After that, it's ready to use.
+Let's add that bad boy to my `~/.zshrc`:
 
 ```sh
 source "/Users/mendler/Code/private/past/src/shell/past.zsh"
@@ -301,9 +304,6 @@ We open a new shell and run a few commands followed by `history`:
 ❯❯❯ it works
 ...
 ❯❯❯ history
-```
-
-```sh
  1011  date
  1012  ls
  1013  it works
@@ -358,8 +358,8 @@ for (;;)
 The history lines are kept in a hash, and also in a [ring-buffer](https://en.wikipedia.org/wiki/Circular_buffer)
 to prevent the history from getting too big. ([See here](https://github.com/zsh-users/zsh/blob/00d20ed15e18f5af682f0daec140d6b8383c479a/Src/hist.c#L98-L103).)
 
-Smart! Without the ring-buffer, a malicious user could just spam the history with random commands
-to trigger a buffer-overflow. I never thought of that.
+That's smart! Without the ring-buffer, a malicious user could just thrash the history with random commands
+until a buffer overflow is triggered. I never thought of that.
 
 ## History time (see what I did there?)
 
