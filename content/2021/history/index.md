@@ -87,7 +87,7 @@ Why should they? When `history` is a shell builtin, they can just record the com
 _internally_.
 
 Thankfully my editor-in-chief and resident Unix neckbeard [Simon Br&uuml;ggen](https://github.com/m3t0r)
-explained that to me &mdash; but only _after_ I sent him the first draft for this article. 🥲
+explained that to me &mdash; but only _after_ I sent him the first draft for this article. 😓
 
 As such, the next section is a bit like _Lord of the Rings_: a sympathetic
 but naive fellow on a questionable mission with no clue of what he's getting
