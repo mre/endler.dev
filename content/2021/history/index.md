@@ -16,7 +16,7 @@ in Rust and throw it away again in the end as we uncover the truth.
 
 {{ figure(src="hero_optim.svg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
 
-As the day is winding down, I have a good hour just for myself.
+As the day is winding down, I have a good hour just to myself.
 Perfect time to listen to some [Billie Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billie Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
 Life is good.
 
@@ -83,7 +83,7 @@ Matthias from the future steps out of a blinding ball of light: _Waaait!
 That's not really how it works!_
 
 It turns out that shells like bash and zsh don't _actually_ call a hook for `history`.
-Why should they? When `history` is a shell builtin, they can just record the commands
+Why should they? When `history` is a shell builtin, they can just track the commands
 _internally_.
 
 Thankfully my editor-in-chief and resident Unix neckbeard [Simon Br&uuml;ggen](https://github.com/m3t0r)
