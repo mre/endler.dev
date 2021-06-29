@@ -1,6 +1,7 @@
 +++
 title="The Uber of Poland"
 date=2021-06-14
+updated=2021-06-30
 [taxonomies]
 tags=["culture", "business"]
 +++
