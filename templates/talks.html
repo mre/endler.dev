@@ -9,7 +9,7 @@
 
 <h1>{{ page.title }}</h1>
 <p>
-{{ data.intro | markdown | safe }}
+{{ data.intro | markdown(inline=true) | safe }}
 </p>
 
 {% for talk in data.talks %}
@@ -44,8 +44,7 @@
         {% if talk.slides %}<li><a href="{{ talk.slides }}">Slides</a></li>{%endif%}
         {% if talk.code %}<li><a href="{{ talk.code}}">Code</a></li>{% endif %}
     </ul>
-    {{ talk.description | markdown(inline=true) | safe }}
-    </p>
+    {{ talk.description | safe | striptags }}
 </article>
 {% endfor %}
 This is just an excerpt. You can find all my other talks on

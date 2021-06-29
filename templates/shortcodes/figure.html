@@ -14,27 +14,26 @@
     {% endif %}
 
     <img src="{{ imgpath}}" 
+        {% if alt %}
+            alt="{{ alt }}"
+        {% elif caption %}
+            alt="{{ caption }}"
+        {% elif credits %}
+            alt="{{ credits }}"
+        {% endif %}
 
-    {% if alt %}
-        alt="{{ alt }}"
-    {% elif caption %}
-        alt="{{ caption }}"
-    {% elif credits %}
-        alt="{{ credits }}"
-    {% endif %}
-
-    {# Give the browser a hand by telling it the image width upfront #}
-    {# It will then use reserve the necessary space and avoid layout changes #}
-    {% if width %}
-        width="{{ width }}"
-    {% elif meta.width %}
-        width="{{ meta.width }}"
-    {% endif %}
-    {% if height %}
-        height ="{{ height }}"
-    {% elif meta.height %}
-        height="{{ meta.height }}"
-    {% endif %} 
+        {# Give the browser a hand by telling it the image width upfront #}
+        {# It will then use reserve the necessary space and avoid layout changes #}
+        {% if width %}
+            width="{{ width }}"
+        {% elif meta.width %}
+            width="{{ meta.width }}"
+        {% endif %}
+        {% if height %}
+            height ="{{ height }}"
+        {% elif meta.height %}
+            height="{{ meta.height }}"
+        {% endif %} 
     />
     {% if src is not ending_with("svg") %}
         </picture>
