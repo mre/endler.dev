@@ -16,9 +16,9 @@
     </a>
 
     {% if page.summary %}
-        {{ page.summary | striptags | safe }}
+        {{ page.summary | safe | striptags }}
     {% elif page.extra.excerpt %}
-        {{ page.extra.excerpt | striptags | safe }}
+        {{ page.extra.excerpt | safe | striptags }}
     {% else %}
         {{ page.content | striptags | truncate(length=300) | safe }}
     {% endif %}
