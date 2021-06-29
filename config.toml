@@ -6,6 +6,8 @@ description = "Backend Engineer at trivago. Likes just-in-time compilers and hot
 generate_feed = true
 feed_filename = "rss.xml"
 
+minify_html = true
+
 # Check if the links are valid
 check_external_links = false
 
