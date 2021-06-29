@@ -1,59 +1,60 @@
 <figure>
     {% if link %}
-    <a href="{{ link }}">
-        {% endif %}
-
-        {% set imgpath = get_url(path=page.path ~ src) %}
-        {% set meta_path = "../static/"~page.path~src %}
-        {% set meta = get_image_metadata(path=meta_path) %}
-
-        {% if src is not ending_with("svg") %}
-        <picture>
-            <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
-            <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
-        {% endif %}
-
-        <img src="{{ imgpath}}" 
-
-        {% if alt %}
-            alt="{{ alt }}"
-        {% elif caption %}
-            alt="{{ caption }}"
-        {% elif credits %}
-            alt="{{ credits }}"
-        {% endif %}
-
-        {# Give the browser a hand by telling it the image width upfront #}
-        {# It will then use reserve the necessary space and avoid layout changes #}
-        {% if width %}
-            width="{{ width }}"
-        {% elif meta.width %}
-            width="{{ meta.width }}"
-        {% endif %}
-        {% if height %}
-            height ="{{ height }}"
-        {% elif meta.height %}
-            height="{{ meta.height }}"
-        {% endif %} 
-        />
-        {% if src is not ending_with("svg") %}
-            </picture>
-        {% endif %}
-
-        {% if link %}
-    </a>
+        <a href="{{ link }}">
     {% endif %}
+
+    {% set imgpath = get_url(path=page.path ~ src) %}
+    {% set meta_path = "../static/"~page.path~src %}
+    {% set meta = get_image_metadata(path=meta_path) %}
+
+    {% if src is not ending_with("svg") %}
+    <picture>
+        <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
+        <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
+    {% endif %}
+
+    <img src="{{ imgpath}}" 
+
+    {% if alt %}
+        alt="{{ alt }}"
+    {% elif caption %}
+        alt="{{ caption }}"
+    {% elif credits %}
+        alt="{{ credits }}"
+    {% endif %}
+
+    {# Give the browser a hand by telling it the image width upfront #}
+    {# It will then use reserve the necessary space and avoid layout changes #}
+    {% if width %}
+        width="{{ width }}"
+    {% elif meta.width %}
+        width="{{ meta.width }}"
+    {% endif %}
+    {% if height %}
+        height ="{{ height }}"
+    {% elif meta.height %}
+        height="{{ meta.height }}"
+    {% endif %} 
+    />
+    {% if src is not ending_with("svg") %}
+        </picture>
+    {% endif %}
+
+    {% if link %}
+        </a>
+    {% endif %}
+
     {% if caption or credits %}
-    <figcaption>
-        {% if caption %}
-        {{ caption | markdown(inline=true) | safe }}
-        {% endif %}
-        {% if caption and credits %}
-        <br />
-        {% endif %}
-        {% if credits %}
-        Source: {{ credits | markdown(inline=true) | safe }}
-        {% endif %}
-    </figcaption>
+        <figcaption>
+            {% if caption %}
+            {{ caption | markdown(inline=true) | safe }}
+            {% endif %}
+            {% if caption and credits %}
+            <br />
+            {% endif %}
+            {% if credits %}
+            Source: {{ credits | markdown(inline=true) | safe }}
+            {% endif %}
+        </figcaption>
     {% endif %}
 </figure>
