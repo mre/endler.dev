@@ -1,3 +1,6 @@
+## Go and Rust at the system interface
+
+
 Everyone is talking about Go vs Rust.
 Heck, even I wrote an article about it once, that I don't necessarily agree with anymore.
 I since learned that comparing Go with Rust is the wrong approach.
@@ -91,8 +94,22 @@ Pick your poison.
 
 Rust does not trust input from the outside by default; Go does.
 
+## Joining/Concatenating paths
 
-How to get a Path from a file?
+ Path::join should concat paths even if the second path is absolute #16507 
+
+ Path::join vs 
+
+https://github.com/rust-lang/rust/issues/16507
+
+I agree with @aturon. The only sensible operation when joining an absolute path
+onto some other path is to get the absolute path back. Doing anything else is
+just weird, and only makes sense if you actually think of paths as strings,
+where "join" is "append, then normalize". I do not understand why Go's path.Join
+behaves in this way, although they are actually taking strings as arguments.
+
+
+## How to get a Path from a file?
 
 Not all files have paths and the path with which the file was opened isn't even guaranteed to still be valid.
 
