@@ -5,14 +5,14 @@ template = "about.html"
 +++
 
 <!-- Use plain old JPEG here so Google might index it. -->
-<img src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
+<img width="200px" height="200px" src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
 
 I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf,
 Germany.
 
 My interests are scalability, performance and distributed systems; but I also
-play around with embedded systems and console emulation.  I have a master's
-degree in Computer Science from [Universit&auml;t Bayreuth].  At work, I improve
+play around with embedded systems and console emulation. I received a master's
+degree in Computer Science from [Universit&auml;t Bayreuth]. At work, I improve
 the backend infrastructure of [trivago] by making it faster and more reliable.
 
 Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
