@@ -1,6 +1,5 @@
 $pink-200: #f5b2c8;
-$pink-400: #c35;
-$pink-500: #ff1c76;
+$pink-400: #e83e8c;
 $blue-300: #9fd6fa;
 $blue-500: #234;
 $blue-800: #141f2b;
@@ -200,7 +199,7 @@ header nav li {
   vertical-align: text-bottom;
   transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
   transform: scale(1);
-  color: $pink-500;
+  color: $pink-400;
   fill: currentColor;
 }
 
@@ -482,7 +481,7 @@ input:focus::placeholder {
   body {
     background: $blue-500;
     color: white;
-    border-top: 0.5em solid $pink-500;
+    border-top: 0.5em solid $pink-400;
   }
 
   .bio,
@@ -492,7 +491,7 @@ input:focus::placeholder {
 
   a {
     color: white;
-    text-decoration-color: $pink-500;
+    text-decoration-color: $pink-400;
   }
 
   a:hover {
