@@ -14,7 +14,7 @@ in Rust and throw it away again in the end as we uncover the truth.
 """
 +++
 
-{{ figure(src="hero_optim.svg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
+{{ figure(src="hero.jpg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
 
 As the day is winding down, I have a good hour just to myself.
 Perfect time to listen to some [Billie Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billie Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
