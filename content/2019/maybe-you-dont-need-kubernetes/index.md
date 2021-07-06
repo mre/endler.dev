@@ -38,7 +38,7 @@ It powers some of the biggest deployments worldwide, but it comes
 with a price tag.
 
 Especially for smaller teams, it can be time-consuming to maintain and has a
-steep learning curve. For what our team of four wanted to achieve at trivago, it
+steep learning curve. For what our team of four wanted to achieve at [trivago](https://tech.trivago.com), it
 added too much overhead. So we looked into alternatives &mdash; and fell in love with
 [Nomad].
 
