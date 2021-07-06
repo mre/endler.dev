@@ -5,8 +5,8 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8744 ★ |
-| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2639 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8747 ★ |
+| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2640 ★ |
 | [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1580 ★ |
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1360 ★ |
 | [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 639 ★ |
@@ -18,7 +18,7 @@ date=2020-01-01
 | [mre/kafka-influxdb](https://github.com/mre/kafka-influxdb) | 210 ★ |
 | [mre/prettyprint](https://github.com/mre/prettyprint) | 196 ★ |
 | [mre/timelapse](https://github.com/mre/timelapse) | 176 ★ |
-| [lycheeverse/lychee](https://github.com/lycheeverse/lychee) | 172 ★ |
+| [lycheeverse/lychee](https://github.com/lycheeverse/lychee) | 173 ★ |
 | [mre/vscode-snippet](https://github.com/mre/vscode-snippet) | 139 ★ |
 | [ReceiptManager/receipt-manager-app](https://github.com/ReceiptManager/receipt-manager-app) | 65 ★ |
 | [mre/PHPench](https://github.com/mre/PHPench) | 51 ★ |
