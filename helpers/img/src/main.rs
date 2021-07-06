@@ -1,4 +1,4 @@
-use anyhow::{anyhow, Result};
+use anyhow::{anyhow, Context, Result};
 use duct::cmd;
 use glob::glob;
 use rayon::prelude::*;
@@ -7,11 +7,21 @@ use std::{
     path::{Path, PathBuf},
 };
 
+use which::which;
+
 // Width of images on blog.
 const MAX_IMAGE_WIDTH: u32 = 650; // pixels
 const INPUT_PATH: &str = "content/**/raw/*";
 
+fn check_deps() -> Result<()> {
+    for dep in vec!["magick", "cavif", "cwebp"] {
+        which(dep).with_context(|| format!("Missing binary required for execution: {}", dep))?;
+    }
+    Ok(())
+}
+
 fn main() -> Result<()> {
+    check_deps()?;
     let entries: Vec<PathBuf> = glob(INPUT_PATH)?.filter_map(Result::ok).collect();
     println!("Inspecting {} images", entries.len());
     entries.into_par_iter().map(handle).collect::<Vec<_>>();
@@ -19,6 +29,7 @@ fn main() -> Result<()> {
 }
 
 fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
+    println!("Copying original to {:?}", out_file);
     let ext = path
         .extension()
         .ok_or_else(|| anyhow!("Cannot get extension for {}", path.display()))?;
@@ -29,6 +40,10 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
             // In the future we could use svgo to optimize here.
             fs::copy(path, out_file)?;
         } else {
+            println!(
+                "magick convert {:?} -strip -resize {}> {:?}",
+                &path, MAX_IMAGE_WIDTH, &out_file
+            );
             cmd!(
                 "magick",
                 "convert",
@@ -73,6 +88,7 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
 }
 
 fn handle(path: PathBuf) -> Result<()> {
+    println!("Handling {:?}", path);
     let filename = path
         .file_name()
         .ok_or_else(|| anyhow!("Unexpected file: {}", path.display()))?;
