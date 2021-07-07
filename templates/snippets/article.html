@@ -8,6 +8,7 @@
             &middot; Tagged with
             {% for tag in page.taxonomies.tags %}
                 <a href="/tags/{{tag}}">{{tag}}</a>
+                {%- if not loop.last %},{% endif %}
             {%endfor%}
         {%- endif %}
     </p>
