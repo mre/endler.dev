@@ -11,7 +11,7 @@ date=2020-01-01
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1361 ★ |
 | [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 639 ★ |
 | [mre/hyperjson](https://github.com/mre/hyperjson) | 414 ★ |
-| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 375 ★ |
+| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 376 ★ |
 | [mre/cargo-inspect](https://github.com/mre/cargo-inspect) | 309 ★ |
 | [hello-rust/show](https://github.com/hello-rust/show) | 286 ★ |
 | [mre/fcat](https://github.com/mre/fcat) | 215 ★ |
