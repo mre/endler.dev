@@ -18,6 +18,12 @@ Rust and Go is like Batman and Robin.
 Go is this amazing sidekick
 
 
+I won't touch on the lack of generics or the cumbersome error handling in Go.
+Nor will I focus on Rust's "weird" syntax.
+These are all superficial issues. 
+
+
+
 ## Different philosophies
 
 This becomes apparent when working on the boundary to the outside world, the system, the os.
