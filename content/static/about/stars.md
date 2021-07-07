@@ -5,15 +5,15 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8747 ★ |
-| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2640 ★ |
-| [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1580 ★ |
-| [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1360 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 8757 ★ |
+| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2641 ★ |
+| [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1581 ★ |
+| [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1361 ★ |
 | [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 639 ★ |
-| [mre/hyperjson](https://github.com/mre/hyperjson) | 415 ★ |
+| [mre/hyperjson](https://github.com/mre/hyperjson) | 414 ★ |
 | [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 375 ★ |
 | [mre/cargo-inspect](https://github.com/mre/cargo-inspect) | 309 ★ |
-| [hello-rust/show](https://github.com/hello-rust/show) | 285 ★ |
+| [hello-rust/show](https://github.com/hello-rust/show) | 286 ★ |
 | [mre/fcat](https://github.com/mre/fcat) | 215 ★ |
 | [mre/kafka-influxdb](https://github.com/mre/kafka-influxdb) | 210 ★ |
 | [mre/prettyprint](https://github.com/mre/prettyprint) | 196 ★ |
