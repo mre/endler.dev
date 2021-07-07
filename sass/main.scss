@@ -10,7 +10,7 @@ $grey-400: #555;
 $grey-500: #111;
 
 $anim-duration: 150ms;
-$border-radius: 6px;
+$border-radius: 4px;
 
 // Default font
 $serif: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond", serif;
@@ -98,7 +98,7 @@ main {
 }
 
 main article {
-  margin-bottom: 44px;
+  margin-bottom: 48px;
 }
 
 main img,
@@ -106,6 +106,7 @@ main video,
 iframe {
   max-width: 100%;
   height: auto;
+  border-radius: $border-radius;
 }
 
 .homepage h1 {
@@ -256,10 +257,23 @@ a {
   color: $grey-500;
   text-decoration: underline;
   text-decoration-color: $pink-400;
-  // Doesn't work in Chrome yet:
   text-decoration-thickness: 2px;
-  // Only works on Firefox right now:
   transition: text-decoration-color $anim-duration;
+  text-underline-offset: 2px;
+}
+
+.homepage a.title {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.excerpt {
+  margin: 10px 0;
+}
+
+.excerpt a {
+  color: $pink-400;
+  text-decoration: none;
 }
 
 a:hover {
@@ -504,10 +518,6 @@ input:focus::placeholder {
 
   .icon {
     filter: brightness(0) invert(1);
-  }
-
-  main img {
-    border-radius: $border-radius;
   }
 
   table {

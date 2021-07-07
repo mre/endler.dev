@@ -11,17 +11,19 @@
             {%endfor%}
         {%- endif %}
     </p>
-    <a href="{{ page.permalink | safe }}">
+    <a class="title" href="{{ page.permalink | safe }}">
         <h1>{{ page.title }}</h1>
     </a>
 
-    {% if page.summary %}
-        {{ page.summary | safe | striptags }}
-    {% elif page.extra.excerpt %}
-        {{ page.extra.excerpt | safe | striptags }}
-    {% else %}
-        {{ page.content | striptags | truncate(length=300) | safe }}
-    {% endif %}
+    <p class="excerpt">
+        {% if page.summary %}
+            {{ page.summary | safe | striptags }}
+        {% elif page.extra.excerpt %}
+            {{ page.extra.excerpt | safe | striptags }}
+        {% else %}
+            {{ page.content | striptags | truncate(length=300) | safe }}
+        {% endif %}
 
-    <a href="{{ page.permalink }}">More »</a>
+        <a href="{{ page.permalink }}">More »</a>
+    </p>
 </article>
