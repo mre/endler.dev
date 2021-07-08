@@ -29,7 +29,7 @@ Few reasons (from ordinary to the first signs of creeping insanity):
 - 👍🏻 Inlined, [optimized SVG graphics](https://jakearchibald.github.io/svgomg/) and hand-rolled CSS
 - 🚅 [Static WASM search](https://github.com/tinysearch/tinysearch) (lazy loaded)
 - 🏎️ The entire homepage is <10K (brotli-compressed), including graphics, thus should fit into the [first HTTP round-trip](https://www.tunetheweb.com/blog/critical-resources-and-the-first-14kb/).
-- 💟 Heck, even the favicon is optimized for size.
+- 💟 Heck, even the favicon is optimized for size. Update: I'm using an SVG icon now thanks to [this article](https://austingil.com/svg-favicons/). 
 
 Then again, it's 2020: **everyone** is optimizing their favicons, right? [...right!?](http://www.p01.org/defender_of_the_favicon/)
 

@@ -394,7 +394,7 @@ consider [sponsoring me on Github](https://github.com/sponsors/mre/).
 This allows me to write more tools like this in the future.
 
 Also, if you're interested in **hands-on Rust consulting**, [pick a date from my
-calendar](https://booktime.xyz/p/matthias) and we can talk about how I can help .
+calendar](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832) and we can talk about how I can help .
 {% end %}
 
 ## Try it!

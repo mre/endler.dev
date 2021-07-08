@@ -12,7 +12,7 @@ credits = [
 +++
 
 One of the best decisions I made in 2020 was to open [my
-calendar](https://booktime.xyz/p/matthias) to everyone. People book appointments
+calendar](https://calendly.com/matthias-endler/chat) to everyone. People book appointments
 to chat about open-source projects, content creation, and business ideas.
 
 When we talk about business ideas, people usually gravitate towards problems

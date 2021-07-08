@@ -33,7 +33,7 @@ consider [sponsoring me on Github](https://github.com/sponsors/mre/).
 This allows me to write more content in the future.
 
 If you're interested in hands-on Rust consulting, [pick a date from my
-calendar](https://booktime.xyz/p/matthias).
+calendar](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832).
 **I can help you with performance problems and reducing your build times.**
 {% end %}
 
@@ -715,5 +715,5 @@ _runtimes_ next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has
 {% info() %}
 
 - Consider [sponsoring me on Github](https://github.com/sponsors/mre/) for future articles.
-- I can help you with performance problems and reducing your build times. [Reach out here.](https://booktime.xyz/p/matthias)
+- I can help you with performance problems and reducing your build times. [Reach out here.](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832)
   {% end %}
