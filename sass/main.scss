@@ -167,15 +167,14 @@ header nav li {
 .info {
   padding: 20px;
   margin: 30px 0;
-  background-color: lightyellow;
-  border: 4px solid peachpuff;
-  position: relative;
+  background: lightyellow;
+  border: $border-radius solid peachpuff;
   border-radius: $border-radius;
 }
 
 .btn {
   color: $grey-500;
-  background-color: $grey-200;
+  background: $grey-200;
   display: inline-block;
   font-weight: 500;
   border-radius: $border-radius;
@@ -242,7 +241,7 @@ pre > code {
 }
 
 blockquote {
-  border-left: 4px solid $blue-300;
+  border-left: $border-radius solid $blue-300;
   font-style: italic;
   margin: 4px 10px;
   padding: 0px 20px;
@@ -390,7 +389,7 @@ footer .body {
 
 input[type="submit"] {
   cursor: pointer;
-  background-color: $grey-300;
+  background: $grey-300;
 }
 
 input:focus::placeholder {
@@ -409,14 +408,26 @@ input:focus::placeholder {
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: white;
+  background: white;
   border: 1px solid $grey-100;
 }
 
 .autocomplete-items div:hover,
 .autocomplete-active {
-  background-color: $pink-400 !important;
+  background: $pink-400 !important;
   color: white;
+}
+
+details {
+    padding: 20px;
+    margin: 30px 0;
+    background: lightyellow;
+    border: $border-radius solid peachpuff;
+    border-radius: $border-radius;
+}
+
+summary {
+    cursor: pointer;
 }
 
 // Styles for small screens
@@ -543,7 +554,7 @@ input:focus::placeholder {
     filter: invert(100%);
   }
 
-  .info {
+  .info, details {
     background: $blue-800;
     border-color: $grey-400;
   }

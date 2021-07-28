@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-05-14
+updated=2021-07-28
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -25,19 +25,10 @@ Below is a list of **tips and tricks on how to make your Rust project compile
 faster today**. They are roughly ordered by practicality, so start at the top
 and work your way down until you're happy and your compiler goes _brrrrrrr_.
 
-{% info() %}
-✨**WOW!** This article blew up lately.✨‍
-
-I don't run any ads on my blog, but if this information is helping you, please
-consider [sponsoring me on Github](https://github.com/sponsors/mre/).
-This allows me to write more content in the future.
-
-If you're interested in hands-on Rust consulting, [pick a date from my
-calendar](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832).
-**I can help you with performance problems and reducing your build times.**
-{% end %}
-
-## Full List Of Tips (Yeah, It's Long)
+<details>
+<summary>
+Table of Contents
+</summary>
 
 - [Update The Rust Compiler And Toolchain](#update-the-rust-compiler-and-toolchain)
 - [Use Cargo Check Instead Of Cargo Build](#use-cargo-check-instead-of-cargo-build)
@@ -65,6 +56,8 @@ calendar](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832
 - [Help Others Upload Leaner Crates For Faster Build Times](#help-others-upload-leaner-crates-for-faster-build-times)
 - [More Resources](#more-resources)
 - [What's Next](#what-s-next)
+
+</details>
 
 ## Why Is Rust Compilation Slow?
 
@@ -700,6 +693,12 @@ not directly affect your own build time, but your users will surely be thankful.
 - [arewefastyet](https://arewefastyet.rs/) measures how long the Rust compiler
   takes to compile common Rust programs.
 
+{% info() %}
+
+- Consider [sponsoring me on Github](https://github.com/sponsors/mre/) for future articles.
+- I can help you with performance problems and reducing your build times. [Reach out here.](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832)
+  {% end %}
+
 ## What's Next?
 
 Phew! That was a long list. 😅 If you have any additional tips, please [let me know](https://github.com/mre/mre.github.io/issues).
@@ -711,9 +710,3 @@ time?
 Also, once you're done optimizing your build times, how about optimizing
 _runtimes_ next? My friend [Pascal Hertleif](https://twitter.com/killercup/) has a
 [nice article](https://deterministic.space/high-performance-rust.html) on that.
-
-{% info() %}
-
-- Consider [sponsoring me on Github](https://github.com/sponsors/mre/) for future articles.
-- I can help you with performance problems and reducing your build times. [Reach out here.](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832)
-  {% end %}
