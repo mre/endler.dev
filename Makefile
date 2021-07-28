@@ -7,6 +7,8 @@ help: ## This help message
 .PHONY: clean
 clean: ## Remove build files
 	rm -rf public/
+	rm -f static/**/*.avif
+	rm -f static/**/*.webp
 
 .PHONY: versions
 versions: ## Show versions of tools
