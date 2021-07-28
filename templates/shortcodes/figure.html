@@ -8,12 +8,12 @@
     {% set meta = get_image_metadata(path=meta_path) %}
 
     {% if src is not ending_with("svg") %}
-    <picture>
-        <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
-        <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
+        <picture>
+            <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
+            <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
     {% endif %}
 
-    <img src="{{ imgpath}}" 
+    <img style="display:block" src="{{ imgpath}}" 
         {% if alt %}
             alt="{{ alt }}"
         {% elif caption %}
@@ -23,7 +23,7 @@
         {% endif %}
 
         {# Give the browser a hand by telling it the image width upfront #}
-        {# It will then use reserve the necessary space and avoid layout changes #}
+        {# It will then reserve the necessary space and avoid layout changes #}
         {% if width %}
             width="{{ width }}"
         {% elif meta.width %}
