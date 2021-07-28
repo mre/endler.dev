@@ -136,7 +136,6 @@ fn handle(path: PathBuf) -> Result<()> {
         cmd!(
             "cavif",
             "--quality=90",
-            "--speed=1",
             "--overwrite",
             "-o",
             avif_file,
