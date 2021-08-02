@@ -13,7 +13,7 @@
     <img src="{{preview}}"
     
     {# Give the browser a hand by telling it the image width upfront #}
-    {# It will then use reserve the necessary space and avoid layout changes #}
+    {# It will then reserve the necessary space and avoid layout changes #}
     {% if width %}
         width="{{ width }}"
     {% elif meta.width %}
