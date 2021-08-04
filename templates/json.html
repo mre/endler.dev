@@ -6,7 +6,7 @@
 {
 "title": {{ post.title | striptags | json_encode | safe }},
 "url": {{ post.permalink | json_encode | safe }},
-"body": {{ post.content | striptags | json_encode | safe }}
+"body": "{{ post.content | striptags | replace(from="{", to=" ") | replace(from="}", to=" ") | replace(from='"', to=" ") | replace(from="'", to="") | replace(from="\", to="")  | escape }}"
 }{% if not loop.last %},{% endif %}
 {% endif %}
 {%- endfor -%}
