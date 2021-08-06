@@ -289,7 +289,7 @@ features](https://github.com/tokio-rs/tokio/blob/2bc6bc14a82dc4c8d447521005e0440
 that you can disable if not needed.
 
 A quick way to list all features of a crate is
-`[cargo-feature-set](https://github.com/badboy/cargo-feature-set)`.
+[cargo-feature-set](https://github.com/badboy/cargo-feature-set).
 
 Admittedly, [features are not very discoverable at the
 moment](https://twitter.com/llogiq/status/1273875653822222337) because there is
