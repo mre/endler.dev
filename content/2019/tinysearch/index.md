@@ -158,7 +158,7 @@ Now I had all the pieces of the puzzle:
 - [wasm-pack] - A bundler for WebAssembly modules
 - A working prototype that served as a proof-of-concept
 
-The search box you see at the top of this page is the outcome. It fully runs on Rust using
+The search box you see on the left side of this page is the outcome. It fully runs on Rust using
 WebAssembly (a.k.a the [RAW stack](https://twitter.com/timClicks/status/1181822319620063237)). Try it now if you like.
 
 There were quite a few obstacles along the way.
@@ -289,6 +289,16 @@ After tweaking with the parameters of the cuckoo filters a bit and removing
 [stop words](https://en.wikipedia.org/wiki/Stop_words) from the articles, I
 arrived at **121kB** (51kB gzipped) &mdash; not bad considering the average image size on the web is [around 900kB](https://httparchive.org/reports/state-of-images#bytesImg).
 On top of that, the search functionality only gets loaded when a user clicks into the search field.
+
+## Update
+
+Recently I moved the project from cuckoofilters to [xor filters](https://arxiv.org/abs/1912.08258).
+I used the awesome [xorf](https://github.com/ayazhafiz/xorf) project, which comes with built-in serde serialization.
+which allowed me to remove a lot of custom code.
+
+With that, I could reduced the payload size by another 20-25% percent. I'm down to **99kB** (**49kB gzipped**) on my blog now. 🎉
+
+The new version is released [on crates.io](https://crates.io/crates/tinysearch) already, if you want to give it a try.
 
 ## Frontend and Glue Code
 
