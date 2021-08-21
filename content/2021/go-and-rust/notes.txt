@@ -134,3 +134,21 @@ It's not that Go is unaware of these limitations.
 Rather, it errs on the side of pragmatism at the cost of being incorrect when handling edge-cases in such situations.
 This is neither good nor bad. It is a trade-off between correctness and ergonomics.
 "Worse is better" is the mantra
+
+
+
+---
+
+
+https://twitter.com/vamchale/status/1421914688271622144/photo/1
+
+strings
+&str, String and &'static str are different types of UTF-8; &str is borrowed UTF-8, String is an owned UTF-8 buffer which you can mutate and &'static str is generally a UTF-8 string literal (and it is a specific kind of &str where the owner is the program itself).
+&[u8], &[u8; N] and Vec<u8> store raw bytes. &[u8] is a borrowed sequence of an arbitrary number of bytes, Vec<u8> is the owned mutable buffer equivalent (like String) and &[u8; N] stores precisely N bytes (e.g. &[u8; 5] stores 5 bytes).
+OsStr/OsString are the borrowed and owned types for what the OS thinks is a string: arbitrary bytes on Unix and WTF-8 on Windows. It is more relaxed than str/String but less relaxed than &[u8]/Vec<u8>.
+Path and PathBuf are simple wrappers dedicated for storing filesystem paths.
+CStr and CString store an arbitrary sequence of bytes with a NULL terminator at the end, for interop with C. Again CStr is borrowed and CString is owned.
+Lastly, &u8 is a just single byte - not a string, so I'm not sure why it's on this list.
+You forgot Cow<str> and Box<str>
+&'a dyn ToString
+URL is outside of the stdlib, but worth to mention
