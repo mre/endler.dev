@@ -1,5 +1,9 @@
 ## Go and Rust at the system interface
 
+The real world is a dangerous place.
+unsafe so any interaction with the real world must be unsafe. For example, calls
+to C libraries and calls to syscalls in the operating system (filesystems,
+networking, general I/O) are two examples.
 
 Everyone is talking about Go vs Rust.
 Heck, even I wrote an article about it once, that I don't necessarily agree with anymore.
