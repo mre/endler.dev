@@ -34,7 +34,7 @@ images: ## Create webp and avif images
 
 .PHONY: index
 index: content ## Build the search index with tinysearch
-	tinysearch --optimize --path static public/json/index.html
+	RUST_LOG=debug tinysearch --optimize --path static public/json/index.html
 
 .PHONY: minify
 minify: ## Compress JavaScript assets
