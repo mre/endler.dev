@@ -52,7 +52,7 @@ Table of Contents
 - [Download All The Crates](#download-all-the-crates)
 - [Bonus: Speed Up Rust Docker Builds Whale](#bonus-speed-up-rust-docker-builds-whale)
 - [Drastic Measures: Overclock Your Cpu Fire](#drastic-measures-overclock-your-cpu-fire)
-- [Speeding-Up-Your-CI-Builds](#speeding-up-your-ci-builds)
+- [Speeding Up Your CI Builds](#speeding-up-your-ci-builds)
 - [Upstream Work](#upstream-work)
 - [Help Others Upload Leaner Crates For Faster Build Times](#help-others-upload-leaner-crates-for-faster-build-times)
 - [More Resources](#more-resources)
