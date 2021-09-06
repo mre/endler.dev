@@ -52,6 +52,7 @@ Table of Contents
 - [Download All The Crates](#download-all-the-crates)
 - [Bonus: Speed Up Rust Docker Builds Whale](#bonus-speed-up-rust-docker-builds-whale)
 - [Drastic Measures: Overclock Your Cpu Fire](#drastic-measures-overclock-your-cpu-fire)
+- [Speeding-Up-Your-CI-Builds](#speeding-up-your-ci-builds)
 - [Upstream Work](#upstream-work)
 - [Help Others Upload Leaner Crates For Faster Build Times](#help-others-upload-leaner-crates-for-faster-build-times)
 - [More Resources](#more-resources)
@@ -647,6 +648,15 @@ you some benchmarks from my machine.)
 
 </details>
 
+## Speeding Up Your CI Builds
+
+If you collaborate with others on a Rust project, chances are you use some sort
+of continuous integration like Github Actions. Optimizing a CI build processes
+is a whole subject on its own. Thankfully [Aleksey Kladov (matklad)](https://github.com/matklad)
+collected a few tips [on his blog](https://matklad.github.io/2021/09/04/fast-rust-builds.html). 
+He touches on bors, caching, splitting build steps, disabling compiler features like
+incremental compilation or debug output, and more. It's a great read and you
+can find it [here](https://matklad.github.io/2021/09/04/fast-rust-builds.html).
 ## Upstream Work
 
 Making the Rust compiler faster is an ongoing process, and many fearless people
