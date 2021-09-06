@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-07-28
+updated=2021-09-06
 [taxonomies]
 tags=["rust"]
 [extra]
