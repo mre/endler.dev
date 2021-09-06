@@ -1,5 +1,7 @@
 ## Go and Rust at the system interface
 
+If rust is complicated, it's only because the world is complicated.
+
 The real world is a dangerous place.
 unsafe so any interaction with the real world must be unsafe. For example, calls
 to C libraries and calls to syscalls in the operating system (filesystems,
