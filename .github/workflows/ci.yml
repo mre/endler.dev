@@ -26,11 +26,17 @@ jobs:
           command: install
           args: --git https://github.com/mre-early-access/gh-stats --branch main
 
-      - name: ⏬ Install wasm-pack and tinysearch
+     - name: ⏬ Install wasm-pack
         uses: actions-rs/cargo@v1
         with:
           command: install
-          args: wasm-pack tinysearch
+          args: wasm-pack
+
+      - name: ⏬ Install tinysearch
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: --git https://github.com/tinysearch/tinysearch.git --branch debug2
 
       - name: ⏬ Install binaryen
         run: |
