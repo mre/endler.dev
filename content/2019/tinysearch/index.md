@@ -311,7 +311,7 @@ Now when a user enters a search query, we go through the cuckoo filter of each
 article and try to match the words. The results are scored by the number of
 hits. Thanks to my dear colleague [Jorge Luis Betancourt](https://github.com/jorgelbg/) for adding that part.
 
-![Video of the search functionality](./anim-opt.gif)
+![Video of the search functionality](./anim-opt2.gif)
 
 (Fun fact: this animation is about the same size as the uncompressed Wasm search itself.)
 
