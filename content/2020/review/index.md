@@ -1,11 +1,12 @@
 +++
 title="What Happened To Programming In The 2010s?"
 date=2020-07-02
+date=2021-10-11
 draft=false
 [taxonomies]
 tags=["culture", "dev"]
 [extra]
-excerpt="How has programming changed in the 2010s? You'd roughly need a decade to talk about all of it, but let me pick out some highlights."
+excerpt="How has programming changed in the 2010s? You'd roughly need a decade to talk about all of it, but let me pick out some of the highlights."
 credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
   {name = "Jorge-Luis Betancourt", url = "https://jorgelbg.me/"},
@@ -15,7 +16,7 @@ credits = [
 A while ago, I read an article titled ["What Happened In The
 2010s"](https://avc.com/2019/12/what-happened-in-the-2010s/) by Fred Wilson. The
 post highlights key changes in technology and business during the last ten
-years. This inspired me to think about a much smaller topic: _What Happened To
+years. This inspired me to think about a much more narrow topic: _What Happened To
 Programming In The 2010s?_
 
 {% info() %}
@@ -38,7 +39,7 @@ Many things we take for granted today didn't exist a decade ago.
 
 ## What Happened Before?
 
-Back in 2009, I wrote [jQuery](https://jquery.com/) plugins, ran websites on
+Back in 2009, we wrote [jQuery](https://jquery.com/) plugins, ran websites on
 shared hosting services, and uploaded content via
 [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol). Sometimes code was
 copy-pasted from dubious forums, tutorials on blogs, or even hand-transcribed
@@ -55,7 +56,7 @@ Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) (which only got released in
 
 ## An Explosion Of New Programming Languages
 
-The last decade saw a vast number of new and exciting programming
+The last decade saw the creation of a vast number of new and exciting programming
 languages.
 
 [Crystal], [Dart], [Elixir], [Elm], [Go], [Julia], [Kotlin], [Nim], [Rust], [Swift], [TypeScript]
@@ -112,7 +113,7 @@ Most languages adopted a quicker release cycle. Here's a list for some popular l
 | PHP                     | 12 months             |
 | Python                  | 12 months             |
 | Ruby                    | 12 months             |
-| Rust                    | 6 weeks!              |
+| Rust                    | 6 weeks (!)           |
 | Swift                   | 6 months              |
 | Visual Basic .NET       | ~ 24 months           |
 
@@ -213,7 +214,7 @@ that point home. This is not even close to everything that happened. You'd
 roughly need a decade to talk about all of it.
 
 Personally, I'm excited about the _next_ ten years.
-Software eats the world &mdash; at an ever-faster pace.
+Software is eating the world &mdash; at an ever-faster pace.
 
 [crystal]: https://crystal-lang.org/
 [dart]: https://dart.dev/
