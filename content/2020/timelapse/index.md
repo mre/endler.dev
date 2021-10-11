@@ -79,7 +79,7 @@ commandline, but I began to see some potential for building a proper app from
 it; I just never found the _time_.
 
 In October '18, I decided to ask for support during
-[Hacktoberfest](https://hacktoberfest.digitalocean.com/details/). I created a few
+[Hacktoberfest](https://hacktoberfest.digitalocean.com/). I created a few
 tickets and labeled them with `hacktoberfest` to try and find contributors.
 
 And then, I waited.
