@@ -1,7 +1,7 @@
 +++
 title="What Happened To Programming In The 2010s?"
 date=2020-07-02
-date=2021-10-11
+updated=2021-10-11
 draft=false
 [taxonomies]
 tags=["culture", "dev"]
