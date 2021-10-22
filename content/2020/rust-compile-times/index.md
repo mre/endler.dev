@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-09-06
+updated=2021-10-23
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -18,7 +18,7 @@ credits = [
 
 When it comes to runtime performance, Rust is one of the fastest guns in the
 west. 🔫 It is [on par with the likes of C and
-C++](https://benchmarksgame-team.pages.debian.net/benchmarksgame/which-programs-are-fastest.html)
+C++](https://web.archive.org/web/20210816230209/https://benchmarksgame-team.pages.debian.net/benchmarksgame/which-programs-are-fastest.html)
 and sometimes even surpasses those. Compile times, however? That's another story.
 
 Below is a list of **tips and tricks on how to make your Rust project compile
@@ -368,6 +368,33 @@ project code is [on Github](https://github.com/bjorn3/rustc_codegen_cranelift).
 > minute detail only in my code. &mdash; [/u/Almindor on
 > Reddit](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/euycz74)
 
+You can check how long your linker takes by running the following commands:
+
+```
+cargo clean
+cargo +nightly rustc --bin <your_binary_name> -- -Z time-passes
+```
+
+It will output the timings of each step, including link time:
+
+```
+...
+time:   0.000   llvm_dump_timing_file
+time:   0.001   serialize_work_products
+time:   0.002   incr_comp_finalize_session_directory
+time:   0.004   link_binary_check_files_are_writeable
+time:   0.614   run_linker
+time:   0.000   link_binary_remove_temps
+time:   0.620   link_binary
+time:   0.622   link_crate
+time:   0.757   link
+time:   3.836   total
+    Finished dev [unoptimized + debuginfo] target(s) in 42.75s
+```
+
+If the `link` steps account for a big percentage of the build time,
+consider switching over to a different linker. There are quite a few options.
+
 According to the [official documentation](https://lld.llvm.org/), "LLD is a
 linker from the LLVM project that is a drop-in replacement for system linkers
 and runs much faster than them. [..] When you link a large program on a
@@ -439,6 +466,12 @@ profiler:
 There's also a [`cargo -Z timings`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#timings)
 feature that gives some information about how long each compilation step takes,
 and tracks concurrency information over time.
+
+You might have to run it using the nightly compiler:
+
+```
+cargo +nightly build -Z timings
+```
 
 Another golden one is
 [`cargo-llvm-lines`](https://github.com/dtolnay/cargo-llvm-lines), which shows
@@ -653,10 +686,11 @@ you some benchmarks from my machine.)
 If you collaborate with others on a Rust project, chances are you use some sort
 of continuous integration like Github Actions. Optimizing a CI build processes
 is a whole subject on its own. Thankfully [Aleksey Kladov (matklad)](https://github.com/matklad)
-collected a few tips [on his blog](https://matklad.github.io/2021/09/04/fast-rust-builds.html). 
+collected a few tips [on his blog](https://matklad.github.io/2021/09/04/fast-rust-builds.html).
 He touches on bors, caching, splitting build steps, disabling compiler features like
 incremental compilation or debug output, and more. It's a great read and you
 can find it [here](https://matklad.github.io/2021/09/04/fast-rust-builds.html).
+
 ## Upstream Work
 
 Making the Rust compiler faster is an ongoing process, and many fearless people
