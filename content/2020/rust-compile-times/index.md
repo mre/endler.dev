@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-10-23
+updated=2021-10-26
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -277,10 +277,6 @@ Hoh](https://twitter.com/im_azriel). Thanks!_
 
 ## Disable Unused Features Of Crate Dependencies
 
-⚠️ **Fair warning**: it seems that switching off features doesn't always improve
-compile time. (See [tikv's experiences
-here](https://github.com/tikv/tikv/pull/4453#issuecomment-481789292).)
-
 Check the feature flags of your dependencies. A lot of library maintainers take
 the effort to split their crate into separate features that can be toggled off
 on demand. Maybe you don't need all the default functionality from every crate?
@@ -288,6 +284,19 @@ on demand. Maybe you don't need all the default functionality from every crate?
 For example, `tokio` has [a ton of
 features](https://github.com/tokio-rs/tokio/blob/2bc6bc14a82dc4c8d447521005e044028ae199fe/tokio/Cargo.toml#L26-L91)
 that you can disable if not needed.
+
+Another example is bindgen, which enables `clap` support by default for its
+binary usage. This isn't needed for library usage, which is the common use-case.
+Disabling that feature [improved compile time of rust-rocksdb by ~13s and ~9s
+for debug and release builds
+respectively](https://github.com/rust-rocksdb/rust-rocksdb/pull/491). Thanks to
+reader [Lilian Anatolie Moraru](https://github.com/lilianmoraru) for mentioning
+this.
+
+⚠️ **Fair warning**: it seems that switching off features doesn't always improve
+compile time. (See [tikv's experiences
+here](https://github.com/tikv/tikv/pull/4453#issuecomment-481789292).)
+It may still be a good idea for improving security be reducing the code's attack surface.
 
 A quick way to list all features of a crate is
 [cargo-feature-set](https://github.com/badboy/cargo-feature-set).
