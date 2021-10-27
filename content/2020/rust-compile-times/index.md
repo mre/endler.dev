@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-10-26
+updated=2021-10-27
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -743,7 +743,7 @@ not directly affect your own build time, but your users will surely be thankful.
   is a great article by Dotan Nahum that I fully agree with.
 - Improving the build times of a bigger Rust project (lemmy) [by
   30%](https://lemmy.ml/post/50089).
-- [arewefastyet](https://arewefastyet.rs/) measures how long the Rust compiler
+- [arewefastyet](http://web.archive.org/web/20210510182416/https://arewefastyet.rs/) (offline) measures how long the Rust compiler
   takes to compile common Rust programs.
 
 {% info() %}
