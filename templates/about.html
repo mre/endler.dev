@@ -3,6 +3,29 @@
 {% block header %}
 <title>About Matthias Endler</title>
 <meta name="thumbnail" content="https://endler.dev/about/matthias-endler.jpg" />
+<style>
+:root {
+    --img-shadow-color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --img-shadow-color:#111;
+    }
+}
+
+img {
+    transition: transform .2s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 4px 4px 5px var(--img-shadow-color);
+    -moz-box-shadow: 4px 4px 5px var(--img-shadow-color);
+    -webkit-box-shadow: 4px 4px 5px var(--img-shadow-color);
+    -khtml-box-shadow: 4px 4px 5px var(--img-shadow-color);
+}
+</style>
 {% endblock header %}
 
 {% block content %}
