@@ -606,8 +606,7 @@ h4 {
 
   pre,
   code {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+    filter: invert(1);
   }
 
   .info, details {
