@@ -310,10 +310,10 @@ figure {
   margin: 40px 0 40px;
   padding: 0;
   text-indent: 0;
+}
 
-  img {
-    width: 100%;
-  }
+figure img {
+  width: 100%;
 }
 
 figcaption {
@@ -500,27 +500,23 @@ summary {
   }
 }
 
-h2,
-h3,
-h4 {
-  .anchor {
-    float: left;
-    margin-left: -28px;
-    margin-top: 3px;
-    fill: var(--grey-400);
-  }
+.anchor {
+  float: left;
+  margin-left: -28px;
+  margin-top: 3px;
+  fill: var(--grey-400);
+}
 
-  .anchor:hover {
+.anchor:hover {
+  fill: var(--grey-300);
+}
+
+@media (prefers-color-scheme: light) {
+  .anchor {
     fill: var(--grey-300);
   }
-
-  @media (prefers-color-scheme: light) {
-    .anchor {
-      fill: var(--grey-300);
-    }
-    .anchor:hover {
-      fill: var(--grey-400);
-    }
+  .anchor:hover {
+    fill: var(--grey-400);
   }
 }
 
