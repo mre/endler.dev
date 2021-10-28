@@ -276,11 +276,14 @@ a {
 }
 
 table {
-  width: 100%
+  width: 100%;
+  border-collapse: collapse; 
 }
 
-table a {
-  text-decoration: none;
+th,
+td {
+  border-bottom: 1px solid $grey-100;
+  padding: 4px;
 }
 
 a:hover {
@@ -580,7 +583,7 @@ h4 {
   body {
     background: $blue-500;
     color: white;
-    border-top: 0.5em solid $pink-400;
+    border-top-color: $pink-400;
   }
 
   .bio,
@@ -599,15 +602,6 @@ h4 {
 
   .icon {
     filter: brightness(0) invert(1);
-  }
-
-  table a {
-    border: none;
-  }
-
-  th,
-  td {
-    border-bottom: 1px solid $grey-100;
   }
 
   pre,
@@ -634,7 +628,7 @@ h4 {
   }
 
   .tag {
-    border: 1px solid white;
+    border-color: white;
     background: $blue-800;
   }
 
