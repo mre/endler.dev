@@ -567,14 +567,16 @@ caption="Rik Arends on Twitter") }}
 The [benchmarks](https://www.reddit.com/r/rust/comments/qgi421/doing_m1_macbook_pro_m1_max_64gb_compile/) for the new Macbook Pro with M1 Max are absolutely _ridiculous_ &mdash; even in comparison to the already fast M1:
 
 | Project                                                   | M1 Max | M1 Air |
-| --------------------------------------------------------- | ------ | ------ |
+| :-------------------------------------------------------- | :----- | :----- |
 | [Deno](https://github.com/denoland)                       | 6m11s  | 11m15s |
 | [MeiliSearch](https://github.com/meilisearch/MeiliSearch) | 1m28s  | 3m36s  |
 | [bat](https://github.com/sharkdp/bat)                     | 43s    | 1m23s  |
 | [hyperfine](https://github.com/sharkdp/hyperfine)         | 23s    | 42s    |
 | [ripgrep](https://github.com/BurntSushi/ripgrep)          | 16s    | 37s    |
 
-If you rather like to stick to Linux, people also had great success with a multicore CPU like an [AMD Ryzen
+That's a solid 2x performance improvement compared to an already fast M1.
+
+But if you rather like to stick to Linux, people also had great success with a multicore CPU like an [AMD Ryzen
 Threadripper and 32 GB of RAM](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/).
 
 On portable devices, compiling can drain your battery and be slow. To avoid
