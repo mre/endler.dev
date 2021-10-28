@@ -37,8 +37,8 @@ body {
   font-family: var(--serif);
   font-size: 1.2em;
   line-height: 1.58;
-  color: --grey-500;
-  border-top: 0.5em solid --pink-400;
+  color: var(--grey-500);
+  border-top: 0.5em solid var(--pink-400);
 }
 
 .container {
