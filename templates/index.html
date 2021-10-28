@@ -1,5 +1,5 @@
 {% import "_macros.html" as macros %} 
-{% set css = load_data(path="static/main.css") %}
+{# Use `logo_winter.svg` for winter theme #}
 {% set logo = load_data(path="static/logo.svg") %}
 {% set logo_font_light = load_data(path="static/logo_font_light.svg") %}
 {% set logo_font_dark = load_data(path="static/logo_font_dark.svg") %}
@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ macros::css(path="/main.css") }}
+    {{ macros::css(path="/css/main.css") }}
     {%- block header %}
     <title>Matthias Endler</title>
     {%- endblock header %}
@@ -33,7 +33,6 @@
 
           <a href="/" aria-label="Go back to homepage">
             {# The logo class allows overwriting the image if needed #}
-            {# Inlining the width and margin here to avoid flashing content on render #}
             <div class="logo">
               {{ logo | safe }}
             </div>

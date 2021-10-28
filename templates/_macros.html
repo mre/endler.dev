@@ -1,3 +1,7 @@
+// Reload inline CSS style tag 
+// Used in index template
+// See https://github.com/getzola/zola/issues/696
+// and https://github.com/getzola/zola/issues/696#issuecomment-690943535
 {% macro css(path) %}
     {% if current_url is starting_with("http://127.0.0.1:1111/") %}
         <link rel="stylesheet" href="{{path}}">
