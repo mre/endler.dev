@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block header %}
+<title>{{ section.title }} | Matthias Endler</title>
+{% endblock header %}
+
+{% block content %}
+{% for year, posts in section.pages | group_by(attribute="year") %}
+    <h3>{{ year }}</h3>
+
+    <ul>
+    {% for post in posts %}
+        <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock content %}
