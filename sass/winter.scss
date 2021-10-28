@@ -13,11 +13,6 @@ $ease-out-quad: cubic-bezier(.25, .46, .450, .94);
     position: relative;
 }
 
-.winter {
-    @extend %on-top;
-    overflow: hidden;
-}
-
 .snow {
     @extend %on-top;
     position: absolute;
