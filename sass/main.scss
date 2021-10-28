@@ -502,84 +502,6 @@ summary {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  .logo_font_dark {
-    display: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo_font_light {
-    display: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: $blue-500;
-    color: white;
-    border-top: 0.5em solid $pink-400;
-  }
-
-  .bio,
-  .post-meta {
-    color: $grey-300;
-  }
-
-  a {
-    color: white;
-    text-decoration-color: $pink-400;
-  }
-
-  a:hover {
-    text-decoration-color: white;
-  }
-
-  .icon {
-    filter: brightness(0) invert(1);
-  }
-
-  table {
-    width: 100%;
-  }
-
-  table a {
-    border: none;
-  }
-
-  th,
-  td {
-    border-bottom: 1px solid #ddd;
-  }
-
-  pre,
-  code {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-  }
-
-  .info, details {
-    background: $blue-800;
-    border-color: $grey-400;
-  }
-
-  .btn {
-    background: $grey-500;
-    color: white;
-  }
-
-  .autocomplete input,
-  .autocomplete-items div {
-    border: 0;
-    background: $blue-800;
-    color: white;
-  }
-
-  footer {
-    background: $blue-800;
-  }
-}
-
 h2,
 h3,
 h4 {
@@ -642,7 +564,75 @@ h4 {
   text-decoration-thickness: inherit;
 }
 
+@media (prefers-color-scheme: light) {
+  .logo_font_dark {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  .logo_font_light {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $blue-500;
+    color: white;
+    border-top: 0.5em solid $pink-400;
+  }
+
+  .bio,
+  .post-meta {
+    color: $grey-300;
+  }
+
+  a {
+    color: white;
+    text-decoration-color: $pink-400;
+  }
+
+  a:hover {
+    text-decoration-color: white;
+  }
+
+  .icon {
+    filter: brightness(0) invert(1);
+  }
+
+  table a {
+    border: none;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  pre,
+  code {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+
+  .info, details {
+    background: $blue-800;
+    border-color: $grey-400;
+  }
+
+  .btn {
+    background: $grey-500;
+    color: white;
+  }
+
+  .autocomplete input,
+  .autocomplete-items div {
+    border: 0;
+    background: $blue-800;
+    color: white;
+  }
+
   .tag {
     border: 1px solid white;
     background: $blue-800;
@@ -655,5 +645,9 @@ h4 {
 
   .post-meta a {
     color: white;
+  }
+
+  footer {
+    background: $blue-800;
   }
 }
