@@ -1,13 +1,15 @@
-$pink-200: #f5b2c8;
-$pink-400: #e83e8c;
-$blue-300: #9fd6fa;
-$blue-500: #234;
-$blue-800: #141f2b;
-$grey-100: #ddd;
-$grey-200: #fafafa;
-$grey-300: #b9b9b9;
-$grey-400: #555;
-$grey-500: #111;
+:root {
+  --pink-200: #f5b2c8;
+  --pink-400: #e83e8c;
+  --blue-300: #9fd6fa;
+  --blue-500: #234;
+  --blue-800: #141f2b;
+  --grey-100: #ddd;
+  --grey-200: #fafafa;
+  --grey-300: #b9b9b9;
+  --grey-400: #555;
+  --grey-500: #111;
+}
 
 $anim-duration: 150ms;
 $border-radius: 4px;
@@ -41,8 +43,8 @@ body {
   font-family: $serif;
   font-size: 1.2em;
   line-height: 1.58;
-  color: $grey-500;
-  border-top: 0.5em solid $pink-400;
+  color: --grey-500;
+  border-top: 0.5em solid --pink-400;
 }
 
 .container {
@@ -168,13 +170,12 @@ header nav li {
   padding: 20px;
   margin: 30px 0;
   background: lightyellow;
-  border: $border-radius solid peachpuff;
-  border-radius: $border-radius;
+  border: solid peachpuff;
 }
 
 .btn {
-  color: $grey-500;
-  background: $grey-200;
+  color: var(--grey-500);
+  background: var(--grey-200);
   display: inline-block;
   font-weight: 500;
   border-radius: $border-radius;
@@ -199,7 +200,7 @@ header nav li {
   vertical-align: text-bottom;
   transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
   transform: scale(1);
-  color: $pink-400;
+  color: var(--pink-400);
   fill: currentColor;
 }
 
@@ -234,28 +235,28 @@ pre > code {
 }
 
 :not(pre) > code {
-  color: $grey-500;
-  background: $grey-200;
+  color: var(--grey-500);
+  background: var(--grey-200);
   border-radius: $border-radius;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
 blockquote {
-  border-left: $border-radius solid $blue-300;
+  border-left: $border-radius solid var(--blue-300);
   font-style: italic;
   margin: 4px 10px;
   padding: 0px 20px;
 }
 
 ::selection {
-  background: $grey-500;
+  background: var(--grey-500);
   color: white;
 }
 
 a {
-  color: $grey-500;
+  color: var(--grey-500);
   text-decoration: underline;
-  text-decoration-color: $pink-400;
+  text-decoration-color: var(--pink-400);
   text-decoration-thickness: 2px;
   transition: text-decoration-color $anim-duration;
   text-underline-offset: 2px;
@@ -271,7 +272,7 @@ a {
 }
 
 .excerpt a {
-  color: $pink-400;
+  color: var(--pink-400);
   text-decoration: none;
 }
 
@@ -282,17 +283,17 @@ table {
 
 th,
 td {
-  border-bottom: 1px solid $grey-100;
+  border-bottom: 1px solid var(--grey-100);
   padding: 4px;
 }
 
 a:hover {
-  text-decoration-color: $grey-500;
+  text-decoration-color: var(--grey-500);
 }
 
 .post-meta a:hover {
-  color: $pink-400;
-  text-decoration-color: $pink-400;
+  color: var(--pink-400);
+  text-decoration-color: var(--pink-400);
 }
 
 .icon {
@@ -342,8 +343,8 @@ picture {
 }
 
 #teaser {
-  background: $pink-400;
-  color: $pink-200;
+  background: var(--pink-400);
+  color: var(--pink-200);
 }
 
 #teaser a,
@@ -356,8 +357,8 @@ footer a {
 }
 
 footer {
-  background: $blue-500;
-  color: $grey-300;
+  background: var(--blue-500);
+  color: var(--grey-300);
 }
 
 #teaser,
@@ -377,7 +378,7 @@ footer .body {
   padding: 10px;
   font-size: 0.8em;
   border: none;
-  border: 1px solid $grey-300;
+  border: 1px solid var(--grey-300);
 }
 
 .autocomplete {
@@ -386,7 +387,7 @@ footer .body {
 }
 
 .autocomplete input {
-  border: 1px solid $grey-100;
+  border: 1px solid var(--grey-100);
   padding: 10px 20px;
   border-radius: 20px;
   width: 150px;
@@ -396,7 +397,7 @@ footer .body {
 
 input[type="submit"] {
   cursor: pointer;
-  background: $grey-300;
+  background: var(--grey-300);
 }
 
 input:focus::placeholder {
@@ -416,12 +417,12 @@ input:focus::placeholder {
   padding: 10px;
   cursor: pointer;
   background: white;
-  border: 1px solid $grey-100;
+  border: 1px solid var(--grey-100);
 }
 
 .autocomplete-items div:hover,
 .autocomplete-active {
-  background: $pink-400 !important;
+  background: var(--pink-400) !important;
   color: white;
 }
 
@@ -437,7 +438,7 @@ summary {
     cursor: pointer;
 }
 
-// Styles for small screens
+/* Styles for small screens */
 @media (max-width: 920px) {
   header {
     position: static;
@@ -512,19 +513,19 @@ h4 {
     float: left;
     margin-left: -28px;
     margin-top: 3px;
-    fill: $grey-400;
+    fill: var(--grey-400);
   }
 
   .anchor:hover {
-    fill: $grey-300;
+    fill: var(--grey-300);
   }
 
   @media (prefers-color-scheme: light) {
     .anchor {
-      fill: $grey-300;
+      fill: var(--grey-300);
     }
     .anchor:hover {
-      fill: $grey-400;
+      fill: var(--grey-400);
     }
   }
 }
@@ -551,8 +552,8 @@ h4 {
   border-radius: 25px;
   text-decoration: none;
   font-style: italic;
-  border: 1px solid $grey-500;
-  background: $grey-200;
+  border: 1px solid var(--grey-500);
+  background: var(--grey-200);
   transition: $anim-duration ease-in;
 }
 
@@ -567,33 +568,21 @@ h4 {
   text-decoration-thickness: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  .logo_font_dark {
-    display: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo_font_light {
-    display: none;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   body {
-    background: $blue-500;
+    background: var(--blue-500);
     color: white;
-    border-top-color: $pink-400;
+    border-top-color: var(--pink-400);
   }
 
   .bio,
   .post-meta {
-    color: $grey-300;
+    color: var(--grey-300);
   }
 
   a {
     color: white;
-    text-decoration-color: $pink-400;
+    text-decoration-color: var(--pink-400);
   }
 
   a:hover {
@@ -607,30 +596,30 @@ h4 {
   }
 
   .info, details {
-    background: $blue-800;
-    border-color: $grey-400;
+    background: var(--blue-800);
+    border-color: var(--grey-400);
   }
 
   .btn {
-    background: $grey-500;
+    background: var(--grey-500);
     color: white;
   }
 
   .autocomplete input,
   .autocomplete-items div {
     border: 0;
-    background: $blue-800;
+    background: var(--blue-800);
     color: white;
   }
 
   .tag {
     border-color: white;
-    background: $blue-800;
+    background: var(--blue-800);
   }
 
   .tag:hover {
     color: white;
-    background: $pink-400;
+    background: var(--pink-400);
   }
 
   .post-meta a {
@@ -638,6 +627,18 @@ h4 {
   }
 
   footer {
-    background: $blue-800;
+    background: var(--blue-800);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .logo_font_dark {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo_font_light {
+    display: none;
   }
 }
