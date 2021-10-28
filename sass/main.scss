@@ -600,10 +600,7 @@ h4 {
     text-decoration-color: white;
   }
 
-  .icon {
-    filter: brightness(0) invert(1);
-  }
-
+  .icon,
   pre,
   code {
     filter: invert(1);
