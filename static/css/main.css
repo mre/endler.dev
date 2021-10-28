@@ -1,14 +1,16 @@
 :root {
   --pink-200: #f5b2c8;
-  --pink-400: #e83e8c;
   --blue-300: #9fd6fa;
-  --blue-500: #234;
-  --blue-800: #141f2b;
   --grey-100: #ddd;
   --grey-200: #fafafa;
+
+  --blue-800: #141f2b;
+  --blue-500: #234;
+  --pink-400: #e83e8c;
   --grey-300: #b9b9b9;
   --grey-400: #555;
   --grey-500: #111;
+
   --anim-duration: 150ms;
   --border-radius: 4px;
   --serif: "Book Antiqua", "Palatino Linotype", Palatino, "EB Garamond", serif;
