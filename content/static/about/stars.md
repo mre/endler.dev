@@ -5,13 +5,13 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 9000 ★ |
-| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2852 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 9001 ★ |
+| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 2854 ★ |
 | [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1685 ★ |
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1410 ★ |
 | [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 669 ★ |
 | [mre/hyperjson](https://github.com/mre/hyperjson) | 428 ★ |
-| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 411 ★ |
+| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 412 ★ |
 | [mre/cargo-inspect](https://github.com/mre/cargo-inspect) | 320 ★ |
 | [hello-rust/show](https://github.com/hello-rust/show) | 288 ★ |
 | [lycheeverse/lychee](https://github.com/lycheeverse/lychee) | 261 ★ |
