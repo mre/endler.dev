@@ -1,0 +1,29 @@
+If you're starting out with async in Rust
+you might be surprised that your code is actually quite... slow.
+
+https://www.reddit.com/r/rust/comments/fzjc39/how_to_run_futuresunordered_in_parallel/
+
+Running futures in parallel (not concurrently)
+
+
+Joined futures will run concurrently, NOT in parallel
+https://www.reddit.com/r/rust/comments/dt6u0s/joined_futures_will_run_concurrently_not_in/
+
+you have to spawn tasks yourself
+
+
+You can spawn both, then await both.
+
+let t1 = tokio::spawn(run_stream(client.clone()));
+let t2 = tokio::spawn(run_stream(client.clone()));
+t1.await;
+t2.await;
+
+Alternative par_stream
+https://docs.rs/par-stream/0.7.0/par_stream/index.html
+
+Asynchronous parallel streams analogous to rayon.
+
+
+How to run them in parallel
+https://gendignoux.com/blog/2021/04/01/rust-async-streams-futures-part1.html

@@ -1,0 +1,365 @@
+Avoiding Allocations in Rust
+How to make Less allocations in Rust
+How to avoid allocations in Rust
+Rust: How to avoid allocations
+Less allocations
+Make less allocations 
+Less allocations in Rust
+
+One of the main benefits of Rust is that it offers a lot of possibilities to control the program output.
+Many other languages like JavaScript or Python make optimizations very hard as they are exclusively high-level.
+Rust allows to deep-dive if necessary.
+
+# Who is this article for?
+
+People that already made some steps in Rust
+Intermediate topic
+
+# What is an allocation?
+
+From Vulgar Latin allocare, from ad- (“to”) + locus (“place”), plus Latinate English suffix +‎ -ate. Compare allocable, without the -ate. 
+https://en.wiktionary.org/wiki/allocate
+
+# Heap vs Stack Allocations
+
+In a stack of items, items sit one on top of the other in the order they were placed there, and you can only remove the top one (without toppling the whole thing over).
+The simplicity of a stack is that you do not need to maintain a table containing a record of each section of allocated memory; the only state information you need is a single pointer to the end of the stack. To allocate and de-allocate, you just increment and decrement that single pointer. 
+
+
+one cpu instruction: just increase the stack pointer!
+
+In a heap, there is no particular order to the way items are placed. You can reach in and remove items in any order because there is no clear 'top' item.
+Heap allocation requires maintaining a full record of what memory is allocated and what isn't, as well as some overhead maintenance to reduce fragmentation, find contiguous memory segments big enough to fit the requested size, and so on. 
+
+What people mostly refer to are heap allocations
+For the purposes of the article, we talk about heap allocation when we say allocation.
+
+# Why can't all allocations be static?
+
+The sizes of some datatypes cannot be known at compile-time.
+For example, you might have a vector called students, but you don't know in advance how many students it will hold.
+Dynamic memory allocation makes it possible to hold any number of students as long as you have RAM available.
+Does not have a specific limit on memory size.
+
+More info on stack vs heap and syscalls:
+https://www.linuxjournal.com/article/6390
+
+# How does allocation work in Rust?
+
+[Diagram]
+jemalloc
+System allocator
+the allocator might call brk or mmap, which might be slow
+mmap asks the kernel to gives us some new virtual address space, bascially a new memory segment.
+brk is used to change the size of an already existing memory segment.
+
+```
+man mmap
+man brk
+```
+
+https://www.youtube.com/watch?v=HPDBOhiKaD8
+
+These syscall might cause a lot of overhead -- e.g. when we don't have enough RAM and the system starts swapping.
+
+
+rust code -> new -> malloc -> brk/mmap
+
+
+
+Creation of a variable on stack (aka local variable) just means to shift the stack pointer by the size of that variable. That’s how you allocate local variables—by a single pointer decrement operation (stack is organised from high addresses to low addresses). It’s as fast as that.
+
+Static variables (aka global variables) have their space reserved in the static data memory segment from the very beginning of the process execution. You simply know the address where the variable resides.
+
+But dynamic allocation is done on-demand. The dynamic memory segment of the process (aka heap) is managed by a dynamic allocator: that’s code which, given required size of the data, needs to find an unused chunk of the memory of at least the required size, update its own records of what chunks it had provided and pass the address to you (the caller). Upon release of the memory chunk (aka free), the allocator needs to update its records again and at times, consolidate the chunks so that the heap fragmentation doesn’t get out of hand. And all that needs to be thread-safe.
+
+These operations are clearly a lot more complex than the previous cases; and that’s the reason why dynamic allocation is “expensive”. Creating a good, fast dynamic allocator is a problem with capital P—not an easy one to solve.
+
+From https://www.quora.com/Why-is-heap-allocation-slow
+
+# When does Rust allocate?
+when the size of an element is not known at compile time
+- dynamic vs static datatypes
+basically every time you call `new` it's allocating on the heap
+
+# Are heap allocations really slower?
+
+Benchmark diagram from
+https://publicwork.wordpress.com/2019/06/27/stack-allocation-vs-heap-allocation-performance-benchmark/
+
+
+
+The right answer is: stack is catastrophically faster than heap! Here’s why:
+
+When you allocate a new memory block on the heap (with malloc/calloc/realloc or new in C/C++), here is what really happens:
+
+    The OS kernel is asked whether it actually has that space available (yep: you have to ask the OS, a huge expense!!)…. for all programs it runs at that moment. Why? Because you can easily ask for a block of 32Gigs (in a 64bit OS) even if your machine only has 8Gigs of physical RAM!
+    If the answer is yes, then the OS needs to reserve that block in the RAM for you… but that may take a very long time if your machine is heavily loaded, as it may involve virtual memory — in which case
+        The OS must go over all the RAM used by all the programs it runs at that moment, and decide that some of it may be reasonably removed from the RAM to make place for what you’re asking for… and put it on the disk(!) instead
+        Needless to say, it must then physically write it on the disk in order not to lose the contents of it, before it can return you that freed RAM block
+    With the resulting memory block to be given to you, there’s still much to do, as the OS must
+        Possibly (and quite often, actually!) reorganize the pieces of free space to “coagulate” them into a contiguous block not smaller than the size you’re asking for
+        Reserve that block for you, which means marking it in use
+    Conversely, when you free a block allocated on the heap (with free/delete/delete[] in C/C++), it must mark that block as being again available for reuse
+    If your program is heavily multi-threaded (as are mine), then spare for the typically tiny TLS (Thread Local Storage), allocating on the heap must be atomic (because there’s just one RAM, whatever number of threads you may be running), which means putting all other threads that may want to allocate at the same time on hold until all the jazz above is done.
+
+And now you compare all of the above huge stuff with a single thing: just incrementing the stack pointer!!!!
+
+How come? Simple: the stack is allocated at the start of the run of your program. There is no call to a memory manager that would call the heap allocator — the stack pointer (a super-fast CPU register!) is simply incremented, in a single CPU cycle.
+
+Ah… and what if you run out of that stack space? Simple: your program will “simply” crash with stack overflow — that’s why you should never use large arrays as local variables (which are all put on the stack): they may well cause a stack overflow.
+
+Stack is very slightly riskier (only if you’re not careful!)… but is catastrophically faster than the heap.
+
+https://www.quora.com/Which-is-faster-stack-allocation-or-heap-allocation/answer/Emanuel-Falkenauer
+
+# Should I care?
+
+If you're asking, then probably not.
+
+Heap allocations are quite normal and nothing bad.
+If you're coming from a dynamically typed language like Python, Ruby, or JavaScript, everything is heap allocated (Boxed, as Rustaceans say)
+unless you're working with C-extensions like numpy.
+Allocations are quite useful in these languages as you don't have to manually allocate and deallocate memory yourself.
+
+Furthermore, not all Rust programs are bottlenecked on allocations.
+
+# When allocations can be bad
+
+
+
+- embedded (writing a gameboy game)
+- high-perf code
+- gaming
+- hard realtime code (predicatable performance) like low-latency audio 
+allocations can slow down the system or downright fail at runtime
+That is, panic on failure
+https://news.ycombinator.com/item?id=15484323
+
+In some situations you don't even have an allocator to begin with.
+Airplane no allocations while in-flight
+because malloc can fail
+
+So unless you're in a hot loop, you probably won't notice the difference
+But maybe you're just curious
+
+If you use dynamic memory alloc, you're dependend on the state of the system: memory fragementation (if you need one block of memory), garbage collection,...
+Not using allocs can make your code more predicatable.
+The important thing you gain is determinism. Malloc can become slow under memory pressure. Calling malloc can fail, leading to an out of memory condition. Avoiding allocation reduces the set of scenarios where you can encounter performance degradation.
+
+Thanks to Rust's ownership model, *views* (references) into memory are entirely safe.
+So you can fearlessly refactor and the compiler will tell you if your code will work safely at runtime.
+In other languages like C++, using pointers is inherently unsafe and can lead to catastrophic errors if you don't pay very close attention.
+This makes performance optimizations way more fun!
+See also https://brson.github.io/rust-anthology/1/where-rust-really-shines.html
+
+
+# How to measure allocations
+
+Before you jump right in and try to avoid all allocations, is crucial to avoid premature optimization.
+
+If you don't really have a problem and you don't care, don't change anything.
+Alternatively change your allocator. That could already make the biggest differenc.
+
+Modern, fast, multi-threaded malloc implementations like
+jemalloc actually use multiple heaps (arenas) to make allocations faster.
+
+
+See this talk by one of the Jemalloc authors: https://www.youtube.com/watch?v=RcWp5vwGlYU
+
+Or this technical write-up on tcmalloc
+https://github.com/google/tcmalloc/blob/master/docs/overview.md
+
+
+ measured/profiled the performance of whatever you are trying to do and discovered that your use of normal vectors is some kind of bottleneck.
+
+And for that, you should measure the allocs
+I would recommend to start by profiling your program on some realistic workloads and see if any significant time is spent on memory allocation. Maybe you have a bigger bottleneck elsewhere.
+
+# How to measure allocations
+
+cargo instruments on macOS
+[ Screenshot ]
+
+heaptrack on Linux
+https://gist.github.com/HenningTimm/ab1e5c05867e9c528b38599693d70b35
+You can also use Valgrind's Massif, but it's usually slower
+https://www.valgrind.org/docs/manual/ms-manual.html
+
+Linux? Windows?
+
+[More tools in the Rust Performance Book](https://nnethercote.github.io/perf-book/profiling.html)
+
+# Benchmark
+
+Avoiding allocations won't help you improve compile-time performance -- only runtime performance. If you like to improve compile time perf, look into https://endler.dev/2020/rust-compile-times/
+hyperfine
+criterion
+
+
+# Quick Wins
+
+Replace your allocator with jemalloc
+https://github.com/gnzlbg/jemallocator
+Measure again
+
+Instructions on tcmalloc
+https://github.com/jmcomets/tcmalloc-rs
+
+mimalloc by Microsoft
+https://github.com/purpleprotocol/mimalloc_rust
+
+# How to reduce allocations
+
+The easiest way is to get rid of your code.
+Removing code-paths by cleaning up your codebase is an easy way to save up on allocations.
+
+
+## Built-in methods in the standard library
+
+three common datastructures: String, Vec, PathBuf vs &str, slice, Path
+
+more rarely Box, Rc, Arc
+
+Avoid `clone`
+`to_owned()` `to_string()`
+`to_vec()`
+PathBuf::from
+into()
+for vec: `iter().cloned().collect()`
+
+Use Path instead of PathBuf 
+
+```
+???
+```
+
+str instead of String
+
+```
+struct Entry {
+    name: Option<String>,
+    phone: Option<String>,
+    address: Option<String>,
+}
+```
+
+Each non-empty String is another separate allocation. In the case of the strings that come from the input, they are just copied from there. In theory one could borrow from the input data and do something like this:
+
+```
+struct Entry<'a> {
+    name: Option<&'a str>,
+    ...
+}
+```
+
+Then it could just point into the input data instead of allocating and copying. But that would make working with the structures and the whole API more hairy.
+
+
+## Vec
+
+You should first try to preallocate your vectors, i.e. use with_capacity() instead of new(). I've found it to be a big perf saver in alloc-intensive workloads.
+
+
+slices instead of vec
+example: extractor going from vec to slice for extracting links.
+zero copy means "view into memory"
+
+
+this will require a basic understanding of lifetimes and borrowing
+Oftentimes the added complexity is not worth it.
+Example: https://github.com/squili/serenity-slash-decode/pull/2
+basically "views into existing memory" with certain lifetime guaranteees instead of allocating new objects.
+
+- Cow<String>
+
+## Use Clippy to find redundant allocations
+clippy has lints to avoid allocations
+https://rust-lang.github.io/rust-clippy/master/
+Finds redundant allocations
+
+```
+use std::boxed::Box;
+
+pub fn foo(bar: Box<&usize>) {
+  println!("{}", bar);
+}
+```
+
+running 
+```
+cargo +nightly clippy                           ✘
+```
+results in 
+
+```
+  |
+3 | pub fn foo(bar: Box<&usize>) {
+  |                 ^^^^^^^^^^^ help: try: `&usize`
+  |
+  = note: `#[warn(clippy::redundant_allocation)]` on by default
+  = note: `&usize` is already a pointer, `Box<&usize>` allocates a pointer on the heap
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_allocation
+```
+
+Pretty cool, huh?
+
+## Third-Party Crates
+
+Generally I would gravitate towards using built-in Rust data structures unless you have a pretty good reason not to.
+
+- Tendril
+
+- tinystring
+
+- https://github.com/japaric/heapless
+
+## Vec replacements
+
+You have many Vecs that are “very small” (both in number of items and in size_of of the item type) try replacing them with arrays (if the size is always the same and known at compile-time), arrayvec (if the size fits in a hard upper bound known at compile-time), or tinyvec / smallvec (if the length is usually smaller than some value decided at compile-time, but can rarely grow larger.
+Especially when you need to allocate buffer spaces that is mostly predictable (but not completely, otherwise you'd use an array) in a tight loop.
+).
+
+Careful with smallvec as it can actually *decrease* performance.
+It introduces branching on each array access, since we need to determine whether we use an internal or external buffer. Processors hate branching.
+
+
+https://www.reddit.com/r/rust/comments/n2429h/arrayvec_vs_smallvec_vs_tinyvec/
+
+
+https://www.reddit.com/r/rust/comments/p0hmvz/a_question_about_allocationsallocators/h870rzo/:
+
+If your program is structured such that many vectors are allocated around the same time (e.g. for a specific operation like parsing some input) and later freed around the same time, using an arena allocator library can help (at the cost of delaying when memory is actually freed for other stuff). https://manishearth.github.io/blog/2021/03/15/arenas-in-rust/ has many details on how that works.
+
+
+
+bump allocator
+bumpalo
+or [scoped_arena](https://github.com/zakarumych/scoped-arena)
+
+helpful with frequent, small allocations with short lifespans
+
+
+
+# Block allocations altogether
+- cargo plugins to fail on allocs
+
+- Use only the core library
+#![no_std]
+https://stackoverflow.com/a/51934186/270334
+`no_std` Bryan Cantrill calls it the killer feature of Rust.
+> Rust has the unique ability to **not** depend on its own standard library
+https://youtu.be/cuvp-e4ztC0?t=1079
+Cannot perform heap allocation. Notably, it's enforced **at compile time**.
+
+String interning
+https://github.com/servo/string-cache
+
+
+Real world articles / further reading
+
+* [A Journey in Optimizing `toml_edit`](https://epage.github.io/blog/2021/09/optimizing-toml-edit/)
+* [Making slow Rust code fast](https://patrickfreed.github.io/rust/2021/10/15/making-slow-rust-code-fast.html)
+
+
+

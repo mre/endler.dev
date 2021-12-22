@@ -17,6 +17,18 @@ I'd say both camps are missing the point.
 Go is rather a pragmatic language. It is not unaware of the fact that its assumptions are incorrect around edge-cases.
 Rather, it's okay with that and sees it as a tradeoff between productivity and maintenance costs.
 
+Golang has a batteries included approach.
+Its standard library ships with http support but also other functionality like crypto or even smtp support.
+As a result, it is ideal when reaching for something quick and easy with minimal external dependencies.
+
+Rust's has a very limited standard library by design.
+Removing code from the standard library is extremely difficult and even deprecated code still gets used
+by downstream applications.
+Also, things that are popular today might not be used in the future.
+Golang has smtp support in their standard library, but this is not something that necessarily gets used a lot.
+Similarly, Rust does not ship with any cryptography code while Go does.
+Therefore the out-of-the-box experience is not that great, but 
+you can just pick the crates that match your requirements to give you exactly what you want.
 
 
 But rarely anyone is talking about Go AND Rust. As in: a team
