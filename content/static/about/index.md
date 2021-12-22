@@ -7,15 +7,16 @@ template = "about.html"
 <!-- Use plain old JPEG here so Google might index it. -->
 <img width="200px" height="200px" src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
 
-I'm a Backend Developer / Site Reliability Engineer living in Düsseldorf,
-Germany.
+Warm welcome to my blog! I'm Matthias Endler, an open-source maintainer and Rust
+consultant living in D&uuml;sseldorf, Germany.
+
+I'm the founder of [Corrode](https://corrode.dev), a Rust consulting company. 
+
+Before that, I was a backend engineer at [trivago]
 
 My interests are scalability, performance and distributed systems; but I also
-play around with embedded systems and console emulation. I received a master's
-degree in Computer Science from [Universit&auml;t Bayreuth]. At work, I improve
-the backend infrastructure of [trivago] by making it faster and more reliable.
-
-Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
+play around with embedded systems and console emulation. I hold an M.Sc. in
+Computer Science from [Universit&auml;t Bayreuth]. 
 
 ## Side Projects
 
@@ -27,8 +28,7 @@ Nowadays, I mostly use _Golang_, _Python_, and _Rust_ to get stuff done.
 
 ## Open Source
 
-I started 100+ open source projects so far;  
-here's a list of the most popular ones:
+So far, I started 100+ open source projects; here's a list of the more popular ones:
 
 {{ load_stars() }}
 
