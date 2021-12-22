@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-10-27
+updated=2021-12-23
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -370,6 +370,12 @@ page](https://jason-williams.co.uk/a-possible-new-backend-for-rust), and the
 project code is [on Github](https://github.com/bjorn3/rustc_codegen_cranelift).
 
 ## Switch To A Faster Linker
+
+{% info() %}
+* 🐧 Linux users: Try [mold](https://github.com/rui314/mold)
+* 🍎 Apple users: Try [zld](https://github.com/michaeleisel/zld)
+* 🪟 Windows users: 🤷
+{% end %}
 
 > The thing that nobody seems to target is linking time. For me, when using
 > something with a big dependency tree like Amethyst, for example linking time
