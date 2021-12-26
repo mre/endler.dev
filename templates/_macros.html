@@ -6,7 +6,7 @@
     {% if current_url is starting_with("http://127.0.0.1:1111/") %}
         <link rel="stylesheet" href="{{path}}">
     {% else %}
-        <style>{{ load_data(path="public/" ~ path) | trim | safe }}</style>
+        <style>{{ load_data(path="static/" ~ path) | trim | safe }}</style>
     {% endif %}
 {% endmacro input %}
 
