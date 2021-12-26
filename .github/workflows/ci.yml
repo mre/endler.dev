@@ -36,7 +36,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: install
-          args: --git https://github.com/tinysearch/tinysearch.git --branch debug2
+          args: --git https://github.com/tinysearch/tinysearch.git
 
       - name: ⏬ Install binaryen
         run: |
