@@ -44,7 +44,6 @@ minify: ## Compress JavaScript assets
 
 .PHONY: build 
 build: stars content index minify ## Build static site and search index, minify JS
-	@rm -r public/json
 
 .PHONY: build-quick
 build-quick: content ## Build static site
