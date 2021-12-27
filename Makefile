@@ -38,8 +38,8 @@ images: ## Create webp and avif images
 # the public output directory. Haven't yet found the reason why.
 .PHONY: index
 index: content ## Build the search index with tinysearch
-	mkdir tinysearch_out
-	RUST_LOG=debug tinysearch --optimize --path tinysearch_output public/json/index.html
+	mkdir -p tinysearch_out
+	RUST_LOG=debug tinysearch --optimize --path tinysearch_out public/json/index.html
 	mv tinysearch_out/* public
 	rm -rf tinysearch_out
 
