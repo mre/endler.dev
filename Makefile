@@ -23,6 +23,8 @@ versions: ## Show versions of tools
 	zola --version
 	gh-stats --version
 	tinysearch --version
+	wasm-opt --version
+	terser --version
 
 .PHONY: content
 content: ## Build the content of the static site with zola
