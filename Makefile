@@ -34,9 +34,14 @@ content: ## Build the content of the static site with zola
 images: ## Create webp and avif images 
 	cargo run --manifest-path ./helpers/img/Cargo.toml
 
+# Creating a temporary directory here because wasm-pack seems to overwrite
+# the public output directory. Haven't yet found the reason why.
 .PHONY: index
 index: content ## Build the search index with tinysearch
-	RUST_LOG=debug tinysearch --optimize --path public public/json/index.html
+	mkdir tinysearch_out
+	RUST_LOG=debug tinysearch --optimize --path tinysearch_output public/json/index.html
+	mv tinysearch_out/* public
+	rm -rf tinysearch_out
 
 .PHONY: minify
 minify: ## Compress JavaScript assets
