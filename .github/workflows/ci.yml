@@ -23,8 +23,9 @@ jobs:
       - name: ⏬ Install gh-stats
         run: |
           set -e
-          curl -L https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xzf -
-          echo "`pwd`/gh-stats" >> $GITHUB_PATH
+          curl -L https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xzf --directory=bin
+          chmod +x bin/gh-stats
+          echo "`pwd`/bin" >> $GITHUB_PATH
 
       - name: ⏬ Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
