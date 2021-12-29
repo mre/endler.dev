@@ -23,6 +23,7 @@ jobs:
       - name: ⏬ Install gh-stats
         run: |
           set -e
+          mkdir bin
           curl -L https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xzf --directory=bin
           chmod +x bin/gh-stats
           echo "`pwd`/bin" >> $GITHUB_PATH
