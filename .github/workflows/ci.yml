@@ -34,7 +34,6 @@ jobs:
       - name: ⏬ Install tinysearch 
         run: |
           set -e
-          mkdir bin
           curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.6.3/tinysearch-v0.6.3-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
           chmod +x bin/tinysearch
           echo "$(pwd)/bin" >> ${GITHUB_PATH}
