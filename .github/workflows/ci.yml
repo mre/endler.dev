@@ -31,11 +31,13 @@ jobs:
       - name: ⏬ Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      - name: ⏬ Install tinysearch
-        uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: --git https://github.com/tinysearch/tinysearch.git
+      - name: ⏬ Install tinysearch 
+        run: |
+          set -e
+          mkdir bin
+          curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.6.3/tinysearch-v0.6.3-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
+          chmod +x bin/tinysearch
+          echo "$(pwd)/bin" >> ${GITHUB_PATH}
 
       - name: ⏬ Install binaryen
         run: |
