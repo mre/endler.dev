@@ -1,3 +1,12 @@
+zero copy is a lot of fun! Especially datastructures.
+The basic idea is that you stick to & references for all your data. With zero-copy parsing, you store &[u8] or &str slice references to the original text.
+often Rust parsers are implemented in terms of Iterators, where parsers in other low-level languages would fill some buffer first.
+Instead of allocating dynamic memory and copying data in to pass to later function calls, you use a buffer given to you by reference or made on the stack, relying on rust’s lifetimes and ownership semantics to guarantee that you’re looking at valid data. Other high level languages sometimes encourage copying of data, which can be slow and waste memory. Rust doesn’t discourage copying directly, but makes it much easier to reason about memory semantics and thus write code that doesn’t perform any copying.
+=> lifetimes enable zero copy
+
+nom zero copy parser
+https://www.youtube.com/watch?v=8mA5ZwWB3M0&t=928s
+
 Avoiding Allocations in Rust
 How to make Less allocations in Rust
 How to avoid allocations in Rust
@@ -113,6 +122,10 @@ Stack is very slightly riskier (only if you’re not careful!)… but is catastr
 
 https://www.quora.com/Which-is-faster-stack-allocation-or-heap-allocation/answer/Emanuel-Falkenauer
 
+zero copy serialization.
+can be extremely fast
+https://davidkoloski.me/blog/rkyv-is-faster-than/
+
 # Should I care?
 
 If you're asking, then probably not.
@@ -217,7 +230,7 @@ Removing code-paths by cleaning up your codebase is an easy way to save up on al
 
 ## Built-in methods in the standard library
 
-three common datastructures: String, Vec, PathBuf vs &str, slice, Path
+common datastructures: String, Vec, PathBuf vs &str, slice, Path
 
 more rarely Box, Rc, Arc
 
@@ -255,11 +268,43 @@ struct Entry<'a> {
 
 Then it could just point into the input data instead of allocating and copying. But that would make working with the structures and the whole API more hairy.
 
-
 ## Vec
 
-You should first try to preallocate your vectors, i.e. use with_capacity() instead of new(). I've found it to be a big perf saver in alloc-intensive workloads.
+Whenever you create a new vector, the default size is 4 elements.
 
+```rust
+fn main() {
+    let mut v = Vec::new();
+    for i in 0..=64 {
+        v.push(i);
+        println!("{}", v.capacity());
+    }
+}
+```
+
+```
+4
+4
+4
+4
+8
+8
+8
+8
+16
+...
+16
+32
+...
+32
+64
+...
+64
+128
+```
+
+Its size gets doubled whenever it can't hold an additional element.
+Therefore you should first try to preallocate your vectors, i.e. use with_capacity() instead of new(). I've found it to be a big perf saver in alloc-intensive workloads.
 
 slices instead of vec
 example: extractor going from vec to slice for extracting links.
@@ -304,6 +349,14 @@ results in
 
 Pretty cool, huh?
 
+
+BytesMut vs &mut [u8]
+
+If you only ever need an immutable view into a byte buffer, you probably want to use `&mut [u8]`.
+If however you need to split up that buffer (e.g. while parsing) then BytesMut is really helpful.
+It's like a view into an `Arc<Vec<u8>>` with the guarantee that you have explicit access to a slice inside that buffer.
+
+
 ## Third-Party Crates
 
 Generally I would gravitate towards using built-in Rust data structures unless you have a pretty good reason not to.
@@ -313,6 +366,8 @@ Generally I would gravitate towards using built-in Rust data structures unless y
 - tinystring
 
 - https://github.com/japaric/heapless
+
+- https://github.com/thomcc/arcstr
 
 ## Vec replacements
 
@@ -363,3 +418,14 @@ Real world articles / further reading
 
 
 
+
+Re-use allocations:
+
+Bump alloc
+* https://github.com/hawkw/thingbuf
+
+The regex crate uses a wonderful library called thread_local-rs written by /u/Amanieu for really fast thread safe access to a pool of previously initialized values. The key is that it allows for dynamic per-object thread local values as opposed to statically known thread locals like with the thread_local! macro.
+https://github.com/Amanieu/thread_local-rs
+https://github.com/frankmcsherry/recycler
+
+bumpalo vec: https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
