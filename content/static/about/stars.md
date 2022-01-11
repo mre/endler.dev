@@ -5,12 +5,12 @@ date=2020-01-01
 
 | Repository | Stars |
 | :--------- | ----: |
-| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 9336 ★ |
-| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 3150 ★ |
-| [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1711 ★ |
+| [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | 9361 ★ |
+| [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) | 3169 ★ |
+| [tinysearch/tinysearch](https://github.com/tinysearch/tinysearch) | 1714 ★ |
 | [mre/the-coding-interview](https://github.com/mre/the-coding-interview) | 1430 ★ |
-| [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 673 ★ |
-| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 499 ★ |
+| [ReceiptManager/receipt-parser-legacy](https://github.com/ReceiptManager/receipt-parser-legacy) | 675 ★ |
+| [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis) | 500 ★ |
 | [mre/hyperjson](https://github.com/mre/hyperjson) | 440 ★ |
 | [mre/cargo-inspect](https://github.com/mre/cargo-inspect) | 330 ★ |
 | [lycheeverse/lychee](https://github.com/lycheeverse/lychee) | 319 ★ |
