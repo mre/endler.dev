@@ -212,8 +212,12 @@ criterion
 
 # Quick Wins
 
-Replace your allocator with jemalloc
+Allocations are rarely the bottleneck.
+Use a faster allocator
 https://github.com/gnzlbg/jemallocator
+https://github.com/microsoft/mimalloc
+https://github.com/mjansson/rpmalloc/tree/master
+https://github.com/EmbarkStudios/rpmalloc-rs
 Measure again
 
 Instructions on tcmalloc
