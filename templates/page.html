@@ -28,9 +28,7 @@
     <div class="tags">
       <i>Tagged with</i>
       {% for tag in page.taxonomies.tags %}
-        <a class="tag" href="/tags/{{tag}}">
-          {{tag}}
-        </a>
+        <a class="tag" href="/tags/{{tag}}">{{tag}}</a>
       {%endfor%}
     </div>
   {% endif %}
