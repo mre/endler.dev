@@ -1,6 +1,7 @@
 +++
 title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
 date=2019-10-17
+updated=2022-02-15
 [taxonomies]
 tags=["dev", "oss", "rust"]
 
@@ -62,13 +63,14 @@ harder and harder to find relevant content.
 Many years ago, in 2013, I read ["Writing a full-text search engine using Bloom
 filters"][stavros] &mdash; and it was a revelation.
 
-The idea was simple: Let's run all articles through a generator that creates a
-tiny, self-contained search index using this magical data structure called a
+The idea was simple: Let's run all my blog articles through a generator that
+creates a tiny, self-contained search index using this magical data structure
+called a
 ✨*Bloom Filter* ✨.
 
-## What's a Bloom Filter?
+## Wait, what's a Bloom Filter?
 
-Roughly speaking, a [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a space-efficient way to
+A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a space-efficient way to
 check if an element is in a set.
 
 The trick is that it doesn't store the elements themselves; it just knows with
@@ -101,7 +103,7 @@ could finally have a small, static search without the need for a backend!
 
 ## Headaches
 
-The disillusionment came quickly.
+Disillusionment came quickly.
 
 I had no idea how to bundle and minimize the generated Bloom filters, let alone
 run them on clients. The original article briefly touches on this:
@@ -120,7 +122,7 @@ Unsure what to do next, my idea remained a pipe dream.
 
 Five years later, in 2018, the web had become a different place. Bundlers were
 ubiquitous, and the Node ecosystem was flourishing. One thing, in particular,
-revived my dreams about the tiny static search engine: [webassembly].
+revived my dreams about the tiny static search engine: [WebAssembly].
 
 > WebAssembly (abbreviated Wasm) is a binary instruction format for a
 > stack-based virtual machine. Wasm is designed as a portable target for
@@ -146,7 +148,7 @@ for (name, words) in articles {
 ```
 
 While I managed to create the Bloom filters for every article, I _still_ had no
-clue how I should package that up for the web... until [wasm-pack came along in
+clue how to package it for the web... until [wasm-pack came along in
 February
 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7).
 
@@ -154,8 +156,8 @@ February
 
 Now I had all the pieces of the puzzle:
 
-- Rust - A language I was comfortable with
-- [wasm-pack] - A bundler for WebAssembly modules
+- Rust &mdash; A language I was comfortable with
+- [wasm-pack] &mdash; A bundler for WebAssembly modules
 - A working prototype that served as a proof-of-concept
 
 The search box you see on the left side of this page is the outcome. It fully runs on Rust using
@@ -172,7 +174,7 @@ First, I tried jedisct1's
 didn't implement
 [Serialize](https://docs.serde.rs/serde/trait.Serialize.html)/[Deserialize](https://docs.serde.rs/serde/trait.Deserialize.html).
 This meant that I could not store my generated Bloom filters inside the binary and load
-them from the client-side.
+them on the client-side.
 
 After trying a few others, I found the
 [cuckoofilter](https://github.com/seiflotfy/rust-cuckoofilter) crate, which
@@ -292,15 +294,15 @@ On top of that, the search functionality only gets loaded when a user clicks int
 
 ## Update
 
-Recently I moved the project from cuckoofilters to [xor filters](https://arxiv.org/abs/1912.08258).
+Recently I moved the project from cuckoofilters to [XOR filters](https://arxiv.org/abs/1912.08258).
 I used the awesome [xorf](https://github.com/ayazhafiz/xorf) project, which comes with built-in serde serialization.
 which allowed me to remove a lot of custom code.
 
-With that, I could reduced the payload size by another 20-25% percent. I'm down to **99kB** (**49kB gzipped**) on my blog now. 🎉
+With that, I could reduce the payload size by another 20-25% percent. I'm down to **99kB** (**49kB gzipped**) on my blog now. 🎉
 
 The new version is released [on crates.io](https://crates.io/crates/tinysearch) already, if you want to give it a try.
 
-## Frontend and Glue Code
+## Frontend- and Glue Code
 
 wasm-pack will auto-generate the JavaScript code to talk to Wasm.
 
@@ -314,6 +316,8 @@ hits. Thanks to my dear colleague [Jorge Luis Betancourt](https://github.com/jor
 ![Video of the search functionality](./anim-opt2.gif)
 
 (Fun fact: this animation is about the same size as the uncompressed Wasm search itself.)
+
+## Caveats
 
 Only whole words are matched. I would love to add prefix-search, but the
 binary became too big when I tried.
@@ -366,7 +370,7 @@ You can generate this JSON file with any static site generator.
 
 I'm pretty sure that the Jekyll version looks quite similar.
 [Here's a starting point](https://learn.cloudcannon.com/jekyll/output-json/).
-If you get something working for your static site generator, please let me know.
+If you get something working for your static site generator, [please let me know](https://github.com/tinysearch/tinysearch/tree/master/howto).
 
 ## Observations
 
@@ -395,6 +399,7 @@ If you get something working for your static site generator, please let me know.
   its future.
 - If you're looking for a standalone, self-hosted search index for your company
   website, check out [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
+  Also check out [stork](https://github.com/jameslittle230/stork) as an alternative.
 
 {% info() %}
 ✨**WOW!** This tool getting quite a bit of traction lately.✨‍
@@ -416,7 +421,7 @@ Please be aware of these limitations:
 - **Only searches for entire words.** There are no search suggestions.
   The reason is that prefix search blows up binary size like [Mentos and Diet Coke](https://www.youtube.com/watch?v=b6u9WJ01Oxs).
 - Since we bundle all search indices for all articles into one static binary, I
-  **only recommend to use it for low- to medium-size websites**. Expect around 4kB
+  **only recommend to use it for low- to medium-sized websites**. Expect around 4kB
   (non-compressed) per article.
 - <strike>The **compile times are abysmal** at the moment (around 1.5 minutes after a
   fresh install on my machine), mainly because we're compiling the Rust crate
@@ -427,7 +432,7 @@ Please be aware of these limitations:
 
 The final Wasm code is laser-fast because we save the roundtrips to a
 search-server. The instant feedback loop feels more like filtering a list than
-searching through files. It can even work fully offline, which might be nice if
+searching through posts. It can even work fully offline, which might be nice if
 you like to bundle it with an app.
 
 [jekyll]: https://github.com/mre/mre.github.io.v1
