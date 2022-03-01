@@ -1,7 +1,7 @@
 +++
 title="Afraid of Makefiles? Don't be!"
 date=2017-08-15
-updated=2021-03-01
+updated=2022-03-01
 [taxonomies]
 tags=["culture", "dev"]
 
