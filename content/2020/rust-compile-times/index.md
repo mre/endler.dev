@@ -37,6 +37,7 @@ Table of Contents
 - [Update Remaining Dependencies](#update-remaining-dependencies)
 - [Replace Heavy Dependencies](#replace-heavy-dependencies)
 - [Use Cargo Workspaces](#use-cargo-workspaces)
+- [Use Cargo Nextest For Faster Test Execution](#use-cargo-nextest-for-faster-test-execution)
 - [Combine All Integration Tests In A Single Binary](#combine-all-integration-tests-in-a-single-binary)
 - [Disable Unused Features Of Crate Dependencies](#disable-unused-features-of-crate-dependencies)
 - [Use A Ramdisk For Compilation](#use-a-ramdisk-for-compilation)
@@ -244,6 +245,28 @@ Bigger projects like
 [vector](https://github.com/timberio/vector/blob/1629f7f82e459ae87f699e931ca2b89b9080cfde/Cargo.toml#L28-L34)
 are using workspaces heavily to slim down compile times.
 [Learn more about workspaces here](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
+
+## Use Cargo Nextest For Faster Test Execution
+
+It's nice that `cargo` comes with its own little test runner, but especially if
+you have to build multiple test binaries, [`cargo nextest`](https://nexte.st/)
+can be up to 60% faster than `cargo test` thanks to its parallel execution
+model.
+Here are some quick [benchmarks](https://nexte.st/book/benchmarks.html):
+
+| Project         | cargo test (s) | nextest (s) | Difference |
+|-----------------|----------------|-------------|------------|
+| meilisearch     | 41.04          | 20.62       | \-49.8%    |
+| rust-analyzer   | 6.76           | 5.23        | \-22.6%    |
+| tokio           | 27.16          | 11.72       | \-56.8%    |
+
+You can try it with
+
+```
+cargo install cargo-nextest
+cargo nextest run
+```
+
 
 ## Combine All Integration Tests In A Single Binary
 
