@@ -50,6 +50,9 @@ jobs:
       - name: 🔍 Tool versions
         run: make versions
 
+      - name: 🏞 Images
+        run: make images
+
       - name: 📖 Build
         run: make build
         env:
