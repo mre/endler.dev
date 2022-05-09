@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2021-12-23
+updated=2022-05-09
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -77,6 +77,16 @@ In general, **comparing across different programming languages makes little sens
 and overall, the Rust compiler is legitimately doing a great job.
 That said, above a certain project size, the compile times are... let's just say
 they could be better.
+
+If you like to know what's slowing down your builds, run 
+
+```
+cargo --timings
+```
+
+This will generate a report on how much time was spent on each step involved in compiling your program. Here's the output:
+
+{{ figure(src="cargo-timings.jpg", caption="A run of cargo-timings", credits="[Mara Bos via Twitter](https://twitter.com/m_ou_se/status/1516051124096315403)") }}
 
 ## Why Bother?
 
@@ -495,21 +505,11 @@ compilation](https://github.com/bevyengine/bevy/blob/3a2a68852c0a1298c0678a47adc
 
 ## Profile Compile Times
 
-If you like to dig deeper, Rust compilation can be profiled with [`cargo rustc -- -Zself-profile`](https://blog.rust-lang.org/inside-rust/2020/02/25/intro-rustc-self-profile.html#profiling-the-compiler).
+If you like to dig deeper than `cargo --timings`, Rust compilation can be profiled with [`cargo rustc -- -Zself-profile`](https://blog.rust-lang.org/inside-rust/2020/02/25/intro-rustc-self-profile.html#profiling-the-compiler).
 The resulting trace file can be visualized with a flamegraph or the Chromium
 profiler:
 
 {{ figure(src="chrome_profiler.jpg", caption="Image of Chrome profiler with all crates", credits="Rust Lang Blog") }}
-
-There's also a [`cargo -Z timings`](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#timings)
-feature that gives some information about how long each compilation step takes,
-and tracks concurrency information over time.
-
-You might have to run it using the nightly compiler:
-
-```
-cargo +nightly build -Z timings
-```
 
 Another golden one is
 [`cargo-llvm-lines`](https://github.com/dtolnay/cargo-llvm-lines), which shows
