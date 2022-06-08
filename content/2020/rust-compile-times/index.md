@@ -699,7 +699,7 @@ RUN cargo build --release --bin app
 FROM rust as runtime
 WORKDIR app
 COPY --from=builder /app/target/release/app /usr/local/bin
-ENTRYPOINT ["./usr/local/bin/app"]
+ENTRYPOINT ["/usr/local/bin/app"]
 ```
 
 [`cargo-chef`](https://github.com/LukeMathWalker/cargo-chef) can help speed up
