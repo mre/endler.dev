@@ -48,7 +48,7 @@ jobs:
         run: sudo npm install -g terser
 
       - name: ⏬ Install ImageMagick
-        run: sudo apt-get install -y magick
+        run: sudo apt-get install -y imagemagick
 
       - name: 🔍 Tool versions
         run: make versions
