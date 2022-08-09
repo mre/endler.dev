@@ -25,8 +25,7 @@ jobs:
           set -e
           mkdir bin
           curl -sSL https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
-          chmod +x bin/gh-stats
-          echo "$(pwd)/bin" >> ${GITHUB_PATH}
+          sudo install "$(pwd)/bin/gh-stats" /usr/local/bin
 
       - name: ⏬ Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
@@ -35,8 +34,7 @@ jobs:
         run: |
           set -e
           curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.6.3/tinysearch-v0.6.3-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
-          chmod +x bin/tinysearch
-          echo "$(pwd)/bin" >> ${GITHUB_PATH}
+          sudo install "$(pwd)/bin/tinysearch" /usr/local/bin
 
       - name: ⏬ Install cavif
         run: |
@@ -52,7 +50,7 @@ jobs:
         run: |
           set -e
           curl -L https://github.com/WebAssembly/binaryen/releases/download/version_104/binaryen-version_104-x86_64-linux.tar.gz | tar xzf -
-          echo "$(pwd)/binaryen-version_104/bin" >> ${GITHUB_PATH}
+          sudo install "$(pwd)/binaryen-version_104/bin/wasm-opt" /usr/local/bin
 
       - name: ⏬ Install terser
         run: sudo npm install -g terser
