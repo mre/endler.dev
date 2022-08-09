@@ -41,7 +41,7 @@ jobs:
       - name: ⏬ Install cavif
         run: |
           set -e
-          curl -sSL https://github.com/kornelski/cavif-rs/releases/download/v1.3.3/cavif-1.3.3.zip --output=cavif.zip
+          curl -sSL https://github.com/kornelski/cavif-rs/releases/download/v1.3.3/cavif-1.3.3.zip --output cavif.zip
           unzip cavif.zip
           chmod +x "$(pwd)/linux-generic/cavif"
           echo "$(pwd)/linux-generic" >> ${GITHUB_PATH}
