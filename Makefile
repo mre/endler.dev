@@ -25,7 +25,7 @@ versions: ## Show versions of tools
 	tinysearch --version
 	wasm-opt --version
 	terser --version
-	binaryen --version
+	wasm-opt --version
 	cavif --version
 	convert -version
 	cwebp -version
