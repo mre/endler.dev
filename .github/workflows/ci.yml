@@ -43,8 +43,7 @@ jobs:
           set -e
           curl -sSL https://github.com/kornelski/cavif-rs/releases/download/v1.3.3/cavif-1.3.3.zip --output cavif.zip
           unzip cavif.zip -d cavif
-          chmod +x "$(pwd)/cavif/linux-generic/cavif"
-          echo "$(pwd)/cavif/linux-generic" >> ${GITHUB_PATH}
+          sudo install "$(pwd)/cavif/linux-generic/cavif" /usr/local/bin
 
       - name: ⏬ Install cwebp
         run: sudo apt-get update && sudo apt-get install -y webp
