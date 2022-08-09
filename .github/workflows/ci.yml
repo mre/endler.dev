@@ -46,6 +46,9 @@ jobs:
           chmod +x "$(pwd)/cavif/linux-generic/cavif"
           echo "$(pwd)/cavif/linux-generic" >> ${GITHUB_PATH}
 
+      - name: ⏬ Install cwebp
+        run: sudo apt-get update && apt-get install -y webp
+
       - name: ⏬ Install binaryen
         run: |
           set -e
