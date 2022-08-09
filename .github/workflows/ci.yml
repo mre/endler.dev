@@ -38,6 +38,16 @@ jobs:
           chmod +x bin/tinysearch
           echo "$(pwd)/bin" >> ${GITHUB_PATH}
 
+      - name: ⏬ Install cavif
+        run: |
+          set -e
+          curl -sSL https://github.com/kornelski/cavif-rs/releases/download/v1.3.3/cavif-1.3.3.zip --output cavif.zip
+          unzip cavif.zip -d cavif
+          sudo install "$(pwd)/cavif/linux-generic/cavif" /usr/local/bin
+
+      - name: ⏬ Install cwebp
+        run: sudo apt-get update && sudo apt-get install -y webp
+
       - name: ⏬ Install binaryen
         run: |
           set -e
@@ -46,9 +56,13 @@ jobs:
 
       - name: ⏬ Install terser
         run: sudo npm install -g terser
-
-      - name: ⏬ Install ImageMagick
-        run: sudo apt-get install -y imagemagick
+        
+      # Ideally we'd install ImageMagick 7 here because it provides the new `magick` binary that we later.
+      # However it's quite tedious to do right now, see
+      # https://github.com/walterbm/rusty-resizer/blob/33295758168171d3ad022e9e4938525f2d264017/.github/workflows/ci.yml#L13-L27
+      # Instead, we just alias the old binary name to the new one because we don't use any of the new functionality.
+      - name: 🔗 Alias ImageMagick
+        run: sudo ln -s /usr/bin/convert /usr/bin/magick
 
       - name: 🔍 Tool versions
         run: make versions
