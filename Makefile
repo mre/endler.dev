@@ -25,6 +25,10 @@ versions: ## Show versions of tools
 	tinysearch --version
 	wasm-opt --version
 	terser --version
+	binaryen --version
+	cavif --version
+	convert -version
+	cwebp -version
 
 .PHONY: content
 content: ## Build the content of the static site with zola
