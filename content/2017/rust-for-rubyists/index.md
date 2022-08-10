@@ -64,7 +64,7 @@ user_ids = users.map(&:id)
 
 </a>
 
-In Ruby, higher-order functions (like `map`) take [blocks or procs](https://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/) as an argument and the language provides a convenient shortcut for method invocation &mdash; `&:id` is the same as `{|o| o.id()}`.
+In Ruby, higher-order functions (like `map`) take [blocks or procs](https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html) as an argument and the language provides a convenient shortcut for method invocation &mdash; `&:id` is the same as `{|o| o.id()}`.
 
 Something similar could be done in Rust:
 

@@ -135,7 +135,7 @@ and donation transfers. [Their docs](https://docs.opencollective.com/help/)
 helped us a lot when getting started.
 
 The task of finding sponsors [is never
-done](https://www.youtube.com/watch?v=qHfAaG34H30), but it was very reassuring
+done](https://www.youtube.com/watch?v=LT_y5qri00o), but it was very reassuring
 to hear from [DeepCode](https://www.deepcode.ai/) - an AI-based semantic
 analysis service, that they were willing to take a chance on us.
 

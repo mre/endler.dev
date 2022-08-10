@@ -721,8 +721,7 @@ to squeeze out the last bits of performance.
 Even though the Rust compiler executes a lot of steps in parallel,
 single-threaded performance is still quite relevant.
 
-As a somewhat drastic measure, you can try to overclock your CPU. [Here's a
-tutorial for my processor](https://www.youtube.com/watch?v=gb1QDpRnOvw). (I owe
+As a somewhat drastic measure, you can try to overclock your CPU. (I owe
 you some benchmarks from my machine.)
 
 </details>

@@ -20,7 +20,7 @@ Related links and resources:
 
 - Podcast by [Caleb Porzio](https://calebporzio.com/) about why building
   a business around Github sponsors is [so
-  hard](https://laravel-livewire.com/podcasts/ep44-did-sponsor-syrup-work).
+  hard](https://podbay.fm/p/building-livewire/e/1593614940).
 - The Changelog Podcast &mdash; [It’s OK to make money from your open source](https://changelog.com/podcast/405)
   with [Zeno Rocha](https://zenorocha.com/).
 - [Nadia Eghbal](https://nadia.xyz/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg). She also wrote a book on that topic

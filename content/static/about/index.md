@@ -41,7 +41,7 @@ As of today, I started more than 100 open source projects. Here's a list of the 
 
 {{ load_stars() }}
 
-[universit&auml;t bayreuth]: https://www.uni-bayreuth.de/en/index.html
+[universit&auml;t bayreuth]: https://www.uni-bayreuth.de
 [trivago]: https://tech.trivago.com/
 [*hello, rust!*]: https://hello-rust.show
 [talks]: @/static/talks/index.md
