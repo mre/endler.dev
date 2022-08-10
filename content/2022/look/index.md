@@ -1,14 +1,13 @@
 +++
 title="The `look` Unix command"
-date=2022-02-15
+date=2022-08-10
 draft=true
 [taxonomies]
 tags=["dev", "rust"]
 +++
 
-Ever heard of the `look` Unix command?
-Me neither. And yet it is installed on my computer &mdash; and probably yours, too. 👀
-Look!
+Chances are you never heard of the `look` Unix command &mdash; and yet it is
+installed on your computer. Look! 👀 
 
 ```
 > look rust
@@ -29,8 +28,8 @@ rusticism
 
 It prints words that start with a prefix.
 
-And it's been around for a while; since "Version 7 AT&T UNIX", according to `man look`.
-That's like 1979 and I find out about it now. Oh well.
+It's been around for a while, too. Since "Version 7 AT&T UNIX", according to `man look`.
+That's like... 1979 (?) and I find out about it now. Oh well.
 
 Anyhow, let's write a Rust thing, shall we?
 
@@ -72,22 +71,20 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 That produces the same output on my MacBook than the system version.
 
-```
-> cargo run -- rust | wc -l
-33
-> look rust | wc -l
-33
+```sh
+> diff <(cargo run -- rust) <(look rust)
+>
 ```
 
 Is it equally fast?
 
+```sh
+> brew install hyperfine
 ```
-brew install hyperfine
 
-```
-
-```
-hyperfine --warmup 5 'look rust' 'target/release/lookrs rust'
+```sh
+> cargo build --release
+> hyperfine --warmup 5 'look rust' 'target/release/lookrs rust'
 Benchmark #1: look rust
   Time (mean ± σ):       4.4 ms ±   6.9 ms    [User: 0.7 ms, System: 1.2 ms]
   Range (min … max):     0.0 ms …  25.4 ms    123 runs
@@ -105,14 +102,14 @@ Huh, my naive version is about 20x slower.
 I just remember that [ripgrep](https://github.com/BurntSushi/ripgrep) could also be used for that.
 It supports `\b` to denote word boundaries:
 
-```
-rg '\brust' /usr/share/dict/words
+```sh
+> rg '\brust' /usr/share/dict/words
 ```
 
 Checking with hyperfine, it's 3x slower than `look`:
 
-```
-hyperfine --warmup 5 'rg '\brust' /usr/share/dict/words'                                                                                                               ✘
+```sh
+> hyperfine --warmup 5 'rg '\brust' /usr/share/dict/words'                                                                                                               ✘
 Benchmark #1: rg brust /usr/share/dict/words
   Time (mean ± σ):      12.3 ms ±   7.4 ms    [User: 3.9 ms, System: 2.9 ms]
   Range (min … max):     4.4 ms …  26.6 ms    198 runs
@@ -124,9 +121,9 @@ The `look` manpage gives a hint:
 
 And indeed if we randomize the input, `look` becomes completely useless:
 
-```
-cat /usr/share/dict/words | sort -R > random.txt
-look rust random.txt
+```sh
+> cat /usr/share/dict/words | sort -R > random.txt
+> look rust random.txt
 *Crickets. No output*
 ```
 
@@ -176,6 +173,7 @@ http://pts.github.io/pts-line-bisect/line_bisect_evolution.html
 
 TODO: Add diagram for comparison of linear search and binary search by file size
 
+```
 |
 |    /
 |   /
@@ -183,3 +181,4 @@ TODO: Add diagram for comparison of linear search and binary search by file size
 | / _/
 |/_/
 +------------------------------------
+```
