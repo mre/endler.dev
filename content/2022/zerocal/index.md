@@ -90,6 +90,7 @@ Shuttle is a hosting service for Rust projects and I wanted to try it out for a 
 To initialize the project using `axum`, I’ve used
 
 ```
+cargo install cargo-shuttle
 cargo shuttle init --axum --name zerocal zerocal
 ```
 
@@ -100,15 +101,15 @@ use axum::{routing::get, Router};
 use sync_wrapper::SyncWrapper;
 
 async fn hello_world() -> &'static str {
-    "Hello, world!"
+  "Hello, world!"
 }
 
 #[shuttle_service::main]
 async fn axum() -> shuttle_service::ShuttleAxum {
-    let router = Router::new().route("/hello", get(hello_world));
-    let sync_wrapper = SyncWrapper::new(router);
+  let router = Router::new().route("/hello", get(hello_world));
+  let sync_wrapper = SyncWrapper::new(router);
 
-    Ok(sync_wrapper)
+  Ok(sync_wrapper)
 }
 ```
 
@@ -127,7 +128,6 @@ It will ask you to authorize it to access your Github account.
 Then:
 
 ```sh
-cargo install cargo-shuttle
 cargo shuttle login
 ```
 
@@ -158,12 +158,12 @@ cargo add chrono # For date and time parsing
 Let's create a demo calendar event:
 
 ```rust
- let event = Event::new()
-    .summary("test event")
-    .description("here I have something really important to do")
-    .starts(Utc::now())
-    .ends(Utc::now() + Duration::days(1))
-    .done();
+let event = Event::new()
+  .summary("test event")
+  .description("here I have something really important to do")
+  .starts(Utc::now())
+  .ends(Utc::now() + Duration::days(1))
+  .done();
 ```
 
 Simple enough.
@@ -177,19 +177,19 @@ There's an example of how to return a file dynamically in axum [here](https://gi
 
 ```rust
 async fn calendar() -> impl IntoResponse {
-    let ical = Calendar::new()
-        .push(
-            // add an event
-            Event::new()
-                .summary("It works! 😀")
-                .description("Meeting with the Rust community")
-                .starts(Utc::now() + Duration::hours(1))
-                .ends(Utc::now() + Duration::hours(2))
-                .done(),
-        )
-        .done();
+  let ical = Calendar::new()
+    .push(
+      // add an event
+      Event::new()
+        .summary("It works! 😀")
+        .description("Meeting with the Rust community")
+        .starts(Utc::now() + Duration::hours(1))
+        .ends(Utc::now() + Duration::hours(2))
+        .done(),
+    )
+    .done();
 
-    CalendarResponse(ical)
+  CalendarResponse(ical)
 }
 ```
 
@@ -208,14 +208,14 @@ Here is the `CalendarResponse` implementation:
 pub struct CalendarResponse(pub Calendar);
 
 impl IntoResponse for CalendarResponse {
-    fn into_response(self) -> Response {
-        let mut res = Response::new(boxed(Full::from(self.0.to_string())));
-        res.headers_mut().insert(
-            header::CONTENT_TYPE,
-            HeaderValue::from_static("text/calendar"),
-        );
-        res
-    }
+  fn into_response(self) -> Response {
+    let mut res = Response::new(boxed(Full::from(self.0.to_string())));
+    res.headers_mut().insert(
+      header::CONTENT_TYPE,
+      HeaderValue::from_static("text/calendar"),
+    );
+    res
+  }
 }
 ```
 
@@ -230,45 +230,45 @@ I used [dateparser](https://docs.rs/dateparser), because it supports [sooo many 
 
 ```rust
 async fn calendar(Query(params): Query<HashMap<String, String>>) -> impl IntoResponse {
-    let mut event = Event::new();
-    event.class(Class::Confidential);
+  let mut event = Event::new();
+  event.class(Class::Confidential);
 
-    if let Some(title) = params.get("title") {
-        event.summary(title);
-    } else {
-        event.summary(DEFAULT_EVENT_TITLE);
+  if let Some(title) = params.get("title") {
+    event.summary(title);
+  } else {
+    event.summary(DEFAULT_EVENT_TITLE);
+  }
+  if let Some(description) = params.get("description") {
+    event.description(description);
+  } else {
+    event.description("Powered by zerocal.shuttleapp.rs");
+  }
+
+  if let Some(start) = params.get("start") {
+    let start = dateparser::parse(start).unwrap();
+    event.starts(start);
+    if let Some(duration) = params.get("duration") {
+      let duration = humantime::parse_duration(duration).unwrap();
+      let duration = chrono::Duration::from_std(duration).unwrap();
+      event.ends(start + duration);
     }
-    if let Some(description) = params.get("description") {
-        event.description(description);
-    } else {
-        event.description("Powered by zerocal.shuttleapp.rs");
+  }
+
+  if let Some(end) = params.get("end") {
+    let end = dateparser::parse(end).unwrap();
+    event.ends(end);
+    if let Some(duration) = params.get("duration") {
+      if params.get("start").is_none() {
+        let duration = humantime::parse_duration(duration).unwrap();
+        let duration = chrono::Duration::from_std(duration).unwrap();
+        event.starts(end - duration);
+      }
     }
+  }
 
-    if let Some(start) = params.get("start") {
-        let start = dateparser::parse(start).unwrap();
-        event.starts(start);
-        if let Some(duration) = params.get("duration") {
-            let duration = humantime::parse_duration(duration).unwrap();
-            let duration = chrono::Duration::from_std(duration).unwrap();
-            event.ends(start + duration);
-        }
-    }
+  let ical = Calendar::new().push(event.done()).done();
 
-    if let Some(end) = params.get("end") {
-        let end = dateparser::parse(end).unwrap();
-        event.ends(end);
-        if let Some(duration) = params.get("duration") {
-            if params.get("start").is_none() {
-                let duration = humantime::parse_duration(duration).unwrap();
-                let duration = chrono::Duration::from_std(duration).unwrap();
-                event.starts(end - duration);
-            }
-        }
-    }
-
-    let ical = Calendar::new().push(event.done()).done();
-
-    CalendarResponse(ical)
+  CalendarResponse(ical)
 }
 ```
 
@@ -319,15 +319,15 @@ I modified the `calendar` function a bit to return the form if the query string 
 
 ```rust
 async fn calendar(Query(params): Query<HashMap<String, String>>) -> impl IntoResponse {
-    // if query is empty, show form
-    if params.is_empty() {
-        return Response::builder()
-            .status(200)
-            .body(boxed(Full::from(include_str!("../static/index.html"))))
-            .unwrap();
-    }
+  // if query is empty, show form
+  if params.is_empty() {
+    return Response::builder()
+      .status(200)
+      .body(boxed(Full::from(include_str!("../static/index.html"))))
+      .unwrap();
+  }
 
-    // ...
+  // ...
 ```
 
 After some more tweaking, we got ourselves a nice little form in all of its web 1.0 glory:
