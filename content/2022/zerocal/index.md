@@ -48,7 +48,8 @@ But you know what they say: Never ask a starfish for directions.
 
 ## Show, don’t tell
 
-That night I went home and built a website that would build a calendar event from `GET` parameters.
+That night I went home and built a website that would create a calendar entry
+from `GET` parameters.
 
 It allows you to create a calendar event from the convenience of your command line:
 
@@ -87,7 +88,7 @@ That's because I'm using [shuttle.rs](https://shuttle.rs) to host the website.
 
 Shuttle is a hosting service for Rust projects and I wanted to try it out for a long time.
 
-To initialize the project using `axum`, I’ve used
+To initialize the project using the awesome [axum](https://github.com/tokio-rs/axum) web framework, I’ve used
 
 ```
 cargo install cargo-shuttle
@@ -143,7 +144,7 @@ Now let's head over to https://zerocal.shuttleapp.rs:
 Hello World!
 ```
 
-Deploying the first version took about 5 minutes. Nice!
+Deploying the first version took less than 5 minutes. Nice!
 We're all set for our custom calendar app.
 
 ## Writing the app
@@ -293,25 +294,37 @@ And for all the odd people who don't use a terminal to create a calendar event, 
 ## Add a form
 
 ```html
-<form action="/calendar">
-  <label for="title">Title</label>
-  <input type="text" id="title" name="title" value="Birthday" />
-
-  <label for="description">Description</label>
-  <input type="text" id="description" name="description" value="Party" />
-
-  <label for="start">Start</label>
-  <input
-    type="datetime-local"
-    id="start"
-    name="start"
-    value="2022-11-04T20:00"
-  />
-
-  <label for="duration">Duration</label>
-  <input type="text" id="duration" name="duration" value="3h" />
-
-  <input type="submit" value="Submit" />
+<form>
+  <table>
+    <tr>
+      <td>
+        <label for="title">Event Title</label>
+      </td>
+      <td>
+        <input type="text" id="title" name="title" value="Birthday" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="desc">Description</label>
+      </td>
+      <td>
+        <input type="text" id="desc" name="desc" value="Party" />
+      </td>
+    </tr>
+    <tr>
+      <td><label for="start">Start</label></td>
+      <td>
+        <input type="datetime-local" id="start" name="start" />
+      </td>
+    </tr>
+    <tr>
+      <td><label for="end">End</label></td>
+      <td>
+        <input type="datetime-local" id="end" name="end" />
+      </td>
+    </tr>
+  </table>
 </form>
 ```
 
@@ -328,6 +341,7 @@ async fn calendar(Query(params): Query<HashMap<String, String>>) -> impl IntoRes
   }
 
   // ...
+}
 ```
 
 After some more tweaking, we got ourselves a nice little form in all of its web 1.0 glory:
@@ -343,7 +357,7 @@ Well, almost. We still need to deploy it.
 cargo shuttle deploy
 ```
 
-Right, that's it. It's that easy.
+Right, that's all. It's that easy.
 Thanks to the folks over at [shuttle.rs](https://shuttle.rs) for making this possible.
 
 The calendar app is now available at [https://zerocal.shuttleapp.rs](https://zerocal.shuttleapp.rs).
@@ -360,14 +374,12 @@ Check out the source code on [GitHub](https://github.com/mre/zerocal) and help m
 
 Here are some ideas:
 
-- Add support for more human-readable date formats (e.g. `now`, `tomorrow`)
-- Add support for recurring events
-- Add support for timezones
-- Add location support (e.g. `location=Berlin` or `location=https://zoom.us/test`)
-- Add Google calendar short-links (`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221003T224500Z%2F20221003T224500Z&details=&location=&text=`)
-- Add example bash command to create a calendar event from the command line
+- Add support for more human-readable date formats (e.g. `now`, `tomorrow`).
+- Add support for recurring events.
+- Add support for timezones.
+- Add location support (e.g. `location=Berlin` or `location=https://zoom.us/test`).
+- Add Google calendar short-links (`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221003T224500Z%2F20221003T224500Z&details=&location=&text=`).
+- Add example bash command to create a calendar event from the command line.
 - Shorten the URL (e.g. `zerocal.shuttleapp.rs/2022-11-04T20:00/3h/Birthday/Party`)?
 
 Check out the [issue tracker](https://github.com/mre/zerocal) and feel free to open a PR!
-
-How about one of you fine folks adds a "serverless" link shortener to the app? 🤔
