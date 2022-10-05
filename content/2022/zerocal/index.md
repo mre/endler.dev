@@ -9,7 +9,10 @@ subtitle="How to create a calendar event from the convenience of your command li
 credits = [
   { name = "Simon Brüggen", url="https://github.com/m3t0r" },
 ]
+social_img="2022_zerocal.png"
 +++
+
+{{ figure(src="intro.svg") }}
 
 Every once in a while my buddies and I meet for dinner.
 I value these evenings, but the worst part is scheduling these events!
