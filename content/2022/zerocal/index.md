@@ -1,5 +1,5 @@
 +++
-title="zerocal - a serverless calendar app in Rust running on shuttle.rs"
+title="zerocal - A Serverless Calendar App in Rust Running on shuttle.rs"
 subtitle="Create a calendar event from the convenience of your command line."
 date=2022-10-05
 draft=false
@@ -84,7 +84,7 @@ There is no state on the server, it just generates a calendar event on the fly a
 ## How I built it
 
 You probably noticed that the URL contains "shuttleapp.rs".
-That's because I'm using [shuttle.rs](https://shuttle.rs) to host the website.
+That's because I'm using [shuttle.rs](https://github.com/shuttle-hq/shuttle) to host the website.
 
 Shuttle is a hosting service for Rust projects and I wanted to try it out for a long time.
 
@@ -358,7 +358,7 @@ cargo shuttle deploy
 ```
 
 Right, that's all. It's that easy.
-Thanks to the folks over at [shuttle.rs](https://shuttle.rs) for making this possible.
+Thanks to the folks over at [shuttle.rs](https://github.com/shuttle-hq/shuttle) for making this possible.
 
 The calendar app is now available at [https://zerocal.shuttleapp.rs](https://zerocal.shuttleapp.rs).
 
