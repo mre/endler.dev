@@ -1,11 +1,11 @@
 +++
 title="zerocal - A Serverless Calendar App in Rust Running on shuttle.rs"
-subtitle="Create a calendar event from the convenience of your command line."
 date=2022-10-05
 draft=false
 [taxonomies]
 tags=["dev", "rust"]
 [extra]
+subtitle="How to create a calendar event from the convenience of your command line. 🤖"
 credits = [
   { name = "Simon Brüggen", url="https://github.com/m3t0r" },
 ]
