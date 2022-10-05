@@ -1,8 +1,8 @@
 +++
 title="zerocal - a serverless calendar app in Rust running on shuttle.rs"
 subtitle="A simple app that allows you to create a calendar event from the convenience of your command line."
-date=2022-10-04
-draft=true
+date=2022-10-05
+draft=false
 [taxonomies]
 tags=["dev", "rust"]
 +++
