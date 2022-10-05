@@ -5,6 +5,10 @@ date=2022-10-05
 draft=false
 [taxonomies]
 tags=["dev", "rust"]
+[extra]
+credits = [
+  { name = "Simon Brüggen", url="https://github.com/m3t0r" },
+]
 +++
 
 Every once in a while my buddies and I meet for dinner.
