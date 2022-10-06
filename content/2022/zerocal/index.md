@@ -381,10 +381,10 @@ Check out the source code on [GitHub](https://github.com/mre/zerocal) and help m
 
 Here are some ideas:
 
+- ✅ Add location support (e.g. `location=Berlin` or `location=https://zoom.us/test`).
 - Add support for more human-readable date formats (e.g. `now`, `tomorrow`).
 - Add support for recurring events.
 - Add support for timezones.
-- Add location support (e.g. `location=Berlin` or `location=https://zoom.us/test`).
 - Add Google calendar short-links (`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221003T224500Z%2F20221003T224500Z&details=&location=&text=`).
 - Add example bash command to create a calendar event from the command line.
 - Shorten the URL (e.g. `zerocal.shuttleapp.rs/2022-11-04T20:00/3h/Birthday/Party`)?
