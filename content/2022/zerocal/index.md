@@ -9,6 +9,11 @@ subtitle="How to create a calendar event from the convenience of your command li
 credits = [
   { name = "Simon Brüggen", url="https://github.com/m3t0r" },
 ]
+comments = [
+  {name = "Hacker News", url = "https://news.ycombinator.com/item?id=33109513"},
+  {name = "Reddit", url = "https://reddit.com/r/rust/comments/xx3gbd/zerocal_a_serverless_calendar_app_in_rust_running/" }
+
+]
 social_img="2022_zerocal.png"
 +++
 
