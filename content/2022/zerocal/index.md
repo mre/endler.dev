@@ -145,13 +145,13 @@ and finally:
 cargo shuttle deploy
 ```
 
-Now let's head over to https://zerocal.shuttleapp.rs:
+Now let's head over to [zerocal.shuttleapp.rs](https://zerocal.shuttleapp.rs):
 
 ```
 Hello World!
 ```
 
-Deploying the first version took less than 5 minutes. Nice!
+Deploying the first version took less than 5 minutes. Neat!
 We're all set for our custom calendar app.
 
 ## Writing the app
@@ -294,7 +294,7 @@ Nice, it works!
 
 Opening it in the browser creates a new event in the calendar:
 
-{{ figure(src="event.jpg", caption="Of course, it also works in Chrome, but you do [support the open web](https://contrachrome.com/), right?") }}
+{{ figure(src="event.jpg", caption="Of course, it also works on Chrome, but you do [support the open web](https://contrachrome.com/), right?") }}
 
 And for all the odd people who don't use a terminal to create a calendar event, let's also add a form to the website.
 
@@ -367,14 +367,14 @@ cargo shuttle deploy
 Right, that's all. It's that easy.
 Thanks to the folks over at [shuttle.rs](https://github.com/shuttle-hq/shuttle) for making this possible.
 
-The calendar app is now available at [https://zerocal.shuttleapp.rs](https://zerocal.shuttleapp.rs).
+The calendar app is now available at [zerocal.shuttleapp.rs](https://zerocal.shuttleapp.rs).
 
 Now I can finally send my friends a link to a calendar event for our next pub crawl.
 They'll surely appreciate it.<sup>yeah<sup>yeah</sup></sup>
 
 ## From zero to calendar in 100 lines of Rust
 
-Boy it feels great to be writing plain HTML again.  
+Boy it feels good to be writing some plain HTML again.  
 Building little apps never gets old.
 
 Check out the source code on [GitHub](https://github.com/mre/zerocal) and help me make it better! 🙏
