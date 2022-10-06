@@ -382,6 +382,7 @@ Check out the source code on [GitHub](https://github.com/mre/zerocal) and help m
 Here are some ideas:
 
 - ✅ Add location support (e.g. `location=Berlin` or `location=https://zoom.us/test`).
+  Thanks to [sigaloid](https://github.com/sigaloid).
 - Add support for more human-readable date formats (e.g. `now`, `tomorrow`).
 - Add support for recurring events.
 - Add support for timezones.
