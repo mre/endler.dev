@@ -17,23 +17,26 @@ My interests are scalability, performance and distributed systems, but I also
 play around with embedded systems and console emulation. I hold an M.Sc. in
 Computer Science from [Universit&auml;t Bayreuth].
 
-You can find me on [Twitter], [LinkedIn], [Stack Overflow], and [Github] or send
-me an <a
-href="mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118;">e-mail</a>.
+Here is a list of my [public speaking][talks] engagements.
 
-Oh yeah, here is a list of my [previous talks][talks]. Let me know if you need a
-speaker.
+## Contact
 
-## Side Projects
+You can find me on [Twitter], [LinkedIn], [Stack Overflow], or [Github].  
+For business inquiries, please [book an intro-chat here](https://cal.com/matthias-endler) or send me an [email](
+mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118;).
 
-- [analysis-tools.dev](https://analysis-tools.dev) is an open comparison
-  platform for static/dynamic code analysis software, listing 500+ tools.
-- [Idiomatic Rust](https://github.com/mre/idiomatic-rust) &mdash; a
+## Projects
+
+- [Open Podcast](https://openpodcast.dev): An open platform for podcast analytics.
+- [Analysis Tools](https://analysis-tools.dev): An open comparison
+  platform for static/dynamic code analysis software, listing 600+ tools.
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust): A
   peer-reviewed collection of articles/talks/repos which teach concise, idiomatic
   Rust.
-- [*Hello, Rust!*], a YouTube channel about the Rust programming language.
-- [codeprints.dev](https://codeprints.dev) is a shop for art prints from your
-  Github contributions to decorate your home-office (acquired).
+- [lychee](lychee.cli.rs): A fast link checker written in Rust.
+- [Hello, Rust!](https://hello-rust.show): A YouTube channel about the Rust programming language.
+- [codeprints](https://codeprints.dev): A shop for framed art prints of your
+  Github contributions (co-founder, since acquired).
 
 ## Open Source
 
@@ -43,7 +46,6 @@ As of today, I started more than 100 open source projects. Here's a list of the 
 
 [universit&auml;t bayreuth]: https://www.uni-bayreuth.de
 [trivago]: https://tech.trivago.com/
-[*hello, rust!*]: https://hello-rust.show
 [talks]: @/static/talks/index.md
 [github]: https://github.com/mre/
 [twitter]: https://twitter.com/matthiasendler
