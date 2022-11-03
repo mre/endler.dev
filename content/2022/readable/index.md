@@ -10,6 +10,8 @@ credits = [
 ]
 +++
 
+{{ figure(src="darkmode.jpg", caption="Reader showing an article in light and dark mode.") }}
+
 {% info() %}
 _tl;dr:_ I built a service that takes any article and creates a pleasant-to-read, printable version.
 It is similar to Reader View in Firefox/Safari, but also works on older
@@ -38,7 +40,7 @@ in Firefox, and while it doesn't always work and it's not the prettiest I like i
 
 There are reader modes in other browsers as well, but some of them &mdash; like Chrome &mdash; [hide
 it behind a feature flag](https://www.howtogeek.com/423643/how-to-use-google-chromes-hidden-reader-mode/).
-Other browsers, like the one on my ebook reader, don't come with a reader mode at all,
+Other browsers, like the one on my eBook reader, don't come with a reader mode at all,
 which leaves me with a subpar and slow browsing experience on my main device used for reading.
 
 So I built _a reader mode as a service_ with a focus on _beautiful typography_
@@ -49,7 +51,7 @@ while travelling.
 
 ## Building It
 
-Lately I saw a post about [circumflex, a hacker News terminal
+Lately I saw a post about [circumflex, a Hacker News terminal
 client](https://news.ycombinator.com/item?id=33192518). The tool did a solid job
 at rendering website content and I wondered if I can retrofit that into a proxy
 server.
@@ -221,6 +223,8 @@ all segments until the end.
 
 ## Typography and Layout
 
+{{ figure(src="nyt.jpg", caption="New York Times website (left) vs reader mode (right)") }}
+
 For my first prototype I used a CSS framework called
 [yue.css](https://github.com/typlog/yue.css) because it was the first thing I
 found which looked nice.
@@ -231,28 +235,16 @@ well-typeset book.
 
 For fonts I chose two of my favorites
 
-- [Crimson Pro](https://github.com/Fonthausen/CrimsonPro) for the body text
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for code
+- [Crimson Pro](https://github.com/Fonthausen/CrimsonPro) for the body text.
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for the code.
 
-Both are licensed under the SIL Open Font License 1.1.
-
-## Terminal
+Both are licensed under the [SIL Open Font License 1.1](https://opensource.org/licenses/OFL-1.1).
 
 You can even use `readable` from the terminal.
 
 ```
 lynx https://readable.shuttleapp.rs/https://en.wikipedia.org/wiki/Alan_Turing
 ```
-
-## Credits
-
-I was not the first person to build a readability proxy. I found out about
-[readable-proxy](https://github.com/n1k0/readable-proxy) when I did my research,
-but the project seems to be abandoned.
-
-Thanks to [Ruud van Asseldonk](https://ruudvanasseldonk.com/) for open sourcing
-his [blog](https://github.com/ruuda/blog). 🙏 His writing and documentation are
-always a great source of inspiration to me.
 
 ## Caveats
 
@@ -261,7 +253,7 @@ It's something I built in a few hours for my personal use.
 
 - It doesn't always produce valid HTML.
 - JavaScript is not executed, so some websites don't work properly. Some might
-  say that this is a feature, not a bug. 😅
+  say that's feature, not a bug. 😉
 - That is also true for websites with sophisticated paywalls or bot-detection. A
   workaround would be to use a headless browser like
   [ScrapingBee](https://www.scrapingbee.com) or
@@ -269,15 +261,29 @@ It's something I built in a few hours for my personal use.
   complexity to the project.
 - The `readability` library takes a lot of freedom in formatting the document
   however it pleases. It can sometimes produce weird results. For example, it
-  likes to mangle code blocks.
+  loves to mangle code blocks.
+
+## Credits
+
+I was not the first person to build a readability proxy. I found out about
+[readable-proxy](https://github.com/n1k0/readable-proxy) when I did my research,
+but the project seems to be abandoned. Nevertheless it was nice to see that
+others had the same need.
+
+Thanks to [Ruud van Asseldonk](https://ruudvanasseldonk.com/) for open sourcing
+his [blog](https://github.com/ruuda/blog). 🙏 His writing and documentation are
+always a great source of inspiration to me.
 
 ## Conclusion
 
+{{ figure(src="kobo.jpg", caption="The browser on my old Kobo eBook reader using the readability proxy.") }}
+
 In times where [the most popular browser might kill off ad
 blockers](https://tech.co/news/google-chrome-ad-blockers-2023), a little service
-to read articles without ads and tracking can come in handy. I'm not saying you
+for reading articles without ads or tracking can come in handy. I'm not saying you
 should use it to send all your traffic through it, but it's a nice tool to have
 in your toolbox for a rainy day, a warm drink and a great article. ☕
 
+Feel free to deploy your own instance of `readable` or use the one I'm hosting.
 The source code is available on [GitHub](https://github.com/mre/readable).
 Maybe one of you wants to help me maintain it.
