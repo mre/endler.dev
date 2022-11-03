@@ -685,6 +685,10 @@ Tutorial: https://gist.github.com/KodrAus/97c92c07a90b1fdd6853654357fd557a
 On macOS
 https://github.com/cmyr/cargo-instruments
 
+
+Heap memory usage estimation (`data_size(&example)` prints an estimate of the number of bytes used by `example` on the heap):
+https://github.com/CasperLabs/datasize-rs
+
 ### Logging allocations
 
 https://github.com/Geal/tracing_allocator
@@ -716,7 +720,8 @@ general purpose
 jemmalloc
 
 special-purpose
-wee-alloc
+wee-alloc https://github.com/rustwasm/wee_alloc
+lol_alloc https://github.com/Craig-Macomber/lol_alloc (for wasm)
 bumpalo
 
 is there a tool to benchmark perf with different allocs?
@@ -762,7 +767,7 @@ https://github.com/rust-lang/rust/tree/master/library/alloc
 
 ## What Is A Memory Leak And Can It Happen In Rust?
 
-## Can I see memory allocations in Rust?
+## Can I "see" memory allocations in Rust?
 
 You can look at the MIR (medium intermediate representation)
 https://play.rust-lang.org/?version=nightly&mode=debug&edition=2021&gist=27235b1815171c24c6da8d1e7dc04e8f
