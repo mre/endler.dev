@@ -119,15 +119,22 @@ Here's a diagram of the memory layout of a program:
 
 {{ figure(src="memory.jpg" invert="true") }}
 
-As you can see, the stack is a contiguous region of memory that grows and shrinks
-as the program executes. Let's take a closer look at the stack.
+The `CODE` section contains the compiled code of the program, and the `GLOBAL`
+section contains static data. These two sections are allocated at compile time
+and are read-only. They never change during the program's execution.
+
+The stack and the heap are allocated at runtime and are read-write.
+They grow and shrink as needed.
+
+Now let's take a closer look at the stack.
 
 ### The Stack
 
 {{ figure(src="stack_heap.jpg" invert="true") }}
 
-You can think of a stack as a stack of dinner plates: you can only put a plate
-on top and remove it from there. It's very simple, which is what makes it fast.
+You can think of the stack as a stack of plates. When you add a new plate, you
+can only place it on top or remove a plate it from there.
+It's very simple, which is what makes it fast.
 
 A register is used to store the address of the topmost element of the stack
 which is known as Stack pointer. [On Intel x86 machines, this is a dedicated CPU
@@ -251,13 +258,91 @@ A quick and dirty way to find allocations is by running
 [ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder
 
 ```bash
-rg -e 'String::new' -e 'to_string()' -e 'to_owned()' -e 'Vec::new' -e 'vec!' -e 'BTreeMap::new' -e 'HashMap::new' -e 'HashSet::new' -e 'Box::new' -e 'Rc::new' -e 'Arc::new' -e 'read_to_string'
+rg -e 'String::new' \
+   -e 'to_string()' \
+   -e 'to_owned()' \
+   -e 'Vec::new' \
+   -e 'vec!' \
+   -e 'BTreeMap::new' \
+   -e 'HashMap::new' \
+   -e 'HashSet::new' \
+   -e 'Box::new' \
+   -e 'Rc::new' \
+   -e 'Arc::new' \
+   -e 'read_to_string'
 ```
 
 On top of that, crates that you use could also allocate, so you have to inspect
 that code as well.
 
-## How Does Allocation Work In Rust?
+## How Do Allocations Work In Rust?
+
+As seen above, there are data structures that implicitly allocate memory on the
+heap.
+
+More complex data structures use lower-level data structures under the hood
+and add more guarantees on top of them.
+
+Take a `String` for example. It's a wrapper around a `Vec<u8>` that adds
+the guarantee that it always holds a valid UTF-8 string.
+
+Internally a `String` is a wrapper around a `Vec<u8>` that provides a bunch of
+methods to manipulate strings.
+
+```rust
+struct String {
+    vec: Vec<u8>,
+}
+```
+
+(The type definition can be found [here](https://doc.rust-lang.org/src/alloc/string.rs.html#368).)
+
+The [`Vec`](https://doc.rust-lang.org/src/alloc/vec/mod.rs.html#400) type in turn is a wrapper around a `Box<[T]>` that provides a bunch of methods
+to manipulate vectors.
+
+```rust
+pub struct Vec<T, A: Allocator = Global> {
+    buf: RawVec<T, A>,
+    len: usize,
+}
+```
+
+where `RawVec` is a wrapper around a `Box<[T]>`:
+
+```rust
+pub struct RawVec<T, A: Allocator = Global> {
+    ptr: Unique<T>,
+    cap: usize,
+    alloc: A,
+}
+```
+
+You can see how complex data structures are built up from simpler data types
+with less guarantees.
+
+At the end, all types are composed of primitive types like `u8`, `i32`, `bool`,
+`char`, etc. The compiler knows how to allocate memory for these types
+and by extension for all other types.
+
+## How Do I Prevent Allocations?
+
+There are two ways to prevent allocations:
+
+- Use a data structure that doesn't allocate
+- Use a data structure that allocates but reuse it
+
+In this context, you will often hear the term "zero copy" or "zero allocation".
+It means that you don't allocate additional memory to perform a task.
+Instead, you reuse existing memory.
+
+### Use a Data Structure That Doesn't Allocate
+
+The most obvious way to prevent allocations is to use a data structure that
+doesn't allocate.
+
+For example, if you want to store a string, you can use a `&str` instead of a
+`String`.
+A &str is made up of two components: a pointer to some bytes, and a length.
 
 Zero copy is a lot of fun! Especially for representing datastructures.
 
