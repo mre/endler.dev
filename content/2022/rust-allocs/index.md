@@ -1,6 +1,6 @@
 +++
 title="Allocations in Rust"
-date=2022-01-18
+date=2022-11-04
 draft=true
 
 [taxonomies]
@@ -10,25 +10,26 @@ tags=["rust"]
 subtitle="And How To Avoid Them"
 +++
 
-One of the main benefits of Rust is that it offers control over
-low-level details.
-I always thought one of the neatest things about Rust was that I could take _full control over memory_
-and deep-dive into optimizations at will.
+One of the main benefits of Rust is that it offers control over low-level
+concepts like memory management. I always thought one of the neatest things
+about Rust was that I could take _full control over memory_ and deep-dive into
+optimizations at will.
 
-I've heard people fondly speak of _zero-copy_ and _allocation-free_ code. Alas I
-wondered, what does that even mean?
+I've heard people fondly speak of _zero-copy_ and _allocation-free_ code.
+Alas, I wondered, what does that even mean?
 
 Information on the topic is surprisingly sparse, and I had to piece together
 whatever I could find from various sources to understand how Rust _really_
 handles allocations &mdash; and how to avoid them if needed.  
-To save others from the trouble, I decided to write down what I've learned so
-far.
+To save others the trouble, I decided to write down all I've learned so far.
 
 ## Who Is This Article For?
 
-Everyone who wants to know more about <u>allocations</u> and <u>Rust</u>, really. It's an
-intermediate topic, so you don't need to know a lot about allocations to be
-productive in Rust. It can be fun and educational to learn more, however!
+Everyone who wants to know more about <u>allocations</u> and <u>Rust</u>, really.
+
+Memory management internals are an intermediate topic, but you don't need to know
+a lot about allocations to be productive in Rust. It can be fun and educational
+to learn more, however!
 
 The article is rather long, so feel free to jump around in
 the...
@@ -37,19 +38,29 @@ the...
 
 ## What's An Allocation?
 
-The word comes from Vulgar Latin [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from ad- (“to”) + locus (“place”)
-<sup><a href="#fn1" id="ref1">1</a></sup> &mdash; where shall I put that data?
+The word comes from _Vulgar Latin_ [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from _ad-_ ("to") + _locus_ ("place")
 
-Ever since the first computers, programmers needed to find an answer for that
-and there are a number of tradeoffs to consider:
-allocation has to be fast, space-efficient, and scalable; it's not an easy task.
+Ever since the first computers, programmers needed to find an answer to the question
+"Where to put that data?".
 
-## What is an Allocator?
+And there are a number of options and tradeoffs to consider:
+allocation has to be fast, space-efficient, and scalable; it's not an easy task!
 
 In the early days, memory was managed by hand. As computer memory got bigger,
 special programs &mdash; allocators &mdash; were written to take on the job.
 
-Here's a list of popular allocators used in the wild:
+## What is an Allocator?
+
+An allocator is a program that manages memory for other programs. It's a
+fundamental piece of software that's been around for a long time.
+
+Allocators are responsible for finding a place in memory for a program's data,
+and keeping track of which parts of memory are in use and which are free.
+
+Research on allocators has been going on for decades, and with the
+advent of new hardware, new techniques get developed all the time.
+
+Here's a list of some popular allocators used in the wild and who uses them:
 
 - [jemalloc](https://github.com/jemalloc/jemalloc) &mdash; FreeBSD and Firefox, [Rust until 1.32.0](https://blog.rust-lang.org/2019/01/17/Rust-1.32.0.html#jemalloc-is-removed-by-default)
 - [tcmalloc](https://github.com/google/tcmalloc) &mdash; Google
@@ -60,16 +71,31 @@ There are [many more](https://github.com/daanx/mimalloc-bench#current-allocators
 at the time of writing, mimalloc [claims to be the fastest](https://github.com/microsoft/mimalloc#Performance);
 and they also published a cool [whitepaper](https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf).
 
-Most modern allocators split memory into [chunks](https://sourceware.org/glibc/wiki/MallocInternals) and commonly, there are separate regions for storing "small", "medium", or "large" objects. For example, GNU's malloc, which is based on [dlmalloc](http://gee.cs.oswego.edu/dl/html/malloc.html) and [ptmalloc](http://www.malloc.de/en/) uses three chunk sizes ([Source: Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)):
+## How Do Modern Allocators Work?
 
-- For requests below 256 bytes (a "smallbin" request), a simple two power best fit allocator is used.
-  If there are no free blocks in that bin, a block from the next highest bin is split in two.
-- For requests of 256 bytes or above but below the `mmap` threshold, dlmalloc since v2.8.0 use an
-  in-place bitwise trie algorithm ("treebin"). If there is no free space left to satisfy the request, dlmalloc tries to increase the size of the heap, usually via the `brk` system call.
-- For requests above the mmap threshold (a "largebin" request), the memory is always allocated using
-  the mmap system call. The threshold is usually 256 KB. The mmap method averts problems with huge buffers trapping a small allocation at the end after their expiration, but always allocates an entire page of memory, which on many architectures is 4096 bytes in size.
+Most modern allocators split memory into
+[chunks](https://sourceware.org/glibc/wiki/MallocInternals) and, commonly, there
+are separate regions for storing "small", "medium", or "large" objects. For
+example, GNU's malloc, which is based on
+[dlmalloc](http://gee.cs.oswego.edu/dl/html/malloc.html) and
+[ptmalloc](http://www.malloc.de/en/) uses three chunk sizes ([Source:
+Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)):
 
-There are some great resources if you want to dig deeper here:
+> - For requests below 256 bytes (a "smallbin" request), a simple two power best
+>   fit allocator is used. If there are no free blocks in that bin, a block from the
+>   next highest bin is split in two.
+> - For requests of 256 bytes or above but below the `mmap` threshold, dlmalloc
+>   since v2.8.0 use an in-place bitwise trie algorithm ("treebin"). If there is no
+>   free space left to satisfy the request, dlmalloc tries to increase the size of
+>   the heap, usually via the `brk` system call.
+> - For requests above the mmap threshold (a "largebin" request), the memory is
+>   always allocated using the mmap system call. The threshold is usually 256 KB.
+>   The mmap method averts problems with huge buffers trapping a small allocation at
+>   the end after their expiration, but always allocates an entire page of memory,
+>   which on many architectures is 4096 bytes in size.
+
+There are some great resources on modern, general-purpose allocators if you want
+to dig deeper here:
 
 - [Details on popular allocators on Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)
   for some more details.
@@ -77,18 +103,24 @@ There are some great resources if you want to dig deeper here:
 - [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
 
 It's a ✨ fascinating topic ✨ on its own, but we are mostly interested in **memory
-handling for Rust programs**, so let's move on.
+handling for Rust programs** today, so let's move on.
 
 ## Stack and Heap Allocations
 
 Computer memory is divided into _static_ and _dynamic memory_.
-The lifetime of static memory is the entire run of the program.
+The lifetime of static memory is the entire duration of the program's execution,
+and it's allocated at compile time.
 In contrast, dynamic memory is more short-lived and gets allocated at runtime.
 
 Static memory lives in the `GLOBAL` and `CODE` sections of a program, while
-dynamic memory lives on the stack and heap.
+dynamic memory lives on the _stack_ or the _heap_.
+
+Here's a diagram of the memory layout of a program:
 
 {{ figure(src="memory.jpg" invert="true") }}
+
+As you can see, the stack is a contiguous region of memory that grows and shrinks
+as the program executes. Let's take a closer look at the stack.
 
 ### The Stack
 
@@ -96,32 +128,44 @@ dynamic memory lives on the stack and heap.
 
 You can think of a stack as a stack of dinner plates: you can only put a plate
 on top and remove it from there. It's very simple, which is what makes it fast.
-The only thing you have to do when adding a new element is incrementing the
-stack pointer. To remove (or "pop") an element, just decrement the pointer. Both
-operations can be done with just one CPU instruction. The stack is where Rust
-allocates memory by default.
 
-However you cannot store arbitrarily large things on the stack and it gets
-cleaned up when you leave a function. This makes it somewhat limited to things
-of which you know the size at compile-time.
+A register is used to store the address of the topmost element of the stack
+which is known as Stack pointer. [On Intel x86 machines, this is a dedicated CPU
+register called `SP`](https://en.wikipedia.org/wiki/Stack_register).
+
+When you add a new element you need to increment the stack pointer.
+To remove (or "pop") an element, just decrement the pointer.
+Both operations can be done with just one CPU instruction.
+
+The stack is where Rust allocates memory _by default_.
+However you cannot store arbitrarily large things on the stack and the stack
+gets cleaned up when you leave a function. This makes it somewhat limited to
+things of which you know the size at compile-time and which have a limited
+scope.
 
 ### The Heap
 
 If you need more flexibility or you just can't tell the size of an object at
-compile-time, you can allocate memory on the heap at runtime instead. You can
+compile-time (e.g. because you read data from a user-specified file),
+you can allocate memory on the heap at runtime instead. You can
 freely allocate any memory address on the heap and its size is virtually
 unlimited, however it is generally slower as it might require a syscall for
 allocations and you might have to reallocate memory when growing things like a
 vector.
 
-Since you can move stuff around on the heap and there is no order of elements,
-the allocator needs to keep track of what memory is already allocated. On top of
-that, if you remove things, you'll end up with "holes" between the elements.
-This is called "memory fragmentation". So sometimes you might have to reorder
-items to free up some space, which can cause some overhead.
-The flexibility comes with a price.
+(Reallocation is a process of copying the data from one memory location to
+another and freeing the old memory.)
 
-# Why can't all allocations be static?
+Since you can move stuff around on the heap and there is no fixed location for
+each object, the allocator needs to keep track of what memory is already
+allocated.
+
+On top of that, if you remove things, you'll end up with "holes" between the
+elements. This is called "memory fragmentation".
+As a consequence you might have to stop and reorder items to free up some space,
+which can cause some overhead. The flexibility comes with a price.
+
+# Why Can't All Allocations Be Static?
 
 The sizes of some datatypes cannot be known at compile-time. For example, you
 might have a vector called students, but you don't know in advance how many
@@ -141,21 +185,26 @@ memory in regular intervals to clean up whatever isn't needed anymore. That's
 pretty handy for the most part.
 
 It's fine unless the garbage collector blocks the main thread.
-That's why most modern GCs are a work of art.
+That's why most modern GCs are a piece of art.
 For example, did you know that the Golang garbage collector [only blocks for a few hundred **micro**seconds on average](https://go.dev/blog/ismmkeynote)?
 In 99% of all cases, that's more than good enough.
 
-...but what about the _remaining_ 1%? 🥲
+...but what about the _remaining_ 1%? 😉
 
 Wellll, that's when you want to squeeze out every little bit of performance from
 your system... or when you simply don't have a way to run a garbage collector &mdash;
 like on an [embedded system](https://stackoverflow.com/a/1726006/270334).
 
+(For some context: An embedded system is a computer that doesn't _look_ like a computer. It's a
+computer that's built into a device, like a car, a washing machine, or a
+smartphone. These devices are often very resource-constrained, so you can't
+just run a garbage collector on them.)
+
 You might know that Rust has no built-in garbage collector.
 Instead, it uses a principle called [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) (Resource acquisition is initialization)
 to automatically allocate and free memory by checking the _liveliness_ of objects at compile-time.
-That's a fancy way of saying "whoever allocated memory has to free it again".
-The Rust compiler knows who owns memory by keeping track of the [ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
+That's a fancy way of saying "whoever allocated memory has to free it again" and
+the Rust compiler knows who owns memory by keeping track of the [ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
 
 When the owner goes out of scope, memory gets dropped:
 
@@ -176,33 +225,52 @@ fn main() {
 }
 ```
 
+What's brilliant about this is that the compiler can check at compile-time
+if ownership is correctly managed. There is never a situation where
+it's not clear whether a variable is still in use or not.
+In my personal opinion this is Rust's main innovation.
+It took the RAII principle from C++ and made it a compiler feature!
+Programs simply won't compile if memory is not correctly managed.
+
 ## How Can I Spot an Allocation?
+
+In the above example, we allocated memory on the stack and on the heap.
+How can we tell which is which?
 
 Here are some heuristics I use in daily life:
 
-- Is the type a standard data structure from std like String, Vec, BTreeMap or HashSet? If yes, then there’s an allocation.
-- Does my type contain a Box or an Rc or an Arc? If yes, then there’s an allocation.
-- Is my type Copy? If yes, then there’s probably no allocation going on. If no, then maybe there’s allocation. (Not always true, but again, we’re talking about heuristics here.)
+- **Is the type a standard data structure from std like `String`, `Vec`, `BTreeMap` or
+  `HashSet`?**
+  If yes, then there’s an allocation.
+- **Does my type contain a `Box` or an `Rc` or an `Arc`?**
+  If yes, then there’s an allocation.
+- **Is my type `Copy`?** If yes, then there’s _probably_ no allocation going on.
+  If not, then _maybe_ there’s allocation. (It's not always true, but again, we’re talking about heuristics here.)
 
-A quick and dirty way to find allocations is running [ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder
+A quick and dirty way to find allocations is by running
+[ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder
 
-```
+```bash
 rg -e 'String::new' -e 'to_string()' -e 'to_owned()' -e 'Vec::new' -e 'vec!' -e 'BTreeMap::new' -e 'HashMap::new' -e 'HashSet::new' -e 'Box::new' -e 'Rc::new' -e 'Arc::new' -e 'read_to_string'
 ```
 
-On top of that, crates that you use could also allocate, so you have to inspect that code as well.
+On top of that, crates that you use could also allocate, so you have to inspect
+that code as well.
 
 ## How Does Allocation Work In Rust?
 
-Zero copy is a lot of fun! Especially datastructures. The basic idea is that you
-stick to & references for all your data. With zero-copy parsing, you store &[u8]
-or &str slice references to the original text. often Rust parsers are
-implemented in terms of Iterators, where parsers in other low-level languages
-would fill some buffer first. Instead of allocating dynamic memory and copying
-data in to pass to later function calls, you use a buffer given to you by
-reference or made on the stack, relying on rust’s lifetimes and ownership
-semantics to guarantee that you’re looking at valid data. Other high level
-languages sometimes encourage copying of data, which can be slow and waste
+Zero copy is a lot of fun! Especially for representing datastructures.
+
+The basic idea is that you stick to `&` references (or borrows) for all your
+data. With zero-copy parsing, you store `&[u8]` or `&str` slice references to
+the original text.
+
+Often Rust parsers are implemented in terms of Iterators, where parsers in other
+low-level languages would fill some buffer first. Instead of allocating dynamic
+memory and copying data in to pass to later function calls, you use a buffer
+given to you by reference or made on the stack, relying on rust’s lifetimes and
+ownership semantics to guarantee that you’re looking at valid data. Other high
+level languages sometimes encourage copying of data, which can be slow and waste
 memory. Rust doesn’t discourage copying directly, but makes it much easier to
 reason about memory semantics and thus write code that doesn’t perform any
 copying. => lifetimes enable zero copy
@@ -684,7 +752,6 @@ Tutorial: https://gist.github.com/KodrAus/97c92c07a90b1fdd6853654357fd557a
 
 On macOS
 https://github.com/cmyr/cargo-instruments
-
 
 Heap memory usage estimation (`data_size(&example)` prints an estimate of the number of bytes used by `example` on the heap):
 https://github.com/CasperLabs/datasize-rs
