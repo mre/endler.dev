@@ -10,7 +10,7 @@ credits = [
 ]
 +++
 
-{{ figure(src="darkmode.jpg", caption="Reader showing an article in light and dark mode.") }}
+{{ figure(src="darkmode.jpg", caption="Reader showing an article in light and dark mode.", link="https://readable.shuttleapp.rs") }}
 
 {% info() %}
 _tl;dr:_ I built a service that takes any article and creates a pleasant-to-read, printable version.
