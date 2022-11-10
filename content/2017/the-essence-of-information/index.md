@@ -37,7 +37,7 @@ The more workers you assign to this task, the faster you're done.
 How long will 3 workers take? Right! Around 20 minutes. We could write down
 a simple formula for this relationship:
 
-![Sorting Time = Time for one worker / workers](./equation.svg)
+{{ figure(src="equation.svg", caption="The formula for the sorting time.") }}
 
 Well, that is not quite correct. We forgot to consider the [overhead](<https://en.wikipedia.org/wiki/Overhead_(computing)>): When Mary
 tries to pick up a sock, Stephen might reach for the same.
@@ -74,12 +74,12 @@ everyone.
 
 The following histogram gives you an idea of what I mean:
 
-![Even piles of socks](./socks_even.svg)
+{{ figure(src="socks_even.svg", caption="Even piles of socks.") }}
 
 In this case, we have about equally sized piles for each color. Looks
 like a fair workload for every worker to me.
 
-![Uneven piles of socks](./socks_uneven.svg)
+{{ figure(src="socks_uneven.svg", caption="Uneven piles of socks.") }}
 
 In the second case, we don't have an equal distribution. I don't want to sort the
 gray socks in this example. We need to think a little harder here.
@@ -107,7 +107,7 @@ miserably in practice.
 
 What if our small piles look like this?
 
-![A random pile of socks](./random_pile.jpg)
+{{ figure(src="random_pile.jpg", caption="A random pile of socks.") }}
 
 The number of pairs in each pile is... sobering.
 What we could do is run a very quick presorting step to increase the number of matches. Or maybe you come up with an even better idea?  

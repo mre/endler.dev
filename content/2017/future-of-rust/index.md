@@ -16,7 +16,7 @@ all, I'm neither part of the Rust core team, nor a major contributor to the Rust
 ecosystem. To that I answer: why not? It's fun to think about the future of
 systems programming in general and Rust in particular.
 
-{{ figure(src="crab.svg", caption="Ferris is the inofficial Rust mascot",  credits="Illustration provided by [zooenvato for FreePik.com](https://www.freepik.com/zooenvato)") }}
+{{ figure(src="crab.svg", caption="Ferris is the inofficial Rust mascot",  credits="Illustration provided by [FreePik.com](https://www.freepik.com)") }}
 
 You might have heard of the [near-term goals](https://internals.rust-lang.org/t/setting-our-vision-for-the-2017-cycle/3958) that the core team has committed itself to. Faster compile times and a more gentle learning curve come to mind.
 This post is not about that.

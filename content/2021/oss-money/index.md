@@ -24,7 +24,7 @@ Related links and resources:
 - The Changelog Podcast &mdash; [It’s OK to make money from your open source](https://changelog.com/podcast/405)
   with [Zeno Rocha](https://zenorocha.com/).
 - [Nadia Eghbal](https://nadia.xyz/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg). She also wrote a book on that topic
-called [Working in Public](https://amzn.to/3vAl43v").
+  called [Working in Public](https://amzn.to/3vAl43v").
 
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
@@ -220,8 +220,10 @@ reality, it's more or less someone working late at night to fix bugs and doing
 it because they believe in it. The public perception is probably wrong, and a
 really small group of people who maintain critical infrastructure. Sometimes
 that can lead to very tricky situations. Two of my childhood heroes talked about
-it openly: [Kenneth Reitz](https://kennethreitz.org/) is the core maintainer of
-requests for Python and [antirez](http://invece.org/) is the creator of
+it openly: [Kenneth
+Reitz](https://web.archive.org/web/20221024021910/https://kennethreitz.org/) is
+the core maintainer of requests for Python and [antirez](http://invece.org/) is
+the creator of
 [Redis](https://redis.io/), a key-value store. So one is front-end development
 and the other one from backend-end. They both talk about burnout here because
 the burden of becoming an Open Source maintainer on a big scale can very much

@@ -25,7 +25,7 @@ As a result, the text will be pushed down on the screen as soon as an image is l
 Also, while an image is loading, there is no preview, just blank space.
 Here's what that looks like on a slower connection:
 
-![Illustration of a flash of unstyled content](./fout.png)
+{{ figure(src="fout.png", caption="Illustration of a flash of unstyled content") }}
 
 I could fix that, by hardcoding the image width and height, but that would be tedious and error-prone.
 And there would be no preview.
@@ -55,7 +55,7 @@ Nevertheless, I liked the idea, so I started experimenting with different image 
 
 Here are 15 pixel wide thumbnails encoded in different file formats:
 
-![Comparison of different image formats when creating thumbnails](./thumbnails.jpg)
+{{ figure(src="thumbnails.jpg", caption="Comparison of different image formats when creating thumbnails") }}
 
 I used different tools to create the thumbnails.
 For JPEG and PNG encoding, I used [svgexport](https://github.com/shakiba/svgexport).

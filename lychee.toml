@@ -1,0 +1,24 @@
+exclude = [ 
+    # Exclude zola's `@/` relative links
+    '@/',
+
+    # HackerNews currently produces a 503
+    'news.ycombinator.com',
+
+    # Some images that get included directly in the markdown
+    # and don't use the `figure` shortcode
+    'content/2020/perf/avif_supported.avif',
+    'content/2020/perf/avif_not_supported.jpg',
+
+    # 403: Forbidden
+    # Mostly because of CDN bot detection I guess
+    'https://jakubsacha.pl/',
+    'https://sourceforge.net/',
+
+]
+exclude_loopback = true
+exclude_private = true
+exclude_path = ["templates"]
+
+max_retries = 0
+

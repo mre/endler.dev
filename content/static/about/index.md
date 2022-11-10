@@ -22,8 +22,7 @@ Here is a list of my [public speaking][talks] engagements.
 ## Contact
 
 You can find me on [Twitter], [LinkedIn], [Stack Overflow], or [Github].  
-For business inquiries, please [book an intro-chat here](https://cal.com/matthias-endler) or send me an [email](
-mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&#108;&#101;&#114;&#046;&#100;&#101;&#118;).
+For business inquiries, please [book an intro-chat here](https://cal.com/matthias-endler) or send me an [email](mailto:matthias@endler.dev).
 
 ## Projects
 
@@ -33,7 +32,7 @@ mailto:&#109;&#097;&#116;&#116;&#104;&#105;&#097;&#115;&#064;&#101;&#110;&#100;&
 - [Idiomatic Rust](https://github.com/mre/idiomatic-rust): A
   peer-reviewed collection of articles/talks/repos which teach concise, idiomatic
   Rust.
-- [lychee](lychee.cli.rs): A fast link checker written in Rust.
+- [lychee](https://lychee.cli.rs): A fast link checker written in Rust.
 - [Hello, Rust!](https://hello-rust.show): A YouTube channel about the Rust programming language.
 - [codeprints](https://codeprints.dev): A shop for framed art prints of your
   Github contributions (co-founder, since acquired).

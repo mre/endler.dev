@@ -37,7 +37,7 @@ What I find particularly motivating is, that now the authors themselves create p
 
 There was one problem though: The list of pull requests got longer and longer, as I was busy doing other things.
 
-![The list of Github Pull requests for awesome-static-analysis](./pull_requests.jpg)
+{{ figure(src="pull_requests.jpg", caption="The list of Github Pull requests for awesome-static-analysis")}}
 
 ## Adding contributors
 
