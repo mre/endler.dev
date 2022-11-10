@@ -22,3 +22,6 @@ exclude_path = ["templates"]
 
 max_retries = 0
 
+# I got lots of Github links...
+accept = [429, 200]
+
