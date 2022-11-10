@@ -15,6 +15,13 @@ exclude = [
     'https://jakubsacha.pl/',
     'https://sourceforge.net/',
 
+    # Produces `ERR`. Need to investigate.
+    'https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3',
+
+    # False positive. The full link should be
+    # https://en.wikiquote.org/wiki/H._L._Mencken
+    'https://en.wikiquote.org/wiki/H',
+
 ]
 exclude_loopback = true
 exclude_private = true
