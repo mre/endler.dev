@@ -636,4 +636,8 @@ summary {
   .logo_font_light {
     display: none;
   }
+
+  .invert {
+    filter: invert(1);
+  }
 }

@@ -1,11 +1,12 @@
 +++
-title="Hacker Folklore"
+title="Dead Metaphors in Computer Science"
 date=2020-04-24
+updated=2022-11-19
 [taxonomies]
 tags=["culture"]
 
 [extra]
-subtitle="Because \"Computer Etymology\" sounded boring."
+subtitle="Formerly \"Hacker Folklore\""
 credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
   {name = "Jakub Sacha", url="https://github.com/jakubsacha" },
@@ -75,6 +76,35 @@ References:
 a rounded printing plate. Plates like this were provided by companies such as
 Western Newspaper Union to many smaller newspapers.", credits="[Wikimedia
 Commons](https://english.stackexchange.com/a/464929)") }}
+
+## Boot / Reboot / Bootstrapping
+
+{{ figure(src="muenchhausen.svg", caption="Lithography of Baron M&uuml;nchhausen
+pulling himself out of a swamp by his pigtail",
+credits="[Wikimedia](https://commons.wikimedia.org/wiki/File:Zentralbibliothek_Solothurn_-_M%C3%BCnchhausen_zieht_sich_am_Zopf_aus_dem_Sumpf_-_a0400.tif#filelinks)")
+}}
+
+The term _boot_ is used in the context of computers to refer to the process of
+starting a computer.
+
+In compiler development, the term _bootstrapping_ refers to the process of
+rewriting a compiler in a new language: The first compiler is written in an
+existing language. Then it gets rewritten in the new language and compiled by
+itself.
+
+The saying "to pull oneself up by one's bootstraps" dates back to the 19th
+century. Tall boots may have a tab, loop or handle at the top allowing one to
+help pulling them on. The metaphor spawned additional metaphors for
+self-sustaining processes that proceed without external help.
+
+According to [Wikipedia](<https://en.wikipedia.org/wiki/Bootstrapping_(computing)>),
+
+> The idiom dates at least to 1834, when it appeared in the Workingman's
+> Advocate: "It is conjectured that Mr. Murphee will now be enabled to hand
+> himself over the Cumberland river or a barn yard fence by the straps of his
+> boots."
+
+There's also a nice summary in [Merriam-Webster](https://www.merriam-webster.com/words-at-play/reboot-boot-word-origin).
 
 ## Bug
 
