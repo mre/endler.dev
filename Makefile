@@ -63,7 +63,7 @@ dev run serve: ## Serve website locally
 
 .PHONY: stars
 stars: ## Update Github stars statistics for my projects
-	gh-stats --filter gitpod --stars 50 --template .star-counter-template.md --output content/static/about/stars.md
+	gh-stats --filter gitpod --stars 100 --template .star-counter-template.md --output content/static/about/stars.md
 
 .PHONY: deploy publish
 deploy publish: clean-pub build ## Deploy site on Cloudflare's Workers Sites using wrangler
