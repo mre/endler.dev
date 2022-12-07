@@ -10,9 +10,8 @@ tags=["rust"]
 subtitle="And How To Avoid Them"
 +++
 
-One of the main benefits of Rust is that it offers control over low-level
-concepts like memory management. I always thought one of the neatest things
-about Rust was that I could take _full control over memory_ and deep-dive into
+One of the neatest things
+about Rust is that you can take _full control over memory_ and deep-dive into
 optimizations at will.
 
 I've heard people fondly speak of _zero-copy_ and _allocation-free_ code.
@@ -25,14 +24,14 @@ To save others the trouble, I decided to write down all I've learned so far.
 
 ## Who Is This Article For?
 
-Everyone who wants to know more about <u>allocations</u> and <u>Rust</u>, really.
+Everyone who wants to know more about <u>allocations</u> and <u>Rust</u>,
+really.
 
-Memory management internals are an intermediate topic, but you don't need to know
-a lot about allocations to be productive in Rust. It can be fun and educational
-to learn more, however!
+Memory management internals are an intermediate topic, but you don't need to
+know a lot about allocations to be productive in Rust. It can be fun and
+educational to learn more, however!
 
-The article is rather long, so feel free to jump around in
-the...
+The article is rather long, so feel free to jump around in the...
 
 ## Table Of Contents
 
@@ -60,7 +59,7 @@ and keeping track of which parts of memory are in use and which are free.
 Research on allocators has been going on for decades, and with the
 advent of new hardware, new techniques get developed all the time.
 
-Here's a list of some popular allocators used in the wild and who uses them:
+Here's a list of some popular allocators used in the wild and what they are used for:
 
 - [jemalloc](https://github.com/jemalloc/jemalloc) &mdash; FreeBSD and Firefox, [Rust until 1.32.0](https://blog.rust-lang.org/2019/01/17/Rust-1.32.0.html#jemalloc-is-removed-by-default)
 - [tcmalloc](https://github.com/google/tcmalloc) &mdash; Google
@@ -89,21 +88,21 @@ Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementat
 >   free space left to satisfy the request, dlmalloc tries to increase the size of
 >   the heap, usually via the `brk` system call.
 > - For requests above the mmap threshold (a "largebin" request), the memory is
->   always allocated using the mmap system call. The threshold is usually 256 KB.
+>   always allocated using the `mmap` system call. The threshold is usually 256 KB.
 >   The mmap method averts problems with huge buffers trapping a small allocation at
 >   the end after their expiration, but always allocates an entire page of memory,
 >   which on many architectures is 4096 bytes in size.
 
+The architecture of modern-day allocators is a ✨ fascinating topic ✨ on its own,
+but we are mostly interested in **memory
+handling for Rust programs** today, so let's move on.
 There are some great resources on modern, general-purpose allocators if you want
-to dig deeper here:
+to dig deeper into allocators in general:
 
 - [Details on popular allocators on Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)
   for some more details.
-- [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals)
+- [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals) about GNU C library's (glibc's) malloc implementation.
 - [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
-
-It's a ✨ fascinating topic ✨ on its own, but we are mostly interested in **memory
-handling for Rust programs** today, so let's move on.
 
 ## Stack and Heap Allocations
 
@@ -113,15 +112,19 @@ and it's allocated at compile time.
 In contrast, dynamic memory is more short-lived and gets allocated at runtime.
 
 Static memory lives in the `GLOBAL` and `CODE` sections of a program, while
-dynamic memory lives on the _stack_ or the _heap_.
+dynamic memory lives on the _stack_ and the _heap_ sections.
 
 Here's a diagram of the memory layout of a program:
 
 {{ figure(src="memory.jpg" invert="true") }}
 
-The `CODE` section contains the compiled code of the program, and the `GLOBAL`
-section contains static data. These two sections are allocated at compile time
-and are read-only. They never change during the program's execution.
+The `CODE` section contains the compiled code of a program, which is the set of
+instructions that the computer follows to execute the program. The `GLOBAL`
+section, on the other hand, contains static data, which is data that remains
+constant throughout the program's execution. These two sections are typically
+allocated at compile time, which means that their size and contents are
+determined when the program is compiled, and they are usually read-only, which
+means that the program cannot modify their contents at runtime.
 
 The stack and the heap are allocated at runtime and are read-write.
 They grow and shrink as needed.
@@ -137,12 +140,19 @@ can only place it on top or remove a plate it from there.
 It's very simple, which is what makes it fast.
 
 A register is used to store the address of the topmost element of the stack
-which is known as Stack pointer. [On Intel x86 machines, this is a dedicated CPU
-register called `SP`](https://en.wikipedia.org/wiki/Stack_register).
+which is known as Stack pointer. [On Intel x86 machines, this is stored in a
+dedicated CPU register called
+`SP`](https://en.wikipedia.org/wiki/Stack_register).
 
 When you add a new element you need to increment the stack pointer.
 To remove (or "pop") an element, just decrement the pointer.
 Both operations can be done with just one CPU instruction.
+
+In Rust, the stack pointer is managed automatically by the compiler and runtime.
+When a program is executed, the Rust runtime sets up a stack and manages the
+stack pointer, which points to the top of the stack. As functions are called and
+variables are allocated on the stack, the stack pointer is adjusted to keep
+track of the current location on the stack.
 
 The stack is where Rust allocates memory _by default_.
 However you cannot store arbitrarily large things on the stack and the stack
@@ -154,7 +164,7 @@ scope.
 
 If you need more flexibility or you just can't tell the size of an object at
 compile-time (e.g. because you read data from a user-specified file),
-you can allocate memory on the heap at runtime instead. You can
+you can allocate memory on the heap &mdash; at runtime &mdash; instead. You can
 freely allocate any memory address on the heap and its size is virtually
 unlimited, however it is generally slower as it might require a syscall for
 allocations and you might have to reallocate memory when growing things like a
@@ -167,7 +177,7 @@ Since you can move stuff around on the heap and there is no fixed location for
 each object, the allocator needs to keep track of what memory is already
 allocated.
 
-On top of that, if you remove things, you'll end up with "holes" between the
+On top of that, if you remove things, you'll end up with "holes" in-between the
 elements. This is called "memory fragmentation".
 As a consequence you might have to stop and reorder items to free up some space,
 which can cause some overhead. The flexibility comes with a price.
@@ -179,8 +189,12 @@ might have a vector called students, but you don't know in advance how many
 students it will hold. Dynamic memory allocation makes it possible to hold any
 number of students as long as you have memory available.
 
-More info on stack vs heap as well as syscalls
-[here](https://www.linuxjournal.com/article/6390) and [here](http://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html#the-heap).
+Alright, I think we've talked enough about the stack and the heap for now! You
+can find even more info on stack vs heap as well as the respective syscalls
+[here](https://www.linuxjournal.com/article/6390) and
+[here](http://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html#the-heap).
+
+With that we're well prepared to dive into the Rust memory model!
 
 ## Memory Management in Rust
 
@@ -211,9 +225,10 @@ You might know that Rust has no built-in garbage collector.
 Instead, it uses a principle called [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) (Resource acquisition is initialization)
 to automatically allocate and free memory by checking the _liveliness_ of objects at compile-time.
 That's a fancy way of saying "whoever allocated memory has to free it again" and
-the Rust compiler knows who owns memory by keeping track of the [ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
+the Rust compiler knows who owns memory by keeping track of [ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
 
-When the owner goes out of scope, memory gets dropped:
+It's pretty simple and effective: When the owner goes out of scope, owned memory
+gets dropped:
 
 ```rust
 fn main() {
@@ -227,12 +242,12 @@ fn main() {
     }
 
     // Memory no longer reachable!
-    println!("{static_int}"); // Error: cannot find value of x in this scope
-    println!("{dynamic_vec:?}"); // Error: cannot find value of x in this scope
+    println!("{static_int}"); // Error: cannot find value `static_int` in this scope
+    println!("{dynamic_vec:?}"); // Error: cannot find value `dynamic_vec` in this scope
 }
 ```
 
-What's brilliant about this is that the compiler can check at compile-time
+What's brilliant about this is that the compiler can check at **compile-time**
 if ownership is correctly managed. There is never a situation where
 it's not clear whether a variable is still in use or not.
 In my personal opinion this is Rust's main innovation.
@@ -244,18 +259,15 @@ Programs simply won't compile if memory is not correctly managed.
 In the above example, we allocated memory on the stack and on the heap.
 How can we tell which is which?
 
-Here are some heuristics I use in daily life:
+There is no canonical way to do this, but there are some rules of thumb:
 
-- **Is the type a standard data structure from std like `String`, `Vec`, `BTreeMap` or
-  `HashSet`?**
-  If yes, then there’s an allocation.
+- **Is the type a data structure from `std`, like `String`, `Vec`, `BTreeMap` or `HashSet`?**
+  If yes, then it's a heap allocation.
 - **Does my type contain a `Box` or an `Rc` or an `Arc`?**
   If yes, then there’s an allocation.
-- **Is my type `Copy`?** If yes, then there’s _probably_ no allocation going on.
-  If not, then _maybe_ there’s allocation. (It's not always true, but again, we’re talking about heuristics here.)
 
 A quick and dirty way to find allocations is by running
-[ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder
+[ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder:
 
 ```bash
 rg -e 'String::new' \
@@ -280,14 +292,11 @@ that code as well.
 As seen above, there are data structures that implicitly allocate memory on the
 heap.
 
-More complex data structures use lower-level data structures under the hood
+More complex data structures use less complex data structures under the hood
 and add more guarantees on top of them.
 
 Take a `String` for example. It's a wrapper around a `Vec<u8>` that adds
 the guarantee that it always holds a valid UTF-8 string.
-
-Internally a `String` is a wrapper around a `Vec<u8>` that provides a bunch of
-methods to manipulate strings.
 
 ```rust
 struct String {
@@ -307,7 +316,7 @@ pub struct Vec<T, A: Allocator = Global> {
 }
 ```
 
-where `RawVec` is a wrapper around a `Box<[T]>`:
+whereas `RawVec` is a wrapper around a `Box<[T]>`:
 
 ```rust
 pub struct RawVec<T, A: Allocator = Global> {
@@ -328,12 +337,11 @@ and by extension for all other types.
 
 There are two ways to prevent allocations:
 
-- Use a data structure that doesn't allocate
-- Use a data structure that allocates but reuse it
+- Use data structures that don't allocate
+- Reuse existing allocations
 
 In this context, you will often hear the term "zero copy" or "zero allocation".
 It means that you don't allocate additional memory to perform a task.
-Instead, you reuse existing memory.
 
 ### Use a Data Structure That Doesn't Allocate
 
@@ -342,15 +350,36 @@ doesn't allocate.
 
 For example, if you want to store a string, you can use a `&str` instead of a
 `String`.
-A &str is made up of two components: a pointer to some bytes, and a length.
+A `&str` is made up of two components: a pointer to some bytes, and a length.
 
 Zero copy is a lot of fun! Especially for representing datastructures.
 
 The basic idea is that you stick to `&` references (or borrows) for all your
 data. With zero-copy parsing, you store `&[u8]` or `&str` slice references to
-the original text.
+the original data.
 
-Often Rust parsers are implemented in terms of Iterators, where parsers in other
+Consider the following example:
+
+```rust
+fn main() {
+    let data = "Hello, world!";
+
+    let hello = &data[0..5];
+    let world = &data[7..12];
+
+    println!("{} {}", hello, world);
+}
+```
+
+This program prints `Hello world` and doesn't allocate any memory.
+The `hello` and `world` variables are just references to the original data and we
+already learned that constant strings are stored in the binary.
+
+A zero-copy parser would work in a similar way.
+
+---
+
+Often, Rust parsers are implemented in terms of Iterators, where parsers in other
 low-level languages would fill some buffer first. Instead of allocating dynamic
 memory and copying data in to pass to later function calls, you use a buffer
 given to you by reference or made on the stack, relying on rust’s lifetimes and
@@ -796,6 +825,10 @@ https://github.com/frankmcsherry/recycler
 bumpalo vec:
 https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
 
+## Can I limit the amount of memory used by my program?
+
+- https://github.com/alecmocatta/cap
+
 # How Are Rust Allocators Implemented?
 
 You just have to implement `alloc` and `dealloc` like this:
@@ -947,3 +980,7 @@ drop(_1) -> bb3;
 in there
 
 <sup id="fn1">1. Side note: I'm very interested in the origins of computer terms. <a href="https://endler.dev/2020/folklore/">Here's a longer list</a><a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
+
+```
+
+```
