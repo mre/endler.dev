@@ -28,8 +28,6 @@
         <a aria-label="Link to talk" href="{{ link }}">
         {% endif %}
             <picture>
-                <source srcset="{{ talk.image | replace(from="jpg", to="avif")}}" type="image/avif" />
-                <source srcset="{{ talk.image | replace(from="jpg", to="webp")}}" type="image/webp" />
                 <img alt="Me speaking at {{ talk.event }}, {{ talk.year }}" style="width:100%;" src="{{ talk.image }}" />
             </picture>
         {% if link %}
