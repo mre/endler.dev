@@ -48,62 +48,6 @@ allocation has to be fast, space-efficient, and scalable; it's not an easy task!
 In the early days, memory was managed by hand. As computer memory got bigger,
 special programs &mdash; allocators &mdash; were written to take on the job.
 
-## What is an Allocator?
-
-An allocator is a program that manages memory for other programs. It's a
-fundamental piece of software that's been around for a long time.
-
-Allocators are responsible for finding a place in memory for a program's data,
-and keeping track of which parts of memory are in use and which are free.
-
-Research on allocators has been going on for decades, and with the
-advent of new hardware, new techniques get developed all the time.
-
-Here's a list of some popular allocators used in the wild and what they are used for:
-
-- [jemalloc](https://github.com/jemalloc/jemalloc) &mdash; FreeBSD and Firefox, [Rust until 1.32.0](https://blog.rust-lang.org/2019/01/17/Rust-1.32.0.html#jemalloc-is-removed-by-default)
-- [tcmalloc](https://github.com/google/tcmalloc) &mdash; Google
-- [mimalloc](https://github.com/microsoft/mimalloc) &mdash; Microsoft
-- [libumem](https://github.com/gburd/libumem) &mdash; Solaris
-
-There are [many more](https://github.com/daanx/mimalloc-bench#current-allocators), but
-at the time of writing, mimalloc [claims to be the fastest](https://github.com/microsoft/mimalloc#Performance);
-and they also published a cool [whitepaper](https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf).
-
-## How Do Modern Allocators Work?
-
-Most modern allocators split memory into
-[chunks](https://sourceware.org/glibc/wiki/MallocInternals) and, commonly, there
-are separate regions for storing "small", "medium", or "large" objects. For
-example, GNU's malloc, which is based on
-[dlmalloc](http://gee.cs.oswego.edu/dl/html/malloc.html) and
-[ptmalloc](http://www.malloc.de/en/) uses three chunk sizes ([Source:
-Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)):
-
-> - For requests below 256 bytes (a "smallbin" request), a simple two power best
->   fit allocator is used. If there are no free blocks in that bin, a block from the
->   next highest bin is split in two.
-> - For requests of 256 bytes or above but below the `mmap` threshold, dlmalloc
->   since v2.8.0 use an in-place bitwise trie algorithm ("treebin"). If there is no
->   free space left to satisfy the request, dlmalloc tries to increase the size of
->   the heap, usually via the `brk` system call.
-> - For requests above the mmap threshold (a "largebin" request), the memory is
->   always allocated using the `mmap` system call. The threshold is usually 256 KB.
->   The mmap method averts problems with huge buffers trapping a small allocation at
->   the end after their expiration, but always allocates an entire page of memory,
->   which on many architectures is 4096 bytes in size.
-
-The architecture of modern-day allocators is a ✨ fascinating topic ✨ on its own,
-but we are mostly interested in **memory
-handling for Rust programs** today, so let's move on.
-There are some great resources on modern, general-purpose allocators if you want
-to dig deeper into allocators in general:
-
-- [Details on popular allocators on Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)
-  for some more details.
-- [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals) about GNU C library's (glibc's) malloc implementation.
-- [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
-
 ## Stack and Heap Allocations
 
 Computer memory is divided into _static_ and _dynamic memory_.
@@ -136,6 +80,11 @@ Now let's take a closer look at the stack.
 
 {{ figure(src="stack_heap.jpg" invert="true") }}
 
+The main purpose of the stack is to store data for the currently executing
+function. When a function is called, a new stack frame is created for it.
+The stack frame contains the function's local variables, parameters, and
+return address.
+
 You can think of the stack as a stack of plates. When you add a new plate, you
 can only place it on top or remove a plate it from there.
 It's very simple, which is what makes it fast.
@@ -155,8 +104,12 @@ stack pointer, which points to the top of the stack. As functions are called and
 variables are allocated on the stack, the stack pointer is adjusted to keep
 track of the current location on the stack.
 
+Rust's default stack size is 2MB on Unix (as defined
+[here](https://github.com/rust-lang/rust/blob/7632db0e87d8adccc9a83a47795c9411b1455855/library/std/src/sys/unix/thread.rs)),
+but you can change it with the `RUST_MIN_STACK` environment variable.
+
 The stack is where Rust allocates memory _by default_.
-However you cannot store arbitrarily large things on the stack and the stack
+However you cannot store arbitrarily large data on the stack and the stack
 gets cleaned up when you leave a function. This makes it somewhat limited to
 things of which you know the size at compile-time and which have a limited
 scope.
@@ -183,7 +136,7 @@ elements. This is called "memory fragmentation".
 As a consequence you might have to stop and reorder items to free up some space,
 which can cause some overhead. The flexibility comes with a price.
 
-# Why Can't All Allocations Be Static?
+## Why Can't All Allocations Be Static?
 
 The sizes of some datatypes cannot be known at compile-time.
 
@@ -198,13 +151,68 @@ can find even more info on stack vs heap as well as the respective syscalls
 
 With that we're well prepared to dive into the Rust memory model!
 
+## Who Manages Dynamic Allocations?
+
+That's the job of an allocator.
+
+An allocator is a program that manages memory for other programs. It's a
+fundamental piece of software that's been around for a long time.
+
+Allocators are responsible for finding a place in memory for a program's data,
+and keeping track of which parts of memory are in use and which are free.
+
+Research on allocators has been going on for decades, and with the
+advent of new hardware, new techniques get developed all the time.
+
+## Excursion: What Are Some Popular Allocators?
+
+The architecture of modern-day allocators is a ✨ fascinating topic ✨ on its own.
+If you're interested in learning more, here's a little excursion for you!
+If not, feel free to skip this section.
+
+Here's a list of some popular allocators used in the wild and what they are used for:
+
+- [jemalloc](https://github.com/jemalloc/jemalloc) &mdash; FreeBSD and Firefox, [Rust until 1.32.0](https://blog.rust-lang.org/2019/01/17/Rust-1.32.0.html#jemalloc-is-removed-by-default)
+- [tcmalloc](https://github.com/google/tcmalloc) &mdash; Google
+- [mimalloc](https://github.com/microsoft/mimalloc) &mdash; Microsoft
+- [libumem](https://github.com/gburd/libumem) &mdash; Solaris
+
+There are [many more](https://github.com/daanx/mimalloc-bench#current-allocators), but
+at the time of writing, mimalloc [claims to be the fastest](https://github.com/microsoft/mimalloc#Performance);
+and they also published a cool [whitepaper](https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf).
+
+Most modern allocators split memory into
+[chunks](https://sourceware.org/glibc/wiki/MallocInternals) and, commonly, there
+are separate regions for storing "small", "medium", or "large" objects. For
+example, GNU's malloc, which is based on
+[dlmalloc](http://gee.cs.oswego.edu/dl/html/malloc.html) and
+[ptmalloc](http://www.malloc.de/en/) uses three chunk sizes ([Source:
+Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)):
+
+> - For requests below 256 bytes (a "smallbin" request), a simple two power best
+>   fit allocator is used. If there are no free blocks in that bin, a block from the
+>   next highest bin is split in two.
+> - For requests of 256 bytes or above but below the `mmap` threshold, dlmalloc
+>   since v2.8.0 use an in-place bitwise trie algorithm ("treebin"). If there is no
+>   free space left to satisfy the request, dlmalloc tries to increase the size of
+>   the heap, usually via the `brk` system call.
+> - For requests above the mmap threshold (a "largebin" request), the memory is
+>   always allocated using the `mmap` system call. The threshold is usually 256 KB.
+>   The mmap method averts problems with huge buffers trapping a small allocation at
+>   the end after their expiration, but always allocates an entire page of memory,
+>   which on many architectures is 4096 bytes in size.
+
+That's a quick overview of some popular allocators, but we are mostly interested
+in **memory handling for Rust programs** today, so let's move on. There are some
+great resources on modern, general-purpose allocators if you want to dig deeper
+into allocators in general:
+
+- [Details on popular allocators on Wikipedia](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Implementations)
+  for some more details.
+- [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals) about GNU C library's (glibc's) malloc implementation.
+- [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
+
 ## Memory Management Rust
-
-When a Rust program is executed, the Rust runtime sets up a stack and manages
-the stack pointer. The default stack size is 2MB on Unix (as defined
-[here](https://github.com/rust-lang/rust/blob/7632db0e87d8adccc9a83a47795c9411b1455855/library/std/src/sys/unix/thread.rs)),
-but you can change it with the `RUST_MIN_STACK` environment variable.
-
 
 The following video goes into more detail about how the Rust runtime manages memory:
 
@@ -262,9 +270,10 @@ fn main() {
 ```
 
 What's _brilliant_ about this is that the compiler can check at **compile-time**
-if ownership is correctly managed. There is never a situation where
-it's not clear whether a variable is still in use or not.
-In my personal opinion this is Rust's main innovation.
+if ownership is correctly managed. There is never a situation where it's not
+clear whether a variable is still in use or not.
+
+In my personal opinion this is Rust's main innovation:
 It took the RAII principle from C++ and made it a compiler feature!
 Programs simply won't compile if memory is not correctly managed.
 
