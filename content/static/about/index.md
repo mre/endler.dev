@@ -17,12 +17,14 @@ My interests are scalability, performance and distributed systems, but I also
 play around with embedded systems and console emulation. I hold an M.Sc. in
 Computer Science from [Universit&auml;t Bayreuth].
 
+You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], or [Github].
 Here is a list of my [public speaking][talks] engagements.
 
 ## Contact
 
-You can find me on [Twitter], [LinkedIn], [Stack Overflow], or [Github].  
-For business inquiries, please [book an intro-chat here](https://cal.com/matthias-endler) or send me an [email](mailto:matthias@endler.dev).
+<a href="https://cal.com/matthias-endler" class="btn">&#9990; Schedule a call</a>
+<a href="mailto:matthias@endler.dev" class="btn">&#9993; Send Mail</a>
+
 
 ## Projects
 
