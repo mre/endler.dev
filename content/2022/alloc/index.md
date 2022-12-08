@@ -118,10 +118,11 @@ Here's a diagram of the memory layout of a program:
 
 {{ figure(src="memory.jpg" invert="true") }}
 
-The `CODE` section contains the compiled code of a program, which is the set of
-instructions that the computer follows to execute the program. The `GLOBAL`
-section, on the other hand, contains static data, which is data that remains
-constant throughout the program's execution. These two sections are typically
+The `CODE` section (a.k.a. the _text segment_) contains the compiled code of a
+program, which is the set of instructions that the computer follows to execute
+the program. The `GLOBAL` section (a.k.a the _data segment_), on the other hand,
+contains static data, which is data that remains constant throughout the
+program's execution. These two sections are typically
 allocated at compile time, which means that their size and contents are
 determined when the program is compiled, and they are usually read-only, which
 means that the program cannot modify their contents at runtime.
@@ -184,10 +185,11 @@ which can cause some overhead. The flexibility comes with a price.
 
 # Why Can't All Allocations Be Static?
 
-The sizes of some datatypes cannot be known at compile-time. For example, you
-might have a vector called students, but you don't know in advance how many
-students it will hold. Dynamic memory allocation makes it possible to hold any
-number of students as long as you have memory available.
+The sizes of some datatypes cannot be known at compile-time.
+
+For example, you might have a vector called students, but you don't know in
+advance how many students it will hold. Dynamic memory allocation makes it
+possible to hold any number of students as long as you have memory available.
 
 Alright, I think we've talked enough about the stack and the heap for now! You
 can find even more info on stack vs heap as well as the respective syscalls
@@ -196,7 +198,19 @@ can find even more info on stack vs heap as well as the respective syscalls
 
 With that we're well prepared to dive into the Rust memory model!
 
-## Memory Management in Rust
+## Memory Management Rust
+
+When a Rust program is executed, the Rust runtime sets up a stack and manages
+the stack pointer. The default stack size is 2MB on Unix (as defined
+[here](https://github.com/rust-lang/rust/blob/7632db0e87d8adccc9a83a47795c9411b1455855/library/std/src/sys/unix/thread.rs)),
+but you can change it with the `RUST_MIN_STACK` environment variable.
+
+
+The following video goes into more detail about how the Rust runtime manages memory:
+
+{{ video(url="https://www.youtube.com/embed/rDoqT-a6UFg", preview="yt_visualizing_memory.jpg") }}
+
+## Memory Management and Ownership in Rust
 
 Okay so programs need memory to store data and _someone_ has to manage it, right?
 Either it's you or the language. In Python, PHP, Go, and Java it's the [garbage
@@ -247,7 +261,7 @@ fn main() {
 }
 ```
 
-What's brilliant about this is that the compiler can check at **compile-time**
+What's _brilliant_ about this is that the compiler can check at **compile-time**
 if ownership is correctly managed. There is never a situation where
 it's not clear whether a variable is still in use or not.
 In my personal opinion this is Rust's main innovation.
@@ -266,7 +280,7 @@ There is no canonical way to do this, but there are some rules of thumb:
 - **Does my type contain a `Box` or an `Rc` or an `Arc`?**
   If yes, then there’s an allocation.
 
-A quick and dirty way to find allocations is by running
+A really quick and dirty way to find allocations is by running
 [ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder:
 
 ```bash
@@ -328,6 +342,39 @@ pub struct RawVec<T, A: Allocator = Global> {
 
 You can see how complex data structures are built up from simpler data types
 with less guarantees.
+
+<details>
+<summary>
+💡 Quiz: How big is an empty `String` in Rust?
+Take a moment to do the math.
+</summary>
+
+It depends on the architecture of your system.
+<bold>It's 24 bytes on 64-bit systems</bold>.
+
+Why is that?
+
+<ul>
+<li>String = Vec&lt;u8&gt;</li>
+<li>Vec = buf + len</li>
+<li>buf = ptr + cap + alloc</li>
+<li>ptr = data pointer so 8 bytes on 64-bit systems</li>
+<li>cap = usize, so 8 bytes</li>
+<li>len = usize, so 8 bytes</li>
+</ul>
+
+```rust
+fn main() {
+    let empty = String::new();
+    println!("size of empty: {}", std::mem::size_of_val(&empty));
+    // prints: 24 bytes
+
+    let s = String::from("Hello, world!");
+    println!("size of s: {}", std::mem::size_of_val(&s));
+}
+```
+
+</details>
 
 At the end, all types are composed of primitive types like `u8`, `i32`, `bool`,
 `char`, etc. The compiler knows how to allocate memory for these types
