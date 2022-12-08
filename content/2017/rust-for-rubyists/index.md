@@ -319,7 +319,7 @@ rng.choose(&[1, 2, 3, 4, 5])
 For the code to work, you need the `rand` crate. Click on the snippet for a running example.
 
 There are some differences to Ruby. Namely, we need to be more explicit about what random number generator
-we want _exactly_. We decide for a [lazily-initialized thread-local random number generator, seeded by the system](https://docs.rs/rand/0.6.1/rand/fn.thread_rng.html).
+we want _exactly_. We decide for a [lazily-initialized thread-local random number generator, seeded by the system](https://docs.rs/rand/latest/rand/fn.thread_rng.html).
 In this case, I'm using a [slice](https://doc.rust-lang.org/std/slice/) instead of a vector. The main difference is that the slice has a fixed size while the vector does not.
 
 Within the standard library, Rust doesn't have a `sample` or `choose` method on the slice itself.

@@ -365,7 +365,7 @@ until a buffer overflow is triggered. I never thought of that.
 ## History time (see what I did there?)
 
 The original `history` command was added to the Unix C shell (csh) in 1978.
-Here's a link to [the paper](http://webcache.googleusercontent.com/search?q=cache:Syyj0FScrv8J:www.kitebird.com/csh-tcsh-book/csh-intro.pdf+&cd=3&hl=en&ct=clnk&gl=de) by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) (hey, another Bill!).
+Here's a link to [the paper](https://web.archive.org/web/20220605000427/http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf) by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) (hey, another Bill!).
 He took inspiration from the `REDO` command in Interlisp.
 You can find its specification in the original Interlisp manual in [section 8.7](https://larrymasinter.net/86-interlisp-manual-opt.pdf).
 
