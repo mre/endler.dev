@@ -56,7 +56,7 @@ finally make the switch.
 Working as a Software Engineer, my biggest fear was, that the switch would slow
 down my daily work. This turned out not to be true. I was reasonably productive
 **from day one**, and nobody even noticed any difference. (That's a good thing,
-*right*?)
+_right_?)
 
 At first, I didn't like the _bar-shaped US-Return key_. I preferred the European
 layout with a _vertical enter key_. I was afraid that I would hit the key by
@@ -73,7 +73,7 @@ Especially when using special characters (`/`, `;`, `{`, and so on) I'm much
 faster now; partly because the key locations feel more intuitive, but mainly
 because my fingers stay at their dedicated positions now.
 
-Somehow the position of special characters feels *just right*. I can now understand the
+Somehow the position of special characters feels _just right_. I can now understand the
 reason why Vim is using `/` for search or why the pipe symbol is `|`: both are
 easy to reach! [It all makes sense now!](/2018/ten-years-of-vim)
 (For a fun time, try that on a German keyboard!)
@@ -87,10 +87,11 @@ always made me leave the [home
 row](https://en.wikipedia.org/wiki/Touch_typing#Home_row) and break my typing
 flow. Now there are dedicated keys for parentheses. Such a relief!
 
-*Update:* It also helps greatly when looking up hotkeys for IDEs, text editors,
+_Update:_ It also helps greatly when looking up hotkeys for IDEs, text editors,
 photo editors, etc. because some programs remap shortcuts for the German market,
 which means that all the English documentation is totally worthless.
 Now I can just use the shortcuts mentioned and move on with my life.
+
 ## Am I Slower When Writing German Texts Now?
 
 In the beginning, I was.
@@ -104,6 +105,10 @@ Layout](https://hci.rwth-aachen.de/usgermankeyboard)". It works perfectly fine f
 me. It allows me to use a single Keyboard layout but insert German umlauts at will
 (e.g. ö is `Option`+`o`). There is probably a similar layout for other language combinations.
 
+[Stefan Imhoff](https://www.stefanimhoff.de/) notified me that there's also a
+[Karabiner](https://www.stefanimhoff.de/) rule which does the same. Might come
+in handy in case you already use this tool.
+
 ## Is Switching Between Keyboards Painful?
 
 {{ figure(src="KB_United_States.svg", caption="US keyboard layout" credits="[Wikipedia](https://commons.wikimedia.org/wiki/File:KB_United_States.svg)") }}
@@ -116,14 +121,14 @@ turned out not to be a problem. I rarely look at the print anyway.
 ## How Often Do You Switch Back To A German Layout Now?
 
 Never. My Girlfriend has a German keyboard and ever time I have to use it, I switch to the US layout. It makes her very happy when I do this and forget to switch back to German when I'm done.
+
 ## Summary
 
 If you consider switching, just do it! I don't look back at all
 and apart from the initial transition period, I still couldn't find any downsides.
 
-Since posting this article, many of my friends made the switch as well and 
+Since posting this article, many of my friends made the switch as well and
 had similar experiences:
 
-* [Wolfgang Gassler wrote a post about his layout switch on Linux](https://wolfgang.gassler.org/switch-keyboard-german-to-english-linux-fedora/)
-* [Discussion of the article on Twitter](https://twitter.com/ro14nd/status/1304360915840753664)
-
+- [Wolfgang Gassler wrote a post about his layout switch on Linux](https://wolfgang.gassler.org/switch-keyboard-german-to-english-linux-fedora/)
+- [Discussion of the article on Twitter](https://twitter.com/ro14nd/status/1304360915840753664)
