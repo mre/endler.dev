@@ -212,25 +212,23 @@ into allocators in general:
 - [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals) about GNU C library's (glibc's) malloc implementation.
 - [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
 
-## Memory Management Rust
-
-The following video goes into more detail about how the Rust runtime manages memory:
-
-{{ video(url="https://www.youtube.com/embed/rDoqT-a6UFg", preview="yt_visualizing_memory.jpg") }}
-
-## Memory Management and Ownership in Rust
+## Memory Management in Rust
 
 Okay so programs need memory to store data and _someone_ has to manage it, right?
 Either it's you or the language. In Python, PHP, Go, and Java it's the [garbage
 collector](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)'s
-job: It usually allocates memory on the heap and iterates over the entire
-memory in regular intervals to clean up whatever isn't needed anymore. That's
-pretty handy for the most part.
+job: it's the counterpart to the allocator and it's like the janitor of your program. 
 
-It's fine unless the garbage collector blocks the main thread.
-That's why most modern GCs are a piece of art.
-For example, did you know that the Golang garbage collector [only blocks for a few hundred **micro**seconds on average](https://go.dev/blog/ismmkeynote)?
-In 99% of all cases, that's more than good enough.
+It iterates over all the process memory on the heap and cleans up whatever isn't
+needed anymore. That's pretty handy for the most part, because you don't have to
+worry about memory management at all.
+
+It's fine unless the garbage collector blocks the main thread and prevents your
+program from doing anything else. To avoid that, most modern GCs are a piece of
+art and highly optimized. For example, did you know that the Golang garbage
+collector [only blocks for a few hundred **micro**seconds on
+average](https://go.dev/blog/ismmkeynote)? In 99% of all cases, that's more than
+good enough.
 
 ...but what about the _remaining_ 1%? 😉
 
@@ -366,8 +364,8 @@ Why is that?
 <ul>
 <li>String = Vec&lt;u8&gt;</li>
 <li>Vec = buf + len</li>
-<li>buf = ptr + cap + alloc</li>
-<li>ptr = data pointer so 8 bytes on 64-bit systems</li>
+<li>buf = ptr + cap</li>
+<li>ptr = usize which is 64 bits on 64-bit systems, so 8 bytes</li>
 <li>cap = usize, so 8 bytes</li>
 <li>len = usize, so 8 bytes</li>
 </ul>
@@ -376,10 +374,7 @@ Why is that?
 fn main() {
     let empty = String::new();
     println!("size of empty: {}", std::mem::size_of_val(&empty));
-    // prints: 24 bytes
-
-    let s = String::from("Hello, world!");
-    println!("size of s: {}", std::mem::size_of_val(&s));
+    // prints: size of empty: 24
 }
 ```
 
@@ -388,6 +383,11 @@ fn main() {
 At the end, all types are composed of primitive types like `u8`, `i32`, `bool`,
 `char`, etc. The compiler knows how to allocate memory for these types
 and by extension for all other types.
+
+The following video goes into more detail about how the Rust runtime manages memory:
+
+{{ video(url="https://www.youtube.com/embed/rDoqT-a6UFg", preview="yt_visualizing_memory.jpg") }}
+
 
 ## How Do I Prevent Allocations?
 
@@ -399,7 +399,7 @@ There are two ways to prevent allocations:
 In this context, you will often hear the term "zero copy" or "zero allocation".
 It means that you don't allocate additional memory to perform a task.
 
-### Use a Data Structure That Doesn't Allocate
+### Use Data Structures That Don't Allocate
 
 The most obvious way to prevent allocations is to use a data structure that
 doesn't allocate.
