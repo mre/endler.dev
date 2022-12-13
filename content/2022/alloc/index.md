@@ -217,7 +217,7 @@ into allocators in general:
 Okay so programs need memory to store data and _someone_ has to manage it, right?
 Either it's you or the language. In Python, PHP, Go, and Java it's the [garbage
 collector](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)'s
-job: it's the counterpart to the allocator and it's like the janitor of your program. 
+job: it's the counterpart to the allocator and it's like the janitor of your program.
 
 It iterates over all the process memory on the heap and cleans up whatever isn't
 needed anymore. That's pretty handy for the most part, because you don't have to
@@ -388,7 +388,6 @@ The following video goes into more detail about how the Rust runtime manages mem
 
 {{ video(url="https://www.youtube.com/embed/rDoqT-a6UFg", preview="yt_visualizing_memory.jpg") }}
 
-
 ## How Do I Prevent Allocations?
 
 There are two ways to prevent allocations:
@@ -399,20 +398,25 @@ There are two ways to prevent allocations:
 In this context, you will often hear the term "zero copy" or "zero allocation".
 It means that you don't allocate additional memory to perform a task.
 
+Let's look at these two approaches in more detail.
+
 ### Use Data Structures That Don't Allocate
 
 The most obvious way to prevent allocations is to use a data structure that
 doesn't allocate.
 
-For example, if you want to store a string, you can use a `&str` instead of a
-`String`.
-A `&str` is made up of two components: a pointer to some bytes, and a length.
+For example, if you want to represent a "list" of strings, you can use a
+`Vec<&str>` instead of a `Vec<String>`. You can even use a `&[&str]` slice
+instead of a `Vec<&str>` to avoid heap allocations altogether.
+The downside is that you can't add or remove elements from the list.
+If that's not a problem, then this is a great way to avoid allocations.
 
 Zero copy is a lot of fun! Especially for representing datastructures.
 
 The basic idea is that you stick to `&` references (or borrows) for all your
 data. With zero-copy parsing, you store `&[u8]` or `&str` slice references to
-the original data.
+the original data instead of copying it into a new buffer and thus allocating
+memory.
 
 Consider the following example:
 
@@ -429,9 +433,22 @@ fn main() {
 
 This program prints `Hello world` and doesn't allocate any memory.
 The `hello` and `world` variables are just references to the original data and we
-already learned that constant strings are stored in the binary.
+learned that constant strings are stored in the binary inside the `DATA` segment.
 
-A zero-copy parser would work in a similar way.
+Is that true?
+
+Let's check the binary!
+
+```bash
+> cargo build
+> strings target/debug/zero-copy | grep Hello
+/rustc/897e37553bba8b42751c67658967889d11ecd120/library/core/src/fmt/mod.rsHello, world!src/main.rs
+```
+
+So, the string is stored in the binary and we can use it without allocating
+any memory.
+
+Zero-copy parser work in a similar way.
 
 ---
 
