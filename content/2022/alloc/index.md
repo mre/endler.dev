@@ -275,6 +275,21 @@ In my personal opinion this is Rust's main innovation:
 It took the RAII principle from C++ and made it a compiler feature!
 Programs simply won't compile if memory is not correctly managed.
 
+## The `Sized` Trait And Deciding Where To Allocate
+
+In Rust, anything can be put on the heap. However, if a type implements
+[`Sized`](https://doc.rust-lang.org/std/marker/trait.Sized.html), it can also be
+put on the stack. `Sized` is a marker trait that indicates that the type's size
+is known at compile time. The trait has no methods and is automatically
+implemented for all types whose size is known at compile time like `i32`,
+`bool`, `char`, etc. Putting things on the stack is faster than putting them on
+the heap because the stack is closer to the CPU.
+
+(Compare that to a language like Java where everything is an object and thus
+allocated on the heap unless you use a [primitive
+type](https://en.wikibooks.org/wiki/Java_Programming/Primitive_Types) like `int`
+or `char`. The programmer has less control over where the data is stored.)
+
 ## How Can I Spot an Allocation?
 
 In the above example, we allocated memory on the stack and on the heap.
@@ -285,9 +300,9 @@ There is no canonical way to do this, but there are some rules of thumb:
 - **Is the type a data structure from `std`, like `String`, `Vec`, `BTreeMap` or `HashSet`?**
   If yes, then it's a heap allocation.
 - **Does my type contain a `Box` or an `Rc` or an `Arc`?**
-  If yes, then there’s an allocation.
+  If yes, then there’s a heap allocation.
 
-A really quick and dirty way to find allocations is by running
+A really quick and dirty way to find heap allocations is by running
 [ripgrep](https://github.com/BurntSushi/ripgrep) in your project folder:
 
 ```bash
@@ -448,34 +463,21 @@ Let's check the binary!
 So, the string is stored in the binary and we can use it without allocating
 any memory.
 
-Zero-copy parser work in a similar way.
+Zero-copy parsers work in a similar way.
+
+In Rust, parsers are often implemented using Iterators, which allows for
+zero-copy parsing. This is made possible by Rust's ownership and lifetime
+semantics, which guarantee that data being accessed is valid. In contrast, other
+high-level languages may encourage copying data, which can be slow and
+inefficient. Rust does not directly discourage copying, but its features make it
+easier to write code that does not perform any copying at all!
+
+Here's a video that explains how zero-copy parsing works in Rust
+by looking at the `nom` crate:
+
+{{ video(url="https://www.youtube.com/embed/8mA5ZwWB3M0", preview="yt_nom.jpg") }}
 
 ---
-
-Often, Rust parsers are implemented in terms of Iterators, where parsers in other
-low-level languages would fill some buffer first. Instead of allocating dynamic
-memory and copying data in to pass to later function calls, you use a buffer
-given to you by reference or made on the stack, relying on rust’s lifetimes and
-ownership semantics to guarantee that you’re looking at valid data. Other high
-level languages sometimes encourage copying of data, which can be slow and waste
-memory. Rust doesn’t discourage copying directly, but makes it much easier to
-reason about memory semantics and thus write code that doesn’t perform any
-copying. => lifetimes enable zero copy
-
-Anything can go on the heap. If the type implements sized it can go on the
-stack. At compile time, Rust needs to know how much space a type takes up. This
-allows for safety and performance gains. In a language like Java you have no
-choice, every object that isn't a primitive is on the heap.
-
-Variables are always on the stack. E.g. let foobar = ... foobar is always on the
-stack.
-
-Now, foobar might be a pointer to something else. For example let foobar = &x.
-foobar is on the stack since it's a variable, x is also on the stack since it's
-a variable. So foobar is a pointer, that lives on the stack, and points to
-someting on the stack.
-
-nom zero copy parser https://www.youtube.com/watch?v=8mA5ZwWB3M0&t=928s
 
 [Diagram] jemalloc System allocator the allocator might call brk or mmap, which
 might be slow mmap asks the kernel to gives us some new virtual address space,
