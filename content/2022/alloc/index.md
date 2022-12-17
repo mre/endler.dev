@@ -485,7 +485,7 @@ In this case you can reuse existing allocations.
 
 #### Trick 1: Allocate The Right Amount Of Memory Up Front
 
-The first trick is to use methods like `with_capacity` 
+The first trick is to use methods like `with_capacity`
 if you already know how much memory you'll need.
 
 For example, if you need to concatenate a lot of small strings, you can create a
@@ -566,27 +566,9 @@ If you need to cache a lot of values, you can use a
 [`lru_cache`](https://docs.rs/lru-cache) to limit the number of values that are
 cached.
 
-
-
-
-
-
-
-
-
-
-
 ## --------------------
 
 Bump alloc
-
-
-The regex crate uses a wonderful library called thread_local-rs written by
-/u/Amanieu for really fast thread safe access to a pool of previously
-initialized values. The key is that it allows for dynamic per-object thread
-local values as opposed to statically known thread locals like with the
-thread_local! macro. https://github.com/Amanieu/thread_local-rs
-https://github.com/frankmcsherry/recycler
 
 bumpalo vec:
 https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
@@ -1157,5 +1139,14 @@ in there
 
 Other crates:
 
-thingbuf is a lock-free array-based concurrent ring buffer that allows access to slots in the buffer by reference. It's also asynchronous and blocking bounded MPSC channels implemented using the ring buffer.
-- https://github.com/hawkw/thingbuf
+- thingbuf is a lock-free array-based concurrent ring buffer that allows access
+  to slots in the buffer by reference. It's also asynchronous and blocking bounded
+  MPSC channels implemented using the ring buffer.
+  https://github.com/hawkw/thingbuf
+
+- The regex crate uses a wonderful library called thread_local-rs written by
+  /u/Amanieu for really fast thread safe access to a pool of previously
+  initialized values. The key is that it allows for dynamic per-object thread
+  local values as opposed to statically known thread locals like with the
+  thread_local! macro. https://github.com/Amanieu/thread_local-rs
+  https://github.com/frankmcsherry/recycler
