@@ -11,48 +11,52 @@ subtitle="And How To Avoid Them"
 +++
 
 One of the neatest things
-about Rust is that you can take _full control over memory_ and deep-dive into
+about Rust is that you have _full control over memory_ and can deep-dive into
 optimizations at will.
 
-I've heard people fondly speak of _zero-copy_ and _allocation-free_ code.
-Alas, I wondered, what does that even mean?
+In that context you might have heard of _zero-copy_ or _allocation-free_ code,
+alas, you might have wondered, what that really meant.
 
-Information on the topic is surprisingly sparse, and I had to piece together
-whatever I could find from various sources to understand how Rust _really_
-handles allocations &mdash; and how to avoid them if needed.  
-To save others the trouble, I decided to write down all I've learned so far.
+Information on the topic is surprisingly sparse, so to save you the trouble,
+I decided to write down all I've learned so far.
 
 ## Who Is This Article For?
-
-Everyone who wants to know more about <u>allocations</u> and <u>Rust</u>,
-really.
 
 Memory management internals are an intermediate topic, but you don't need to
 know a lot about allocations to be productive in Rust. It can be fun and
 educational to learn more, however!
 
-The article is rather long, so feel free to jump around in the...
+So this is for everyone who wants to know more about <u>allocations</u> in
+<u>Rust</u>.
 
 ## Table Of Contents
 
 ## What's An Allocation?
 
+_Allocation_ is a term which is often used, but few people know the origin of.
 The word comes from _Vulgar Latin_ [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from _ad-_ ("to") + _locus_ ("place")
 
-Ever since the first computers, programmers needed to find an answer to the question
+Ever since we invented computers, there had to be an answer to the question:
 "Where to put that data?".
 
 And there are a number of options and tradeoffs to consider:
-allocation has to be fast, space-efficient, and scalable; it's not an easy task!
+allocations have to be fast, space-efficient, and scalable; the combination is
+not an easy task!
 
-In the early days, memory was managed by hand. As computer memory got bigger,
-special programs &mdash; allocators &mdash; were written to take on the job.
+In the early days, memory was managed by hand. Humans would punch holes into
+pieces of paper or flip switches on a machine to "allocate memory". When the
+computer loaded a program, it would read the program's code and data from there
+and print out the results or make lights blink.
+
+As computer memory got bigger, special programs &mdash; allocators &mdash; were
+written to take on the job of managing memory.
 
 ## Stack and Heap Allocations
 
-Computer memory is divided into _static_ and _dynamic memory_.
-The lifetime of static memory is the entire duration of the program's execution,
-and it's allocated at compile time.
+Memory can be divided into two categories: _static_ and _dynamic memory_.
+
+Static memory is around for the entire duration of the program's execution, and
+it's allocated at compile time.
 In contrast, dynamic memory is more short-lived and gets allocated at runtime.
 
 Static memory lives in the `GLOBAL` and `CODE` sections of a program, while
@@ -62,39 +66,42 @@ Here's a diagram of the memory layout of a program:
 
 {{ figure(src="memory.jpg" invert="true") }}
 
-The `CODE` section (a.k.a. the _text segment_) contains the compiled code of a
-program, which is the set of instructions that the computer follows to execute
-the program. The `GLOBAL` section (a.k.a the _data segment_), on the other hand,
-contains static data, which is data that remains constant throughout the
-program's execution. These two sections are typically
-allocated at compile time, which means that their size and contents are
-determined when the program is compiled, and they are usually read-only, which
-means that the program cannot modify their contents at runtime.
+The `CODE` section (a.k.a. the _text segment_) contains the compiled code, which
+is the set of instructions that the computer follows to execute the program. The
+`GLOBAL` section (a.k.a the _data segment_), on the other hand, contains static
+data, which is data that remains constant throughout the
+program's execution.
 
-The stack and the heap are allocated at runtime and are read-write.
-They grow and shrink as needed.
+These two sections are typically allocated at compile time, which means that
+their size and contents are determined before the program is even started. Data
+in these sections is usually read-only, which means that the program cannot
+modify their contents at runtime.
 
-Now let's take a closer look at the stack.
+The stack and the heap on the other hand are allocated at runtime and are
+read-write. They "grow" and "shrink" as needed.
+
+Now let's take a closer look at the latter two.
 
 ### The Stack
 
 {{ figure(src="stack_heap.jpg" invert="true") }}
 
-The main purpose of the stack is to store data for the currently executing
-function. When a function is called, a new stack frame is created for it.
+The main purpose of the stack is to store data for the function that is currently
+being executed. When a function is called, a new *stack frame* is created for it.
 The stack frame contains the function's local variables, parameters, and
 return address.
 
-You can think of the stack as a stack of plates. When you add a new plate, you
-can only place it on top or remove a plate it from there.
-It's very simple, which is what makes it fast.
+You can think of the stack as a stack of plates: When you add a new plate, you
+can only place it at the top. Same goes for removing: You can only remove the
+topmost plate.
+It's very simple, which is what makes it so effective and fast.
 
-A register is used to store the address of the topmost element of the stack
-which is known as Stack pointer. [On Intel x86 machines, this is stored in a
+A CPU register is used to store the address of the topmost element of the stack,
+which is known as the Stack pointer. [On Intel x86 machines, this is stored in a
 dedicated CPU register called
 `SP`](https://en.wikipedia.org/wiki/Stack_register).
 
-When you add a new element you need to increment the stack pointer.
+When you add a new element, you need to increment the stack pointer.
 To remove (or "pop") an element, just decrement the pointer.
 Both operations can be done with just one CPU instruction.
 
@@ -566,6 +573,60 @@ If you need to cache a lot of values, you can use a
 [`lru_cache`](https://docs.rs/lru-cache) to limit the number of values that are
 cached.
 
+#### Trick 3: Use A Memory Pool To Reuse Allocations
+
+If you need to allocate a lot of objects of the same type, you can use a memory
+pool to reuse the allocations.
+The concept is closely related to "Region-Based Memory Management".
+
+Simply put, it's a chunk of memory that you can use to allocate objects of the
+same type. When you're done with the objects, you can clear the entire pool to reuse
+the memory. This is much faster than allocating and freeing memory individually.
+
+A popular crate for this is [`bumpalo`](https://github.com/fitzgen/bumpalo).
+Here's an example of how to use it with a bunch of objects of the same `struct` type:
+
+```rust
+use bumpalo::Bump;
+
+enum Fur {
+    White,
+    Black,
+    Colorful,
+}
+
+struct Kitty {
+    name: String,
+    age: u8,
+    fur: Fur,
+}
+
+fn main() {
+    // Create a new arena to bump allocate into.
+    let bump = Bump::new();
+
+    // Allocate values into the arena.
+    let oskar = bump.alloc(Kitty {
+        name: "Oskar".to_string(),
+        age: 1,
+        fur: Fur::White,
+    });
+
+    // Exclusive, mutable references to the just-allocated value are returned.
+    oskar.age += 1;
+    println!("Oskar is now {} years old", oskar.age);
+}
+```
+
+https://en.wikipedia.org/wiki/Memory_pool
+
+For example, if you need to allocate a lot of `Vec`s, you can use a
+[`VecPool`](https://docs.rs/vec-pool) to reuse the allocations:
+
+````rust
+
+
+
 ## --------------------
 
 Bump alloc
@@ -624,7 +685,7 @@ fn main() {
     let mut v = Vec::new();
     v.push(1);
 }
-```
+````
 
 https://doc.rust-lang.org/std/alloc/index.html
 
