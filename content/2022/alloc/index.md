@@ -168,7 +168,7 @@ advent of new hardware, new techniques get developed all the time.
 
 The architecture of modern-day allocators is a ✨ fascinating topic ✨ on its own.
 If you're interested in learning more, here's a little excursion for you!
-If not, feel free to skip this section.
+If you don't feel like it, feel free to skip this section.
 
 Here's a list of some popular allocators used in the wild and what they are used for:
 
@@ -275,7 +275,7 @@ In my personal opinion this is Rust's main innovation:
 It took the RAII principle from C++ and made it a compiler feature!
 Programs simply won't compile if memory is not correctly managed.
 
-## The `Sized` Trait And Deciding Where To Allocate
+## Deciding Where To Allocate: The `Sized` Trait
 
 In Rust, anything can be put on the heap. However, if a type implements
 [`Sized`](https://doc.rust-lang.org/std/marker/trait.Sized.html), it can also be
@@ -477,21 +477,136 @@ by looking at the `nom` crate:
 
 {{ video(url="https://www.youtube.com/embed/8mA5ZwWB3M0", preview="yt_nom.jpg") }}
 
----
+### Reuse Existing Allocations
+
+What if you need to allocate memory but you want to limit the number of
+allocations?
+In this case you can reuse existing allocations.
+
+#### Trick 1: Allocate The Right Amount Of Memory Up Front
+
+The first trick is to use methods like `with_capacity` 
+if you already know how much memory you'll need.
+
+For example, if you need to concatenate a lot of small strings, you can create a
+`String::with_capacity` to allocate enough memory for all the pieces of the
+string. Then you can use `push_str` to add the strings to the `String` without
+allocating any additional memory:
+
+```rust
+fn main() {
+    let mut s = String::with_capacity(100);
+
+    s.push_str("Hello, ");
+    s.push_str("world!");
+
+    println!("{}", s);
+}
+```
+
+`with_capacity` also exists for `Vec`, `HashMap`, `BufWriter`, `PathBuf`, etc.
+
+#### Trick 2: Cache Values To Avoid Allocations
+
+If you find that you repeatedly allocate the same value, you can cache it to
+avoid allocating it multiple times.
+
+For example, if you need to allocate a `String` that contains the same text
+multiple times, you can cache it in a `static` variable:
+
+```rust
+static HELLO_WORLD: &str = "Hello, world!";
+```
+
+This way, you only allocate the string once and then you can reuse it multiple
+times.
+If you can't do this because the string is dynamic, you can use a [`lazy_static`](https://github.com/rust-lang-nursery/lazy-static.rs) or [`once_cell`](https://github.com/matklad/once_cell)
+to cache the value:
+
+```rust
+lazy_static! {
+    static ref USER_AGENT: String = {
+        let mut s = String::new();
+        s.push_str("MyApp/");
+        // Add crate version
+        s.push_str(env!("CARGO_PKG_VERSION"));
+        s
+    };
+}
+```
+
+If you need to handle a lot of strings at runtime and you don't know which ones
+but there are a lot of duplicates, you can use a string interner to cache the
+strings and avoid allocating them multiple times.
+
+As Alex Kladov (matklad, the author of the `once_cell` crate and Rust Analyzer) [explains](https://matklad.github.io/2020/03/22/fast-simple-rust-interner.html):
+
+> Interning works by ensuring that there’s only one canonical copy of each
+> distinct string in memory. [...] If all strings are canonicalized, comparison
+> can be done in O(1) (instead of O(n)) by using pointer equality.
+
+There are many string interner crates available for Rust, including [ustr](https://github.com/anderslanglands/ustr).
+
+This strategy is also useful for other types of data. In the easiest case, you
+can use a `HashMap` to cache values:
+
+```rust
+let mut cache = HashMap::new();
+
+let value = cache.entry(key).or_insert_with(|| {
+    // Compute value here, then return it.
+    value
+});
+
+// Use value
+// ...
+```
+
+If you need to cache a lot of values, you can use a
+[`lru_cache`](https://docs.rs/lru-cache) to limit the number of values that are
+cached.
+
+
+
+
+
+
+
+
+
+
+
+## --------------------
+
+Bump alloc
+
+
+The regex crate uses a wonderful library called thread_local-rs written by
+/u/Amanieu for really fast thread safe access to a pool of previously
+initialized values. The key is that it allows for dynamic per-object thread
+local values as opposed to statically known thread locals like with the
+thread_local! macro. https://github.com/Amanieu/thread_local-rs
+https://github.com/frankmcsherry/recycler
+
+bumpalo vec:
+https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
+
+## The Journey Of A Rust Allocation
+
+TODO
+
+rust code -> new -> malloc -> brk/mmap
 
 [Diagram] jemalloc System allocator the allocator might call brk or mmap, which
 might be slow mmap asks the kernel to gives us some new virtual address space,
-bascially a new memory segment. brk is used to change the size of an already
+basically a new memory segment. brk is used to change the size of an already
 existing memory segment.
 
 `man mmap man brk`
-
-https://www.youtube.com/watch?v=HPDBOhiKaD8
+{{ video(url="https://www.youtube.com/watch?v=HPDBOhiKaD8", preview="yt_malloc.jpg") }}
 
 These syscall might cause a lot of overhead -- e.g. when we don't have enough
 RAM and the system starts swapping.
-
-rust code -> new -> malloc -> brk/mmap
 
 strace brk calls allocations
 https://ysantos.com/blog/malloc-in-rust
@@ -500,12 +615,40 @@ https://ysantos.com/blog/malloc-in-rust
 system calls. But many programming languages don’t allocate memory by directly
 invoking brk or mmap. In Linux they usually delegate this job to libc."
 
-Creation of a variable on stack (aka local variable) just means to shift the
-stack pointer by the size of that variable. That’s how you allocate local
-variables—by a single pointer decrement operation (stack is organised from high
-addresses to low addresses). It’s as fast as that.
+## How Are Rust Allocators Implemented?
 
-Static variables (aka global variables) have their space reserved in the static
+You just have to implement `alloc` and `dealloc` like this:
+
+```rust
+use std::alloc::{GlobalAlloc, System, Layout};
+
+struct MyAllocator;
+
+unsafe impl GlobalAlloc for MyAllocator {
+    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
+        System.alloc(layout)
+    }
+
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
+        System.dealloc(ptr, layout)
+    }
+}
+
+#[global_allocator]
+static GLOBAL: MyAllocator = MyAllocator;
+
+fn main() {
+    // This `Vec` will allocate memory through `GLOBAL` above
+    let mut v = Vec::new();
+    v.push(1);
+}
+```
+
+https://doc.rust-lang.org/std/alloc/index.html
+
+As we've learned, the creation of a variable on the stack (aka local variable)
+just means to shift the stack pointer by the size of that variable.
+And static variables (aka global variables) have their space reserved in the static
 data memory segment from the very beginning of the process execution. You simply
 know the address where the variable resides.
 
@@ -852,7 +995,7 @@ https://github.com/sebastiencs/shared-arena
 
 helpful with frequent, small allocations with short lifespans
 
-## How To Block Allocations Altogether
+## How To Deny Allocations Altogether
 
 - cargo plugins to fail on allocs
 
@@ -881,59 +1024,9 @@ String interning https://github.com/servo/string-cache
 - [Making slow Rust code
 - fast](https://patrickfreed.github.io/rust/2021/10/15/making-slow-rust-code-fast.html)
 
-## Can I re-use allocations?
-
-Bump alloc
-
-String interning -> allocate a string only once, even if it occurs multiple times.
-https://github.com/anderslanglands/ustr
-
-- https://github.com/hawkw/thingbuf
-
-The regex crate uses a wonderful library called thread_local-rs written by
-/u/Amanieu for really fast thread safe access to a pool of previously
-initialized values. The key is that it allows for dynamic per-object thread
-local values as opposed to statically known thread locals like with the
-thread_local! macro. https://github.com/Amanieu/thread_local-rs
-https://github.com/frankmcsherry/recycler
-
-bumpalo vec:
-https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
-
 ## Can I limit the amount of memory used by my program?
 
 - https://github.com/alecmocatta/cap
-
-# How Are Rust Allocators Implemented?
-
-You just have to implement `alloc` and `dealloc` like this:
-
-```rust
-use std::alloc::{GlobalAlloc, System, Layout};
-
-struct MyAllocator;
-
-unsafe impl GlobalAlloc for MyAllocator {
-    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
-        System.alloc(layout)
-    }
-
-    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
-        System.dealloc(ptr, layout)
-    }
-}
-
-#[global_allocator]
-static GLOBAL: MyAllocator = MyAllocator;
-
-fn main() {
-    // This `Vec` will allocate memory through `GLOBAL` above
-    let mut v = Vec::new();
-    v.push(1);
-}
-```
-
-https://doc.rust-lang.org/std/alloc/index.html
 
 ## How Can I Find Out When My Program Allocates Memory?
 
@@ -1027,6 +1120,8 @@ https://github.com/rust-lang/rust/tree/master/library/alloc
 
 ## What Is A Memory Leak And Can It Happen In Rust?
 
+A memory leak is when a program allocates memory but never frees it.
+
 ## Can I "see" memory allocations in Rust?
 
 You can look at the MIR (medium intermediate representation)
@@ -1059,3 +1154,8 @@ in there
 ```
 
 ```
+
+Other crates:
+
+thingbuf is a lock-free array-based concurrent ring buffer that allows access to slots in the buffer by reference. It's also asynchronous and blocking bounded MPSC channels implemented using the ring buffer.
+- https://github.com/hawkw/thingbuf
