@@ -80,14 +80,15 @@ modify their contents at runtime.
 The stack and the heap on the other hand are allocated at runtime and are
 read-write. They "grow" and "shrink" as needed.
 
-Now let's take a closer look at the latter two.
+Before we can take a closer look at Rust, we first must understand how the stack
+and the heap work.
 
 ### The Stack
 
 {{ figure(src="stack_heap.jpg" invert="true") }}
 
 The main purpose of the stack is to store data for the function that is currently
-being executed. When a function is called, a new *stack frame* is created for it.
+being executed. When a function is called, a new _stack frame_ is created for it.
 The stack frame contains the function's local variables, parameters, and
 return address.
 
@@ -107,19 +108,17 @@ Both operations can be done with just one CPU instruction.
 
 In Rust, the stack pointer is managed automatically by the compiler and runtime.
 When a program is executed, the Rust runtime sets up a stack and manages the
-stack pointer, which points to the top of the stack. As functions are called and
-variables are allocated on the stack, the stack pointer is adjusted to keep
-track of the current location on the stack.
+pointer to the top of the stack. As functions are called and variables are
+allocated on, the stack pointer is adjusted to keep track of the current stack
+location.
 
 Rust's default stack size is 2MB on Unix (as defined
 [here](https://github.com/rust-lang/rust/blob/7632db0e87d8adccc9a83a47795c9411b1455855/library/std/src/sys/unix/thread.rs)),
 but you can change it with the `RUST_MIN_STACK` environment variable.
 
-The stack is where Rust allocates memory _by default_.
-However you cannot store arbitrarily large data on the stack and the stack
-gets cleaned up when you leave a function. This makes it somewhat limited to
-things of which you know the size at compile-time and which have a limited
-scope.
+You cannot store arbitrarily large data on the stack and it gets cleaned up when
+you leave a function. This makes it somewhat limited to things of which you know
+the size of at compile-time and which have a limited scope.
 
 ### The Heap
 
@@ -143,20 +142,38 @@ elements. This is called "memory fragmentation".
 As a consequence you might have to stop and reorder items to free up some space,
 which can cause some overhead. The flexibility comes with a price.
 
+A possible analogy for the heap that is similar to the stack of plates analogy
+for the stack could be pile of laundry. Just like the heap is a region of memory
+used for dynamic memory allocation, a pile of laundry is a collection of items
+that can grow and shrink as needed. It can contain a variety of
+different items, just like the heap can contain a variety of different variables
+that are allocated at runtime.
+
+And like the heap, the pile of laundry can change in size, but it may be more
+difficult to manage and keep organized. In contrast, the stack of plates is more
+organized and has a fixed size.
+
+## Quick Recap of the Stack and the Heap
+
+So there you have it!
+
+Even though you might have been familiar with the stack and the heap before,
+it's important to understand the differences between them as Rust is very strict
+about the differences as we will see later.
+
 ## Why Can't All Allocations Be Static?
 
-The sizes of some datatypes cannot be known at compile-time.
+It would be nice if we could just allocate all memory statically.
+That way we could avoid the overhead of dynamic memory allocation and our programs
+would be fast and efficient.
 
-For example, you might have a vector called students, but you don't know in
-advance how many students it will hold. Dynamic memory allocation makes it
-possible to hold any number of students as long as you have memory available.
+However not even Nostradamus could predict the sizes of some data structures at
+compile time.
+For example, consider storing a list of students but you don't know the number
+of students in advance. How many entries should you allocate for the list?
+Dynamic memory allocation makes it possible to defer the decision until runtime.
+That's why you need the stack and the heap.
 
-Alright, I think we've talked enough about the stack and the heap for now! You
-can find even more info on stack vs heap as well as the respective syscalls
-[here](https://www.linuxjournal.com/article/6390) and
-[here](http://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html#the-heap).
-
-With that we're well prepared to dive into the Rust memory model!
 
 ## Who Manages Dynamic Allocations?
 
@@ -218,6 +235,15 @@ into allocators in general:
   for some more details.
 - [Overview of Malloc](https://sourceware.org/glibc/wiki/MallocInternals) about GNU C library's (glibc's) malloc implementation.
 - [A look at how malloc works on the Mac](https://www.cocoawithlove.com/2010/05/look-at-how-malloc-works-on-mac.html).
+
+## Recap
+
+Alright, I think we've talked enough about the stack and the heap for now! You
+can find even more info as well as the respective syscalls
+[here](https://www.linuxjournal.com/article/6390) and
+[here](http://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html#the-heap).
+
+With that we're well prepared to dive into the Rust memory model!
 
 ## Memory Management in Rust
 
