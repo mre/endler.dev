@@ -10,12 +10,11 @@ tags=["rust"]
 subtitle="And How To Avoid Them"
 +++
 
-One of the neatest things
-about Rust is that you have _full control over memory_ and can deep-dive into
-optimizations at will.
+One of the neatest things about Rust is that you have _full control over memory
+management_ and can deep-dive into performance optimizations at will.
 
-In that context you might have heard of _zero-copy_ or _allocation-free_ code,
-alas, you might have wondered, what that really meant.
+In that context you might have heard terms like _zero-copy_ or _allocation-free_
+code, alas, you might have wondered, what that really meant.
 
 Information on the topic is surprisingly sparse, so to save you the trouble,
 I decided to write down all I've learned so far.
@@ -33,8 +32,8 @@ So this is for everyone who wants to know more about <u>allocations</u> in
 
 ## What's An Allocation?
 
-_Allocation_ is a term which is often used, but few people know the origin of.
-The word comes from _Vulgar Latin_ [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from _ad-_ ("to") + _locus_ ("place")
+The origin of _allocation_ is not widely known, despite being commonly used.
+The word comes from _Vulgar Latin_ [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from _ad-_ ("to") + _locus_ ("place").
 
 Ever since we invented computers, there had to be an answer to the question:
 "Where to put that data?".
@@ -159,7 +158,7 @@ So there you have it!
 
 Even though you might have been familiar with the stack and the heap before,
 it's important to understand the differences between them as Rust is very strict
-about the differences as we will see later.
+about it as we'll see later.
 
 ## Why Can't All Allocations Be Static?
 
@@ -173,7 +172,6 @@ For example, consider storing a list of students but you don't know the number
 of students in advance. How many entries should you allocate for the list?
 Dynamic memory allocation makes it possible to defer the decision until runtime.
 That's why you need the stack and the heap.
-
 
 ## Who Manages Dynamic Allocations?
 
@@ -248,16 +246,16 @@ With that we're well prepared to dive into the Rust memory model!
 ## Memory Management in Rust
 
 Okay so programs need memory to store data and _someone_ has to manage it, right?
-Either it's you or the language. In Python, PHP, Go, and Java it's the [garbage
+In Python, PHP, Go, and Java it's the [garbage
 collector](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)'s
 job: it's the counterpart to the allocator and it's like the janitor of your program.
 
-It iterates over all the process memory on the heap and cleans up whatever isn't
-needed anymore. That's pretty handy for the most part, because you don't have to
-worry about memory management at all.
+From time to time it iterates over all the process memory on the heap and cleans
+up whatever isn't needed anymore. That's pretty handy for the most part, because
+you don't have to worry about memory management at all!
 
-It's fine unless the garbage collector blocks the main thread and prevents your
-program from doing anything else. To avoid that, most modern GCs are a piece of
+The downside is that the garbage collector blocks the main thread and prevents your
+program from doing any meaningful work. To avoid that, most modern GCs are a piece of
 art and highly optimized. For example, did you know that the Golang garbage
 collector [only blocks for a few hundred **micro**seconds on
 average](https://go.dev/blog/ismmkeynote)? In 99% of all cases, that's more than
