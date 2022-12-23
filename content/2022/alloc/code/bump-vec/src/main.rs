@@ -1,4 +1,4 @@
-use bumpalo::Bump;
+use bumpalo::{collections::Vec, Bump};
 
 enum Fur {
     White,
@@ -17,23 +17,20 @@ fn main() {
     let bump = Bump::new();
 
     // Allocate values into the arena.
-    let oskar = bump.alloc(Kitty {
+    let mut kitties = Vec::new_in(&bump);
+    kitties.push(Kitty {
         name: "Oskar".to_string(),
         age: 1,
         fur: Fur::White,
     });
-
-    let flecki = bump.alloc(Kitty {
+    kitties.push(Kitty {
         name: "Flecki".to_string(),
         age: 10,
         fur: Fur::Colorful,
     });
 
-
     // Use the allocated values.
-    println!("{} is {} years old", oskar.name, oskar.age);
-    println!("{} is {} years old", flecki.name, flecki.age);
-
-    // The arena is dropped at the end of the scope (e.g. function), freeing all
-    // the allocated values.
+    for kitty in kitties {
+        println!("{} is {} years old", kitty.name, kitty.age);
+    }
 }
