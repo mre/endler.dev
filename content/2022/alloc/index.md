@@ -30,6 +30,33 @@ So this is for everyone who wants to know more about <u>allocations</u> in
 
 ## Table Of Contents
 
+## Why Should I Care?
+
+Hold on a sec!
+
+I made it sound like you should know all about memory allocations (admittedly a
+bold topic of conversation for a dinner party) but what's the point? After all,
+isn't that something that the compiler and runtime takes care of?
+
+Indeed it is very convenient to use a language that takes care of memory
+management, until you hit a wall:
+And it can be frustrating if to wrangle with the language's limitations in the
+face of a performance bottleneck, a memory leak, or a hardward limitation.
+You silently might nod in agreement if you've ever been in such a situation.
+
+Rust, in contrast, never hides any low-level details from you.
+It requires you to understand how memory works, because you need to be
+explicit about how you want to use it.
+Then again, Rust is not the only language that does that.
+Infamously, C also requires you to manage memory yourself.
+However, crucially, Rust's memory model is _safe_. Its static code analysis
+ensures that you don't make too much of a mess. In contrast, C almost
+feels like it actively tries to ambush you; edge-cases and undefined behavior
+around every corner.
+
+In summary, Rust is a great language to learn more about memory management,
+because it's safe but does not hide any details from you.
+
 ## What's An Allocation?
 
 The origin of _allocation_ is not widely known, despite being commonly used.
@@ -274,6 +301,7 @@ just run a garbage collector on them.)
 
 You might know that Rust has no built-in garbage collector.
 Instead, it uses a principle called [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) (Resource acquisition is initialization)
+or OBRM (Ownership-based resource management)
 to automatically allocate and free memory by checking the _liveliness_ of objects at compile-time.
 That's a fancy way of saying "whoever allocated memory has to free it again" and
 the Rust compiler knows who owns memory by keeping track of [ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
@@ -305,6 +333,10 @@ clear whether a variable is still in use or not.
 In my personal opinion this is Rust's main innovation:
 It took the RAII principle from C++ and made it a compiler feature!
 Programs simply won't compile if memory is not correctly managed.
+
+Further Reading:
+Rustonomicon - The Perils Of Ownership Based Resource Management (OBRM)
+https://doc.rust-lang.org/nomicon/obrm.html
 
 ## Deciding Where To Allocate: The `Sized` Trait
 
@@ -464,6 +496,65 @@ data. With zero-copy parsing, you store `&[u8]` or `&str` slice references to
 the original data instead of copying it into a new buffer and thus allocating
 memory.
 
+Here's an example from the `serde` crate:
+
+```rust
+#[derive(Deserialize)]
+struct User<'a> {
+    id: u32,
+    name: &'a str,
+    screen_name: &'a str,
+    location: &'a str,
+}
+```
+
+> Zero-copy deserialization means deserializing into a data structure, like the
+> User struct above, that **borrows string or byte array data from the string or
+> byte array holding the input**. This avoids allocating memory to store a string
+> for each individual field and then copying string data out of the input over to
+> the newly allocated field. Rust guarantees that the input data outlives the
+> period during which the output data structure is in scope, meaning it is
+> impossible to have dangling pointer errors as a result of losing the input data
+> while the output data structure still refers to it.
+
+Source: https://serde.rs/lifetimes.html
+
+Another example is `nom`, a zero-copy parser combinator library for Rust.
+Let's say we want to parse a struct from the following text without allocating:
+
+```json
+id: 123,
+name: "John Doe",
+hobbies: ["programming", "reading", "writing"]
+```
+
+With `nom` we can do this:
+
+```rust
+#[derive(Debug, PartialEq)]
+struct User<'a> {
+    id: u32,
+    name: &'a str,
+    hobbies: Vec<&'a str>,
+}
+
+named!(parse_user<&str, User>,
+    do_parse!(
+        tag!("id: ") >>
+        id: map_res!(digit, str::parse) >>
+        tag!(", name: ") >>
+        name: delimited!(tag!("\""), is_not!("\""), tag!("\"")) >>
+        tag!(", hobbies: ") >>
+        hobbies: delimited!(tag!("["), separated_list!(tag!(","), delimited!(tag!("\""), is_not!("\""), tag!("\""))), tag!("]")) >>
+    )
+);
+```
+
+Here's a video that explains how zero-copy parsing works in Rust
+by looking at the `nom` crate:
+
+{{ video(url="https://www.youtube.com/embed/8mA5ZwWB3M0", preview="yt_nom.jpg") }}
+
 Consider the following example:
 
 ```rust
@@ -493,20 +584,6 @@ Let's check the binary!
 
 So, the string is stored in the binary and we can use it without allocating
 any memory.
-
-Zero-copy parsers work in a similar way.
-
-In Rust, parsers are often implemented using Iterators, which allows for
-zero-copy parsing. This is made possible by Rust's ownership and lifetime
-semantics, which guarantee that data being accessed is valid. In contrast, other
-high-level languages may encourage copying data, which can be slow and
-inefficient. Rust does not directly discourage copying, but its features make it
-easier to write code that does not perform any copying at all!
-
-Here's a video that explains how zero-copy parsing works in Rust
-by looking at the `nom` crate:
-
-{{ video(url="https://www.youtube.com/embed/8mA5ZwWB3M0", preview="yt_nom.jpg") }}
 
 ### Reuse Existing Allocations
 
@@ -602,12 +679,14 @@ cached.
 If you need to allocate a lot of objects of the same type, you can use a memory
 pool to reuse the allocations.
 The concept is closely related to "Region-Based Memory Management".
+(Source: https://en.wikipedia.org/wiki/Memory_pool)
 
 Simply put, it's a chunk of memory that you can use to allocate objects of the
 same type. When you're done with the objects, you can clear the entire pool to reuse
 the memory. This is much faster than allocating and freeing memory individually.
 
-A popular crate for this is [`bumpalo`](https://github.com/fitzgen/bumpalo).
+A popular crate for this is [`bumpalo`](https://github.com/fitzgen/bumpalo),
+a "bump allocator" that allocates memory in a pool.
 Here's an example of how to use it with a bunch of objects of the same `struct` type:
 
 ```rust
@@ -636,27 +715,53 @@ fn main() {
         fur: Fur::White,
     });
 
-    // Exclusive, mutable references to the just-allocated value are returned.
-    oskar.age += 1;
-    println!("Oskar is now {} years old", oskar.age);
+    let flecki = bump.alloc(Kitty {
+        name: "Flecki".to_string(),
+        age: 10,
+        fur: Fur::Colorful,
+    });
+
+
+    // Use the allocated values.
+    println!("{} is {} years old", oskar.name, oskar.age);
+    println!("{} is {} years old", flecki.name, flecki.age);
+
+    // The arena is dropped at the end of the scope (e.g. function), freeing all
+    // the allocated values.
 }
 ```
 
-https://en.wikipedia.org/wiki/Memory_pool
+Bumpalo also has a `Vec` type that you can use to allocate a bunch of values of
+the same type:
 
-For example, if you need to allocate a lot of `Vec`s, you can use a
-[`VecPool`](https://docs.rs/vec-pool) to reuse the allocations:
+```rust
+use bumpalo::{collections::Vec, Bump};
 
-````rust
+// ...
 
+fn main() {
+    // Create a new arena to bump allocate into.
+    let bump = Bump::new();
 
+    // Allocate values into the arena.
+    let mut kitties = Vec::new_in(&bump);
+    kitties.push(Kitty {
+        name: "Oskar".to_string(),
+        age: 1,
+        fur: Fur::White,
+    });
+    kitties.push(Kitty {
+        name: "Flecki".to_string(),
+        age: 10,
+        fur: Fur::Colorful,
+    });
 
-## --------------------
-
-Bump alloc
-
-bumpalo vec:
-https://docs.rs/bumpalo/latest/bumpalo/collections/vec/struct.Vec.html
+    // Use the allocated values.
+    for kitty in kitties {
+        println!("{} is {} years old", kitty.name, kitty.age);
+    }
+}
+```
 
 ## The Journey Of A Rust Allocation
 
@@ -709,7 +814,7 @@ fn main() {
     let mut v = Vec::new();
     v.push(1);
 }
-````
+```
 
 https://doc.rust-lang.org/std/alloc/index.html
 
@@ -1220,7 +1325,14 @@ in there
 
 ```
 
-```
+## How is Zero-Copy Related to Lifetimes?
+
+https://users.rust-lang.org/t/how-does-zero-copy-deserialization-work/72782
+which links to
+https://serde.rs/lifetimes.html
+Decrusting the serde crate also mentions the lifetimes on Deserializer:
+https://www.youtube.com/watch?v=BI_bHCGRgMY
+
 
 Other crates:
 
@@ -1235,3 +1347,19 @@ Other crates:
   local values as opposed to statically known thread locals like with the
   thread_local! macro. https://github.com/Amanieu/thread_local-rs
   https://github.com/frankmcsherry/recycler
+
+- databake: https://github.com/kupiakos/icu4x/tree/main/utils/databake
+  and basically everyting else in https://github.com/kupiakos/icu4x/tree/main/utils
+
+## Further Reading
+
+- Manish Goregaokar's blog post on zero-copy deserialization
+https://manishearth.github.io/blog/2022/08/03/zero-copy-1-not-a-yoking-matter/
+
+- Comprehensive Rust: Memory Management
+https://google.github.io/comprehensive-rust/memory-management.html
+
+- The Rustonomicon - Chapter on Uninitialized Memory
+https://doc.rust-lang.org/nomicon/uninitialized.html
+
+```
