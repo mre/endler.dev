@@ -432,3 +432,64 @@ Wait a sec, where did I hear that one before...!?
 
 ## Right, C.
 ````
+
+
+# Golang: Naive Solutions to Complex Problems
+
+I've been contemplating about Go again lately.
+
+There's an inner aversion to Go that I've been trying to understand, but I think
+I got one step closer today. My take on it is that Go, on the surface, offers
+simple solutions to complex problems while in reality its solutions are naive
+and only solve a shallow version of the problem.  This is a big statement to
+make, so let's unpack it.
+
+Take for example the way Go handles time and dates. To create a time object, you
+can do the following:
+
+```go t, err := time.Parse("2006-01-02 15:04:05", "2012-11-01 22:08:41") ```
+
+At first glance, this seems like a simple, almost elegant solution to a complex
+problem.
+
+But upon closer inspection, the true, unpleasant nature of the problem reveals
+itself.
+
+There are numerous problems this naive solution does not address:
+
+* [It does not handle leap seconds](https://github.com/golang/go/issues/50888).
+* [It does not handle timezones](https://github.com/golang/go/issues/26032).
+* There 
+
+
+
+
+
+
+
+
+
+Instead, it provides a plethora of naive solutions to complex problems.
+
+
+
+
+
+
+
+
+The mistake they make, is that they assumed a problem is simple when in reality
+it is much more complex. If you take a complex problem and try to apply a naive
+solution, then you end up with a low quality solution that does not fully solve
+the problem. This ends up straining relationships with the developer community
+who have already put a great deal of thought into all the aspects of the problem
+and understand the inherent flaws of the naive solution.
+
+That said, I think Go was striving for simple solutions to complex problems. But
+often this is hard to do and often it's best to be explicit about the complexity
+of the problem and then try to solve it in a simple way. That is Rust's
+approach.
+
+Additionally, solutions that are simple relative to the complexity of the
+problem can still appear over-complicated at first glance if one is
+under-estimating the complexity of the problem.
