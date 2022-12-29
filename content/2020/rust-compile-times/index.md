@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2022-05-09
+updated=2022-12-29
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -562,7 +562,24 @@ Manish goes on to say
 > if necessary.
 
 If you heavily use procedural macros in your project (e.g., if you use serde),
-you can try to sidestep their impact on compile times with
+it might be worth it to play around with opt-levels in your `Cargo.toml`.
+
+```toml
+[profile.dev.build-override]
+opt-level = 3
+```
+
+As reader [jfmontanaro](https://github.com/jfmontanaro) mentioned on
+[Github](https://github.com/mre/endler.dev/issues/53):
+
+> I think the reason it helps with build times is because it only applies to
+> build scripts and proc-macros. Build scripts and proc-macros are unique because
+> during a normal build, they are not only compiled but also executed (and in the
+> case of proc-macros, they can be executed repeatedly). When your project uses a
+> lot of proc-macros, optimizing the macros themselves can in theory save a lot of
+> time.
+
+Another approach is to try and sidestep the macro impact on compile times with
 [watt](https://github.com/dtolnay/watt), a tool that offloads macro compilation
 to Webassembly.
 
