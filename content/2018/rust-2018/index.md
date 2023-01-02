@@ -1,7 +1,7 @@
 +++
 title="Rust in 2018"
 date=2018-01-09
-updated=2022-01-02
+updated=2023-01-02
 [taxonomies]
 tags=["dev", "rust"]
 

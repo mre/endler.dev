@@ -1,7 +1,7 @@
 +++
 title="Making Myself Obsolete"
 date=2017-12-10
-updated=2022-01-02
+updated=2023-01-02
 [taxonomies]
 tags=["dev", "oss"]
 

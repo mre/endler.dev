@@ -1,6 +1,7 @@
 +++
 title="Rust for Rubyists"
 date=2017-12-17
+updated=2023-01-02
 [taxonomies]
 tags=["dev", "rust"]
 
