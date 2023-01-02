@@ -41,7 +41,7 @@ The rest is easier to solve than a lack of product market fit.
 Uber and Lyft can't be everywhere from the start. While they expand their
 businesses, others have the ability to outpace them. There's an Uber clone in
 China ([DiDi](https://didichuxing.com)), one in Africa and the Middle East
-([Careem](https://www.careem.com/en-ae/)) and basically one for every
+([Careem](https://www.careem.com)) and basically one for every
 [country](https://gett.com/il/)
 [in](https://www.cnbc.com/2019/04/11/uber-s-1-risk-factors-competitors-deleteuber-campaign-reputation.html)
 [the](https://taxi.yandex.ru/) [world](https://www.gojek.com/). The tech

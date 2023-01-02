@@ -1,6 +1,7 @@
 +++
 title="Making Myself Obsolete"
 date=2017-12-10
+updated=2022-01-02
 [taxonomies]
 tags=["dev", "oss"]
 
@@ -64,7 +65,7 @@ With every pull request, we trigger our bot, which checks the above rules and re
 The first step was to read the [Github documentation about building a CI server](https://developer.github.com/v3/guides/building-a-ci-server/).
 
 Just for fun, I wanted to create the bot in [Rust](https://www.rust-lang.org/).
-The two most popular Github clients for Rust were [github-rs](https://github.com/github-rs/github-rs) and [hubcaps](https://github.com/softprops/hubcaps).
+The two most popular Github clients for Rust were github-rs (now deprecated) and [hubcaps](https://github.com/softprops/hubcaps).
 Both looked pretty neat, but then I found [afterparty](https://github.com/softprops/afterparty), a "Github webhook server".
 
 The example looked fabulous:

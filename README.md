@@ -1,6 +1,6 @@
 # Hello!
 
-![Build Status](https://github.com/mre/mre.github.io/workflows/CI/badge.svg)
+[![Build Status](https://github.com/mre/endler.dev/actions/workflows/ci.yml/badge.svg)](https://github.com/mre/endler.dev/actions/workflows/ci.yml)
 
 This is the source code of [my personal website](https://endler.dev). I write about Rust, open-source maintenance, side projects, and business ideas.
 

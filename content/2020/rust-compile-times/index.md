@@ -651,7 +651,7 @@ Gitpod has a neat feature called [prebuilds](https://www.gitpod.io/docs/prebuild
 
 Especially when reviewing pull requests, this could give you a nice speedup.
 Prebuilds are quite customizable; take a look at the [`.gitpod.yml` config of
-nushell](https://github.com/nushell/nushell/blob/main/.gitpod.yml) to get an
+nushell](https://github.com/nushell/nushell/blob/d744cf8437614cc6b95a4bb22731269a17fe9c80/.gitpod.yml) to get an
 idea.
 
 ## Download ALL The Crates

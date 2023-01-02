@@ -23,14 +23,11 @@ The Ruby code samples are from the [original article](https://medium.com/the-ren
 
 The first example is a pretty basic iteration over elements of a container using `map`.
 
-<a class="example" href="https://gist.github.com/LeandroTk/64ca7d6f5279e08589e21d799544e878">
 <div class="ruby lang-icon"></div>
 
 ```ruby
 user_ids = users.map { |user| user.id }
 ```
-
-</a>
 
 The `map` concept is also pretty standard in Rust.
 Compared to Ruby, we need to be a little more explicit here:
@@ -55,14 +52,12 @@ will the iterator take ownership of the vector, or will it not?
 
 The above Ruby code can be simplified like this:
 
-<a class="example" href="https://gist.github.com/LeandroTk/258652cbaea308ccfeddc5df5bb9f37b">
 <div class="ruby lang-icon"></div>
 
 ```ruby
 user_ids = users.map(&:id)
 ```
 
-</a>
 
 In Ruby, higher-order functions (like `map`) take [blocks or procs](https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html) as an argument and the language provides a convenient shortcut for method invocation &mdash; `&:id` is the same as `{|o| o.id()}`.
 
@@ -139,15 +134,12 @@ for lang in ["Ruby", "Rust", "Python", "Cobol"].iter() {
 
 Let's say you want to extract only even numbers from a collection in Ruby.
 
-<a class="example" href="https://gist.github.com/LeandroTk/f341051889e27c99ddd66c075e5ef6d0">
 <div class="ruby lang-icon"></div>
 
 ```ruby
 even_numbers = [1, 2, 3, 4, 5].map { |element| element if element.even? } # [ni, 2, nil, 4, nil]
 even_numbers = even_numbers.compact # [2, 4]
 ```
-
-</a>
 
 In this example, before calling `compact`, our `even_numbers` array had `nil` entries.
 Well, in Rust there is no concept of `nil` or `Null`. You don't need a `compact`.
@@ -281,14 +273,11 @@ The return value contains all successfully converted strings:
 
 The `filter_map` is similar to the `select` method in Ruby:
 
-<a class="example" href="https://gist.github.com/LeandroTk/1ae24e0fece0207f814932b0ac6c4a5e">
 <div class="ruby lang-icon"></div>
 
 ```ruby
 [1, 2, 3, 4, 5].select { |element| element.even? }
 ```
-
-</a>
 
 ## Random numbers
 
@@ -365,7 +354,6 @@ With that, we arrive at a solution that rivals Ruby's elegance.
 
 Ruby methods automatically return the result of the last statement.
 
-<a class="example" href="https://gist.github.com/LeandroTk/9ede60f0898979f8f74d2869ed014c0c">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -373,8 +361,6 @@ def get_user_ids(users)
   users.map(&:id)
 end
 ```
-
-</a>
 
 Same for Rust. Note the missing semicolon.
 
@@ -445,7 +431,6 @@ let length_in_meters = match unit {
 
 In Ruby you can assign multiple values to variables in one step:
 
-<a class="example" href="https://gist.github.com/LeandroTk/998bed8f8c20e487a1b8a638dd7563a1">
 <div class="ruby lang-icon"></div>
 
 ```ruby
@@ -455,8 +440,6 @@ end
 
 one, two, three = values
 ```
-
-</a>
 
 In Rust, you can only decompose tuples into tuples, but not a vector into a tuple for example.
 So this will work:
@@ -530,15 +513,12 @@ To quote _[The Book](https://doc.rust-lang.org/book/second-edition/ch18-03-patte
 
 Ruby has [extensive string interpolation support](https://ruby-doc.org/docs/ruby-doc-bundle/ProgrammingRuby/book/ref_m_kernel.html#Kernel.sprintf).
 
-<a class="example" href="https://gist.github.com/LeandroTk/5125cab5e74d26460124c786ac5df534">
 <div class="ruby lang-icon"></div>
 
 ```ruby
 programming_language = "Ruby"
 "#{programming_language} is a beautiful programming language"
 ```
-
-</a>
 
 This can be translated like so:
 

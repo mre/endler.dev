@@ -87,8 +87,8 @@ And then, I waited.
 First, [Shreya V Prabhu](https://github.com/ShreyaPrabhu) fixed an issue where a
 new recording was overwriting the previous one by adding a [timestamp to the
 video name](https://github.com/mre/timelapse/pull/3). Then [Abner
-Campanha](https://github.com/abnerpc) and [Shane
-Creedon](https://github.com/ShaneCreedon) created a basic test structure.
+Campanha](https://github.com/abnerpc) and Shane
+Creedon (no longer on Github) created a basic test structure.
 [Gbenro Selere](https://github.com/seleregb) added a CI pipeline for Travis CI.
 It really worked, and the project was in much better shape after that!
 

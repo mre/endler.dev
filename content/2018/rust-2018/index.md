@@ -1,6 +1,7 @@
 +++
 title="Rust in 2018"
 date=2018-01-09
+updated=2022-01-02
 [taxonomies]
 tags=["dev", "rust"]
 
@@ -43,8 +44,8 @@ All of that was already [suggested by Niko](https://smallcultfollowing.com/babys
 On a related note, I'd like to see more talks/guidelines/books targeting intermediate Rust programmers.
 This includes discussions on how to structure [big projects](https://github.com/servo/servo) in Rust and Rust-specific [design patterns](https://github.com/rust-unofficial/patterns).
 I want to read more about professional Rust usage and see case-studies from various industries.
-For example, there is a startup called [snips](https://snips.ai/), which builds an on-device voice-assistant using Rust.
-They integrate with C and C++ libraries and [I want to hear more about their journey](https://medium.com/snips-ai/snips-big-wish-for-rust2018-libraries-or-portability-pick-two-814d104586d9).
+For example, there was a startup called snips.ai, which built an on-device voice-assistant using Rust.
+They integrated with C and C++ libraries and [I want to hear more about their journey](https://medium.com/snips-ai/snips-big-wish-for-rust2018-libraries-or-portability-pick-two-814d104586d9).
 
 ## Improve the RFC process
 
