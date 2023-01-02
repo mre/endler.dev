@@ -1,6 +1,7 @@
 +++
 title="fastcat - A Faster `cat` Implementation Using Splice"
 date=2018-07-31
+updated=2023-01-02
 [taxonomies]
 tags=["dev", "rust"]
 
@@ -25,7 +26,7 @@ credits = [
 {{ figure(src="fastcat.svg") }}
 
 Lots of people asked me to write another piece about the internals of well-known
-Unix commands. Well, actually, nobody asked me, but it makes for a good
+Unix commands. Well, actually, nobody asked, but it makes for a good
 intro. I'm sure you’ve read the previous parts about [`yes`](@/2017/yes/index.md) and
 [`ls`](@/2018/ls/index.md) &mdash; they are epic.
 
@@ -36,7 +37,7 @@ commonly, abused to print a file's contents to the screen.
 # Concatenate files, the intended purpose
 cat input1.txt input2.txt input3.txt > output.txt
 
-# Print file to screen, the most common use case
+# Print file to screen, the most common use-case
 cat myfile
 ```
 
@@ -80,7 +81,7 @@ cat myfile | pv -r > /dev/null
 [1.90GiB/s]
 ```
 
-Uh oh, [GNU cat](https://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=blob;f=src/cat.c;h=3c319511c767f65d2e420b3bff8fa6197ddbb37b;hb=HEAD) is **ten times faster** than our little Ruby cat. 🐌
+Uh oh, [GNU cat](https://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=blob;f=src/cat.c;h=3c319511c767f65d2e420b3bff8fa6197ddbb37b;hb=HEAD) is **ten times faster** than our little Ruby cat. 💎🐈🐌
 
 ## Making our Ruby cat a little faster
 
@@ -126,8 +127,8 @@ but I prefer the description from the [manpage](https://linux.die.net/man/2/spli
 
 > **splice()** moves data between two file descriptors without copying
 > between kernel address space and user address space. It transfers up
-> to len bytes of data from the file descriptor fd_in to the file
-> descriptor fd_out, where one of the file descriptors must refer to a
+> to `len` bytes of data from the file descriptor `fd_in` to the file
+> descriptor `fd_out`, where one of the file descriptors must refer to a
 > pipe.
 
 If you really want to dig deeper, here's the corresponding [source code from the
@@ -173,7 +174,7 @@ pub fn splice(
 ) -> Result<usize>
 ```
 
-Now I didn't implement the Linux bindings myself. Instead, I just used a library called
+Now, I didn't implement the Linux bindings myself. Instead, I just used a library called
 [nix](https://github.com/nix-rust/nix), which provides Rust friendly bindings to \*nix APIs.
 
 There is one caveat, though:
@@ -248,7 +249,7 @@ Holy guacamole. That's **over three times as fast as system cat**.
 - **Linux** and **Android** are fully supported.
 - **[OpenBSD](https://stackoverflow.com/questions/12230316/do-other-operating-systems-implement-the-linux-system-call-splice?lq=1)**
   also has some sort of splice implementation called
-  [`sosplice`](https://man.openbsd.org/sosplice). I haven't tested that, though.
+  [`sosplice`](https://man.openbsd.org/sosplice). I didn't test that, though.
 - On **macOS**, the closest thing to splice is its bigger brother,
   [sendfile](https://www.unix.com/man-page/osx/2/sendfile/), which can send a
   file to a socket within the Kernel. Unfortunately, it does not support sending
@@ -291,7 +292,7 @@ network card to another, [similar to netcat](https://nc110.sourceforge.io/).
 - The closer we get to bare metal, the more our hard-won abstractions fall
   apart, and we are back to low-level systems programming.
 - Apart from a fast cat, there's also a use-case for a slow cat: old computers.
-  For that purpose, there's... well.. [slowcat](https://grox.net/software/mine/slowcat/).
+  For that purpose, there's &mdash; you guessed it &mdash; [slowcat](https://grox.net/software/mine/slowcat/).
 
 That said, I still have no idea why GNU cat does not use splice on Linux. 🤔
 The [source code for fcat is on Github](https://github.com/mre/fcat).
