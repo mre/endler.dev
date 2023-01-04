@@ -1199,6 +1199,10 @@ String interning https://github.com/servo/string-cache
 ## Can I limit the amount of memory used by my program?
 
 - https://github.com/alecmocatta/cap
+- https://github.com/nnethercote/dhat-rs
+"This code should do exactly 96 heap allocations".
+"The peak heap usage of this code should be less than 10 MiB".
+"This code should free all heap allocations before finishing".
 
 ## How Can I Find Out When My Program Allocates Memory?
 
