@@ -49,6 +49,7 @@ body {
   grid-template-columns: auto 650px;
   justify-content: center;
   margin-top: 40px;
+  gap: 20px;
 }
 
 header {
@@ -91,8 +92,7 @@ header {
 main {
   margin-top: 20px;
   margin-bottom: 50px;
-  max-width: 650px;
-  padding: 0px 30px;
+  max-width: 600px;
 }
 
 main article {
