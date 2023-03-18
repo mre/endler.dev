@@ -173,7 +173,7 @@ There are many other examples for extensibility:
 - Use Ceph to add a distributed file system to Nomad.
 - Use [fabio] for load balancing.
 
-All of this allowed us to [grow our infrastructure organically](https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/) without too much
+All of this allowed us to [grow our infrastructure organically](https://tech.trivago.com/post/2019-01-25-nomadourexperiencesandbestpractices/) without too much
 up-front commitment.
 
 ## Fair Warning

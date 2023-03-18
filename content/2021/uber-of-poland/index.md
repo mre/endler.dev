@@ -42,17 +42,17 @@ Uber and Lyft can't be everywhere from the start. While they expand their
 businesses, others have the ability to outpace them. There's an Uber clone in
 China ([DiDi](https://didichuxing.com)), one in Africa and the Middle East
 ([Careem](https://www.careem.com)) and basically one for every
-[country](https://gett.com/il/)
+[country](http://web.archive.org/web/20230211164448/https://www.gett.com/il/)
 [in](https://www.cnbc.com/2019/04/11/uber-s-1-risk-factors-competitors-deleteuber-campaign-reputation.html)
 [the](https://taxi.yandex.ru/) [world](https://www.gojek.com/). The tech
-industry rarely talks about these *Ubers of X*, but they serve millions of
+industry rarely talks about these _Ubers of X_, but they serve millions of
 customers. While they start as exact copies of their well-known counterparts,
 some of them end up offering better service thanks to their understanding of the
 local market.
 
 ## People always find a way
 
-With creativity, you can provide great service even without a big budget.  The
+With creativity, you can provide great service even without a big budget. The
 important part is to know which corners you can cut while staying true to your
 mission. If there's a market, there's a way. The Cubans have a word for it:
 [_resolver_](https://medium.com/@d.yau/cubas-resolver-mentality-makes-it-the-next-startup-hub-2f10ea2096a0),

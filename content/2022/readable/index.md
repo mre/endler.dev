@@ -238,7 +238,7 @@ For fonts I chose two of my favorites
 - [Crimson Pro](https://github.com/Fonthausen/CrimsonPro) for the body text.
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for the code.
 
-Both are licensed under the [SIL Open Font License 1.1](https://opensource.org/licenses/OFL-1.1).
+Both are licensed under the [SIL Open Font License 1.1](https://opensource.org/license/openfont-html/).
 
 You can even use `readable` from the terminal.
 
