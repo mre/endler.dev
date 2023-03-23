@@ -28,7 +28,7 @@ Here is a list of my [public speaking][talks] engagements.
 
 ## Projects
 
-- [Open Podcast](https://openpodcast.dev): An open platform for podcast analytics.
+- [Open Podcast](https://openpodcast.app): An open platform for podcast analytics.
 - [Analysis Tools](https://analysis-tools.dev): An open comparison
   platform for static/dynamic code analysis software, listing 600+ tools.
 - [Idiomatic Rust](https://github.com/mre/idiomatic-rust): A
