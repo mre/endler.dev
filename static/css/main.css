@@ -85,10 +85,6 @@ header {
   padding: 16px;
 }
 
-.bio span:after {
-  content: " Writes about Rust, engineering culture, and socks.";
-}
-
 main {
   margin-top: 20px;
   margin-bottom: 50px;
