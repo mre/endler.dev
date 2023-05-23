@@ -1,12 +1,12 @@
 +++
-title="Dead Metaphors in Computer Science"
+title="Hackers' Folklore"
 date=2020-04-24
-updated=2022-11-19
+updated=2023-05-24
 [taxonomies]
 tags=["culture"]
 
 [extra]
-subtitle="Formerly \"Hacker Folklore\""
+subtitle="A collection of stories about the origins of computer terms."
 credits = [
   {name = "Simon Brüggen", url="https://github.com/m3t0r" },
   {name = "Jakub Sacha", url="https://github.com/jakubsacha" },
@@ -120,6 +120,22 @@ It predates electronic computers and computer software.
 Thomas Edison used the term "bug" in his notes.
 [Reference](https://en.wikipedia.org/wiki/Software_bug#Etymology)
 
+## Bit
+
+The term's invention is credited to John W. Tukey, who in a memo written for
+Bell Labs on January 9, 1947, had shortened "binary information digit" to "bit".
+[Reference](https://en.wikipedia.org/wiki/Bit#History)
+
+## Byte
+
+The term "byte" was first introduced by [Werner
+Buchholz](https://en.wikipedia.org/wiki/Werner_Buchholz) in June 1956. This was
+during the initial design stage for the IBM Stretch computer. The computer had a
+design that enabled addressing down to the individual bit and allowed variable
+field length instructions, with the size of the byte encoded into the
+instruction itself. The choice of spelling as "byte" instead of "bite" was
+intentional to prevent any accidental alteration to "bit".
+
 ## Carriage Return and Line Feed
 
 _Today's meaning: Set the cursor to the beginning of the next line._
@@ -193,6 +209,24 @@ References:
 - [Cult of Mac: What Are The Mac’s Command ⌘ And Option ⌥ Symbols Supposed To
   Represent?](https://www.cultofmac.com/181495/what-are-the-macs-command-%E2%8C%98-and-option-%E2%8C%A5-symbols-supposed-to-represent/)
 
+
+## Cookie
+
+_Today's meaning: A small piece of data sent from a website and stored in the
+user's web browser._
+
+The term _cookie_ was coined by  23-year-old web browser programmer Lou Montulli
+in the fall of 1994. It was
+inspired by the term [_magic cookie_](https://en.wikipedia.org/wiki/Magic_cookie), which is a packet of data a program
+receives and sends back unchanged, used by Unix programmers. 
+This term in turn derives from the [fortune cookie](https://en.wikipedia.org/wiki/Fortune_cookie), which is a cookie with an embedded message.
+
+Montulli used the
+term _cookie_ to describe the small packets of data that the web browser
+receives and sends back unchanged to the web server.
+
+> "So, yeah, the cookie," Montulli says with a laugh. "It's one week of my life that turned into the most important thing that I ever did." ([Reference](https://hiddenheroes.netguru.com/lou-montulli))
+
 ## Core Dump
 
 _Today's meaning: Retrieving a snapshot of a (crashed) program's state by
@@ -222,6 +256,16 @@ IBM 604 Electronic Calculating Punch that was first produced in 1948. The
 advertisement claims the IBM 604 can do the work of 150 engineers with slide
 rules. The cursor (or runner) is the transparent part in the middle of the
 slide.") }}
+
+## Daemon
+
+In computing, a daemon is a background process that handles requests for
+services such as print spooling and file transfers, and then terminates. The
+term was coined by the programmers of [MIT's Project MAC (Mathematics and Computation)](https://www.britannica.com/topic/Project-Mac) in 1963. They took the name from
+[Maxwell's demon](https://en.wikipedia.org/wiki/Maxwell%27s_demon), a hypothetical creature from a thought experiment that
+constantly works in the background, sorting molecules.
+ 
+> The MIT programmers thought demon would be an appropriate name for a background process that worked tirelessly to perform system chores. But instead of using the term demon, they used daemon, which is an older form of the word. ([Reference](https://web.archive.org/web/20230405225031/https://www.techtarget.com/whatis/definition/daemon))
 
 ## Dashboard
 
@@ -309,6 +353,22 @@ In it, a Lord offers his paid army of 'free lances' to King Richard:
 
 Therefore, a "free lancer" is someone who fights for whoever pays the most.
 Free does not mean "without pay", but refers to the additional freedom to work for any employer. [Reference](https://www.merriam-webster.com/words-at-play/freelance-origin-meaning)
+
+## Hash
+
+_Today's meaning: A hash function is any function that can be used to map data of arbitrary size to fixed-size values._
+
+According to Wikipedia, the use of the word "hash" in hash function 
+"comes by way of analogy with its non-technical meaning, to "chop and mix".
+Indeed, typical hash functions, like the mod operation, "chop" the input domain
+into many sub-domains that get "mixed" into the output range to improve the
+uniformity of the key distribution."
+
+References:
+
+* [Software Engineering StackExchange](https://softwareengineering.stackexchange.com/a/108127)
+* [Wikipedia](https://en.wikipedia.org/wiki/Hash_function#History)
+
 
 ## Log / Logfile
 
