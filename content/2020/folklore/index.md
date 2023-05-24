@@ -509,7 +509,9 @@ mass-emails or posting in forums and chats._
 The term goes back to a sketch by the British comedy group Monty Python from 1970.
 In the sketch, a cafe is including
 [Spam](<https://en.wikipedia.org/wiki/Spam_(food)>) (a brand of canned cooked
-pork) in almost every dish. The excessive amount of Spam mentioned is a
+pork) in almost every dish. 
+Spam is a [portmanteau of _spiced_ and _ham_](https://time.com/4827451/spam-history-80th-anniversary/).
+The excessive amount of Spam mentioned is a
 reference to the ubiquity of it and other imported canned meat products in the
 UK after World War II (a period of rationing in the UK) as the country struggled
 to rebuild its agricultural base.
