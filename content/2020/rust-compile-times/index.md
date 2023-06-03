@@ -81,7 +81,7 @@ they could be better.
 If you like to know what's slowing down your builds, run 
 
 ```
-cargo --timings
+cargo build --timings
 ```
 
 This will generate a report on how much time was spent on each step involved in compiling your program. Here's the output:
