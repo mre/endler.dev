@@ -190,6 +190,11 @@ check if you can toss anything with
 cargo install cargo-udeps && cargo +nightly udeps
 ```
 
+There also is a newer tool called
+[cargo-machete](https://github.com/bnjbvr/cargo-machete), which does the same
+thing but does not require a nightly compiler. It also works better with
+workspaces.
+
 ## Update Remaining Dependencies
 
 Next, update your dependencies, because they themselves could have tidied up
