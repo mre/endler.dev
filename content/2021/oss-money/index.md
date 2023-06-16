@@ -25,6 +25,7 @@ Related links and resources:
   with [Zeno Rocha](https://zenorocha.com/).
 - [Nadia Eghbal](https://nadia.xyz/) talking about [Maintenance of our essential info-structure](https://www.youtube.com/watch?v=TMxBf-Ohgmg). She also wrote a book on that topic
   called [Working in Public](https://amzn.to/3vAl43v").
+- [Generating income from open source](https://vadimdemedes.com/posts/generating-income-from-open-source) by [Vadim Demedes](https://twitter.com/vadimdemedes), which explains different ways to monetize your projects based on various real-world examples.
 
 Find a full transcript of the talk below. (Sorry for the wall of text.)
 
