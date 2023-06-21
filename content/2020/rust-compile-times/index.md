@@ -1,7 +1,7 @@
 +++
 title = "Tips for Faster Rust Compile Times"
 date = 2020-06-21
-updated=2022-12-29
+updated=2023-06-21
 [taxonomies]
 tags=["rust"]
 [extra]
@@ -334,16 +334,22 @@ this.
 ⚠️ **Fair warning**: it seems that switching off features doesn't always improve
 compile time. (See [tikv's experiences
 here](https://github.com/tikv/tikv/pull/4453#issuecomment-481789292).)
-It may still be a good idea for improving security be reducing the code's attack surface.
+It may still be a good idea for improving security by reducing the code's attack surface.
 
 A quick way to list all features of a crate is
 [cargo-feature-set](https://github.com/badboy/cargo-feature-set).
+As of recently, you also get a list of features of a crate when installing it with
+`cargo add`.
 
-Admittedly, [features are not very discoverable at the
-moment](https://twitter.com/llogiq/status/1273875653822222337) because there is
-no standard way to document them, but we'll get there eventually.
+If you want to look up the feature flags of a crate, they are listed on
+[docs.rs](https://docs.rs/). E.g. check out [tokio's feature
+flags](https://docs.rs/crate/tokio/latest/features).
 
 ## Use A Ramdisk For Compilation
+
+{% info() %}
+💾 Skip this tip if you're using an SSD.
+{% end %}
 
 When starting to compile heavy projects, I noticed that I was throttled on I/O.
 The reason was that I kept my projects on a measly HDD. A more performant
@@ -472,6 +478,10 @@ has stalled (see
 **Update**: I recently learned about another linker called [mold](https://github.com/rui314/mold), which claims a massive 12x performance bump over lld. Compared to GNU gold, it's said to be more than 50x. Would be great if anyone could verify and send me a message.
 
 **Update II**: Aaand another one called [zld](https://github.com/michaeleisel/zld), which is a drop-in replacement for Apple's `ld` linker and is targeting debug builds. [[Source](https://www.reddit.com/r/rust/comments/lv3eb2/hey_rustaceans_got_an_easy_question_ask_here_92021/gppyutx)]
+
+**Update III**: zld is deprecated. The author recommends using [lld](https://lld.llvm.org/) instead.
+You can read up on the backstory [here](https://eisel.me/lld).
+
 
 {{ figure(src="zld_benchmark.svg", caption="The zld benchmarks are quite impressive.", link="https://github.com/michaeleisel/zld")}}
 
@@ -625,7 +635,7 @@ The [benchmarks](https://www.reddit.com/r/rust/comments/qgi421/doing_m1_macbook_
 | [hyperfine](https://github.com/sharkdp/hyperfine)         | 23s    | 42s    |
 | [ripgrep](https://github.com/BurntSushi/ripgrep)          | 16s    | 37s    |
 
-That's a solid 2x performance improvement compared to an already fast M1.
+That's a solid 2x performance improvement.
 
 But if you rather like to stick to Linux, people also had great success with a multicore CPU like an [AMD Ryzen
 Threadripper and 32 GB of RAM](https://www.reddit.com/r/rust/comments/chqu4c/building_a_computer_for_fastest_possible_rust/).
@@ -804,13 +814,12 @@ not directly affect your own build time, but your users will surely be thankful.
 - [arewefastyet](http://web.archive.org/web/20210510182416/https://arewefastyet.rs/) (offline) measures how long the Rust compiler
   takes to compile common Rust programs.
 
-{% info() %}
-
-- Consider [sponsoring me on Github](https://github.com/sponsors/mre/) for future articles.
-- I can help you with performance problems and reducing your build times. [Reach out here.](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832)
-  {% end %}
-
 ## What's Next?
+
+{% info() %}
+My company, [corrode](https://corrode.dev), can help you with performance problems and reducing your build times. [Reach out here.](https://corrode.dev/job/)
+{% end %}
+
 
 Phew! That was a long list. 😅 If you have any additional tips, please [let me know](https://github.com/mre/mre.github.io/issues).
 
