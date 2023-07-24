@@ -69,7 +69,7 @@ jobs:
         run: make images
 
       - name: 📖 Build
-        run: make content # TODO: Switch back to `make build` once tinysearch is fixed
+        run: make build
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
