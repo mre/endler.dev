@@ -99,7 +99,7 @@ promise we'll get to the bottom of things in the end.
 {% end %}
 
 I found [add-zsh-hook](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html)
-and a usage example in [atuin's source code](https://github.com/ellie/atuin/blob/main/src/shell/atuin.zsh).
+and a usage example in [atuin's source code](https://github.com/ellie/atuin/blob/main/atuin/src/shell/atuin.zsh).
 
 I might not fully comprehend all of that is written there, but I'm a man of action, and I can take a solid piece of work and tear it apart.
 
