@@ -183,7 +183,7 @@ program[0]="+"; | ^^^^^^^^^^ the type `str` cannot be mutably indexed by `{integ
 https://news.ycombinator.com/item?id=16202031
 
 > For every complex problem there is an answer that is clear, simple, and wrong.
-> (Adapted from https://en.wikiquote.org/wiki/H._L._Mencken)
+> (Adapted from <https://en.wikiquote.org/wiki/H._L._Mencken>)
 
 Go is simple by offloading the cost of complexity to its users.
 

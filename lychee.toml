@@ -2,26 +2,10 @@ exclude = [
     # Exclude zola's `@/` relative links
     '@/',
 
-    # HackerNews currently produces a 503
-    'news.ycombinator.com',
-
     # Some images that get included directly in the markdown
     # and don't use the `figure` shortcode
     'content/2020/perf/avif_supported.avif',
     'content/2020/perf/avif_not_supported.jpg',
-
-    # 403: Forbidden
-    # Mostly because of CDN bot detection I guess
-    'https://jakubsacha.pl/',
-    'https://sourceforge.net/',
-
-    # Produces `ERR`. Need to investigate.
-    'https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3',
-
-    # False positive. The full link should be
-    # https://en.wikiquote.org/wiki/H._L._Mencken
-    'https://en.wikiquote.org/wiki/H',
-
 ]
 exclude_mail = true
 exclude_loopback = true
