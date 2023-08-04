@@ -56,7 +56,7 @@ function autocomplete(inp) {
             /* If the arrow DOWN key is pressed,
             increase the currentFocus variable:*/
             currentFocus++;
-            /* and and make the current item more visible:*/
+            /* and make the current item more visible:*/
             addActive(x);
         } else if (e.keyCode == 38) { //up
             /* If the arrow UP key is pressed,
