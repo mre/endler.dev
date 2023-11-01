@@ -1,5 +1,5 @@
 +++
-title="How To Move Fast With Rust"
+title="Deploy Rust Code Faster"
 date=2023-10-25
 draft=false
 [taxonomies]
@@ -70,7 +70,8 @@ I was looking for a platform tailored for Rust developers, aiming to provide a
 top-notch developer experience. I wanted deep integration with the Rust
 ecosystem (serde, sqlx, axum,...).
 
-A while ago, I came across Shuttle while trying to find ways to make my Rust
+A while ago, I came across [Shuttle](https://www.shuttle.rs/) while trying to
+find ways to make my Rust
 development workflow a bit smoother. It’s a tool that kind of just fits into the
 existing Rust ecosystem, letting you use cargo as you normally would, but with
 some of the infrastructural heavy lifting taken out of the picture. Now, it’s
