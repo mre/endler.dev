@@ -260,15 +260,15 @@ Here, each character is printed in a separate thread. The threads are spawned
 in a loop, and each thread sleeps for a certain amount of milliseconds before
 printing its character. This uses the full power of your CPU to print a string!
 
-## More Solutions
+## What We Learned
 
-Got more solutions? Send me a message and I'll add them here.
+If you've got more solutions, I'd love to hear them! Send me a message.
 
 For production usage, check out this enterprise-ready version of
 [hello world](https://github.com/mTvare6/hello-world.rs).
-
 There also is a yearly obfuscated C code contest, which is a lot of fun. Check
 out the [recent winners](https://ioccc.org/years.html).
+
 
 If were more interested in the barometer story, check out [You Must Be Joking,
 Mr. Feynman!](https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman),
