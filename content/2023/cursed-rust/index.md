@@ -116,7 +116,7 @@ that implements the `Display` trait, which allows us to print it using `print!`.
 In general, `Display` is intended to make more complex types printable, but it
 is also possible to implement it for a hardcoded string!
 
-## Solution 4: Who Needs Display?
+## Solution 4: Who Needs `Display`?
 
 How about we create our own trait instead of using `Display`?
 
@@ -152,7 +152,7 @@ case, we use `panic!`, which prints the string (as a side-effect) and
 immediately terminates the program. It works as long as we only want to print
 a single string...
 
-## Solution 6: I Love Closures
+## Solution 6: I &#x2665;&#xFE0E;️ Closures
 
 ```rust
 (|s: &str| print!("{}", s))("hello");
@@ -260,7 +260,7 @@ Here, each character is printed in a separate thread. The threads are spawned
 in a loop, and each thread sleeps for a certain amount of milliseconds before
 printing its character. This uses the full power of your CPU to print a string!
 
-## What We Learned
+## Your Turn!
 
 If you've got more solutions, I'd love to hear them! Send me a message.
 
