@@ -106,6 +106,7 @@ Your browser does not support the video tag. :( But the video is great.
 ### Zerocal - Stateless Calendar Magic
 
 
+Zerocal was the first project I deployed on Shuttle. 
 The principle was very simple yet innovative: encode calendar data directly into a URL. This means creating an event was as straightforward as:
 
 ```sh
@@ -136,24 +137,24 @@ async fn axum() -> shuttle_axum::ShuttleAxum {
 I don’t really need Zerocal for myself anymore, so I’m hoping someone else might
 want to take it over. I think it could be really useful for sharing invites on
 places like GitHub or Discord. If you want to know more about Zerocal, you can
-read this detailed breakdown.
+read [this detailed breakdown](/2022/zerocal/).
 
 I would also like to mention that someone else built a similar project inspired
-by Zerocal: kiwi by  Mahesh Sundaram, written in Deno. This is a really cool
-outcome. 
+by Zerocal: [kiwi](https://github.com/maheshsundaram/kiwi) by  [Mahesh Sundaram](https://github.com/maheshsundaram/), written in Deno. This is a really cool outcome. 
 
 
-### Bringing Clarity to the Web: A Reader Mode Proxy
+### A Reader Mode For My E-Reader
 
-My appreciation for Firefox's reader mode sparked the creation of a Reader Mode
-Proxy for a minimalist, JavaScript-free web reading experience, particularly
+My appreciation for [Firefox's reader view](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages) sparked the creation of a [Reader Mode
+Proxy](/2022/readable/) for a minimalist, JavaScript-free web reading experience, particularly
 tailored for e-readers. The intention was to transform verbose websites into a
-more digestible format for distraction-free reading. This project resonated
-deeply with my personal preferences, as I like simple apps that solve a problem.
-With just a sprinkle of annotations, my code adapted smoothly to Shuttle's
-environment. Initially, I had my own local mode, which allowed me to run the app
-on my machine for testing, but I found no need to maintain that because
-Shuttle’s own local mode works just as well.
+more digestible format for distraction-free reading.
+
+This project deeply reflected my personal preferences, as I like simple
+apps that solve a problem. With just a sprinkle of annotations, my code adapted
+smoothly to Shuttle's environment. Initially, I had my own local mode, which
+allowed me to run the app on my machine for testing, but I found no need to
+maintain that because Shuttle’s own local mode works just as well.
 
 While developing the app, there were some bumps along the road. Service
 downtimes required some code revamping. Yet, Shuttle's evolution simplified
@@ -202,16 +203,17 @@ async fn axum() -> shuttle_axum::ShuttleAxum {
 }
 ```
 
-A glance at this diff will show the difference. To understand the intricacies of
-this project, here's a more comprehensive look.
+To understand the intricacies of this project, [here's a more comprehensive
+look](/2022/readable).
 
 ## Control and Safety
 
 Initially, I was concerned that annotating my code for infrastructure would
 cause vendor lock-in. I wanted to retain full control over my project. Want to
 move away? The Shuttle macros get rid of the boilerplate, so I could just remove
-the 2 annotations I’ve added. Shuttle's code is also open source, so I could
-even set up your self-hosted instance -- although I don't want to.
+the 2 annotations I’ve added and get the original code back. Shuttle's code is
+also open source, so I could even set up your self-hosted instance &mdash;
+although I wouldn't want to.
 
 ## The True Cost of DIY Infrastructure
 
@@ -219,8 +221,6 @@ Infrastructure may seem easy on the surface, but maintaining it involves various
 complexities and costs. Updates, deployments, availability – it can be
 overwhelming. Each hour spent on these tasks carries both a direct and
 opportunity cost.
-
-## Next Steps
 
 Infrastructure can be a maze, and Shuttle seems to fit well for those working
 with Rust. I'm thinking of trying out a larger project on Shuttle soon, now that
