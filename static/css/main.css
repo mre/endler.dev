@@ -578,9 +578,11 @@ summary {
     text-decoration-color: white;
   }
 
-  .icon,
-  pre,
-  code {
+  .icon {
+    filter: invert(1);
+  }
+
+  code:not(pre code) {
     filter: invert(1);
   }
 

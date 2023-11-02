@@ -25,12 +25,13 @@ taxonomies = [
     { name = "tags", feed = true, paginate_by = 10},
 ]
 
-# Whether to do syntax highlighting
-# Theme can be customized by setting the `highlight_theme` variable to a theme
-# supported by Zola
 [markdown]
 highlight_code = true
-highlight_theme = "ayu-light"
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "demain", filename = "syntax-theme-light-custom.css" },
+  { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
+]
 
 [extra]
 author = "Matthias Endler"
