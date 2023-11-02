@@ -171,12 +171,21 @@ and for which you don't want to come up with a name.
 ```rust
 extern crate libc;
 use libc::{c_char, c_int};
+use core::ffi::CStr;
 
 extern "C" {
     fn printf(fmt: *const c_char, ...) -> c_int;
 }
-unsafe {
-    printf("hello\n".as_ptr() as *const i8);
+
+fn main() {
+    const HI: &CStr = match CStr::from_bytes_until_nul(b"hello\n\0") {
+        Ok(x) => x,
+        Err(_) => panic!(),
+    };
+
+    unsafe {
+        printf(HI.as_ptr());
+    }
 }
 ```
 
@@ -185,7 +194,7 @@ example shows how to call the C standard library's `printf` function from Rust.
 It's unsafe because we are using a raw pointer to pass the string to the
 function. This teaches us a little bit about how FFI works in Rust.
 
-Credit goes to [/u/pinespear on Reddit](https://www.reddit.com/r/rustjerk/comments/16xty71/s_str_print_shello/k36n6be/).
+Credit goes to [/u/pinespear on Reddit](https://www.reddit.com/r/rustjerk/comments/16xty71/s_str_print_shello/k36n6be/) and [@brk@infosec.exchange](https://infosec.exchange/@brk).
 
 ## Solution 8: C++ Style
 
