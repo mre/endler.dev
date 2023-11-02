@@ -79,10 +79,10 @@ expands to a call to `write!` with a newline character appended to the string.
 The real code is [much weirder](https://github.com/rust-lang/rust/blob/f3457dbf84cd86d284454d12705861398ece76c3/library/std/src/io/stdio.rs#L1097). Search for `print` in this file if you want to be amazed.
 `write!` itself [desugars to a call to `write_fmt`](https://doc.rust-lang.org/std/fmt/trait.Write.html#method.write_fmt), which is a method of the `Write` trait. 
 
-There is a real-world use case for this: if you want things really fast, you can
-lock `stdout` once and then use `write!` to print things. This avoids the overhead
+There is a real-world use case for this: if you want to print things really fast, you can
+lock `stdout` once and then use `write!`. This avoids the overhead
 of locking `stdout` for each call to `println!`. See [this article on how to write a very
-fast version of `yes`](/2017/yes/).
+fast version of `yes`](/2017/yes/) with this trick.
 
 ## Solution 2: Iterating Over Characters
 
