@@ -17,9 +17,12 @@ amused.
 
 After a complaint and a reevaluation, the student offered various physics-based
 solutions, ranging from dropping the barometer and calculating the building’s
-height using the time of fall, to using it as a pendulum or measuring
-atmospheric pressure difference between the roof and the ground. He even
-humorously suggested simply asking the caretaker in exchange for the barometer.
+height using the time of fall, to using the proportion between the lengths of
+the building's shadow and that of the barometer to calculate the building's
+height from the height of the barometer.
+He even humorously suggested simply asking the caretaker in exchange for the
+barometer. to using it as a pendulum or measuring atmospheric pressure
+difference between the roof and the ground.
 
 The physicist, as the legend goes, was [Niels Bohr](https://en.wikipedia.org/wiki/Niels_Bohr), who
 went on to receive a Nobel Prize in 1922. This story is also known as the
@@ -28,13 +31,13 @@ went on to receive a Nobel Prize in 1922. This story is also known as the
 ## Why Is This Story Interesting?
 
 The question and its possible answers have an important didactic side effect:
-they convey to the learner that one can also reach the goal with unconventional
-solution methods in the case of a question that appears to be clear.
+they convey to the learner that one can also get to the solution with unconventional
+methods &mdash; and that these methods are often more interesting than the
+canonical solution *because they reveal something about the problem itself*.
 
 There is virtue in learning from unconventional answers to conventional questions.
 To some extent, this fosters new ways of thinking and problem-solving, which is
-essential for innovation. 
-
+an essential part of innovation. 
 
 ## Applying The Same Principle To Learning Rust
 
@@ -52,16 +55,9 @@ It's an easy way to test that your Rust installation is working correctly.
 However, we can also have some fun and turn the task on its head:
 let's find ways to print "Hello, world!" in Rust that no sane person would ever use.
 
-## But why?
-
-Just like the barometer example, this exercise has a didactic side effect:
-it conveys to the learner that there is more than one way to solve a problem
-and that alternative solutions often reveal something about the problem itself.
-
-Let's try to come up with as many solutions for printing "Hello, world!"
-as possible. The weirder, the better!
-As you go through each of the solutions below, try to understand *why* they work
-and what you can learn from them.
+Let's try to come up with as many unconventional solutions for printing "Hello, world!"
+as possible. The weirder, the better! As you go through each of the solutions
+below, try to understand *why* they work and what you can learn from them.
 
 [This started as a meme](https://www.reddit.com/r/rustjerk/comments/16xty71/s_str_print_shello/),
 but I decided to turn it into a full article after seeing how engaging it was.
@@ -81,7 +77,6 @@ This solution is interesting, because it shows that `println!` is just a macro t
 expands to a call to `write!` with a newline character appended to the string.
 
 The real code is [much weirder](https://github.com/rust-lang/rust/blob/f3457dbf84cd86d284454d12705861398ece76c3/library/std/src/io/stdio.rs#L1097). Search for `print` in this file if you want to be amazed.
-
 `write!` itself [desugars to a call to `write_fmt`](https://doc.rust-lang.org/std/fmt/trait.Write.html#method.write_fmt), which is a method of the `Write` trait. 
 
 There is a real-world use case for this: if you want things really fast, you can
@@ -281,5 +276,5 @@ a book by Richard Feynman, another famous physicist and Nobel Prize winner, who
 was known for his unconventional thinking.
 
 We should all strive to think outside the box and come up with unconventional
-solutions to problems. Who knows, maybe they will lead to a new breakthrough one
-day!
+solutions to problems. Who knows, maybe that's the key to a deeper
+understanding of the problem itself?
