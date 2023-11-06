@@ -21,8 +21,7 @@ height using the time of fall, to using the proportion between the lengths of
 the building's shadow and that of the barometer to calculate the building's
 height from the height of the barometer.
 He even humorously suggested simply asking the caretaker in exchange for the
-barometer. to using it as a pendulum or measuring atmospheric pressure
-difference between the roof and the ground.
+barometer. 
 
 The physicist, as the legend goes, was [Niels Bohr](https://en.wikipedia.org/wiki/Niels_Bohr), who
 went on to receive a Nobel Prize in 1922. This story is also known as the
