@@ -1,6 +1,7 @@
 +++
 title="Cursed Rust: Printing Things The Wrong Way"
 date=2023-11-01
+updated=2020-11-12
 draft=false
 [taxonomies]
 tags=["dev", "rust"]
@@ -52,17 +53,19 @@ fn main() {
 It's an easy way to test that your Rust installation is working correctly.
 
 However, we can also have some fun and turn the task on its head:
-let's find ways to print "Hello, world!" in Rust that no sane person would ever use.
+let's find ways to print "Hello, world!" without using `println!`.
 
-Let's try to come up with as many unconventional solutions for printing "Hello, world!"
-as possible. The weirder, the better! As you go through each of the solutions
+Let's try to come up with as many unconventional solutions as possible.
+The weirder, the better! As you go through each of the solutions
 below, try to understand *why* they work and what you can learn from them.
 
 [This started as a meme](https://www.reddit.com/r/rustjerk/comments/16xty71/s_str_print_shello/),
-but I decided to turn it into a full article after seeing how engaging it was.
+but I decided to turn it into a full article after the post got a lot of
+attention.
 
 It goes without saying that you should never use any of these solutions in
-production code. They are meant to be fun and educational only.
+production code. Check out this [enterprise-ready version of
+hello world](https://github.com/mTvare6/hello-world.rs) instead.
 
 ## Solution 1: Desugaring `println!`
 
@@ -197,7 +200,7 @@ Credit goes to [/u/pinespear on Reddit](https://www.reddit.com/r/rustjerk/commen
 
 ## Solution 8: C++ Style
 
-We're well into psychopath territory now, so let's not stop here.
+We're well into psychopath territory now... so let's not stop here.
 If you try extremely hard, you can bend Rust to your will and make it look
 like C++.
 
@@ -235,7 +238,7 @@ which prints the newline character in the end.
 Credit goes to [Wisha Wanichwecharungruang](https://wisha.page/posts/fun-rust-operators/) for this
 solution.
 
-## Solution 9: Assembly! Unadulterated Control!
+## Solution 9: Unadulterated Control With Assembly
 
 All of these high-level abstractions stand in the way of printing things
 efficiently. We have to take back control of your CPU. Assembly is the way. No more wasted cycles.
@@ -284,9 +287,9 @@ Submitted by [isaacthefallenapple](https://github.com/isaacthefallenapple).
 
 ## Solution 10: "Blazing Fast"
 
-All of our shiny new cores are going unused. Why did we pay a premium for them
-if we aren't using them? Wasn't fearless concurrency the promise of Rust? 
-Let's fix that at once!
+Why did we pay a premium for all those CPU cores if we aren't actually using
+them? Wasn't fearless concurrency one of Rust's promises? Let's put those cores
+to good use!
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -318,20 +321,22 @@ fn main() {
 Here, each character is printed in a separate thread. The threads are spawned
 in a loop, and each thread sleeps for a certain amount of milliseconds before
 printing its character. This uses the full power of your CPU to print a string!
+It might not always consistently print the characters in the right order ([hey, scheduling
+is hard!](https://people.ece.ubc.ca/sasha/papers/eurosys16-final29.pdf)), but
+that's a worthwhile trade-off for all the raw performance gains.
 
 ## Your Turn!
 
-If you've got more solutions, I'd love to hear them! Send me a message.
+If you've got more solutions, please send me a message.
 
-For production usage, check out this enterprise-ready version of
-[hello world](https://github.com/mTvare6/hello-world.rs).
-There also is a yearly obfuscated C code contest, which is a lot of fun. Check
-out the [recent winners](https://ioccc.org/years.html).
+Also, if you liked this article, you might also enjoy the yearly obfuscated C
+code contest. Check out the [previous winners here](https://ioccc.org/years.html).
 
-If you were more interested in the barometer story, check out [Surely You're Joking,
-Mr. Feynman!](https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman),
+If you were actually more intrigued by the barometer story, read [Surely You're
+Joking, Mr.
+Feynman!](https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman),
 a book by Richard Feynman, another famous physicist and Nobel Prize winner, who
-was known for his unconventional thinking.
+was known for his unconventional way of thinking.
 
 We should all strive to think outside the box and come up with unconventional
 solutions to problems. Who knows, maybe that's the key to a deeper
