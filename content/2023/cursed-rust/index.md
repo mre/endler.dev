@@ -235,7 +235,58 @@ which prints the newline character in the end.
 Credit goes to [Wisha Wanichwecharungruang](https://wisha.page/posts/fun-rust-operators/) for this
 solution.
 
-## Solution 9: "Blazingly Fast"
+## Solution 9: Assembly! Unadulterated Control!
+
+All of these high-level abstractions stand in the way of printing things
+efficiently. We have to take back control of your CPU. Assembly is the way. No more wasted cycles.
+No hidden instructions. Pure, unadulterated performance.
+
+```rust
+use std::arch::asm;
+
+const SYS_WRITE: usize = 1;
+const STDOUT: usize = 1;
+
+fn main() {
+    #[cfg(not(target_arch = "x86_64"))]
+    panic!("This only works on x86_64 machines!");
+
+    let phrase = "Hello, world!";
+    let bytes_written: usize;
+    unsafe {
+        asm! {
+            "syscall",
+            inout("rax") SYS_WRITE => bytes_written,
+            inout("rdi") STDOUT => _,
+            in("rsi") phrase.as_ptr(),
+            in("rdx") phrase.len(),
+            // syscall clobbers these
+            out("rcx") _,
+            out("r11") _,
+        }
+    }
+
+    assert_eq!(bytes_written, phrase.len());
+}
+```
+
+([Rust Playground](https://play.rust-lang.org/?version=stable&mode=release&edition=2021&gist=d11b1f6ef0711681e1f5a613e5cf412b))
+
+If you're wondering why we use Rust in the first place if all
+we do is call assembly code, you're missing the point!
+This is about way more than just printing things.
+It is about freedom! Don't tell me how I should use my CPU.
+
+Okaaay, it only works on x86_64 machines, but that's a small sacrifice to make
+for freedom.
+
+Submitted by [isaacthefallenapple](https://github.com/isaacthefallenapple).
+
+## Solution 10: "Blazing Fast"
+
+All of our shiny new cores are going unused. Why did we pay a premium for them
+if we aren't using them? Wasn't fearless concurrency the promise of Rust? 
+Let's fix that at once!
 
 ```rust
 use std::sync::{Arc, Mutex};
