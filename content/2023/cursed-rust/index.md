@@ -328,8 +328,7 @@ For production usage, check out this enterprise-ready version of
 There also is a yearly obfuscated C code contest, which is a lot of fun. Check
 out the [recent winners](https://ioccc.org/years.html).
 
-
-If were more interested in the barometer story, check out [Surely You're Joking,
+If you were more interested in the barometer story, check out [Surely You're Joking,
 Mr. Feynman!](https://www.goodreads.com/book/show/35167685-surely-you-re-joking-mr-feynman),
 a book by Richard Feynman, another famous physicist and Nobel Prize winner, who
 was known for his unconventional thinking.
