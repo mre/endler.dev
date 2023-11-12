@@ -1,7 +1,7 @@
 +++
 title="Cursed Rust: Printing Things The Wrong Way"
 date=2023-11-01
-updated=2020-11-12
+updated=2023-11-12
 draft=false
 [taxonomies]
 tags=["dev", "rust"]
