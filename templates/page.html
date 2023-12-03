@@ -6,6 +6,8 @@
 {%- if page.extra.css %}
     <link href="./article.css" rel="stylesheet"/>
 {%- endif %}
+<link rel="stylesheet" type="text/css" href="/syntax-theme-dark-custom.css" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" type="text/css" href="/syntax-theme-light-custom.css" media="(prefers-color-scheme: light)" />
 {%- include "snippets/social.html" %}{%- endblock header -%}
 
 {%- block content %}
