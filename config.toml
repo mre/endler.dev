@@ -2,7 +2,7 @@
 base_url = "https://endler.dev"
 
 title = "Matthias Endler"
-description = "Backend Engineer at trivago. Likes just-in-time compilers and hot chocolate"
+description = "Consultant at corrode.dev. Likes just-in-time compilers and hot chocolate"
 generate_feed = true
 feed_filename = "rss.xml"
 
