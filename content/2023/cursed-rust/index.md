@@ -9,6 +9,8 @@ tags=["dev", "rust"]
 subtitle="Let's have some fun with 'Hello, world!'"
 +++
 
+{{ video(url="https://www.youtube.com/embed/qwOlWfYlq0A", preview="maxresdefault.jpg") }}
+
 There is a famous story about a physicist during an exam at the University of
 Copenhagen. The candidate was asked to describe how to determine a skyscraper's
 height using a barometer. The student suggested dangling the barometer from the
