@@ -7,6 +7,7 @@ draft=false
 tags=["dev", "rust"]
 [extra]
 subtitle="Let's have some fun with 'Hello, world!'"
+excerpt="In which I look at unconventional ways to print 'Hello, world!' in Rust as an excuse to teach some Rust concepts and foster curiosity. Seemingly simple problems can have surprisingly complex, often humbling solutions. "
 +++
 
 {{ video(url="https://www.youtube.com/embed/qwOlWfYlq0A", preview="maxresdefault.jpg") }}
