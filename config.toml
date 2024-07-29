@@ -3,13 +3,13 @@ base_url = "https://endler.dev"
 
 title = "Matthias Endler"
 description = "Consultant at corrode.dev. Likes just-in-time compilers and hot chocolate"
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 
 minify_html = true
 
 # Check if the links are valid
-check_external_links = false
+#check_external_links = false
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
