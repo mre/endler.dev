@@ -6,26 +6,26 @@ draft=false
 tags=["culture"]
 +++
 
-I look left and right and I'm the only one who still uses Firefox.
+I look left and right, and I'm the only one who still uses Firefox.
 
 {{ figure(src="travolta.gif") }}
 
-At conferences and in coworking spaces it's always the same image: people using some distribution of Chrome.
+At conferences and in coworking spaces, it's always the same image: people using some distribution of Chrome.
 Sometimes it's called Brave, sometimes Chromium, most of the time it's just Google Chrome.
 
 I find that hilariously appalling.
 
-An entire generation grew up with access to great free tools and open standards, which helped them jumpstart their career and 
+An entire generation grew up with access to great free tools and open standards, which helped them jumpstart their careers and 
 gave them access to excellent technology for free.
 
-Now, the world's largest websites by the same company, which also owns the world's most popular browser,
-search engine. Coincidentally they are also the world's largest advertising company.
+Now, the world's largest websites are owned by the same company, which also owns the world's most popular browser and
+search engine. Coincidentally, they are also the world's largest advertising company.
 And people are wondering why they can't block ads on YouTube anymore.
 
 We gave it all away for nothing.
 
 Let me be the first to admit that I too am not without sin.
-There was a weak period 15 years ago where browser performance became so unbearable on anything other than Chrome,
+There was a weak period 15 years ago when browser performance became so unbearable on anything other than Chrome
 that it forced my hand to make the switch.
 And yes, for a while, life was good and websites loaded quickly.
 
@@ -33,7 +33,7 @@ Reluctantly, I made the switch back to Firefox after a while, because open stand
 more important than a few milliseconds of loading time.
 I could still understand why people would use Chrome, but I was happy with my choice.
 
-Then [Firefox Quantum](https://blog.mozilla.org/en/mozilla/introducing-firefox-quantum/) came around and I 
+Then [Firefox Quantum](https://blog.mozilla.org/en/mozilla/introducing-firefox-quantum/) came around, and I 
 told all my fellow developer friends about it.
 To me, it was the best browser on the market, and I was proud to be a Firefox user again.
 It was fast, snappy, and had a great add-on ecosystem.
@@ -47,8 +47,8 @@ Maybe people stayed with Chrome out of habit.
 Performance and privacy aside, I just don't know how people can cope with Chrome's limited customizability.
 It's hilarious to watch people with 200 tabs named "G", "Y", or "X" struggle to find that one document they opened a week ago.
 
-In comparison, vertical tabs  on Firefox with addon-ons like [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/)
-will make Chrome look like a toy.
+In comparison, vertical tabs on Firefox with add-ons like [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/)
+make Chrome look like a toy.
 
 Anyhow, Chrome.
 
@@ -56,8 +56,8 @@ There was a time when I tried to educate people on the negative effects of brows
 Okay, my mum didn't get it, but I was more disappointed by my fellow devs.
 Everyone went the easy route and happily stayed on Uncle Google's lap.
 
-At this point I neither have the willpower nor the energy to fight back;
-It's hopeless. Probably it's easier to get blood from a stone
+At this point, I neither have the willpower nor the energy to fight back;
+it's hopeless. Probably it's easier to get blood from a stone
 than to convince someone to switch back to Firefox.
 
 {{ figure(src="marketshare.png") }}
@@ -67,7 +67,7 @@ than to convince someone to switch back to Firefox.
 True, but the issues don't stop in front of my lawn, though.
 As an outsider, I need to live with the consequences of browser monoculture every day.
 
-Quite a few websites are unusable by now, because they got "optimized for Chrome."
+Quite a few websites are unusable by now because they got "optimized for Chrome."
 [Microsoft Teams](https://github.com/webcompat/web-bugs/issues/25070#issuecomment-460721700), for example,
 and [the list is long](https://github.com/webcompat/web-bugs/issues?q=is%3Aopen+is%3Aissue+label%3Abrowser-firefox).
 These websites fail without reason.
@@ -75,15 +75,15 @@ These websites fail without reason.
 There are positive examples, too.
 [Zencastr](https://zencastr.com/), for example, used to be broken on Firefox, but they fixed it. 
 
-I also use Chrome for online-calls, because tools like [Jitsi](https://meet.jit.si/) don't work well on Firefox.
-Maybe it's because of Firefox' WebRTC support? Or, [maybe it's because of Chrome](https://blog.mozilla.org/webrtc/):
+I also use Chrome for online calls, because tools like [Jitsi](https://meet.jit.si/) don't work well on Firefox.
+Maybe it's because of Firefox's WebRTC support? Or, [maybe it's because of Chrome](https://blog.mozilla.org/webrtc/):
 
 > **Pop Quiz**: If a website wants to play out of different speakers on your system, what permission must it have?
 >
 > 1. Speaker-selection permission
 > 2. Microphone permission
 >
->If you answered 2 then chances are you know your WebRTC stuff well, but you’re probably on a Chromium browser.
+> If you answered 2, then chances are you know your WebRTC stuff well, but you're probably on a Chromium browser.
 
 ## How could Google get free reign?
 
@@ -96,7 +96,7 @@ I can't blame them. It's easier to ride a horse in the direction it is going.
 ## But at what cost?
 
 \*Elrond voice\*: We've been there two decades ago. (Okay, I was there.)
-We called it the *Browser Wars*: Netscape vs Internet Explorer. Netscape lost and Microsoft ruled over the web with their ironclad fist. It wasn't fun.
+We called it the *Browser Wars*: Netscape vs Internet Explorer. Netscape lost and Microsoft ruled over the web with their iron-clad fist. It wasn't fun.
 We had more hacks around browser limitations than actual website functionality. Parents brought their kids through college by working around browser bugs for money.
 
 Microsoft tried *really* hard to make life as miserable as possible for everybody:
@@ -108,17 +108,17 @@ All we got in return was quirks mode.
 
 Google is smarter! They break the web, too, but they make you stand inside the fire.
 
-## Why should I care a about a browser? They are all the same these anyways.
+## Why should I care about a browser? They are all the same anyways.
 
 ...says the developer who gets [tracked by Google](https://www.forbes.com/sites/zakdoffman/2024/06/16/google-chrome-tracking-on-windows-android-iphone-for-200-more-days/) 
 every second of their waking life.
 
 You see, Chrome is reeeeally good at marketing.
 They say all the right things: We're fast! We're open source! We have the latest features!
-What they don't tell you is that they control the narrative of the world wide web.
+What they don't tell you is that they control the narrative of the World Wide Web.
 They make you feel [guilty for using adblockers](https://www.reddit.com/r/browsers/comments/1810egw/google_chrome_will_limit_ad_blockers_starting/) and add weird 
 [nonstandard browser features](https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html) because they can.
-Lately, the uBlock origin team just threw in the towel and [stopped supporting Chrome](https://www.theregister.com/2024/08/06/chrome_web_store_warns_end/).
+Lately, the uBlock Origin team just threw in the towel and [stopped supporting Chrome](https://www.theregister.com/2024/08/06/chrome_web_store_warns_end/).
 
 But did anyone decide to switch away?
 I get the feeling that by now people turn a blind eye towards Google's evil practices.
@@ -136,6 +136,3 @@ If you made it here, do yourself a favor and spend a few minutes trying Firefox.
 Who knows? You might just like it.
 
 [Try Firefox today,](https://www.mozilla.org/firefox) please?
-
-
-
