@@ -4,12 +4,9 @@ base_url = "https://endler.dev"
 title = "Matthias Endler"
 description = "Consultant at corrode.dev. Likes just-in-time compilers and hot chocolate"
 generate_feeds = true
-feed_filenames = ["rss.xml"]
+feed_filenames = ["atom.xml", "rss.xml"]
 
 minify_html = true
-
-# Check if the links are valid
-#check_external_links = false
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -21,16 +18,14 @@ compile_sass = true
 # build_search_index = true
 # default_language = "en"
 
-taxonomies = [
-    { name = "tags", feed = true, paginate_by = 10},
-]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
 
 [markdown]
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "demain", filename = "syntax-theme-light-custom.css" },
-  { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
+    { theme = "demain", filename = "syntax-theme-light-custom.css" },
+    { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
 ]
 
 [extra]
