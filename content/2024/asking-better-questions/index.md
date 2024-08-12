@@ -407,4 +407,4 @@ After a while, you will get better at spotting the patterns.
 Asking **good** questions is a skill that can be learned and improved upon.
 Asking **more** questions can't hurt along the way.
 
-So, how Do You Ask Good Questions?
+So, how do you ask better questions?
