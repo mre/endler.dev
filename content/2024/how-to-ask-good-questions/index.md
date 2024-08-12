@@ -1,5 +1,5 @@
 +++
-title="How To Ask Good Questions"
+title="Asking Better Questions"
 date=2024-08-12
 draft=false
 [taxonomies]
