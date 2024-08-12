@@ -57,7 +57,7 @@ If it's one of the former two questions, get straight to the point:
 Q: "Are you a nice person?"  
 A: ...
 
-Q: "How do you manage having a pet if you have to work all day?"
+Q: "How do you manage having a pet if you have to work all day?"  
 A: ...
 
 It will lead to better answers.
@@ -178,11 +178,11 @@ Trained conversationalists do it all the time without anyone noticing.
 The conversation gets boring, so they just move on to the next topic.
 There doesn't even have to be a transition.
 
-Showmaster: "So, what do you do for a living?"  
-Guest: "I'm a plumber."  
+Q: "So, what do you do for a living?"  
+A: "I'm a plumber."  
 
-Showmaster: "Oh, interesting. So, what are your plans if you win?"  
-Guest: ...
+Q: "Oh, interesting. So, what are your plans if you win?"  
+A: ...
 
 Once you notice that, you will see it everywhere.
 We do it all the time in our daily lives, too, for example on the phone.
@@ -401,10 +401,10 @@ Here's a summary of what I wrote:
 
 Don't be mistaken! Asking good questions is hard work!
 You have to be present, you have to listen, you have to reflect.
-It help to take mental notes while you're talking to someone.
+It helps to take mental notes while you're talking to someone.
 After a while, you will get better at spotting the patterns.
 
 Asking **good** questions is a skill that can be learned and improved upon.
 Asking **more** questions can't hurt along the way.
 
-How Do You Ask Good Questions?
+So, how Do You Ask Good Questions?
