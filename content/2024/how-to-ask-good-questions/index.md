@@ -8,71 +8,69 @@ tags=["culture"]
 
 Recently, I realized that I mostly get paid to ask questions.
 
-- [As a consultant](https://corrode.dev/), advicing companies
+- [As a consultant](https://corrode.dev/), advising companies
 - [As a podcast host](https://corrode.dev/podcast/)
 - [In calls with potential clients](https://openpodcast.app/)
 
 The curious thing is that, like most people in a similar position, I never had any formal training in asking questions!
 I basically just wing it, and try to get better over time. 
 
-What makes a good question?  
+That got me thinking: What makes a good question?  
 The other day, I reflected on that. Here's what I came up with.
 
 
-### 1. Good questions are open-ended
+## 1. Good questions are open-ended
 
 Recently, we did a survey about our podcast, and someone mentioned that some questions I asked the guests were "either-or" type of questions.
 
 - Q: "Do you prefer Dogs or Cats?"
 - A: "Dogs."
 
-Not a very interesting conversation!
+Ouch, not a very interesting conversation!
 
-A better one might be "What's your favorite pet?".
+A better one might have been "What's your favorite pet?".
 It allows for surprising answers.
 
 - Q: "What's your favorite pet?"
 - A: "Tarantula!"
 
-We have to ask ourselves what we want out of the answer.
-That's my my second rule of becoming better at asking questions:
+We have to ask ourselves what we want out of the answer,
+which leads me to my second observation:
 
 ## 2. Never Ask A Question If You Don't Care About The Answer.
 
 Or to rephrase it, "Only ask things you care about."
 If you don't care about the other person's answer, why even ask?
-Ask something else instead!
-What is it you *truly* care about?
+Ask something else you care about instead!
 
-When you ask someone if they prefer dogs or cats, what are you really asking?
+For example, when you ask someone if they prefer dogs or cats, what are you really asking?
 
 - Do you wonder if the person is *nice*?
 - Do you care about the logistics of owning a pet as a full-time employee?
-
-Or do you rather want to hear a certain answer from the other person that happens to fit *your* narrative?
+- Or do you rather want to hear a certain answer from the other person that happens to fit *your* narrative?
 
 Be honest!
 
 Dig deeper into "why" you're asking the question.
 If it's one of the former two questions, get straight to the point:
 
-"Are you a nice person?"  
-"How do you manage having a pet if you have to work all day?"
+- "Are you a nice person?"  
+- "How do you manage having a pet if you have to work all day?"
 
 It will lead to better answers.
 
 If it's about your own agenda and you're just looking for someone to give you the answer you're hoping for ([confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias)):
 don't. Allow them to surprise you!
 
-Who knows? You might learn something about your predispositions.
+Who knows? You might learn a thing or two about your preconceptions.
 
-Which leads my my next rule:
+Which leads to...
 
 ## 3. A good question reveals something about the person who answers; a bad question about the person who asks
 
-It's very easy to slip into a role where you're framing people and that lets your bias speak more about you than 
+It's very easy to slip into a role where you're framing people and that lets your bias speak more about **you** than 
 the person you're talking to.
-Be concious about that so that you can avoid it when it happens.
+Be conscious about that so that you can avoid it when it happens.
 
 Q: "Why do you love X?"  
 A: "I don't."
@@ -88,29 +86,26 @@ So I would even say that a good question is one that reveals something *unique* 
 - What is it that only **they** can say?
 - What is it that they have **unique** insight into?
 
-If you talk to a construction worker from Ireland, 
-don't ask them about the weather. (Don't ask anyone about the weather &ndash; especially not the Irish!)
-Ask them about their line of business in the context of their location.
-What makes their job unique in Ireland? What are the challenges they face? How do they overcome them?
-That's something only they can answer.
+Q: "As an expert in X, who has been in the field for 20 years, what is one thing that people always get wrong about X?"  
+A: "People always think that X is about Y, but it's really about Z."  
 
 ## 4. Good questions are stacked on top of each other
 
 Do you know the [*Five Whys*](https://en.wikipedia.org/wiki/Five_whys) technique?
-It's simple: Ask "why" five times to get the root of the issue.
+It's simple: Ask "why" five times to get to the root of the issue.
 
 - Q: Are you happy with your job? A: No.  
 - Q: Why? A: It drains my energy.  
 - Q: Why? A: I have to do boring things  
 - Q: Why? A: My boss thinks they must be done by *someone* 
-- Q: Why? A: Noone got around to automating them  
-- Q: Why? A: We don't have to skills to automate boring tasks
+- Q: Why? A: No one got around to automating them  
+- Q: Why? A: We don't have the skills to automate boring tasks
 
-Aha! If you learn how to automate things, this might lead to better job happiness!
+Aha! If they learn how to automate things, this might lead to better job happiness!
 That's insightful.
 
 What's nice is that it was a purely mechanical process.
-With every step, we dug deaper into the underlying question.
+With every step, we dug deeper into the underlying question.
 At some point, the truth revealed itself.
 
 I love this technique. Good questions are built on top of each other.
@@ -163,7 +158,7 @@ Cut the cord.
 
 Just acknowledge it and move on.
 
-Trained convsersationalists do it all the time without anyone noticing.
+Trained conversationalists do it all the time without anyone noticing.
 The conversation gets boring so they just move on to the next topic.
 There doesn't even have to be a transition.
 
@@ -199,9 +194,9 @@ Often, they will stop and follow up with a much more personal answer.
 
 Pauses are powerful. Use them.
 
-## 8. Good questions are obvious
+## 8. Obvious questions can be the best questions
 
-If you look closely, many questions become obvious:
+If you look close enough, many questions become obvious:
 
 - "Why are we still working on this?"
 - "Should we split up?"
@@ -217,11 +212,11 @@ And yet, it's still the right question to ask.
 What I noticed is that oftentimes multiple people have the same "obvious" question in mind.
 They are just too afraid to ask.
 
-Mosst people dance around the topic, because they want to be polite.
+Most people dance around the topic, because they want to be polite.
 They don't address problems head-first because it's easier!
 The result is small talk.
 
-Especially if you get paid to ask questions, your job is to ask questions that noone else wants to ask.
+Especially if you get paid to ask questions, your job is to ask questions that no one else wants to ask.
 Often, politics, infighting and hidden agendas make it very hard for people to break out of their role and ask the obvious question.
 
 If you're not afraid to ask the obvious question, you will look like Houdini.
@@ -238,7 +233,7 @@ It's easier to get it out of the way and move on!
 - Q: How do you feel after the diagnosis? A: I'm scared. I don't know what to do. But I'm glad you asked.
 
 The truth is hidden in plain sight. 
-If noone dares to ask, these questions stay unanswered.
+If no one dares to ask, these questions stay unanswered.
 The trick is to accept the answer for what it is. 
 Don't be mad or angry at people who honestly answer your question.
 Be mad or angry for not asking sooner.
@@ -258,7 +253,7 @@ So don't be afraid to refine your question to clarify any misunderstandings.
 - "Am I correct in understanding that you mean...?"
 - "Can you give me an example?"
 
-There's an old chinese proverb that goes like this:
+There's an old Chinese proverb that goes like this:
 
 > He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.
 
@@ -331,7 +326,7 @@ It's like peeling an onion.
 You get deeper and deeper into the topic.
 You learn more about the person.
 You learn more about the topic.
-Step by step, you tap into some elses hard-earned wisdom.
+Step by step, you tap into someone else's hard-earned wisdom.
 Look at all the things you learned in such a short time!
 Their favorite sport, their childhood memories, their relationship with their dad, how to serve in table tennis, the most difficult angle to return a serve.
 If you followed up with "I like that too" you would have missed out on all of this and probably never had learned about it.
@@ -354,7 +349,17 @@ Maybe it helps someone else too.
 
 Here's a summary of what I wrote:
 
-...
+1. Good questions are open-ended
+2. Never ask a question if you don't care about the answer
+3. A good question reveals something about the person who answers; a bad question about the person who asks
+4. Good questions are stacked on top of each other
+5. Good questions run deep
+6. Let the winners run and cut your losses short
+7. Give people space to think
+8. Obvious questions can be the best questions
+9. If you don't understand the answer, it's not your fault
+10. Good observations lead to good questions
+11. The best follow-up to an answer is a question
 
 Don't be mistaken! Asking good questions is hard work!
 You have to be present, you have to listen, you have to reflect.
