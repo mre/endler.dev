@@ -3,6 +3,8 @@ base_url = "https://endler.dev"
 
 title = "Matthias Endler"
 description = "Consultant at corrode.dev. Likes just-in-time compilers and hot chocolate"
+author = "matthias@endler.dev (Matthias Endler)"
+
 generate_feeds = true
 feed_filenames = ["atom.xml", "rss.xml"]
 
@@ -27,6 +29,3 @@ highlight_themes_css = [
     { theme = "demain", filename = "syntax-theme-light-custom.css" },
     { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
 ]
-
-[extra]
-author = "Matthias Endler"
