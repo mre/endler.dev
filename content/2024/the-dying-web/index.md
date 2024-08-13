@@ -131,6 +131,12 @@ Browser makers make mistakes, so this engine is not perfect.
 If it contains a bug and there's no competition, that bug becomes the standard.
 Alternative browser engines need to implement the bug as well to support websites which depend on it.
 
+## I Use Safari
+
+Congratulations, you switched from a browser controlled by a 2 trillion dollar company to a browser controlled by a 3 trillion dollar company. Oh, and it doesn't run on Windows or Linux.
+Both Apple and Google would throw you under the bus if it made them more profit.
+Oh, and did you know that Google paid Apple [20 billion dollars in 2022](https://www.pymnts.com/antitrust/2024/google-ruling-may-blunt-apple-services-revenue-ecosystem-growth/) to be the default search engine on Safari?
+
 ## What Can I Do?
 
 If you've made it this far, do yourself a favor and spend a few minutes trying Firefox.
