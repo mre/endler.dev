@@ -1,6 +1,7 @@
 +++
 title="Asking Better Questions"
 date=2024-08-12
+updated=2024-08-13
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -48,6 +49,7 @@ For example, when you ask someone if they prefer dogs or cats, what are you real
 - Do you wonder if the person is *nice*?
 - Do you care about the logistics of owning a pet as a full-time employee?
 - Or do you rather want to hear a certain answer from the other person that happens to fit *your* narrative?
+  (The obvious correct answer is "cats".)
 
 Be honest!
 
@@ -63,13 +65,13 @@ A: ...
 It will lead to better answers.
 
 If it's about your own agenda and you're just looking for someone to give you the answer you're hoping for ([confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias)):
-don't. Allow them to surprise you!
+don't. Again, allow them to surprise you!
 
 Who knows? You might learn a thing or two about your preconceptions.
 
 Which leads to...
 
-## 3. A Good Question Reveals Something About The Person Who Answers; A Bad Question About The Person Who Asks
+## 3. Good Questions Reveal Something About The Person Who Answers; Bad Questions About The Person Who Asks
 
 It's very easy to slip into a role where you're framing people, and that lets your bias speak more about **you** than 
 the person you're talking to.
@@ -146,7 +148,8 @@ Q: "Can you give me a concrete example?"
 A: "..."
 
 When someone answers your question, ask yourself if the answer really covered everything you wanted to know.
-Often, the most interesting pieces are left out. Sometimes on purpose. But this is the most revealing part, and you have to uncover it.
+Often, the most interesting pieces are omitted. Sometimes on purpose. But this is the most revealing part, 
+the part at the verge of uncertainty and insecurity and you have to uncover it to get to the heart of the matter!
 If you don't do this, conversations stay shallow.
 
 Speaking of which...
@@ -389,7 +392,7 @@ Here's a summary of what I wrote:
 
 1. Good Questions Are Open-ended
 2. Never Ask A Question If You Don't Care About The Answer
-3. A Good Question Reveals Something About The Person Who Answers; A Bad Question About The Person Who Asks
+3. Good Questions Reveal Something About The Person Who Answers; Bad Questions About The Person Who Asks 
 4. Good Questions Are Stacked On Top Of Each Other
 5. Good Questions Run Deep
 6. Let The Winners Run And Cut Your Losses Short
