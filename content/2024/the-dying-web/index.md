@@ -1,6 +1,7 @@
 +++
 title="The Dying Web"
 date=2024-08-08
+updated=2024-08-13
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -121,7 +122,7 @@ They make you feel [guilty for using adblockers](https://www.reddit.com/r/browse
 [nonstandard browser features](https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html) because they can.
 Lately, the uBlock Origin team just threw in the towel and [stopped supporting Chrome](https://www.theregister.com/2024/08/06/chrome_web_store_warns_end/).
 
-But did anyone decide to jump ship?
+Did anyone decide to jump ship?
 I get the feeling that by now people turn a blind eye to Google's evil practices.
 
 ## But shouldn't Brave, Edge, Opera, or Vivaldi be sufficient?
@@ -130,6 +131,15 @@ Unfortunately not. They all use the [same browser engine](https://www.chromium.o
 Browser makers make mistakes, so this engine is not perfect.
 If it contains a bug and there's no competition, that bug becomes the standard.
 Alternative browser engines need to implement the bug as well to support websites which depend on it.
+
+## I Use Safari
+
+Please don't.
+
+Now you use a browser from a company with a 3 trillion dollar market cap instead of 2 trillion.
+No matter their marketing, both companies would happily throw you under the bus if it made them extra bucks.
+[Google paid Apple $20 Billion](https://appleinsider.com/articles/24/05/02/google-paid-apple-20-billion-to-be-default-search-engine-in-2022) to be default search engine in 2022.
+Safari isn't natively available on Windows or Linux, so it's not even a viable alternative for everyone.
 
 ## What Can I Do?
 
