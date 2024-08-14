@@ -22,14 +22,14 @@ I don't think that needs to be the case.
 
 As it turns out, I was always interested in the *exact opposite*.
 Sustainable growth, robust solutions, and a long-term mindset.
-It's the reason why I contribute to open source since 20 years, why I only run small, bootstrapped businesses or non-profits,
+It's the reason why I've been contributing to open source for 20 years, why I only run small, bootstrapped businesses or non-profits,
 and why I focus on writing and knowledge sharing.
 
 What Paul Graham and his VC buddies try to make you believe is that your ultimate goal as a founder should be to build a unicorn.
-But when I look at the Ubers and Facebooks and Googles of this world, what I see greed, gatekeeping, exploiting the system, tracking their users, 
+But when I look at the Ubers and Facebooks and Googles of this world, what I see is greed, gatekeeping, exploiting the system, tracking their users, 
 using an abundance of resources, and striking lawsuits against competitors.
-These companies do everything in their command to stay on top &ndash; even if that means bending the law or finding legal loopholes.
-What role model is that?
+These companies do everything in their power to stay on top &ndash; even if that means bending the law or finding legal loopholes.
+What kind of role model is that?
 
 ## The Other Side
 
@@ -41,7 +41,7 @@ Instead, they focus on the product. They do a lot with very little.
 I find that way more inspiring.
 
 It's very rewarding to build something that people love and you can make a solid living from it.
-There is no need to risk it all, drop out of college, work ridculous hours, and break things along the way.
+There is no need to risk it all, drop out of college, work ridiculous hours, and break things along the way.
 You can build something small and useful instead, without a venture capitalist breathing down your neck.
 It's still hard work, but you leave the campsite a little better than you found it.
 
@@ -70,16 +70,16 @@ Most of his essays read true on the surface, but once you dig deeper you see tha
 ## Is All VC Money Bad?
 
 Of course not. But I'd argue that it becomes less and less relevant in today's world.
-For example, to build a software product, you don't need a lot of money. There's website builders, cloud hosting, and open source software.
+For example, to build a software product, you don't need a lot of money. There are website builders, cloud hosting, and open source software.
 Why would you take on VC money if you're just starting out?
 One could argue that you get a lot of value from the network and the business advice that comes with it.
 Most of that is freely available online, though. There's a plethora of podcasts, videos, and books on the topic if you're willing to learn.
 
 It's harder, of course, if you build a physical product.
-But building physical products became a lot easier, too, in the last years.
+But building physical products has become a lot easier, too, in the last few years.
 Maybe you can sell a 3D printed prototype before you scale up production?
 Or you can launch a Kickstarter campaign to fund the first batch of products?
-There's print-on-demand services for t-shirts, mugs, posters, and books now.
+There are print-on-demand services for t-shirts, mugs, posters, and books now.
 On top of that, there are plenty of brick-and-mortar stores that you can approach with your business idea if you're looking for collaboration.
 
 Say you get wildly successful and you urgently need money to scale, then maybe VC money is one way to go. Or you just take out a loan.
@@ -94,13 +94,13 @@ If that is the case, there are more meaningful things in life.
 Your self-worth is not tied to building a unicorn. 
 It's okay to be 23 and not be a millionaire founder.
 
-Don't sell your mental compass for cheap.
+Don't sell your moral compass for cheap.
 You don't have to jump on the AI bandwagon just because it's the hot new thing.
 [At least 144 out of 251 companies](https://www.ycombinator.com/companies?batch=W24&tags=Artificial%20Intelligence&tags=AI&tags=Generative%20AI&tags=AI%20Assistant) from the YC W24 batch are building products with "AI".
 That's 57% of the batch.
 How many of them are actually doing something meaningful with it?
 How many will still be around in 5 years? What is the long-lasting value these companies bring to the world?
-We're sitting on a huge pile of tech debt and reward short-term thinking and hypergrowth.
+We're sitting on a huge pile of tech debt and rewarding short-term thinking and hypergrowth.
 
 Sure, Paul will make a profit if one of them hits it big. You can read all about it in his next essay.
 
