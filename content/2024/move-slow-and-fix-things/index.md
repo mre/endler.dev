@@ -25,7 +25,7 @@ I don't believe that has to be the case.
 
 As it turns out, I've always been drawn to the *exact opposite*:
 sustainable growth, robust solutions, and a long-term mindset.
-That's why I've been contributing to open source for 20 years, why I only run small, bootstrapped businesses or non-profits,
+That's why I've been contributing to [open source for 15 years](/2021/oss-money), why I only run [small, bootstrapped businesses](/2021/codeprints/) or [non-profits](/2020/sponsors/),
 and why I focus on writing and knowledge sharing.
 
 Paul Graham and his VC buddies would have you believe that your ultimate goal as a founder should be to build a unicorn.
@@ -89,6 +89,9 @@ Plus, there are plenty of brick-and-mortar stores you could approach with your b
 Let's say you do become wildly successful and urgently need capital to scale. Maybe then VC money is one way to go. Or you could take out a loan.
 Either way, remember that money always comes with strings attached. 
 Funding might force you to do things you're not comfortable with, like compromising your users' privacy or your own values.
+And even if not, you'll constantly be pressured to find new avenues for growth.
+Wouldn't it be nicer to focus on making your product better instead?
+That's often far more rewarding.
 But often, if you spend enough time thinking through a problem, you might find a way to prove your concept at a smaller scale.
 
 ## There Is No Infinite Growth
@@ -96,7 +99,7 @@ But often, if you spend enough time thinking through a problem, you might find a
 Ask yourself: What truly motivates you? Is it power, money, or fame?
 If so, there are more meaningful things in life.
 Your self-worth isn't tied to building a unicorn. 
-It's perfectly fine to be 23 and not be a millionaire founder.
+I dont' know who needs to hear this, but it's perfectly fine to be 23 and not be a millionaire founder.
 If you're a high school or college student dreaming of running a startup, know that there's another path.
 
 Don't sell out your moral compass for a quick buck.
@@ -112,4 +115,5 @@ Sure, Paul will benefit if one of them hits it big. You can read all about it in
 But maybe there's another way.
 Maybe it's okay to have a small business with a few loyal user base that pays the bills.
 Maybe you don't need to grow exponentially.
+
 Maybe you can move slow and fix things.
