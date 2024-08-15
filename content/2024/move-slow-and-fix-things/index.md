@@ -43,6 +43,8 @@ They fly under the radar because their success isn't measured in dollars, and th
 Instead, they focus on their product, doing a lot with very little.
 I find that far more inspiring.
 
+{{ figure(src="bootstrap.jpg") }}
+
 It's incredibly rewarding to build something people love that can provide you with a comfortable living.
 There's no need to risk it all, drop out of college, work insane hours, and leave a trail of destruction in your wake.
 You can build something small and useful instead, without a venture capitalist breathing down your neck.
