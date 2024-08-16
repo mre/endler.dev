@@ -59,6 +59,7 @@ Everyone took the easy route and happily stayed on Uncle Google's lap.
 At this point, I neither have the willpower nor the energy to fight back;
 it's hopeless. It's probably easier to get blood from a stone
 than to convince someone to switch back to Firefox.
+It's so easy to switch, [you won't even lose any open tabs](https://support.mozilla.org/en-US/kb/switching-chrome-firefox)!
 
 {{ figure(src="marketshare.png") }}
 
