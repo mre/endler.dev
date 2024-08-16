@@ -1,6 +1,7 @@
 +++
 title="Move Slow and Fix Things"
 date=2024-08-15
+updated=2024-08-16
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -113,6 +114,8 @@ We're accumulating a massive amount of tech debt while rewarding short-term thin
 Sure, Paul will benefit if one of them hits it big. You can read all about it in his next essay.
 
 But maybe there's another way.
+I, for one, just want to make my mum proud.
+
 Maybe it's okay to have a small business with a few loyal user base that pays the bills.
 Maybe you don't need to grow exponentially.
 
