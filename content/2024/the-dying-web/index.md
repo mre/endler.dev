@@ -114,6 +114,8 @@ Google is smarter! They break the web, too, but they make you stand inside the f
 ...says the developer who gets [tracked by Google](https://www.forbes.com/sites/zakdoffman/2024/06/16/google-chrome-tracking-on-windows-android-iphone-for-200-more-days/) 
 every waking moment.
 
+{{ figure(src="incognito.jpg", credits="https://www.skeletonclaw.com/image/710734055173472257") }}
+
 You see, Chrome is reeeeally good at marketing.
 They say all the right things: We're fast! We're open source! We have the latest features!
 What they don't tell you is that they control the narrative of the World Wide Web.
