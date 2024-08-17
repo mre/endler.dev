@@ -1,7 +1,7 @@
 +++
 title="Move Slow and Fix Things"
 date=2024-08-15
-updated=2024-08-16
+updated=2024-08-17
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -9,7 +9,7 @@ tags=["culture"]
 
 Growing up as a kid in rural Bavaria, I always dreamed of moving to the US to run a startup.
 Many kids in my generation shared that dream.
-To me, it felt like the *only* way to combine my two greatest passions: coding and building things.
+To me, it felt like the *only* way to combine my two greatest passions: writing code and building things.
 
 As I got older, I became disillusioned with the narrative surrounding Silicon Valley.
 The hockey stick growth, the VC money, the "get rich quick" mentality &ndash; it was all one big illusion.
@@ -51,6 +51,13 @@ There's no need to risk it all, drop out of college, work insane hours, and leav
 You can build something small and useful instead, without a venture capitalist breathing down your neck.
 It's still hard work, but you're leaving the campsite a little better than you found it.
 
+Note that moving slowly doesn't mean you can't make quick decisions.
+It's just that the execution should be deliberate. 
+Don't wreak havoc along the way.
+Because the time to fix what you might break rarely comes.
+
+## VCs are Not Your Friends
+
 In ["Why to Not Not Start a Startup"](https://paulgraham.com/notnot.html), Paul Graham writes:
 
 > So, paradoxically, if you're too inexperienced to start a startup, what you should do is start one. That's a way more efficient cure for inexperience than a normal job. In fact, getting a normal job may actually make you less able to start a startup, by turning you into a tame animal who thinks he needs an office to work in and a product manager to tell him what software to write.
@@ -70,7 +77,10 @@ You might wonder why I'm picking on Paul Graham so much.
 It's because I once looked up to him and valued his essays.
 He represents a worldview I used to believe in, but now consider harmful.
 Most of his essays seem true on the surface, but dig deeper and you'll find his claims are based on a narrow worldview and rarely supported by evidence.
+
 Misleading young, impressionable people is dangerous.
+
+Startup founders bear all the downside risk, while venture capitalists are well-insulated from failure. VCs spread their bets across numerous startups, ensuring they profit regardless of individual outcomes. For you, the founder, it's an all-or-nothing gamble with your time, energy, and often your financial stability.
 
 ## Is All VC Money Bad?
 
@@ -100,7 +110,7 @@ But often, if you spend enough time thinking through a problem, you might find a
 Ask yourself: What truly motivates you? Is it power, money, or fame?
 If so, there are more meaningful things in life.
 Your self-worth isn't tied to building a unicorn. 
-I dont' know who needs to hear this, but it's perfectly fine to be 23 and not be a millionaire founder.
+I don't know who needs to hear this, but it's perfectly fine to be 23 and not be a millionaire founder.
 If you're a high school or college student dreaming of running a startup, know that there's another path.
 
 Don't sell out your moral compass for a quick buck.
@@ -114,9 +124,7 @@ We're accumulating a massive amount of tech debt while rewarding short-term thin
 Sure, Paul will benefit if one of them hits it big. You can read all about it in his next essay.
 
 But maybe there's another way.
-I, for one, just want to make my mum proud.
-
-Maybe it's okay to have a small business with a few loyal user base that pays the bills.
+Maybe it's okay to have a small business with a loyal user base that pays the bills.
 Maybe you don't need to grow exponentially.
 
-Maybe you can move slow and fix things.
+Maybe you can move slow and fix things instead.
