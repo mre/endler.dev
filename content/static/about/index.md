@@ -13,11 +13,11 @@ consultant living in D&uuml;sseldorf, Germany.
 I'm the founder of [corrode](https://corrode.dev), a Rust consulting company.
 Before that, I was a backend engineer at [trivago].
 
-My interests are scalability, performance and distributed systems, but I also
+My interests are scalability, performance, and distributed systems, but I also
 play around with embedded systems and console emulation. I hold an M.Sc. in
 Computer Science from [Universit&auml;t Bayreuth].
 
-You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], or [Github].
+You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], or [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
 ## Contact
@@ -36,6 +36,7 @@ Here is a list of my [public speaking][talks] engagements.
   Rust.
 - [lychee](https://lychee.cli.rs): A fast link checker written in Rust.
 - [Hello, Rust!](https://hello-rust.show): A YouTube channel about the Rust programming language.
+- [Rust in Production](https://corrode.dev/podcast): A podcast about companies using Rust in production.
 - [codeprints](https://codeprints.dev): A shop for framed art prints of your
   Github contributions (co-founder, since acquired).
 
