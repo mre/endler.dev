@@ -28,12 +28,12 @@ or that your readers won't like it.
 
 Writing becomes a chore.  
 Eventually, you stop writing.  
-This is what happened to this blog.  
 
-Somewhat tautologically people come here exactly for that reason: to read what I write.
-If I make it about them, I have to guess what they want to hear, which kills the joy in writing.
-This also affects reading, as the content becomes predictable. 
-*Interesting* doesn't mean *novel*.
+Somewhat tautologically, people come here exactly for one reason: to read what I write.
+If I make it about them, I have to guess what they want to hear, which kills the joy in writing,
+and also, in reading, as the content becomes predictable. 
+
+## *Interesting* Doesn't Mean *Novel*.
 
 Just because someone else wrote about the same topic doesn't mean it's off-limits. 
 There are a million love songs to disprove that. 
@@ -44,7 +44,7 @@ Some of these songs I like because I can relate to them.
 To me, that's what makes them interesting: it's the same story but told in a different way &ndash; a personal way.
 And that *personal* makes it *new* and that *new* makes it *interesting*.
 
-## If you take away the personal, you take away the interesting.
+## If You Take Away the Personal, You Take Away the Interesting
 
 Writing is a lot like that.
 I get to learn about how other people *feel* and how they think.
@@ -64,7 +64,7 @@ I can't tell who reads this and why should I care?
 Instead of trying to make other people enjoy my writing, I want to connect with people who like the same topics. 
 Big difference.
 
-## Knowing all of that is liberating.
+## Knowing That Is Liberating
 
 It gives me confidence that I will never run out of things to write. 
 At least not as long as I remember why I write.
@@ -76,4 +76,4 @@ Maybe someone else will find joy in it, maybe not.
 
 It doesn't matter.
 
-What matters is what *you* think matters, and that's what you should write about.
+What matters is what *you* think matters, and *that's* what you should write about.
