@@ -14,9 +14,10 @@ and hopefully to someone else.
 
 What people *actually* want to know is how to come up with something *interesting* to write.
 But why should that matter?
-Who's the judge of what's interesting?
-And what if people don't find it interesting?
+What if people don't find it interesting?
 Was it a waste of time?
+
+## Why Write?
 
 There's this funny thing which happens when you write for a while:
 you forget what excited you about writing in the first place. 
@@ -43,10 +44,10 @@ Some of these songs I like because I can relate to them.
 To me, that's what makes them interesting: it's the same story but told in a different way &ndash; a personal way.
 And that *personal* makes it *new* and that *new* makes it *interesting*.
 
-If you take away the personal, you take away the interesting.
+## If you take away the personal, you take away the interesting.
 
-I get to learn about how other people *feel* and how they think.
 Writing is a lot like that.
+I get to learn about how other people *feel* and how they think.
 It's mostly an experience; shaped into words.
 
 It's beautiful to think how writing is such a simple way to learn from the experiences of others.
@@ -63,7 +64,7 @@ I can't tell who reads this and why should I care?
 Instead of trying to make other people enjoy my writing, I want to connect with people who like the same topics. 
 Big difference.
 
-Knowing all of that is liberating.
+## Knowing all of that is liberating.
 
 It gives me confidence that I will never run out of things to write. 
 At least not as long as I remember why I write.
