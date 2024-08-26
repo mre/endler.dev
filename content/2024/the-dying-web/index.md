@@ -1,6 +1,7 @@
 +++
 title="The Dying Web"
 date=2024-08-08
+updated=2024-08-26
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -73,8 +74,11 @@ Quite a few websites are unusable by now because they got "optimized for Chrome.
 and [the list is long](https://github.com/webcompat/web-bugs/issues?q=is%3Aopen+is%3Aissue+label%3Abrowser-firefox).
 These websites fail for no good reason.
 
-There are positive examples, too.
-[Zencastr](https://zencastr.com/), for example, used to be broken on Firefox, but they fixed it. 
+~~There are positive examples, too.
+[Zencastr](https://zencastr.com/), for example, used to be broken on Firefox, but they fixed it.~~
+
+**Update: Zencastr is still broken on Firefox.**
+Thanks to Randell from Mozilla for pointing that out. Their [support page states that Chrome, Edge, or Brave are required](https://support.zencastr.com/en/articles/5018334-system-requirements). They stopped supporting Firefox in February 2021 as per [this blog post](https://blog.zencastr.com/blog/2021/2/16/zencastr-is-launching-video-recording-into-open-beta). There's an [open ticket in the Mozilla Bugzilla](https://bugzilla.mozilla.org/show_bug.cgi?id=1899831) tracking this issue. It's currently blocked on some other issues, but there's progress being made. The [WebCodecs API](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API), which might be related to this problem, is currently in beta and progressing through Mozilla's release process. While it's disappointing that Zencastr doesn't work on Firefox yet, it's encouraging to see that Mozilla is actively working on resolving the underlying issues.
 
 I also use Chrome for online calls, because tools like [Jitsi](https://meet.jit.si/) don't work well on Firefox.
 Maybe it's because of Firefox's WebRTC support? Or, [maybe it's because of Chrome](https://blog.mozilla.org/webrtc/):
