@@ -38,7 +38,7 @@ Great home cinema setup you have there.
 Thanks for inviting me over!
 At home, I don't even have external speakers.
 
-You're planning a trip to the Bahamas? Enjoy! Send me a photo, maybe.
+You're planning a trip to the Bahamas? Enjoy! Send me a photo.
 
 Regarding technology, that means:
 
