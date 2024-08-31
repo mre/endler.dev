@@ -8,20 +8,20 @@ tags=["culture"]
 
 Last night I realized that my life is very simple.
 That's not by chance, but by conscious effort.
-Life becomes complex all by its own if you do nothing about it.
+Life becomes complex all by itself if you do nothing about it.
 
 One day you'll wake up and you have a mortgage, 10 on-demand subscriptions, 20 insurances, 1000 open browser tabs, a demanding job and a dog.
 And when you realize it, you wonder how you got there.
 
-I keep my life simple because I know my time is limited.
-Time and health are my best proxies for happines.
+I keep my life simple because I know my time is limited --
+because time and health are my best proxies for happiness.
 
 ## Simple Doesn't Mean Boring 
 
 Quite the contrary: give me enough time and I find ways to entertain myself.
 My friends might disagree, but I consider myself to be an introvert.
 I like to spend time on my own to explore and learn.
-There wasn't a boring moment in a long time.
+There hasn't been a boring moment in a long time.
 
 If life was more complex, that would take away my time, but time is the resource I can't replenish, so I protect it.
 How? Mostly by saying NO.
@@ -29,7 +29,7 @@ How? Mostly by saying NO.
 - No streaming subscriptions. No Disney+, no Netflix. TV is fine, but I rarely watch TV.
 - No gym memberships. Just run in the park.
 - No Instagram or TikTok, but part of that is getting old.
-- My shoes are 6 years old. So is my waredrobe. 
+- My shoes are 6 years old. So is most of my wardrobe. 
 - No meetings if possible. I'm the guy who sits at his desk for 8 hours straight, only getting up for toilet breaks twice.
 - No property; I'm a happy tenant.
 - No commute; I work remotely.
@@ -52,7 +52,7 @@ Regarding technology, that means
 
 My goal is not to have as few possessions as possible -- I own a lot -- but to lead a simple life.
 I'll happily buy things if they make my life simpler.
-The last big life improvement were a robot vacuum cleaner (four years ago) and an automated cat toilet (two years ago).
+The last big life improvements were a robot vacuum cleaner (four years ago) and an automated cat toilet (two years ago).
 If I decide to buy something I make sure it's the absolute best I can afford.
 (My rule is actually "don't buy shit".)
 For example, I spent a ridiculous amount on the best laptop I could buy.
@@ -67,25 +67,25 @@ I know that when I buy something, it demands my attention.
 Maintenance is not fun.
 Even though I like the *idea* of owning something, I probably don't own it.
 That makes me the worst consumer possible. 
-I keep things in my Amazon basked *forever*. From time to time I look at the items and when I enjoy seeing them in my basked... I keep them there.
+I keep things in my Amazon basket *forever*. From time to time I look at the items and when I enjoy seeing them in my basket... I keep them there.
 The rest, I just delete. 
 This way, I get the "feeling" of owning things, without spending any money.
 
 ## Simple Doesn't Mean Convenient
 
-To life with such a person is not easy.
-We have regular discussions about "investing" money into things that I'm the sceptic about.
+To live with such a person is not easy.
+We have regular discussions about "investing" money into things that I'm the skeptic about.
 It takes me ages to get to a conclusion.
 Vacation planning is definitely one of my weaknesses.
 I am very well aware that my approach is not perfect at times.
-I am okay to make these sacrifices for protecting my time and therefore my happines.
+I am okay to make these sacrifices for protecting my time and therefore my happiness.
 
 Recently, I got a few emails from a few people that told me that my newsletter subscription is broken.
 I'm aware of that. My newsletter provider shut down.
 I won't fix it.
 Turns out that people find other ways to follow me; either on Mastodon or via RSS.
 I also don't have a comment section -- Reddit or HN work just fine.
-Even though there are a few folks on my old newsletter list, I never got around to sending a lot of mails.
+Even though there are a few folks on my old newsletter list, I never got around to sending a lot of emails.
 I don't particularly enjoy writing a newsletter, so it might be best that it finally broke.
 I will remove the signup box I guess.
 It would be nice to have it "just work", but the next best thing is to not have it at all.
@@ -117,7 +117,7 @@ When there's no room for distractions and complexity.
 I find that constraints help as well.
 Technology is one major source of distraction.
 Some of the best stories were written with a typewriter.
-In itself, it's a very limited environment, but it takes away all the distractions and let's you focus on the task at hand.
+In itself, it's a very limited environment, but it takes away all the distractions and lets you focus on the task at hand.
 I find that inspiring, liberating.
 That's why I like constraints.
 When I give presentations I wonder what I'd write if I could only have 5 slides with 5 words each, 
