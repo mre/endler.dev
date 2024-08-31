@@ -94,13 +94,14 @@ It would be nice to have it "just work", but the next best thing is to not have 
 
 Perhaps another way to explain it is the midwit theme:
 
-[[ MIDWIT ]]
+{{ figure(src="midwit.jpg") }}
 
 I try to stay on the left side of this curve as much as I can.
 
 That is, I'm aware that there are "smarter" ways to do things, but I don't want to dedicate time to learning about them.
-Knowing that getting over the middle-ground requires lots of effort and that the other end of the spectrum only provides diminishing returns,
-I think I made it over that hump only once or twice in my life.
+Knowing that getting over the middle-ground takes lots of effort keeps me on the left side. 
+The other end of the spectrum only provides diminishing returns anyway.
+I think I made it over that hump only a few times in my life.
 For the rest, knowing that there's an awkward middle-ground makes me keep things simple.
 It's fine.
 
