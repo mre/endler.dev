@@ -1,6 +1,6 @@
 +++
 title="Be Simple"
-date=2024-08-30
+date=2024-09-02
 draft=false
 [taxonomies]
 tags=["culture"]
