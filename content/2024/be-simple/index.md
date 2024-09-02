@@ -99,6 +99,8 @@ Perhaps another way to explain it is the midwit theme:
 I try to stay on the left side of this curve as much as I can.
 
 I'm aware that there are "smarter" ways to do things, but I don't want to dedicate time to learning about them.
+I only dedicate time to things that matter to me and that I want to go really deep into.
+
 The meme shows simple approaches on both ends, with a complicated phase in between. 
 Getting to the right side of the spectrum takes lots of effort, and I've only made that journey a few times in my life.
 For the rest, knowing there's an awkward complicated phase in between keeps me happily on the simple side.
