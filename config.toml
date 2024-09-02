@@ -23,6 +23,7 @@ compile_sass = true
 taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
 
 [markdown]
+smart_punctuation = true
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
