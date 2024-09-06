@@ -1,23 +1,27 @@
 +++
 title="Follow the Hackers"
-date=2024-08-17
+date=2024-09-07
 draft=false
 [taxonomies]
-tags=["culture"]
+tags=["culture", "technology", "trends"]
 +++
 
 {% info() %}
-
-If you're one of those people who love reading meticulously researched, data-driven analyses of technology adoption trends with carefully balanced viewpoints and zero personal bias... well, you might want to check out an actual research paper, because this blog post has none of that.
-
-What you will find here is a bunch of personal musings, cheerfully cherry-picked examples, and the kind of sweeping generalizations that would make an economist weep.
-
-But hey, if you're in the mood for some subjective ramblings about future tech trends, and you're willing to take them with a grain of salt, then strap in! Just remember to put on your critical thinking cap before.
+This post offers personal insights on predicting tech trends by observing hackers. It's based on subjective observations and should be read with critical thinking. If you're looking for meticulously researched, data-driven analyses, you might want to check out an actual research paper instead!
+If you like fan-fiction, you might enjoy this post.
 
 {% end %}
 
 A good way to predict which technologies will be important in the future is to see what hackers are passionate about today.
-I'm using the term "hackers" broadly here to describe smart people who are deeply passionate about technology and know how to bend it to their will. 
+
+## Defining "Hacker"
+
+I'm using the term "hacker" in the spirit of the Hacker Ethic, as described by authors like Steven Levy and Pekka Himanen. In this context, a hacker is someone who:
+
+- Follows their passion and seeks self-fulfillment through technology
+- Creates something beneficial for the wider community
+- Values freedom, cooperation, and voluntary work
+- Challenges traditional work ethics with a focus on creativity and sharing
 
 These folks are a small subset of the population, but they have some traits that make them excellent predictors of the future:
 
@@ -39,7 +43,7 @@ Instead, there might be other motivations at play!
 
 Usually, it's people trying to make money from technology.
 They call themselves Investors, "Serial-Entrepreneurs", or "Thought leaders".
-You can spot them by their LinkedIn profiles, which get updated with the latest keywords every 6 months.
+You can easily spot them on LinkedIn, because they update their public profile with a fresh set of buzzwords every 6 months.
 There are a few legit ones, but most are opportunists who couldn't explain the technology if their life depended on it.
 All they care about is profit.
 
@@ -47,7 +51,7 @@ The hackers? They don't care what you think about them.
 They've got nothing to sell you.
 They're too busy building cool stuff!
 
-Another factor hackers care about is "who owns the platform"?
+A question hackers care about is "who owns the platform"?
 If it's companies, they always have an agenda.
 Invest a ton of time and effort, and they might just lock you out and profit from your work.
 Hackers don't like that.
@@ -86,4 +90,4 @@ Ask 10 tech enthusiasts what new things they're excited about, and you'll get a 
 Unfortunately, business people don't talk to hackers regularly. That's a missed opportunity, because these folks love nothing more than talking about their passions.
 
 If you're selling to developers ([and you probably shouldn't](/2024/selling-to-developers/)),
-the key is to really listen to what they're saying and then following their lead. 
+the key is to really listen to what they're saying and then following their lead.
