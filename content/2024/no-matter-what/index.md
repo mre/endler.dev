@@ -32,7 +32,7 @@ It grounded us.
 - Played computer games all afternoon and lost track of time? Dinner at 6.
 - No matter how bad your day was, dinner is always waiting for you at 6.
 
-Still, it sounded like one of those "stupid" rules only grownups would come up with.
+Still, it sounded like one of those "stupid" rules only grown-ups would come up with.
 And in fact, my parents knew that it was stupid.
 They did it anyway.
 As a kid, that made their life look extremely dull and boring.
@@ -76,7 +76,7 @@ Perhaps you learn to cope with crazy challenges (like raising kids) by making up
 
 Yes, the rules "sound" stupid, but there's a deeper, almost stoic realization to it:
 life is complicated and it will throw obstacles in your way, and that's unfair. 
-But if you really want to make progress in life, you have to do find a way. 
+But if you really want to make progress in life, you have to find a way. 
 If nothing else helps, make up a stupid rule.
 Dinner at 6.
 
@@ -95,7 +95,7 @@ My pace isn't fast. The distance isn't far, but it's a solid effort.
 Time was made.
 It worked out.
 Again, it had positive rippling effects:
-I ran in on Crete in Greece and Sardinia in Italy.
+I ran on Crete in Greece and Sardinia in Italy.
 Different people joined me on my runs.
 If Tuesday finds me elsewhere, my running shoes come along.
 Now, did I always manage to run on a Tuesday?
@@ -151,7 +151,7 @@ It worked.
 I might have skipped five days total and I'm planning to keep it at five forever.
 
 Another good way to get started is to take on some lightweight responsibility.
-For example, I recommend to get plants.
+For example, I recommend getting plants.
 Then you have to water them -- no matter what.
 
 If the plant dries out, you broke the rule; simple as that.
@@ -171,4 +171,4 @@ I love the companionship and the continuity.
 If you already have a "no matter what" rule, you have my deepest respect.
 
 If not, whether you want to write that book or you want to run that marathon,
-a good way to make progress towards that goal is to commit it -- no matter what. 
+a good way to make progress towards that goal is to commit to it -- no matter what.
