@@ -8,8 +8,6 @@ tags=["culture", "technology", "trends"]
 
 {% info() %}
 This post offers personal insights on predicting tech trends by observing hackers. It's based on subjective observations and should be read with critical thinking. If you're looking for meticulously researched, data-driven analyses, you might want to check out an actual research paper instead!
-If you like fan-fiction, you might enjoy this post.
-
 {% end %}
 
 A good way to predict which technologies will be important in the future is to see what hackers are passionate about today.
@@ -42,7 +40,7 @@ If hardcore tech people can't explain the benefits to you, that's a bad sign.
 Instead, there might be other motivations at play!
 
 Usually, it's people trying to make money from technology.
-They call themselves Investors, "Serial-Entrepreneurs", or "Thought leaders".
+They call themselves Investors, "Serial Entrepreneurs", or "Thought Leaders".
 You can easily spot them on LinkedIn, because they update their public profile with a fresh set of buzzwords every 6 months.
 There are a few legit ones, but most are opportunists who couldn't explain the technology if their life depended on it.
 All they care about is profit.
@@ -90,4 +88,4 @@ Ask 10 tech enthusiasts what new things they're excited about, and you'll get a 
 Unfortunately, business people don't talk to hackers regularly. That's a missed opportunity, because these folks love nothing more than talking about their passions.
 
 If you're selling to developers ([and you probably shouldn't](/2024/selling-to-developers/)),
-the key is to really listen to what they're saying and then following their lead.
+the key is to really listen to what they're saying and then follow their lead.
