@@ -10,21 +10,22 @@ As a kids, our parents established a few simple rules that we would all follow, 
 One of them was that we'd always have dinner together at 6pm.
 Not 5:30pm, not 7pm, 6pm.
 
-At lot of things have to go right to have dinner at 6.
-First, you have to put food on the table.
-Second, you have to sit down and take the time.
+At lot of things have to go right to always have dinner at 6.
+
+- You have to be home by 6.
+- Obviously, you have to put food on the table.
+- But you have take the time to sit down. 
 
 In almost two decades they never broke the rule.
 We had dinner on 9/11. 
 We had dinner when mom was at the hospital.
-Someone starts a war with someone else? Dinner at 6.
 It's not easy.
 
 There's a a nice thing which happen when you have such a golden rule: it has ripple effects.
 Since we had dinner at 6, we would always have time to talk about the day.
 Problems would be uncovered earlier.
 We would know about each others appointments for the next day.
-It gave us structure throughout the rest of the day.
+It provided structure throughout the rest of the day.
 It put things into perspective. 
 It grounded us.
 
@@ -94,9 +95,12 @@ I ran in different cities and countries.
 I ran in Greece and on Sardinia.
 I ran with different people.
 If I have to be somewhere on a Tuesday, I'll bring my running shoes.
-Since we run together a lot, another thing happened: we would talk about the week.
+Now, did I always manage to run on a Tuesday?
+No, because it's not easy.
+But I _always_ tried and I can count the times I didn't on one hand.
+Since Abu and me run together a lot, another thing happened: we would talk about the week.
 We would know more about each other.
-Just because we somehow made it work.
+Just because we make it work somehow.
 
 Some people won't understand when you tell them that you have to do a thing "no matter what."
 After all, there's an exception to every rule, no?
