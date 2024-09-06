@@ -1,34 +1,81 @@
 <div class="info">
     <p>
-        Thanks for reading! I mostly write about Rust and my (open-source) projects. If you would like to receive future posts automatically,
-                                                                            you can subscribe via
-        <a href="/rss.xml">RSS</a>
-        or email:
+        Thanks for reading! I mostly write about Rust and my (open-source)
+        projects. If you would like to receive future posts automatically, you
+        can subscribe via <a href="/rss.xml">RSS</a>.
     </p>
-    <form action="https://tinyletter.com/mre" method="post" onsubmit="window.open('https://tinyletter.com/mre', 'popupwindow', 'scrollbars=yes,width=800,height=600'); return true" target="popupwindow">
-        <p>
-            <input aria-label="E-mail address" class="field" id="tlemail" name="email" placeholder="E-Mail address" type="email"/>
-            <input name="embed" type="hidden" value="1"/><input class="field submit" type="submit" value="Subscribe"/>
-        </p>
-    </form>
 </div>
 
 <p>
-    {% if not page.extra.comments and not page.extra.comments.name["Hacker News"] %}
-    <a aria-label="Submit blog post to Hacker News" class="btn btn-sm" href="https://news.ycombinator.com/submitlink?u=https://endler.dev{{ page.path | safe }}&t={{ page.title | safe }}">
-        <svg height="16" width="16" aria-hidden="true" class="btn-ico" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.41" version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.0593 0 0 .0593 -8.6 -3.86)" stroke-width="1.05"><path d="m145 65h270v270h-270z" fill="#fb651e"/><path d="m271 218-46.3-86.8h21.2l27.3 54.9c0.42 0.979 0.909 1.99 1.47 3.04 0.559 1.05 1.05 2.13 1.47 3.25 0.281 0.42 0.489 0.804 0.63 1.15 0.14 0.349 0.279 0.663 0.42 0.943 0.698 1.4 1.33 2.76 1.89 4.09 0.559 1.33 1.05 2.55 1.47 3.67 1.12-2.38 2.34-4.93 3.67-7.65 1.33-2.73 2.69-5.56 4.09-8.49l27.7-54.9h19.7l-46.8 87.9v56h-17.8z" fill="#fff" fill-rule="nonzero"/></g>
+    {% if not page.extra.comments and not page.extra.comments.name["Hacker
+    News"] %}
+    <a
+        aria-label="Submit blog post to Hacker News"
+        class="btn btn-sm"
+        href="https://news.ycombinator.com/submitlink?u=https://endler.dev{{ page.path | safe }}&t={{ page.title | safe }}"
+    >
+        <svg
+            height="16"
+            width="16"
+            aria-hidden="true"
+            class="btn-ico"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="1.41"
+            version="1.1"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g
+                transform="matrix(.0593 0 0 .0593 -8.6 -3.86)"
+                stroke-width="1.05"
+            >
+                <path d="m145 65h270v270h-270z" fill="#fb651e" />
+                <path
+                    d="m271 218-46.3-86.8h21.2l27.3 54.9c0.42 0.979 0.909 1.99 1.47 3.04 0.559 1.05 1.05 2.13 1.47 3.25 0.281 0.42 0.489 0.804 0.63 1.15 0.14 0.349 0.279 0.663 0.42 0.943 0.698 1.4 1.33 2.76 1.89 4.09 0.559 1.33 1.05 2.55 1.47 3.67 1.12-2.38 2.34-4.93 3.67-7.65 1.33-2.73 2.69-5.56 4.09-8.49l27.7-54.9h19.7l-46.8 87.9v56h-17.8z"
+                    fill="#fff"
+                    fill-rule="nonzero"
+                />
+            </g>
         </svg>
         <span>Submit to HN</span>
     </a>
     {% endif %}
-    <a aria-label="Sponsor Matthias on Github" class="btn btn-sm" href="https://github.com/sponsors/mre/">
-        <svg aria-hidden="true" class="btn-ico" height="16" version="1.1" viewbox="0 0 16 16" width="16">
-            <path d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z" fill-rule="evenodd"></path>
+    <a
+        aria-label="Sponsor Matthias on Github"
+        class="btn btn-sm"
+        href="https://github.com/sponsors/mre/"
+    >
+        <svg
+            aria-hidden="true"
+            class="btn-ico"
+            height="16"
+            version="1.1"
+            viewbox="0 0 16 16"
+            width="16"
+        >
+            <path
+                d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z"
+                fill-rule="evenodd"
+            ></path>
         </svg>
         <span>Sponsor me on Github</span>
     </a>
-    <a aria-label="Amazon wishlist" class="btn btn-sm" href="https://www.amazon.de/hz/wishlist/ls/361PJ2MNLWL16?ref_=wl_share">
-        <svg viewBox="0 0 16 16" class="btn-ico" height="16"><defs/><path fill="none" stroke="#999" stroke-width="1.668" d="M4.068 2.493c-1.058.005-2.138.354-3.237 1.03v9.231c1.099-.676 2.179-1.025 3.237-1.03 1.058-.006 2.096.33 3.111 1.03v-9.23c-1.015-.7-2.053-1.037-3.111-1.031zm7.864 0c-1.058-.006-2.096.33-3.111 1.03v9.231c1.015-.7 2.053-1.036 3.111-1.03 1.058.005 2.138.354 3.237 1.03v-9.23c-1.099-.677-2.179-1.026-3.237-1.031z"/></svg>
+    <a
+        aria-label="Amazon wishlist"
+        class="btn btn-sm"
+        href="https://www.amazon.de/hz/wishlist/ls/361PJ2MNLWL16?ref_=wl_share"
+    >
+        <svg viewBox="0 0 16 16" class="btn-ico" height="16">
+            <defs />
+            <path
+                fill="none"
+                stroke="#999"
+                stroke-width="1.668"
+                d="M4.068 2.493c-1.058.005-2.138.354-3.237 1.03v9.231c1.099-.676 2.179-1.025 3.237-1.03 1.058-.006 2.096.33 3.111 1.03v-9.23c-1.015-.7-2.053-1.037-3.111-1.031zm7.864 0c-1.058-.006-2.096.33-3.111 1.03v9.231c1.015-.7 2.053-1.036 3.111-1.03 1.058.005 2.138.354 3.237 1.03v-9.23c-1.099-.677-2.179-1.026-3.237-1.031z"
+            />
+        </svg>
         <span>My Amazon wish list</span>
     </a>
 </p>
