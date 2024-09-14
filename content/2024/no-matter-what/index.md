@@ -1,6 +1,6 @@
 +++
 title="No Matter What"
-date=2024-09-07
+date=2024-09-14
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -38,18 +38,16 @@ They did it anyway.
 As a kid, that made their life look extremely dull and boring.
 I remember pitying my dad once for being such a slave to society.
 Yet, they persisted.
-Not because they stuck to the rule, but because they knew about the positive consequences.
-There were a few other such rules in our lives, and they all made no sense -- except they did!
 
 My parents didn't invent that rule for fun. They did so because they had to.
 Without it, things would fall apart.
-Skipping dinner once is about way more than skipping dinner.
-It's a problem in disguise.
-At the very least, I would know that something was up.
+Skipping dinner is about way more than skipping dinner.
+
+There were a few other such rules in our lives, and they all made no sense -- except they did!
 
 ## These rules are simple, but not easy. 
 
-(I recommend Rich Hickey's talk to clarify the nuance in those words)
+(I recommend [Rich Hickey's talk](https://www.youtube.com/watch?v=SxdOUGdseq4) to clarify the nuance in those words)
 
 It's a very simple rule in that it doesn't have a lot of room for interpretation.
 Setting an alarm is simple, too.
@@ -60,21 +58,20 @@ There are times when these rules are really inconvenient and get in the way.
 When you're in the middle of "something."
 That's when the rule counts the most.
 That's what makes or breaks it.
-Turns out you're always in the middle of something.
-[Don't break the chain.](https://sureshjoshi.com/productivity/dont-break-the-chain-says-seinfeld)
+Turns out you're _always_ in the middle of something.
+Just [don't break the chain.](https://sureshjoshi.com/productivity/dont-break-the-chain-says-seinfeld)
 Following the rule 90% of the time is much easier than following it 100% of the time.
 You have to make sacrifices.
 You have to say no sometimes.
 You might have to disappoint people.
-That's the price it takes.
+That's the price it takes to stick to the rule.
 
-My parents knew that or they intuitively inherited it from their parents.
-It makes sense if you think about it for a while.
 What's funny is that my parents discovered this in their twenties.
 More than a decade earlier than me.
-Perhaps you learn to cope with crazy challenges (like raising kids) by making up irrational rules.
+Maybe they intuitively adapted it from their parents
+or you learn to cope with crazy challenges (like raising kids) by making up irrational rules.
 
-Yes, the rules "sound" stupid, but there's a deeper, almost stoic realization to it:
+Yes, these rules "sound" stupid, but there's a deeper, almost stoic realization to it:
 life is complicated and it will throw obstacles in your way, and that's unfair. 
 But if you really want to make progress in life, you have to find a way. 
 If nothing else helps, make up a stupid rule.
@@ -83,10 +80,10 @@ Dinner at 6.
 Only now am I discovering this for myself.
 In 2019, I mentioned to my friend Abu that I felt bad for not doing any sports.
 It's not that I didn't try, it's just that nothing lasted for long.
-He suggested going for a run together on Tuesdays - no matter what.
+He suggested going for a run together on Tuesdays -- no matter what.
 I thought that was ridiculous.
 I told him that it couldn't possibly work.
-Why Tuesdays!?
+Why Tuesdays of all days!?
 It felt so random.
 In my mind, I started negotiating.
 But there's no point in negotiating with irrationality.
@@ -100,17 +97,16 @@ Different people joined me on my runs.
 If Tuesday finds me elsewhere, my running shoes come along.
 Now, did I always manage to run on a Tuesday?
 No. It's not easy!
-But I _always_ tried and I can count the times I didn't run on one hand.
+But I _always_ gave it a solid attempt and I can count the times I didn't run on one hand.
 Since Abu and I run together a lot, we would talk about the week.
 We would get to know each other on a different level.
-All just because we make it work somehow.
+All just because we started running on Tuesdays.
 
 Some people won't understand when you tell them that you have to do a thing "no matter what."
 After all, there's an exception to every rule, right?
 Instead of telling them I have to go for a run, I say I'm busy that evening and ask if another day works.
-Nobody asks more questions.
+Nobody ever asks any questions.
 
-I find these rules extremely interesting.
 Another "no matter what" rule is that I'll always take the time to play with my cat in the evening.
 No matter what.
 Of course, like putting food on the table, it's somewhat of a necessity.
@@ -145,22 +141,19 @@ My stakes are not as high, but I take them very seriously.
 "No matter what" rules aren't habits, at least not in the beginning.
 They can, however, turn into super strong habits with time.
 
-I found that the best way to implement a "NMW Rule" is on the spot.
-When my doctor asked me if I floss every day (I didn't), I made the decision to start right then and there.
-It worked.
-I might have skipped five days total and I'm planning to keep it at five forever.
+I found that the best way to implement a "NMW Rule" is to do it on the spot.
+When my dentist asked me if I floss every day (I didn't), I made the decision to start right then and there.
+I might have skipped five days total since then and I'm planning to keep it at five days forever.
 
 Another good way to get started is to take on some lightweight responsibility.
-For example, I recommend getting plants.
-Then you have to water them -- no matter what.
+For example, I recommend getting some plants.
+You have to water them -- no matter what.
 
-If the plant dries out, you broke the rule; simple as that.
 The great thing is that the watering interval is usually pretty low, so there's time to get used to it
 (but getting used to it you must).
 
-If it works, you'll enjoy the feeling of continuity.
-It's like a chain of good deeds.
-A new habit is born.
+If the plant dries out, you failed; simple as that.
+If it works, however, you might find that it has positive ripple effects in your life.
 
 In the past, I never had any plants.
 Now our apartment is full of them.
@@ -171,4 +164,4 @@ I love the companionship and the continuity.
 If you already have a "no matter what" rule, you have my deepest respect.
 
 If not, whether you want to write that book or you want to run that marathon,
-a good way to make progress towards that goal is to commit to it -- no matter what.
+make it work -- no matter what.
