@@ -1,12 +1,24 @@
 +++
 title="So You Want to Start a (Tech) Podcast"
 date=2024-10-04
+updated=2024-10-07
 draft=false
 [taxonomies]
 tags=["culture", "technology"]
 +++
 
-For the past year, I've been hosting the [Rust in Production](https://corrode.dev/podcast/) podcast, diving deep into how companies use Rust in their tech stacks. This journey has taught me a lot about what it takes to create and maintain a successful podcast. Whether you're considering starting your own podcast or just curious about the process, I hope my experiences can offer some valuable insights.
+For the past year, I've been hosting the [Rust in
+Production](https://corrode.dev/podcast/),
+a podcast about companies who shape the future of infrastructure.
+
+This journey has taught me a lot about what it takes to create and maintain a
+successful podcast. Well, success is always relative; at the moment we have
+around 5k regular (monthly) listeners. Maybe not a ton of people, but it puts us
+comfortably into the top 5% of podcasts -- at least by [some
+statistics](https://www.demandsage.com/podcast-statistics/).
+
+Whether you're considering starting your own podcast or just curious about the
+process, I hope my experiences can offer some valuable insights.
 
 {{ figure(src="cover.jpg", caption="The 'Rust in Production' podcast cover", link="https://corrode.dev/podcast/") }}
 
@@ -16,7 +28,11 @@ Before you dive into the world of podcasting, take some time to explore the land
 
 ### Topic
 
-When choosing your topic, make sure it's something you can easily generate ideas for. Try to come up with at least 10 potential episode topics on the fly. If you're planning an interview-based podcast, ensure you have a large enough network to secure at least 10 guests.
+When choosing your topic, make sure it's something you can easily generate ideas
+for. Try to come up with at least 10 potential episode ideas 
+before you settle on it. If you're
+planning an interview-based podcast, ensure you have a large enough network to
+secure at least 10 guests.
 
 
 ### Competition
@@ -109,3 +125,5 @@ Starting a podcast is a lot of work, but it's incredibly rewarding. The podcast 
 reminds me of the golden age of YouTube a few years ago. Podcasting is becoming more professional now, but there's still plenty of room for new formats and perspectives.
 
 Remember: it's okay to start small and grow. You'll learn and improve with each new episode. The most important thing is to enjoy the process and share your personality with the world.
+
+If you're interested in Rust, consider listening to the [Rust in Production](https://corrode.dev/podcast/) podcast. I'd love to hear what you think!
