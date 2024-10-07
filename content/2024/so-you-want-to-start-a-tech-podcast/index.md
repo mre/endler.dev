@@ -113,7 +113,10 @@ When it comes to hosting, I use [Letscast](https://letscast.fm/). They're not th
 
 ## Develop Your Style
 
-As you progress, you'll naturally develop your own podcasting style. For me, I prefer to let guests do most of the talking, only interjecting occasionally with questions or comments. I've found that taking notes during recording helps me ask better follow-up questions.
+As you progress, you'll naturally develop your own podcasting style. For me, I prefer to let guests do most of the talking, only interjecting occasionally with questions or comments.
+The motto is "say less, ask more." It's a good rule of thumb for interviews. It's not about you, it's about the guest. Let them shine.
+In pursuit of asking better questions, I wrote an essay on [how to ask better questions](/2024/asking-better-questions/).
+I've also found that taking notes during recording helps me ask better follow-up questions.
 
 Don't be afraid to encourage your guests when they make good points. A nod, a smile, or a thumbs up can go a long way in making them feel comfortable and valued.
 
