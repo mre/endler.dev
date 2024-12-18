@@ -18,7 +18,7 @@ Watch what hackers are passionate about today.
 
 ## Defining "Hacker"
 
-I'm using the term "hacker" in the spirit of the Hacker Ethic, as described by authors like Steven Levy and Pekka Himanen.
+I'm using the term "hacker" in the spirit of the Hacker Ethic, as described by authors like [Steven Levy](https://en.wikipedia.org/wiki/Steven_Levy) and [Pekka Himanen](https://en.wikipedia.org/wiki/Pekka_Himanen).
 In this context, a hacker is someone who:
 
 - Follows their passion and seeks self-fulfillment through technology
