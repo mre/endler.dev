@@ -1,3 +1,4 @@
+import { search, default as init } from './tinysearch_engine.js';
 async function lazyLoad() {
     await init('/tinysearch_engine_bg.wasm');
 }
