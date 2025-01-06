@@ -55,6 +55,9 @@ jobs:
       - name: ⏬ Install terser
         run: sudo npm install -g terser
 
+      - name: ⏬ Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
       # Ideally we'd install ImageMagick 7 here because it provides the new `magick` binary that we later.
       # However it's quite tedious to do right now, see
       # https://github.com/walterbm/rusty-resizer/blob/33295758168171d3ad022e9e4938525f2d264017/.github/workflows/ci.yml#L13-L27
