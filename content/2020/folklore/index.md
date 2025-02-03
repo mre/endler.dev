@@ -1,7 +1,7 @@
 +++
-title="Hackers' Folklore"
+title="Hacker Folklore"
 date=2020-04-24
-updated=2023-05-24
+updated=2025-02-03
 [taxonomies]
 tags=["culture"]
 
@@ -525,6 +525,19 @@ flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
 
 [Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from
 [Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com).
+
+## Mainframe
+
+_Today's meaning: A large computer system, often used by large organizations._
+
+Originally, the term referred to the frame that held the main components of a
+computer. The main components were the CPU, memory, and I/O devices. The term
+was used in the 1960s and 1970s when computers were large and required a lot of
+space.
+
+{{ figure(src="mainframe.jpg",caption="This diagram shows how the IBM 701 mainframe swings open for access to the circuitry. From 'Type 701 EDPM [Electronic Data Processing Machine] Installation Manual', IBM. From Computer History Museum archives.") }}
+
+Read more about that on [Ken Shirriff's blog](http://www.righto.com/2025/02/origin-of-mainframe-term.html).
 
 ## Radio Button
 
