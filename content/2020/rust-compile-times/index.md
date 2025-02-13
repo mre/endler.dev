@@ -653,7 +653,7 @@ process to the cloud instead.
 provide you with a beefy machine (currently 16 core Intel Xeon 2.80GHz, 60GB
 RAM) for free during a limited period. Simply add `https://gitpod.io/#` in
 front of any Github URL.
-[Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://hello-rust.show/) episodes.
+[Here is an example](https://gitpod.io/#https://github.com/hello-rust/show/tree/master/episode/9) for one of my [Hello Rust](https://corrode.dev/hello-rust//) episodes.
 
 Gitpod has a neat feature called [prebuilds](https://www.gitpod.io/docs/prebuilds). From their docs:
 

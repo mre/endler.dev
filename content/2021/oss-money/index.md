@@ -49,7 +49,7 @@ first: why am I entitled to talk about this? I've been doing Open Source for 10
 years over 10 years now. This is a talk dedicated to my former self maybe 15
 years ago. I work at trivago, which is a hotel search company based in
 Düsseldorf. I have a blog at endler.dev. Like everyone and their mom, I also
-have a YouTube channel. It's called [Hello, Rust!](https://hello-rust.show/) and I'm
+have a YouTube channel. It's called [Hello, Rust!](https://corrode.dev/hello-rust//) and I'm
 extremely active with one video every two years. Hence, you definitely want to
 subscribe to not miss any updates. But today, I want to talk about Open Source,
 and I have a very sophisticated outline with two points my journey and revenue

@@ -35,7 +35,7 @@ Here is a list of my [public speaking][talks] engagements.
   peer-reviewed collection of articles/talks/repos which teach concise, idiomatic
   Rust.
 - [lychee](https://lychee.cli.rs): A fast link checker written in Rust.
-- [Hello, Rust!](https://hello-rust.show): A YouTube channel about the Rust programming language.
+- [Hello, Rust!](https://corrode.dev/hello-rust/): A YouTube channel about the Rust programming language.
 - [Rust in Production](https://corrode.dev/podcast): A podcast about companies using Rust in production.
 - [codeprints](https://codeprints.dev): A shop for framed art prints of your
   Github contributions (co-founder, since acquired).
