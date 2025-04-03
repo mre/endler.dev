@@ -26,7 +26,7 @@ Don't go to Stack Overflow, don't ask the LLM, don't *guess*, just go straight t
 Great devs understand the technologies they use on a **fundamental level**.
 
 It's one thing to be able to *use* a tool and a whole other thing to truly *grok* (understand) it.
-A mere user will fumble around, get confused easily, hold it wrong and don't optimize the config.
+A mere user will fumble around, get confused easily, hold it wrong and not optimize the config.
 
 An expert goes in (after reading the reference!)
 and sits down to write a config for the tool of which they understand every single line and can explain it to a colleague.
@@ -58,7 +58,7 @@ Everyone gets stuck at times.
 The best know how to get unstuck.
 They simplify problems until they become digestible.
 That's a hard skill to learn and requires a ton of experience.
-Alternatively, you just have awesome problem-solving skills, e.g. you're clever.
+Alternatively, you just have awesome problem-solving skills, e.g., you're clever.
 If not, you can train it, but there is no way around breaking down hard problems.
 There are problems in this world that are too hard to solve at once for anyone involved.
 
@@ -67,14 +67,14 @@ breaking down problems.
 If you do it right, it will feel like cheating:
 you just solve simple problems until you're done.
 
-## Are Not Afraid To Get Their Hands Dirty ()
+## Are Not Afraid To Get Their Hands Dirty
 
 The best devs I know read a lot of code and they are not afraid to touch it.
 They never say "that's not for me" or "I can't help you here."
 Instead, they just start and learn.
 Code is *just code*.
 They can just pick up any skill that is required with time and effort. 
-Before you know it, they become the go-to-person in the team for whatever they touched.
+Before you know it, they become the go-to person in the team for whatever they touched.
 Mostly because they were the only ones who were not afraid to touch it in the first place.
 
 ## Always Help Others
@@ -88,7 +88,7 @@ It's a sheer joy to have them on your team, because they are problem solvers.
 
 Most awesome engineers are well-spoken and happy to share knowledge.
 
-The best have some outlet for their thoughts: blogs, talks, open source, or a combination of that.
+The best have some outlet for their thoughts: blogs, talks, open source, or a combination of those.
 
 I think there is a strong correlation between writing skills and programming.
 All the best engineers I know have good command over at least one human language -- often more.
@@ -99,7 +99,7 @@ If it's concise, educational, well-structured, and witty at times, their code wi
 
 Excellent programmers find joy in playing with words.
 
-## Never Stop To Learn
+## Never Stop Learning
 
 Some of the best devs I know are 60+ years old.
 They can run circles around me.
@@ -116,27 +116,27 @@ I try to one day belong to the latter group.
 
 Somewhat related, the best engineers don't follow trends, but they will always carefully
 evaluate the benefits of new technology. If they dismiss it, they can tell you exactly *why*,
-when the technology would be a good choice, and what are the alternatives.
+when the technology would be a good choice, and what the alternatives are.
 
 ## Don't Care About Status
 
 The best devs talk to principal engineers and junior devs alike. There is no hierarchy.
 They try to learn from everyone, young and old.
-The newcomers often aren't entrenchened in office politics yet and still have a fresh mind.
+The newcomers often aren't entrenched in office politics yet and still have a fresh mind.
 They don't know why things are *hard* and so they propose creative solutions.
 Maybe the obstacles from the past are no more, which makes these people a great source of inspiration.
 
 ## Have a Reputation 
 
-You can be a solid engineer without being known for your work, but
-you can only be one of the best, if you're known for your good work;
+You can be a solid engineer if you **do** good work, 
+but you can only be one of the best if you're **known** for your good work;
 at least within a (larger) organization.
 
 There are many ways to build a reputation for yourself:
 
 - You built and shipped a critical service for a (larger) org.
 - You wrote a famous tool
-- You countribute to a popular open source tool 
+- You contribute to a popular open source tool 
 - You wrote a book that is often mentioned
 
 Why do I think it is important to be known for your work?
@@ -153,7 +153,7 @@ Over time, the work will speak for itself.
 More people will trust you and your work and they will want to work with you.
 You will work on more prestigious projects and the circle will grow.
 
-I once heard about this idea that you current work should
+I once heard about this idea that your latest work should
 overshadow everything you did before.
 That's a good sign that you are on the right track.
 
@@ -205,11 +205,11 @@ The candidates said
 and then they would proceed to deduce the answer.
 That's a sign that you have the potential to be a great engineer.
 
-If you are afraid to say "I don't know", you come from a position of hybris or defensiveness.
-I don't like bullshitters in my team.
+If you are afraid to say "I don't know", you come from a position of hubris or defensiveness.
+I don't like bullshitters on my team.
 Better to acknowledge that you can't know everything.
 Once you accept that, you allow yourself to learn.
-"The important thing is that you don't stop asking questions." said Albert Einstein.
+"The important thing is that you don't stop asking questions," said Albert Einstein.
 
 ## Great Engineers Don't Guess
 
@@ -237,7 +237,7 @@ Exceptional engineers write simple code.
 
 That's because most of the time, simple is enough. 
 And simple is more maintainable than complex.
-Sometimes it *does* matters to get things right, but
+Sometimes it *does* matter to get things right, but
 knowing the difference is what separates the best from the rest. 
 
 You can achieve a whole lot by keeping it simple.
