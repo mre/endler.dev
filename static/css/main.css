@@ -56,7 +56,7 @@ header {
   font-size: 0.8em;
   text-align: center;
   padding-top: 25px;
-  position: sticky;
+  /* position: sticky; */
   top: 50px;
   height: 100vh;
 }
