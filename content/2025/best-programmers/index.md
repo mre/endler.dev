@@ -221,8 +221,8 @@ And it's so, so tempting to guess!
 I've been there many times and I failed with my own ambition.
 
 When you guess, two things can happen:
-- In the best case you're wrong and your incorrect assumptions lead to a bug. 
-- In the **worst** case you are right... and you'll never stop and second guess yourself. 
+- In the **best case** you're wrong and your incorrect assumptions lead to a bug. 
+- In the **worst case** you are right... and you'll never stop and second guess yourself. 
   You build up your mental model based on the wrong assumptions.
   This can haunt you for a long time.
 
