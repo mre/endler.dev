@@ -191,7 +191,7 @@ but they never blame external circumstances.
 With this attitude, they are able to make incredible progress and learn things that others fail to.
 When you mistake bugs for incomprehensible magic, magic is what it will always be.
 
-## The Best Engineers Are Not Afraid to Say "I Don't Know"
+## Don't Be Afraid to Say "I Don't Know"
 
 In job interviews, I pushed candidates hard to at least say "I don't know" once. 
 The reason was not that I wanted to look superior (although some people certainly had that impression). 
@@ -211,7 +211,7 @@ Better to acknowledge that you can't know everything.
 Once you accept that, you allow yourself to learn.
 "The important thing is that you don't stop asking questions," said Albert Einstein.
 
-## Great Engineers Don't Guess
+## Don't Guess
 
 "In the Face of Ambiguity, Refuse the Temptation to Guess"
 That is one of my favorite rules in [PEP 20 – The Zen of Python](https://peps.python.org/pep-0020/).
@@ -230,7 +230,7 @@ Again, resist the urge to guess.
 Ask questions, read the reference, use a debugger, be thorough.
 Do what it takes to get the answer.
 
-## The Best Engineers Keep Things Simple
+## Keep It Simple 
 
 Clever engineers write clever code.
 Exceptional engineers write simple code.
