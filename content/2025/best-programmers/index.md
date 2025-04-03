@@ -20,6 +20,7 @@ the [Python Standard Library](https://docs.python.org/3/library/index.html),
 or the [TOML spec](https://toml.io/en/v1.0.0).
 
 Don't go to Stack Overflow, don't ask the LLM, don't *guess*, just go straight to the **source**.
+Oftentimes, it's surprisingly accessible and well-written.
 
 ## Know Your Tools Really Well
 
