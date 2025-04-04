@@ -45,8 +45,7 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: auto 650px;
+  display: flex;
   justify-content: center;
   margin-top: 40px;
   gap: 20px;
@@ -446,8 +445,6 @@ summary {
   }
 
   .container {
-    display: grid;
-    grid-template-columns: auto;
     margin: 0 auto;
   }
 
