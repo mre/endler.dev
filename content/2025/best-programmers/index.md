@@ -1,6 +1,7 @@
 +++
 title="The Best Programmers I Know"
 date=2025-04-04
+updated=2025-04-05
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -201,7 +202,7 @@ I wanted to stand with them on the edge of what they thought they knew.
 Often, I myself didn't know the answer. And to be honest, I didn't care about the answer.
 What I cared about was when people bullshitted their way through the interview.
 
-The candidates said
+The best candidates said
 "Huh, I don't know, but that's an interesting question! If I had to guess, I would say..."
 and then they would proceed to deduce the answer.
 That's a sign that you have the potential to be a great engineer.
