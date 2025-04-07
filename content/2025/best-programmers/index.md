@@ -1,7 +1,7 @@
 +++
 title="The Best Programmers I Know"
 date=2025-04-04
-updated=2025-04-05
+updated=2025-04-07
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -38,7 +38,7 @@ To know a tool well, you have to know:
 - its history: who created it? Why? To solve which problem?
 - its present: who maintains it? Where do they work? On what?
 - its limitations: when is the tool not a good fit? When does it break?
-- the ecosystem: what client libraries are out there? 
+- its ecosystem: what libraries exist? Who uses it? What plugins?
 
 For example, if you are a backend engineer and you make heavy use of Kafka,
 I expect you to know a lot about Kafka -- not just things you read on Reddit.
@@ -69,7 +69,7 @@ breaking down problems.
 If you do it right, it will feel like cheating:
 you just solve simple problems until you're done.
 
-## Are Not Afraid To Get Their Hands Dirty
+## Don't Be Afraid To Get Your Hands Dirty 
 
 The best devs I know read a lot of code and they are not afraid to touch it.
 They never say "that's not for me" or "I can't help you here."
@@ -120,7 +120,7 @@ Somewhat related, the best engineers don't follow trends, but they will always c
 evaluate the benefits of new technology. If they dismiss it, they can tell you exactly *why*,
 when the technology would be a good choice, and what the alternatives are.
 
-## Don't Care About Status
+## Status Doesn't Matter
 
 The best devs talk to principal engineers and junior devs alike. There is no hierarchy.
 They try to learn from everyone, young and old.
@@ -128,7 +128,7 @@ The newcomers often aren't entrenched in office politics yet and still have a fr
 They don't know why things are *hard* and so they propose creative solutions.
 Maybe the obstacles from the past are no more, which makes these people a great source of inspiration.
 
-## Have a Reputation 
+## Build a Reputation 
 
 You can be a solid engineer if you **do** good work, 
 but you can only be one of the best if you're **known** for your good work;
@@ -184,7 +184,7 @@ flaky, seemingly "random" bugs.
 The best devs don't.
 
 No matter how erratic or mischievous the behavior of a computer seems, 
-there is *always* a logical reason: you just haven't found it yet!
+there is *always* a logical explanation: you just haven't found it yet!
 
 The best keep digging until they find the reason.
 They might not find the reason immediately, they might never find it, 
