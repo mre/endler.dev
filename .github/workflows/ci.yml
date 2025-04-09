@@ -27,9 +27,6 @@ jobs:
           curl -sSL https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
           sudo install "$(pwd)/bin/gh-stats" /usr/local/bin
 
-      - name: ⏬ Install wasm-pack
-        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
-
       - name: ⏬ Install tinysearch
         run: |
           set -e
@@ -71,13 +68,24 @@ jobs:
       - name: 🏞 Images
         run: make images
 
-      - name: 📖 Build
-        run: make build
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      # - name: ⭐ Stars
+      #   run: make stars 
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
-      - name: 🤠 Publish
-        if: github.ref == 'refs/heads/master'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+      - name: 👷‍♀️ Build
+        uses: shalzz/zola-deploy-action@master
+        env:
+          PAGES_BRANCH: gh-pages
+          BUILD_DIR: .
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
+
+      - name: 🚀 Deploy
+        uses: shalzz/zola-deploy-action@master
+        # TODO: Add back once it works
+        # if: github.ref == 'refs/heads/master'
+        env:
+          PAGES_BRANCH: gh-pages
+          BUILD_DIR: .
+          TOKEN: ${{ secrets.TOKEN }}
