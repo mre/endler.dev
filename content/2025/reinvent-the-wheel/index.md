@@ -13,15 +13,15 @@ The advice probably comes from a good place, but is typically given by two group
 - those who never tried to invent a wheel and blindly follow the advice
 
 Either way, both positions lead to a climate where curiosity and exploration gets discouraged.
-I'm glad that some people didn't follow that advice for that we owe them many of the conveniences of modern life.
+I'm glad that some people didn't follow that advice for we owe them many of the conveniences of modern life.
 We have much better wheels today than 4500–3300 BCE when the first wheel was invented.
 
-It was also *crucially* important that wheels got reinvented throughout the civilizations and cultures.
+It was also *crucially* important that wheels got reinvented throughout civilizations and cultures.
 
 {% info() %}
 
 **Note:** I would guess that most readers are programmers. It should be clear
-*that when I say "wheel" throughout this post, you can replace it with whatever
+that when I say "wheel" throughout this post, you can replace it with whatever
 tool, protocol, service, technology, or other invention you're personally
 interested in. 
 
@@ -31,16 +31,16 @@ I think people should reinvent wheels more often.
 
 ## Inventing Wheels Is Learning 
 
-When in school I had trouble in math, because I could never bring myself to ask "why"?
-Especially my first few classes gave me a severe lack of context.
-I would ask "why" about seemingly trivial things:
+When in school I ran into some trouble, because I could never bring myself to stop asking "why"?
+Especially my first math classes gave me a severe lack of context.
+I would ask seemingly trivial questions: 
 
-- Why is it called `x`? Why not `a`?
-- Where does the equal sign come from?
-- How does that formula fall from the sky? Where's the backstory?
-- Why is it called a "square"? 
+- Why is it called `x` and not `a`?
+- Who invented the equal sign? 
+- Where does that formula suddenly come from? 
+- Why do we call it a "square"? 
 
-Other students in class would not second-guess the teacher and had a much easier time making progress.
+Other students in class would seemingly not second-guess the teacher and had a much easier time making progress.
 I wondered why and thought something was wrong with me to ask these questions.
 Only later I found out that most people don't think too often about seemingly "simple" things.
 For me, that's a key aspect of learning!
@@ -49,13 +49,13 @@ Some people learn best from first principles.
 Anyhow...
 
 To *really* understand something on a fundamental level, you have to implement a toy version first. 
-It doesn't matter if its any good; you can throw it away later.
+It doesn't matter if it's any good; you can throw it away later.
 In Computer Science, for example, there are many concepts that are commonly understood to be beyond the abilities of mere mortals:
 databases, cryptography, and monads come to mind.
 
 More people should know how caches, version control, or web servers work.
 
-Think more about simple things and implement simple things yourself 
+## Reinvent Simple Things Yourself
 
 Too often, fundamental things are taken for granted. 
 For example "strings" and "paths" are super tricky concepts in programming.
@@ -65,7 +65,7 @@ To understand that, you have to run a lot of simple experiments and get a good i
 I think it's a great exercise to implement a path library in your strongest language. Even if nobody ends up using it, I bet you'll learn a lot about paths. 
 Similarly, I think every programmer should at least write one parser from scratch in their life.
 A parser for what? It doesn't matter; maybe a CSV parser. 
-These are not easy tasks. There's dozens, sometimes hundreds of footguns with ever toy problem. 
+These are not easy tasks. There are dozens, sometimes hundreds of footguns with every toy problem. 
 
 It will teach you a few things:
 - There is an infinite complexity in everyday things. 
@@ -108,8 +108,9 @@ There are many great reasons to reinvent the wheel:
 
 Who knows? The wheel you come up with might not be the best use for a car, but maybe for a... skateboard or a bike?
 Or you fail building a nicer wheel, but you come up with a better way to test wheels along the way.
+
 Heck, the wheel you come up with might not even be used for transportation at all! 
-It might bee a potter's wheel, "a machine used in the shaping (known as throwing) of clay into round ceramic ware" according to Wikipedia (https://en.wikipedia.org/wiki/Wheel).
+It might be a potter's wheel, "a machine used in the shaping (known as throwing) of clay into round ceramic ware" [according to Wikipedia](https://en.wikipedia.org/wiki/Wheel).
 You might end up building a totally different kind of wheel like a steering wheel or a flywheel.
 
 Entire careers are made of people inventing wheels.
