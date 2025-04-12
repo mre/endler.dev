@@ -33,10 +33,10 @@ To *really* understand something on a fundamental level, you have to be able to 
 It doesn't matter if it's any good; you can throw it away later.
 
 In Computer Science, for example, there are many concepts that are commonly assumed to be beyond the abilities of mere mortals:
-databases, cryptography, and monads come to mind.
+protocols, cryptography, and web servers come to mind.
 
 More people should know these things work. 
-And therefore I think people should not be afraid to reinvent them. 
+And therefore I think people should not be afraid to recreate them. 
 
 ## Reinvent Simple Things Yourself
 
@@ -45,7 +45,7 @@ For example strings or paths are super complicated concepts in programming.
 I think it's a great exercise to implement a string or a path library yourself
 if you're interested in how they work.
 
-Even if nobody ends up using work, I bet you'll learn a lot. For example:
+Even if nobody ends up using your work, I bet you'll learn a lot. For example:
 
 - There is an infinite complexity in everyday things. 
 - Building something that even a single other person finds useful is a humbling experience. 
