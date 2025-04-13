@@ -32,11 +32,9 @@ Dinner. Every day. At 6 o'clock.
 
 Only now am I discovering this for myself. In 2019, I mentioned to my friend Abu that I felt bad for not doing any sports. It's not that I didn't try, it's just that nothing lasted for long. He suggested going for a run together on Tuesdays -- no matter what. I thought that was ridiculous. I told him that it couldn't possibly work. Why Tuesdays of all days!? It felt so random. In my mind, I started negotiating. But there's no point in negotiating with irrationality. Fast forward 5 years, and I still run every Tuesday.
 
-I actually suck at running. My pace isn't fast. The distance isn't far, but it's a solid effort. Time was made. It worked out. Again, it had positive rippling effects: I ran on Crete in Greece and Sardinia in Italy. Different people joined me on my runs. If Tuesday finds me elsewhere, my running shoes come along. Now, did I always manage to run on a Tuesday? No. It's not easy! But I _always_ gave it a solid attempt and I can remember each times I didn't run. Since Abu and I run together a lot, we would talk about our week. If we didn't make up that rule, we would never have started to know each other on such a deep level.
+I actually suck at running. My pace isn't fast. The distance isn't far, but it's a solid effort. Time was made. It worked out. Again, it had positive rippling effects: I ran on Crete in Greece and Sardinia in Italy. Different people joined me on my runs. If Tuesday finds me elsewhere, my running shoes come along. Now, did I always manage to run on a Tuesday? No. It's not easy! But I _always_ gave it a solid attempt and I can remember each time I didn't run. Since Abu and I run together a lot, we would talk about our week. If we didn't make up that rule, we would never have started to know each other on such a deep level.
 
 Some people won't understand when you tell them that you have to do a thing "no matter what." Instead of telling them I have to go for a run, I say I'm busy that evening. Nobody ever asks any questions.
-
-
 
 ## Isn't this just a habit?
 
