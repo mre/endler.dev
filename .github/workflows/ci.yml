@@ -76,8 +76,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
-      - name: 🤠 Publish
+      - name: 🚀 Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/master'
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 1c71f27d6fa097a1576b4ffab9186fa8
+          projectName: endler-dev
+          directory: ./public
+      
