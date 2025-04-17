@@ -1,10 +1,10 @@
 name = "endler-dev"
-compatibility_date = "2025-01-01"
+type = "webpack"
+account_id = "1c71f27d6fa097a1576b4ffab9186fa8"
 workers_dev = false
 route = "*endler.dev/*"
 zone_id = "ac5871ca4c20923c76e603f50eb50ef8"
-account_id = "1c71f27d6fa097a1576b4ffab9186fa8"
+compatibility_date = "2022-07-15"
 
-[assets]
-directory = "./public"
-binding = "ASSETS"
+[site]
+bucket = "./public"
