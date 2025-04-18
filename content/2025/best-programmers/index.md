@@ -1,7 +1,7 @@
 +++
 title="The Best Programmers I Know"
 date=2025-04-04
-updated=2025-04-07
+updated=2025-04-18
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -52,7 +52,7 @@ The best engineers can infer a ton of information from very little context.
 Just by reading the error message, you can fix most of the problems on your own.
 
 It also feels like a superpower if you help someone who doesn't have that skill.
-Like "reading from a cup" or so.
+Like ["reading from a cup"](https://en.m.wikipedia.org/wiki/Tasseography) or so.
 
 ## Break Down Problems
 
