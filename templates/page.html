@@ -44,8 +44,13 @@
     <li>{{ macros::translations(translations=page.extra.translations) }}</li>
     {% endif %}
   </ul>
-  {% if page.extra.credits %} {{ macros::credits(credits=page.extra.credits) }}
+
+  {% if page.taxonomies.tags and "dev" in page.taxonomies.tags %}
+    {% include "snippets/codecrafters.html" %}
   {% endif %}
+  
+  {% if page.extra.credits %} {{
+  macros::credits(credits=page.extra.credits) }} {% endif %}
 </article>
 
 {% endblock content %} {% block teaser %} {% include "snippets/teaser.html" %}

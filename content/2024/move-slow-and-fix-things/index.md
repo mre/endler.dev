@@ -4,7 +4,7 @@ date=2024-08-15
 updated=2024-08-17
 draft=false
 [taxonomies]
-tags=["culture"]
+tags=["culture", "dev"]
 +++
 
 Growing up as a kid in rural Bavaria, I always dreamed of moving to the US to run a startup.
