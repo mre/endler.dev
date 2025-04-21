@@ -331,32 +331,16 @@ picture {
   display: inline;
 }
 
-#teaser {
-  background: var(--pink-400);
-  color: var(--pink-200);
-}
-
-#teaser a,
-footer a {
-  color: white;
-}
-
-#teaser a::after {
-  content: "\a0»";
-}
-
 footer {
   background: var(--blue-500);
   color: var(--grey-300);
 }
 
-#teaser,
 footer {
   display: flex;
   justify-content: center;
 }
 
-#teaser .body,
 footer .body {
   max-width: 800px;
   margin: 40px auto;
