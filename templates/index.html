@@ -1,5 +1,5 @@
-{% import "_macros.html" as macros %} 
-{# Use `logo_winter.svg` for winter theme #}
+{% import "_macros.html" as macros %}
+
 {% set logo = load_data(path="static/logo.svg") %}
 {% set logo_font_light = load_data(path="static/logo_font_light.svg") %}
 {% set logo_font_dark = load_data(path="static/logo_font_dark.svg") %}
@@ -7,12 +7,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ macros::css(path="/css/main.css") }}
-    {%- block header %}
-    <title>Matthias Endler</title>
-    {%- endblock header %}
+    <link rel="stylesheet" href="/css/main.css" />
     <link rel="canonical" href="{{ current_url | safe }}" />
-    <link rel="me" href="https://mastodon.social/@mre">
+    <link rel="me" href="https://mastodon.social/@mre" />
 
     <link rel="icon" href="data:image/svg+xml;utf8,{{ logo }}" />
 
@@ -26,28 +23,24 @@
       content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go"
     />
 
+    {%- block header %}
+    <title>Matthias Endler</title>
+    {%- endblock header %}
   </head>
 
   <body>
     <div class="container">
       <header>
         <div class="navwrapper">
-
           <a href="/" aria-label="Go back to homepage">
             {# The logo class allows overwriting the image if needed #}
-            <div class="logo">
-              {{ logo | safe }}
-            </div>
+            <div class="logo">{{ logo | safe }}</div>
           </a>
           <div class="biowrapper">
             <a href="/" aria-label="Go back to homepage">
               <div class="logo_font">
-                <div class="logo_font_dark">
-                {{ logo_font_dark | safe }}
-                </div>
-                <div class="logo_font_light">
-                {{ logo_font_light | safe }}
-                </div>
+                <div class="logo_font_dark">{{ logo_font_dark | safe }}</div>
+                <div class="logo_font_light">{{ logo_font_light | safe }}</div>
               </div>
             </a>
             <p class="bio">
@@ -61,23 +54,20 @@
       </header>
 
       <main>
-        {% block content %}
-          {% for page in paginator.pages %}
-            {% include "snippets/article.html" %}
-          {% endfor %}
+        {% block content %} {% for page in paginator.pages %} {% include
+        "snippets/article.html" %} {% endfor %}
 
-          <div style="display: flex; justify-content: space-between">
-            {% if paginator.previous %}
-              <a class="btn" href="{{  paginator.previous}}">« Next</a>
-            {% endif %}
-            {% if paginator.next %}
-              <a class="btn" href="{{  paginator.next }}">Previous »</a>
-            {% endif %}
-          </div>
+        <div style="display: flex; justify-content: space-between">
+          {% if paginator.previous %}
+          <a class="btn" href="{{  paginator.previous}}">« Next</a>
+          {% endif %} {% if paginator.next %}
+          <a class="btn" href="{{  paginator.next }}">Previous »</a>
+          {% endif %}
+        </div>
         {% endblock content %}
       </main>
     </div>
-    {% block teaser %} {% endblock teaser %}
-    {% include "snippets/footer.html" %}
+    {% block teaser %} {% endblock teaser %} {% include "snippets/footer.html"
+    %}
   </body>
 </html>

@@ -10,9 +10,6 @@ feed_filenames = ["atom.xml", "rss.xml"]
 
 minify_html = true
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
 # Whether to build a search index out of the pages and section
 # content for the `default_language`
 # https://www.getzola.org/documentation/content/search/

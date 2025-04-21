@@ -1,15 +1,3 @@
-// Reload inline CSS style tag 
-// Used in index template
-// See https://github.com/getzola/zola/issues/696
-// and https://github.com/getzola/zola/issues/696#issuecomment-690943535
-{% macro css(path) %}
-    {% if current_url is starting_with("http://127.0.0.1:1111/") %}
-        <link rel="stylesheet" href="{{path}}">
-    {% else %}
-        <style>{{ load_data(path="static/" ~ path) | trim | safe }}</style>
-    {% endif %}
-{% endmacro input %}
-
 {% macro nicedate(date) %}
 {% set daynum = date | date(format="%-d") %}
 {% if daynum == "1" %}
@@ -48,12 +36,3 @@
 {%- if not loop.last %},{% else %}.{% endif %}
 {% endfor %}
 {% endmacro translations %}
-
-{% macro credits(credits) %}
-Thanks to  
-{% for credit in credits | sort(attribute="name") %}
-<a href="{{ credit.url }}">{{ credit.name }}</a>
-{%- if not loop.last %},{% endif %}
-{% endfor %}
-for reviewing drafts of this article.
-{% endmacro credits %}
