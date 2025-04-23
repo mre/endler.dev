@@ -17,10 +17,10 @@
 
     <style>
       @font-face {
-      font-family: 'Happy';
-      src: url('/fonts/Happy.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
+        font-family: "Happy";
+        src: url("/fonts/Happy.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
       }
     </style>
 
@@ -42,31 +42,29 @@
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <div class="navwrapper">
-          <a href="/" aria-label="Go back to homepage">
-            <div class="logo">{{ logo | safe }}</div>
-          </a>
-        </div>
-      </header>
+    <header>
+      <h1>Matthias Endler</h1>
+      <a href="/" aria-label="Go back to homepage">
+        <div class="logo">{{ logo | safe }}</div>
+      </a>
+    </header>
 
       <main>
         {% block content %}
         {% for page in paginator.pages %}
-        {% include "snippets/article.html" %}
+          {% include "snippets/article.html" %}
         {% endfor %}
 
-        <div style="display: flex; justify-content: space-between">
-          {% if paginator.previous %}
+      <div style="display: flex; justify-content: space-between">
+        {% if paginator.previous %}
           <a class="btn" href="{{  paginator.previous}}">« Next</a>
-          {% endif %} {% if paginator.next %}
+        {% endif %}
+        {% if paginator.next %}
           <a class="btn" href="{{  paginator.next }}">Previous »</a>
-          {% endif %}
-        </div>
-        {% endblock content %}
-      </main>
-    </div>
+        {% endif %}
+      </div>
+      {% endblock content %}
+    </main>
     {% include "snippets/footer.html" %}
   </body>
 </html>
