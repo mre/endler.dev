@@ -76,5 +76,42 @@
       </main>
     </div>
     {% include "snippets/footer.html" %}
+    <script>
+      // Check for saved theme preference or use the browser's preference
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          // Use browser preference as default
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        }
+      }
+
+      // Toggle between light and dark themes
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+
+      // Initialize theme when page loads
+      initTheme();
+      
+      // Listen for system preference changes
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+          if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', event.matches ? 'dark' : 'light');
+          }
+        });
+      }
+    </script>
   </body>
 </html>
