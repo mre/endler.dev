@@ -7,12 +7,6 @@ draft=false
 tags=["culture", "technology", "trends"]
 +++
 
-{% info() %}
-This post offers personal insights on predicting tech trends by observing hackers.
-It's based on subjective observations and should be read with critical thinking.
-If you're looking for meticulously researched, data-driven analyses, you might want to check out an actual research paper instead!
-{% end %}
-
 Want to see tomorrow's important technologies?
 Watch what hackers are passionate about today.
 
