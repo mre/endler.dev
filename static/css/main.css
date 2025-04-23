@@ -4,14 +4,14 @@
   --grey-100: #ddd;
   --grey-200: #fafafa;
 
-  --blue-800: #141f2b;
+  --blue-800: #1a1a1a;
   --pink-400: #e83e8c;
   --grey-300: #b9b9b9;
   --grey-400: #555;
   --grey-500: #111;
 
   --anim-duration: 150ms;
-  --border-radius: 0px;
+  --border-radius: 15px;
 }
 
 /* Tiny reset */
@@ -23,10 +23,32 @@ fieldset,
 legend,
 label,
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
+
+blockquote, q{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
 
 /* Style */
 
@@ -44,9 +66,18 @@ body {
 }
 
 header {
+  margin-top: 50px;
   display: flex;
   gap: 20px;
 }
+
+/* TODO: Replace with SVG */
+header h1 {
+  font-family: 'Happy-Headline';
+  font-size: 1.4em;
+  color: hotpink;
+}
+
 
 .logo {
   width: 80px;
@@ -105,21 +136,18 @@ caption {
 }
 
 h1 {
-  font-size: 1.87em;
-  margin-bottom: 8px;
+  font-size: 2.0em;
+  margin-top: 100px;
 }
 
 h2 {
-  font-size: 1.5em;
-}
-
-main h2 {
-  margin-top: 60px;
+  font-size: 1.4em;
+  margin-top: 70px;
 }
 
 h3 {
+  font-size: 1.2em;
   margin-top: 40px;
-  font-style: italic;
 }
 
 .social-icons ul {
@@ -145,9 +173,11 @@ h3 {
 
 .info {
   padding: 20px;
-  margin: 30px 0;
+  margin: 70px 0 30px 0;
   background: lightyellow;
-  border: solid peachpuff;
+  opacity: 0.9;
+  border: dashed peachpuff;
+  border-radius: var(--border-radius);
 }
 
 .btn {
@@ -213,9 +243,9 @@ pre > code {
 }
 
 blockquote {
-  border-left: var(--border-radius) solid var(--blue-300);
+  border-left: 4px solid hotpink; 
   font-style: italic;
-  margin: 4px 10px;
+  margin-right: 100px;
   padding: 0px 20px;
 }
 
