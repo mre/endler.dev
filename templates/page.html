@@ -57,8 +57,11 @@
   
 
   <p class="post-meta">
-    Published on {{ macros::nicedate(date=page.date) }} {%- if page.updated %}
-    &middot; Updated on {{ macros::nicedate(date=page.updated) }} {%- endif %}
+    {%- if page.updated %}
+      {{ macros::nicedate(date=page.updated) }}
+    {% else %}
+        {{ macros::nicedate(date=page.date) }} 
+    {% endif %}
   </p>
   
   {{ page.content | safe }}
