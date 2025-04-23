@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="canonical" href="{{ current_url | safe }}" />
     <link rel="me" href="https://mastodon.social/@mre" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+      font-family: 'Happy';
+      src: url('/fonts/Happy.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+    </style>
 
     <link rel="icon" href="data:image/svg+xml;utf8,{{ logo }}" />
 
@@ -33,29 +46,16 @@
       <header>
         <div class="navwrapper">
           <a href="/" aria-label="Go back to homepage">
-            {# The logo class allows overwriting the image if needed #}
             <div class="logo">{{ logo | safe }}</div>
           </a>
-          <div class="biowrapper">
-            <a href="/" aria-label="Go back to homepage">
-              <div class="logo_font">
-                <div class="logo_font_dark">{{ logo_font_dark | safe }}</div>
-                <div class="logo_font_light">{{ logo_font_light | safe }}</div>
-              </div>
-            </a>
-            <p class="bio">
-              <span>Open-source maintainer, speaker, rebel.</span>
-              <a href="/about">About me.</a>
-            </p>
-            {% include "snippets/nav.html" %}
-          </div>
         </div>
-        {% include "snippets/search.html" %}
       </header>
 
       <main>
-        {% block content %} {% for page in paginator.pages %} {% include
-        "snippets/article.html" %} {% endfor %}
+        {% block content %}
+        {% for page in paginator.pages %}
+        {% include "snippets/article.html" %}
+        {% endfor %}
 
         <div style="display: flex; justify-content: space-between">
           {% if paginator.previous %}
