@@ -454,17 +454,32 @@ th {
 
 /* Footer */
 footer {
-  background: var(--dark-bg);
-  opacity: 0.7;
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  background: #f5f5f5;  /* Light grey for light mode */
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
 }
 
 footer .body {
-  max-width: 800px;
+  max-width: 550px;
   margin: 40px auto;
   padding: 20px;
+}
+
+/* Dark mode footer - slightly darker than the page background */
+[data-theme="dark"] footer {
+  background: #141414;  /* Darker than --dark-bg (#1a1a1a) */
+  color: #e1e1e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) footer {
+    background: #141414;  /* Darker than --dark-bg (#1a1a1a) */
+    color: #e1e1e1;
+  }
 }
 
 /* Icons and anchors */
