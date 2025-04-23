@@ -59,7 +59,7 @@ build-quick: content ## Build static site
 
 .PHONY: dev run serve
 dev run serve: ## Serve website locally
-	zola serve --drafts
+	zola serve --fast
 
 .PHONY: stars
 stars: ## Update Github stars statistics for my projects
