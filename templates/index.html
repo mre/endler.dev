@@ -42,29 +42,31 @@
   </head>
 
   <body>
-    <header>
-      <h1>Matthias Endler</h1>
-      <a href="/" aria-label="Go back to homepage">
-        <div class="logo">{{ logo | safe }}</div>
-      </a>
-    </header>
+    <div class="container">
+      <header>
+        <a href="/" aria-label="Go back to homepage">
+          <div class="logo">{{ logo | safe }}</div>
+        </a>
+        <h1>Matthias Endler</h1>
+      </header>
 
-      <main>
-        {% block content %}
-        {% for page in paginator.pages %}
-          {% include "snippets/article.html" %}
-        {% endfor %}
+        <main>
+          {% block content %}
+          {% for page in paginator.pages %}
+            {% include "snippets/article.html" %}
+          {% endfor %}
 
-      <div style="display: flex; justify-content: space-between">
-        {% if paginator.previous %}
-          <a class="btn" href="{{  paginator.previous}}">« Next</a>
-        {% endif %}
-        {% if paginator.next %}
-          <a class="btn" href="{{  paginator.next }}">Previous »</a>
-        {% endif %}
-      </div>
-      {% endblock content %}
-    </main>
+        <div style="display: flex; justify-content: space-between">
+          {% if paginator.previous %}
+            <a class="btn" href="{{  paginator.previous}}">« Next</a>
+          {% endif %}
+          {% if paginator.next %}
+            <a class="btn" href="{{  paginator.next }}">Previous »</a>
+          {% endif %}
+        </div>
+        {% endblock content %}
+      </main>
+    </div>
     {% include "snippets/footer.html" %}
   </body>
 </html>
