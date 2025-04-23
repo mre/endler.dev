@@ -42,19 +42,6 @@ body {
   border-top: 0.5em solid var(--pink-400);
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  gap: 20px;
-}
-
-header {
-  font-size: 0.8em;
-  text-align: center;
-  padding-top: 25px;
-}
-
 .logo {
   width: 110px;
   margin: auto;
@@ -414,11 +401,6 @@ summary {
 
 /* Styles for small screens */
 @media (max-width: 920px) {
-  .navwrapper {
-    margin: 0 auto;
-    display: flex;
-  }
-
   .container {
     margin: 0 auto;
     flex-direction: column;
