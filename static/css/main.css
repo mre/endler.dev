@@ -181,6 +181,7 @@ a:hover {
   text-align: center;
   padding-bottom: 1.5rem;
   margin: 0 auto;
+  position: relative;
 }
 
 .article-header h1 {
@@ -188,6 +189,9 @@ a:hover {
   margin-top: 10rem; 
   margin-bottom: 1.0rem;
   line-height: 1.2;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-header .subtitle {
@@ -195,6 +199,19 @@ a:hover {
   font-weight: normal;
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-color);
+  margin: 2rem auto 0;
+  opacity: 0.6;
 }
 
 .article-content {
@@ -406,13 +423,15 @@ footer .body {
 
 .anchor {
   float: left;
-  margin-left: -28px;
+  margin-left: -33px;
   margin-top: 3px;
   fill: var(--meta-color);
+  opacity: 0.4;
 }
 
 .anchor:hover {
   fill: var(--accent-color);
+  opacity: 1;
 }
 
 /* Social icons */
