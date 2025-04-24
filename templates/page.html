@@ -1,4 +1,7 @@
 {% extends "index.html" %}
+
+{% block header_title %}{{ page.title }}{% endblock %}
+
 {%- block header %}
 <title>{{ page.title }} | Matthias Endler</title>
 <link rel="canonical" href="{{ page.permalink | safe }}" />

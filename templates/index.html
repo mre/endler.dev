@@ -25,7 +25,6 @@
     />
 
     <style>
-
       @font-face {
         font-family: "Happy-Headline";
         src: url("/fonts/Happy-Headline.ttf") format("truetype");
@@ -42,7 +41,6 @@
     </style>
 
     <link rel="icon" href="data:image/svg+xml;utf8,{{ logo }}" />
-
     <link href="/rss.xml" rel="alternate" type="application/rss+xml" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,16 +57,21 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="logo-header">
+    <header>
+      <div class="site-header">
         <a href="/" aria-label="Go back to homepage">
           <div class="logo">{{ logo | safe }}</div>
         </a>
-        <h1>Matthias Endler</h1>
-      </header>
+        <div>
+          <h1>Matthias Endler</h1>
+          <h2>{% block header_title %}{% endblock %}</h2>
+        </div>
+      </div>
+    </header>
 
-        <main>
-          {% block content %}
+   <div class="container">
+      <main>
+        {% block content %}
           {% for page in paginator.pages %}
             {% include "snippets/article_preview.html" %}
           {% endfor %}
@@ -89,9 +92,20 @@
         {% endblock content %}
       </main>
     </div>
+
     {% include "snippets/footer.html" %}
+
     <script>
-      // Check for saved theme preference or use the browser's preference
+      // Theme toggle function
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+      
+      // Initialize theme
       function initTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
@@ -105,18 +119,23 @@
           }
         }
       }
+      
+      // Header animation
+      const headerWrapper = document.querySelector(".site-header");
+      const startOffset = 160;
 
-      // Toggle between light and dark themes
-      function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+      function updateHeaderPosition() {
+        const scrollPos = window.scrollY;
+        const newTransform = Math.max(0, startOffset - scrollPos);
+        headerWrapper.style.transform = `translateY(${newTransform}px)`;
       }
-
-      // Initialize theme when page loads
+      
+      // Initialize theme and header position
       initTheme();
+      updateHeaderPosition();
+      
+      // Listen for scroll events
+      window.addEventListener("scroll", updateHeaderPosition);
       
       // Listen for system preference changes
       if (window.matchMedia) {
