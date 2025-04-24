@@ -22,11 +22,11 @@
   --line-height: 1.75;
   
   /* Layout */
-  --max-width: 700px;
+  --max-width: 34em; 
   --content-padding: 20px;
   
   /* UI */
-  --border-radius: 15px;
+  --border-radius: 10px;
   --border-width: 2px;
   --anim-duration: 150ms;
 }
@@ -203,7 +203,6 @@ a:hover {
   margin-top: 10rem; 
   margin-bottom: 1.0rem;
   line-height: 1.2;
-  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -353,11 +352,10 @@ pre > code {
 
 /* Blockquotes */
 blockquote {
-  border-left: var(--border-width) solid var(--accent-color);
+  border-left: 4px solid var(--accent-color);
   font-style: italic;
   margin: 30px 0;
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.03);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
