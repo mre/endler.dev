@@ -1,10 +1,4 @@
 <article class="homepage">
-    <p class="post-meta">
-        {{ macros::nicedate(daynum=page.day, date=page.date) }}
-        {%- if page.updated %}
-            &middot; Updated on {{ macros::nicedate(date=page.updated) }}
-        {%- endif %}
-    </p>
     <a class="title" href="{{ page.permalink | safe }}">
         <h1>{{ page.title }}</h1>
     </a>

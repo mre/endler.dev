@@ -20,10 +20,9 @@ Computer Science from [Universit&auml;t Bayreuth].
 You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], or [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
-## Contact
-
-<a href="https://cal.com/matthias-endler" class="btn">&#9990; Schedule a call</a>
-<a href="mailto:matthias@endler.dev" class="btn">&#9993; Send Mail</a>
+If you wish to get in touch, feel free to <a
+href="https://cal.com/matthias-endler"> schedule a meeting</a> or <a
+href="mailto:matthias@endler.dev">send an e-mail</a>.
 
 
 ## Projects
@@ -42,7 +41,7 @@ Here is a list of my [public speaking][talks] engagements.
 
 ## Open Source
 
-As of today, I started more than 100 open source projects. Here's a list of the more popular ones:
+Here's a list of my more popular open-source projects: 
 
 {{ load_stars() }}
 
