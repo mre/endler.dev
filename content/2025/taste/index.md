@@ -6,137 +6,123 @@ draft=false
 tags=["culture"]
 +++
 
-The year is 2015 and I realize that something is very wrong with me.
-Maybe I stared at a poster or perhaps I saw a shop sign, but for the first time in my life,
-I realize that I hate bad typography.
+I hate bad typography.
 
-Now, a lot of people subconsciously like good typography (or at least that's what they think
-until you see them reach for Comic Sans whenever they need a "cute" font for their printout).
+I spent *years* telling myself fonts don't matter. "It's just letters on paper," I'd say.
+But one day, staring at a poorly designed poster, something in me snapped.
 
-If you see a great logo or a nicely designed magazine article, you can't help but
-think "oh golly, that's neat!" without really knowing *why*. It's just... "well done."
+Most people claim to appreciate good design – right until they reach for Comic Sans to make their wedding invitations "fun." They see a beautifully designed magazine spread and say it looks "nice."
 
-On the other end of the spectrum you have people like me, who *obsess* over typography,
-even though I actively **refused** to care about it for a long time.
-I told myself that it doesn't matter which font I pick.
-It's just letters on a piece of paper.
-But also: you can't **NOT** pick a font -- and your choice *will* say something about yourself;
-about your taste.
-It's like fashion: like it or not, you're communicating through your clothing style.
-People who care will take notice.
-The question is just whether you remain oblivious to it.
-I myself couldn't bring myself to pick a random font, so I had to study fonts whether I wanted to or not. 
+Then there's people like me who can't stop caring. We *obsess*.
 
-Anyways.
+Here's the truth: you can't **NOT** pick a font.
+Your choice reveals your taste like clothing reveals your style. 
+And your choice communicates a lot about you.
+Once you start seeing nuance, you can't unsee. 
 
-What I really asked myself is... 
+## Personal Taste 
 
-## What IS Good Taste?
+*Everything* in this world is somebody's obsession. Sneakers. Mechanical keyboards. Vintage bottle caps. 
 
-Every single thing in this world is something some people obsess about. 
-Whether it be sneakers, mechanical keyboards, crown caps, or toy cars.
-*Everything* is someone's hobby.
+When you spend enough time with anything, the patterns start to emerge.
 
-When you spend enough time on anything, you start to see the patterns.
+Watch 10,000 movies and suddenly you're analyzing dutch angles and obsessing over color grading. You notice pacing issues that others don't.
 
-Take movies for example.
-Once you've seen 10,000 movies, you start to notice dutch angles, you obsess over dynamic range and color grading, pacing, lighting – it never stops. 
-Congratulations! Movies have been forever ruined for you.
+Congratulations! Movies are forever ruined for you.
 
-What happened is that you developed a very specific taste for what makes a great movie.
-To an outsider, it's extremely hard to comprehend why you spend an ungodly amount of time
-researching the camera model used in a specific movie or why you know the name of the actor
-who played [that student in the Social Network](https://www.imdb.com/name/nm1035503/).
+You've developed taste. Specific, personal taste.
 
-It all starts very innocently, subconsciously.
-But through all of that exposure, you have automatically developed a certain taste.
-Even if you tried, you couldn't avoid it.
+To outsiders, it's incomprehensible why you spend an ungodly amount of time researching camera models or why you know the name of [that random student in the 'Social Network' movie](https://www.imdb.com/name/nm1035503/).
 
-I think what differentiates an expert from a random person is that the expert can precisely articulate *why* certain things matter to them.
-What effect certain changes have on the experience.
+## Good Taste
+
+Just because you have taste doesn't mean you have good taste.
+Good taste is different. It's the ability to notice quality in something even if it does not match your personal taste. 
+It's when you notice how someone else expresses their refined, carefully groomed, personal taste through the choices they make.
+When you look at it and it "just fits."
+It's an extension of their personality.
+
+There is a correlation between having good taste and being an expert
+in something.
+Both groups of people can tell you *exactly why* something matters. They know precisely what effect each detail has on the experience. 
+
 Simply put: experts **care**.
 
-We care even more when we practice the craft ourselves.
+Take guitars for example.
 
-Show me a guitar and I can tell you if it's good or not.
-It's not a party trick; every decent musician knows their instrument. 
-The neck, the frets, the wood, the pickups, the finish.
-It all matters.
+Willie Nelson plays a 1969 Martin N-20 called "Trigger." To most, it's just a worn-down piece of wood with a hole in it. But after 10,000 performances, it's developed a sound that can't be replicated. The same repairman has been maintaining it since 1977.
 
-Willie Nelson plays a 1969 Martin N-20 that he lovingly calls "Trigger."
-Trigger is a worn-down piece of wood with a hole in it.
-And after 10,000 performances, it developed a unique sound.
-It's a great guitar played by an expert craftsman.
-Willie Nelson cares about it.
-The same guy has been doing repairs on the guitar since 1977.
-Once you reach this level of expertise, your taste is so refined that you simply can't go back.
-Willie wants full control over every aspect of the sound.
-When you care about the details you need control.
-And caring about details is a sign of good taste.
-So good taste is to have control over the details.
+At this level, you can't go back. Willie demands control over every aspect of his sound.
 
-Crucially, the brand barely matters. 
-That's another thing that distinguishes experts from the wannabes.
-Experts don't care about brands.
-In fact, they might be *averse* to brands.
-Brands kill products with time.
+And that's what good taste is – caring enough to control the details that most never notice.
 
-It goes a bit like this:
+## Good Taste Can't Be Bought 
 
-1. Someone creates a really good product. 
-2. A small group of early adopters notices and starts to buy it. 
-3. They keep telling their friends about it because they love it so much.
-4. More people start to buy the product.
-5. The company struggles to keep up with demand and starts to cut corners.
-6. The product gets worse over time.
-7. Experts move on, the product is dead.
+Just because you buy an Apple computer doesn't mean you have good taste.
+Millions of people own Apple devices.
+To most people, it's just a good product at best or a status symbol at worst.
+That purchase doesn't make you an artist or an original thinker 
+similar to how buying Air Jordan's doesn't make you Michael Jordan.
 
-It's almost inevitable.
+In fact, experts would like you to not buy Apple products.
+That's because strong brands kill great products with time.
 
-When Fender was bought by CBS, they started to cut corners.
-Laymen didn't notice, so Fender kept selling guitars; but experts did.
+The cycle goes like this: 
 
-## Tragedy of the Commons
+1. Someone creates something brilliant. 
+2. Early adopters discover it and evangelize.
+3. Popularity grows.
+4. The company cuts corners to meet demand.
+5. Quality suffers.
+6. Experts abandon ship.
+7. The product dies. 
 
-Here's the problem: almost by definition, experts will always be the minority.
-And as such, most products are targeted to non-experts.
-As a corollary, most products suck. 
+## TODO: Please add a better, simple headline here 
 
-To the people who care, this causes a lot of pain and suffering.
-Because in order to convey *why* it matters and what *is* good craftsmanship,
-you'd have to care enough to develop a good taste yourself, to become more proficient. 
-And there's just not enough time and energy to become an expert in everything.
+Here's the problem: almost by definition, experts will always be in the minority.
+<needs logical connecting sentence(s)>
 
-So we mostly get by and trust mainstream advice. 
-And then we wonder why things feel "off" sometimes: why the quality feels sub-par,
-but we struggle to put our finger on it.
-There's a kind of tragedy in the situation.
-But we are mostly oblivious to it, so we don't realize. 
+As a result, most products target non-experts. So most products suck.
 
-## Ignorance is bliss
+For those who care, this causes genuine suffering.
+To explain *why* something matters, the other person would need to develop taste themselves. And nobody has time to become an expert in everything.
 
-Note that I never answered the question: "What is good taste?"
-That's because I don't believe there is an answer. 
-It's all just one big circlejerk.
-All those so-called "experts" don't exist (or there are too many layers of expertise to unpack)
-and developing good taste is just an infinite rabbit hole.
+So we trust mainstream advice and wonder why things feel "off" sometimes.
+We sense the sub-par quality but can't articulate why.
+Like a car that works, but feels "gimmicky", "clunky", or "cheap."
+It's a silent tragedy we remain largely oblivious to.
 
-It's a fool's errand.
+## Does Good Taste Exist?
 
-Wine experts can't tell the difference between cheap and expensive wines anymore,
-art critics can't tell good from bad art, it's all just one big echo chamber.
+I don't think there's an answer.
+It might all be one big circlejerk.
+Maybe "experts" don't really exist – or there are too many layers of expertise to untangle.
+Maybe developing taste is just an infinite rabbit hole in and of itself.
 
-But I don't believe you should stop caring. NO!
-There's joy in exploring and learning to differentiate between good and bad stuff.
-It has very practical implications of buying more long-lasting tools or investing in good music equipment.
-It's also great to socialize over seemingly irrelevant details and nerd out on the minutiae of a craft.
-It's a great bonding experience to talk about motorcycle exhaust systems or the best way to brew coffee.
+Nothing makes sense anymore.
+Wine experts fail blind tastings.
+Art critics contradict each other constantly.
+We reached a point of hyper-customization where everything can be tailored to our own taste.
+Algorithms decide what we like.
+Everything got fragmented into tiny niche communities.
+It's all just one big echo chamber.
+
+And yet: don't stop caring. NO!
+
+There's profound joy in learning to distinguish the good from the bad.
+It leads to owning better tools.
+Making smarter purchases.
+You learn to discover different layers of personality.
+It creates community when you nerd out over coffee grinders.
+The irrelevant details matter.
+All of the quirkiness is what brings color and meaning to the human existence.
 
 I believe everyone should have at least one thing they obsess about.
-A thing they are an "expert" in, no matter how small.
+A thing they call themselves an "expert" in, no matter how niche.
 It makes for a richer life.
-And to truly become an expert, you have to learn from the masters and learn a craft for real.
-Only then can you start to dismiss their advice and build your own thing.
+And to truly become an expert?
+You have to learn from the masters.
+Only after you can dismiss their advice and develop your own taste. 
 Picasso learned how to draw like an old master by 14, only to reinvent art as he got older. 
 
 > "It took me four years to paint like Raphael, but a lifetime to paint like a child."
@@ -144,17 +130,19 @@ Picasso learned how to draw like an old master by 14, only to reinvent art as he
 
 It takes one to know one.
 
-## So... Which Font Should I Pick?
+## Just Tell Me Which Font To Pick
 
-You've realized by now that this was not an article about typography.
+This is not an article about typography.
 I think it doesn't matter which font you pick.
-What matters is that you realize that you're either consciously ignorant about fonts,
-or that you are willing to spend time and energy to learn more about fonts.
+What matters is that you realize that you're either consciously ignorant about typography,
+or that you need to spend time and energy to learn more about it to make better decisions. 
 At the end of the day, it's all just very subjective and contextual.
 Experiment and learn from other people.
 Develop your own taste.
+And if that takes too much time, just steal from someone else.
+[That's what Picasso did, at least.](https://creativityclasses.com/good-artists-copy-great-artists-steal/)
 
-If you stare at text for a long time every day, 
+If you stare at text for a long time each day, 
 I think learning more about fonts is a quality of life improvement. 
 
 And if you create "products" for other people to use, it becomes all the more important 
@@ -162,11 +150,12 @@ to make a tasteful, conscious decision.
 It's just as personal as your signature or your choice of words: it shows who you are
 and what is important to you.
 
-I've been honing this blog design for two decades now.
-For every version, I try to explain a little better what matters to me.
-I've developed a very specific taste for what I think is a good blog.
-Is it any good? I don't know and honestly, I doubt it.
-But at least I can explain to you *why* I made every single decision
-and I hope you can tell.
-
-Good taste brings joy to other people -- if only subconsciously.
+Try to develop good taste in the things that matter to you.
+For example, I've been honing this blog design for two decades now
+and I'm far from done.
+However, for every version, I try to express a little clearer what I want to say. 
+The messaging becomes simpler.
+I don't know if my personal taste turned into good taste,
+but at least I can explain to you *why* every single decision
+mattered to me.
+And I think that's a good start.
