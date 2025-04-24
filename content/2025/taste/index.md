@@ -150,9 +150,17 @@ Develop your own taste.
 
 If you stare at text for a long time every day, 
 I think learning more about fonts is a quality of life improvement. 
+
 And if you create "products" for other people to use, it becomes all the more important 
 to make a tasteful, conscious decision. 
 It's just as personal as your signature or your choice of words: it shows who you are
 and what is important to you.
+
+I've been honing on this blog design for two decades now.
+For every version, I try to explain a little better what matters to me.
+I developed a very specific taste for what I think is a good blog.
+Is it any good? I don't know and honestly, I doubt it.
+But at least I can explain to you *why* I mad every single decision I made
+and I hope you can tell.
 
 Good taste brings joy to other people -- if only subconciously.
