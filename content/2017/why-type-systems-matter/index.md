@@ -12,7 +12,7 @@ comments = [
 ]
 +++
 
-I've written most of my code in dynamically typed languages such as Python or PHP. But ever since dabbling with [Rust](https://www.rust-lang.org), I've developed a passion for static type systems.  
+I've written most of my code in dynamically typed languages such as Python or PHP; but ever since dabbling with [Rust](https://www.rust-lang.org), I've developed a passion for static type systems.  
 It began to feel very natural to me; like a totally new way to express myself.
 
 <!-- more -->
@@ -54,7 +54,7 @@ total = file1 + file2
 print(total) # prints '50003000'
 ```
 
-How can we fix that?
+## How can we fix that?
 
 We can safely assume that a file size is always a number.
 To be more precise, it must be a positive, natural number.
@@ -202,7 +202,7 @@ And we can understand the inputs and outputs of the function without looking els
 
 - Types force developers to do their homework and think about the guarantees and limitations of their code.
 - Don't think of types as constraints, think of them as a safety net which will protect you from your own flawed mental models.
-- Always choose the type which most precisely expresses your intentions.
+- Always choose the type which most precisely expresses your intent.
 - If there is no perfect type in the standard library, create your own from simpler types.
 
 Following these rules, I found that I was magically guided towards the most elegant representation of my ideas.

@@ -16,7 +16,7 @@ credits = [
 _tl;dr:_ I built a service that takes any article and creates a pleasant-to-read, printable version.
 It is similar to Reader View in Firefox/Safari, but also works on older
 browsers, can be shared and has a focus on beautiful typography.
-Try it [here](https://readable.shuttleapp.rs/).
+Check out the [source code](https://github.com/readable-app/readable).
 {% end %}
 
 The web used to be such a fun place.
