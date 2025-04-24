@@ -106,10 +106,23 @@
   </div>
 
   <ul class="post-links">
+    {% if page.extra.credits %} 
+      <li>
+        Thanks to  
+        {% for credit in page.extra.credits | sort(attribute="name") %}
+          <a href="{{ credit.url }}">{{ credit.name }}</a>
+          {%- if not loop.last %},{% endif %}
+        {% endfor %}
+        for reviewing drafts of this article.
+      </li>
+    {% endif %}
+
     {% if page.extra.comments %}
-    <li>{{ macros::comments(comments=page.extra.comments) }}</li>
-    {% endif %} {% if page.extra.translations %}
-    <li>{{ macros::translations(translations=page.extra.translations) }}</li>
+      <li>{{ macros::comments(comments=page.extra.comments) }}</li>
+    {% endif %}
+
+    {% if page.extra.translations %}
+      <li>{{ macros::translations(translations=page.extra.translations) }}</li>
     {% endif %}
   </ul>
 
@@ -125,6 +138,7 @@
     {% endfor %}
     for reviewing drafts of this article.
   {% endif %}
+  
 </article>
 
 {% endblock content %}
