@@ -16,6 +16,8 @@ comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/golang/comments/70iwcd/go_vs_rust_choose_go/"}]
 +++
 
+{{ figure(src="hero.svg", credits="Gopher designed with <a href='https://gopherize.me'>Gopherize.me</a>. Gears designed by <a href='https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm'>Freepik</a>.") }}
+
 {% info() %}
 
 I wrote this article a long time ago. In the meantime, 
@@ -30,9 +32,6 @@ Shuttle 🚀
 {% end %}
 
 
-
-{{ figure(src="hero.svg", credits="Gopher designed with <a href='https://gopherize.me'>Gopherize.me</a>. Gears designed by <a href='https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm'>Freepik</a>") }}
-
 "Rust or Go, which one should I choose?" is a question I get quite often.
 Both languages seem to be competing for the same user base and they both seem to be
 _systems programming_ languages, so there must be a clear winner, right?
@@ -41,7 +40,7 @@ _systems programming_ languages, so there must be a clear winner, right?
 
 {{ figure( src="go.jpg" caption="The Golang learning curve over time, a straight line.") }}
 
-I don't think Go is an elegant language. Its biggest feature is simplicity.
+I don't think Go is an elegant language. Its biggest feature is ~simplicity~ [easiness](https://www.youtube.com/watch?v=SxdOUGdseq4).
 Go is not even a systems programming language. While it's great for writing microservices and tooling around backend infrastructure, I would not want to write a kernel or a memory allocator with it.
 
 But with Go, you _get things done_ &mdash; fast.  

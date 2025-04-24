@@ -127,8 +127,8 @@
   </ul>
 
 
-  {% if page.taxonomies.tags and "dev" in page.taxonomies.tags %}
-    {% include "snippets/codecrafters.html" %}
+  {% if page.taxonomies.tags and ("dev" in page.taxonomies.tags or "oss" in page.taxonomies.tags or "rust" in page.taxonomies.tags) %}
+      {% include "snippets/codecrafters.html" %}
   {% endif %}
   
 </article>
