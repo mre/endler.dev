@@ -1,5 +1,5 @@
 :root {
-  /* Core colors (semantic) - light theme defaults */
+  /* Core colors (semantic) */
   --text-color: #2d2d2d;
   --background: #fff;
   --footer-background: #f5f5f5;
@@ -98,7 +98,6 @@ body {
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "kern", "liga", "clig", "calt";
   letter-spacing: 0.01em;
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .container {
@@ -159,35 +158,57 @@ a:hover {
   color: white;
 }
 
-/* Header and logo */
-.logo-header {
-  display: none;
-  margin-top: 50px;
+/* Header styling */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.site-header {
+  background-color: var(--background);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(160px); /* Initial position, offscreen */
+  padding-top: 25px;
+  padding-bottom: 55px;
+  display: flex;
   gap: 20px;
 }
 
-.logo-header h1 {
+/* Logo in header */
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+/* Headings in header */
+header h1 {
   font-family: 'Happy-Headline';
-  font-size: 1.4em;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
   color: var(--accent-color);
 }
 
-.logo {
-  width: 80px;
-  margin: auto;
+header h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: var(--heading-color);
 }
 
-.logo_font {
+/* Create space at top of content for header */
+main {
+  padding-top: 100px;
+  margin: 0 auto 4rem auto;
+  max-width: var(--max-width);
   position: relative;
-  width: 165px;
-  height: 34px;
-  margin: 0 auto;
-}
-
-.logo_font svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 1;
 }
 
 /* Article styles */
@@ -196,13 +217,13 @@ a:hover {
   padding-bottom: 1.5rem;
   margin: 0 auto;
   position: relative;
+  margin-top: 5.3em;
 }
 
 .article-header h1 {
   font-size: 2.6rem;
-  margin-top: 10rem; 
-  margin-bottom: 1.0rem;
   line-height: 1.2;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -350,6 +371,13 @@ pre > code {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
+/* Disable font ligatures for monospace text */
+pre, code, kbd, samp {
+  font-variant-ligatures: none;
+  font-feature-settings: normal;
+  font-family: monospace, monospace;
+}
+
 /* Blockquotes */
 blockquote {
   border-left: 4px solid var(--accent-color);
@@ -382,20 +410,7 @@ blockquote {
   border-color: var(--accent-color);
 }
 
-.pagination a:active {
-  transform: translateY(0);
-}
-
-[data-theme="dark"] .pagination a {
-  background: var(--surface-color);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .pagination a:hover {
-  background: var(--accent-color);
-  color: white;
-}
-
+/* Info blocks */
 .info {
   padding: 20px;
   margin: 40px 0 20px 0;
@@ -415,6 +430,7 @@ blockquote {
   margin-top: 0;
 }
 
+/* Details and summary */
 details {
   padding: 20px;
   margin: 30px 0;
@@ -494,19 +510,6 @@ footer .body {
   max-width: 550px;
   margin: 40px auto;
   padding: 20px;
-}
-
-/* Dark mode footer - slightly darker than the page background */
-[data-theme="dark"] footer {
-  background: var(--footer-dark-bg);
-  color: #e1e1e1;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) footer {
-    background: #141414;  /* Darker than --dark-bg (#1a1a1a) */
-    color: #e1e1e1;
-  }
 }
 
 /* Icons and anchors */
@@ -644,84 +647,80 @@ input:focus::placeholder {
 }
 
 /* Dark mode styles */
-[data-theme="dark"], 
-.dark-mode-auto {
-  .invert {
-    filter: invert(1);
-  }
-  
-  a {
-    color: white;
-    text-decoration-color: var(--accent-color);
-  }
+[data-theme="dark"] .invert {
+  filter: invert(1);
+}
 
-  .icon {
-    filter: invert(1);
-  }
+[data-theme="dark"] a {
+  color: white;
+  text-decoration-color: var(--accent-color);
+}
 
-  code:not(pre code) {
-    filter: invert(1);
-  }
+[data-theme="dark"] .icon {
+  filter: invert(1);
+}
 
-  .info,
-  details {
-    background: var(--dark-bg);
-    border-color: var(--border-color);
-  }
+[data-theme="dark"] code:not(pre code) {
+  filter: invert(1);
+}
 
-  blockquote {
-    background: rgba(255, 255, 255, 0.05);
-  }
-  
-  .logo_font_light {
-    display: none;
-  }
-  
-  .logo_font_dark {
-    display: block;
-  }
+[data-theme="dark"] .info,
+[data-theme="dark"] details {
+  background: var(--dark-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] blockquote {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .logo_font_light {
+  display: none;
+}
+
+[data-theme="dark"] .logo_font_dark {
+  display: block;
 }
 
 /* Auto dark mode via system preference */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    .invert {
-      filter: invert(1);
-    }
-    
-    a {
-      color: white;
-      text-decoration-color: var(--accent-color);
-    }
+  :root:not([data-theme="light"]) .invert {
+    filter: invert(1);
+  }
   
-    .icon {
-      filter: invert(1);
-    }
+  :root:not([data-theme="light"]) a {
+    color: white;
+    text-decoration-color: var(--accent-color);
+  }
+
+  :root:not([data-theme="light"]) .icon {
+    filter: invert(1);
+  }
+
+  :root:not([data-theme="light"]) code:not(pre code) {
+    filter: invert(1);
+  }
+
+  :root:not([data-theme="light"]) .info,
+  :root:not([data-theme="light"]) details {
+    background: var(--dark-bg);
+    border-color: var(--border-color);
+  }
+
+  :root:not([data-theme="light"]) blockquote {
+    background: rgba(255, 255, 255, 0.05);
+  }
   
-    code:not(pre code) {
-      filter: invert(1);
-    }
+  :root:not([data-theme="light"]) .logo_font_light {
+    display: none;
+  }
   
-    .info,
-    details {
-      background: var(--dark-bg);
-      border-color: var(--border-color);
-    }
-  
-    blockquote {
-      background: rgba(255, 255, 255, 0.05);
-    }
-    
-    .logo_font_light {
-      display: none;
-    }
-    
-    .logo_font_dark {
-      display: block;
-    }
+  :root:not([data-theme="light"]) .logo_font_dark {
+    display: block;
   }
 }
 
+/* Light mode logo display */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) .logo_font_dark {
     display: none;
@@ -730,10 +729,4 @@ input:focus::placeholder {
   :root:not([data-theme="dark"]) .logo_font_light {
     display: block;
   }
-}
-
-pre, code, kbd, samp {
-  font-variant-ligatures: none;
-  font-feature-settings: normal;
-  font-family: monospace, monospace; /* Use a proper monospace font */
 }
