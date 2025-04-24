@@ -2,7 +2,8 @@
   /* Core colors (semantic) - light theme defaults */
   --text-color: #2d2d2d;
   --background: #fff;
-  --heading-color: #000;
+  --footer-background: #f5f5f5;
+  --heading-color: #242424;
   --link-color: hotpink;
   --meta-color: #666;
   
@@ -12,6 +13,7 @@
   --accent-color: hotpink;
   --accent-muted: #e83e8c;
   --dark-bg: #1a1a1a;
+  --footer-dark-bg: #141414;
   
   /* Typography */
   --body-font: "Bitter", serif;
@@ -33,6 +35,7 @@
 [data-theme="dark"] {
   --text-color: #e1e1e1;
   --background: var(--dark-bg);
+  --footer-background: var(--footer-dark-bg); 
   --heading-color: #fff;
   --meta-color: #999;
   --surface-color: #2a2a2a;
@@ -44,6 +47,7 @@
   :root:not([data-theme="light"]) {
     --text-color: #e1e1e1;
     --background: var(--dark-bg);
+    --footer-background: var(--footer-dark-bg);
     --heading-color: #fff;
     --meta-color: #999;
     --surface-color: #2a2a2a;
@@ -357,26 +361,41 @@ blockquote {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-/* UI elements */
-.btn {
-  color: var(--text-color);
-  background: var(--surface-color);
-  display: inline-block;
-  font-weight: 500;
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--border-color);
-  text-decoration: none;
-  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
-    inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  padding: 7px 16px;
-  white-space: nowrap;
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  font-size: 0.9em;
 }
 
-.btn-sm {
-  padding: 7px 12px;
-  font-size: 15px;
-  line-height: 20px;
+.pagination a {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background: var(--surface-color);
+}
+
+.pagination a:hover {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.pagination a:active {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .pagination a {
+  background: var(--surface-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .pagination a:hover {
+  background: var(--accent-color);
+  color: white;
 }
 
 .info {
@@ -386,6 +405,16 @@ blockquote {
   opacity: 0.9;
   border: dashed peachpuff;
   border-radius: var(--border-radius);
+}
+
+/* Remove bottom margin from last element inside info */
+.info > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Adjust top margin of first element */
+.info > *:first-child {
+  margin-top: 0;
 }
 
 details {
@@ -457,7 +486,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 60px;
-  background: #f5f5f5;  /* Light grey for light mode */
+  background: var(--footer-background);
   color: var(--text-color);
   transition: background-color 0.3s ease;
   font-size: 0.9em;
@@ -471,7 +500,7 @@ footer .body {
 
 /* Dark mode footer - slightly darker than the page background */
 [data-theme="dark"] footer {
-  background: #141414;  /* Darker than --dark-bg (#1a1a1a) */
+  background: var(--footer-dark-bg);
   color: #e1e1e1;
 }
 

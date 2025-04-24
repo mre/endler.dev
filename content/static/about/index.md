@@ -51,10 +51,9 @@ I usually go by my handle `mre` on the internet, which is short for "Matthias Ri
 You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], and [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
-## Contact
-
-<a href="https://cal.com/matthias-endler" class="btn">&#9990; Schedule a call</a>
-<a href="mailto:matthias@endler.dev" class="btn">&#9993; Send Mail</a>
+If you wish to get in touch, feel free to <a
+href="https://cal.com/matthias-endler"> schedule a meeting</a> or <a
+href="mailto:matthias@endler.dev">send an e-mail</a>.
 
 
 ## Active Projects / Companies

@@ -7,6 +7,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      // Prevent flash of wrong theme
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="canonical" href="{{ current_url | safe }}" />
     <link rel="me" href="https://mastodon.social/@mre" />
@@ -64,14 +73,19 @@
             {% include "snippets/article_preview.html" %}
           {% endfor %}
 
-        <div style="display: flex; justify-content: space-between">
-          {% if paginator.previous %}
-            <a class="btn" href="{{  paginator.previous}}">« Next</a>
-          {% endif %}
-          {% if paginator.next %}
-            <a class="btn" href="{{  paginator.next }}">Previous »</a>
-          {% endif %}
-        </div>
+        <nav class="pagination" aria-label="Blog pagination">
+            {% if paginator.previous %}
+                <a href="{{ paginator.previous}}" rel="prev">« Newer posts</a>
+            {% else %}
+                <span></span> <!-- Empty span to maintain layout -->
+            {% endif %}
+            
+            {% if paginator.next %}
+                <a href="{{ paginator.next }}" rel="next">Older posts »</a>
+            {% else %}
+                <span></span> <!-- Empty span to maintain layout -->
+            {% endif %}
+        </nav>
         {% endblock content %}
       </main>
     </div>
