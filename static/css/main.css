@@ -403,7 +403,7 @@ blockquote {
   margin: 40px 0 20px 0;
   background: lightyellow;
   opacity: 0.9;
-  border: dashed peachpuff;
+  border: 2px dotted peachpuff;
   border-radius: var(--border-radius);
 }
 
@@ -732,4 +732,10 @@ input:focus::placeholder {
   :root:not([data-theme="dark"]) .logo_font_light {
     display: block;
   }
+}
+
+pre, code, kbd, samp {
+  font-variant-ligatures: none;
+  font-feature-settings: normal;
+  font-family: monospace, monospace; /* Use a proper monospace font */
 }
