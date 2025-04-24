@@ -7,6 +7,6 @@ tags=["rust"]
 +++
 
 {% info() %}
-This post has moved to [my other blog](https://corrode.dev/blog/tips-for-faster-rust-compile-times/).
+This post has [moved to my other blog](https://corrode.dev/blog/tips-for-faster-rust-compile-times/).
 It will be updated there in the future.
 {% end %}
