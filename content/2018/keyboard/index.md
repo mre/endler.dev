@@ -1,7 +1,7 @@
 +++
 title="Switching from a German to a US Keyboard Layout - Is It Worth It?"
 date=2018-09-02
-updated=2021-04-24
+updated=2025-04-24
 [taxonomies]
 tags=["dev"]
 
@@ -67,18 +67,18 @@ Within two weeks, I was back to 100% typing speed.
 
 ## Did My Programming Speed Improve Noticeably?
 
-Yup. I'd say I can type programs about 30% faster now.
+Yup. I'd say I can type programs about 30% faster.
 
 Especially when using special characters (`/`, `;`, `{`, and so on) I'm much
 faster now; partly because the key locations feel more intuitive, but mainly
-because my fingers stay at their dedicated positions now.
+because my fingers stay at their dedicated positions.
 
-Somehow the position of special characters feels _just right_. I can now understand the
+Somehow the position of special characters feels _just right_. I can finally understand the
 reason why Vim is using `/` for search or why the pipe symbol is `|`: both are
-easy to reach! [It all makes sense now!](/2018/ten-years-of-vim)
+easy to reach! [It all makes sense!](/2018/ten-years-of-vim)
 (For a fun time, try that on a German keyboard!)
 
-I now understand why Mircosoft chose `\` as a directory separator: it's easily
+I understand why Mircosoft chose `\` as a directory separator: it's easily
 accessible from a US keyboard. On the German layout, it's&hellip; just&hellip; awful
 (`Alt Gr`+`ß` on Windows, `Shift` + `Option` + `7` on Mac).
 
@@ -90,7 +90,7 @@ flow. Now there are dedicated keys for parentheses. Such a relief!
 _Update:_ It also helps greatly when looking up hotkeys for IDEs, text editors,
 photo editors, etc. because some programs remap shortcuts for the German market,
 which means that all the English documentation is totally worthless.
-Now I can just use the shortcuts mentioned and move on with my life.
+Thanks to the English layout, I can just use the shortcuts mentioned and move on with my life.
 
 ## Am I Slower When Writing German Texts Now?
 
@@ -120,7 +120,7 @@ turned out not to be a problem. I rarely look at the print anyway.
 
 ## How Often Do You Switch Back To A German Layout Now?
 
-Never. My Girlfriend has a German keyboard and ever time I have to use it, I switch to the US layout. It makes her very happy when I do this and forget to switch back to German when I'm done.
+Never. My Girlfriend has a German keyboard and every time I have to use it, I switch to the US layout. It makes her very happy when I do this and forget to switch back to German when I'm done.
 
 ## Summary
 
