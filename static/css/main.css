@@ -174,7 +174,7 @@ header {
   margin: 0 auto;
   position: relative;
   transform: translateY(160px); /* Initial position, offscreen */
-  padding-top: 25px;
+  padding-top: 70px;
   padding-bottom: 55px;
   display: flex;
   gap: 20px;
@@ -246,6 +246,7 @@ main {
   background: var(--accent-color);
   margin: 2rem auto 0;
   opacity: 0.6;
+  margin-bottom: 7rem;
 }
 
 .article-content {
