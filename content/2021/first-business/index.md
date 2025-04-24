@@ -1,7 +1,7 @@
 +++
-title = "Your First Business Should Be A Spreadsheet"
+title = "Spreadsheets Make For Great Business Ideas"
 date = 2021-03-10
-updated = 2024-02-05
+updated = 2025-04-24
 [taxonomies]
 tags = ["business"]
 [extra]
