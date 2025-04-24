@@ -10,22 +10,21 @@ The year is 2015 and I realize that something is very wrong with me.
 Maybe I stared at a poster or perhaps I saw a shop sign, but for the first time in my life,
 I realize that I hate bad typography.
 
-Now, a lot of people subconciously like good typography; or at least that's what they think
-until you see them reach for Comic Sans whenever they need a "cute" font for their printout,
-but that's not what I want to convey; it's become a trope by now.
+Now, a lot of people subconciously like good typography (or at least that's what they think
+until you see them reach for Comic Sans whenever they need a "cute" font for their printout).
 
-No, I mean that if you see a great logo or a nicely designed magazine article, you can't help but
-think "oh gosh, that's neat!" without really knowing *why* it works. It's just... "well done."
+If you see a great logo or a nicely designed magazine article, you can't help but
+think "oh golly, that's neat!" without really knowing *why*. It's just... "well done."
 
-Then on the other end of the spectrum you have people like me, who *obsesses* over typography,
-even though I actively **refused** to care about it.
-I told myself that it doesn't matter which font to pick as it's just letters on a piece of paper.
+On the other end of the spectrum you have people like me, who *obsesses* over typography,
+even though I actively **refused** to care about it for a long time.
+I told myself that it doesn't matter which font I pick.
+It's just letters on a piece of paper.
 But also: you can't not **NOT** pick a font -- and your choice *will* say something about yourself;
-about taste.
+about your taste.
 It's like fashion: like it or not, but you're communicating through your clothing style.
-Good taste shows.
 People who care will take notice.
-The question is just whether you remain oblivious to it.
+The question is just whether you remain <oblivious> to it.
 I myself couldn't bring myself to pick a random font, so I had to study fonts whether I wanted to or not. 
 
 Anyways.
@@ -34,42 +33,48 @@ What I really asked myself is...
 
 ## What IS Good Taste?
 
-*Everything* is someone's hobby.
-
 Every single thing on this world is a thing some people obsess about. 
 Whether it be sneakers, mechanical keyboards, crown caps, or toy cars.
+*Everything* is someone's hobby.
 
-It all starts very innocently, subconsciously.
-But over time you start to notice patterns.
+When you spend enough time on anything, you start to see the patterns.
 
 Take movies for example.
-Once you saw 10.000 movies, you start to recognize dutch angles, the color grading, the pacing, the lighting, everything. 
-Congratulations, movies have been forever ruined for you.
+Once you saw 10.000 movies, you start to see dutch angles, you obsess over dynamic range and color grading, pacing, lighting, it never stops. 
+Congratulations! Movies have been forever ruined for you.
 
 What happened is that you started to develop a very specific taste for what makes a great movie.
-It's like a nod from the director to you, the viewer.
 To an outsider, it's extremely hard to comprehend why you spend an ongodly amount of time
 researching the camera model used in a specific movie or why you know the name of the actor
 who played [that student in the Social Network](https://www.imdb.com/name/nm1035503/).
 
-But! Through all of that research and experience, you have developed a certain taste.
+It all starts very innocently, subconsciously.
+But! Through all of the exposure, you have automatically <develop> a certain taste.
 
-I think what differentiates an expert from a random guy is that the expert 
-can precisely articulate *why* certain things matter.
-What effect things have on the consumer.
-Experts care.
-They care if the creators care.
+I think what differentiates an expert from a random person is that the expert can precisely articulate *why* certain things matter to them.
+What effect certain changes have on the experience.
+Simply put: experts **care**.
 
-All those minor details are signs of great craftsmanship
-and we develop a sense for craftsmanship when we spend time with something.
-It gets worse when we practice a craft ourselves.
+We care even more when we practice the craft ourselves.
 
-Show me a guitar and I can tell you if it's a good one or not.
-It's not magic, every decent guitarist can do that. 
-The neck, the frets, the wood, the pickups, the electronics, the finish.
+Show me a guitar and I can tell you if it's good or not.
+It's not a party trick; every decent musician knows their instrument. 
+The neck, the frets, the wood, the pickups, the finish.
 It all matters.
 
-Crucially, the brand matters the least.
+Willie Nelson plays a 1969 Martin N-20 that he lovingly calls "Trigger."
+Trigger is a worn-down piece of wood with a hole in it.
+And after 10,000 performances, it developed a unique sound.
+It's a great guitar played by an expert craftsman.
+Willie Nelson cares about it.
+The same guy has been doing repairs on the guitar since 1977.
+Once you reach this level of expertise, your taste is so refined that you simply can't go back.
+Willie wants full control over every aspect of the sound.
+When you care about the details you need control.
+And caring about details is a sign of good taste.
+So good taste is to have control over the details.
+
+Crucially, the brand barely matters. 
 That's another thing that distinguishes experts from the wannabes.
 Experts don't care about brands.
 In fact, they might be *averse* to brands.
@@ -85,7 +90,7 @@ It goes a bit like this:
 6. The product gets worse over time.
 7. Experts move on, the product is dead.
 
-It's almost invetiable.
+It's almost inevitable.
 
 When Fender was bought by CBS, they started to cut corners.
 Laymen didn't notice, so Fender kept selling guitars; but experts did.
@@ -109,8 +114,8 @@ But we are mostly <obliviant> to the situation, so we don't realize.
 
 ## Ignorance is bliss
 
-Note that I never answerd the question: "What is good taste?"
-That's because I don't believe there is an anwer. 
+Note that I never answered the question: "What is good taste?"
+That's because I don't believe there is an answer. 
 It's all just one big circlejerk.
 All those so-called "experts" don't exist (or there are too many layers of expertism to unpack)
 and developing good taste is just an infinite rabbit hole.
@@ -138,7 +143,7 @@ Picasso learned how to draw like an old master by 14, only to reinvent art as he
 
 It takes one to know one.
 
-## So... which font should I pick?
+## So... Which Font Should I Pick?
 
 You realized by now that this was not an article about typography.
 I think it doesn't matter which font you pick.
