@@ -406,17 +406,6 @@ If you get something working for your static site generator, [please let me know
   website, check out [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
   Also check out [stork](https://github.com/jameslittle230/stork) as an alternative.
 
-{% info() %}
-✨**WOW!** This tool getting quite a bit of traction lately.✨‍
-
-I don't run ads on this website, but if you like these kind of experiments, please
-consider [sponsoring me on Github](https://github.com/sponsors/mre/).
-This allows me to write more tools like this in the future.
-
-Also, if you're interested in **hands-on Rust consulting**, [pick a date from my
-calendar](https://github.com/sponsors/mre/sponsorships?sponsor=mre&tier_id=78832) and we can talk about how I can help .
-{% end %}
-
 ## Try it!
 
 The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
