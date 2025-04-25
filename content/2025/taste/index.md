@@ -10,13 +10,13 @@ I spent *years* telling myself typography doesn't matter.
 "It's just letters on paper," I'd say.
 But the truth is, I hate bad typography.
 
-Most people claim to appreciate good design – right until they reach for Comic Sans to make their wedding invitations "fun."
+Most people claim to appreciate good design — right until they reach for Comic Sans to make their wedding invitations "fun."
 They see a beautifully designed magazine spread and say it looks "nice."
 
 Then there's people like me who can't stop caring.
 
 Here's the truth: you can't **NOT** care about typography. 
-Eventually you got to pick a font (or choose the default).
+Eventually you've got to pick a font (or choose the default).
 Your choice, just like clothing, reveals a lot about you. 
 Whether you intend to or not, you're making a statement.
 
@@ -29,7 +29,7 @@ Vintage bottle caps.
 
 When you spend enough time with anything, patterns emerge.
 
-Watch 10,000 movies and suddenly you're analyzing dutch angles and obsessing over color grading.
+Watch 10,000 movies and suddenly you're analyzing Dutch angles and obsessing over color grading.
 You notice pacing issues that others don't.
 Congratulations!
 Movies are forever ruined for you.
@@ -40,40 +40,47 @@ Very specific, personal taste.
 
 To outsiders, it's incomprehensible why you'd spend an ungodly amount of time researching camera models or why you know the name of [that random student in the 'Social Network'](https://www.imdb.com/name/nm1035503/).
 
-Picking up on the finer details is the first step towards developing something more substantive than mere preference; it's the foundation of good taste.
+Picking up on the finer details is the first step towards developing something more substantive than mere preference—it's the foundation of good taste.
 
 ## Good Taste
 
 Just because you have personal preferences doesn't mean you have good taste.
-Good taste is recognizing quality in things even when it doesn't match your personal preferences.
-It's appreciating how *someone else* expresses their personal taste through deliberate choices
-and recognizing how it matches the subculture they feel part of.
-You look at something and it just... fits.
-It feels natural; effortless.
+Personal preferences are just an opinion.
+
+I believe good taste is recognizing quality in things which goes beyond personal preference. 
+It's understanding how *someone else* expresses their personal taste through deliberate choices
+and recognizing the context and how it relates to the subculture they feel part of.
+Good taste often feels natural; effortless.
 
 What connects good taste and expertise is attention to detail.
-Both come from deeply caring about something.
+Both come from deep care about something.
 Both require understanding why each element matters.
-Both demand knowing precisely what effect every decision has.
+Both demand knowing precisely what effect a decision has.
 
 Simply put: people with good taste **care**.
-And they care enough to become experts in their field.
+
+And they care enough to invest the time to become experts in their field.
 Or perhaps it's the experts who care enough to develop good taste?
 
 Take Willie Nelson's guitar, "Trigger," a 1969 Martin N-20.
 To most, it's just a worn-down chunk of wood with a hole in it.
 But after 10,000 performances, it's developed a sound that can't be replicated.
 The same repairman has been maintaining it since 1977.
-At this stage, there's no way back. 
+That's some dedication to craftsmanship if there ever was one.
+
+And the central piece is control.
+
 Willie **demands** control over every aspect of his sound.
 Because the details are what makes the whole.
+Willie **obsesses** over details.
 
-Is it Willie Nelson who shaped "Trigger" into a unique guitar?
-Or is it the guitar that informed Willie's sound? 
+Is it Willie Nelson who beat "Trigger" into a unique guitar?
+Or is it the guitar that soothened Willie's sound? 
 Would both be equally great without the other?
+Doesn't matter. They aged together and they'll die together.
 
 Good taste is caring enough to demand control over the details that **don't** matter
-&ndash; because that's all that matters.
+—because that's all that matters.
 
 To truly develop good taste, you must first learn from masters.
 Only then can you dismiss their advice and find your own voice.
@@ -86,6 +93,9 @@ It takes one to know one.
 And there is no shortcut...
 
 ## You Can't Buy Good Taste
+
+There's a common misconception that good taste can simply be purchased.
+At least that's what marketing wants you to believe.
 
 Buying an Apple device doesn't prove you have good taste. 
 Millions own Apple devices.
@@ -115,24 +125,18 @@ What if there is no such thing as good taste?
 ## Does Good Taste Exist?
 
 I don't think there's a definitive answer!
-It might all be one big circlejerk.
+It might all just be very subjective in the end.
 
-Nothing makes sense anymore.
-Wine experts fail blind tastings.
-Art critics contradict each other constantly.
-We've reached a point of hyper-customization where everything can be tailored to our highly specific preferences.
-We don't get in touch with the rough and the uncomfortable.
-But without exposure to things we don't like we can't develop our own taste.
-Most people didn't like their first beer or coffee; it's an acquired taste.
+At least it gets harder to develop a truly *unique* taste nowadays. 
+We don't get in touch with the rough and the uncomfortable anymore.
+But without exposure to things we *don't* like we can't turn them into things we *do*. 
+Most people didn't like their first coffee; it's an acquired taste.
+But if we don't push past our comfort zone, taste can't evolve. 
 
-Maybe good taste is just an illusion.
+Maybe good taste is just an illusion after all.
 Maybe we just stroke our egos by pretending to have good taste.
-Maybe striving to develop good taste is itself a fool's errand. 
-
-Nowadays, algorithms decide what we like.
-We're so deeply entrenched in our own bubbles that we can't develop our own distinct taste for what we like.
-Instead, we're getting the average of what other people similar to us like and this lack of novelty feels bland and boring.
 It's all just one giant echo chamber.
+Then again, hasn't always been this way?
 
 ## What Now? 
 
@@ -141,6 +145,7 @@ How does that fit together?
 
 Both can be true at the same time.
 I think good taste is a personal journey and you should not stop caring.
+In fact, if you do stop caring, that's how you end up with low-quality products and mediocre work.
 
 There's profound joy in learning to distinguish the good from the bad.
 It leads to owning better tools, making smarter purchases.
@@ -152,7 +157,7 @@ It's part of the human experience.
 
 So get yourself out there and try something different for a change.
 
-At the end of the day, it's all subjective and contextual anyway, but I believe everyone should have at least one thing they obsess about for no rational reason.
+I believe everyone should have at least one thing they irrationally obsess about.
 A domain they truly call themselves an expert in, no matter how small.
 It makes for a richer life.
 
@@ -170,7 +175,10 @@ I've been honing this blog design for two decades and I'm far from done.
 With each version, though, I try to express my ideas more clearly.
 And it turns out my design language becomes *simpler*.
 
-Part of it is great typography and spacing. Add some color to it and you've come a long way.
+Part of it is just great typography and negative space. 
+Perhaps a little color and the whole thing comes alive.
 
 I don't know if my personal taste has evolved into good taste, but I can explain *why* I made every decision the way I did. 
 And I think that's a damn good start.
+
+Good taste begins with noticing the finer details others miss.
