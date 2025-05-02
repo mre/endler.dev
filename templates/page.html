@@ -60,12 +60,16 @@
     {% endif %}
     
     <div class="post-meta">
-    <a href="/about">Matthias Endler</a> on
-      {%- if page.updated %}
-        {{ macros::nicedate(date=page.updated) }}
-      {% else %}
-        {{ macros::nicedate(date=page.date) }} 
-      {% endif %}
+      <span class="post-author">
+        <a href="/about">Matthias Endler</a> on
+      </span>
+      <span class="post-date">
+        {%- if page.updated %}
+          {{ macros::nicedate(date=page.updated) }}
+        {% else %}
+          {{ macros::nicedate(date=page.date) }} 
+        {% endif %}
+      </span>
       
       <button
         onclick="toggleTheme()"
