@@ -18,7 +18,7 @@
   --heading-font: "Happy", sans-serif;
   --mono-font: "JetBrainsMono", sans-serif;
   
-  --base-font-size: calc(0.9em + 0.32vw);
+  --base-font-size: calc(0.94em + 0.32vw);
   --line-height: 1.75;
   
   /* Layout */
