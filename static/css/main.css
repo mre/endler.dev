@@ -3,22 +3,22 @@
   --text-color: #2d2d2d;
   --background: #fff;
   --heading-color: #242424;
-  --link-color: hotpink;
-  --meta-color: #666;
-  
-  /* UI element colors */
+  --accent-color: hotpink;
   --surface-color: #fafafa;
   --border-color: #ddd;
-  --accent-color: hotpink;
+  --meta-color: rgba(45, 45, 45, 0.6);
+  
+  /* Dark mode */
   --dark-bg: #1a1a1a;
-  --dark-surface: #252525;
+  --dark-surface: rgba(255, 255, 255, 0.08);
+  --dark-border: rgba(255, 255, 255, 0.2);
   
   /* Typography */
   --body-font: "Merriweather", serif;
   --heading-font: "Happy", sans-serif;
   --mono-font: "JetBrainsMono", sans-serif;
   
-  --base-font-size: calc(0.94em + 0.32vw);
+  --base-font-size: calc(1em + 0.32vw);
   --line-height: 1.75;
   
   /* Layout */
@@ -35,7 +35,7 @@
   --heading-color: #fff;
   --meta-color: rgba(255, 255, 255, 0.6);
   --surface-color: var(--dark-surface);
-  --border-color: rgba(255, 255, 255, 0.2);
+  --border-color: var(--dark-border);
 }
 
 /* Support system preference as default if no theme is explicitly set */
@@ -46,7 +46,7 @@
     --heading-color: #fff;
     --meta-color: rgba(255, 255, 255, 0.6);
     --surface-color: var(--dark-surface);
-    --border-color: rgba(255, 255, 255, 0.2);
+    --border-color: var(--dark-border);
   }
 }
 
@@ -140,7 +140,7 @@ h3 {
 /* Links */
 a {
   color: var(--text-color);
-  text-decoration-color: var(--link-color);
+  text-decoration-color: var(--accent-color);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
   text-decoration-skip-ink: auto;
@@ -152,20 +152,20 @@ a:hover {
 }
 
 [data-theme="dark"] a {
-  color: white;
+  color: #fff;
   text-decoration-color: var(--accent-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) a {
-    color: white;
+    color: #fff;
     text-decoration-color: var(--accent-color);
   }
 }
 
 ::selection {
   background: var(--accent-color);
-  color: white;
+  color: #fff;
 }
 
 /* Header styling */
@@ -366,24 +366,24 @@ pre > code {
 }
 
 :not(pre) > code {
-  color: #333;
-  background: #e8e8e8;
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
 
 [data-theme="dark"] :not(pre) > code {
-  color: #e1e1e1;
+  color: var(--text-color);
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   box-shadow: none;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) :not(pre) > code {
-    color: #e1e1e1;
+    color: var(--text-color);
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-color);
     box-shadow: none;
   }
 }
@@ -431,7 +431,7 @@ blockquote > *:first-child {
 
 .pagination a:hover {
   background: var(--accent-color);
-  color: white;
+  color: #fff;
   border-color: var(--accent-color);
 }
 
@@ -439,21 +439,21 @@ blockquote > *:first-child {
 .info {
   padding: 20px;
   margin: 40px 0 20px;
-  background: #f2f2f2;
-  border: 2px dotted #ccc;
+  background: rgba(0, 0, 0, 0.04);
+  border: 2px dotted var(--border-color);
   border-radius: var(--radius);
 }
 
 [data-theme="dark"] .info,
 [data-theme="dark"] details {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--dark-surface);
   border-color: var(--border-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .info,
   :root:not([data-theme="light"]) details {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--dark-surface);
     border-color: var(--border-color);
   }
 }
@@ -470,8 +470,8 @@ blockquote > *:first-child {
 details {
   padding: 20px;
   margin: 30px 0;
-  background: #f2f2f2;
-  border: 2px solid #ccc;
+  background: rgba(0, 0, 0, 0.04);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius);
 }
 
