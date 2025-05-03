@@ -1,4 +1,9 @@
 :root {
+  /* Typography with improved fallbacks */
+  --body-font: "Merriweather", Georgia, "Times New Roman", serif;
+  --heading-font: "Happy", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono-font: "JetBrainsMono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
   /* Core colors (semantic) */
   --text-color: #2d2d2d;
   --background: #fff;
@@ -12,11 +17,6 @@
   --dark-bg: #1a1a1a;
   --dark-surface: rgba(255, 255, 255, 0.08);
   --dark-border: rgba(255, 255, 255, 0.2);
-  
-  /* Typography */
-  --body-font: "Merriweather", serif;
-  --heading-font: "Happy", sans-serif;
-  --mono-font: "JetBrainsMono", sans-serif;
   
   --base-font-size: calc(1em + 0.32vw);
   --line-height: 1.75;
