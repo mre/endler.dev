@@ -366,8 +366,8 @@ pre > code {
 }
 
 :not(pre) > code {
-  color: var(--text-color);
-  background: var(--surface-color);
+  color: #333;
+  background: #e8e8e8;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
 }
@@ -439,9 +439,8 @@ blockquote > *:first-child {
 .info {
   padding: 20px;
   margin: 40px 0 20px;
-  background: lightyellow;
-  opacity: 0.9;
-  border: 2px dotted peachpuff;
+  background: #f2f2f2;
+  border: 2px dotted #ccc;
   border-radius: var(--radius);
 }
 
@@ -471,8 +470,8 @@ blockquote > *:first-child {
 details {
   padding: 20px;
   margin: 30px 0;
-  background: lightyellow;
-  border: var(--border-width) solid peachpuff;
+  background: #f2f2f2;
+  border: 2px solid #ccc;
   border-radius: var(--radius);
 }
 
