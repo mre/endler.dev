@@ -172,31 +172,7 @@
         }
       }
       
-      // Header animation
-      const headerWrapper = document.querySelector(".site-header");
-      const startOffset = 180;
-
-      function updateHeaderPosition() {
-        const scrollPos = window.scrollY;
-        const newTransform = Math.max(0, startOffset - scrollPos);
-        headerWrapper.style.transform = `translateY(${newTransform}px)`;
-      }
-      
-      // Initialize theme and header position
       initTheme();
-      updateHeaderPosition();
-      
-      // Listen for scroll events
-      window.addEventListener("scroll", updateHeaderPosition);
-      
-      // Listen for system preference changes
-      if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-          if (!localStorage.getItem('theme')) {
-            document.documentElement.setAttribute('data-theme', event.matches ? 'dark' : 'light');
-          }
-        });
-      }
     </script>
   </body>
 </html>
