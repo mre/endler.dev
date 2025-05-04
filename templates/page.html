@@ -1,7 +1,5 @@
 {% extends "index.html" %}
 
-{% block header_title %}{{ page.title }}{% endblock %}
-
 {%- block header %}
 <title>{{ page.title }} | Matthias Endler</title>
 <link rel="canonical" href="{{ page.permalink | safe }}" />
@@ -49,6 +47,20 @@
 <meta name="twitter:image" content="{{ social_img | safe }}">
 {%- endblock header -%}
 
+{%- block site_header %}
+<header>
+  <div class="site-header">
+    <a href="/" aria-label="Go back to homepage">
+      <div class="logo">{{ logo | safe }}</div>
+    </a>
+    <div>
+      <h1 class="site-title">Matthias Endler</h1>
+      <h2 class="header-title">{{ page.title }}</h2>
+    </div>
+  </div>
+</header>
+{%- endblock site_header %}
+
 {%- block content %}
 
 <article>
@@ -61,9 +73,10 @@
     
     <div class="post-meta">
       <span class="post-author">
-        <a href="/about">Matthias Endler</a> on
+        <a href="/about">Matthias Endler</a>
       </span>
       <span class="post-date">
+        on
         {%- if page.updated %}
           {{ macros::nicedate(date=page.updated) }}
         {% else %}

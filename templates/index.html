@@ -109,6 +109,7 @@
   </head>
 
   <body>
+    {%- block site_header %}
     <header>
       <div class="site-header">
         <a href="/" aria-label="Go back to homepage">
@@ -116,10 +117,10 @@
         </a>
         <div>
           <h1 class="site-title">Matthias Endler</h1>
-          <h2 class="header-title">{% block header_title %}{% endblock %}</h2>
         </div>
       </div>
     </header>
+    {%- endblock site_header %}
 
    <div class="container">
       <main>
