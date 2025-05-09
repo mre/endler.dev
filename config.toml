@@ -27,3 +27,4 @@ highlight_themes_css = [
     { theme = "demain", filename = "syntax-theme-light-custom.css" },
     { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
 ]
+bottom_footnotes = true
