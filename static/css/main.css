@@ -212,7 +212,6 @@ header h2 {
 
 /* Create space at top of content for header */
 main {
-  padding-top: 100px;
   margin: 0 auto 4rem;
   max-width: var(--max-width);
   position: relative;
@@ -222,6 +221,7 @@ main {
 /* Article styles */
 .article-header {
   text-align: center;
+  padding-top: 100px;
   padding-bottom: 1.5rem;
   margin: 8em auto 6em;
   position: relative;
@@ -649,7 +649,6 @@ footer .body {
   .site-header {
     position: static;
     padding: 20px 0;
-    justify-content: center;
     transform: none !important;
   }
 
@@ -662,8 +661,9 @@ footer .body {
   }
 
   .article-header {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-bottom: 1.5rem;
+    margin: 1em auto 2em;
+    position: relative;
   }
 
   .post-meta {
