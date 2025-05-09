@@ -52,4 +52,4 @@ As of today, I started more than 100 open source projects. Here's a list of the 
 [github]: https://github.com/mre/
 [twitter]: https://twitter.com/matthiasendler
 [stack overflow]: https://stackoverflow.com/users/270334/mre
-[linkedin]: https://www.linkedin.com/in/endlermatthias/
+[linkedin]: https://www.linkedin.com/in/matthiasendler/
