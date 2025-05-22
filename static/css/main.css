@@ -187,6 +187,10 @@ header {
   gap: 20px;
 }
 
+.homepage-title {
+  font-size: 1.8em; 
+}
+
 /* Logo in header */
 .logo {
   width: 70px;
