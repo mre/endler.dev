@@ -1,6 +1,6 @@
 +++
 title="Reinvent the Wheel"
-date=2025-04-12
+date=2025-05-24
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
