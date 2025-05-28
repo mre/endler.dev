@@ -224,7 +224,7 @@ main {
 /* Article styles */
 .article-header {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 90px;
   padding-bottom: 1.5rem;
   margin: 8em auto 6em;
   position: relative;
@@ -263,8 +263,8 @@ main article {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 2em;
+  gap: 6px;
+  margin-top: 1.4em;
 }
 
 .homepage .post-meta {
