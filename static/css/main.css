@@ -33,7 +33,7 @@
   --text-color: #e1e1e1;
   --background: var(--dark-bg);
   --heading-color: #fff;
-  --meta-color: rgba(255, 255, 255, 0.6);
+  --meta-color: rgba(255, 255, 255, 0.4);
   --surface-color: var(--dark-surface);
   --border-color: var(--dark-border);
 }
@@ -44,7 +44,7 @@
     --text-color: #e1e1e1;
     --background: var(--dark-bg);
     --heading-color: #fff;
-    --meta-color: rgba(255, 255, 255, 0.6);
+    --meta-color: rgba(255, 255, 255, 0.4);
     --surface-color: var(--dark-surface);
     --border-color: var(--dark-border);
   }
@@ -182,10 +182,12 @@ header {
   max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
-  padding: 70px 0 80px;
+  padding: 70px 0 0px;
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
+
 
 .homepage-title {
   font-size: 1.8em; 
@@ -193,12 +195,19 @@ header {
 
 /* Logo in header */
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 
-/* Headings in header */
 header h1 {
+  font-family: 'Happy-Headline';
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+
+}
+
+article h1 {
   font-family: 'Happy-Headline';
   font-size: 1.2em;
   margin: 0;
@@ -224,14 +233,14 @@ main {
 /* Article styles */
 .article-header {
   text-align: center;
-  padding-top: 90px;
+  padding-top: 20px;
   padding-bottom: 1.5rem;
-  margin: 8em auto 6em;
+  margin: 0 auto 4em;
   position: relative;
 }
 
 .article-header h1 {
-  font-size: 2.6rem;
+  font-size: 2.4em;
   line-height: 1.2;
   max-width: 90%;
   margin-left: auto;
@@ -264,7 +273,6 @@ main article {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-top: 1.4em;
 }
 
 .homepage .post-meta {
@@ -278,8 +286,8 @@ main article {
   padding: 0.4em;
   border-radius: 2em;
   cursor: pointer;
-  min-width: 2.5em;
-  min-height: 2.5em;
+  min-width: 1em;
+  min-height: 1em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
