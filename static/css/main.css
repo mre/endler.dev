@@ -198,6 +198,10 @@ header {
   justify-content: center;
 }
 
+.site-header a {
+  text-decoration: none;
+}
+
 
 .homepage-title {
   font-size: 1.8em; 
