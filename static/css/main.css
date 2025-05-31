@@ -1,6 +1,5 @@
 :root {
-  /* Typography with improved fallbacks */
-  --body-font: "Bitter", "Merriweather", Georgia, "Times New Roman", serif;
+  --body-font: "Merriweather", Georgia, "Times New Roman", serif;
   --heading-font: "Happy", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono-font: "JetBrainsMono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   
