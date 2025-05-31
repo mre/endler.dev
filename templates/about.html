@@ -8,10 +8,21 @@
 table a {
     text-decoration: none;
 }
+
+.profile-photo-inline {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    float: left;
+    margin: 2rem 2rem 0 0;
+    margin-left: 0;
+}
 </style>
 {% endblock header %}
 
 {% block content %}
+
 <article>
     <h1>{{ page.title }}</h1>
     {{ page.content | safe }}
