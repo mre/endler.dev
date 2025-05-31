@@ -1,18 +1,31 @@
 <footer>
   <div class="body">
-    {% include "snippets/social.html" %}
+    <div class="footer-author">
+      <a href="/about">
+        <img class="footer-author-photo" src="/about/matthias-endler.jpg" alt="Matthias Endler" />
+      </a>
+      <div class="footer-author-text">
+        Hello, I'm <a href="/about">Matthias</a>.
+      </div>
+    </div>
+    
     <div>
       <p>
-        Hey, I mostly write about software development, Rust and
-        open-source. If you would like to receive future posts
+        I mostly write about software development, Rust and
+        open-source.
+        For more info, check out my
+        <a href="/about">about page</a>.
+      </p>
+      <p>
+        For other posts, you can check out my
+        <a href="/archive">blog archive</a>.
+
+        If you would like to receive future posts
         automatically, you can subscribe to my
         <a href="/rss.xml">RSS feed</a>.
       </p>
-      <p>
-        For more info, check out my
-        <a href="/about">about page</a> or the
-        <a href="/archive">blog archive</a>.
-      </p>
+
+    {% include "snippets/social.html" %}
     </div>
   </div>
 </footer>

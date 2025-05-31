@@ -187,6 +187,10 @@ header {
   font-size: 0.9em;
 }
 
+.homepage-header a {
+  text-decoration: none;
+}
+
 .site-header {
   align-items: center;
   max-width: var(--max-width);
@@ -709,5 +713,51 @@ footer .body {
 
   blockquote {
     padding: 10px 15px;
+  }
+}
+
+.footer-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.footer-author-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white; 
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.footer-author-text {
+  font-size: 1.6rem;
+}
+
+.footer-author-text a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-author-text a:hover {
+  color: var(--accent-color);
+  text-decoration: underline dotted;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent-color);
+}
+
+@media (max-width: 920px) {
+  .footer-author-photo {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+  
+  .footer-author-text {
+    font-size: 0.85rem;
   }
 }
