@@ -14,9 +14,7 @@ const MAX_IMAGE_WIDTH: u32 = 650; // pixels
 const INPUT_PATH: &str = "content/**/raw/*";
 
 fn check_deps() -> Result<()> {
-    for dep in vec!["magick", "cavif", "cwebp"] {
-        which(dep).with_context(|| format!("Missing binary required for execution: {}", dep))?;
-    }
+    which("magick").with_context(|| format!("Missing ImageMagick, required for execution"))?;
     Ok(())
 }
 
@@ -78,11 +76,6 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
             out_file.with_extension("jpg")
         )
         .run()?;
-
-        // let output = cmd!("cjpeg", "-quality", "85", "-optimize", out_file)
-        //     .stdout_capture()
-        //     .read()?;
-        // fs::write(out_file.with_extension("jpg"), output)?;
     }
     Ok(())
 }
@@ -124,11 +117,6 @@ fn handle(path: PathBuf) -> Result<()> {
     if orig_extension == "svg" || orig_extension == "gif" {
         // We're done here.
         return Ok(());
-    }
-
-    let webp_file = out_file.with_extension("webp");
-    if !webp_file.exists() {
-        cmd!("cwebp", &out_file, "-o", webp_file).run()?;
     }
 
     let avif_file = out_file.with_extension("avif");

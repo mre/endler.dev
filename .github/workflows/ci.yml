@@ -43,9 +43,6 @@ jobs:
           unzip cavif.zip -d cavif
           sudo install "$(pwd)/cavif/linux-generic/cavif" /usr/local/bin
 
-      - name: ⏬ Install cwebp
-        run: sudo apt-get update && sudo apt-get install -y webp
-
       - name: ⏬ Install binaryen
         run: |
           set -e
