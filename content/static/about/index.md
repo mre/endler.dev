@@ -1,17 +1,21 @@
 +++
+title = "This is me!"
 path = "about"
 template = "about.html"
 +++
 
 <!-- Use plain old JPEG here so Google might index it. -->
-<img width="200px" height="200px" src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
-
-This is me!
+<img class="profile-photo-inline" src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
 
 My first computer was a Vobis Highscreen Big Tower with a 16 MHz 386SX.
 I managed to get Windows 95 running on it, which took 50 out of the available 60 MB of
 disk space. Booting Win95 took around 30 minutes on that machine; it was glorious.
 Eventually I fried it when I flipped the voltage switch from 230V to 115V while it was running.
+
+I fried a few more computers, but I also helped fix some. I learned how to
+configure routers and set up networks before I had internet access, because
+we used to have print magazines with articles about how to do that,
+and people paid money to get them online.
 
 As a kid living up on a mountain with no internet, the only programming language
 I had access to was QBASIC because it came pre-installed with the OS, including the documentation.
@@ -22,11 +26,6 @@ so all asteroids had hardcoded names in the program.
 Later, I wrote a table tennis game for two players with nice graphics and double-buffering, but
 when I reinstalled the operating system, I forgot to save it to a floppy disk.
 Those were the days.
-
-I fried a few more computers, but I also helped fix some. I learned how to
-configure routers and set up networks before I had internet access, because
-we used to have print magazines with articles about how to do that,
-and people paid money to get them online.
 
 This is also around the time I started to have my own blog.
 I've been maintaining some form of personal website for more than 25 years now. Some of the [different versions](https://github.com/mre/endler.dev) are still available on GitHub and the Internet Archive.
@@ -51,10 +50,9 @@ I usually go by my handle `mre` on the internet, which is short for "Matthias Ri
 You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], and [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
-## Contact
-
-<a href="https://cal.com/matthias-endler" class="btn">&#9990; Schedule a call</a>
-<a href="mailto:matthias@endler.dev" class="btn">&#9993; Send Mail</a>
+If you wish to get in touch, feel free to <a
+href="https://cal.com/matthias-endler"> schedule a meeting</a> or <a
+href="mailto:matthias@endler.dev">send an e-mail</a>.
 
 
 ## Active Projects / Companies

@@ -4,33 +4,25 @@
 <title>About Matthias Endler</title>
 <meta name="thumbnail" content="https://endler.dev/about/matthias-endler.jpg" />
 <style>
-:root {
-    --img-shadow-color: #333;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --img-shadow-color:#111;
-    }
-}
-
-img {
-    transition: transform .2s ease-in-out;
-}
-
-img:hover {
-    transform: scale(1.1) rotate(-2deg);
-    box-shadow: 4px 4px 5px var(--img-shadow-color);
-}
-
 /* Normal links in the stars table look quite busy */
 table a {
     text-decoration: none;
+}
+
+.profile-photo-inline {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    float: left;
+    margin: 2rem 2rem 0 0;
+    margin-left: 0;
 }
 </style>
 {% endblock header %}
 
 {% block content %}
+
 <article>
     <h1>{{ page.title }}</h1>
     {{ page.content | safe }}

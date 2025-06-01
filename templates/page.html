@@ -1,4 +1,6 @@
-{% extends "index.html" %} {%- block header %}
+{% extends "index.html" %}
+
+{%- block header %}
 <title>{{ page.title }} | Matthias Endler</title>
 <link rel="canonical" href="{{ page.permalink | safe }}" />
 {%- if page.extra.css %}
@@ -16,32 +18,139 @@
   href="/syntax-theme-light-custom.css"
   media="(prefers-color-scheme: light)"
 />
-{%- include "snippets/social.html" %}{%- endblock header -%} {%- block content
-%}
+{%- if page.extra.excerpt %}
+  {%- set social_description = page.extra.excerpt | safe %}
+{%- elif page.summary %}
+  {%- set social_description = page.summary | safe %}
+{%- else %}
+  {%- set social_description = page.content | truncate(length=50) | safe %}
+{%- endif %}
+
+{%- if page.extra.social_img %}
+  {% set relpath = current_path ~ page.extra.social_img %}
+  {%- set social_img = get_url(path=relpath) %}
+{% else %}
+  {%- set social_img = "https://endler.dev/default.png" %}
+{%- endif %}
+
+<meta property="og:title" content="{{ page.title }} | Matthias Endler" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="{{ social_description | safe | striptags }}" />
+<meta property="og:url" content="https://endler.dev{{ page.path | safe }}" />
+<meta property="og:image" content="{{ social_img | safe }}" />
+
+<meta name="twitter:title" content="{{ page.title | safe }}">
+<meta name="twitter:description" content="{{ social_description | safe | striptags }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@matthiasendler">
+<meta name="twitter:creator" content="@matthiasendler">
+<meta name="twitter:image" content="{{ social_img | safe }}">
+{%- endblock header -%}
+
+{%- block site_header %}
+<header>
+  <div class="site-header">
+    <a href="/" aria-label="Go back to homepage">
+      <div class="logo">{{ logo | safe }}</div>
+    </a>
+    <div>
+      <a href="/">
+        <h1>Matthias Endler</h1>
+      </a>
+    </div>
+  </div>
+</header>
+{%- endblock site_header %}
+
+{%- block content %}
 
 <article>
-  <p class="post-meta">
-    Published on {{ macros::nicedate(date=page.date) }} {%- if page.updated %}
-    &middot; Updated on {{ macros::nicedate(date=page.updated) }} {%- endif %}
-  </p>
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
+    
+    {%if page.extra.subtitle %}
+    <h2 class="subtitle">&mdash; {{ page.extra.subtitle }}</h2>
+    {% endif %}
+    
+    <div class="post-meta">
+      <span class="post-date">
+        on
+        {%- if page.updated %}
+          {{ macros::nicedate(date=page.updated) }}
+        {% else %}
+          {{ macros::nicedate(date=page.date) }} 
+        {% endif %}
+      </span>
 
-  <h1>{{ page.title }}</h1>
-  {%if page.extra.subtitle %}
-  <h3>&mdash; {{ page.extra.subtitle }}</h3>
-  {% endif %} {% if page.taxonomies.tags %}
-  <div class="tags">
-    <i>Tagged with</i>
-    {% for tag in page.taxonomies.tags %}
-    <a class="tag" href="/tags/{{tag}}">{{tag}}</a>
-    {%endfor%}
+      <button
+        onclick="toggleTheme()"
+        class="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          class="sun-icon"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          class="moon-icon"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <script>
+      // Listen for system preference changes
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+          if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', event.matches ? 'dark' : 'light');
+          }
+        });
+      }
+    </script>
+
+  </header>
+  
+  <div class="article-content">
+    {{ page.content | safe }}
   </div>
-  {% endif %} {{ page.content | safe }}
 
   <ul class="post-links">
+    {% if page.extra.credits %} 
+      <li>
+        Thanks to  
+        {% for credit in page.extra.credits | sort(attribute="name") %}
+          <a href="{{ credit.url }}">{{ credit.name }}</a>
+          {%- if not loop.last %},{% endif %}
+        {% endfor %}
+        for reviewing drafts of this article.
+      </li>
+    {% endif %}
+
     {% if page.extra.comments %}
-    <li>{{ macros::comments(comments=page.extra.comments) }}</li>
-    {% endif %} {% if page.extra.translations %}
-    <li>{{ macros::translations(translations=page.extra.translations) }}</li>
+      <li>{{ macros::comments(comments=page.extra.comments) }}</li>
+    {% endif %}
+
+    {% if page.extra.translations %}
+      <li>{{ macros::translations(translations=page.extra.translations) }}</li>
     {% endif %}
   </ul>
 
@@ -49,14 +158,6 @@
       {% include "snippets/codecrafters.html" %}
   {% endif %}
 
-  {% if page.extra.credits %} 
-    Thanks to  
-    {% for credit in page.extra.credits | sort(attribute="name") %}
-      <a href="{{ credit.url }}">{{ credit.name }}</a>
-      {%- if not loop.last %},{% endif %}
-    {% endfor %}
-    for reviewing drafts of this article.
-  {% endif %}
 </article>
 
 {% endblock content %}

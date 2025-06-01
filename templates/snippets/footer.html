@@ -1,16 +1,37 @@
 <footer>
   <div class="body">
+    <div class="footer-author">
+      <a href="/about">
+        <picture>
+          <source srcset="/about/matthias-endler-2x.avif" type="image/avif">
+          <img 
+            src="/about/matthias-endler-2x.jpg" 
+            alt="Matthias Endler" 
+            class="footer-author-photo"
+            width="80" 
+            height="80">
+        </picture>
+      </a>
+      <div class="footer-author-text">
+        Servus, I'm <a href="/about">Matthias</a>.
+      </div>
+    </div>
+    
     <div>
       <p>
-        I mostly write about Rust and my (open-source) projects. If you would
-        like to receive future posts automatically, you can subscribe via
-        <a href="/rss.xml">RSS</a>.
+        A developer from Bavaria, Germany, mostly writing about software development, Rust, and
+        open-source.
+        There's more info on my <a href="/about">about page</a>.
       </p>
       <p>
-        For more info, check out my
-        <a href="/about">about page</a> or the
+        For more posts, you can check out my
         <a href="/archive">blog archive</a>.
+        If you would like to receive future posts
+        automatically, you can subscribe to my
+        <a href="/rss.xml">RSS feed</a>.
       </p>
+
+      {% include "snippets/social.html" %}
     </div>
   </div>
 </footer>

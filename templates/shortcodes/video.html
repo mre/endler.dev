@@ -9,7 +9,6 @@
 > 
   <picture>
     <source srcset="{{ preview | replace(from="jpg", to="avif") }}" type="image/avif" />
-    <source srcset="{{ preview | replace(from="jpg", to="webp") }}" type="image/webp" />
     <img src="{{preview}}"
     
     {# Give the browser a hand by telling it the image width upfront #}

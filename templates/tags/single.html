@@ -9,14 +9,19 @@
 
 <h1 class="tag-headline">{{ term.pages | length }} articles tagged with <span class="tag">{{ term.name }}</span></h1>
     {% for page in paginator.pages %}
-        {% include "snippets/article.html" %}
+        {% include "snippets/article_preview.html" %}
     {% endfor %}
-    <div style="display: flex; justify-content: space-between">
+    <nav class="pagination" aria-label="Blog pagination">
         {% if paginator.previous %}
-            <a class="btn" href="{{ paginator.previous}}">« Next</a>
+            <a href="{{ paginator.previous}}" rel="prev">« Newer posts</a>
+        {% else %}
+            <span></span> <!-- Empty span to maintain layout -->
         {% endif %}
+        
         {% if paginator.next %}
-            <a class="btn" href="{{ paginator.next }}">Previous »</a>
+            <a href="{{ paginator.next }}" rel="next">Older posts »</a>
+        {% else %}
+            <span></span> <!-- Empty span to maintain layout -->
         {% endif %}
-    </div>
+    </nav>
 {% endblock content %}

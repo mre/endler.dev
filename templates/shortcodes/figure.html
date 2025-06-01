@@ -10,7 +10,6 @@
     {% if src is not ending_with("svg") %}
         <picture>
             <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
-            <source srcset="{{ imgpath| replace(from="jpg", to="webp")}}" type="image/webp" />
     {% endif %}
 
     <img style="display:block" src="{{ imgpath}}" 

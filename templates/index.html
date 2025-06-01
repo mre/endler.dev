@@ -7,12 +7,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      // Prevent flash of wrong theme
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="canonical" href="{{ current_url | safe }}" />
     <link rel="me" href="https://mastodon.social/@mre" />
 
-    <link rel="icon" href="data:image/svg+xml;utf8,{{ logo }}" />
+    <style>
+      @font-face {
+        font-family: "Happy-Headline";
+        src: url("/fonts/Happy-Headline.woff2") format("woff2"); 
+        font-weight: normal;
+        font-style: normal;
+      }
 
+      @font-face {
+        font-family: "Happy";
+        src: url("/fonts/Happy.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "JetBrainsMono";
+        src: url("/fonts/JetBrainsMono-Regular.woff2") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Merriweather';
+        font-style: normal;
+        font-weight: 400;
+        src: url('/fonts/merriweather-v31-latin-regular.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Merriweather';
+        font-style: italic;
+        font-weight: 400;
+        src: url('/fonts/merriweather-v31-latin-italic.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Merriweather';
+        font-style: bold;
+        font-weight: 700;
+        src: url('/fonts/merriweather-v31-latin-700.woff2') format('woff2');
+      }
+    </style>
+
+    <link rel="icon" href="data:image/svg+xml;utf8,{{ logo }}" />
     <link href="/rss.xml" rel="alternate" type="application/rss+xml" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,44 +85,106 @@
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <div class="navwrapper">
+    {%- block site_header %}
+    <header>
+      <div class="homepage-header">
+        <a href="/" aria-label="Go back to homepage">
+          <div class="logo">{{ logo | safe }}</div>
+        </a>
+        <div>
           <a href="/" aria-label="Go back to homepage">
-            {# The logo class allows overwriting the image if needed #}
-            <div class="logo">{{ logo | safe }}</div>
+            <h1 class="homepage-title">Matthias Endler</h1>
           </a>
-          <div class="biowrapper">
-            <a href="/" aria-label="Go back to homepage">
-              <div class="logo_font">
-                <div class="logo_font_dark">{{ logo_font_dark | safe }}</div>
-                <div class="logo_font_light">{{ logo_font_light | safe }}</div>
-              </div>
-            </a>
-            <p class="bio">
-              <span>Open-source maintainer, speaker, rebel.</span>
-              <a href="/about">About me.</a>
-            </p>
-            {% include "snippets/nav.html" %}
-          </div>
         </div>
-        {% include "snippets/search.html" %}
-      </header>
 
+          <button
+            onclick="toggleTheme()"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+      </div>
+    </header>
+    {%- endblock site_header %}
+
+   <div class="container">
       <main>
-        {% block content %} {% for page in paginator.pages %} {% include
-        "snippets/article.html" %} {% endfor %}
+        {% block content %}
+          {% for page in paginator.pages %}
+            {% include "snippets/article_preview.html" %}
+          {% endfor %}
 
-        <div style="display: flex; justify-content: space-between">
-          {% if paginator.previous %}
-          <a class="btn" href="{{  paginator.previous}}">« Next</a>
-          {% endif %} {% if paginator.next %}
-          <a class="btn" href="{{  paginator.next }}">Previous »</a>
-          {% endif %}
-        </div>
+        <nav class="pagination" aria-label="Blog pagination">
+            {% if paginator.previous %}
+                <a href="{{ paginator.previous}}" rel="prev">« Newer posts</a>
+            {% else %}
+                <span></span> <!-- Empty span to maintain layout -->
+            {% endif %}
+            
+            {% if paginator.next %}
+                <a href="{{ paginator.next }}" rel="next">Older posts »</a>
+            {% else %}
+                <span></span> <!-- Empty span to maintain layout -->
+            {% endif %}
+        </nav>
         {% endblock content %}
       </main>
     </div>
+
     {% include "snippets/footer.html" %}
+
+    <script>
+      // Theme toggle function
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+      
+      // Initialize theme
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          // Use browser preference as default
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        }
+      }
+      
+      initTheme();
+    </script>
   </body>
 </html>
