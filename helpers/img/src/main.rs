@@ -1,4 +1,10 @@
-use anyhow::{anyhow, Context, Result};
+//! Image processing tool for blog content
+//!
+//! Converts raw images to optimized web formats (JPEG + AVIF)
+
+#![warn(clippy::all, clippy::pedantic, clippy::nursery)]
+
+use anyhow::{anyhow, Context as _, Result};
 use duct::cmd;
 use glob::glob;
 use rayon::prelude::*;
@@ -8,33 +14,28 @@ use std::{
 };
 use which::which;
 
-// Width of images on blog.
+/// Width of images on blog
 const MAX_IMAGE_WIDTH: u32 = 650; // pixels
+/// Input path pattern for raw images
 const INPUT_PATH: &str = "content/**/raw/*";
 
-fn check_deps() -> Result<()> {
-    // Remove cwebp since we're not using WebP anymore
-    for dep in ["magick"] {
-        which(dep).with_context(|| format!("Missing binary required for execution: {dep}"))?;
-    }
-    Ok(())
-}
-
 fn main() -> Result<()> {
-    check_deps()?;
+    // Check dependencies
+    which("magick").with_context(|| "Missing ImageMagick, required for execution")?;
+
     let entries: Vec<PathBuf> = glob(INPUT_PATH)?.filter_map(Result::ok).collect();
     println!("Inspecting {} images", entries.len());
 
-    // Use for_each instead of collecting results we don't use
     entries.into_par_iter().for_each(|path| {
-        if let Err(e) = handle(path.clone()) {
-            eprintln!("Error processing {}: {e}", path.display());
+        if let Err(err) = handle(&path) {
+            eprintln!("Error processing {}: {err}", path.display());
         }
     });
 
     Ok(())
 }
 
+/// Copy and resize original image
 fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
     println!("Processing original: {}", out_file.display());
 
@@ -44,12 +45,14 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
 
     if !out_file.exists() {
         if ext == "svg" || ext == "gif" {
-            // Simply copy over SVG/GIF to target directory
+            // Simply copy over SVG/GIF to target directory verbatim
             fs::copy(path, out_file)?;
         } else {
             println!(
-                "magick {:?} -strip -resize {}> {:?}",
-                path, MAX_IMAGE_WIDTH, out_file
+                "magick {} -strip -resize {}> {}",
+                path.display(),
+                MAX_IMAGE_WIDTH,
+                out_file.display()
             );
             cmd!(
                 "magick",
@@ -61,6 +64,11 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
             )
             .run()?;
         }
+    }
+
+    // Skip JPG generation for GIFs to avoid creating individual frames
+    if ext == "gif" {
+        return Ok(());
     }
 
     // Create optimized JPG version
@@ -79,7 +87,7 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
             "-sampling-factor",
             "4:2:0",
             "-colorspace",
-            "sRGB", // Changed from RGB to sRGB for better compatibility
+            "sRGB",
             "-resize",
             format!("{MAX_IMAGE_WIDTH}>"),
             &jpg_file
@@ -90,7 +98,8 @@ fn copy_original(path: &Path, out_file: &Path) -> Result<()> {
     Ok(())
 }
 
-fn handle(path: PathBuf) -> Result<()> {
+/// Handle processing of a single image file
+fn handle(path: &Path) -> Result<()> {
     println!("Handling: {}", path.display());
 
     let Some(filename) = path.file_name() else {
@@ -125,7 +134,7 @@ fn handle(path: PathBuf) -> Result<()> {
     }
 
     fs::create_dir_all(&out_dir)?;
-    copy_original(&path, &out_file)?;
+    copy_original(path, &out_file)?;
 
     // Skip vector/animated formats
     if orig_extension == "svg" || orig_extension == "gif" {
@@ -144,8 +153,8 @@ fn handle(path: PathBuf) -> Result<()> {
             "-define",
             "avif:method=0", // Chrome-compatible encoding
             "-colorspace",
-            "sRGB",   // Ensure sRGB colorspace
-            "-strip", // Remove metadata
+            "sRGB",
+            "-strip",
             &avif_file
         )
         .run()?;
