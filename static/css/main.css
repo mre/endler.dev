@@ -305,6 +305,7 @@ main article {
   font-weight: normal;
   margin: 0.75rem auto 1.5rem;
   max-width: 80%;
+  color: var(--meta-color);
 }
 
 .article-content {
