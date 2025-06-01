@@ -723,3 +723,16 @@ footer .body {
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 480px) {
+  .homepage-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .theme-toggle {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
