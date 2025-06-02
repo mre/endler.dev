@@ -21,8 +21,7 @@ Paolo asked if he could watch the machine work.
 The next day, Paolo and Mario took the machine to a house with a broken pipe.
 Paolo watched as Mario positioned the machine by the pipe.
 "Beep boop," and the machine started working, and quickly.
-Paolo noticed the machine turned the wrench back and forth instead of steady pressure
-- something he could adapt for his own work.
+Paolo noticed the machine turned the wrench back and forth instead of steady pressure - something he could adapt for his own work.
 Within minutes, the pipe was fixed.
 
 "Soon no one will need plumbers anymore," said Mario.
