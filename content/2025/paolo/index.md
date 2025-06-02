@@ -1,6 +1,6 @@
 +++
 title="Paolo the Plumber"
-date=2025-05-29
+date=2025-06-02
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -59,15 +59,14 @@ They all had problems after working with Mario and the machine.
 On closer inspection of the damage, Paolo kept finding the same mistakes:
 Pipes not properly sealed, joints not aligned correctly, leaks that were only temporarily fixed with instant glue
 -- it was a messy job.
-From time to time the machine would even add extra parts that seemingly had no purpose.
-For example, it would add another pipe that ended nowhere, or a valve that didn't connect to anything.
+From time to time the machine would even add extra parts that seemingly had no purpose: it would add pipes that ended nowhere, or a valve that didn't connect to anything.
 These parts would not cause any problems, but were hallmarks of bad craftsmanship.
-One time Paolo even noticed that the machine decided to paint a pipe in bright pink and use a glittery sealant for now good reason.
-Over time, Paolo noticed the signs that the machine did the job. 
+Over time, Paolo recognized these as signs of the machine at work; it was like a fingerprint. 
 
 Paolo realized that while the machine was fast, it wasn't perfect.
 He called Mario and told him what he found.
 Mario knew about the issues: "I told it to fix it, but it didn't work right. Even when I asked it multiple times and when I was very polite." 
+And, even worse: "one time I looked a way for a moment and the machine started to remodel the bathroom! It added a new sink that wasn't there before."
 
 Paolo asked why he didn't just fix it himself.
 "I can't." Mario said, "I don't know how to do it without the machine."
@@ -103,5 +102,11 @@ He showed him how to use tools instead of relying on the machine.
 Mario soon was back to being a skilled plumber.
 "Thank you, I really missed the feeling of actually fixing things," he said.
 
-When Mario asked him why he never gave up, 
+And Paolo learned a few things too.
+At times, the machine had a really good idea.
+Sometimes it suggested a new way to do things that Paolo hadn't thought of before.
+For example, it had a clever way of bending pipes that saved time and material.
+Paolo adopted that technique and used it in his work.
+
+After a good day of work, Mario asked him why he never gave up when things looked grim,
 Paolo just smiled and said: "I just really like plumbing."
