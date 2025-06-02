@@ -15,12 +15,12 @@ One day, his friend Mario told him that he'd bought a plumbing machine.
 Paolo was intrigued and asked how it worked.
 
 "It's magical!" said Mario.
-"I point it at the broken spot, and it fixes the problem in no time!"
+"I show it what's broken, and it fixes the problem in no time!"
 Paolo asked if he could watch the machine work.
 
 The next day, Paolo and Mario took the machine to a house with a broken pipe.
-Paolo watched as Mario pointed the machine at the pipe.
-"Beep boop"—the machine started working, and quick.
+Paolo watched as Mario positioned the machine by the pipe.
+"Beep boop," and the machine started working, and quickly.
 Paolo noticed the machine turned the wrench back and forth instead of steady pressure
 - something he could adapt for his own work.
 Within minutes, the pipe was fixed.
@@ -55,7 +55,7 @@ From that day on, more people called Paolo.
 They all had problems after working with Mario and the machine.
 Paolo kept finding the same mistakes: pipes not properly sealed, joints not aligned correctly, leaks temporarily fixed with instant glue.
 Sometimes the machine would add extra parts: pipes that ended nowhere, valves that didn't connect to anything.
-Over time, Paolo recognized these as signs of the machine at work.
+Paolo recognized these as signs of the machine at work.
 
 Paolo called Mario and told him what he'd found.
 Mario knew about the issues: "I told it to fix it, but it didn't work right. Even when I asked multiple times and was very polite."
@@ -76,14 +76,9 @@ It wasn't just plumbers—electricians, carpenters, other tradespeople were all 
 The machines caused problems, but the company promised they would fix everything and get better with time.
 They kept updating the machines and gave them fancy names, but the problems remained.
 
-What could he do?
-
-Paolo decided to just keep working.
-He loved plumbing and that's all he knew how to do.
-When the machine jobs failed, people called him for help. 
-He never complained.
-
-Soon Paolo's phone was ringing again.
+Paolo just kept working. 
+He fixed what the machines broke.
+His customers called him back for more work. 
 
 A while later, a salesperson came to town with a new machine.
 Paolo heard Mario talking to him at the coffee shop.
