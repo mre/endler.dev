@@ -78,6 +78,7 @@ They kept updating the machines and gave them fancy names, but the problems rema
 Paolo just kept working. 
 He fixed what the machines broke.
 His customers called him back for more work. 
+Soon his phone was ringing like before.
 
 A while later, a salesperson came to town with a new machine.
 Paolo heard Mario talking to him at the coffee shop.
