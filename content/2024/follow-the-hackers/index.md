@@ -4,7 +4,7 @@ date=2024-09-07
 updated=2024-12-18
 draft=false
 [taxonomies]
-tags=["culture", "technology", "trends"]
+tags=["culture", "technology", "trends", "dev"]
 +++
 
 Want to see tomorrow's important technologies?
