@@ -58,7 +58,6 @@ On closer inspection, Paolo kept finding the same mistakes:
 pipes not properly sealed, joints not aligned correctly, leaks that were only temporarily fixed with instant glue.
 It was messy work.
 Sometimes the machine would even add extra parts that had no purpose: pipes that ended nowhere, or valves that didn't connect to anything.
-These parts wouldn't cause problems, but were hallmarks of bad craftsmanship.
 Over time, Paolo recognized these as signs of the machine at work.
 It was like a fingerprint.
 
@@ -82,9 +81,7 @@ It wasn't just plumbers—electricians, carpenters, and other tradespeople were 
 The machines caused problems, but the Big Company promised they would fix everything and that it would get better with time.
 They kept updating the machines and gave them fancy names, but the problems remained.
 
-Paolo felt sad and hopeless.
 What could he do?
-
 He decided to take action.
 
 He started a campaign in his town: he explained how important it was to have skilled plumbers who could fix problems properly.
