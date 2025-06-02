@@ -103,3 +103,6 @@ Paolo adopted that technique and used it in his work.
 
 After a good day of work, Mario asked him why he never gave up when things looked grim.
 Paolo just smiled and said: "I just really like plumbing."
+
+The following week, a kid with a new machine started working the other side of town.
+Paolo heard Mario talking to him at the coffee shop.
