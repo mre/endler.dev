@@ -11,7 +11,7 @@ Paolo was a plumber.
 People knew him as a reliable and thorough craftsman.
 He fixed the pipes in his small town and made a good living doing so.
 
-One day, his friend Mario, another plumber, told him that he'd bought a plumbing machine.
+One day, his friend Mario told him that he'd bought a plumbing machine.
 Paolo was intrigued and asked how it worked.
 
 "It's magical!" said Mario.
@@ -21,8 +21,9 @@ Paolo asked if he could watch the machine work.
 The next day, Paolo and Mario took the machine to a house with a broken pipe.
 Paolo watched as Mario pointed the machine at the pipe.
 "Beep boop"—the machine started working, and quick.
+Paolo noticed the machine turned the wrench back and forth instead of steady pressure
+- something he could adapt for his own work.
 Within minutes, the pipe was fixed.
-Paolo was amazed.
 
 "Soon no one will need plumbers anymore," said Mario.
 "I can already do the work of ten plumbers with this machine!"
@@ -34,32 +35,29 @@ But what if machines really took over?
 
 Within a few weeks, Paolo's phone stopped ringing.
 People were calling Mario instead because he did quicker, cheaper work.
-Some of Paolo's old customers even told him he was "old-fashioned" and "out of touch."
+Some of Paolo's old customers told him he was "old-fashioned" and "out of touch."
 
 In the past, none of his customers had ever complained about his work.
 He always took time to do things right.
 He would check every joint, seal every pipe, and make sure everything was perfect before leaving.
-Sometimes he noticed other problems that needed fixing, like a leaking faucet, and he would offer to fix those too.
+Sometimes he noticed other problems that needed fixing and he would offer to fix those too.
 
 Then one day, he got a call from an old customer.
 It was an emergency.
 The pipes in the restaurant were leaking and they needed help fast.
-Paolo rushed to the restaurant and found a mess.
-He quickly got to work, using his tools and skills to fix the problem.
-The owner was very grateful.
+Paolo rushed over and found a mess.
+He got to work and fixed the problem.
 
 "We just got it fixed the other day!"
 When Paolo asked who did the work, the owner said it was Mario.
 
-From that day on, more and more people called Paolo.
+From that day on, more people called Paolo.
 They all had problems after working with Mario and the machine.
-On closer inspection, Paolo kept finding the same mistakes:
-pipes not properly sealed, joints not aligned correctly, leaks that were only temporarily fixed with instant glue.
-Sometimes the machine would even add extra parts: pipes that ended nowhere, or valves that didn't connect to anything.
+Paolo kept finding the same mistakes: pipes not properly sealed, joints not aligned correctly, leaks temporarily fixed with instant glue.
+Sometimes the machine would add extra parts: pipes that ended nowhere, valves that didn't connect to anything.
 Over time, Paolo recognized these as signs of the machine at work.
 
-Paolo realized that while the machine was fast, it wasn't perfect.
-He called Mario and told him what he'd found.
+Paolo called Mario and told him what he'd found.
 Mario knew about the issues: "I told it to fix it, but it didn't work right. Even when I asked multiple times and was very polite."
 And worse: "One time I looked away for a moment and the machine started remodeling the bathroom! It added a new sink that wasn't there before."
 
@@ -67,42 +65,25 @@ Paolo asked why he didn't just fix it himself.
 "I can't," Mario said.
 "I don't know how to do it without the machine."
 
-Paolo was shocked.
-
-After all, Mario had been a reputable plumber before he got the machine.
-He certainly knew his trade.
+Mario had been a reputable plumber before he got the machine.
 Now he was relying on a machine that didn't always work.
-Worse, Mario said he didn't own the machine but rented it from a company far away.
+Worse, Mario didn't own the machine but rented it from a company far away.
 The rent was cheap in the beginning, but now it was getting more expensive.
 
-Paolo also realized that Mario wasn't the only one.
-Many plumbers were now using machines to do the work for them, and many new plumbers were learning to use machines instead of tools.
-It wasn't just plumbers—electricians, carpenters, and other tradespeople were all relying on machines now.
-The machines caused problems, but the company promised they would fix everything and that it would get better with time.
+Paolo realized that Mario wasn't the only one.
+Many plumbers were using machines now, and new plumbers were learning machines instead of tools.
+It wasn't just plumbers—electricians, carpenters, other tradespeople were all relying on machines.
+The machines caused problems, but the company promised they would fix everything and get better with time.
 They kept updating the machines and gave them fancy names, but the problems remained.
 
 What could he do?
 
-He started a campaign in his town: he explained how important it was to have skilled plumbers who could fix problems properly.
-He showed people the difference between quick fixes and real solutions.
-Slowly, people began to understand, but most of them only after they'd had problems with the machines.
+Paolo decided to just keep working.
+He loved plumbing and that's all he knew how to do.
+When the machine jobs failed, people called him for help. 
+He never complained.
 
-Soon, Paolo's phone was ringing off the hook again.
-He was back to being the most trusted plumber in town.
-He had to fix some of the mess the machines created, but his customers appreciated his work.
-On the side, Paolo also taught Mario how to fix pipes properly again, showing him how to use tools instead of relying on the machine.
-Mario was soon back to being a skilled plumber.
+Soon Paolo's phone was ringing again.
 
-"Thank you," he said.
-"I really missed the feeling of actually fixing things."
-
-Paolo learned a few tricks too.
-Sometimes the machine had good ideas that Paolo hadn't thought of before.
-For example, it had a clever way of bending pipes that saved time and material.
-Paolo adopted that technique and used it in his work.
-
-After a good day of work, Mario asked him why he never gave up when things looked grim.
-Paolo just smiled and said: "I just really like plumbing."
-
-The following week, a kid with a new machine started working the other side of town.
+A while later, a salesperson came to town with a new machine.
 Paolo heard Mario talking to him at the coffee shop.
