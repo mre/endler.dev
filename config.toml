@@ -24,7 +24,7 @@ smart_punctuation = true
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
-    { theme = "demain", filename = "syntax-theme-light-custom.css" },
-    { theme = "ayu-dark", filename = "syntax-theme-dark-custom.css" },
+    { theme = "cheerfully-light", filename = "syntax-theme-light-custom.css" },
+    { theme = "dracula", filename = "syntax-theme-dark-custom.css" },
 ]
 bottom_footnotes = true
