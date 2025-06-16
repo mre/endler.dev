@@ -8,7 +8,6 @@
 <html lang="en">
   <head>
     <script>
-      // Prevent flash of wrong theme
       (function() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
@@ -16,6 +15,10 @@
         }
       })();
     </script>
+    
+    <link rel="preload" href="/fonts/Happy-Headline.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/merriweather-v31-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="canonical" href="{{ current_url | safe }}" />
     <link rel="me" href="https://mastodon.social/@mre" />
@@ -26,6 +29,7 @@
         src: url("/fonts/Happy-Headline.woff2") format("woff2"); 
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
       }
 
       @font-face {
@@ -33,6 +37,7 @@
         src: url("/fonts/Happy.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
       }
 
       @font-face {
@@ -40,6 +45,7 @@
         src: url("/fonts/JetBrainsMono-Regular.woff2") format("truetype");
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
       }
 
 
@@ -144,13 +150,13 @@
             {% if paginator.previous %}
                 <a href="{{ paginator.previous}}" rel="prev">« Newer posts</a>
             {% else %}
-                <span></span> <!-- Empty span to maintain layout -->
+                <span></span>
             {% endif %}
             
             {% if paginator.next %}
                 <a href="{{ paginator.next }}" rel="next">Older posts »</a>
             {% else %}
-                <span></span> <!-- Empty span to maintain layout -->
+                <span></span>
             {% endif %}
         </nav>
         {% endblock content %}
@@ -160,7 +166,6 @@
     {% include "snippets/footer.html" %}
 
     <script>
-      // Theme toggle function
       function toggleTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -169,13 +174,11 @@
         localStorage.setItem('theme', newTheme);
       }
       
-      // Initialize theme
       function initTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
           document.documentElement.setAttribute('data-theme', savedTheme);
         } else {
-          // Use browser preference as default
           if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.setAttribute('data-theme', 'dark');
           } else {
