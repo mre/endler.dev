@@ -13,7 +13,7 @@
         </picture>
       </a>
       <div class="footer-author-text">
-        Servus, I'm <a href="/about">Matthias</a>.
+        <span class="greeting">Servus</span>, I'm <a href="/about">Matthias</a>.
       </div>
     </div>
     
@@ -34,4 +34,16 @@
       {% include "snippets/social.html" %}
     </div>
   </div>
+  <script>
+    // Switch the greeting between a few possible options on dom loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      // A few not-so-common greetings:
+      const greetings = ["Servus", "Aloha", "Howdy", "Ahoi", "Ohai", "Yo"];
+      const greetingElement = document.querySelector(".greeting");
+      if (greetingElement) {
+        greetingElement.textContent =
+          greetings[Math.floor(Math.random() * greetings.length)];
+      }
+    });
+  </script>
 </footer>
