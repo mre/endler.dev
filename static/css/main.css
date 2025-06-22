@@ -381,6 +381,17 @@ iframe {
   border-radius: var(--radius);
 }
 
+/* Make images and media 20% wider than text in articles */
+article img,
+article video,
+article iframe,
+article figure {
+  width: 120%;
+  max-width: 120%;
+  margin-left: -10%;
+  margin-right: -10%;
+}
+
 figure {
   font-size: 0.9em;
   font-style: italic;
@@ -398,6 +409,13 @@ figcaption {
   font-size: 0.7em;
 }
 
+/* Figure captions should remain centered within wider figures */
+article figcaption {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: calc(100% - 20%);
+}
+
 /* Code blocks */
 pre,
 code,
@@ -411,11 +429,19 @@ samp {
 pre {
   display: block;
   border-radius: var(--radius);
-  width: calc(100% - 40px);
   padding: var(--spacing);
   margin: 30px 0;
   background: var(--surface-color);
   overflow-x: auto;
+}
+
+/* Make code blocks 20% wider than text in articles */
+article pre {
+  width: 120%;
+  max-width: 120%;
+  margin-left: -10%;
+  margin-right: -10%;
+  box-sizing: border-box;
 }
 
 code {
@@ -615,6 +641,12 @@ footer .body {
   text-decoration-color: var(--text-color);
 }
 
+.footnotes {
+  border-top: 1px dotted var(--border-color);
+  font-size: 0.8em;
+  background-color: transparent;
+}
+
 /* Icons and anchors */
 .icon {
   height: 24px;
@@ -705,8 +737,25 @@ footer .body {
     display: none;
   }
   
+  /* Reduce wider effect on mobile */
+  article img,
+  article video,
+  article iframe,
+  article pre,
+  article figure {
+    width: 110%;
+    max-width: 110%;
+    margin-left: -5%;
+    margin-right: -5%;
+  }
+  
+  article figcaption {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: calc(100% - 10%);
+  }
+
   pre {
-    width: 100%; 
     padding: 16px;
     margin: 20px 0px;
   }
@@ -736,5 +785,23 @@ footer .body {
   .theme-toggle {
     margin-left: 0;
     margin-top: 10px;
+  }
+  
+  /* Back to normal width on very small screens */
+  article img,
+  article video,
+  article iframe,
+  article pre,
+  article figure {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  article figcaption {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
