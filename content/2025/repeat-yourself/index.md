@@ -64,12 +64,12 @@ Abstraction is often touted as a way to reduce code duplication, but it comes wi
 Abstractions can make code harder to read, understand, and maintain.
 That is because you have to jump between multiple levels of indirection to understand what the code does.
 The abstraction can live in a different file, modules, or even libraries or frameworks.
-The cost of traversing these layers is not low and us humans only have a limited context window.
+The cost of traversing these layers is not low**,** and we humans only have a limited context window.
 An expert programmer might be able to keep a few levels of abstraction in their head, but most programmers will struggle pretty quickly.
 (That also depends on the familiarity with the codebase, of course.)
 
 When you copy code, you can keep it all in one place.
-The code *is* the code, so you just go in and read it.
+The code *is* the code, so you can just go and read it.
 
 Whenever you introduce an abstraction, think about developers who might not be familiar with the codebase.
 
@@ -85,9 +85,8 @@ for item in shopping_cart:
     total += item.price * item.quantity
 ```
 
-Here is some code which looks similar, but is actually doing a completely different calculation:
+Here's similar-looking code that's actually doing a completely different calculation:
 
-```python
 ```python
 # Calculate the total memory usage of processes
 for process in processes:
