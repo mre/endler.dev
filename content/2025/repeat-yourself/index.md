@@ -21,29 +21,29 @@ Why is the DRY principle so prevalent in software development?
 One reason is to avoid bugs.
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places, but if you have a shared abstraction, you only have to fix it once.
 
-I don't think this tells the whole story, though.
-As we'll see abstractions can introduce bugs, too.
+I don't think this tells the whole story, though. Abstractions can introduce bugs, too.
 
 Another reason why we avoid any kind of repetition is that it makes us feel clever.
 "Look, I know all of these smart ways to avoid repetition! I know how to use interfaces, generics, higher-order functions, and inheritance!"
 
 Both reasons are misguided.
-There are many benefits of repeating yourself.
-Interestingly, they might get us closer to our goals in the long run.
+Interestingly, repeating yourself might get us closer to our goals in the long run.
 
 ## Keeping Up The Momentum
 
 When you're writing code, you want to keep the momentum going to get into a flow state.
 If you stop to think about the perfect abstraction all the time, it's easy to lose momentum.
+Suddenly you face two problems: trying to solve the original problem and trying to find the right abstraction.
 
-Instead, if you allow yourself to copy-paste code, you keep your train of thought going and work on the problem at hand.
-You don't introduce another problem of trying to find the right abstraction.
+Instead, if you allow yourself to copy-paste code, you keep your train of thought going and focus on the problem at hand.
 
-It's often easier to copy existing code and modify it until it becomes too much of a burden, at which point you can go and refactor it.
+It's easier to copy existing code and modify it until it does the thing you want.
+If it becomes too much of a burden, go and refactor it.
 
 I would argue that "writing mode" and "refactoring mode" are two different modes of programming.
-During writing mode, you want to focus on getting the idea down and stop your inner critic, which keeps telling you that your code sucks. 
-During refactoring mode, you take the opposite role: that of the critic. You look for ways to improve the code by finding the right abstractions, removing duplication, and improving readability.
+During writing mode, you want to focus on getting the idea down and stop your inner critic, which keeps telling you that your code sucks.
+During refactoring mode, you take the opposite role: that of the critic.
+You look for ways to improve the code by finding the right abstractions, removing duplication, and improving readability.
 
 Keep these two modes separate.
 Don't try to do both at the same time.[^1]
@@ -51,12 +51,11 @@ Don't try to do both at the same time.[^1]
 [^1]: This is also how I write text: I first write a draft and block my inner critic, and then I play the role of the editor/critic and "refactor" the text.
 This way, I get the best of both worlds: a quick feedback loop which doesn't block my creativity, and a final product which is more polished and well-structured.
 
-
 ## Finding The Right Abstraction Is Hard
 
 When you start to write code, you don't know the right abstraction just yet.
 But if you copy code, you find that the right abstraction reveals itself; it's too tedious to copy the same code over and over again, at which point you start to look for ways to abstract it away.
-For me, this happens typically after the first copy of the same code, but I try to resist the urge until the 2nd or 3rd copy.
+For me, this typically happens after the first copy of the same code, but I try to resist the urge until the 2nd or 3rd copy.
 
 If you start too early, you might end up with a bad abstraction that doesn't fit the problem.
 You know it's wrong because it feels *clunky*.
@@ -72,14 +71,14 @@ Some typical symptoms include:
 ## The Cost of Wrong Abstractions
 
 It's easy to settle for the first abstraction that comes to mind, but most often, it's not the right one.
-And removing the *wrong* abstraction is difficult, because now the data flow depends on it.
+And removing the *wrong* abstraction is hard, because now the data flow depends on it.
 
 We also tend to fall in love with our own abstractions because they took time and effort to create.
 This makes us reluctant to discard them even when they no longer fit the problem -- it's a sunk cost fallacy.
 
 It gets worse when other programmers start to depend on it, too.
 Then you have to be careful about changing it, because it might break other parts of the codebase.
-Once you introduce an abstraction, you have to work with it for a long time, sometimes forever.
+Once you introduce an abstraction, it might stick around forever. 
 
 If you had a copy of the code instead, you could just change it in one place without worrying about breaking anything else.
 
@@ -90,22 +89,22 @@ Better to wait until the *last moment* to settle on the abstraction, when you ha
 
 ## The Cost of Abstraction
 
-Abstraction reduces code duplication, but it comes at a cost. 
+Abstraction reduces code duplication, but it comes at a cost.
 
 Abstractions can make code harder to read, understand, and maintain because you have to jump between multiple levels of indirection to understand what the code does.
-The abstraction might live in different files, modules, or even libraries or frameworks.
+The abstraction might live in different files, modules, or libraries.
 
 The cost of traversing these layers is high.
 An expert programmer might be able to keep a few levels of abstraction in their head, but we all have a limited context window (which depends on the familiarity with the codebase).
 
 When you copy code, you can keep all the logic in one place.
-You can just go and read the whole thing and understand what it does. 
+You can just go and read the whole thing and understand what it does.
 
-## Code That Looks Similar But Is Not
+## Code That Looks Similar But Isn't 
 
 Sometimes, code *looks* similar but serves different purposes.
 
-For example, consider two pieces of code that calculate a sum by iterating over a collection of items. 
+For example, consider two pieces of code that calculate a sum by iterating over a collection of items.
 
 ```python
 for item in shopping_cart:
@@ -116,33 +115,14 @@ for process in processes:
     total += process.memory_usage * process.instance_count
 ```
 
-You might be tempted to abstract this into a single function:
+You might be tempted to abstract this away somehow, but the two calculations are very different.
 
-```python
-def calculate_total(items, multiplier):
-    return sum(multiplier(item) for item in items)
-```
+The first is a financial calculation that requires exact decimal precision, while the second is about system monitoring where performance and simplicity matter more than perfect accuracy.
 
-Then the two calculations would look like this:
-
-```python
-price_multiplier = lambda item: item.price * item.quantity
-total_price = calculate_total(shopping_cart, price_multiplier)
-
-memory_multiplier = lambda process: process.memory_usage * process.instance_count
-total_memory_usage = calculate_total(processes, memory_multiplier)
-```
-
-But the two calculations are different.
-The first is about financial calculations that require exact decimal precision and audit trails, while the second is about system monitoring where performance and real-time updates matter more than perfect accuracy.
-
-Different parts of the codebase evolve independently:
+After a few iterations, these two pieces of code might evolve very differently:
 
 ```python
 def calculate_total_price(shopping_cart):
-    """
-    Calculate the total price of items in a shopping cart.
-    """
     if not shopping_cart:
         raise ValueError("Shopping cart cannot be empty")
     
@@ -154,29 +134,20 @@ def calculate_total_price(shopping_cart):
     return total
 ```
 
-This function is specific to calculating shopping cart totals, with checks for empty carts, negative quantities, and rounding errors.
+This function is specific to calculating shopping cart totals, with checks for empty carts and rounding for financial precision.
 A generic abstraction would have hidden these important domain-specific details.
 
-In contrast, the memory usage calculation is much simpler:
+In contrast, the memory usage calculation can be much simpler:
 
 ```python
 def calculate_total_memory_usage(processes):
-    """
-    Calculate the total memory usage of processes.
-    Return 0 for empty process list (normal in monitoring)
-    """
-    return sum(process.memory_usage * process.instance_count for process in processes)
-```
-
-```python
-def calculate_total_memory_usage(processes):
-    """Calculate the total memory usage of processes."""
+    # Return 0 for empty process list (normal in monitoring)
     return sum(process.memory_usage * process.instance_count for process in processes)
 ```
 
 Had we applied "don't repeat yourself" too early, we would have lost the context and specific requirements of each calculation.
 
-If you allow duplicated code to go through a few iterations, you might find that it starts looking quite different after a while. 
+If you allow duplicated code to go through a few iterations, you might find that it starts looking quite different after a while.
 
 ## DRY Can Introduce Complexity
 
