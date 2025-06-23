@@ -21,24 +21,25 @@ Why is the DRY principle so prevalent in software development?
 One reason is to avoid bugs.
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places, but if you have a shared abstraction, you only have to fix it once.
 
-I don't think this tells the whole story, though. Abstractions can introduce bugs, too.
+I don't think this tells the whole story, though.
+As we'll see, abstractions can introduce bugs, too.
 
 Another reason why we avoid any kind of repetition is that it makes us feel clever.
 "Look, I know all of these smart ways to avoid repetition! I know how to use interfaces, generics, higher-order functions, and inheritance!"
 
 Both reasons are misguided.
-Interestingly, repeating yourself might get us closer to our goals in the long run.
+There are many benefits of repeating yourself.
+Interestingly, they might get us closer to our goals in the long run.
 
 ## Keeping Up The Momentum
 
 When you're writing code, you want to keep the momentum going to get into a flow state.
 If you stop to think about the perfect abstraction all the time, it's easy to lose momentum.
-Suddenly you face two problems: trying to solve the original problem and trying to find the right abstraction.
 
-Instead, if you allow yourself to copy-paste code, you keep your train of thought going and focus on the problem at hand.
+Instead, if you allow yourself to copy-paste code, you keep your train of thought going and work on the problem at hand.
+You don't introduce another problem of trying to find the right abstraction.
 
-It's easier to copy existing code and modify it until it does the thing you want.
-If it becomes too much of a burden, go and refactor it.
+It's often easier to copy existing code and modify it until it becomes too much of a burden, at which point you can go and refactor it.
 
 I would argue that "writing mode" and "refactoring mode" are two different modes of programming.
 During writing mode, you want to focus on getting the idea down and stop your inner critic, which keeps telling you that your code sucks.
@@ -64,13 +65,13 @@ Some typical symptoms include:
 - Generic names that don't convey intent (e.g., `render_pdf_file` instead of `generate_invoice`)
 - Difficulty understanding without additional context
 - The abstraction is only used in one or two places
-- Not flexible enough to accommodate future changes or requirements
+- Too rigid for future changes
 - Tight coupling to implementation details
 - Poor testability
 
 ## The Cost of Wrong Abstractions
 
-It's easy to settle for the first abstraction that comes to mind, but most often, it's not the right one.
+We easily settle for the first abstraction that comes to mind, but most often, it's not the right one.
 And removing the *wrong* abstraction is hard, because now the data flow depends on it.
 
 We also tend to fall in love with our own abstractions because they took time and effort to create.
@@ -78,7 +79,7 @@ This makes us reluctant to discard them even when they no longer fit the problem
 
 It gets worse when other programmers start to depend on it, too.
 Then you have to be careful about changing it, because it might break other parts of the codebase.
-Once you introduce an abstraction, it might stick around forever. 
+Once you introduce an abstraction, you have to work with it for a long time, sometimes forever.
 
 If you had a copy of the code instead, you could just change it in one place without worrying about breaking anything else.
 
@@ -109,15 +110,19 @@ For example, consider two pieces of code that calculate a sum by iterating over 
 ```python
 for item in shopping_cart:
     total += item.price * item.quantity
-
-# Elsewhere...
-for process in processes:
-    total += process.memory_usage * process.instance_count
 ```
 
+And elsewhere in the code, we have
+
+```python
+for item in package_items:
+    total += item.weight * shipping_rate_per_kg
+```
+
+In both cases, we iterate over a collection and calculate a total.
 You might be tempted to abstract this away somehow, but the two calculations are very different.
 
-The first is a financial calculation that requires exact decimal precision, while the second is about system monitoring where performance and simplicity matter more than perfect accuracy.
+The first is a financial calculation that requires exact decimal precision, while the second is about shipping logistics where weight estimates matters more than perfect accuracy.
 
 After a few iterations, these two pieces of code might evolve very differently:
 
@@ -137,12 +142,17 @@ def calculate_total_price(shopping_cart):
 This function is specific to calculating shopping cart totals, with checks for empty carts and rounding for financial precision.
 A generic abstraction would have hidden these important domain-specific details.
 
-In contrast, the memory usage calculation can be much simpler:
+In contrast, the shipping cost calculation can be much simpler:
 
 ```python
-def calculate_total_memory_usage(processes):
-    # Return 0 for empty process list (normal in monitoring)
-    return sum(process.memory_usage * process.instance_count for process in processes)
+def calculate_shipping_cost(package_items, destination_zone):
+    # Use higher of actual weight vs dimensional weight
+    total_weight = sum(item.weight for item in package_items)
+    total_volume = sum(item.length * item.width * item.height for item in package_items)
+    dimensional_weight = total_volume / 5000  # FedEx formula
+    
+    billable_weight = max(total_weight, dimensional_weight)
+    return billable_weight * shipping_rates[destination_zone]
 ```
 
 Had we applied "don't repeat yourself" too early, we would have lost the context and specific requirements of each calculation.
@@ -162,7 +172,7 @@ The result is dead code that adds complexity to the codebase—all because you w
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places.
 But the assumption is that the bug exists in all copies, which isn't true.
 Each copy might have evolved and only some instances have the issue.
-When you create a shared abstraction, a bug in that abstraction affects *every* caller, breaking multiple features at once.
+When you create a shared abstraction, a bug in that abstraction breaks *every* caller, breaking multiple features at once.
 With duplicated code, a bug is isolated to just one specific use case.
 
 Knowing that you didn't break anything in a shared abstraction is much harder than checking a single copy of the code.
