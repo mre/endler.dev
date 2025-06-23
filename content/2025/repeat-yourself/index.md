@@ -30,7 +30,7 @@ There are many benefits of repeating yourself that might get us closer to our go
 ## Keeping Up The Momentum
 
 When you're writing code, you want to keep the momentum going to get into a flow state.
-If you stop to think about the perfect abstraction all the time, it's easy to lose momentum.
+If you think about the perfect abstraction all the time, it's easy to lose momentum.
 
 Instead, if you allow yourself to copy-paste code, you keep your train of thought going and work on the problem at hand.
 You don't introduce another problem of trying to find the right abstraction.
