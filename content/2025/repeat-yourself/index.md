@@ -21,15 +21,11 @@ Why is the DRY principle so prevalent in software development?
 One reason is to avoid bugs.
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places, but if you have a shared abstraction, you only have to fix it once.
 
-I don't think this tells the whole story, though.
-As we'll see, abstractions can introduce bugs, too.
-
-Another reason why we avoid any kind of repetition is that it makes us feel clever.
+Another reason why we avoid repetition is that it makes us feel clever.
 "Look, I know all of these smart ways to avoid repetition! I know how to use interfaces, generics, higher-order functions, and inheritance!"
 
 Both reasons are misguided.
-There are many benefits of repeating yourself.
-Interestingly, they might get us closer to our goals in the long run.
+There are many benefits of repeating yourself that might get us closer to our goals in the long run.
 
 ## Keeping Up The Momentum
 
@@ -56,7 +52,7 @@ Of course, I did not invent this approach. I recommend reading "Shitty first dra
 ## Finding The Right Abstraction Is Hard
 
 When you start to write code, you don't know the right abstraction just yet.
-But if you copy code, you find that the right abstraction reveals itself; it's too tedious to copy the same code over and over again, at which point you start to look for ways to abstract it away.
+But if you copy code, the right abstraction reveals itself; it's too tedious to copy the same code over and over again, at which point you start to look for ways to abstract it away.
 For me, this typically happens after the first copy of the same code, but I try to resist the urge until the 2nd or 3rd copy.
 
 If you start too early, you might end up with a bad abstraction that doesn't fit the problem.
@@ -76,7 +72,7 @@ We easily settle for the first abstraction that comes to mind, but most often, i
 And removing the *wrong* abstraction is hard, because now the data flow depends on it.
 
 We also tend to fall in love with our own abstractions because they took time and effort to create.
-This makes us reluctant to discard them even when they no longer fit the problem -- it's a sunk cost fallacy.
+This makes us reluctant to discard them even when they no longer fit the problem—it's a sunk cost fallacy.
 
 It gets worse when other programmers start to depend on it, too.
 Then you have to be careful about changing it, because it might break other parts of the codebase.
@@ -97,10 +93,10 @@ Abstractions can make code harder to read, understand, and maintain because you 
 The abstraction might live in different files, modules, or libraries.
 
 The cost of traversing these layers is high.
-An expert programmer might be able to keep a few levels of abstraction in their head, but we all have a limited context window (which depends on the familiarity with the codebase).
+An expert programmer might be able to keep a few levels of abstraction in their head, but we all have a limited context window (which depends on familiarity with the codebase).
 
 When you copy code, you can keep all the logic in one place.
-You can just go and read the whole thing and understand what it does.
+You can just read the whole thing and understand what it does.
 
 ## Resist The Urge Of Premature Abstraction 
 
@@ -125,7 +121,7 @@ for item in package_items:
 In both cases, we iterate over a collection and calculate a total.
 You might be tempted to introduce a helper function, but the two calculations are very different.
 
-After a few iterations, these two pieces of code might evolve into different directions: 
+After a few iterations, these two pieces of code might evolve in different directions: 
 
 ```python
 def calculate_total_price(shopping_cart):
@@ -174,18 +170,16 @@ However, each copy might have evolved and only some instances have the issue.
 When you create a shared abstraction, a bug in that abstraction breaks *every* caller, breaking multiple features at once.
 With duplicated code, a bug is isolated to just one specific use case.
 
-
 ## Clean Up Afterwards
 
 Knowing that you didn't break anything in a shared abstraction is much harder than checking a single copy of the code.
-Of course, if you have a lot of copies, there is a risk of forgetting to fix all of them, so there is a trade-off here.
+Of course, if you have a lot of copies, there is a risk of forgetting to fix all of them.
 
 The key to making this work is to clean up afterwards.
 This can happen before you commit the code or during a code review.
 
 At this stage, you can look at the code you copied and see if it makes sense to keep it as is or if you can see the right abstraction.
 I try to refactor code once I have a better understanding of the problem, but not before.
-This is a struggle, as I am tempted to abstract too early, but I try to resist the urge these days.
 
 Give yourself permission to remove abstractions that no longer fit the problem.
 Go back to copy-pasted code, then rethink the problem based on the new information you have.
@@ -198,9 +192,6 @@ Often you'll find a better abstraction that fits the problem better.
 > -- [Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
 
 ## tl;dr
-
-I realized this was as much about not repeating yourself as it was about the cost of wrong abstractions.
-These two concepts are intertwined. 
 
 It's fine to look for the right abstraction, but don't obsess over it.
 Don't be afraid to copy code when it helps you keep momentum and find the right abstraction.
