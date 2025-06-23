@@ -1,6 +1,6 @@
 +++
 title="Repeat Yourself"
-date=2025-06-22
+date=2025-06-23
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -49,8 +49,9 @@ You look for ways to improve the code by finding the right abstractions, removin
 Keep these two modes separate.
 Don't try to do both at the same time.[^1]
 
-[^1]: This is also how I write text: I first write a draft and block my inner critic, and then I play the role of the editor/critic and "refactor" the text.
+[^1]: This is also how I write prose: I first write a draft and block my inner critic, and then I play the role of the editor/critic and "refactor" the text.
 This way, I get the best of both worlds: a quick feedback loop which doesn't block my creativity, and a final product which is more polished and well-structured.
+Of course, I did not invent this approach. I recommend reading "Shitty first drafts" from Anne Lamott's book [Bird by Bird: Instructions on Writing and Life](https://canongate.co.uk/books/3055-bird-by-bird-instructions-on-writing-and-life/) if you want to learn more about this technique. 
 
 ## Finding The Right Abstraction Is Hard
 
@@ -69,7 +70,7 @@ Some typical symptoms include:
 - Tight coupling to implementation details
 - Poor testability
 
-## The Cost of Wrong Abstractions
+## It's Hard To Get Rid Of Wrong Abstractions 
 
 We easily settle for the first abstraction that comes to mind, but most often, it's not the right one.
 And removing the *wrong* abstraction is hard, because now the data flow depends on it.
@@ -88,7 +89,7 @@ If you had a copy of the code instead, you could just change it in one place wit
 
 Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.
 
-## The Cost of Abstraction
+## The Mental Overhead of Abstractions
 
 Abstraction reduces code duplication, but it comes at a cost.
 
@@ -101,13 +102,14 @@ An expert programmer might be able to keep a few levels of abstraction in their 
 When you copy code, you can keep all the logic in one place.
 You can just go and read the whole thing and understand what it does.
 
-## Code That Looks Similar But Isn't 
+## Resist The Urge Of Premature Abstraction 
 
 Sometimes, code *looks* similar but serves different purposes.
 
 For example, consider two pieces of code that calculate a sum by iterating over a collection of items.
 
 ```python
+total = 0
 for item in shopping_cart:
     total += item.price * item.quantity
 ```
@@ -115,16 +117,15 @@ for item in shopping_cart:
 And elsewhere in the code, we have
 
 ```python
+total = 0
 for item in package_items:
-    total += item.weight * shipping_rate_per_kg
+    total += item.weight * item.rate
 ```
 
 In both cases, we iterate over a collection and calculate a total.
-You might be tempted to abstract this away somehow, but the two calculations are very different.
+You might be tempted to introduce a helper function, but the two calculations are very different.
 
-The first is a financial calculation that requires exact decimal precision, while the second is about shipping logistics where weight estimates matters more than perfect accuracy.
-
-After a few iterations, these two pieces of code might evolve very differently:
+After a few iterations, these two pieces of code might evolve into different directions: 
 
 ```python
 def calculate_total_price(shopping_cart):
@@ -139,10 +140,7 @@ def calculate_total_price(shopping_cart):
     return total
 ```
 
-This function is specific to calculating shopping cart totals, with checks for empty carts and rounding for financial precision.
-A generic abstraction would have hidden these important domain-specific details.
-
-In contrast, the shipping cost calculation can be much simpler:
+In contrast, the shipping cost calculation might look like this: 
 
 ```python
 def calculate_shipping_cost(package_items, destination_zone):
@@ -155,9 +153,9 @@ def calculate_shipping_cost(package_items, destination_zone):
     return billable_weight * shipping_rates[destination_zone]
 ```
 
-Had we applied "don't repeat yourself" too early, we would have lost the context and specific requirements of each calculation.
-
 If you allow duplicated code to go through a few iterations, you might find that it starts looking quite different after a while.
+
+Had we applied "don't repeat yourself" too early, we would have lost the context and specific requirements of each calculation.
 
 ## DRY Can Introduce Complexity
 
@@ -166,31 +164,35 @@ However, this can lead to complexity.
 
 When you try to avoid repetition by introducing abstractions, you have to deal with all the edge cases in a place far away from the actual business logic.
 You end up adding redundant checks and conditions to the abstraction, just to make sure it works in all cases.
-Later on, you might forget the reasoning behind those checks, but you keep them around because you don't want to break any callers.
+Later on, you might forget the reasoning behind those checks, but you keep them around "just in case" because you don't want to break any callers.
 The result is dead code that adds complexity to the codebase—all because you wanted to avoid repeating yourself.
 
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places.
-But the assumption is that the bug exists in all copies, which isn't true.
-Each copy might have evolved and only some instances have the issue.
+But the assumption is that the bug exists in all copies.
+However, each copy might have evolved and only some instances have the issue.
+
 When you create a shared abstraction, a bug in that abstraction breaks *every* caller, breaking multiple features at once.
 With duplicated code, a bug is isolated to just one specific use case.
 
-Knowing that you didn't break anything in a shared abstraction is much harder than checking a single copy of the code.
 
 ## Clean Up Afterwards
 
+Knowing that you didn't break anything in a shared abstraction is much harder than checking a single copy of the code.
+Of course, if you have a lot of copies, there is a risk of forgetting to fix all of them, so there is a trade-off here.
+
 The key to making this work is to clean up afterwards.
 This can happen before you commit the code or during a code review.
+
 At this stage, you can look at the code you copied and see if it makes sense to keep it as is or if you can see the right abstraction.
-I refactor code once I have a better understanding of the problem, but not before.
-This is a struggle, as I am tempted to abstract too early, but I try to resist the urge.
+I try to refactor code once I have a better understanding of the problem, but not before.
+This is a struggle, as I am tempted to abstract too early, but I try to resist the urge these days.
 
 Give yourself permission to remove abstractions that no longer fit the problem.
 Go back to copy-pasted code, then rethink the problem based on the new information you have.
-You'll find a better abstraction that fits the problem better.
-The "inlining" step of copy-pasting code is crucial to this process.
+
+A trick to undo a bad abstraction is to inline the code back into the places where it was used.
 For a while, you end up "repeating yourself" again in the codebase, but that's okay.
-It gets worse before it gets better.
+Often you'll find a better abstraction that fits the problem better.
 
 > When the abstraction is wrong, the fastest way forward is back.  
 > -- [Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
@@ -198,9 +200,9 @@ It gets worse before it gets better.
 ## tl;dr
 
 I realized this was as much about not repeating yourself as it was about the cost of wrong abstractions.
-These two concepts are related.
+These two concepts are intertwined. 
 
+It's fine to look for the right abstraction, but don't obsess over it.
 Don't be afraid to copy code when it helps you keep momentum and find the right abstraction.
-It's fine to think about the right abstraction, but don't obsess over it.
 
 **It bears repeating: "Repeat yourself."**
