@@ -82,12 +82,12 @@ Once you introduce an abstraction, you have to work with it for a long time, som
 If you had a copy of the code instead, you could just change it in one place without worrying about breaking anything else.
 
 <div>
-  <blockquote>
+  <blockquote cite="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">
     <p>
       Duplication is far cheaper than the wrong abstraction
     </p>
   </blockquote>
-  <p>—<cite>Sandi Metz</cite></p>
+  <p>—<cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></cite></p>
 </div>
 
 Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.
@@ -196,12 +196,12 @@ For a while, you end up "repeating yourself" again in the codebase, but that's o
 Often you'll find a better abstraction that fits the problem better.
 
 <div>
-  <blockquote>
+  <blockquote cite="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">
     <p>
       When the abstraction is wrong, the fastest way forward is back.
     </p>
   </blockquote>
-  <p>—<cite>Sandi Metz</cite></p>
+  <p>—<cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></cite></p>
 </div>
 
 ## tl;dr
