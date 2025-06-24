@@ -1,6 +1,7 @@
 +++
 title="Repeat Yourself"
 date=2025-06-23
+updated=2025-06-24
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -80,8 +81,14 @@ Once you introduce an abstraction, you have to work with it for a long time, som
 
 If you had a copy of the code instead, you could just change it in one place without worrying about breaking anything else.
 
-> Duplication is far cheaper than the wrong abstraction  
-> -- [Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+<div>
+  <blockquote>
+    <p>
+      Duplication is far cheaper than the wrong abstraction
+    </p>
+  </blockquote>
+  <p>—<cite>Sandi Metz</cite></p>
+</div>
 
 Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.
 
@@ -188,8 +195,14 @@ A trick to undo a bad abstraction is to inline the code back into the places whe
 For a while, you end up "repeating yourself" again in the codebase, but that's okay.
 Often you'll find a better abstraction that fits the problem better.
 
-> When the abstraction is wrong, the fastest way forward is back.  
-> -- [Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+<div>
+  <blockquote>
+    <p>
+      When the abstraction is wrong, the fastest way forward is back.
+    </p>
+  </blockquote>
+  <p>—<cite>Sandi Metz</cite></p>
+</div>
 
 ## tl;dr
 
