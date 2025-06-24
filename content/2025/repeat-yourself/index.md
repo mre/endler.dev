@@ -87,7 +87,7 @@ If you had a copy of the code instead, you could just change it in one place wit
       Duplication is far cheaper than the wrong abstraction
     </p>
   </blockquote>
-  <p>—<cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></cite></p>
+  <p>—Sandi Metz, <cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">The Wrong Abstraction</a></cite></p>
 </div>
 
 Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.
@@ -201,7 +201,7 @@ Often you'll find a better abstraction that fits the problem better.
       When the abstraction is wrong, the fastest way forward is back.
     </p>
   </blockquote>
-  <p>—<cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></cite></p>
+  <p>—Sandi Metz, <cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">The Wrong Abstraction</a></cite></p>
 </div>
 
 ## tl;dr
