@@ -12,7 +12,7 @@
             <source srcset="{{ imgpath | replace(from="jpg", to="avif")}}" type="image/avif" />
     {% endif %}
 
-    <img style="display:block" src="{{ imgpath}}" 
+    <img style="display:block;margin:0 auto" src="{{ imgpath}}" 
         {% if alt %}
             alt="{{ alt }}"
         {% elif caption %}
