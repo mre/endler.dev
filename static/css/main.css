@@ -379,6 +379,8 @@ iframe {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius);
+  display: block;
+  margin: 0 auto;
 }
 
 /* Make images and media 20% wider than text in articles */
@@ -388,8 +390,9 @@ article iframe,
 article figure {
   width: 120%;
   max-width: 120%;
-  margin-left: -10%;
-  margin-right: -10%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 figure {
@@ -745,8 +748,9 @@ footer .body {
   article figure {
     width: 110%;
     max-width: 110%;
-    margin-left: -5%;
-    margin-right: -5%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   article figcaption {
@@ -795,8 +799,7 @@ footer .body {
   article figure {
     width: 100%;
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 auto;
   }
   
   article figcaption {
