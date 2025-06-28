@@ -266,9 +266,6 @@ header h2 {
 
 article h1 {
   font-family: 'Happy-Headline';
-  font-size: 1.2em;
-  margin: 0;
-  padding: 0;
   color: var(--accent-color);
 }
 

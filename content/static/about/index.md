@@ -1,9 +1,21 @@
 +++
-title = "This is me!"
+title = "Hello, this is me!"
 path = "about"
 template = "about.html"
 +++
 
+| | |
+|---|---|
+| **Location** | Düsseldorf, Germany |
+| **Company** | [corrode](https://corrode.dev) (Rust consulting) |
+| **Experience** | 25+ years programming, 10+ years Rust |
+| **Education** | Computer Science, [Universität Bayreuth](https://www.uni-bayreuth.de/) |
+| **Specialties** | Rust, backend systems, performance optimization |
+| **Podcast** | Host of [Rust in Production](https://corrode.dev/podcast) |
+| **Open Source** | 100+ projects, maintainer of [lychee](https://lychee.cli.rs) |
+| **Contact** | [Linkedin], [Twitter], [Mastodon], [GitHub] |
+
+## The Full Story 
 
 My first computer was a Vobis Highscreen Big Tower with a 16 MHz 386SX.
 I managed to get Windows 95 running on it, which took 50 out of the available 60 MB of
@@ -45,7 +57,7 @@ In 2021, I founded [corrode](https://corrode.dev), a consulting company that hel
 make the most of Rust.
 
 I usually go by my handle `mre` on the internet, which is short for "Matthias Richard Endler".
-You can find me on [Mastodon](https://mastodon.social/@mre), [Twitter], [LinkedIn], [Stack Overflow], and [GitHub].
+You can find me on [Mastodon], [Twitter], [LinkedIn], and [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
 If you wish to get in touch, feel free to <a
@@ -82,5 +94,5 @@ As of today, I have started more than 100 open source projects. Here's a list of
 [talks]: @/static/talks/index.md
 [github]: https://github.com/mre/
 [twitter]: https://twitter.com/matthiasendler
-[stack overflow]: https://stackoverflow.com/users/270334/mre
 [linkedin]: https://www.linkedin.com/in/matthiasendler/
+[mastodon]: https://mastodon.social/@mre
