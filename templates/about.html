@@ -1,8 +1,82 @@
 {% extends "index.html" %}
 
 {% block header %}
-<title>About Matthias Endler</title>
+<title>Matthias Endler - Rust Consultant & Open Source Maintainer</title>
+
+<!-- Open Graph meta tags (Facebook, LinkedIn, etc.) -->
+<meta property="og:title" content="About Matthias Endler" />
+<meta property="og:description" content="Rust consultant and open source developer, creator of lychee link checker, host of 'Rust in Production' podcast" />
+<meta property="og:image" content="https://endler.dev/about/matthias-endler.jpg" />
+<meta property="og:image:alt" content="Matthias Endler - Software Engineer" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://endler.dev/about/" />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Matthias Endler" />
+
+<!-- Twitter Card meta tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About Matthias Endler" />
+<meta name="twitter:description" content="Rust consultant and open source developer, creator of lychee link checker, host of 'Rust in Production' podcast" />
+<meta name="twitter:image" content="https://endler.dev/about/matthias-endler.jpg" />
+<meta name="twitter:image:alt" content="Matthias Endler - Software Engineer" />
+
+<meta name="description" content="Rust consultant and open source developer, creator of lychee link checker, host of 'Rust in Production' podcast" />
+<meta name="author" content="Matthias Endler" />
+
 <meta name="thumbnail" content="https://endler.dev/about/matthias-endler.jpg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matthias Endler",
+  "alternateName": "mre",
+  "url": "https://endler.dev/about/",
+  "image": "https://endler.dev/about/matthias-endler.jpg",
+  "jobTitle": "Rust Consultant & Open Source Maintainer",
+  "description": "Rust consultant and open source developer, creator of lychee link checker, host of 'Rust in Production' podcast",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "corrode",
+    "url": "https://corrode.dev"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Düsseldorf",
+    "addressCountry": "Germany"
+  },
+  "sameAs": [
+    "https://github.com/mre",
+    "https://twitter.com/matthiasendler",
+    "https://linkedin.com/in/matthiasendler"
+  ],
+  "knowsAbout": [
+    "Rust Programming",
+    "Backend Development",
+    "Open Source Software",
+    "Technical Consulting",
+    "Software Architecture"
+  ],
+  "owns": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "lychee",
+      "description": "Fast, async link checker written in Rust",
+      "url": "https://github.com/lycheeverse/lychee"
+    }
+  ],
+  "creator": [
+    {
+      "@type": "PodcastSeries",
+      "name": "Rust in Production",
+      "description": "Podcast about companies using Rust in production",
+      "url": "https://corrode.dev/podcast/"
+    }
+  ]
+}
+</script>
+
 <style>
     .profile-photo-inline {
         width: 150px;
@@ -31,6 +105,13 @@
 
 <article>
     <h1>{{ page.title }}</h1>
+    
+    <img src="https://endler.dev/about/matthias-endler.jpg" 
+         alt="Photograph of Matthias Endler taken in 2024" 
+         class="profile-photo-inline"
+         width="150" 
+         height="150" />
+    
     {{ page.content | safe }}
 </article>
 {% endblock content %}

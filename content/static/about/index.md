@@ -4,8 +4,6 @@ path = "about"
 template = "about.html"
 +++
 
-<!-- Use plain old JPEG here so Google might index it. -->
-<img class="profile-photo-inline" src="/about/matthias-endler.jpg" alt="Photograph of Matthias Endler taken in 2021" />
 
 My first computer was a Vobis Highscreen Big Tower with a 16 MHz 386SX.
 I managed to get Windows 95 running on it, which took 50 out of the available 60 MB of
