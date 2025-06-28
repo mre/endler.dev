@@ -1,19 +1,18 @@
 +++
-title = "Hello, this is me!"
+title = "Hey, it's me!"
 path = "about"
 template = "about.html"
 +++
 
-|                 |                                                                        |
-| --------------- | ---------------------------------------------------------------------- |
-| **Location**    | Düsseldorf, Germany                                                    |
-| **Company**     | [corrode](https://corrode.dev) (Rust consulting)                       |
-| **Experience**  | 25+ years programming, 10+ years Rust                                  |
-| **Education**   | Computer Science, [Universität Bayreuth](https://www.uni-bayreuth.de/) |
-| **Specialties** | Rust, backend systems, performance optimization                        |
-| **Podcast**     | Host of [Rust in Production](https://corrode.dev/podcast)              |
-| **Open Source** | 100+ projects, maintainer of [lychee](https://lychee.cli.rs)           |
-| **Contact**     | [Linkedin], [Twitter], [Mastodon], [GitHub]                            |
+|                 |                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🗺️ **Living in**   | Düsseldorf, Germany                                                                                                                                         |
+| 🏭 **Company**     | [corrode](https://corrode.dev) (Rust Consulting)                                                                                                            |
+| 🎙️ **Podcast**     | Host of [Rust in Production](https://corrode.dev/podcast)                                                                                                   |
+| ❤️ **Open Source** | [lychee](https://lychee.cli.rs), [Analysis Tools](https://analysis-tools.dev), [Idiomatic Rust](https://github.com/mre/idiomatic-rust), [...](#open-source) |
+| 🎯 **Focus areas** | Rust, backend systems, performance optimizations                                                                                                            |
+| 🎓 **Education**   | M. Sc. Computer Science, [Universität Bayreuth](https://www.uni-bayreuth.de/)                                                                               |
+| 🤝 **Contact**     | [Linkedin], [Twitter], [Mastodon], [GitHub], [Email]                                                                                                        |
 
 ## The Full Story 
 
@@ -60,10 +59,7 @@ I usually go by my handle `mre` on the internet, which is short for "Matthias Ri
 You can find me on [Mastodon], [Twitter], [LinkedIn], and [GitHub].
 Here is a list of my [public speaking][talks] engagements.
 
-If you wish to get in touch, feel free to <a
-href="https://cal.com/matthias-endler"> schedule a meeting</a> or <a
-href="mailto:matthias@endler.dev">send an e-mail</a>.
-
+If you wish to get in touch, feel free to [schedule a meeting][calendar] or [send me an e-mail][email].
 
 ## Active Projects / Companies
 
@@ -96,3 +92,5 @@ As of today, I have started more than 100 open source projects. Here's a list of
 [twitter]: https://twitter.com/matthiasendler
 [linkedin]: https://www.linkedin.com/in/matthiasendler/
 [mastodon]: https://mastodon.social/@mre
+[calendar]: https://cal.com/matthias-endler
+[email]: mailto:matthias@endler.dev
