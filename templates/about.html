@@ -4,21 +4,27 @@
 <title>About Matthias Endler</title>
 <meta name="thumbnail" content="https://endler.dev/about/matthias-endler.jpg" />
 <style>
-/* Normal links in the stars table look quite busy */
-table a {
-    text-decoration: none;
-}
+    .profile-photo-inline {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        float: left;
+        margin: 1rem 2rem 0 0;
+        left: 0;
+        transform: translateX(0);
+    }
 
-.profile-photo-inline {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: cover;
-    float: left;
-    margin: 2rem 2rem 0 0;
-    margin-left: 0;
-}
+    /* Normal links in the stars table look quite busy */
+    table a {
+        text-decoration: none;
+    }
 </style>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/about/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/about/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/about/favicon-16x16.png">
+<link rel="manifest" href="/about/site.webmanifest">
+<link rel="shortcut icon" href="/about/favicon.ico">
 {% endblock header %}
 
 {% block content %}
