@@ -190,11 +190,6 @@ a:hover {
   text-decoration-style: solid;
 }
 
-[data-theme="dark"] a {
-  color: #fff;
-  text-decoration-color: var(--accent-color);
-}
-
 /* Header styling */
 header {
   width: 100%;
