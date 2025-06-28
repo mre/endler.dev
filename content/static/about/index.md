@@ -4,16 +4,16 @@ path = "about"
 template = "about.html"
 +++
 
-| | |
-|---|---|
-| **Location** | Düsseldorf, Germany |
-| **Company** | [corrode](https://corrode.dev) (Rust consulting) |
-| **Experience** | 25+ years programming, 10+ years Rust |
-| **Education** | Computer Science, [Universität Bayreuth](https://www.uni-bayreuth.de/) |
-| **Specialties** | Rust, backend systems, performance optimization |
-| **Podcast** | Host of [Rust in Production](https://corrode.dev/podcast) |
-| **Open Source** | 100+ projects, maintainer of [lychee](https://lychee.cli.rs) |
-| **Contact** | [Linkedin], [Twitter], [Mastodon], [GitHub] |
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Location**    | Düsseldorf, Germany                                                    |
+| **Company**     | [corrode](https://corrode.dev) (Rust consulting)                       |
+| **Experience**  | 25+ years programming, 10+ years Rust                                  |
+| **Education**   | Computer Science, [Universität Bayreuth](https://www.uni-bayreuth.de/) |
+| **Specialties** | Rust, backend systems, performance optimization                        |
+| **Podcast**     | Host of [Rust in Production](https://corrode.dev/podcast)              |
+| **Open Source** | 100+ projects, maintainer of [lychee](https://lychee.cli.rs)           |
+| **Contact**     | [Linkedin], [Twitter], [Mastodon], [GitHub]                            |
 
 ## The Full Story 
 
