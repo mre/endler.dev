@@ -273,7 +273,7 @@ main {
 }
 
 main article {
-  margin-bottom: 48px;
+  margin-bottom: 70px;
   overflow-wrap: anywhere;
 }
 
@@ -557,7 +557,8 @@ th {
 
 /* Homepage styles */
 .homepage h1 {
-  font-size: 1.3em;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .homepage a.title {
@@ -767,7 +768,7 @@ footer .body {
   }
   
   .footer-author-text {
-    font-size: 0.85rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -776,6 +777,7 @@ footer .body {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    padding: 40px 20px;
   }
   
   .theme-toggle {
