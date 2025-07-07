@@ -48,10 +48,6 @@
     --border-color: var(--dark-border);
   }
   
-  :root:not([data-theme="light"]) a {
-    text-decoration-color: var(--accent-color);
-  }
-  
   :root:not([data-theme="light"]) :not(pre) > code {
     color: var(--text-color);
     background: rgba(255, 255, 255, 0.1);
@@ -574,6 +570,11 @@ th {
 
 .excerpt {
   margin: 10px 0;
+}
+
+.excerpt a {
+  color: var(--text-color);
+  text-decoration-color: var(--text-color);
 }
 
 /* Post links and social */
