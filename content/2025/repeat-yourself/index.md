@@ -1,7 +1,7 @@
 +++
 title="Repeat Yourself"
 date=2025-06-23
-updated=2025-06-24
+updated=2025-07-07
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -17,9 +17,6 @@ I realized that repeating yourself has a few great benefits.
 
 ## Why People Love DRY 
 
-Why is the DRY principle so prevalent in software development?
-
-One reason is to avoid bugs.
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places, but if you have a shared abstraction, you only have to fix it once.
 
 Another reason why we avoid repetition is that it makes us feel clever.
@@ -31,10 +28,10 @@ There are many benefits of repeating yourself that might get us closer to our go
 ## Keeping Up The Momentum
 
 When you're writing code, you want to keep the momentum going to get into a flow state.
-If you stop to think about the perfect abstraction all the time, it's easy to lose momentum.
+If you constantly pause to design the perfect abstraction, it's easy to lose momentum.
 
 Instead, if you allow yourself to copy-paste code, you keep your train of thought going and work on the problem at hand.
-You don't introduce another problem of trying to find the right abstraction.
+You don't introduce another problem of trying to find the right abstraction at the same time.
 
 It's often easier to copy existing code and modify it until it becomes too much of a burden, at which point you can go and refactor it.
 
@@ -57,20 +54,18 @@ But if you copy code, the right abstraction reveals itself; it's too tedious to 
 For me, this typically happens after the first copy of the same code, but I try to resist the urge until the 2nd or 3rd copy.
 
 If you start too early, you might end up with a bad abstraction that doesn't fit the problem.
-You know it's wrong because it feels *clunky*.
+You know it's wrong because it *feels clunky*.
 Some typical symptoms include:
 
-- Generic names that don't convey intent (e.g., `render_pdf_file` instead of `generate_invoice`)
-- Difficulty understanding without additional context
+- Generic names that don't convey intent, e.g., `render_pdf_file` instead of `generate_invoice`
+- Difficult to understand without additional context
 - The abstraction is only used in one or two places
-- Too rigid for future changes
 - Tight coupling to implementation details
-- Poor testability
 
 ## It's Hard To Get Rid Of Wrong Abstractions 
 
 We easily settle for the first abstraction that comes to mind, but most often, it's not the right one.
-And removing the *wrong* abstraction is hard, because now the data flow depends on it.
+And removing the *wrong* abstraction is hard work, because now the data flow depends on it.
 
 We also tend to fall in love with our own abstractions because they took time and effort to create.
 This makes us reluctant to discard them even when they no longer fit the problem—it's a sunk cost fallacy.
@@ -90,7 +85,9 @@ If you had a copy of the code instead, you could just change it in one place wit
   <p>—Sandi Metz, <cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">The Wrong Abstraction</a></cite></p>
 </div>
 
-Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.
+Better to wait until the *last moment* to settle on the abstraction, when you have a solid understanding of the problem space.[^ooda]
+
+[^ooda]: This is similar to the [OODA loop](https://en.wikipedia.org/wiki/OODA_loop) concept, which stands for "Observe, Orient, Decide, Act." It was developed by military strategist John Boyd. Fighter pilots use it to wait until the last responsible moment to decide on a course of action, which allows them to make the best decision based on the current situation and available information.
 
 ## The Mental Overhead of Abstractions
 
@@ -156,23 +153,20 @@ def calculate_shipping_cost(package_items, destination_zone):
     return billable_weight * shipping_rates[destination_zone]
 ```
 
-If you allow duplicated code to go through a few iterations, you might find that it starts looking quite different after a while.
-
 Had we applied "don't repeat yourself" too early, we would have lost the context and specific requirements of each calculation.
 
 ## DRY Can Introduce Complexity
 
-The DRY principle is misinterpreted as a blanket rule to avoid any duplication at all costs.
-However, this can lead to complexity.
+The DRY principle is misinterpreted as a blanket rule to avoid any duplication at all costs, which can lead to complexity.
 
 When you try to avoid repetition by introducing abstractions, you have to deal with all the edge cases in a place far away from the actual business logic.
 You end up adding redundant checks and conditions to the abstraction, just to make sure it works in all cases.
 Later on, you might forget the reasoning behind those checks, but you keep them around "just in case" because you don't want to break any callers.
-The result is dead code that adds complexity to the codebase—all because you wanted to avoid repeating yourself.
+The result is dead code that adds complexity to the codebase; all because you wanted to avoid repeating yourself.
 
 The common wisdom is that if you repeat yourself, you have to fix the same bug in multiple places.
 But the assumption is that the bug exists in all copies.
-However, each copy might have evolved and only some instances have the issue.
+In reality, each copy might have evolved in different ways, and the bug might only exist in one of them.
 
 When you create a shared abstraction, a bug in that abstraction breaks *every* caller, breaking multiple features at once.
 With duplicated code, a bug is isolated to just one specific use case.
@@ -186,13 +180,11 @@ The key to making this work is to clean up afterwards.
 This can happen before you commit the code or during a code review.
 
 At this stage, you can look at the code you copied and see if it makes sense to keep it as is or if you can see the right abstraction.
-I try to refactor code once I have a better understanding of the problem, but not before.
-
-Give yourself permission to remove abstractions that no longer fit the problem.
-Go back to copy-pasted code, then rethink the problem based on the new information you have.
+I try to refactor code once I have a better understanding of the problem, but not earlier. 
 
 A trick to undo a bad abstraction is to inline the code back into the places where it was used.
 For a while, you end up "repeating yourself" again in the codebase, but that's okay.
+Rethink the problem based on the new information you have.
 Often you'll find a better abstraction that fits the problem better.
 
 <div>
