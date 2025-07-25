@@ -6,22 +6,34 @@ draft=false
 tags=["dev", "code-review", "engineering"]
 +++
 
-I've been reviewing other people's code for more than a decade now.
-I'm still far from being an expert, but I went through a bit of a "rite of passage" where my code reviews have changed.
+I've been reviewing other people's code for a while now, more than two decades to be exact. 
+
 Nowadays, I spend around 50-70% of my time reviewing code in some form or another.
 It's what I get paid to do, alongside systems design.
-
 I focus on different things now than when I started.
-This blog post is a summary of what I've learned over the years, ordered from most important to least important so you can get as much value as quickly as possible.
+This blog post is a summary of what I've learned over the years.
 
-## Look at the bigger picture
+## Look At The Bigger Picture
 
 Bad reviews are narrow in scope.
+
 Good reviews look at not only the changes, but also what problems the changes solve, what future issues might arise, and how they fit into the rest of the system design.
 Look at the lines that *weren't* changed.
 They often tell the story.
 
-## Watch the seams
+For example, often people forget to update a related section of the codebase or the docs.
+This can lead to confusion and bugs later on.
+Be thorough and look at all the call-sites of the new code.
+Have they been updated?
+Are the tests still testing the right thing?
+Are the changes in the right place?
+
+Software design is more important than the code itself.
+By accepting bad changes, the design of the overall system will deteriorate over time.
+Keep an eye out for better abstractions as the code evolves.
+That's why having an experienced developer who understands the codebase and its users is so valuable.
+
+## Watch The Seams
 
 How does this code fit into the rest of the system?
 What's its interaction with other parts of the codebase?
@@ -31,7 +43,7 @@ All of these questions are important to ask because code isn't written in isolat
 The role of more experienced developers is to reduce operational friction and handle risk management for the project.
 The documentation, the tests, and the types are equally important as the code itself.
 
-## Naming is everything
+## Naming Is Everything
 
 Names are so important because they encapsulate concepts and serve as the "building blocks" of your code.
 Strong type systems make them even more critical, because they define how you can initialize things in your system.
@@ -39,7 +51,7 @@ When reviewing code, I spend the most time on naming.
 Often, this is the most important part of a code review.
 It's also the most subjective part, which makes it tedious because it's hard to distinguish between nitpicking and important naming decisions.
 
-## Don't be afraid to say no
+## Don't Be Afraid To Say No
 
 Sometimes you'll have to say no to a change.
 Being honest and direct is important.
@@ -52,7 +64,7 @@ There needs to be someone who says "no" and this is a very unpopular role (ask L
 However, great projects need gatekeepers who are willing to say no, even though it's hard.
 You can still be nice about it, but you need to be firm.
 
-## Don't be a gatekeeper
+## Don't Be A Gatekeeper
 
 Avoid being the person who decides what's acceptable and what isn't.
 Team decisions and code style guides should cover that.
@@ -66,7 +78,7 @@ It's hard to stand your ground, but it's important to do so.
 If you see something that isn't right, speak up.
 Typically, subtle issues point to deeper problems.
 
-## Code Review is communication
+## Code Review Is Communication
 
 Code reviews aren't just about the code.
 The people who write it matter too.
@@ -76,7 +88,7 @@ This way, you can learn from each other's communication styles and preferences.
 Building trust and getting to know each other works well this way.
 You can repeat that process later if you notice a communication breakdown or misunderstanding.
 
-## Use multiple layers of review
+## Use Multiple Layers Of Review
 
 Start by focusing on the bigger picture.
 Once you're done with that, go into the details.
@@ -90,7 +102,7 @@ I've also gotten excellent feedback on my own code from excellent engineers.
 These are "aha moments" that help you grow as a developer.
 I think everybody should experience that.
 
-## Don't be a jerk
+## Don't Be A Jerk
 
 From time to time, you'll disagree with the author.
 Being respectful and constructive is important.
@@ -101,7 +113,7 @@ If people resist, ask them why they did it that way.
 Ask questions, which can lead to better designs.
 Only add comments that you yourself would be happy to receive.
 
-## If possible, try to run the code
+## If Possible, Try To Run The Code
 
 Missing things becomes very easy when you look at a lot of code for a long time.
 Having a local copy of the code that I can play with helps me a lot.
@@ -112,7 +124,7 @@ Better understanding can come from this approach.
 User-facing changes like UI changes or error messages become testable.
 Constraints that weren't obvious from the code review might become visible.
 
-## Don't be the bottleneck
+## Don't Be The Bottleneck
 
 Code reviews are a bottleneck in the development process.
 Avoid being the person who holds up the process.
@@ -121,7 +133,7 @@ Uncertainty about something? Ask for help.
 No time to review the code? Let the author know.
 I'm still getting used to this, but I try to be more proactive about it.
 
-## Never stop learning
+## Never Stop Learning
 
 Code reviews are my favorite way to learn new things.
 I learn new techniques, patterns, and approaches.
@@ -129,10 +141,11 @@ I learn about new tooling and libraries.
 I try to learn one new thing with each review.
 It's not wasted time, because it helps the team improve and grow as a whole.
 
-## Don't be nitpicky
+## Don't Be Nitpicky
 
 Whitespace changes don't deserve comments.
-You have linters for that.
+We've got linters for that.
+
 Focus on the positive aspects: I like to add positive comments like "I like this" or "this is a great idea" from time to time.
 Keeping the author motivated and showing that you appreciate their work matters.
 Avoid focusing on the small stuff.
@@ -141,14 +154,31 @@ If it's not, let it go.
 If it is, ask yourself if it's worth the time to fix it.
 Typical examples are comments, which are often subjective, or stylistic decisions such as functional vs imperative code.
 
-## Don't be a perfectionist
+## Focus On The Why, Not The How
+
+When reviewing code, focus on the reasoning behind the changes.
+This has a much better chance of success than pointing out flaws without reasoning. 
+
+```rust
+// Comment: "Don't do this." 
+let result = data[0];
+```
+
+**Good:**
+```rust
+// Comment: "This can panic if data is empty, consider using get() instead. Here's an example:"
+// let result = data[0];
+let result = data.get(0).ok_or("Data is empty")?;
+```
+
+## Don't Be A Perfectionist
 
 Developing your own standards and expecting others to follow them is easy to do.
 That's not realistic and not helpful.
 Instead, understand that people come from different backgrounds and have different experiences.
 Adapt to their style and preferences to focus on helping them improve.
 
-## Don't be afraid to ask stupid questions
+## Don't Be Afraid To Ask Stupid Questions
 
 Not understanding something? Ask.
 Asking is better than assuming.
@@ -158,7 +188,7 @@ It can also help the author see things from a different perspective.
 Perhaps they'll learn that their assumptions were wrong or that the system isn't self-explanatory.
 Perhaps there's missing documentation.
 
-## Ask for feedback on your review style
+## Ask For Feedback On Your Reviewing Style
 
 From time to time, ask the author for feedback on your review style.
 Did you help them?
