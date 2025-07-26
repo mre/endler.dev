@@ -6,34 +6,40 @@ draft=false
 tags=["dev", "culture"]
 +++
 
-I've been reviewing other people's code for a while now, more than two decades to be exact. 
-
+I've been reviewing other people's code for a while now, more than two decades to be precise. 
 Nowadays, I spend around 50-70% of my time reviewing code in some form or another.
 It's what I get paid to do, alongside systems design.
+
+Over time, I learned a thing or two about how to review code effectively.
 I focus on different things now than when I started.
-This blog post is a summary of what I've learned over the years.
+This blog post is a summary of my current approach to code reviews. 
 
 ## Think About The Big Picture
 
 Bad reviews are narrow in scope.
+They focus on syntax, style, and minor issues instead of systems design, maintainability, and extensibility. 
 
-Good reviews look at not only the changes, but also what problems the changes solve, what future issues might arise, and how they fit into the rest of the system design.
-Look at the lines that *weren't* changed.
-They often tell the story.
+Good reviews look at not only the changes, but also what problems the changes solve, what future issues might arise, and how a change fits into the overall design of the system.
+
+I like to look at the lines that *weren't* changed. They often tell the real story.
 
 For example, often people forget to update a related section of the codebase or the docs.
-This can lead to confusion, bugs, or even breaking changes or security issues later on. 
+This can lead to confusion, bugs, or even breaking changes or security issues. 
 
-Be thorough and look at all the call-sites of the new code.
+Be thorough and look at all call-sites of the new code.
 Have they been updated?
 Are the tests still testing the right thing?
 Are the changes in the right place?
 
-Ask yourself:
+{% info() %}
+
+Here's a cheat sheet of questions I ask myself when reviewing code:
 - How does this code fit into the rest of the system?
 - What's its interaction with other parts of the codebase?
 - How does it affect the overall architecture?
 - Does it impact future planned work?
+
+{% end %}
 
 These questions have more to do with systems design than with the code changes themselves.
 You should not neglect the bigger picture because systems design will suffer if you accept bad changes.
@@ -46,14 +52,15 @@ Always keep an eye out for better abstractions as the code evolves.
 
 ## Naming Is Everything
 
-When reviewing code, I spend a big chunk of my time thinking about good names. 
-It's also the most subjective part, which makes it tedious because it's hard to distinguish between nitpicking and important naming decisions.
+I spend a big chunk of my time thinking about good names when reviewing code.
 Often, this is the most important part of a code review.
+It's also the most subjective part, which makes it tedious because it's hard to distinguish between nitpicking and important naming decisions.
 
-Naming things is so important because naming things is hard.
+Naming things is hard, which is why it's so important to get it right. 
 
 Names encapsulate concepts and serve as "building blocks" in your code.
 For me, bad names increase cognitive overhead by one or more orders of magnitude. 
+Bad names are the code smell that hint at problems running deep. 
 
 For example, say we have a struct that represents a player's stats in a game:
 
@@ -84,8 +91,8 @@ fn update_player_stats(player: Player, bonus_points: i32, level_up: bool) -> Pla
 ```
 
 This code is hard to read and understand.
-The variable names `usr`, `updated_score`, and `l2` don't convey their purpose clearly.
-They create cognitive overhead and make it harder to follow the logic.
+What is `usr`, `updated_score`, and `l2`? The purpose is not conveyed clearly. 
+This builds up cognitive load and make it harder to follow the logic.
 
 That's why I always think of the most fitting names for variables, even if it feels like I'm being pedantic. 
 
@@ -113,40 +120,35 @@ fn update_player_stats(player: Player, bonus_points: i32, level_up: bool) -> Pla
 Good names become even more critical in larger codebases where values are declared far away from where they're used 
 and where many developers have to have a shared understanding of the problem domain.
 
-## Don't Be Afraid To Say No
+## Don't Be Afraid To Say "No"
 
-Sometimes you'll have to say no to a change.
 I have to decline changes all the time and it's never easy.
-My colleagues put in a lot of effort and they want to see their work accepted.
-Telling them "no" requires trust and transparency.
-Being honest and direct is important.
+After all someone put in a lot of effort and they want to see their work accepted.
 
-Avoid sugarcoating it or trying to be nice.
+Avoid sugarcoating your decision or trying to be nice.
 Be objective, explain your reasoning and provide better alternatives.
+Don't dwell on it, but focus on the next steps.
 
 It's better to say no than to accept something that isn't right and will cause problems down the road. 
 In the future it will get even harder to deny a change once you've set a precedent.
 
-That's the purpose of the review process: not every change is guaranteed to be accepted.
+That's the purpose of the review process: there is no guarantee that the code will be accepted. 
 
 In open source, many people will contribute code that doesn't meet your standards.
 There needs to be someone who says "no" and this is a very unpopular job (ask Linus Torvalds).
-However, great projects need gatekeepers willing to say no.
+However, great projects need gatekeepers because the alternative is subpar code and eventually unmaintainable projects. 
 
 At times, people will say "let's just merge this and fix it later."
 That's a slippery slope.
 It can lead to technical debt and a lot of work later on.
 It's hard to stand your ground, but it's important to do so.
 If you see something that isn't right, speak up.
-Typically, subtle issues point to deeper problems.
 
 When it gets hard, remember that you're not rejecting the person, you're rejecting the code.
 Remind people that you appreciate their effort and that you want to help them improve.
 
-Remember that taking time to get it right prevents future technical debt.
-Quality reviews create a positive feedback loop: teams internalize best practices and future reviews become more efficient.
-
 Be gracious but decisive.
+It's just code.
 
 ## Don't Be A Gatekeeper
 
@@ -163,15 +165,15 @@ Even though you'll develop an intuition for what to focus on in reviews, you sho
 Code reviews aren't just about code; people matter too.
 Building a good relationship with your coworkers is important.
 
-I make it a point to do the first couple of reviews together in a pair programming session.
+I make it a point to do the first couple of reviews together in a pair programming session if possible.
 
-This way, you can learn from each other's communication styles and preferences.
+This way, you can learn from each other's communication style.
 Building trust and getting to know each other works well this way.
 You should repeat that process later if you notice a communication breakdown or misunderstanding.
 
 ## Use Multiple Iterations Of Reviews 
 
-"Can you take a look at this PR? I want to merge it today."
+"Can you take a quick look at this PR? I want to merge it today."
 There often is an expectation that code reviews are a one-time thing.
 That's not how it works.
 Instead, code reviews are an iterative process.
@@ -206,28 +208,29 @@ If people resist, ask a few questions to understand their reasoning.
 - "What happens if you call this function with an empty array?"
 - "If I don't set this value, what will be the error message presented to the user?"
 
-These ["socratic questions"](https://en.wikipedia.org/wiki/Socratic_questioning)[^lucca] help the author think about their decisions and can lead to better designs.
+These ["Socratic questions"](https://en.wikipedia.org/wiki/Socratic_questioning)[^lucca] help the author think about their decisions and can lead to better designs.
 
-[^lucca]: Thanks for pointing out the term "socratic questions" to me, Lucca!
+[^lucca]: Thanks for pointing out that term to me, Lucca!
 
 People should enjoy receiving your feedback.
 If not, revisit your review style.
 Only add comments that you yourself would be happy to receive.
 
-I like to add positive comments like "I like this" or "this is a great idea" from time to time.
-Keeping the author motivated and showing that you appreciate their work matters.
+From time to time, I like to add positive comments like "I like this" or "this is a great idea."
+Keeping the author motivated and showing that you appreciate their work goes a long way.
 
 ## If Possible, Try To Run The Code
 
-Missing subtle details becomes very easy when you look at a lot of code for a long time.
+It's easy to miss subtle details when you look at code for too long. 
 Having a local copy of the code that I can play with helps me a lot.
 
 I try to run the code, the tests, and the linters if I can. 
+Checking out the branch, moving things around, breaking things, and trying to understand how it works is part of my review workflow.
 
-Checking out the branch, moving things around, breaking things, and trying to understand how it works is part of my review process.
+User-facing changes like UI changes or error messages are often easier to spot when you run the code and try to break it.
+
 After that, I revert the changes and, if needed, write down my findings in a comment.
 Better understanding can come from this approach.
-User-facing changes like UI changes or error messages are often easier to spot when you run the code and try to break it.
 
 ## Be Upfront About Your Availability 
 
