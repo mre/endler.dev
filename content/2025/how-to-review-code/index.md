@@ -265,17 +265,14 @@ Ask yourself: Does this affect functionality or would it confuse future develope
 When reviewing code, focus on the reasoning behind the changes.
 This has a much better chance of success than pointing out flaws without reasoning. 
 
-```rust
-// Comment: "Don't do this." 
-let result = data[0];
-```
+![](bad-review-comment.png)
 
-**Good:**
-```rust
-// Comment: "This can panic if data is empty.
-// Consider using get() instead. Example:
-let result = data.get(0).ok_or("Data is empty")?;
-```
+Instead, be helpful and constructive.
+
+![](good-review-comment.png)
+
+I realize that this requires more time and effort, but it's worth it!
+Most of the time, the author will appreciate it and avoid making the same mistake in the future, s there is a compound effect from helpful reviews over time.
 
 ## Don't Be Afraid To Ask Stupid Questions
 
