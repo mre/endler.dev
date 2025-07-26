@@ -292,12 +292,13 @@ Perhaps there's missing documentation?
 ## Ask For Feedback On Your Reviewing Style
 
 From time to time, ask the author for feedback on your review style:
-- Did your feedback help them?
-- Did you point out the right things?
+
 - Have you been too harsh/nitpicky/slow/sloppy?
+- Did you point out the right things?
+- Did your feedback help them?
 - Do they have suggestions for improvement?
 
-Basically, you ask them to review your review process.
+Basically, you ask them to review your review process, heh.
 
 Learning how to review code is a skill that needs constant practice and refinement.
 Good luck finding your own style.
