@@ -180,7 +180,7 @@ The goal shouldn't be to merge as quickly as possible, but to accept code that i
 Otherwise, what's the point of a code review in the first place?
 That's a mindset shift that's important to make.
 
-Reviews aren't about pointing out flaws, they're about creating a shared understanding of the code within the team.
+Reviews aren't *exclusively* about pointing out flaws, they're also about creating a shared understanding of the code within the team.
 I often learn the most about writing better code by reviewing other people's code.
 I've also gotten excellent feedback on my own code from excellent engineers.
 
