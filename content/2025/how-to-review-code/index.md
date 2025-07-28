@@ -228,8 +228,8 @@ Better understanding can come from this approach.
 
 ## Be Upfront About Your Availability 
 
-Code reviews are often a bottleneck in the development process,
-because they can't be automated.
+Code reviews are often a bottleneck in the development process, because they can't be fully automated:
+there's a human in the loop who has to look at the code and provide feedback.
 
 But if you wait for your colleagues to review your code, that can lead to frustration.
 Avoid being that person. 
