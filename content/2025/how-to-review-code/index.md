@@ -135,7 +135,7 @@ In the future it will get even harder to deny a change once you've set a precede
 That's the purpose of the review process: there is no guarantee that the code will be accepted. 
 
 In open source, many people will contribute code that doesn't meet your standards.
-There needs to be someone who says "no" and this is a very unpopular job (ask Linus Torvalds).
+There needs to be someone who says "no" and this is a very unpopular job (ask any open source maintainer). 
 However, great projects need gatekeepers because the alternative is subpar code and eventually unmaintainable projects. 
 
 At times, people will say "let's just merge this and fix it later."
