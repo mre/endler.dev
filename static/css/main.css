@@ -118,7 +118,8 @@ body {
   line-height: var(--line-height);
   color: var(--text-color);
   background: var(--background);
-  hyphens: auto;
+  hyphens: none;
+  overflow-wrap: break-word;
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "kern", "liga", "clig", "calt";
   letter-spacing: 0.01em;
