@@ -12,7 +12,7 @@ It's what I get paid to do, alongside systems design.
 
 Over time, I learned a thing or two about how to review code effectively.
 I focus on different things now than when I started.
-This blog post is a summary of my current approach to code reviews. 
+This describes my current approach to code reviews. 
 
 ## Think About The Big Picture
 
