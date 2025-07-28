@@ -4,6 +4,10 @@ date=2025-07-28
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
+[extra]
+credits = [
+  {name = "Simon Brüggen", url="https://github.com/m3t0r" },
+]
 +++
 
 I've been reviewing other people's code for a while now, more than two decades to be precise. 
