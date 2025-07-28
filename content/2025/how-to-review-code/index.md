@@ -147,18 +147,12 @@ If you see something that isn't right, speak up.
 When it gets hard, remember that you're not rejecting the person, you're rejecting the code.
 Remind people that you appreciate their effort and that you want to help them improve.
 
+Even though you'll develop an intuition for what to focus on in reviews, you should still back it up with facts.
+If you find yourself saying "no" to the same thing over and over again, consider writing a style guide or a set of guidelines for your team.
+
 Be gracious but decisive.
 It's just code.
 
-## Don't Be A Gatekeeper
-
-Don't be a gatekeeper who only accepts code that meets your personal standards.
-Style guides should cover the baseline for code quality. 
-
-Stay open to new ideas and approaches by being objective and constructive.
-That's a good idea in general, but especially in code reviews, where you're often dealing with subjective decisions.
-
-Even though you'll develop an intuition for what to focus on in reviews, you should still back it up with facts.
 
 ## Code Review Is Communication
 
