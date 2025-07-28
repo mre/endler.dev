@@ -139,7 +139,7 @@ There needs to be someone who says "no" and this is a very unpopular job (ask an
 However, great projects need gatekeepers because the alternative is subpar code and eventually unmaintainable projects. 
 
 At times, people will say "let's just merge this and fix it later."
-That's a slippery slope.
+I think that's a slippery slope.
 It can lead to technical debt and a lot of work later on.
 It's hard to stand your ground, but it's important to do so.
 If you see something that isn't right, speak up.
