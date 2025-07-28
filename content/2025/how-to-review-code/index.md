@@ -260,16 +260,21 @@ Ask yourself: Does this affect functionality or would it confuse future develope
 ## Focus On The Why, Not The How
 
 When reviewing code, focus on the reasoning behind the changes.
-This has a much better chance of success than pointing out flaws without reasoning. 
+This has a much better chance of success than pointing out flaws without any reasoning. 
 
-![](bad-review-comment.png)
+Consider the following two code review comments.
+The first one is unhelpful and dismissive.
 
-Instead, be helpful and constructive.
+![A code review comment just saying: "Don't do this."](bad-review-comment.png)
 
-![](good-review-comment.png)
+The second suggests an alternative, links to the documentation, and explains why the change could lead to problems down the road. 
+
+![A code review comment explaining the reasoning behind rejecting the change by providing a helpful alternative and a link to the docs](good-review-comment.png)
+
+Which one would you prefer to receive?
 
 I realize that this requires more time and effort, but it's worth it!
-Most of the time, the author will appreciate it and avoid making the same mistake in the future, s there is a compound effect from helpful reviews over time.
+Most of the time, the author will appreciate it and avoid making the same mistake in the future. There is a compound effect from helpful reviews over time.
 
 ## Don't Be Afraid To Ask Stupid Questions
 
