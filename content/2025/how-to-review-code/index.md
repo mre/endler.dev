@@ -1,6 +1,6 @@
 +++
 title="How To Review Code"
-date=2025-07-28
+date=2025-08-06
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
