@@ -16,22 +16,21 @@ It's what I get paid to do, alongside systems design.
 
 Over time, I learned a thing or two about how to review code effectively.
 I focus on different things now than when I started.
-This describes my current approach to code reviews. 
 
 ## Think About The Big Picture
 
 Bad reviews are narrow in scope.
-They focus on syntax, style, and minor issues instead of systems design, maintainability, and extensibility. 
+They focus on syntax, style, and minor issues instead of maintainability and extensibility. 
 
 Good reviews look at not only the changes, but also what problems the changes solve, what future issues might arise, and how a change fits into the overall design of the system.
 
-I like to look at the lines that *weren't* changed. They often tell the real story.
+I like to look at the lines that *weren't* changed. They often tell the true story.
 
 For example, often people forget to update a related section of the codebase or the docs.
-This can lead to confusion, bugs, or even breaking changes or security issues. 
+This can lead to bugs, confusion, breaking changes, or security issues. 
 
 Be thorough and look at all call-sites of the new code.
-Have they been updated?
+Have they been correctly updated?
 Are the tests still testing the right thing?
 Are the changes in the right place?
 
@@ -45,26 +44,27 @@ Here's a cheat sheet of questions I ask myself when reviewing code:
 
 {% end %}
 
-These questions have more to do with systems design than with the code changes themselves.
-You should not neglect the bigger picture because systems design will suffer if you accept bad changes.
+These questions have more to do with systems design than with the changes themselves.
+Don't neglect the bigger picture because systems become brittle if you accept bad changes.
 
 Code isn't written in isolation.
 The role of more experienced developers is to reduce operational friction and handle risk management for the project.
-The documentation, the tests, and the types are equally important parts.
+The documentation, the tests, and the data types are equally as important as the code itself. 
 
 Always keep an eye out for better abstractions as the code evolves.
 
 ## Naming Is Everything
 
 I spend a big chunk of my time thinking about good names when reviewing code.
-Often, this is the most important part of a code review.
-It's also the most subjective part, which makes it tedious because it's hard to distinguish between nitpicking and important naming decisions.
 
 Naming things is hard, which is why it's so important to get it right. 
+Often, it's the most important part of a code review.
+
+It's also the most subjective part, which makes it tedious because it's hard to distinguish between nitpicking and important naming decisions.
 
 Names encapsulate concepts and serve as "building blocks" in your code.
-For me, bad names increase cognitive overhead by one or more orders of magnitude. 
 Bad names are the code smell that hint at problems running deep. 
+They increase cognitive overhead by one or more orders of magnitude. 
 
 For example, say we have a struct that represents a player's stats in a game:
 
@@ -111,8 +111,8 @@ fn update_player_stats(player: Player, bonus_points: i32, level_up: bool) -> Pla
     let level = if level_up { player.level + 1 } else { player.level };
     let level = if level > 100 { 100 } else { level };
     
-    // I like when the final variable names
-    // match the struct's field names
+    // If done correctly, the final variable names
+    // often match the struct's field names
     Player {
         username,
         score,
@@ -144,7 +144,7 @@ However, great projects need gatekeepers because the alternative is subpar code 
 
 At times, people will say "let's just merge this and fix it later."
 I think that's a slippery slope.
-It can lead to technical debt and a lot of work later on.
+It can lead to tech debt and additional work later on.
 It's hard to stand your ground, but it's important to do so.
 If you see something that isn't right, speak up.
 
@@ -154,8 +154,7 @@ Remind people that you appreciate their effort and that you want to help them im
 Even though you'll develop an intuition for what to focus on in reviews, you should still back it up with facts.
 If you find yourself saying "no" to the same thing over and over again, consider writing a style guide or a set of guidelines for your team.
 
-Be gracious but decisive.
-It's just code.
+Be gracious but decisive; it's just code.
 
 
 ## Code Review Is Communication
@@ -178,7 +177,7 @@ Instead, code reviews are an iterative process.
 Multiple iterations should be expected to get the code right.
 
 In my first iteration, I focus on the big picture and the overall design. 
-Once I'm done with that, go into the details.
+Once I'm done with that, I go into the details.
 
 The goal shouldn't be to merge as quickly as possible, but to accept code that is of high quality.
 Otherwise, what's the point of a code review in the first place?
@@ -199,10 +198,10 @@ Being respectful and constructive is important.
 Avoid personal attacks or condescending language.
 Don't say "this is wrong."
 Instead, say "I would do it this way."
-If people resist, ask a few questions to understand their reasoning. 
+If people are hesitant, ask a few questions to understand their reasoning. 
 
-- "What breaks if we do it this way?"
-- "Have you considered any alternatives?"
+- "Will this break existing workflows if we do it this way?"
+- "Which alternatives have you considered?"
 - "What happens if you call this function with an empty array?"
 - "If I don't set this value, what will be the error message presented to the user?"
 
@@ -223,7 +222,7 @@ It's easy to miss subtle details when you look at code for too long.
 Having a local copy of the code that I can play with helps me a lot.
 
 I try to run the code, the tests, and the linters if I can. 
-Checking out the branch, moving things around, breaking things, and trying to understand how it works is part of my review workflow.
+Checking out the branch, moving things around, breaking things, and trying to understand how it works is part of my review process.
 
 User-facing changes like UI changes or error messages are often easier to spot when you run the code and try to break it.
 
@@ -253,8 +252,7 @@ It's not wasted time, if it helps the team improve and grow as a whole.
 
 ## Don't Be Nitpicky
 
-Leave whitespace and formatting to the tools.
-Formatters exist for a reason.
+Formatters exist for a reason: leave whitespace and formatting to the tools.
 Save your energy for issues that truly matter.
 
 Focus on logic, design, maintainability, and correctness. Avoid subjective preferences that don't impact code quality.
@@ -285,7 +283,6 @@ Most of the time, the author will appreciate it and avoid making the same mistak
 Asking is better than assuming.
 If you don't understand something, ask the author to explain it.
 Chances are, you're not the only one who doesn't get it.
-On top of that, the author might learn how to make their code more self-explanatory.
 
 Often, the author will be happy to explain their reasoning.
 Better understanding of the code and the system as a whole can result from this.
@@ -293,11 +290,11 @@ It can also help the author see things from a different perspective.
 Perhaps they'll learn that their assumptions were wrong or that the system isn't self-explanatory.
 Perhaps there's missing documentation?
 
-[Asking good questions is powerful.](/2024/asking-better-questions/)
+[Asking great questions is a superpower.](/2024/asking-better-questions/)
 
 ## Ask For Feedback On Your Reviewing Style
 
-From time to time, ask the author for feedback on your review style:
+From time to time, ask the author for feedback on your feedback: 
 
 - Have you been too harsh/nitpicky/slow/sloppy?
 - Did you point out the right things?
