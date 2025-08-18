@@ -1,0 +1,12 @@
+{% set section = get_section(path="_index.md") %}
+[
+{%- for post in section.pages -%}
+{% if not post.draft %}
+{
+"title": {{ post.title | striptags | json_encode | safe }},
+"url": {{ post.permalink | json_encode | safe }},
+"body": "{{ post.content | striptags | replace(from="{", to=" ") | replace(from="}", to=" ") | replace(from='"', to=" ") | replace(from="'", to="") | replace(from="\", to="")  | escape }}"
+}{% if not loop.last %},{% endif %}
+{% endif %}
+{%- endfor -%}
+]
