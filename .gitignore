@@ -1,14 +1,9 @@
-dist
-public
 .DS_Store
-storage
-demo.html
+public/
 TODO.md
-tinysearch_build
 static/package.json
 static/2019
 static/static
 .vscode
 drafts
-workers-site/
 ideas.md
