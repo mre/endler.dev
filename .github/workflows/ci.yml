@@ -17,6 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: ⏬ Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+
       - name: ⏬ Install zola
         run: sudo snap install --edge zola
 
@@ -33,7 +40,7 @@ jobs:
       - name: ⏬ Install tinysearch
         run: |
           set -e
-          curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.8.2/tinysearch-v0.8.2-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.10.0/tinysearch-v0.10.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
           sudo install "$(pwd)/tinysearch" /usr/local/bin
 
       - name: ⏬ Install cavif
