@@ -23,7 +23,7 @@ Let's look at some of the claims made in the blog post and Twitter thread and se
 > "GNU Core Utils has basically never had any major security vulnerabilities in its entire existence" 
 
 If only that were true.
-A [quick CVE search](https://www.cve.org/CVERecord/SearchResults?query=coreutils) shows multiple security issues over the decades, including buffer overflows and path traversal vulnerabilities. Just a few months ago, a [heap buffer under-read](https://nvd.nist.gov/vuln/detail/CVE-2025-5278) was found in `sort`, which would cause a leak of sensitive data if an attacker sends a specially crafted input file.
+A [quick CVE search](https://www.cve.org/CVERecord/SearchResults?query=coreutils) shows multiple security issues over the decades, including buffer overflows and path traversal vulnerabilities. Just a few months ago, a [heap buffer under-read](https://nvd.nist.gov/vuln/detail/CVE-2025-5278) was found in `sort`, which would cause a leak of sensitive data if an attacker sends a specially crafted input stream.
 
 The GNU coreutils are one of the most widely used software packages worldwide with billions of installations and hundreds (thousands?) of developers looking at the code.
 Yes, vulnerabilities still happen. 
