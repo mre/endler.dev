@@ -39,7 +39,7 @@ Especially in concurrent workloads and with memory safety guarantees.
 If writing safe C code is too hard, try writing safe concurrent C code!
 
 That's where Rust shines.
-You can ridiculously parallelize your code without worrying about security issues.
+You can achieve ridiculous levels of parallelization without worrying about security issues.
 And no, you don't need to litter your code with `unsafe` blocks.
 Check out [Steve Klabnik's recent talk about Oxide](https://www.youtube.com/watch?v=q8qn0dyT3xc) where he shows that their core systems code only has 5% of `unsafe` code.
 You can write large codebases in Rust with no unsafe code at all. 
