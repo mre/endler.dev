@@ -97,7 +97,7 @@ It's just that the end product (the thing you deliver to your users, i.e. binary
 
 C developers are essentially going extinct.
 The aging maintainers of C projects are retiring, and there are fewer new developers willing to pick up C just to maintain legacy code in their free time.
-New developers want to work with modern tools and languages and that's pretty reasonable. 
+New developers want to work with modern languages and that's pretty reasonable. 
 Or would you want to maintain a 40-year-old COBOL codebase or an old Perl script?
 We have to move on.
 
