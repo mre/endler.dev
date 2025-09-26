@@ -4,19 +4,26 @@ date=2025-09-26
 draft=false
 [taxonomies]
 tags=["rust", "dev", "culture"]
+[extra]
+credits = [
+  { name = "Simon Brüggen", url="https://github.com/m3t0r" },
+  { name = "Theodor-Alexandru Irimia", url = "https://github.com/tirimia" },
+  { name = "Thomas Zahner",  url = "https://github.com/thomas-zahner"}
+]
 +++
 
-Since most of my "serious" writing on Rust has moved to the [corrode blog](https://corrode.dev/blog), I can be a bit more casual on my personal blog and share some of my personal thoughts on the recent debate around using Rust in established software.
+Since most of my "serious" writing on Rust has moved to the [corrode blog](https://corrode.dev/blog), I can be a bit more casual on here and share some of my personal thoughts on the recent debate around using Rust in established software.
 
 The two projects in question are git ([kernel thread](https://lore.kernel.org/git/20250904-b4-pks-rust-breaking-change-v1-0-3af1d25e0be9@pks.im/), [Hacker News Discussion](https://news.ycombinator.com/item?id=45312696)) and the recently rewritten [coreutils in Rust](https://github.com/uutils/coreutils), which will [ship with Ubuntu 25.10 Quizzical Quokka](https://discourse.ubuntu.com/t/carefully-but-purposefully-oxidising-ubuntu/56995).
 
-What prompted me to write this post is the [discussion on Twitter](https://x.com/nafonsopt/status/1968954376262652175) and a blog post titled ["Are We Chasing Language Hype Over Solving Real Problems?"](https://dayvster.com/blog/are-we-chasing-language-hype-over-solving-real-problems).
+What prompted me to write this post is a [discussion on Twitter](https://x.com/nafonsopt/status/1968954376262652175) and a blog post titled ["Are We Chasing Language Hype Over Solving Real Problems?"](https://dayvster.com/blog/are-we-chasing-language-hype-over-solving-real-problems).
 
-In both cases, the authors speculate about the motivations behind choosing Rust, and as someone who helps teams use Rust in production, I find those takes hilarious.
+In both cases, the authors speculate about the motivations behind choosing Rust, and as someone who helps teams use Rust in production, I find those takes... hilarious.
 
-Back in the day when I started corrode, people always mentioned that Rust wasn't used in production.
-As a consequence, we started the ['Rust in Production'](https://corrode.dev/podcast/) podcast to show that companies choose Rust for real-world applications. 
-However, people don't like to be proven wrong, so that conspiracy theory has now morphed into "Big Rust" trying to take over the world.
+Back when I started corrode, people always mentioned that Rust wasn't used for anything serious. 
+I knew about the production use-cases from client-work, but there was very little pubic information out there.
+As a consequence, we started the ['Rust in Production'](https://corrode.dev/podcast/) podcast to show that companies indeed choose Rust for real-world applications. 
+However, people don't like to be proven wrong, so that conspiracy theory has now morphed into "Big Rust" trying to take over the world. 😆
 
 Let's look at some of the claims made in the blog post and Twitter thread and see how these could be debunked pretty easily.
 
@@ -52,7 +59,7 @@ Performance is not only dependent on the language but on the algorithms and syst
 
 If you play into Rust's strengths, you can match C's performance. 
 At least there is no technical limitation, which would prevent this.
-And at least I personally feel more willing to optimize my code more aggressively in Rust, because I don't have to worry about introducing memory safety bugs.
+And I personally feel more willing to aggressively optimize my code in Rust, because I don't have to worry about introducing memory safety bugs.
 It feels like [I'm not alone](https://steveklabnik.com/writing/is-rust-faster-than-c/).
 
 > "We reward novelty over necessity in the industry"
@@ -60,11 +67,11 @@ It feels like [I'm not alone](https://steveklabnik.com/writing/is-rust-faster-th
 This ignores that most successful companies (Google, Meta, etc.) primarily use battle-tested tech stacks, not bleeding-edge languages.
 These companies have massive codebases and cannot afford to rewrite everything in the latest trendy language.
 But they see the value of using Rust for new components and gradually rewriting existing ones.
-That's because [70% of security vulnerabilities are memory safety issues](https://corrode.dev/blog/why-rust/#reasons-for-using-rust-in-production) and these are extremely costly to fix.
-If these companies could avoid switching to a new language, they would.
+That's because [70% of security vulnerabilities are memory safety issues](https://corrode.dev/blog/why-rust/#reasons-for-using-rust-in-production) and these issues are extremely costly to fix.
+If these companies could avoid switching to a new language to do so, they would.
 
-Besides, Rust is not exactly new anymore.
-It's been stable for 10+ years!
+Besides, Rust is not exactly *new* anymore.
+Rust 1.0 was released 10+ years ago!
 The industry is moving slowly, but not that slowly.
 You'd be surprised to find out how many established companies use Rust without even announcing it or thinking of it as "novelty".
 
@@ -91,9 +98,9 @@ It's just that the end product (the thing you deliver to your users, i.e. binary
 
 > "It's just developers being bored and wanting to work with shiny new languages" 
 
-C developers are essentially going extinct.
 The aging maintainers of C projects are retiring, and there are fewer new developers willing to pick up C just to maintain legacy code in their free time.
-New developers want to work with modern languages and that's pretty reasonable. 
+C developers are essentially going extinct.
+New developers want to work with modern languages and who can blame them? 
 Or would you want to maintain a 40-year-old COBOL codebase or an old Perl script?
 We have to move on.
 
@@ -110,19 +117,20 @@ But yes, new tools are being built in Rust as well.
 
 > "They don't know how to actually solve problems, just chase trends" 
 
-Talk about dismissing the technical expertise of maintainers who've been working on these projects for years and understand the pain points better than anyone.
+Talk about dismissing the technical expertise of maintainers who've been working on these projects for years or decades and understand the pain points better than anyone.
+
 If they were just chasing trends, they wouldn't be maintaining these projects in the first place!
 These people are some of the most experienced developers in the world, and yet people want to tell them how to do their jobs.
 
 > "It's part of the woke mind virus infecting software"
 
 Imagine thinking memory safety is a political conspiracy.
-The closest thing is the [White House's technical report](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/) which recommends memory-safe languages for government software.
 Apparently preventing buffer overflows is now an ideological stance.
+The closest thing is the [White House's technical report](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/) which recommends memory-safe languages for government software and mandating memory safety for software receiving federal funding is a pretty reasonable take.
 
 ## Conclusion
 
-I could go on, but I think you get the point.
+I could go on, but I think you get my point.
 
 People who give Rust an honest chance know that it offers advantages in terms of memory safety, concurrency, and maintainability.
 It's not about chasing hype but about long-term investment in software quality. 
@@ -130,4 +138,4 @@ As more companies successfully adopt Rust every day, it increasingly becomes the
 
 If you're interested in learning more about using Rust in production, check out [my other blog](https://corrode.dev/blog) or listen to the [Rust in Production podcast](https://corrode.dev/podcast/).
 
-Oh, and if you know someone who posts such takes, please forward them this post.
+Oh, and if you know someone who posts such takes, stop arguing and send them a link to this post. 
