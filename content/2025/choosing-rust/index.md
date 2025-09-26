@@ -1,6 +1,6 @@
 +++
 title="On Choosing Rust"
-date=2025-09-25
+date=2025-09-26
 draft=false
 [taxonomies]
 tags=["rust", "dev", "culture"]
@@ -8,7 +8,7 @@ tags=["rust", "dev", "culture"]
 
 Since most of my "serious" writing on Rust has moved to the [corrode blog](https://corrode.dev/blog), I can be a bit more casual on my personal blog and share some of my personal thoughts on the recent debate around using Rust in established software.
 
-The two projects in question are git ([kernel thread](https://lore.kernel.org/git/20250904-b4-pks-rust-breaking-change-v1-0-3af1d25e0be9@pks.im/), [Hacker News Discussion](https://news.ycombinator.com/item?id=45312696)) and the recently rewritten coreutils in Rust, which will ship with Ubuntu 25.10 Quizzical Quokka ([Discourse post](https://discourse.ubuntu.com/t/carefully-but-purposefully-oxidising-ubuntu/56995)).
+The two projects in question are git ([kernel thread](https://lore.kernel.org/git/20250904-b4-pks-rust-breaking-change-v1-0-3af1d25e0be9@pks.im/), [Hacker News Discussion](https://news.ycombinator.com/item?id=45312696)) and the recently rewritten [coreutils in Rust](https://github.com/uutils/coreutils), which will [ship with Ubuntu 25.10 Quizzical Quokka](https://discourse.ubuntu.com/t/carefully-but-purposefully-oxidising-ubuntu/56995).
 
 What prompted me to write this post is the [discussion on Twitter](https://x.com/nafonsopt/status/1968954376262652175) and a blog post titled ["Are We Chasing Language Hype Over Solving Real Problems?"](https://dayvster.com/blog/are-we-chasing-language-hype-over-solving-real-problems).
 
@@ -68,10 +68,6 @@ It's been stable for 10+ years!
 The industry is moving slowly, but not that slowly.
 You'd be surprised to find out how many established companies use Rust without even announcing it or thinking of it as "novelty".
 
-> "It's part of the woke mind virus infecting software"
-
-Imagine thinking memory safety is a political conspiracy.
-
 > "100% orchestrated"
 
 Multiple people in the Twitter thread were convinced this is some coordinated master plan rather than developers choosing better tools,
@@ -117,6 +113,12 @@ But yes, new tools are being built in Rust as well.
 Talk about dismissing the technical expertise of maintainers who've been working on these projects for years and understand the pain points better than anyone.
 If they were just chasing trends, they wouldn't be maintaining these projects in the first place!
 These people are some of the most experienced developers in the world, and yet people want to tell them how to do their jobs.
+
+> "It's part of the woke mind virus infecting software"
+
+Imagine thinking memory safety is a political conspiracy.
+The closest thing is the [White House's technical report](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/) which recommends memory-safe languages for government software.
+Apparently preventing buffer overflows is now an ideological stance.
 
 ## Conclusion
 
