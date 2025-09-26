@@ -91,6 +91,9 @@ Even if you use Rust, you can still license your code under GPL or any other lic
 Git itself remains GPL, and many Rust projects use various licenses, not only MIT.
 The license fear is often brought up by people who don't understand how open source licensing works or it might just be FUD.
 
+[MIT code is still compatible with GPL code](https://interoperable-europe.ec.europa.eu/licence/compatibility-check/GPL-2.0%20/MIT) and you can use both of them in the same project without issues.
+It's just that the end product (the thing you deliver to your users, i.e. binary executables) are now covered by GPL because of its virality.
+
 > "It's just developers being bored and wanting to work with shiny new languages" 
 
 C developers are basically dinosaurs at this point.
