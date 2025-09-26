@@ -92,7 +92,7 @@ The license fear is often brought up by people who don't understand how open sou
 
 > "It's just developers being bored and wanting to work with shiny new languages" 
 
-C developers are basically dinosaurs at this point.
+C developers are essentially going extinct.
 Often, the language is not even taught in universities anymore.
 The aging maintainers of C projects are retiring, and there are fewer new developers willing to pick up C just to maintain legacy code in their free time.
 New developers want to work with modern tools and languages and that's pretty reasonable. 
