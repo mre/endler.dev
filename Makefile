@@ -41,11 +41,12 @@ images: ## Create avif images
 # the public output directory. Haven't yet found the reason why.
 .PHONY: index
 index: content ## Build the search index with tinysearch
-	mkdir -p tinysearch_out
-	cp public/tinysearch.json/index.html public/search_index.json
-	RUST_LOG=debug tinysearch --release -o -m wasm -p tinysearch_out public/search_index.json
-	mv tinysearch_out/* public
-	rm -rf tinysearch_out
+	# Commented out tinysearch build for now
+	# mkdir -p tinysearch_out
+	# mv public/tinysearch.json/index.html public/search_index.json
+	# RUST_LOG=debug tinysearch --release -o -m wasm -p tinysearch_out public/search_index.json
+	# mv tinysearch_out/* public
+	# rm -rf tinysearch_out
 
 .PHONY: minify
 minify: ## Compress JavaScript assets
