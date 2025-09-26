@@ -12,7 +12,7 @@ credits = [
 ]
 +++
 
-Since most of my "serious" writing on Rust has moved to the [corrode blog](https://corrode.dev/blog), I can be a bit more casual on here and share some of my personal thoughts on the recent debate around using Rust in established software.
+Since my professional writing on Rust has moved to the [corrode blog](https://corrode.dev/blog), I can be a bit more casual on here and share some of my personal thoughts on the recent debate around using Rust in established software.
 
 The two projects in question are git ([kernel thread](https://lore.kernel.org/git/20250904-b4-pks-rust-breaking-change-v1-0-3af1d25e0be9@pks.im/), [Hacker News Discussion](https://news.ycombinator.com/item?id=45312696)) and the recently rewritten [coreutils in Rust](https://github.com/uutils/coreutils), which will [ship with Ubuntu 25.10 Quizzical Quokka](https://discourse.ubuntu.com/t/carefully-but-purposefully-oxidising-ubuntu/56995).
 
