@@ -37,7 +37,7 @@ Yes, vulnerabilities still happen.
 No, it is not easy to write correct, secure C code.
 No, not even if you're extra careful and disciplined.
 
-`ls` is 5k lines long. (Check out the [source code](https://github.com/coreutils/coreutils/blob/master/src/ls.c)). That's a lot of code for printing file names and metadata and a big attack surface!
+`ls` is five thousand lines long. (Check out the [source code](https://github.com/coreutils/coreutils/blob/master/src/ls.c)). That's a lot of code for printing file names and metadata and a big attack surface!
 
 > "Rust can only ever match C performance at best and is usually slower"
 
