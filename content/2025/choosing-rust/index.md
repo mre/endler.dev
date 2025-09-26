@@ -28,7 +28,7 @@ A [quick CVE search](https://www.cve.org/CVERecord/SearchResults?query=coreutils
 The GNU coreutils are one of the most widely used software packages worldwide with billions of installations and hundreds (thousands?) of developers looking at the code.
 Yes, vulnerabilities still happen. 
 No, it is not easy to write correct, secure C code.
-Not even if you're extra careful and disciplined.
+No, not even if you're extra careful and disciplined.
 
 `ls` is 5k lines long. (Check out the [source code](https://github.com/coreutils/coreutils/blob/master/src/ls.c)). That's a lot of code for printing file names and metadata and a big attack surface!
 
@@ -79,8 +79,7 @@ while the very maintainers of git and coreutils openly discussed their motivatio
 
 > "They're trying to replace/erase C. It's not going to happen" 
 
-Posted while literally discussing C being replaced in major projects.
-And yet, C is not going away anytime soon.
+They are right. C is not going away anytime soon.
 There is just so much C/C++ code out there in the wild, and rewriting everything in Rust is not feasible.
 The good news is that you can incrementally rewrite C/C++ code in Rust, one component at a time.
 That's what the git maintainers are planning, by using Rust for new components.
@@ -96,7 +95,7 @@ It's just that the end product (the thing you deliver to your users, i.e. binary
 
 > "It's just developers being bored and wanting to work with shiny new languages" 
 
-C developers are basically dinosaurs at this point.
+C developers are essentially going extinct.
 Often, the language is not even taught in universities anymore.
 The aging maintainers of C projects are retiring, and there are fewer new developers willing to pick up C just to maintain legacy code in their free time.
 New developers want to work with modern tools and languages and that's pretty reasonable. 
