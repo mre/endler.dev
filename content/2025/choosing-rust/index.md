@@ -127,6 +127,6 @@ People who give Rust an honest chance know that it offers advantages in terms of
 It's not about chasing hype but about long-term investment in software quality. 
 As more companies successfully adopt Rust every day, it increasingly becomes the default choice for many new projects. 
 
-If you're interested in learning more about using Rust in production, check out my [blog](https://corrode.dev/blog) or listen to the [Rust in Production podcast](https://corrode.dev/podcast/).
+If you're interested in learning more about using Rust in production, check out [my other blog](https://corrode.dev/blog) or listen to the [Rust in Production podcast](https://corrode.dev/podcast/).
 
 Oh, and if you know someone who posts such takes, please forward them this post.
