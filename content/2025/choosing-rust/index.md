@@ -28,7 +28,7 @@ A [quick CVE search](https://www.cve.org/CVERecord/SearchResults?query=coreutils
 The GNU coreutils are one of the most widely used software packages worldwide with billions of installations and hundreds (thousands?) of developers looking at the code.
 Yes, vulnerabilities still happen. 
 No, it is not easy to write correct, secure C code.
-Not even if you're extra careful and disciplined.
+No, not even if you're extra careful and disciplined.
 
 `ls` is 5k lines long. (Check out the [source code](https://github.com/coreutils/coreutils/blob/master/src/ls.c)). That's a lot of code for printing file names and metadata and a big attack surface!
 
