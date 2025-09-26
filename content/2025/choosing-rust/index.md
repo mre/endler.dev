@@ -21,7 +21,7 @@ What prompted me to write this post is a [discussion on Twitter](https://x.com/n
 In both cases, the authors speculate about the motivations behind choosing Rust, and as someone who helps teams use Rust in production, I find those takes... hilarious.
 
 Back when I started corrode, people always mentioned that Rust wasn't used for anything serious. 
-I knew about the production use-cases from client-work, but there was very little pubic information out there.
+I knew about the production use cases from client work, but there was very little public information out there.
 As a consequence, we started the ['Rust in Production'](https://corrode.dev/podcast/) podcast to show that companies indeed choose Rust for real-world applications. 
 However, people don't like to be proven wrong, so that conspiracy theory has now morphed into "Big Rust" trying to take over the world. 😆
 
@@ -48,7 +48,7 @@ If writing safe C code is too hard, try writing safe concurrent C code!
 That's where Rust shines.
 You can achieve ridiculous levels of parallelization without worrying about security issues.
 And no, you don't need to litter your code with `unsafe` blocks.
-Check out [Steve Klabnik's recent talk about Oxide](https://www.youtube.com/watch?v=q8qn0dyT3xc) where he shows that their bootloader and their preemptive multi-tasking OS, hubris -- both pretty core systems code -- only contains 5% of `unsafe` code each.
+Check out [Steve Klabnik's recent talk about Oxide](https://www.youtube.com/watch?v=q8qn0dyT3xc) where he shows that their bootloader and their preemptive multitasking OS, hubris -- both pretty core systems code -- only contain 5% of `unsafe` code each.
 You can write large codebases in Rust with no unsafe code at all. 
 
 As a trivial example, I sat down to rewrite `cat` in Rust one day.
@@ -58,7 +58,7 @@ All I did was use `splice` to copy data, which saves one memory copy.
 Performance is not only dependent on the language but on the algorithms and system calls you use.
 
 If you play into Rust's strengths, you can match C's performance. 
-At least there is no technical limitation, which would prevent this.
+At least there is no technical limitation that would prevent this.
 And I personally feel more willing to aggressively optimize my code in Rust, because I don't have to worry about introducing memory safety bugs.
 It feels like [I'm not alone](https://steveklabnik.com/writing/is-rust-faster-than-c/).
 
@@ -94,7 +94,7 @@ Git itself remains GPL, and many Rust projects use various licenses, not only MI
 The license fear is often brought up by people who don't understand how open source licensing works or it might just be FUD.
 
 [MIT code is still compatible with GPL code](https://interoperable-europe.ec.europa.eu/licence/compatibility-check/GPL-2.0%20/MIT) and you can use both of them in the same project without issues.
-It's just that the end product (the thing you deliver to your users, i.e. binary executables) are now covered by GPL because of its virality.
+It's just that the end product (the thing you deliver to your users, i.e. binary executables) is now covered by GPL because of its virality.
 
 > "It's just developers being bored and wanting to work with shiny new languages" 
 
@@ -126,7 +126,7 @@ These people are some of the most experienced developers in the world, and yet p
 
 Imagine thinking memory safety is a political conspiracy.
 Apparently preventing buffer overflows is now an ideological stance.
-The closest thing is the [White House's technical report](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/) which recommends memory-safe languages for government software and mandating memory safety for software receiving federal funding is a pretty reasonable take.
+The closest thing to this is the [White House's technical report](https://bidenwhitehouse.archives.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/) which recommends memory-safe languages for government software and mandating memory safety for software receiving federal funding is a pretty reasonable take.
 
 ## Conclusion
 
@@ -138,4 +138,4 @@ As more companies successfully adopt Rust every day, it increasingly becomes the
 
 If you're interested in learning more about using Rust in production, check out [my other blog](https://corrode.dev/blog) or listen to the [Rust in Production podcast](https://corrode.dev/podcast/).
 
-Oh, and if you know someone who posts such takes, stop arguing and send them a link to this post. 
+Oh, and if you know someone who posts such takes, stop arguing and send them a link to this post.
