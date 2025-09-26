@@ -42,7 +42,8 @@ images: ## Create avif images
 .PHONY: index
 index: content ## Build the search index with tinysearch
 	mkdir -p tinysearch_out
-	RUST_LOG=debug tinysearch --release -o -m wasm -p tinysearch_out public/tinysearch.json/index.html
+	cp public/tinysearch.json/index.html public/search_index.json
+	RUST_LOG=debug tinysearch --release -o -m wasm -p tinysearch_out public/search_index.json
 	mv tinysearch_out/* public
 	rm -rf tinysearch_out
 
