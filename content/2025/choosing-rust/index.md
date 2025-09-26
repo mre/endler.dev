@@ -49,7 +49,11 @@ The result was 3x faster than GNU `cat` on my machine.
 You can read the [post here](/2018/fastcat/).
 All I did was use `splice` to copy data, which saves one memory copy. 
 Performance is not only dependent on the language but on the algorithms and system calls you use.
-By the way, that optimization could have been done in the GNU coreutils as well, but it wasn't.
+
+If you play into Rust's strengths, you can match C's performance. 
+At least there is no technical limitation, which would prevent this.
+And at least I personally feel more willing to optimize my code more aggressively in Rust, because I don't have to worry about introducing memory safety bugs.
+It feels like [I'm not alone](https://steveklabnik.com/writing/is-rust-faster-than-c/).
 
 > "We reward novelty over necessity in the industry"
 
