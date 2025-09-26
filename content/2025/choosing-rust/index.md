@@ -79,8 +79,7 @@ while the very maintainers of git and coreutils openly discussed their motivatio
 
 > "They're trying to replace/erase C. It's not going to happen" 
 
-Posted while literally discussing C being replaced in major projects.
-And yet, C is not going away anytime soon.
+They are right. C is not going away anytime soon.
 There is just so much C/C++ code out there in the wild, and rewriting everything in Rust is not feasible.
 The good news is that you can incrementally rewrite C/C++ code in Rust, one component at a time.
 That's what the git maintainers are planning, by using Rust for new components.
