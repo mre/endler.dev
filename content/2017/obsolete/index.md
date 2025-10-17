@@ -1,7 +1,7 @@
 +++
 title="Making Myself Obsolete"
 date=2017-12-10
-updated=2023-01-02
+updated=2025-10-17
 [taxonomies]
 tags=["dev", "oss"]
 
@@ -27,8 +27,10 @@ Without overthinking it, I opened up my editor and wrote down a few tools I foun
 I called the project [Awesome Static Analysis](https://github.com/analysis-tools-dev/static-analysis).
 
 Fast forward two years and the list has grown quite a bit.
-So far, it has 75 contributors, 277 forks and received over 2000 stars. (Thanks for all the support!)
-(Update May 2018: 91 contributors, 363 forks, over 3000 stars)
+So far, it has 75 contributors, 277 forks, and received over 2,000 stars.
+(Thanks for all the support!)
+(Update May 2018: 91 contributors, 363 forks, over 3,000 stars.)
+(Update October 2025: 316 contributors, 1,400 forks, over 14,000 stars.)
 
 Around 1000 unique visitors find the list every week. Not much by any means, but I feel obliged to keep it up-to-date
 because it has become an essential source of information for many people.
@@ -259,3 +261,15 @@ While attending the [WeAreDevelopers conference in Vienna](https://www.wearedeve
 The reason was, that I wanted the linting code next to the project, which greatly simplified things.
 First and foremost I don't need the web request handling code anymore, because travis takes care of that.
 If you like, you can compare the [old](https://github.com/mre/awesome-static-analysis-ci/blob/master/src/main.rs) and the [new](https://github.com/analysis-tools-dev/static-analysis/blob/d03bd8a602b231205915a4403e2b6dc4159962f8/ci/src/lib.rs) version.
+
+## Update October 2025
+
+Most everything about that project has changed since then.
+I now use Github Actions to run the CI checks, and the `README.md` is completely auto-generated from the YAML files for each tool.
+We support specia metadata fields like a list of additional resources (tutorials, videos, etc) or the list of paid plans a tool offers.
+We have a [fancy website](https://analysis-tools.dev/) now, where we list all 700+ tools and allow people to vote.
+The website is built with Next.js and uses Algolia for search.
+We also have a bunch of sponsors now, who help us pay for hosting and other expenses.
+It's crazy to see how projects grow if you give them some love and your time!
+I hope this serves as an inspiration for you to start your own open source project!
+It's not that hard, and incredibly rewarding.
