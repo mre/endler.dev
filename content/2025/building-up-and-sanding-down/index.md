@@ -16,7 +16,7 @@ On top of that, my thoughts on the topic are not particularly novel, but I wante
 
 ## Building Up
 
-{{ figure(src="Stonework.jpg", caption="Working on a solid stone block in ancient Egypt",  credits="[Wikimedia](https://commons.wikimedia.org/wiki/File:%C3%84gypten_Steinbearbeitung.png) Public Domain") }}
+{{ figure(src="stonework.jpg", caption="Working on a solid stone block in ancient Egypt",  credits="[Wikimedia](https://commons.wikimedia.org/wiki/File:%C3%84gypten_Steinbearbeitung.png) Public Domain") }}
 
 Building up focuses on creating a solid foundation first.
 I like to use it when working on systems I know well or when there is a clear specification I can refer to.
