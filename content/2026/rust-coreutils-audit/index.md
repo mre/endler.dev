@@ -46,9 +46,9 @@ copy(from, &mut dest)?;
 
 Between step 1 and step 2, anyone with write access to the parent directory can plant `to` as a symlink to, say, `/etc/shadow`. Then `File::create` follows the symlink and the privileged process happily overwrites `/etc/shadow` with whatever `from` happened to contain.
 
-The fix uses [`OpenOptions::create_new(&mut self, true)`](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html#method.create_new): 
+The fix uses [`OpenOptions::create_new(true)`](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html#method.create_new):
 
-> No file is allowed to exist at the target location, **also no (dangling) symlink**. In this way, if the call succeeds, the file returned is guaranteed to be new. 
+> No file is allowed to exist at the target location, **also no (dangling) symlink**. In this way, if the call succeeds, the file returned is guaranteed to be new.
 
 ```rust
 fs::remove_file(to)?;
@@ -76,9 +76,9 @@ This is a close relative of TOCTOU. You want a directory with restrictive permis
 
 ```rust
 // Create with default permissions
-fs::create_dir(&path)?;                  
+fs::create_dir(&path)?;
 // Fix up permissions
-fs::set_permissions(&path, Permissions::from_mode(0o700))?;  
+fs::set_permissions(&path, Permissions::from_mode(0o700))?;
 ```
 
 The lights are on but it’s burglars!
@@ -103,9 +103,9 @@ fn create_dir_with_mode(path: &Path, mode: u32) -> io::Result<()> {
 I love that the bug is C-shaped but the defense (an RAII guard that restores the umask on drop) is idiomatic Rust.
 
 
-##  String equality on paths is not the same as filesystem identity.
+## String Equality on Paths Is Not the Same as Filesystem Identity
 
-The original `--preserve-root` in check `chmod` was literally this:
+The original `--preserve-root` check in `chmod` was literally this:
 
 ```rust
 if recursive && preserve_root && file == Path::new("/") {
@@ -113,7 +113,7 @@ if recursive && preserve_root && file == Path::new("/") {
 }
 ```
 
-That comparison is bypassed by anything that *resolves* to `/` but isn't spelled `/`. So `/../`, `/./`, `/usr/..`, or a symlink that points to `/`. Run `chmod -R 000 /../` and see it fly right past your check and lock down the whole system. 
+That comparison is bypassed by anything that *resolves* to `/` but isn't spelled `/`. So `/../`, `/./`, `/usr/..`, or a symlink that points to `/`. Run `chmod -R 000 /../` and see it fly right past your check and lock down the whole system.
 
 Here's the fix from <a href="https://github.com/uutils/coreutils/pull/10033/files" target="_blank" rel="noopener noreferrer">PR #10033</a>.
 
@@ -155,7 +155,7 @@ By the way, my favorite bug in this group is `rm ./` (CVE-2026-35363). The code 
 ## Stay in Bytes at Unix Boundaries
 
 Rust's [`String`](https://doc.rust-lang.org/std/string/struct.String.html) and [`&str`](https://doc.rust-lang.org/std/primitive.str.html) are always UTF-8.
-That's a great choice in 99% of all cases, but Unix paths, environment variables, arguments, and the inputs flowing through tools like `cut`, `comm`, and `tr` live in the messy world of bytes. 
+That's a great choice in 99% of all cases, but Unix paths, environment variables, arguments, and the inputs flowing through tools like `cut`, `comm`, and `tr` live in the messy world of bytes.
 
 Every time a Rust program bridges that gap, it has three options.
 
@@ -187,7 +187,7 @@ out.write_all(rb)?;
 ```
 
 [`print!`](https://doc.rust-lang.org/std/macro.print.html) forces a UTF-8 round-trip through [`Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html). [`Write::write_all`](https://doc.rust-lang.org/std/io/trait.Write.html#method.write_all) does not.
-It writes the raw bytes directly to `stdout`. 
+It writes the raw bytes directly to `stdout`.
 
 ### Pick the Right Type for the Job
 
@@ -248,7 +248,7 @@ A surprising number of these CVEs aren't "the code does something unsafe" but "t
 
 The clearest example is `kill -1` (CVE-2026-35369). GNU reads `-1` as "signal 1" and asks for a PID. uutils read it as "send the default signal to PID -1", which on Linux means *every process you can see*. Yikes!
 
-A typo becomes a system-wide kill switch. 
+A typo becomes a system-wide kill switch.
 
 > If you reimplement a battle-tested tool, bug-for-bug compatibility on exit codes, error messages, edge cases, and option semantics is a security feature. (Hello, [Hyrum's Law](https://www.hyrumslaw.com/)!)
 
@@ -294,7 +294,7 @@ There's a general principle here that Rust can't help you with: **resolve everyt
 
 I want to end on a more positive note.
 
-Although the above bugs were real, it would be the wrong conclusion to say "See? Rust is just as buggy as C!" 
+Although the above bugs were real, it would be the wrong conclusion to say "See? Rust is just as buggy as C!"
 None of the following bad things happened in the audit:
 
 - No buffer overflows.
@@ -308,8 +308,8 @@ That means, even if the tools were (and still are) buggy, they never had a bug t
 
 GNU coreutils has shipped CVEs in every single one of those categories. The Rust rewrite has shipped zero. That's *most* of what historically goes wrong in a C codebase.
 
-What's left is, frankly, a more interesting class of bug. It lives at the boundary between our tidy Rust environment and the "messy outside world" where paths, bytes, strings, and syscalls are eternally tangled up in this ugly ball of sadness. 
-That's the new security boundary of modern systems code. 
+What's left is, frankly, a more interesting class of bug. It lives at the boundary between our tidy Rust environment and the "messy outside world" where paths, bytes, strings, and syscalls are eternally tangled up in this ugly ball of sadness.
+That's the new security boundary of modern systems code.
 
 If you write systems code in Rust, treat this CVE list as a checklist. Grep your own codebase for `from_utf8_lossy`, stray `unwrap()` calls, discarded `Result`s, `File::create`, and string comparisons against `"/"`.
 
