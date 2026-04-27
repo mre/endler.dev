@@ -305,11 +305,11 @@ main article {
 }
 
 .article-header .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     font-weight: normal;
     margin: 0.75rem auto 1.5rem;
     max-width: 80%;
-    color: var(--meta-color);
+    color: var(--heading-color);
 }
 
 .article-content {
