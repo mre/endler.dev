@@ -87,22 +87,6 @@ For a brief moment, `path` exists with the default permissions. Any other user o
 
 The rule is to set permissions at the moment of creation. Never afterwards.
 
-### Case Study: `mkdir -m 0700` (CVE-2026-35353)
-
-The fix from <a href="https://github.com/uutils/coreutils/pull/10036/files" target="_blank" rel="noopener noreferrer">PR #10036</a> is admittedly pretty old-school. It temporarily sets `umask(0)` so the kernel creates the directory with exactly the requested mode, in one syscall.
-
-```rust
-fn create_dir_with_mode(path: &Path, mode: u32) -> io::Result<()> {
-    // Drop umask to 0 so the kernel honors `mode` exactly.
-    // The RAII guard restores the previous umask on drop, even on panic.
-    let _guard = UmaskGuard::set(0);
-    DirBuilder::new().mode(mode).create(path)
-}
-```
-
-I love that the bug is C-shaped but the defense (an RAII guard that restores the umask on drop) is idiomatic Rust.
-
-
 ## String Equality on Paths Is Not the Same as Filesystem Identity
 
 The original `--preserve-root` check in `chmod` was literally this:
@@ -147,8 +131,7 @@ if let Ok(p) = fs::canonicalize(file) {
 }
 ```
 
-That said, this still isn't bulletproof I think...? 🤔 There's a gap between the `canonicalize` call and the recursive `chmod` that follows. An attacker who controls a parent directory can swap things around in that window. For real protection, GNU coreutils opens the target and compares its `(dev, inode)` pair against `/`.
-Think identity, not string equality.
+In the specific case of `--preserve-root`, this works because `/` has no parent directory, so there's nothing for an attacker to swap from underneath you. In the more general case of comparing two arbitrary paths for filesystem identity, however, you'd want to open both and compare their `(dev, inode)` pairs, the way GNU coreutils does. (Think identity, not string equality.)
 
 By the way, my favorite bug in this group is `rm ./` (CVE-2026-35363). The code refused `.` and `..`, but happily accepted `./` and `.///`, then deleted the current directory while printing `Invalid input`. 😅
 
@@ -200,12 +183,31 @@ UTF-8 is a great default for application strings but it's absolutely, positively
 In a CLI, every `unwrap`, every `expect`, every slice index, every unchecked arithmetic, every [`from_utf8`](https://doc.rust-lang.org/std/str/fn.from_utf8.html) is a potential denial of service if an attacker can shape the input.
 That's because a `panic!` unwinds the stack and aborts the process. If your tool is running in a cron job, a CI pipeline, or a shell script, that means the whole thing just stops working. Even worse, you could find yourself in a crash loop that can paralyze the entire system.
 
-A canonical case from the audit was `sort --files0-from` (CVE-2026-35348).
-Feed it a non-UTF-8 path and the whole pipeline aborts on a panic. Your nightly cron job is dead and there goes your weekend.
+A canonical case from the audit was `sort --files0-from` ([CVE-2026-35348](https://ubuntu.com/security/CVE-2026-35348)). The flag reads a NUL-separated list of filenames from a file, but the parser called `expect()` on a UTF-8 conversion of each name:
+
+```rust
+// Inside sort.rs, simplified
+let path = std::str::from_utf8(bytes)
+    .expect("Could not parse string from zero terminated input.");
+```
+
+GNU `sort` treats filenames as raw bytes, the way the kernel does. The uutils version required UTF-8 and aborted the whole process on the first non-UTF-8 path:
+
+```text
+$ python3 -c "open('list0','wb').write(b'weird\xffname\0')"
+$ coreutils sort --files0-from=list0
+thread 'main' panicked at uu_sort-0.2.2/src/sort.rs:1076:18:
+Could not parse string from zero terminated input.: Utf8Error { valid_up_to: 5, error_len: Some(1) }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+```
+
+(I reproduced this against `coreutils 0.2.2` on macOS. The Python one-liner is there because most modern shells refuse to create a non-UTF-8 filename for you.)
+
+Your nightly cron job is dead and there goes your weekend.
 
 > In code that processes untrusted input, treat every `unwrap`, `expect`, indexing, or `as` cast as a CVE waiting to be filed. Use `?`, `get`, `checked_*`, `try_from`, and surface a real error. Push back on the boundary of your application and let the caller deal with the fallout.
 
-A good lint baseline to catch this in CI.
+A good lint baseline to catch this in CI:
 
 ```toml
 [lints.clippy]
@@ -216,7 +218,7 @@ indexing_slicing = "warn"
 arithmetic_side_effects = "warn"
 ```
 
-(These are noisy in test code, so turn them off there.)
+These are noisy in test code where panicking on bad data is exactly what you want. The cleanest way to scope them to non-test code is to put `#![cfg_attr(test, allow(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::indexing_slicing, clippy::arithmetic_side_effects))]` at the top of each crate root, or to gate `#[allow(...)]` on the individual `#[cfg(test)]` modules.
 
 ## Propagate Every Error
 
@@ -260,9 +262,9 @@ uutils now runs the upstream GNU coreutils test suite against itself in CI. That
 
 ## Resolve Inputs Before Crossing a Trust Boundary
 
-[CVE-2026-35368](https://ubuntu.com/security/CVE-2026-35368) is the worst single bug in the audit. It's local root code execution. And the best part is that you can't see it just by reading the code.
+[CVE-2026-35368](https://ubuntu.com/security/CVE-2026-35368) is the worst single bug in the audit. It's local root code execution in `chroot`. The bug is visible if you know what to look for (a `chroot` followed by a function call that loads a dynamic library), but it's the kind of thing that doesn't jump out on a first read.
 
-Here's the pattern.
+Here's the pattern, simplified from the `chroot` utility.
 
 ```rust
 chroot(new_root)?;
@@ -288,7 +290,7 @@ setuid(user.uid())?;
 exec(cmd)?;
 ```
 
-There's a general principle here that Rust can't help you with: **resolve everything you need *before* crossing into a less-trusted environment.** Once you're across, every library call might run the attacker's code.
+There's a general principle here that Rust can't help you with: **resolve everything you need *before* crossing into a less-trusted environment.** Once you're across, every library call might run the attacker's code. And no, static compilation doesn't help here, because `get_user_by_name` goes through NSS, which `dlopen`s `libnss_*` modules at runtime regardless of whether your binary is statically linked.
 
 ## What Rust *Did* Prevent
 
@@ -306,10 +308,26 @@ None of the following bad things happened in the audit:
 
 That means, even if the tools were (and still are) buggy, they never had a bug that could be exploited to read arbitrary memory.
 
-GNU coreutils has shipped CVEs in every single one of those categories. The Rust rewrite has shipped zero. That's *most* of what historically goes wrong in a C codebase.
+GNU coreutils has shipped CVEs in every single one of those categories. Just looking at the last few years of the GNU `NEWS` file:
+
+- `pwd` buffer overflow on deep paths longer than `2 * PATH_MAX` (9.11, 2026)
+- `numfmt` out-of-bounds read on trailing blanks (9.9, 2025)
+- `unexpand --tabs` heap buffer overflow (9.9, 2025)
+- `od --strings -N` writes a NUL byte past a heap buffer (9.8, 2025)
+- `sort` 1-byte read before a heap buffer with a `SIZE_MAX` key offset (9.8, 2025)
+- `ls -Z` and `ls -l` crashes with SELinux but no xattr support (9.7, 2025)
+- `split --line-bytes` heap overwrite ([CVE-2024-0684](https://nvd.nist.gov/vuln/detail/CVE-2024-0684), 9.5, 2024)
+- `b2sum --check` reads unallocated memory on malformed input (9.4, 2023)
+- `tail -f` stack buffer overrun with many files and a high `ulimit -n` (9.0, 2021)
+
+...and the list goes on and on. The Rust rewrite has shipped zero of these, over a comparable window of activity.[^rewrite-caveat] That's *most* of what historically goes wrong in a C codebase.
+
+[^rewrite-caveat]: To be fair to GNU: GNU coreutils is 40 years old and has had a very long time to surface and fix this class of bug. And we don't *know* there are no memory-safety bugs in the Rust rewrite, only that the audit didn't find any. Still, the difference is noticable when comparing the same duration of development activity.
 
 What's left is, frankly, a more interesting class of bug. It lives at the boundary between our tidy Rust environment and the "messy outside world" where paths, bytes, strings, and syscalls are eternally tangled up in this ugly ball of sadness.
-That's the new security boundary of modern systems code.
+That's the new security boundary of modern systems code.[^c-handles]
+
+[^c-handles]: It's worth noting that the `Path`/`PathBuf` TOCTOU class of bug is in some ways *easier* to avoid in C than in Rust. C code naturally reaches for an open file descriptor and the `*at` family of syscalls (`openat`, `fstatat`, `unlinkat`, `mkdirat`), and most creation syscalls take a `mode` argument directly. Rust's high-level `std::fs` APIs abstract over the file descriptor and operate on `&Path` values, which makes the path-based, re-resolving call the path of least resistance. The handle-based APIs exist on every Unix platform; Rust just doesn't put them front and center.
 
 If you write systems code in Rust, treat this CVE list as a checklist. Grep your own codebase for `from_utf8_lossy`, stray `unwrap()` calls, discarded `Result`s, `File::create`, and string comparisons against `"/"`.
 
