@@ -8,7 +8,7 @@ author = "matthias@endler.dev (Matthias Endler)"
 generate_feeds = true
 feed_filenames = ["atom.xml", "rss.xml"]
 
-minify_html = true
+minify_html = false
 
 # Whether to build a search index out of the pages and section
 # content for the `default_language`

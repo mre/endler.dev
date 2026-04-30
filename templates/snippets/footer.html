@@ -1,48 +1,69 @@
 <footer>
-  <div class="body">
-    <div class="footer-author">
-      <a href="/about">
-        <picture>
-          <source srcset="/about/matthias-endler-2x.avif" type="image/avif">
-          <img 
-            src="/about/matthias-endler-2x.jpg" 
-            alt="Matthias Endler" 
-            class="footer-author-photo"
-            width="80" 
-            height="80">
-        </picture>
-      </a>
-      <div class="footer-author-text">
-        <span class="greeting">Servus</span>, I'm <a href="/about">Matthias</a>.
-      </div>
-    </div>
-    
-    <div>
-      <p>
-        A developer from Bavaria, Germany 🥨🍺, mostly writing about software development and open-source.
-      </p>
-      
-      <p>
-        My company <a href="https://corrode.dev">corrode</a> offers friendly, human consulting and training for teams going from prototype to production with Rust.
-      </p>
-      
-      <p>
-        You can learn more <a href="/about">about me</a>, subscribe to my <a href="/rss.xml">RSS feed</a>, or browse the <a href="/archive">archive</a>.
-      </p>
+    <div class="body">
+        <div class="footer-author">
+            <a href="/about">
+                <picture>
+                    <source
+                        srcset="/about/matthias-endler-2x.avif"
+                        type="image/avif"
+                    />
+                    <img
+                        src="/about/matthias-endler-2x.jpg"
+                        alt="Matthias Endler"
+                        class="footer-author-photo"
+                        width="80"
+                        height="80"
+                    />
+                </picture>
+            </a>
+            <div class="footer-author-text">
+                <span class="greeting">Servus</span>, I'm
+                <a href="/about">Matthias</a>.
+            </div>
+        </div>
 
-      {% include "snippets/social.html" %}
+        <div>
+            <p>
+                A developer from Bavaria, Germany 🥨🍺, mostly writing about
+                software development and open-source.
+            </p>
+
+            <p>
+                My company <a href="https://corrode.dev">corrode</a> offers
+                friendly, human consulting and training for teams going from
+                prototype to production with Rust.
+            </p>
+
+            <p>
+                You can learn more <a href="/about">about me</a>, subscribe to
+                my <a href="/rss.xml">RSS feed</a>, browse the
+                <a href="/archive">archive</a>, or
+                <a
+                    href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#97;&#116;&#116;&#104;&#105;&#97;&#115;&#64;&#101;&#110;&#100;&#108;&#101;&#114;&#46;&#100;&#101;&#118;"
+                    >drop me an email</a
+                >.
+            </p>
+
+            {% include "snippets/social.html" %}
+        </div>
     </div>
-  </div>
-  <script>
-    // Switch the greeting between a few possible options on dom loaded
-    document.addEventListener("DOMContentLoaded", function () {
-      // A few not-so-common greetings:
-      const greetings = ["Servus", "Aloha", "Howdy", "Ahoi", "Ohai", "Yo"];
-      const greetingElement = document.querySelector(".greeting");
-      if (greetingElement) {
-        greetingElement.textContent =
-          greetings[Math.floor(Math.random() * greetings.length)];
-      }
-    });
-  </script>
+    <script>
+        // Switch the greeting between a few possible options on dom loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            // A few not-so-common greetings:
+            const greetings = [
+                "Servus",
+                "Aloha",
+                "Howdy",
+                "Ahoi",
+                "Ohai",
+                "Yo",
+            ];
+            const greetingElement = document.querySelector(".greeting");
+            if (greetingElement) {
+                greetingElement.textContent =
+                    greetings[Math.floor(Math.random() * greetings.length)];
+            }
+        });
+    </script>
 </footer>

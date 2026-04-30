@@ -1,37 +1,71 @@
-{% set home = load_data(path="static/icons/home.svg") %}
-{% set github = load_data(path="static/icons/github.svg") %}
-{% set twitter = load_data(path="static/icons/twitter.svg") %}
-{% set mastodon = load_data(path="static/icons/mastodon.svg") %}
-{% set rss = load_data(path="static/icons/rss.svg") %}
-{% set search = load_data(path="static/icons/search.svg") %}
+{% set home = load_data(path="static/icons/home.svg") %} {% set github =
+load_data(path="static/icons/github.svg") %} {% set twitter =
+load_data(path="static/icons/twitter.svg") %} {% set mastodon =
+load_data(path="static/icons/mastodon.svg") %} {% set rss =
+load_data(path="static/icons/rss.svg") %} {% set search =
+load_data(path="static/icons/search.svg") %} {% set email =
+load_data(path="static/icons/email.svg") %}
 
 <nav class="social-icons">
     <ul>
         <li>
-            <a class="icon" href="/" title="Go to homepage" aria-label="Go to homepage">
+            <a
+                class="icon"
+                href="/"
+                title="Go to homepage"
+                aria-label="Go to homepage"
+            >
                 {{ home | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://github.com/mre" title="Github" aria-label="Github">
+            <a
+                class="icon"
+                href="https://github.com/mre"
+                title="Github"
+                aria-label="Github"
+            >
                 {{ github | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://mastodon.social/@mre" title="Mastodon"
-                aria-label="Mastodon">
+            <a
+                class="icon"
+                href="https://mastodon.social/@mre"
+                title="Mastodon"
+                aria-label="Mastodon"
+            >
                 {{ mastodon | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="https://twitter.com/matthiasendler" title="Twitter"
-                aria-label="Twitter">
+            <a
+                class="icon"
+                href="https://twitter.com/matthiasendler"
+                title="Twitter"
+                aria-label="Twitter"
+            >
                 {{ twitter | safe }}
             </a>
         </li>
         <li>
-            <a class="icon" href="/rss.xml" title="RSS feed"
-                aria-label="RSS feed">{{ rss | safe }}</a>
+            <a
+                class="icon"
+                href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#97;&#116;&#116;&#104;&#105;&#97;&#115;&#64;&#101;&#110;&#100;&#108;&#101;&#114;&#46;&#100;&#101;&#118;"
+                title="Email"
+                aria-label="Email"
+            >
+                {{ email | safe }}
+            </a>
+        </li>
+        <li>
+            <a
+                class="icon"
+                href="/rss.xml"
+                title="RSS feed"
+                aria-label="RSS feed"
+                >{{ rss | safe }}</a
+            >
         </li>
     </ul>
 </nav>
