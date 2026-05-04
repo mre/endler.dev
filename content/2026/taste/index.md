@@ -1,12 +1,13 @@
 +++
 title="On Taste"
 date=2026-05-01
+updated=2026-05-04
 draft=false
 [taxonomies]
 tags=["culture"]
 +++
 
-I’ve been refining this blog’s design for two decades.
+I’ve been refining this blog’s design for two decades now.
 With each new version, I get a little better at knowing what I want.
 
 Turns out, my designs tend to get *simpler* with time.
@@ -15,6 +16,13 @@ I got better at knowing what I value and what I can *take away*.
 
 Uncluttering brings joy.
 Maybe that's a deeply human thing?
+
+## Screenshots of my blog’s design over the years
+
+{{ figure(src="2007.jpg", caption="2007") }}
+{{ figure(src="2011.jpg", caption="2011") }}
+{{ figure(src="2018.jpg", caption="2018") }}
+{{ figure(src="2026.jpg", caption="2026") }}
 
 ## Obsession and Preference
 
@@ -33,12 +41,9 @@ You’ve developed a strong personal preference.
 
 But at this stage, you're just a guy with an opinion.
 
-## Good Taste
-
 Having preferences isn’t the same as having good taste.
 
-Preferences are just opinions.
-Good taste is about recognizing quality *outside* your own preferences.
+To develop good taste you have to recognize quality *outside* your own preferences.
 It’s seeing how something expresses an idea through deliberate choice, and being able to tell when those choices are honest.
 
 Good taste is rooted in context.
@@ -81,21 +86,22 @@ They aged together. They’ll die together.
 If you watch an artist like him perform, it looks effortless.
 That’s because he knows what matters and what doesn’t.
 He focuses on the details that make a difference and ignores the rest, which makes the task simpler for him.
-That’s the trick: good taste tells you what to leave out.
+That’s the trick: good taste tells you what to look for,
+and expertise teaches you how to achieve it -- what to emphasize and what to leave out.
 
-## You Can’t Buy It
+## Apple 
 
 Buying an Apple device doesn’t mean you have good taste.
 Millions own them.
 For many, it’s just a status symbol.
-Apple helps you think different in the same way that Air Jordans help you jump higher.
+Apple helps you think different in the same way that Air Jordans help you jump higher. (I do love the posters, though.)
 
 In fact, people with good taste often *avoid* brands.
 Brands are what kill great products.
 
 The cycle goes like this:
 
-1. Someone creates something great.
+1. A company builds something great.
 2. Early adopters rave about it.
 3. Popularity grows.
 4. The product gets adjusted for the mass market.
@@ -121,9 +127,7 @@ If we get too comfortable, we stop developing taste at all.
 Our preferences become narrow, superficial, shallow.
 We just like what everyone else likes, with no way to say why.
 
-## What Now?
-
-The way out is to care about something. Anything!
+The way out is to care about *something*. Anything!
 Care so much it becomes part of who you are.
 
 Everyone should have at least one thing they irrationally obsess over.
@@ -139,4 +143,4 @@ It shows who you are and what you care about.
 That's scary. But it's how you find your people.
 
 I don't think I will ever stop refining this blog's design.
-It is my zen garden. Now go out and build your own.
+Maybe I'm not an expert and just a guy with an opinion, but my blog is my zen garden. It brings me joy. Now go out and build your own.
