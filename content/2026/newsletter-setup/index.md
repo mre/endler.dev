@@ -130,6 +130,7 @@ It validates the email, and forwards to Plunk. No JavaScript needed.
 Plunk sends a transactional confirmation email (for double opt-in).
 
 Everything runs on a Hetzner box which runs Coolify.
+It takes absolutely no CPU or memory.
 I push to git, [Nixpacks](https://nixpacks.com/) detects the Rust crate, builds it, and the new version is live.
 
 [Building small things yourself](/2025/build-it-yourself/) is one of the best ways to actually understand them and to keep owning the parts that matter.
@@ -157,3 +158,5 @@ If you'd like a peek at the (somewhat hacky) repo, send me a mail and I'll send 
 It's really not that interesting, but if you're curious about how it works, I'm happy to share.
 Or wait until I clean it up a bit and open source it properly.
 Probably will just take me another few years to get around to it. 
+
+The best part is that you can test my setup by filling out the form below and subscribing to the newsletter.
