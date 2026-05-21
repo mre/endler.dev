@@ -91,8 +91,11 @@
     @media (max-width: 480px) {
         .newsletter-callout form {
             flex-direction: column;
+            align-items: stretch;
         }
+        .newsletter-callout input[type="email"],
         .newsletter-callout button {
+            flex: 0 0 auto;
             width: 100%;
         }
     }
