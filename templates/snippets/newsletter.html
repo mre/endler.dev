@@ -47,11 +47,19 @@
 </div>
 
 <style>
+    .newsletter-callout > h2 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .newsletter-callout > p {
+        margin-top: 0;
+        margin-bottom: 1.2em;
+    }
     .newsletter-callout form {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 16px;
+        gap: 10px;
+        margin-top: 0;
     }
     .newsletter-callout input[type="email"] {
         flex: 1 1 220px;
@@ -69,6 +77,7 @@
         border-color: var(--accent-color);
     }
     .newsletter-callout button {
+        flex: 1 1 auto;
         padding: 10px 18px;
         font: inherit;
         font-size: 0.95em;
@@ -78,6 +87,14 @@
         border-radius: var(--radius);
         cursor: pointer;
         transition: opacity var(--transition);
+    }
+    @media (max-width: 480px) {
+        .newsletter-callout form {
+            flex-direction: column;
+        }
+        .newsletter-callout button {
+            width: 100%;
+        }
     }
     .newsletter-callout button:hover:not(:disabled) {
         opacity: 0.9;

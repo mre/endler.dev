@@ -1,6 +1,6 @@
 +++
 title="How I Built My Own Newsletter Setup (And Why)"
-date=2026-05-15
+date=2026-05-21
 draft=false
 [taxonomies]
 tags=["dev", "culture"]
@@ -134,17 +134,7 @@ I push to git, [Nixpacks](https://nixpacks.com/) detects the Rust crate, builds 
 
 [Building small things yourself](/2025/build-it-yourself/) is one of the best ways to actually understand them and to keep owning the parts that matter.
 
-## The Friend Who Told Me What Not To Do
-
-A lot of what I avoided getting wrong, I avoided because of my friend [Simon](https://github.com/m3t0r) (yes, the same Simon who edits the [podcast](https://corrode.dev/podcast/)).
-Simon knows mail.
-More importantly, he knows *why* mail is hard, and he was generous with the warnings.
-He told me what not to do and explained why.
-He also came up with the `corrode v0.N.0` subject line, which still makes me smile every time I send an issue.
-
-Thank you, Simon.
-
-## The Bug I Shipped on Day One
+## A Minor Hickup 
 
 I forgot that the `From:` address actually needs to be a real mailbox if you want replies to work.
 The first issue went out as `newsletter@corrode.dev`, which didn't exist as a mailbox.
