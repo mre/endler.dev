@@ -1,0 +1,123 @@
+<div class="newsletter-callout">
+    <h2>Idiomatic Rust content. Straight to your inbox.</h2>
+    <p>
+        I regularly write new articles on idiomatic Rust. If you want to be
+        notified when I publish them, you should sign up to my newsletter here.
+        No spam. Unsubscribe at any time.
+    </p>
+    <div id="newsletter-subscription">
+        <form
+            id="newsletter-form"
+            action="https://newsletter.corrode.dev/subscribe"
+            method="post"
+        >
+            <label for="tlemail" class="visually-hidden">Email</label>
+            <input
+                id="tlemail"
+                type="email"
+                name="email"
+                placeholder="mail@example.com"
+                required
+            />
+            <!-- honeypot: hidden from humans, irresistible to bots -->
+            <input
+                type="text"
+                name="hpfield"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+            />
+            <button type="submit" id="newsletter-submit">
+                <span id="newsletter-button-text">Subscribe</span>
+                <span
+                    id="newsletter-spinner"
+                    class="newsletter-spinner"
+                    style="display: none"
+                    aria-hidden="true"
+                ></span>
+                <span id="newsletter-button-loading" style="display: none">
+                    Subscribing…
+                </span>
+            </button>
+            <p id="newsletter-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</div>
+
+<style>
+    @keyframes newsletter-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .newsletter-spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
+        vertical-align: -2px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: newsletter-spin 0.8s linear infinite;
+    }
+</style>
+
+<script>
+    (function () {
+        const container = document.getElementById("newsletter-subscription");
+        const form = document.getElementById("newsletter-form");
+        const status = document.getElementById("newsletter-status");
+        const submitBtn = document.getElementById("newsletter-submit");
+        const buttonText = document.getElementById("newsletter-button-text");
+        const buttonLoading = document.getElementById(
+            "newsletter-button-loading",
+        );
+        const spinner = document.getElementById("newsletter-spinner");
+        if (!container || !form || !status || !submitBtn) return;
+
+        const setLoading = (loading) => {
+            submitBtn.disabled = loading;
+            buttonText.style.display = loading ? "none" : "";
+            buttonLoading.style.display = loading ? "" : "none";
+            spinner.style.display = loading ? "inline-block" : "none";
+        };
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            status.textContent = "";
+            setLoading(true);
+            try {
+                const res = await fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams(new FormData(form)),
+                });
+                const text = (await res.text()).trim();
+                if (res.ok) {
+                    const message =
+                        text && text !== "Thank you for subscribing"
+                            ? text
+                            : "🎉 You're in! Check your inbox to confirm.";
+                    const p = document.createElement("p");
+                    p.className = "newsletter-success";
+                    p.setAttribute("role", "status");
+                    p.setAttribute("aria-live", "polite");
+                    p.textContent = message;
+                    container.replaceChildren(p);
+                } else {
+                    status.textContent =
+                        text ||
+                        "There was a problem with your subscription. Please try again later.";
+                    setLoading(false);
+                }
+            } catch (err) {
+                status.textContent =
+                    "There was a problem with your subscription. Please try again later.";
+                setLoading(false);
+            }
+        });
+    })();
+</script>
