@@ -1,83 +1,85 @@
 +++
 title="How I Built My Own Newsletter Setup (And Why)"
 date=2026-05-15
-draft=true
+draft=false
 [taxonomies]
 tags=["dev", "culture"]
 +++
 
-A few people asked me how this newsletter is sent.
-The honest answer is: I'm still figuring it out.
+I had a newsletter on this blog for years, but I didn't send a single email for a long time.
+This is the story of how I finally got it back up and running, and what I learned along the way.
 
-Here's the story so far, because the technical bits turned out to be less interesting than the path that got me there.
+{{ figure(src="tinyletter-landing-page.jpg", caption="The old Tinyletter landing page, now a sad 404.", credits="[Wayback Machine](https://web.archive.org/web/20240229161126/http://tinyletter.com/)") }}
 
-## Tinyletter
 
-For years, my newsletter on this blog was just a small form pointing at Tinyletter.
-I never thought about deliverability, bounce rates, suppression lists, SPF, DKIM, DMARC, or any of that.
+## The Tinyletter Years
+
+For years my setup was a small form on the website pointing at Tinyletter, a small newsletter service that was focused on writers.
+What I liked about it was the simplicity.
+I never had to think about email deliverability, bounce rates, suppression lists, SPF, DKIM, DMARC, or any of that.
 I wrote a thing, hit send, people got it.
-It just worked.
 
-Then Tinyletter shut down.
+{{ figure(src="tinyletter-compose-message.jpg", caption="The Tinyletter compose page, showing the simplicity of the interface.") }}
 
-I always wanted something *like* Tinyletter, but more open and more hackable.
-Something I could actually understand.
-With Tinyletter I had simplicity, but I didn't own anything.
-When it disappeared, my list disappeared with it.
+It just worked. Then Tinyletter shut down.
 
-{{ figure(src="placeholder-tinyletter.jpg", caption="TODO: screenshot of the old Tinyletter signup form, or a goodbye-Tinyletter image") }}
+A bit of history: Tinyletter was built in 2010 by [Philip Kaplan](https://en.wikipedia.org/wiki/Philip_Kaplan), reportedly coded [in a single day (on Sunday, the 31st of October, 2010)](https://techcrunch.com/2010/11/12/pud-revisits-his-past-launches-an-email-newsletter-platform-with-tinyletter/).
 
-## The fly.io Detour
+It got acquired by Mailchimp one year later, and quietly became the de facto home for writers who wanted a personal newsletter without thinking about funnels, segments, or A/B tests.
+
+Then in late 2023, Mailchimp (now part of Intuit) announced they'd shut it down.
+The official wording was that their "business priorities have evolved" and that they were "laser focused on building tools to serve marketers and help small businesses grow."
+[But perhaps writers were never the customer.](https://simonowens.substack.com/p/tinyletter-was-one-of-the-greatest)
+
+{{ figure(src="tinyletter-shutdown.png", caption="Mailchimp's shutdown announcement, late 2023.", credits="[EmailOctopus](https://emailoctopus.com/blog/alternative-to-tinyletter)") }}
+
+Just before Tinyletter went dark on February 29, 2024, I made a final backup of my subscriber list, but I didn't have a plan for what to do with it.
+
+## Denial 
+
+At this point, I became hostile to the idea of using a third-party service.
+I looked at all options and bounced off all of them.
+
+- **Too expensive.** Most services price per contact and assume you're running a business funnel, not writing letters to people.
+- **Too marketing-focused.** Templates, drag-and-drop builders, A/B tests, engagement scoring, tracking pixels. The whole vocabulary is wrong. I don't want to run *campaigns*; I want to send *email*!
+- **Not hacker-friendly.** No markdown, no CLI, no API I'd actually enjoy using. Everything happens in a web dashboard built for a marketing team.
+- **Not open source.** If the next Tinyletter shuts down, I'd like to keep going without having to migrate again.
+- **Tracking by default.** Open tracking, click tracking, pixels in every footer. I don't want to know who opened what. I want to write, you read it (or don't), the end.
+
+## Migrating to Fly.io 
 
 People kept asking me when the newsletter was coming back, so I cobbled something together on fly.io.
-A small Rust API, a CSV file with subscribers, sending through SMTP.
-It worked, technically.
-But I never actually sent anything.
+A small Rust API, a CSV file with subscribers, and a way to subscribe through the website. 
+The idea was to deal with the sending later, but at least offer a way to sign up.
 
-I didn't really know what I wanted to write about, or who I was writing it *for*.
-So the list just sat there.
-Cold.
-Months passed.
-Then more months.
+The list just sat there. Cold.
 
 Turns out, a cold list is a problem all by itself.
-When you finally do send to a list of people who haven't heard from you in a year, mail providers get suspicious and you can get flagged as spam.
-Suddenly your "I'll get to it eventually" newsletter is actively bad for you.
+When you finally do send to a list of people who haven't heard from you in a long time, mail providers get suspicious and you can get flagged as spam.
+Suddenly your own newsletter can turn against you. 
 
-I learned a lot in that period &ndash; the [git history](https://github.com/corrode/newsletter) is a graveyard of half-finished ideas &ndash; but the bigger lesson was about the writing, not the code:
+I learned a lot in that period, but the bigger lesson was about the writing, not the code:
 I needed a clear idea of *who* this was for.
 
 I love newsletters like [The Pragmatic Engineer](https://www.pragmaticengineer.com/) because they're hands-on and fact-heavy.
 I wanted to do something in that spirit, but with more of *me* in it.
-Random thoughts allowed.
-Slightly weird tangents encouraged.
 I'm a person, not a content pipeline.
 
 (I've written about this before in [What to Write](/2024/what-to-write/).)
 
 ## The Hunt for a Sending Service
 
-So now I had a goal, but I needed a service to actually send the mail.
+Eventually, I went back to the original problem: I still needed something to actually send the mail.
 This was the hardest part by far.
 
-I tried a lot of things.
-Mailchimp is bloated and feels designed for someone else.
-Other services were either way too expensive for what I wanted to do, or pushed me toward "campaigns" with templates and tracking pixels and engagement scoring &ndash; which is the opposite of what I want.
-
-I just want to send personal-feeling emails to people who said they wanted them.
-No tracking.
-Proper double opt-in.
-Working unsubscribe headers.
-That's it.
-
 Then I found [Plunk](https://www.useplunk.com/).
-Open source, fair pricing that scales with your list size, an API that doesn't fight me, and it does the deliverability work I don't want to think about &ndash; SES integration, bounce handling, suppression list, hosted unsubscribe pages.
+It is open source, the pricing scales with your list size, and the API doesn't fight me.
+It does the deliverability work I don't want to think about ([SES integration](https://aws.amazon.com/ses/), [bounce handling](https://debounce.com/glossary/bounce-handling/), [suppression list](https://mailchimp.com/resources/email-suppression-list/), [hosted unsubscribe pages](https://docs.useplunk.com/concepts/templates)).
 I'm a paying customer now.
-No affiliation, just genuinely happy.
+I'm not affiliated, just a genuinely happy user. 
 
-I even sent them a small contribution at one point: [PR #359](https://github.com/useplunk/plunk/pull/359).
-Merged in ten minutes.
-That kind of responsiveness is rare, and it told me a lot about the project.
+I even sent them a [small contribution](https://github.com/useplunk/plunk/pull/359) and they merged it in ten minutes.
+This made me feel like I was actually part of the community.
 
 The first real send went out to a thousand-plus contacts that hadn't heard from me in ages.
 I was bracing for a wave of bounces and a spam flag.
@@ -85,23 +87,22 @@ It went fine.
 Bounce rate around 1%, no complaints.
 I exhaled.
 
-{{ figure(src="placeholder-status-dashboard.jpg", caption="TODO: screenshot of `send status` showing the colour-coded bounce table") }}
+{{ figure(src="plunk-dashboard.jpg", caption="The Plunk dashboard, showing the campaign overview and deliverability report. As you can see, I don't track who opens my emails.", credits="[Plunk](https://www.useplunk.com/)") }}
 
-## The "This Feels Like Home" Moment
+## This Feels Like Home
 
-The setup clicked when I realized I could write issues as plain markdown files in a folder, version-controlled, with a small CLI for everything else.
+I realized I could write issues as plain markdown files in a folder, version-controlled, with a small CLI for everything else.
 That's where I feel at home.
-Editor, terminal, git.
-No web dashboard between me and the writing.
+Just me, a cup of hot chocolate, my editor, the terminal, and git.
+No more web dashboard between me and the writing.
 
-The whole thing lives in one repo:
+The whole thing lives in a single repo:
 
 ```
 newsletter/
 ├── issues/         # one .md per edition (1.md, 2.md, ...)
 ├── send/           # the CLI I run locally
-├── subscribe/      # tiny HTTP service behind the website signup form
-└── old/            # the previous fly.io setup, kept for reference
+└── subscribe/      # tiny HTTP service behind the website signup form
 ```
 
 The CLI is called `send`. Here's what it can do:
@@ -115,39 +116,23 @@ Commands:
   new      Create a new issue file and open $EDITOR
   list     List local issues
   lint     Check links in an issue (or all issues)
-  test     Send a test email to a single address
+  test     Send a test email to myself 
   publish  Publish the issue to all subscribed contacts
-  status   Show contact-list and campaign deliverability report
-  prune    List unsubscribed contacts and (after confirmation) delete them
+  status   Show contact-list and deliverability report
+  prune    Delete unsubscribed contacts
 ```
-
-Issues are plain markdown.
-The first non-empty line is the topic.
-Everything after is the body.
-No frontmatter, no YAML, nothing to remember.
-
-The subject line gets built automatically as `corrode v0.N.0 # <topic>`.
-The major version stays at `0` forever &ndash; a small joke about projects that never quite reach 1.0.
-(That subject scheme was Simon's idea. More on him in a second.)
 
 `send publish 2` shows me a preview, the recipient count, and a `y/N` prompt before it actually fires anything off.
 `send status` shows me per-campaign deliverability with bounce-rate cells colour-coded against the SES thresholds, plus daily bounces and unsubscribes, so I can spot trouble early.
-`send prune` deletes unsubscribed contacts after I confirm, because Plunk keeps them around indefinitely otherwise.
 
-The signup form on the website POSTs to a tiny Rust service called `subscribe`.
-It validates the email, drops anything with the honeypot field filled in, and forwards to Plunk.
-No JavaScript on the page.
-Plunk sends a transactional confirmation email (double opt-in, basically free).
+The signup form on the website POSTs to a tiny Rust service called `subscribe`, which runs on my own server.
+It validates the email, and forwards to Plunk. No JavaScript needed. 
+Plunk sends a transactional confirmation email (for double opt-in).
 
-{{ figure(src="placeholder-architecture.jpg", caption="TODO: simple architecture diagram &mdash; website form → subscribe service → Plunk; send CLI → Plunk → SES → subscribers") }}
-
-Everything runs on a Hetzner box.
+Everything runs on a Hetzner box which runs Coolify.
 I push to git, [Nixpacks](https://nixpacks.com/) detects the Rust crate, builds it, and the new version is live.
-Push to deploy.
-It feels almost unfair how easy this kind of thing has gotten.
 
-Yes, I know I could have used an off-the-shelf tool.
-But I've [argued before](/2025/build-it-yourself/) that building small things yourself is one of the best ways to actually understand them &ndash; and to keep owning the parts that matter.
+[Building small things yourself](/2025/build-it-yourself/) is one of the best ways to actually understand them and to keep owning the parts that matter.
 
 ## The Friend Who Told Me What Not To Do
 
@@ -164,26 +149,21 @@ Thank you, Simon.
 I forgot that the `From:` address actually needs to be a real mailbox if you want replies to work.
 The first issue went out as `newsletter@corrode.dev`, which didn't exist as a mailbox.
 A kind reader replied to say hi, his message bounced, and he forwarded the bounce notice back to me to let me know.
-Fixed within the hour.
-Now the alias exists and replies just work.
+I fixed it and now the alias exists and replies just work.
 
-You will ship bugs.
-Ship them anyway.
+## One List, Not Two
+
+While I was at it, I also collapsed my older endler.dev newsletter and the corrode.dev one into a single list.
+Both were always written by me, and running two parallel setups never really made sense &ndash; same person on the keyboard, mostly overlapping audience, twice the maintenance. Going forward, there's just one newsletter. If any of this isn't for you, you can always unsubscribe and never hear from me again. No hard feelings. 
 
 ## What I'd Tell You
 
 If you've been thinking about doing this yourself: do it.
 Self-hosting is genuinely easier than it used to be.
 There are great open source services for almost every piece.
-You don't need to reinvent the deliverability stack &ndash; you just need to pick the right tool (Plunk, in my case) and let it handle the parts you don't want to think about.
-
-I have no idea what I'm doing most of the time.
-I'm learning as I go.
-It's fun, and that's most of why I'm doing it this way.
+That would be its own blog post, so let me know if you want me to write it.
 
 If you'd like a peek at the (somewhat hacky) repo, send me a mail and I'll send you a link.
+It's really not that interesting, but if you're curious about how it works, I'm happy to share.
 Or wait until I clean it up a bit and open source it properly.
-Probably both.
-
-Reply anytime.
-I read every email.
+Probably will just take me another few years to get around to it. 
