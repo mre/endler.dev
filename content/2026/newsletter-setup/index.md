@@ -1,5 +1,5 @@
 +++
-title="How I Built My Own Newsletter Setup (And Why)"
+title="Hosting My Own Newsletter"
 date=2026-05-21
 updated=2026-05-22
 draft=false
