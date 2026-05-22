@@ -1,6 +1,7 @@
 +++
 title="How I Built My Own Newsletter Setup (And Why)"
 date=2026-05-21
+updated=2026-05-22
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -80,6 +81,13 @@ I was bracing for a wave of bounces, but it went fine.
 Bounce rate around 1%, only very few unsubscribes, and no deliverability issues. 
 Wow!
 
+I didn't do anything fancy: no batching, no slow warmup, no clever subject line. 
+I sent it all at once and let Plunk (well, SES underneath) auto-prune obviously dead addresses via bounce handling. 
+The one thing I did do was lead the first issue with a short, frank reintroduction &ndash; something like *"hey, you signed up because you read a blog post of mine once, sorry for the silence"* &ndash; which I think did most of the work in keeping unsubscribes low.
+
+Cost-wise, one send to the full list costs me roughly **$1**. 
+For a newsletter I send irregularly, that's nothing.
+
 {{ figure(src="plunk-dashboard.jpg", caption="The Plunk dashboard, showing the campaign overview and deliverability report. As you can see, I don't track who opens my emails.", credits="[Plunk](https://www.useplunk.com/)") }}
 
 ## This Feels Like Home!
@@ -116,26 +124,46 @@ Commands:
 ```
 
 `send publish 2` shows me a preview, the recipient count, and a `y/N` prompt before it actually fires anything off.
+The subject line gets built automatically as `corrode v0.N.0 # <topic>` &ndash; semver-styled, with the major version stuck at `0` forever as a small joke about projects that never quite reach 1.0.
+
 `send status` shows me per-campaign deliverability with bounce-rate cells colour-coded against the SES thresholds, plus daily bounces and unsubscribes, so I can spot trouble early.
 
-The signup form on the website POSTs to the tiny `subscribe` service, which runs on my server.
-It validates the email and forwards it to Plunk. No JavaScript needed.
-Plunk sends a transactional confirmation email (for double opt-in).
+`send lint` runs every link in an issue through [`lychee`](https://github.com/lycheeverse/lychee) before I hit publish. 
+I am a lychee maintainer, so dogfooding it here was an obvious choice and a nice quality-of-life improvement over the old Tinyletter web editor, which had no link checking at all. 
 
-I push to git, [Nixpacks](https://nixpacks.com/) detects the Rust crate, builds it, and the new version is live.
+The signup form on the website POSTs to the tiny `subscribe` service, which runs on my server.
+It validates the email, drops anything with the honeypot field filled in, and POSTs to Plunk with a `subscribe-requested` event. 
+Plunk creates the contact in the *unsubscribed* state and fires off the transactional confirmation email through its Action workflow. 
+Only when the recipient clicks the link does Plunk flip them to *subscribed*[^gdpr]. 
+No webhook back to my side, no callback, no JavaScript on the page.
+I just push to git, my server detects the change, builds and runs the server crate, and the new version is live.
 The running service takes absolutely no CPU or memory.
+
+## A Little DNS, Briefly
+
+Plunk needs three things in DNS to send on my behalf: an **SPF** record (saying SES is allowed to send for the domain), a **DKIM** key (so SES can sign outgoing mail), and a return-path **MX** record (so bounces come back somewhere Plunk can read them).
+All three live under a subdomain.
+Don't worry, Plunk tells you exactly how to set this up and you can copy-paste the records into your DNS provider's dashboard.
+
+The one thing worth not forgetting: do *not* add Plunk's optional inbound MX at the apex of your domain. That would steal mail away from whoever currently handles your inbox (mailbox.org in my case), and replies stop landing where you expect.
 
 ## A Minor Hiccup
 
 I forgot that the `From:` address actually needs to be a real mailbox if you want replies to work.
 The first issue went out as `newsletter@corrode.dev`, which didn't exist as a mailbox.
 A kind reader (hey Kevin!) replied to say hi, his message bounced, and he forwarded the bounce notice back to me to let me know.
-I fixed it and now the alias exists and replies just work.
+I created the alias on mailbox.org, and replies have landed in my inbox ever since.
 
 ## One List, Not Two
 
 While I was at it, I also collapsed my older endler.dev newsletter and the [corrode.dev](https://corrode.dev) one into a single list.
-Both were always written by me, and running two parallel setups never really made sense. Same person on the keyboard, mostly overlapping audience, twice the maintenance. Going forward, there's just one newsletter. If any of this isn't for you, you can always unsubscribe and never hear from me again. No hard feelings. 
+Both were always written by me, and running two parallel setups never really made sense. Same person on the keyboard, mostly overlapping audience, twice the maintenance.
+
+The merge itself was uneventful: I had a CSV exported from Tinyletter (the original endler.dev list) and another from my fly.io service (the corrode.dev list I'd started collecting when corrode.dev launched). Same format. Both went into Plunk and deduplication was a non-issue. In the first issue I made the framing explicit (one newsletter for all my writing) so nobody had to guess what they were now signed up for. [^backup]
+
+[^backup]: As for backups: Plunk holds the canonical subscriber list, and I can export it to CSV any time. I think they also have an API for that, but I haven't tried it yet. 
+
+Going forward, there's just one newsletter. If any of this isn't for you, you can always unsubscribe and never hear from me again. No hard feelings. 
 
 ## What I'd Tell You
 
@@ -149,3 +177,5 @@ If you'd like a peek at the (somewhat hacky) repo, send me a mail and I'll send 
 Or wait until I clean it up a bit and open source it properly, which will just take me another few years to get around to it. 
 
 And the best part is that you can now test my setup by filling out the form below and subscribing to the newsletter!
+
+[^gdpr]: The confirmation click matters to comply with GDPR regulations, and Plunk handles that for me.
