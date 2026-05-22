@@ -90,4 +90,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: 1c71f27d6fa097a1576b4ffab9186fa8
-          command: pages deploy ./public --project-name=endler-dev --branch=master --commit-dirty=true
+          # Project name and build output directory are read from wrangler.toml.
+          # `--commit-dirty=true` silences the warning about `make stars`
+          # writing to content/static/about/stars.md during the build.
+          command: pages deploy --branch=master --commit-dirty=true
