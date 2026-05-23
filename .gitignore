@@ -1,4 +1,6 @@
 .DS_Store
+.env
+.env.*
 public/
 TODO.md
 static/package.json
@@ -7,3 +9,4 @@ static/static
 .vscode
 drafts
 ideas.md
+.wrangler
