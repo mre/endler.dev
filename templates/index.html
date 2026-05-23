@@ -7,14 +7,18 @@ load_data(path="static/logo_font_dark.svg") %}
 <html lang="en">
     <head>
         <script>
+            // Set data-theme as early as possible so the page (and the
+            // toggle icon) render in the correct state on first paint.
+            // The attribute is ALWAYS set to a concrete value ("light"
+            // or "dark") so CSS selectors like `[data-theme="dark"] ...`
+            // work uniformly regardless of system preference.
             (function () {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute(
-                        "data-theme",
-                        savedTheme,
-                    );
-                }
+                const saved = localStorage.getItem("theme");
+                const prefersDark =
+                    window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                const theme = saved || (prefersDark ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", theme);
             })();
         </script>
 
@@ -211,34 +215,28 @@ load_data(path="static/logo_font_dark.svg") %}
                 updateSyntaxHighlighting(newTheme);
             }
 
-            function initTheme() {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute(
-                        "data-theme",
-                        savedTheme,
-                    );
-                    updateSyntaxHighlighting(savedTheme);
-                } else {
-                    if (
-                        window.matchMedia &&
-                        window.matchMedia("(prefers-color-scheme: dark)")
-                            .matches
-                    ) {
-                        document.documentElement.setAttribute(
-                            "data-theme",
-                            "dark",
-                        );
-                    } else {
-                        document.documentElement.setAttribute(
-                            "data-theme",
-                            "light",
-                        );
-                    }
-                }
-            }
+            // data-theme is already set by the inline head script.
+            // Here we only need to sync the syntax-highlighting
+            // stylesheets to it, and react to system-pref changes
+            // when the user hasn't made an explicit choice.
+            updateSyntaxHighlighting(
+                document.documentElement.getAttribute("data-theme"),
+            );
 
-            initTheme();
+            if (window.matchMedia) {
+                window
+                    .matchMedia("(prefers-color-scheme: dark)")
+                    .addEventListener("change", (event) => {
+                        if (!localStorage.getItem("theme")) {
+                            const theme = event.matches ? "dark" : "light";
+                            document.documentElement.setAttribute(
+                                "data-theme",
+                                theme,
+                            );
+                            updateSyntaxHighlighting(theme);
+                        }
+                    });
+            }
         </script>
     </body>
 </html>

@@ -116,22 +116,6 @@ social_img = get_url(path=page.path ~ "social.png") -%} {%- endif -%} {%- endfor
                 </svg>
             </button>
         </div>
-
-        <script>
-            // Listen for system preference changes
-            if (window.matchMedia) {
-                window
-                    .matchMedia("(prefers-color-scheme: dark)")
-                    .addEventListener("change", (event) => {
-                        if (!localStorage.getItem("theme")) {
-                            document.documentElement.setAttribute(
-                                "data-theme",
-                                event.matches ? "dark" : "light",
-                            );
-                        }
-                    });
-            }
-        </script>
     </header>
 
     <div class="article-content">{{ page.content | safe }}</div>
