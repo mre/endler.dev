@@ -1,7 +1,7 @@
 +++
 title="Hosting My Own Newsletter"
 date=2026-05-21
-updated=2026-05-22
+updated=2026-05-25
 draft=false
 [taxonomies]
 tags=["culture"]
@@ -9,6 +9,8 @@ tags=["culture"]
 
 I had a newsletter on this blog for years, but I didn't send a single email for a long time.
 This is the story of how I finally got it back up and running, and what I learned along the way.
+
+A quick note up front, because this caused some confusion: by "hosting my own" I mean I don't use a newsletter *platform*. The signup backend and the CLI I use to send issues are mine, and the issues themselves are just markdown files in a git repo. I still use [Plunk](https://www.useplunk.com/) as the sending backend (so SES, bounces, suppression lists, and unsubscribe pages aren't my problem). Plunk *is* open source and I could self-host it, but the deliverability side has enough edge cases that I'm happy to pay someone else to run it. 🙃
 
 
 ## The Tinyletter Years
