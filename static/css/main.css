@@ -527,13 +527,30 @@ details {
 
 .info {
     margin: 40px 0 20px;
+    padding: 35px;
     border-style: dotted;
+    font-size: 0.9em;
 }
 
-.info > *:first-child,
-.info > *:last-child {
+.info > *:first-child {
     margin-top: 0;
+}
+
+.info > *:last-child {
     margin-bottom: 0;
+}
+
+.info-title {
+    margin: 0 0 24px;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.2;
+}
+
+.info ul,
+.info ol {
+    padding-left: 1.3em;
+    margin: 0;
 }
 
 details summary {

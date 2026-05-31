@@ -1,3 +1,6 @@
+{% set title = title | default(value="") %}
 <div class="info">
-  {{ body | markdown() | safe }}
+    {% if title %}
+    <p class="info-title">{{ title }}</p>
+    {% endif %} {{ body | markdown() | safe }}
 </div>

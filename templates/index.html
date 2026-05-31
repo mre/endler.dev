@@ -37,7 +37,10 @@ load_data(path="static/logo_font_dark.svg") %}
             crossorigin
         />
 
-        <link rel="stylesheet" href="/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="{{ get_url(path='css/main.css', cachebust=true) | safe }}"
+        />
         <link rel="canonical" href="{{ current_url | safe }}" />
         <link rel="me" href="https://mastodon.social/@mre" />
 
