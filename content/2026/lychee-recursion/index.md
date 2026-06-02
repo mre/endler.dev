@@ -1,22 +1,24 @@
 +++
 title="Five Years of Trying to Add Recursion to lychee"
 date=2026-05-31
+updated=2026-06-02
 draft=false
 [taxonomies]
-tags=["rust", "dev", "lychee", "async"]
+tags=["rust", "dev", "culture"]
 +++
 
-Recursion has been [lychee](https://github.com/lycheeverse/lychee)'s longest-standing open issue. It's been sitting there, unresolved, for over five years now.
+Recursion has been [lychee](https://github.com/lycheeverse/lychee)'s longest-standing open issue.
+It's been sitting there, unresolved, for over five years now.
 
 If you haven't come across it before, lychee is a fast, async link checker written in Rust (BTW).
-I started it in 2020 because I got bored at home. By now, around 40k GitHub repositories depend on it.
 You point it at your website, your docs, your README, your Markdown files.
+
+I started it in 2020 because I got bored at home. By now, around 40k GitHub repositories depend on it.
 Google, AWS, Microsoft, Cloudflare, and many others use it to check links in their documentation.
 
 I gave [talks](https://www.youtube.com/watch?v=BIguvia6AvM) and [podcasts](https://www.youtube.com/watch?v=plEz4l7HwhY) about it, in case you'd like to learn more.
 
 {{ figure(src="screencast.svg", caption="lychee goes weeeee...") }}
-
 
 lychee got [funded by NLnet](https://nlnet.nl/) through their [NGI Zero program](https://nlnet.nl/NGI0/) for open, trustworthy infrastructure.
 
@@ -398,7 +400,7 @@ Put another way, Rust made the *wrong* approaches fail loudly and painfully e.g.
 
 Despite all the failed attempts, the ground has quietly shifted under this problem in 2025–2026. A bunch of work, most of it not even about recursion, has made a real implementation finally look within reach.
 
-### Per-Host Rate Limiting (PR #1929, Merged December 2025)
+### Per-Host Rate Limiting (December 2025)
 
 Recursion without rate limiting is dangerous.
 Gwenn found that out firsthand by accidentally DDoS'ing their own WiFi router while recursively checking Wikipedia. 😬
@@ -468,7 +470,7 @@ That's the missing piece that our previous attempts lacked.
 
 After it, input fetching and link checking go through the same pool. For recursion this matters because recursively discovered pages need to be fetched and parsed, and they should use the same client config as everything else.
 
-### Sitemap Support (PR #2062)
+### Sitemap Support (February 2026)
 
 [Sitemap support](https://github.com/lycheeverse/lychee/pull/2062) is a partial solution to a lot of recursion use cases. By parsing `sitemap.xml`, lychee can discover every page on a site without crawling recursively at all. It's not a replacement for true recursion (it doesn't help sites without sitemaps, and it won't find dynamically linked pages), but it unblocks a lot of use-cases. 
 
@@ -499,12 +501,13 @@ Recursion becomes a by-product of good architecture, not a special case bolted o
 
 ## So, Did We Fail...?
 
-I promised at the start I'd come back to this.
-
 For a long time I told myself we'd failed. Four attempts, five years, seemingly nothing shipped.
 
-But writing it all out changed how I see it. Every attempt hit some mix of channel termination semantics, backpressure deadlocks, ownership ergonomics, and distributed termination detection. None of those are lychee problems. They're hard concurrent-systems problems.
-We just lacked the vocabulary to talk about them, and while I wasn't looking, those primitives got built. Sometimes the most important code you write for a feature is the code that never mentions the feature at all.
+But writing it all out changed how I see it.
+Every attempt hit some mix of channel termination semantics, backpressure deadlocks, ownership ergonomics, and distributed termination detection.
+None of those are lychee problems. They're hard concurrent-systems problems.
+We just lacked the vocabulary to talk about them, and while I wasn't looking, those primitives got built.
+Sometimes the most important code you write for a feature is the code that never mentions the feature at all.
 
 So no, I don't think we failed. We made progress by stumbling into the right direction.
 
