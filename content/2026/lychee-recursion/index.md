@@ -256,7 +256,7 @@ Someone offered a €100 bounty. Others pointed to [muffet](https://github.com/r
 
 ## Attempt 4: Gwenn Takes a Swing (January – March 2025)
 
-In late 2024, a community contributor, [**@gwennlbh**](https://github.com/gwennlbh), [picked up the gauntlet](https://github.com/lycheeverse/lychee/pull/1603). Their plan went back to the channel-based model but with a twist: instead of trying to close channels for termination, they used an `Arc<AtomicUsize>` counter. Like Attempt 1, but atomic and shared across tasks!
+In late 2024, a community contributor, [**@gwennlbh**](https://github.com/gwennlbh), [picked up the gauntlet](https://github.com/lycheeverse/lychee/pull/1603). Her plan went back to the channel-based model but with a twist: instead of trying to close channels for termination, she used an `Arc<AtomicUsize>` counter. Like Attempt 1, but atomic and shared across tasks!
 
 And it looked so elegant: 
 
@@ -310,11 +310,11 @@ To extract links from response bodies, the code built a fresh `Collector` inline
 
 ### The End of That Road
 
-After a burst of energy in January 2025, things slowed. Merge conflicts piled up. CI linting rules changed underneath the branch. @gwennlbh switched to Windows and couldn't get the OpenSSL dependency to build. In March 2025 they wrote, honestly:
+After a burst of energy in January 2025, things slowed. Merge conflicts piled up. CI linting rules changed underneath the branch. @gwennlbh switched to Windows and couldn't get the OpenSSL dependency to build. In March 2025 she wrote, honestly:
 
 > even though I was kinda denying it, it's pretty clear that I've lost motivation to keep working on this [...] I'm sorry T_T
 
-I didn't want them to apologize. They got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. My own note on the PR a while later was just the sober truth:
+I didn't want her to apologize. She got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. Instead, I'm grateful for the time she invested to push tings forward.
 
 {% info() %}
 
