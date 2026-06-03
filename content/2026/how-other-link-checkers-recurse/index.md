@@ -26,7 +26,7 @@ Before the individual teardowns, here's the punchline. Every recursive checker I
 
 Diagrammatically, lychee and the crawlers are different *shapes*:
 
-```mermaid
+{% mermaid() %}
 graph TD
     subgraph crawler["Everyone else: a worklist (a cycle)"]
         direction TB
@@ -41,13 +41,13 @@ graph TD
         LB --> LC[Checker]
         LC --> LD[Results]
     end
-```
+{% end %}
 
 The crawler shape has a back-edge baked in. The pipeline shape doesn't, and every one of my failed attempts was an effort to bend that back-edge into a graph that was never designed to hold one.
 
 The crucial design decision they all share, stated more precisely:
 
-```mermaid
+{% mermaid() %}
 graph TD
     Seed[Seed URLs] --> Enq["Enqueue step: is URL in visited set?"]
     Enq -->|yes| Skip[Drop]
@@ -58,7 +58,7 @@ graph TD
     FP -->|discovered links| Enq
     FP --> Rec[Record result]
     Q -.->|empty AND no worker busy| Stop[Terminate]
-```
+{% end %}
 
 Note *where* the visited check happens: at the **enqueue** step, atomically with the mark, before the worker ever touches the network. That ordering is the entire fix to the deduplication race that haunted lychee's attempts 1–4, where the cache was written *after* checking.
 
