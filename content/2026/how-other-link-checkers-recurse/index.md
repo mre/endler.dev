@@ -6,10 +6,11 @@ draft=false
 tags=["rust", "dev", "lychee", "async"]
 +++
 
-After I published [Five Years of Trying to Add Recursion to lychee](@/2026/lychee-recursion/index.md), the most common reply I got was a very fair question:
+After I published [Five Years of Trying to Add Recursion to lychee](@/2026/lychee-recursion/index.md), one reply I got was a very fair question:
 
 > If recursion is so hard, how do *other* link checkers do it? Plenty of them already crawl websites!
 
+This sent me down a rabbit hole of reading the code of other link checkers.
 The key takeaway is: **they didn't find a clever trick we missed.** They were built as crawlers from the very first commit, and I initially built lychee as a stream.
 
 I went and read the source of the recursive checkers we list in [lychee's README](https://github.com/lycheeverse/lychee#features): [muffet](https://github.com/raviqqe/muffet) (Go), [LinkChecker](https://github.com/linkchecker/linkchecker) (Python), [linkinator](https://github.com/JustinBeckwith/linkinator) (TypeScript), and [broken-link-checker](https://github.com/stevenvachon/broken-link-checker) (JavaScript). This post is a teardown of how each one actually handles recursion, what it costs them, and what it means for lychee.
