@@ -37,7 +37,10 @@ load_data(path="static/logo_font_dark.svg") %}
             crossorigin
         />
 
-        <link rel="stylesheet" href="/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="{{ get_url(path='css/main.css', cachebust=true) | safe }}"
+        />
         <link rel="canonical" href="{{ current_url | safe }}" />
         <link rel="me" href="https://mastodon.social/@mre" />
 
@@ -53,6 +56,14 @@ load_data(path="static/logo_font_dark.svg") %}
             @font-face {
                 font-family: "Happy";
                 src: url("/fonts/Happy.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "xkcd";
+                src: url("/fonts/xkcd.otf") format("opentype");
                 font-weight: normal;
                 font-style: normal;
                 font-display: swap;
@@ -92,6 +103,46 @@ load_data(path="static/logo_font_dark.svg") %}
                 font-weight: 700;
                 src: url("/fonts/merriweather-v31-latin-700.woff2")
                     format("woff2");
+            }
+
+            /* Hand-drawn Mermaid diagrams sit flush on the page: no surface
+               box, centered, uppercase labels, and edge lines that break
+               around their labels (the label is masked with the page
+               background, so the line appears to have a gap for the text). */
+            pre.mermaid {
+                background: transparent;
+                padding: 0;
+                text-align: center;
+            }
+
+            .mermaid svg {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .mermaid .nodeLabel,
+            .mermaid .edgeLabel,
+            .mermaid .cluster-label,
+            .mermaid span,
+            .mermaid text {
+                text-transform: uppercase;
+            }
+
+            /* Fatter lines, lighter boxes. The squiggle displacement filter
+               itself is injected per-diagram by mermaid-init.js (Safari can't
+               resolve a shared cross-<svg> filter reference). */
+            .mermaid .nodes path {
+                stroke-width: 1.75px;
+            }
+
+            .mermaid .edgePaths path,
+            .mermaid .flowchart-link {
+                stroke-width: 4px;
+            }
+
+            .mermaid .labelBkg {
+                background-color: var(--background) !important;
             }
         </style>
 

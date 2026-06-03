@@ -145,4 +145,8 @@ social_img = get_url(path=page.path ~ "social.png") -%} {%- endif -%} {%- endfor
     "snippets/codecrafters.html" %} {% endif %}
 </article>
 
-{% endblock content %}
+{# Load Mermaid only on pages that actually contain a diagram. #} {%- if
+'class="mermaid"' in page.content %}
+<script defer src="/js/mermaid.min.js"></script>
+<script defer src="/js/mermaid-init.js"></script>
+{%- endif %} {% endblock content %}

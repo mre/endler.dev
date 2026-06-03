@@ -115,9 +115,7 @@ In September 2021 we decided to do a bigger rewrite: a stream-based architecture
 
 [PR #165](https://github.com/lycheeverse/lychee/pull/165) was closed in December 2021. The stream refactor landed and gave us a 35–50% speedup. Nice! Tradeoffs, I guess.
 
-{% info() %}
-
-## Takeaways
+{% info(title="Takeaways") %}
 
 - **Counting outstanding work in an async pipeline is fragile.** An off-by-one in distributed counting means a deadlock or an early exit.
 - **Big refactors and feature branches don't get along.** The stream rewrite made the recursion branch stale before it was ever ready.
@@ -178,9 +176,7 @@ I took the problem to the Tokio Discord, and the advice that came back was: "Sto
 
 Even ignoring the deadlock, there was a second issue. The new `from_chan` method benchmarked roughly 30% slower than the existing `from` method. The extra channel indirection cost something, and it cost it even in the non-recursive case, which is the case basically everyone uses.
 
-{% info() %}
-
-## Takeaways
+{% info(title="Takeaways") %}
 
 - **Channels are the wrong tool for cyclic pipelines.** Their close-on-last-sender-drop semantics are fundamentally at odds with a feedback loop.
 - **`for_each_concurrent` looks perfect and isn't.** It processes a stream concurrently but gives you no way to feed items back in.
@@ -230,9 +226,7 @@ A semaphore solves the concurrency-limiting problem. It does nothing for the *te
 
 There's a subtlety with the permits, too. Swapping `for_each_concurrent` for raw `tokio::spawn` loses the bounded concurrency that channels gave us for free. The semaphore adds it back, but you have to manage permits carefully. If a task acquires a permit, spawns a child, and transfers the permit, the parent can't do more work. If it clones the permit, you can blow past your concurrency limit. Getting the permit lifecycle exactly right is fiddly.
 
-{% info() %}
-
-## Takeaways
+{% info(title="Takeaways") %}
 
 - **Semaphores solve concurrency, not termination.** You still need something to tell you "all the work is done."
 - **`Arc<RwLock<State>>` is a code smell in async Rust.** When you start wrapping everything in locks, you're fighting the ownership model instead of working with it. That can leave a lot of performance on the table since every access is a lock acquisition across all threads.
@@ -316,9 +310,7 @@ After a burst of energy in January 2025, things slowed. Merge conflicts piled up
 
 I didn't want her to apologize. She got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. Instead, I'm grateful for the time she invested to push tings forward.
 
-{% info() %}
-
-## Takeaways
+{% info(title="Takeaways") %}
 
 - **The atomic counter is a manual counter in a trenchcoat.** It had the same failure modes. 
 - When you're adding `vec![]` and `0` to every `Response::new()` call, that's a leaky abstraction.
