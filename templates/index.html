@@ -62,6 +62,14 @@ load_data(path="static/logo_font_dark.svg") %}
             }
 
             @font-face {
+                font-family: "xkcd";
+                src: url("/fonts/xkcd.otf") format("opentype");
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
                 font-family: "JetBrainsMono";
                 src: url("/fonts/JetBrainsMono-Regular.woff2")
                     format("truetype");
@@ -95,6 +103,27 @@ load_data(path="static/logo_font_dark.svg") %}
                 font-weight: 700;
                 src: url("/fonts/merriweather-v31-latin-700.woff2")
                     format("woff2");
+            }
+
+            /* Hand-drawn Mermaid diagrams sit flush on the page: no surface
+               box, uppercase labels, and edge lines that break around their
+               labels (the label is masked with the page background, so the
+               line appears to have a gap for the text). */
+            pre.mermaid {
+                background: transparent;
+                padding: 0;
+            }
+
+            .mermaid .nodeLabel,
+            .mermaid .edgeLabel,
+            .mermaid .cluster-label,
+            .mermaid span,
+            .mermaid text {
+                text-transform: uppercase;
+            }
+
+            .mermaid .labelBkg {
+                background-color: var(--background) !important;
             }
         </style>
 
