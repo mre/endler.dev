@@ -6,19 +6,19 @@ draft=false
 tags=["rust", "dev", "lychee", "async"]
 +++
 
-After I published [Five Years of Trying to Add Recursion to lychee](@/2026/lychee-recursion/index.md), the most common reply I got was a very fair question:
+After we published [Five Years of Trying to Add Recursion to lychee](@/2026/lychee-recursion/index.md), the most common reply we got was a very fair question:
 
 > If recursion is so hard, how do *other* link checkers do it? Plenty of them already crawl websites!
 
-The key takeaway is: **they didn't find a clever trick we missed.** They were built as crawlers from the very first commit, and I initially built lychee as a stream.
+The key takeaway is: **they didn't find a clever trick we missed.** They were built as crawlers from the very first commit, and we initially built lychee as a stream.
 
-I went and read the source of the recursive checkers we list in [lychee's README](https://github.com/lycheeverse/lychee#features): [muffet](https://github.com/raviqqe/muffet) (Go), [LinkChecker](https://github.com/linkchecker/linkchecker) (Python), [linkinator](https://github.com/JustinBeckwith/linkinator) (TypeScript), and [broken-link-checker](https://github.com/stevenvachon/broken-link-checker) (JavaScript). This post is a teardown of how each one actually handles recursion, what it costs them, and what it means for lychee.
+We went and read the source of the recursive checkers we list in [lychee's README](https://github.com/lycheeverse/lychee#features): [muffet](https://github.com/raviqqe/muffet) (Go), [LinkChecker](https://github.com/linkchecker/linkchecker) (Python), [linkinator](https://github.com/JustinBeckwith/linkinator) (TypeScript), and [broken-link-checker](https://github.com/stevenvachon/broken-link-checker) (JavaScript). This post is a teardown of how each one actually handles recursion, what it costs them, and what it means for lychee.
 
 If you haven't read the [first post](@/2026/lychee-recursion/index.md), the summary is that lychee was architected as a one-shot, unidirectional pipeline (`inputs → extract → check → output`). Recursion needs a *cycle* (responses create new inputs), and cycles in an async, channel-based pipeline are where the [dragons live](@/2026/lychee-recursion/index.md). 🐲 Five years and four attempts later, the pieces we'll need to do it properly only *just* landed.
 
 ## DAGs vs. cycles 
 
-Every recursive checker I looked at is built from the same three parts:
+Every recursive checker we looked at is built from the same three parts:
  
 1. A mutable work queue (let's call it "frontier"), not a fixed input stream. Discovered URLs go back into the same queue they came from.
 2. A visited set that's updated at enqueue time (before the request completes), so two pages discovering the same link can't both submit it.
@@ -43,7 +43,7 @@ graph TD
     end
 {% end %}
 
-Crawlers have a back-edge baked in. Our pipeline doesn't, and every one of my failed attempts was an effort to bend that back-edge into a graph that was never designed for it. 
+Crawlers have a back-edge baked in. Our pipeline doesn't, and every one of our failed attempts was an effort to bend that back-edge into a graph that was never designed for it. 
 
 Let's look at that graph design more closely: 
 
@@ -117,12 +117,12 @@ func (m daemonManager) Run() {
 
 Every scheduled page increments the group; every completed page decrements it; `Wait()` returns when the count hits zero. The whole crawl bootstraps with a single `addPage` before `Run()`, so the counter is positive before anyone waits on it.
 
-This is the *same counter* I tried (and failed with) in [Attempt 1](@/2026/lychee-recursion/index.md) and [Attempt 4](@/2026/lychee-recursion/index.md). The difference is the invariant: `waitGroup.Add(1)` is only ever called from inside an already-running daemon that holds the count above zero (or from the bootstrap). There is no window where the counter briefly reads zero while work is still pending. Go's `WaitGroup` enforces this invariant so naturally that it doesn't feel like distributed termination detection at all, but that's exactly what it is. It's the moral equivalent of the `WaitGroup` primitive [Kait contributed to lychee in 2026](https://github.com/lycheeverse/lychee/pull/2046).
+This is the *same counter* we tried (and failed with) in [Attempt 1](@/2026/lychee-recursion/index.md) and [Attempt 4](@/2026/lychee-recursion/index.md). The difference is the invariant: `waitGroup.Add(1)` is only ever called from inside an already-running daemon that holds the count above zero (or from the bootstrap). There is no window where the counter briefly reads zero while work is still pending. Go's `WaitGroup` enforces this invariant so naturally that it doesn't feel like distributed termination detection at all, but that's exactly what it is. It's the moral equivalent of the `WaitGroup` primitive [Kait contributed to lychee in 2026](https://github.com/lycheeverse/lychee/pull/2046).
 
 ### Where the tradeoffs are
 
 - Concurrency isn't bounded by the daemon manager. `Run()` does `go f()` for every task, spawning unbounded goroutines. The actual limiting happens downstream in a `semaphore` (a buffered-channel counting semaphore) and a per-host throttler pool. muffet *separates* "the frontier" from "the rate limiter," which is exactly the separation lychee lacked when it tried to use one bounded channel as both in the past.
-- Cheap goroutines do a lot of heavy lifting. Spawning a goroutine per link is "fine" in Go. The equivalent in Rust (`tokio::spawn` per link, each needing `Send + 'static` state) is what pushed me toward `Arc<RwLock<…>>` and the ownership pain I [wrote about](@/2026/lychee-recursion/index.md#attempt-3-semaphores-february-2022).
+- Cheap goroutines do a lot of heavy lifting. Spawning a goroutine per link is "fine" in Go. The equivalent in Rust (`tokio::spawn` per link, each needing `Send + 'static` state) is what pushed us toward `Arc<RwLock<…>>` and the ownership pain we [wrote about](@/2026/lychee-recursion/index.md#attempt-3-semaphores-february-2022).
 - On extensibility, muffet is a focused CLI, not a library. There's no plugin surface; you get what the flags give you. lychee deliberately ships `lychee-lib` as a reusable crate, which raises the bar, since every architectural choice has to uphold the standards of a public API. 
 - On scalability, unbounded goroutines plus an in-memory visited set scale comfortably to large sites, but there's no disk-backed frontier, so a truly enormous crawl is bounded by RAM. Same as lychee.
 
@@ -149,7 +149,7 @@ def __init__(self, max_allowed_urls=None):
     self.unfinished_tasks = 0
 ```
 
-It's explicit about the exact deadlock that bit me.
+It's explicit about the exact deadlock that bit us.
 
 That comment is *our [Attempt 4 backpressure deadlock](@/2026/lychee-recursion/index.md#attempt-4-gwenn-takes-a-swing-january-march-2025)*, called out and designed around. lychee tried to push discovered URLs into a **bounded** channel; when it filled, the response handler blocked, no responses drained, no slots freed. Deadlock. 💥
 
@@ -317,7 +317,7 @@ The frontier and dedup live in `SiteChecker` (`lib/public/SiteChecker.js`). Visi
 }
 ```
 
-Recursion is goverened by a filter that decides whether a discovered link becomes a crawled page:
+Recursion is governed by a filter that decides whether a discovered link becomes a crawled page:
 
 ```js
 #maybeEnqueuePage(link, customData, auth) {
@@ -356,13 +356,13 @@ And in classic Node.js fashion, the `done` callback is what actually tells the s
 ### Where the tradeoffs are
 
 - It's the best web citizen of the bunch. robots.txt is honored (`getRobotsTxt`, `isAllowed`), `rel=nofollow` is respected, and `rateLimit` plus `maxSockets` are first-class. This is a crawler that's polite by default.
-- Event cascades are powerful but fiddly. Termination is spread across half a dozen event handlers and two nested queues. It works, but the control flow is much harder to follow than `await queue.onIdle()`. This is the JS cousin of the "leaky abstraction" problem I described, where recursion-awareness ends up sprinkled across many handlers.
+- Event cascades are powerful but fiddly. Termination is spread across half a dozen event handlers and two nested queues. It works, but the control flow is much harder to follow than `await queue.onIdle()`. This is the JS cousin of the "leaky abstraction" problem we described, where recursion-awareness ends up sprinkled across many handlers.
 - It's single-threaded, the same ceiling as linkinator, plus the in-memory `URLCache` per site.
 - On maturity versus momentum, it's very widely used (it powers a lot of tooling), but development has slowed. The architecture is still sound and worth studying.
 
 {% info(title="Takeaways: broken-link-checker") %}
 
-- Termination is a cascade of queue-drain events, not a counter. Same idea, different sytnax. 
+- Termination is a cascade of queue-drain events, not a counter. Same idea, different syntax. 
 - Politeness is built in. robots.txt, `rateLimit`, and `maxSockets` make it the most server-friendly recursive checker by default.
 - Event-driven control flow is the cost. Distributing recursion logic across many handlers is exactly the kind of spread-out complexity that makes the feature hard to reason about.
 
@@ -394,10 +394,10 @@ Three reasons, in increasing order of how much they're actually lychee's fault.
 
 **2. The frontier and the rate-limiter must be different objects.** muffet (set + semaphore), LinkChecker (unbounded queue + thread count), linkinator (p-queue + delayCache), BLC (request queue + maxSockets) all keep "what to do next" separate from "how fast to go." lychee's early attempts tried to make one bounded channel serve both roles, and a cycle through a bounded channel deadlocks. The fix (lychee's `HostPool` plus a `WaitGroup` over an unbounded work source) is the same separation we're aiming for now.
 
-**3. Single-threaded runtimes get dedup for free.** Both Node tools dedup with a plain `Set` and zero locking, because the event loop serializes access. Go and Python pay a mutex. Rust pays a mutex *and* fights the borrow checker about who owns the shared state across `tokio::spawn`. That's the ~30% "Rust tax" I [estimated last time](@/2026/lychee-recursion/index.md#how-much-of-this-is-rust-s-fault): not the algorithm, but the friction of expressing shared mutable frontier state under `Send + 'static`.
+**3. Single-threaded runtimes get dedup for free.** Both Node tools dedup with a plain `Set` and zero locking, because the event loop serializes access. Go and Python pay a mutex. Rust pays a mutex *and* fights the borrow checker about who owns the shared state across `tokio::spawn`. That's the ~30% "Rust tax" we [estimated last time](@/2026/lychee-recursion/index.md#how-much-of-this-is-rust-s-fault): not the algorithm, but the friction of expressing shared mutable frontier state under `Send + 'static`.
 
 None of this is a knock on lychee's design. A unidirectional stream is *the right call* for the common, non-recursive case: it's why lychee is fast and why the 30% channel regression from [Attempt 2](@/2026/lychee-recursion/index.md) was a dealbreaker. The other tools pay for their back-edge on every run, recursive or not. lychee refused to, and that principle is exactly why recursion took five years and why, when it lands, it won't slow down the path everyone actually uses.
-I believe that we can have our cake and eat it too: a crawler architecture that supports recursion without sacrificing the speed of a one-shot pipeline. But it's a harder problem than just "copy what they do," because most link checkers didn't start with uncompromising performance as their top goal. 
+We believe that we can have our cake and eat it too: a crawler architecture that supports recursion without sacrificing the speed of a one-shot pipeline. But it's a harder problem than just "copy what they do," because most link checkers didn't start with uncompromising performance as their top goal. 
 
 {% info(title="Key takeaways") %}
 
