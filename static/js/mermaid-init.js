@@ -14,6 +14,67 @@
       : "default";
   }
 
+  // Hand-drawn "squiggle": a turbulence-driven displacement filter applied to
+  // the box and line strokes (not the text labels). The filter is injected
+  // into each diagram's *own* <svg> with a unique id and referenced via a
+  // presentation attribute, because Safari refuses to resolve a CSS
+  // `filter: url(#id)` that points at a filter defined in a different (or
+  // zero-sized) <svg> element — the shapes would simply vanish.
+  const SVG_NS = "http://www.w3.org/2000/svg";
+
+  function applySquiggle() {
+    document.querySelectorAll(".mermaid svg").forEach((svg, index) => {
+      const id = "squiggle-" + index;
+
+      let defs = svg.querySelector("defs");
+      if (!defs) {
+        defs = document.createElementNS(SVG_NS, "defs");
+        svg.insertBefore(defs, svg.firstChild);
+      }
+
+      if (!svg.querySelector("#" + id)) {
+        // Use `objectBoundingBox` units (the default) so the filter region is
+        // sized relative to *each* element's own bounding box. Mermaid gives
+        // every node its own translated coordinate system (the box is centred
+        // on the local origin), so a single `userSpaceOnUse` region can't fit
+        // them all — it ends up clipping one side of every box. A generous
+        // bbox-relative margin leaves room for the displacement, and the
+        // per-element buffers stay small enough for Safari.
+        const filter = document.createElementNS(SVG_NS, "filter");
+        filter.setAttribute("id", id);
+        filter.setAttribute("x", "-50%");
+        filter.setAttribute("y", "-50%");
+        filter.setAttribute("width", "200%");
+        filter.setAttribute("height", "200%");
+        // Keep the noise frequency in user space so the wobble looks the same
+        // on every box regardless of its size.
+        filter.setAttribute("primitiveUnits", "userSpaceOnUse");
+
+        const turbulence = document.createElementNS(SVG_NS, "feTurbulence");
+        turbulence.setAttribute("type", "fractalNoise");
+        turbulence.setAttribute("baseFrequency", "0.03");
+        turbulence.setAttribute("numOctaves", "2");
+        turbulence.setAttribute("seed", "7");
+        turbulence.setAttribute("result", "noise");
+
+        const displace = document.createElementNS(SVG_NS, "feDisplacementMap");
+        displace.setAttribute("in", "SourceGraphic");
+        displace.setAttribute("in2", "noise");
+        displace.setAttribute("scale", "6");
+        displace.setAttribute("xChannelSelector", "R");
+        displace.setAttribute("yChannelSelector", "G");
+
+        filter.appendChild(turbulence);
+        filter.appendChild(displace);
+        defs.appendChild(filter);
+      }
+
+      svg
+        .querySelectorAll(".nodes path, .edgePaths path")
+        .forEach((shape) => shape.setAttribute("filter", "url(#" + id + ")"));
+    });
+  }
+
   async function render() {
     if (!window.mermaid) return;
 
@@ -97,6 +158,7 @@
       await window.mermaid.run({
         nodes: document.querySelectorAll(".mermaid"),
       });
+      applySquiggle();
     } finally {
       rendering = false;
       if (rerenderQueued) {
