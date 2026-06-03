@@ -106,12 +106,19 @@ load_data(path="static/logo_font_dark.svg") %}
             }
 
             /* Hand-drawn Mermaid diagrams sit flush on the page: no surface
-               box, uppercase labels, and edge lines that break around their
-               labels (the label is masked with the page background, so the
-               line appears to have a gap for the text). */
+               box, centered, uppercase labels, and edge lines that break
+               around their labels (the label is masked with the page
+               background, so the line appears to have a gap for the text). */
             pre.mermaid {
                 background: transparent;
                 padding: 0;
+                text-align: center;
+            }
+
+            .mermaid svg {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .mermaid .nodeLabel,
@@ -120,6 +127,23 @@ load_data(path="static/logo_font_dark.svg") %}
             .mermaid span,
             .mermaid text {
                 text-transform: uppercase;
+            }
+
+            /* Fatter, wobblier box and line strokes. The squiggle filter only
+               touches the SVG shapes (paths/arrowheads), not the HTML labels. */
+            .mermaid .nodes path {
+                stroke-width: 1.75px;
+                filter: url(#squiggle);
+            }
+
+            .mermaid .edgePaths path,
+            .mermaid .flowchart-link {
+                stroke-width: 4px;
+                filter: url(#squiggle);
+            }
+
+            .mermaid marker path {
+                filter: url(#squiggle);
             }
 
             .mermaid .labelBkg {
@@ -144,6 +168,35 @@ load_data(path="static/logo_font_dark.svg") %}
     </head>
 
     <body>
+        <!-- Reusable "squiggle" filter: a turbulence-driven displacement map
+             that warps the Mermaid box/line strokes so they look hand-drawn
+             and wobbly. Labels (HTML in foreignObjects) are left untouched. -->
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+            <filter
+                id="squiggle"
+                filterUnits="userSpaceOnUse"
+                x="-2000"
+                y="-2000"
+                width="6000"
+                height="6000"
+                primitiveUnits="userSpaceOnUse"
+            >
+                <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.03"
+                    numOctaves="2"
+                    seed="7"
+                    result="noise"
+                />
+                <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="noise"
+                    scale="6"
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                />
+            </filter>
+        </svg>
         {%- block site_header %}
         <header>
             <div class="homepage-header">

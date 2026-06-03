@@ -28,14 +28,14 @@ Diagrammatically, lychee is different from the others:
 
 {% mermaid() %}
 graph TD
-    subgraph crawler["Everyone else: a worklist (a cycle)"]
+    subgraph crawler["Everyone else: a cycle"]
         direction TB
         CQ[Frontier queue] --> CW[Worker pool]
         CW --> CP[Fetch and parse page]
         CP -->|new links| CQ
         CP --> CR[Record result]
     end
-    subgraph lychee["lychee: a pipeline (a DAG)"]
+    subgraph lychee["lychee: a DAG"]
         direction TB
         LA[Inputs] --> LB[Extractor]
         LB --> LC[Checker]
