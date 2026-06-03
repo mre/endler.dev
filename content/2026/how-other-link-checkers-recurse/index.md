@@ -33,7 +33,7 @@ graph TD
         CQ[Frontier queue] --> CW[Worker pool]
         CW --> CP[Fetch and parse page]
         CP -->|new links| CQ
-        CP --> CR[Record result]
+        CP --> CR[Results]
     end
     subgraph lychee["lychee: a DAG"]
         direction TB
@@ -56,7 +56,7 @@ graph TD
     Q --> Pool["Worker pool, bounded concurrency"]
     Pool --> FP[Fetch page and extract links]
     FP -->|discovered links| Enq
-    FP --> Rec[Record result]
+    FP --> Rec[Results]
     Q -.->|empty AND no worker busy| Stop[Terminate]
 {% end %}
 
