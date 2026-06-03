@@ -587,8 +587,8 @@ th {
 /* Wide tables: break out of the narrow reading column and scroll
    horizontally on small screens. Apply via the `wide_table` shortcode. */
 .wide-table {
-    width: 92vw;
-    max-width: 1000px;
+    width: 94vw;
+    max-width: 1200px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -597,8 +597,37 @@ th {
 }
 
 .wide-table table {
+    width: auto;
+    min-width: 100%;
+    max-width: none;
     margin: 0;
-    min-width: 640px;
+    font-size: 0.82em;
+}
+
+/* Keep cells readable: wrap at spaces only, never split words or inline
+   code mid-token (`main article` sets `overflow-wrap: anywhere`). The
+   table widens to fit its content and scrolls horizontally if needed. */
+.wide-table th,
+.wide-table td {
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+}
+
+.wide-table code {
+    white-space: nowrap;
+}
+
+/* On small screens the reading column is already near full width, so the
+   breakout is unnecessary and its transform can push the page wider than
+   the viewport. Keep the table inside the column and scroll it instead. */
+@media (max-width: 920px) {
+    .wide-table {
+        width: 100%;
+        max-width: 100%;
+        left: auto;
+        transform: none;
+    }
 }
 
 /* Homepage styles */
