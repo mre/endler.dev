@@ -584,6 +584,23 @@ th {
     font-weight: 600;
 }
 
+/* Wide tables: break out of the narrow reading column and scroll
+   horizontally on small screens. Apply via the `wide_table` shortcode. */
+.wide-table {
+    width: 92vw;
+    max-width: 1000px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.wide-table table {
+    margin: 0;
+    min-width: 640px;
+}
+
 /* Homepage styles */
 .homepage h1 {
     font-size: 1.5em;
