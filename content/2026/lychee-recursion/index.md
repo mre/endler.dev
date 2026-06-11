@@ -1,7 +1,7 @@
 +++
 title="Five Years of Trying to Add Recursion to lychee"
 date=2026-05-31
-updated=2026-06-02
+updated=2026-06-11
 draft=false
 [taxonomies]
 tags=["rust", "dev", "culture"]
@@ -243,8 +243,6 @@ But in Rust, the `Send + 'static` bounds on `tokio::spawn`, the borrow checker's
 
 For more than two years, the recursion issue kept collecting comments from people who wanted it.
 People suggested workarounds (piping sitemap URLs through `xargs` was a popular one). The person who originally filed it built [their own tool](https://github.com/styfle/links-awakening) and moved on, which I completely understood.
-
-I was honest about it whenever it came up:
 
 Someone offered a €100 bounty. Others pointed to [muffet](https://github.com/raviqqe/muffet), which already does recursive checking. lychee wasn't standing still during these years; a lot of work went into performance, caching, rate limiting, and other features. But recursion was the elephant in the room. 
 
