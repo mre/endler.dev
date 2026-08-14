@@ -175,68 +175,73 @@ load_data(path="static/logo_font_dark.svg") %}
                     </a>
                 </div>
 
-                <button
-                    onclick="toggleTheme()"
-                    class="theme-toggle"
-                    aria-label="Toggle dark mode"
-                >
-                    <svg
-                        class="sun-icon"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line
-                            x1="18.36"
-                            y1="18.36"
-                            x2="19.78"
-                            y2="19.78"
-                        ></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg
-                        class="moon-icon"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path
-                            d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                        ></path>
-                    </svg>
-                </button>
+                {% include "snippets/header_actions.html" %}
             </div>
         </header>
         {%- endblock site_header %}
 
         <div class="container">
             <main>
-                {% block content %} {% for page in paginator.pages %} {% include
-                "snippets/article_preview.html" %} {% endfor %}
+                <div
+                    class="search-panel"
+                    id="site-search-panel"
+                    data-search-panel
+                    hidden
+                >
+                    <form class="search-form" role="search" autocomplete="off">
+                        <label class="visually-hidden" for="tinysearch"
+                            >Search articles</label
+                        >
+                        <input
+                            id="tinysearch"
+                            class="search-input"
+                            type="search"
+                            placeholder="Search articles…"
+                            maxlength="100"
+                            spellcheck="false"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-controls="search-content-results"
+                            aria-describedby="search-content-status"
+                        />
+                    </form>
+                </div>
 
-                <nav class="pagination" aria-label="Blog pagination">
-                    {% if paginator.previous %}
-                    <a href="{{ paginator.previous}}" rel="prev"
-                        >« Newer posts</a
-                    >
-                    {% else %}
-                    <span></span>
-                    {% endif %} {% if paginator.next %}
-                    <a href="{{ paginator.next }}" rel="next">Older posts »</a>
-                    {% else %}
-                    <span></span>
-                    {% endif %}
-                </nav>
-                {% endblock content %}
+                <section class="search-content" data-search-content hidden>
+                    <p
+                        class="search-content-status"
+                        id="search-content-status"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                    <ul
+                        class="search-content-results"
+                        id="search-content-results"
+                        role="listbox"
+                        aria-label="Search results"
+                    ></ul>
+                </section>
+
+                <div data-page-content>
+                    {% block content %} {% for page in paginator.pages %} {% include
+                    "snippets/article_preview.html" %} {% endfor %}
+
+                    <nav class="pagination" aria-label="Blog pagination">
+                        {% if paginator.previous %}
+                        <a href="{{ paginator.previous}}" rel="prev"
+                            >« Newer posts</a
+                        >
+                        {% else %}
+                        <span></span>
+                        {% endif %} {% if paginator.next %}
+                        <a href="{{ paginator.next }}" rel="next">Older posts »</a>
+                        {% else %}
+                        <span></span>
+                        {% endif %}
+                    </nav>
+                    {% endblock content %}
+                </div>
             </main>
         </div>
 
