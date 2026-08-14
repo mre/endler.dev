@@ -1,7 +1,25 @@
-{% set search_min = load_data(path="static/search_min.js") %}
-<script defer type="module">{{ search_min | safe }}</script>
-<form id="searchbox" autocomplete="off">
-    <div class="autocomplete">
-        <input id="tinysearch" type="text" aria-label="Search through articles" placeholder="&#x1F50D; Search">
-    </div>
-</form>
+<div class="site-search" data-search>
+    <button
+        class="search-toggle"
+        type="button"
+        aria-label="Search articles"
+        aria-expanded="false"
+        aria-controls="site-search-panel"
+    >
+        <svg
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+        >
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+        </svg>
+    </button>
+</div>
+<script
+    defer
+    type="module"
+    src="{{ get_url(path='search.mjs', cachebust=true) | safe }}"
+></script>

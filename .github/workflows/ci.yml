@@ -38,13 +38,11 @@ jobs:
           curl -sSL https://github.com/mre/gh-stats/releases/download/v0.1.0/gh-stats-v0.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xz --directory=bin
           sudo install "$(pwd)/bin/gh-stats" /usr/local/bin
 
-      - name: ⏬ Install wasm-pack
-        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: ⏬ Install tinysearch
         run: |
           set -e
-          curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.10.0/tinysearch-v0.10.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          curl -sSL https://github.com/tinysearch/tinysearch/releases/download/v0.11.0/tinysearch-v0.11.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
           sudo install "$(pwd)/tinysearch" /usr/local/bin
 
       - name: ⏬ Install cavif
@@ -57,8 +55,8 @@ jobs:
       - name: ⏬ Install binaryen
         run: |
           set -e
-          curl -L https://github.com/WebAssembly/binaryen/releases/download/version_104/binaryen-version_104-x86_64-linux.tar.gz | tar xzf -
-          sudo install "$(pwd)/binaryen-version_104/bin/wasm-opt" /usr/local/bin
+          curl -L https://github.com/WebAssembly/binaryen/releases/download/version_131/binaryen-version_131-x86_64-linux.tar.gz | tar xzf -
+          sudo install "$(pwd)/binaryen-version_131/bin/wasm-opt" /usr/local/bin
 
       - name: ⏬ Install terser
         run: sudo npm install -g terser
