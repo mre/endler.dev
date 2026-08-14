@@ -10,14 +10,13 @@ feed_filenames = ["atom.xml", "rss.xml"]
 
 minify_html = false
 
-# Whether to build a search index out of the pages and section
-# content for the `default_language`
-# https://www.getzola.org/documentation/content/search/
-# This is used for tinysearch
-# build_search_index = true
-# default_language = "en"
+# Generate the JSON corpus consumed by tinysearch.
+build_search_index = true
 
 taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
+
+[search]
+index_format = "fuse_json"
 
 [markdown]
 smart_punctuation = true
