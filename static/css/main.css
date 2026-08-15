@@ -423,7 +423,7 @@ main article {
     color: var(--text-color);
     background: var(--surface-color);
     font: inherit;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.4;
 }
 
