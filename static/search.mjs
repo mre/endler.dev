@@ -120,8 +120,9 @@ function initializeSearch(root) {
     document.body.classList.toggle("is-search-open", open);
 
     if (open) {
+      // Keep focus in the tap handler so mobile browsers open the keyboard.
+      input.focus();
       loadEngine().catch(() => {});
-      requestAnimationFrame(() => input.focus());
     } else {
       resetSearch();
       if (returnFocus) {
@@ -244,7 +245,8 @@ function initializeSearch(root) {
     }
   });
 
-  document.addEventListener("pointerdown", (event) => {
+  // A click fires after a touch gesture, so scrolling does not dismiss results.
+  document.addEventListener("click", (event) => {
     if (
       !panel.hidden &&
       !root.contains(event.target) &&
