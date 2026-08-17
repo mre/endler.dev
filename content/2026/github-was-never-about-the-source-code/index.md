@@ -18,10 +18,10 @@ This was the [top comment on Hacker News](https://news.ycombinator.com/item?id=4
 > where you can find someone will fade**.
 > And that is a very real loss for all of us.
 
-That resonates sooo much with me. GitHub has never been about the source code. It's where I'd hang out with friends, see what they've built, and discover all the cool projects they star. It's the last "Facebook" I still visit. There is no other place like it anymore.
+That resonates sooo much with me. GitHub has never been about the source code. It's where I hang out with friends, see what they've built, and discover all the cool projects they star. It's the only "Facebook" I still visit. There is no other place like it anymore.
 
 GitHub is on its way out, and the community around it is starting to crumble.
-My feed is basically the same two people starring repos and being really "active."
+My feed basically consists of the same two people starring repos and being really "active."
 The rest is just noise. (I wish I could show you a screenshot, but, well, GitHub is down.)
 
 "AI" has only accelerated this trend.
@@ -32,4 +32,4 @@ Discussing changes is no longer fun when you're talking to a bot 90% of the time
 
 The way I see it, our code could live anywhere. We could share stars, comments, and project updates through a common network, similar to [Keybase](https://keybase.io/) or [Mastodon](https://mastodon.social).
 
-Send me an email you like the idea.
+Send me an email if you like the idea.
