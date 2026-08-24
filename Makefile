@@ -56,8 +56,8 @@ build: stars minify ## Build static site and search index, minify JS
 build-quick: content ## Build static site
 
 .PHONY: dev run serve
-dev run serve: ## Serve website locally
-	zola serve --fast
+dev run serve: ## Serve website locally, including drafts
+	zola serve --fast --drafts
 
 .PHONY: stars
 stars: ## Update Github stars statistics for my projects
