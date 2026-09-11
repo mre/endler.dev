@@ -16,9 +16,9 @@ comments = [
   {name = "Reddit", url = "https://www.reddit.com/r/golang/comments/70iwcd/go_vs_rust_choose_go/"}]
 +++
 
-{{ figure(src="hero.svg", credits="Gopher designed with <a href='https://gopherize.me'>Gopherize.me</a>. Gears designed by <a href='https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm'>Freepik</a>.") }}
+{{ <figure page={page} src="hero.svg" credits="Gopher designed with <a href='https://gopherize.me'>Gopherize.me</a>. Gears designed by <a href='https://www.freepik.com/free-vector/gear-background-with-pieces-different-colors_966124.htm'>Freepik</a>." /> }}
 
-{% info() %}
+{% <info> %}
 
 I wrote this article a long time ago. In the meantime, 
 my opinion on some aspects has changed.
@@ -29,7 +29,7 @@ Shuttle 🚀
 
 [Rust vs Go: A Hands-On Comparison](https://www.shuttle.rs/blog/2023/09/27/rust-vs-go-comparison)
 
-{% end %}
+{% </info> %}
 
 
 "Rust or Go, which one should I choose?" is a question I get quite often.
@@ -38,7 +38,7 @@ _systems programming_ languages, so there must be a clear winner, right?
 
 ## Go: practical, pragmatic, plain
 
-{{ figure( src="go.jpg" caption="The Golang learning curve over time, a straight line.") }}
+{{ <figure page={page} src="go.jpg" caption="The Golang learning curve over time, a straight line." /> }}
 
 I don't think Go is an elegant language. Its biggest feature is ~simplicity~ [easiness](https://www.youtube.com/watch?v=SxdOUGdseq4).
 Go is not even a systems programming language. While it's great for writing microservices and tooling around backend infrastructure, I would not want to write a kernel or a memory allocator with it.
@@ -49,7 +49,7 @@ The mantra is: solve real problems today.
 
 ## Rust's strong guarantees come at a cost
 
-{{ figure( src="rust.jpg" caption="The Rust learning curve over time, a bumpy ride.") }}
+{{ <figure page={page} src="rust.jpg" caption="The Rust learning curve over time, a bumpy ride." /> }}
 
 Rust in comparison is **hard**. It took me many months to become somewhat productive.
 You need to invest a serious amount of time to see any benefit.
@@ -141,7 +141,7 @@ This was just a quick example, of course. I suggest, you browse some code on [Ro
 If you're more like a visual type, here is a video where I write a simple
 concurrent program in Go and Rust to compare both languages:
 
-{{ video(url="https://www.youtube.com/embed/B5xYBrxVSiE", preview="maxresdefault.jpg") }}
+{{ <video url="https://www.youtube.com/embed/B5xYBrxVSiE" preview="maxresdefault.jpg" /> }}
 
 ## Some things I prefer in Go
 

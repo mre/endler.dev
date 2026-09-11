@@ -14,7 +14,7 @@ Let me explain.
 """
 +++
 
-{{ figure(src="octocat.jpg", caption="Photo of my office with Github's octocat on the wall over my couch") }}
+{{ <figure page={page} src="octocat.jpg" caption="Photo of my office with Github's octocat on the wall over my couch" /> }}
 
 So I'm in a bit of a sentimental mood lately.
 Github got acquired by Microsoft.

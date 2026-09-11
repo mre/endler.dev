@@ -6,7 +6,7 @@ updated=2023-06-21
 tags=["rust"]
 +++
 
-{% info() %}
+{% <info> %}
 This post has [moved to my other blog](https://corrode.dev/blog/tips-for-faster-rust-compile-times/).
 It will be updated there in the future.
-{% end %}
+{% </info> %}

@@ -1,0 +1,22 @@
+{% component nicedate(date) %}
+{% set daynum = date | date(format="%-d") %}
+{% set suffixes = {"1": "st", "21": "st", "31": "st", "2": "nd", "22": "nd", "3": "rd", "23": "rd"} %}
+{% set suffix = suffixes[daynum] or "th" %}
+
+{{ daynum }}{{ suffix }} of {{ date | date(format="%B, %Y") }}
+{% endcomponent nicedate %}
+
+{% component link_list(links) %}
+{% for link in links %}
+<a href="{{ link.url }}">{{ link.name }}</a>
+{%- if not loop.last %},{% else %}.{% endif %}
+{% endfor %}
+{% endcomponent link_list %}
+
+{% component comments(comments) %}
+💬 Comments on {{ <link_list links={comments} /> }}
+{% endcomponent comments %}
+
+{% component translations(translations) %}
+📖 Translated into {{ <link_list links={translations} /> }}
+{% endcomponent translations %}

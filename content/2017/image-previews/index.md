@@ -9,7 +9,7 @@ social_img="2017_image_previews.png"
 excerpt="My website is reasonably fast. There was one thing left which really annoyed me: layout reflow after images got loaded. The problem is, that the image dimensions are not known when the text is ready to be displayed. As a result, the text will be pushed down on the screen as soon as an image is loaded above. I decided to fix that once and for all."
 +++
 
-{{ figure(src="factory.svg", credits="Adapted from <a href='https://www.freepik.com/free-vector/industrial-machine-vector_753558.htm'>Freepik</a> ") }}
+{{ <figure page={page} src="factory.svg" credits="Adapted from <a href='https://www.freepik.com/free-vector/industrial-machine-vector_753558.htm'>Freepik</a> " /> }}
 
 My website is reasonably fast.
 
@@ -25,7 +25,7 @@ As a result, the text will be pushed down on the screen as soon as an image is l
 Also, while an image is loading, there is no preview, just blank space.
 Here's what that looks like on a slower connection:
 
-{{ figure(src="fout.png", caption="Illustration of a flash of unstyled content") }}
+{{ <figure page={page} src="fout.png" caption="Illustration of a flash of unstyled content" /> }}
 
 I could fix that, by hardcoding the image width and height, but that would be tedious and error-prone.
 And there would be no preview.
@@ -55,7 +55,7 @@ Nevertheless, I liked the idea, so I started experimenting with different image 
 
 Here are 15 pixel wide thumbnails encoded in different file formats:
 
-{{ figure(src="thumbnails.jpg", caption="Comparison of different image formats when creating thumbnails") }}
+{{ <figure page={page} src="thumbnails.jpg" caption="Comparison of different image formats when creating thumbnails" /> }}
 
 I used different tools to create the thumbnails.
 For JPEG and PNG encoding, I used [svgexport](https://github.com/shakiba/svgexport).

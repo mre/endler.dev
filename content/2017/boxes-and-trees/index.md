@@ -40,7 +40,7 @@ t = Tree(15,
 And the result can be visualized beautifully.  
 (Yes I've drawn that myself.)
 
-{{ figure(src="tree.svg", caption="A binary search tree representing our data structure") }}
+{{ <figure page={page} src="tree.svg" caption="A binary search tree representing our data structure" /> }}
 
 Porting that code to Rust turned out to be a little... challenging.
 My first attempt looked quite innocuous.

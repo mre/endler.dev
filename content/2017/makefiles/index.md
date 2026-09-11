@@ -15,7 +15,7 @@ comments = [
 ]
 +++
 
-{{ figure(src="clothes.svg", caption="What do clothes have to do with Makefiles? Find out in this post!", credits="[Illustration by Anindyanfitri - Freepik.com](https://www.freepik.com/free-photos-vectors/background)") }}
+{{ <figure page={page} src="clothes.svg" caption="What do clothes have to do with Makefiles? Find out in this post!" credits="[Illustration by Anindyanfitri - Freepik.com](https://www.freepik.com/free-photos-vectors/background)" /> }}
 
 In the last few years, I've had the pleasure to work with a lot of talented Software Engineers.
 One thing that struck me is that many of them did not have any working knowledge of `Makefiles`

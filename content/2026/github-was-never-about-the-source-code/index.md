@@ -6,7 +6,7 @@ draft=false
 
 With GitHub down once again, I decided to write this long-overdue blog post.
 
-{{ figure(src="github-down.jpg", alt="GitHub's unicorn error page during an outage") }}
+{{ <figure page={page} src="github-down.jpg" alt="GitHub's unicorn error page during an outage" /> }}
 
 This was the [top comment on Hacker News](https://news.ycombinator.com/item?id=49330987) when I started writing this:
 

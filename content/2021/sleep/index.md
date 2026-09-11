@@ -90,9 +90,9 @@ Hold on! So both the user time _and_ the system time is 0, but the total time is
   elapsed time including time slices used by other processes and **time the
   process spends blocked (for example if it is waiting for I/O to complete)**.
 
-{% info() %}
+{% <info> %}
 💡 `sleep` is blocked on I/O
-{% end %}
+{% </info> %}
 
 Okay, but what does that even mean?
 

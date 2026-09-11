@@ -23,7 +23,7 @@ credits = [
 
 +++
 
-{{ figure(src="fastcat.svg") }}
+{{ <figure page={page} src="fastcat.svg" /> }}
 
 Lots of people asked me to write another piece about the internals of well-known
 Unix commands. Well, actually, nobody asked, but it makes for a good
@@ -155,7 +155,7 @@ Ideally, splice works by remapping pages and does not actually copy
 any data, which may improve I/O performance
 ([reference](<https://en.wikipedia.org/wiki/Splice_(system_call)>)).
 
-{{ figure(src="buffers.jpg", credits="File icon by Aleksandr Vector from the Noun Project. Terminal icon by useiconic.com from the Noun Project.") }}
+{{ <figure page={page} src="buffers.jpg" credits="File icon by Aleksandr Vector from the Noun Project. Terminal icon by useiconic.com from the Noun Project." /> }}
 
 ## Using splice from Rust
 

@@ -9,7 +9,7 @@ tags=["culture"]
 
 I look left and right, and I'm the only one who still uses Firefox.
 
-{{ figure(src="travolta.gif") }}
+{{ <figure page={page} src="travolta.gif" /> }}
 
 At conferences and in coworking spaces, it's always the same scene: people using some flavor of Chrome.
 Sometimes it's Brave, sometimes Chromium, most of the time it's just Google Chrome.
@@ -62,7 +62,7 @@ it's hopeless. It's probably easier to get blood from a stone
 than to convince someone to switch back to Firefox.
 It's so easy to switch, [you won't even lose any open tabs](https://support.mozilla.org/en-US/kb/switching-chrome-firefox)!
 
-{{ figure(src="marketshare.png") }}
+{{ <figure page={page} src="marketshare.png" /> }}
 
 ## Nobody Forces You to Use Chrome
 
@@ -119,7 +119,7 @@ Google is smarter! They break the web, too, but they make you stand inside the f
 ...says the developer who gets [tracked by Google](https://www.forbes.com/sites/zakdoffman/2024/06/16/google-chrome-tracking-on-windows-android-iphone-for-200-more-days/) 
 every waking moment.
 
-{{ figure(src="incognito.jpg", credits="https://www.skeletonclaw.com/image/710734055173472257") }}
+{{ <figure page={page} src="incognito.jpg" credits="https://www.skeletonclaw.com/image/710734055173472257" /> }}
 
 You see, Chrome is reeeeally good at marketing.
 They say all the right things: We're fast! We're open source! We have the latest features!

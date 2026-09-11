@@ -9,7 +9,7 @@ excerpt="October is the perfect time to contribute to Open Source &mdash; at lea
 social_img="2017_hacktoberfest.png"
 +++
 
-{{ figure(src="hacktoberfest.svg", caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](https://www.freepik.com/free-vector/food-items-oktoberfest-festival_911290.htm)")}}
+{{ <figure page={page} src="hacktoberfest.svg" caption="Dirndl, Lederhose, Brezn, Beer, Rust" credits="[Designed by Freepik](https://www.freepik.com/free-vector/food-items-oktoberfest-festival_911290.htm)" /> }}
 
 October is the perfect time to contribute to Open Source &mdash; at least according to Github and DigitalOcean.
 Because that's when they organize Hacktoberfest, a global event where you **get a free shirt and lots of street cred** for creating pull requests. Read the official announcement [here](https://hacktoberfest.digitalocean.com/).

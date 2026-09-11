@@ -17,7 +17,7 @@ Since I was playing around with [Rocket](https://rocket.rs/) &ndash; a web frame
 
 <!-- more -->
 
-{{ figure(src="rocket.svg", caption="A rocket travelling through space") }}
+{{ <figure page={page} src="rocket.svg" caption="A rocket travelling through space" /> }}
 
 ## Requirements
 
@@ -49,10 +49,10 @@ version on [crates.io](https://crates.io/crates/rocket).
 Since Rocket requires cutting-edge Rust features, we need to use a recent nightly
 build. [Rustup](https://rustup.rs/) provides a simple way to switch between stable and nightly.
 
-{% info() %}
+{% <info> %}
 🤔 Nightly Rust might no longer be required. Has anyone tried without and can
 report back?
-{% end %}
+{% </info> %}
 
 ```Rust
 rustup update && rustup override set nightly

@@ -17,7 +17,7 @@ The idea was to avoid file handling in unit tests without mocking or using tempo
 
 <!-- more -->
 
-{{ figure(src="gopher.svg", caption="A gopher reading a long computer printout" credits="Illustration by [Marcus Olsson](https://github.com/marcusolsson/gophers/) CC BY-NC-SA 4.0") }}
+{{ <figure page={page} src="gopher.svg" caption="A gopher reading a long computer printout" credits="Illustration by [Marcus Olsson](https://github.com/marcusolsson/gophers/) CC BY-NC-SA 4.0" /> }}
 
 I was surprised that I couldn't find a simple explanation on sites like StackOverflow,
 which is why I wrote down some notes myself so that others can refer to it in the future.
@@ -183,10 +183,10 @@ The refactoring above is just the **first step towards better architecture**. Th
 
 If that got you interested, also check out [justforfunc #29: dependency injection in a code review](https://youtu.be/ifBUfIb7kdo), which covers the same topic:
 
-{{ video(url="https://www.youtube.com/embed/ifBUfIb7kdo", preview="maxresdefault.jpg") }}
+{{ <video url="https://www.youtube.com/embed/ifBUfIb7kdo" preview="maxresdefault.jpg" /> }}
 
 A great resource that I can recommend is [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/). It teaches you test-driven development with Go and helps you get a grounding with TDD.
 
 Another one is [The Go Programming Language](https://amzn.to/2QCHvWP) book, co-authored by Brian W. Kernighan (of Unix fame), which shows how to write clear and idiomatic Go to solve real-world problems. It contains a dedicated chapter on interfaces and testing. It also covers `io.Reader` in more detail.
 
-{{ figure(src="the_go_programming_language.jpg", caption="The Go Programming Language book co-authored by Brian W. Kernighan (affiliate link)", link="https://amzn.to/2QCHvWP") }}
+{{ <figure page={page} src="the_go_programming_language.jpg" caption="The Go Programming Language book co-authored by Brian W. Kernighan (affiliate link)" link="https://amzn.to/2QCHvWP" /> }}

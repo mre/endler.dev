@@ -15,14 +15,14 @@ A quick note up front, because this caused some confusion: by "hosting my own" I
 
 ## The Tinyletter Years
 
-{{ figure(src="tinyletter-landing-page.jpg", caption="The old Tinyletter landing page, now a sad 404.", credits="[Wayback Machine](https://web.archive.org/web/20240229161126/http://tinyletter.com/)") }}
+{{ <figure page={page} src="tinyletter-landing-page.jpg" caption="The old Tinyletter landing page, now a sad 404." credits="[Wayback Machine](https://web.archive.org/web/20240229161126/http://tinyletter.com/)" /> }}
 
 For years my setup was a small form on the website pointing at **Tinyletter**, a small newsletter service that was focused on writers.
 What I liked about it was the simplicity.
 I never had to think about email deliverability, bounce rates, suppression lists, SPF, DKIM, DMARC, or any of that.
 I wrote a thing, hit send, people got it.
 
-{{ figure(src="tinyletter-compose-message.jpg", caption="The Tinyletter compose page, showing the simplicity of the interface.") }}
+{{ <figure page={page} src="tinyletter-compose-message.jpg" caption="The Tinyletter compose page, showing the simplicity of the interface." /> }}
 
 It just worked. Then Tinyletter shut down.
 
@@ -34,7 +34,7 @@ Then in late 2023, Mailchimp (now part of Intuit) announced they'd shut it down.
 The official wording was that their "business priorities have evolved" and that they were "laser focused on building tools to serve marketers and help small businesses grow."
 [Writers were never their core customers.](https://simonowens.substack.com/p/tinyletter-was-one-of-the-greatest)
 
-{{ figure(src="tinyletter-shutdown.png", caption="Mailchimp's shutdown announcement, late 2023.", credits="[EmailOctopus](https://emailoctopus.com/blog/alternative-to-tinyletter)") }}
+{{ <figure page={page} src="tinyletter-shutdown.png" caption="Mailchimp's shutdown announcement, late 2023." credits="[EmailOctopus](https://emailoctopus.com/blog/alternative-to-tinyletter)" /> }}
 
 Just before Tinyletter went dark on February 29, 2024, I made a final backup of my subscriber list, but I didn't have a plan for what to do with it.
 
@@ -90,7 +90,7 @@ The one thing I did do was lead the first issue with a short, frank reintroducti
 Cost-wise, one send to the full list costs me roughly **$1**. 
 For a newsletter I send irregularly, that's nothing.
 
-{{ figure(src="plunk-dashboard.jpg", caption="The Plunk dashboard, showing the campaign overview and deliverability report. As you can see, I don't track who opens my emails.", credits="[Plunk](https://www.useplunk.com/)") }}
+{{ <figure page={page} src="plunk-dashboard.jpg" caption="The Plunk dashboard, showing the campaign overview and deliverability report. As you can see, I don't track who opens my emails." credits="[Plunk](https://www.useplunk.com/)" /> }}
 
 ## This Feels Like Home!
 

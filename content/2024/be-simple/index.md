@@ -94,7 +94,7 @@ It would be nice to have it "just work", but the next best thing is to not have 
 
 Perhaps another way to explain it is the midwit theme:
 
-{{ figure(src="midwit.jpg") }}
+{{ <figure page={page} src="midwit.jpg" /> }}
 
 I try to stay on the left side of this curve as much as I can.
 

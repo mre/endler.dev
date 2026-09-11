@@ -11,9 +11,9 @@ I liked the thought of bringing something "virtual" into the real world. 😄
 So I called up my friend [Wolfgang](https://twitter.com/schafele) and we built [codeprints](https://codeprints.dev).
 It's my first "physical" product, so I decided to share my learnings.
 
-{{ figure(src="tweet_felix.jpg", caption="[Felix Krause](https://krausefx.com/) of [fastlane](https://fastlane.tools/) fame was one
+{{ <figure page={page} src="tweet_felix.jpg" caption="[Felix Krause](https://krausefx.com/) of [fastlane](https://fastlane.tools/) fame was one
 of our first customers and we are very thankful for this tweet promoting our
-service, which gave us a huge traffic boost.", link="https://twitter.com/KrauseFx/status/1348546742644580353") }}
+service, which gave us a huge traffic boost." link="https://twitter.com/KrauseFx/status/1348546742644580353" /> }}
 
 ## Launching Is Hard, So Launch Early
 
@@ -25,13 +25,13 @@ Wolfgang convinced me that multiple layouts were not needed for the MVP and that
 He was right. Without Wolfgang, the shop would probably still not be live today.
 We have a much clearer vision now of what people want to see, thanks to launching early. Turns out users were not really interested in the graph-based design after all, and it would have been a waste of time to create it.
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 Even if you know all the rules for building products, it's
 different when applying them in practice for the first time. We'll probably
 never be completely happy with the shop functionality, but it's better to launch
 early and make incremental improvements later.
-{% end %}
+{% </info> %}
 
 ## Software Development Is Easy
 
@@ -57,16 +57,16 @@ like [themekit](https://shopify.github.io/themekit/). Payments, refunds,
 discounts, customer analytics: it's all built into the platform. It
 saved us sooo much development time.
 
-{{ figure(src="tweet_product.jpg", link="https://twitter.com/matthiasendler/status/1349308007839109122") }}
+{{ <figure page={page} src="tweet_product.jpg" link="https://twitter.com/matthiasendler/status/1349308007839109122" /> }}
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 There are many [unknown
 unknowns](https://medium.com/datadriveninvestor/known-knowns-unknown-knowns-and-unknown-unknowns-b35013fb350d)
 &mdash; things we are neither aware of nor understand &mdash; when starting a project.
 Try to get to the root of the problem as soon as possible to save time and avoid
 the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost).
-{% end %}
+{% </info> %}
 
 ## Users Expect Great UI/UX
 
@@ -81,14 +81,14 @@ many details wrong, and you lose a customer.
 
 Those things can only be found by watching real users use your product. I promise you, it will be eye-opening!
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 Watch potential customers use your service. It will be
 painful at first, but will improve the quality of your product. Use standard
 frameworks for shops if you can because they get many UI/UX details
 right out of the box. [WooCommerce](https://woocommerce.com/) or
 [Shopify](https://www.shopify.com/) come to mind.
-{% end %}
+{% </info> %}
 
 ## Building Products Means Being Pragmatic
 
@@ -101,15 +101,15 @@ because our suppliers' support is not there. On top of that, we run the
 business next to our day job and other
 responsibilities, so we need to make use of our time as efficiently as possible.
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 Making services look effortless is hard work. Time is your biggest constraint.
 You'll have to say "no" more often than you can say "yes".
-{% end %}
+{% </info> %}
 
-{{ figure(src="whereby.jpg", caption="Due to the pandemic, codeprints was
+{{ <figure page={page} src="whereby.jpg" caption="Due to the pandemic, codeprints was
 entirely built remotely. More people should give [whereby](https://whereby.com/)
-a try.") }}
+a try." /> }}
 
 ## Getting Traction As A Small Business
 
@@ -129,9 +129,9 @@ providing value on those platforms; a plain marketing post won't get you any att
 platforms like LinkedIn, Facebook, ProductHunt, or IndieHackers could also work, but our target audience (OSS developers with an active Github profile) doesn't
 hang out there that much.
 
-{% info() %}
+{% <info> %}
 **Lesson learned:** Always know where your customers are and understand their needs.
-{% end %}
+{% </info> %}
 
 ## Finding A Niche Is Only Half The Job
 
@@ -153,15 +153,14 @@ required level of Github activity for a cool print. We are also working on makin
 emptier profiles look more interesting and highlighting the value-producing part
 of open source contribution. Every contribution counts &mdash; no matter how tiny.
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 Make sure that your niche market is not too narrow so that you can make a sustainable business out of it.
-{% end %}
+{% </info> %}
 
-{{ figure(src="tweet_orta.jpg", caption="Early adopters like [Orta
+{{ <figure page={page} src="tweet_orta.jpg" caption="Early adopters like [Orta
 Therox](https://orta.io/) are incredibly precious when starting out. Not
-everybody has a rockstar profile like that, though (and that's fine).",
-link="https://twitter.com/orta/status/1350058678418878465") }}
+everybody has a rockstar profile like that, though (and that's fine)." link="https://twitter.com/orta/status/1350058678418878465" /> }}
 
 ## Make User Feedback Actionable
 
@@ -189,10 +188,10 @@ You could turn it around to make it constructive:
 And that is some valuable feedback. We could provide a downloadable version in
 the future!
 
-{% info() %}
+{% <info> %}
 **Lesson learned:**
 It takes practice to extract actionable feedback from user input and make it fit your product vision.
-{% end %}
+{% </info> %}
 
 ## Summary
 
@@ -207,9 +206,9 @@ That print of 2020 pretty much encapsulates those feelings for me.
 (Note the greener spots in August and September, which is when we launched
 analysis-tools and the days in December when we built codeprints.)
 
-{{ figure(src="vertical.jpg", caption="My coding year in review using our new
+{{ <figure page={page} src="vertical.jpg" caption="My coding year in review using our new
 vertical layout.<br />Here's to
-building more products in 2021.", link="https://codeprints.dev") }}
+building more products in 2021." link="https://codeprints.dev" /> }}
 
 Let me know if you found that post helpful and reach out if you have questions.
 Oh and if you're looking for a unique way to decorate your home office, why not

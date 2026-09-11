@@ -83,7 +83,7 @@ If you wish to get in touch, feel free to [schedule a meeting][calendar] or [sen
 
 As of today, I have started more than 100 open source projects. Here's a list of the more popular ones:
 
-{{ load_stars() }}
+{{ <load_stars /> }}
 
 [universit&auml;t bayreuth]: https://www.uni-bayreuth.de
 [trivago]: https://tech.trivago.com/

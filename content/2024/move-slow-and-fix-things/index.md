@@ -18,7 +18,7 @@ For a long time, I couldn't put my finger on what exactly bothered me about it.
 Part of what made me increasingly uncomfortable was the glorification of hustle culture &ndash;
 the idea that you have to work yourself to the bone to make it big against all odds.
 
-{{ figure(src="work.jpg") }}
+{{ <figure page={page} src="work.jpg" /> }}
 
 The other part was the "winner takes all" mentality and the mindset that you have to "move fast and break things" to succeed.
 
@@ -44,7 +44,7 @@ They fly under the radar because their success isn't measured in dollars, and th
 Instead, they focus on their product, doing a lot with very little.
 I find that far more inspiring.
 
-{{ figure(src="bootstrap.jpg") }}
+{{ <figure page={page} src="bootstrap.jpg" /> }}
 
 It's incredibly rewarding to build something people love that can provide you with a comfortable living.
 There's no need to risk it all, drop out of college, work insane hours, and leave a trail of destruction in your wake.

@@ -116,7 +116,7 @@ curl https://zerocal.shuttleapp.rs?start=2023-11-04+20:00&duration=3h&title=Birt
 This would return an iCal file, that you can add to your calendar.
 Here's how you create an event in the browser:
 
-{{ figure(src="form.jpg") }}
+{{ <figure page={page} src="form.jpg" /> }}
 
 I tried building this project on Shuttle when they were still fixing some things and changing their APIs here and there. Even with these small issues, it was a good experience. In just a few minutes, my app was up and running.
 

@@ -162,8 +162,7 @@ In Python 2, this would result in `[1, 'fish']` (<strike>because strings will be
 
 Edit: Reddit user [jcdyer3 pointed out](https://www.reddit.com/r/rust/comments/6mknzp/why_type_systems_matter/dk2jtcm/) that the reason is that when incomparable types are compared, they sort by their type, so all ints will come before all strings. It's a [CPython implementation detail](https://stackoverflow.com/a/3270689/270334)).
 
-{{ figure(src="fish.svg", caption="1 < fish according to Python 2",
-credits="Illustration provided by [Freepik](https://www.freepik.com/free-vector/sealife-animals-collection_1072064.htm)") }}
+{{ <figure page={page} src="fish.svg" caption="1 < fish according to Python 2" credits="Illustration provided by [Freepik](https://www.freepik.com/free-vector/sealife-animals-collection_1072064.htm)" /> }}
 
 Since Python 3, this throws an Exception.
 

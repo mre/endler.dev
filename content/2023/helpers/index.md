@@ -21,7 +21,7 @@ was tedious, time-consuming, manual labor.
 I heard stories about how people used to watch the washing machine do its thing,
 just because it was entertaining to see the machine do their work for them.
 
-{{ video(url="https://www.youtube.com/embed/BZoKfap4g4w", preview="rosling.jpg") }}
+{{ <video url="https://www.youtube.com/embed/BZoKfap4g4w" preview="rosling.jpg" /> }}
 
 Growing up in the 90s and early 2000s, I remember when "smart home" was a
 buzzword, and now it's a reality. Smart devices control the thermostat and soon

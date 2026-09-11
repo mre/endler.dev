@@ -1,0 +1,8 @@
+{% component info(title="") -%}
+<div class="info">
+    {%- if title %}
+    <p class="info-title">{{ title }}</p>
+    {%- endif %}
+    {{ body | markdown() | safe }}
+</div>
+{%- endcomponent info %}

@@ -1,0 +1,25 @@
+{% component video(url: string, preview: string, start="", width="", height="", meta={}) -%}
+{% set image_width = width or meta.width -%}
+{% set image_height = height or meta.height -%}
+<link rel="stylesheet" href="{{ get_url(path="css/video.css") }}" />
+<script defer src="/video.js"></script>
+{# Keep the HTML free of blank lines so Markdown does not parse it as code. #}
+<div class="light-video-embed" data-url="{{ url }}"
+  {%- if start %} data-start="{{ start }}"{% endif %}
+>
+  <picture>
+    <source srcset="{{ preview | replace(from="jpg", to="avif") }}" type="image/avif" />
+    <img src="{{ preview }}"
+      {#- Reserve space upfront to avoid layout changes. -#}
+      {%- if image_width %} width="{{ image_width }}"{% endif %}
+      {%- if image_height %} height="{{ image_height }}"{% endif %}
+    />
+  </picture>
+  <div class="play"></div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    lightEmbedInit();
+  });
+</script>
+{%- endcomponent video %}

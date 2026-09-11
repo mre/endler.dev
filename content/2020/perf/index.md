@@ -12,7 +12,7 @@ support for the new AVIF image format to the blog. The results were suprising.
 """
 +++
 
-{{ figure(src="hero.jpg") }}
+{{ <figure page={page} src="hero.jpg" /> }}
 
 Did I mention that this website is fast?
 Oh yeah, [I did](/2019/tinysearch/), [multiple times](/2017/image-previews/).
@@ -49,15 +49,15 @@ To this day, [Safari doesn't support WebP](https://caniuse.com/?search=webp).
 
 Meet [AVIF](https://aomediacodec.github.io/av1-avif/), the new next-gen image compression format. Check this out:
 
-{{ figure(src="stats.svg", credits="[ReachLightSpeed.com](https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/)") }}
+{{ <figure page={page} src="stats.svg" credits="[ReachLightSpeed.com](https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/)" /> }}
 
 It's already supported by Chrome 85 and Firefox 80.  
 [Then it hit me like a hurricane](https://www.youtube.com/watch?v=BixwVsiDdZM) 🌪️:
 
-{% info() %}
+{% <info> %}
 😲 Holy smokes, AVIF is supported by major browsers now!?  
 I want this for my blog!
-{% end %}
+{% </info> %}
 
 Yes and no.
 
@@ -71,7 +71,7 @@ Under the hood, it calls [cavif](https://github.com/kornelski/cavif) by [Kornel 
 
 The results of AVIF on the blog were nothing short of impressive:
 
-{{ figure(src="own_stats.svg", caption="Total image size for [endler.dev/2020/sponsors](https://endler.dev/2020/sponsors)") }}
+{{ <figure page={page} src="own_stats.svg" caption="Total image size for [endler.dev/2020/sponsors](https://endler.dev/2020/sponsors)" /> }}
 
 ## Check Your Browser
 
@@ -103,7 +103,7 @@ So I can use the `<picture>` element to serve the right format to you. (Look ma,
 ```
 
 [The real
-thing](https://github.com/mre/endler.dev/blob/master/templates/shortcodes/figure.html)
+thing](https://github.com/mre/endler.dev/blob/master/templates/components/figure.html)
 is a bit more convoluted, but you get the idea.
 
 ## Workaround II: Wrong Content-Type On Github Pages
@@ -137,15 +137,15 @@ Another side-effect of Workers Sites is that a production deployment takes [one 
 
 ## Performance Results After Moving To Cloudflare
 
-{{ figure(src="cdn_before.jpg", caption="Website response time before", credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)") }}
-{{ figure(src="cdn_after.jpg", caption="Website response time after", credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)") }}
+{{ <figure page={page} src="cdn_before.jpg" caption="Website response time before" credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)" /> }}
+{{ <figure page={page} src="cdn_after.jpg" caption="Website response time after" credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)" /> }}
 
-{{ figure(src="pingdom_before.jpg", caption="Page size and rating before", credits="[Pingdom.com](https://tools.pingdom.com/#5d1d402401400000)") }}
-{{ figure(src="pingdom_after.jpg", caption="Page size and rating after", credits="[Pingdom.com](https://tools.pingdom.com/#5d226db3af800000)") }}
+{{ <figure page={page} src="pingdom_before.jpg" caption="Page size and rating before" credits="[Pingdom.com](https://tools.pingdom.com/#5d1d402401400000)" /> }}
+{{ <figure page={page} src="pingdom_after.jpg" caption="Page size and rating after" credits="[Pingdom.com](https://tools.pingdom.com/#5d226db3af800000)" /> }}
 
 I don't have to hide from a comparison with well-known sites either:
 
-{{ figure(src="speedcurve.png", caption="Comparison with some other blogs I read", credits="[Speedcurve](https://speedcurve.com)") }}
+{{ <figure page={page} src="speedcurve.png" caption="Comparison with some other blogs I read" credits="[Speedcurve](https://speedcurve.com)" /> }}
 
 ## Further reading
 

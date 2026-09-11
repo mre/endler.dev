@@ -18,7 +18,7 @@ Google, AWS, Microsoft, Cloudflare, and many others use it to check links in the
 
 I gave [talks](https://www.youtube.com/watch?v=BIguvia6AvM) and [podcasts](https://www.youtube.com/watch?v=plEz4l7HwhY) about it, in case you'd like to learn more.
 
-{{ figure(src="screencast.svg", caption="lychee goes weeeee...") }}
+{{ <figure page={page} src="screencast.svg" caption="lychee goes weeeee..." /> }}
 
 lychee got [funded by NLnet](https://nlnet.nl/) through their [NGI Zero program](https://nlnet.nl/NGI0/) for open, trustworthy infrastructure.
 
@@ -34,7 +34,7 @@ But there are good reasons! Of course, the gist is "it's hard," but let's go dee
 
 On December 14, 2020, a user named [**@styfle**](https://github.com/styfle) opened [issue #78](https://github.com/lycheeverse/lychee/issues/78):
 
-{{ figure(src="issue78.jpg", caption="The original recursion issue") }}
+{{ <figure page={page} src="issue78.jpg" caption="The original recursion issue" /> }}
 
 Very reasonable! At that point, lychee was already a fast, concurrent link checker with a lot of features. Surely adding a little `--recursive` flag to follow links within a domain could be done in an honest day's work, no? 
 
@@ -45,7 +45,7 @@ But five years, four serious implementation attempts, and several abandoned pull
 To understand why recursion is so difficult to add, you need to understand how lychee processes things.
 Here's the flow from back in late 2020:
 
-{{ figure(src="initial-architecture.svg", caption="lychee's initial architecture") }}
+{{ <figure page={page} src="initial-architecture.svg" caption="lychee's initial architecture" /> }}
 
 Basically one big pipeline, from input URLs over link extraction, to link checking, to output formatting.
 
@@ -115,13 +115,13 @@ In September 2021 we decided to do a bigger rewrite: a stream-based architecture
 
 [PR #165](https://github.com/lycheeverse/lychee/pull/165) was closed in December 2021. The stream refactor landed and gave us a 35–50% speedup. Nice! Tradeoffs, I guess.
 
-{% info(title="Takeaways") %}
+{% <info title="Takeaways"> %}
 
 - **Counting outstanding work in an async pipeline is fragile.** An off-by-one in distributed counting means a deadlock or an early exit.
 - **Big refactors and feature branches don't get along.** The stream rewrite made the recursion branch stale before it was ever ready.
 - **Recursion touches almost every layer.** This isn't something you bolt on.
 
-{% end %}
+{% </info> %}
 
 And one honest aside on the language question, because I get asked it a lot: the counting problem here is **not Rust's fault**. A Go version with goroutines and channels, or a Python asyncio version, would hit the same off-by-one bugs. The race between "response processed" and "new requests discovered" is inherent to any concurrent recursive crawler. Rust's `Stream` trait and the way it plays with ownership made a streaming architecture feel natural, and that's what invalidated the work. So that's perhaps a Rust-specific point. 
 
@@ -176,13 +176,13 @@ I took the problem to the Tokio Discord, and the advice that came back was: "Sto
 
 Even ignoring the deadlock, there was a second issue. The new `from_chan` method benchmarked roughly 30% slower than the existing `from` method. The extra channel indirection cost something, and it cost it even in the non-recursive case, which is the case basically everyone uses.
 
-{% info(title="Takeaways") %}
+{% <info title="Takeaways"> %}
 
 - **Channels are the wrong tool for cyclic pipelines.** Their close-on-last-sender-drop semantics are fundamentally at odds with a feedback loop.
 - **`for_each_concurrent` looks perfect and isn't.** It processes a stream concurrently but gives you no way to feed items back in.
 - **The common path can't get slower.** Recursion support is worthless if it taxes everyone who never uses it.
 
-{% end %}
+{% </info> %}
 
 The channel-cycle deadlock is **inherent to any channel-based system**. Go channels have the same problem. Closing one means knowing nobody will send again, and a cycle makes that impossible. Erlang/OTP sidesteps it with process monitoring instead of channel semantics. The 30% regression, though, has a Rust angle. Rust's zero-cost-abstraction culture means people (me included) expect to pay nothing for features they don't use. In a runtime-heavy language, a 30% regression on an unused path might slide. In Rust, "you don't pay for what you don't use" is practically a moral position, and it made that regression a non-starter for me.
 
@@ -226,13 +226,13 @@ A semaphore solves the concurrency-limiting problem. It does nothing for the *te
 
 There's a subtlety with the permits, too. Swapping `for_each_concurrent` for raw `tokio::spawn` loses the bounded concurrency that channels gave us for free. The semaphore adds it back, but you have to manage permits carefully. If a task acquires a permit, spawns a child, and transfers the permit, the parent can't do more work. If it clones the permit, you can blow past your concurrency limit. Getting the permit lifecycle exactly right is fiddly.
 
-{% info(title="Takeaways") %}
+{% <info title="Takeaways"> %}
 
 - **Semaphores solve concurrency, not termination.** You still need something to tell you "all the work is done."
 - **`Arc<RwLock<State>>` is a code smell in async Rust.** When you start wrapping everything in locks, you're fighting the ownership model instead of working with it. That can leave a lot of performance on the table since every access is a lock acquisition across all threads.
 - **The real question was never "how do I recurse?"** It was "how do I know when I'm done recursing."
 
-{% end %}
+{% </info> %}
 
 This was the most Rust-specific failure of the bunch.
 The semaphore approach is idiomatic in Go. A `sync.WaitGroup` plus a semaphore channel, with state shared across goroutines via `sync.Mutex` is how you'd do that in Golang because it has green threads and a runtime that manages goroutine lifecycles for you.
@@ -308,13 +308,13 @@ After a burst of energy in January 2025, things slowed. Merge conflicts piled up
 
 I didn't want her to apologize. She got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. Instead, I'm grateful for the time she invested to push tings forward.
 
-{% info(title="Takeaways") %}
+{% <info title="Takeaways"> %}
 
 - **The atomic counter is a manual counter in a trenchcoat.** It had the same failure modes. 
 - When you're adding `vec![]` and `0` to every `Response::new()` call, that's a leaky abstraction.
 - **Outside contributors face extra friction.** Build-environment differences, conflicts with a moving target, and the sheer cognitive load of a big async codebase make this an especially brutal feature to contribute.
 
-{% end %}
+{% </info> %}
 
 How much of the issues were Rust-specific?
 I'd say around half.

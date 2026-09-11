@@ -21,12 +21,12 @@ credits = [
 ]
 +++
 
-{% info() %}
+{% <info> %}
 I wrote a basic search module that you can add to a static website.
 It's very lightweight (50kB-100kB gzipped) and works with Hugo, Zola, and
 Jekyll. Only searching for entire words is supported. Try the search box on the
 left for a demo. [The code is on Github](https://github.com/mre/tinysearch).
-{% end %}
+{% </info> %}
 
 Static site generators are magical. They combine the best of both worlds:
 dynamic content without sacrificing performance.
@@ -77,10 +77,10 @@ The trick is that it doesn't store the elements themselves; it just knows with
 some confidence that they were stored before. In our case, it can say with a
 certain _error rate_ that a word is in an article.
 
-{{ figure(src="bloomfilter.svg", caption="A Bloom filter stores a
+{{ <figure page={page} src="bloomfilter.svg" caption="A Bloom filter stores a
 'fingerprint' (a number of hash values) of all input values instead of the raw
 input. The result is a low-memory-footprint data structure. This is an example
-of 'hello' as an input.") }}
+of 'hello' as an input." /> }}
 
 Here's the Python code from the original article that generates the Bloom
 filters for each post (courtesy of [Stavros
@@ -265,6 +265,7 @@ Then I removed web-sys as we don't have to bind to the DOM: 152858 bytes.
 There's a tool called [twiggy](https://github.com/rustwasm/twiggy) to profile the code size of Wasm binaries.
 It printed the following output:
 
+{% raw %}
 ```
 twiggy top -n 20 pkg/tinysearch_bg.wasm
  Shallow Bytes │ Shallow % │ Item
@@ -277,6 +278,7 @@ twiggy top -n 20 pkg/tinysearch_bg.wasm
           5972 ┊     3.34% ┊ std::sync::once::Once::call_once::{{closure}}::ha520deb2caa7e231
           5869 ┊     3.29% ┊ search
 ```
+{% endraw %}
 
 From what I can tell, the biggest chunk of our binary is occupied by the raw data section for our articles.
 Next up, we got the function headers and some float to decimal helper functions, that most likely come from deserialization.
@@ -313,12 +315,7 @@ Now when a user enters a search query, we go through the cuckoo filter of each
 article and try to match the words. The results are scored by the number of
 hits. Thanks to my dear colleague [Jorge Luis Betancourt](https://github.com/jorgelbg/) for adding that part.
 
-{{ figure(
-  src="anim-opt2.gif",
-  caption="Video of the search functionality",
-  alt="Video of the search functionality",
-  width="600"
-) }}
+{{ <figure page={page} src="anim-opt2.gif" caption="Video of the search functionality" alt="Video of the search functionality" width="600" /> }}
 
 (Fun fact: this animation is about the same size as the uncompressed Wasm search itself.)
 
@@ -356,6 +353,7 @@ This `corpus.json` contains the text you would like to index. The format is pret
 You can generate this JSON file with any static site generator.
 [Here's my version for Zola](https://github.com/mre/mre.github.io/tree/1c731717b48afb584e54ca4dd5fd649f9b74e51c/templates):
 
+{% raw %}
 ```t
 {% set section = get_section(path="_index.md") %}
 
@@ -372,6 +370,7 @@ You can generate this JSON file with any static site generator.
   {%- endfor -%}
 ]
 ```
+{% endraw %}
 
 I'm pretty sure that the Jekyll version looks quite similar.
 [Here's a starting point](https://learn.cloudcannon.com/jekyll/output-json/).

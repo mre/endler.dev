@@ -15,7 +15,7 @@ the end.
 To celebrate its unlikely 1.0 release today, I present here a "timelapse" of
 this project's journey. It just took _ten years_ to get here.
 
-{{ video(url="https://www.youtube.com/embed/_QEmxAZqQhE", preview="timelapse.jpg") }}
+{{ <video url="https://www.youtube.com/embed/_QEmxAZqQhE" preview="timelapse.jpg" /> }}
 
 ## 2011 - How it all began
 
@@ -37,7 +37,7 @@ drawing app inspired by
 [obligatory CMS software](https://github.com/mre/Creamy), that I sold to
 clients. Surprisingly, none of them were a great success.
 
-{{ figure(src="drawroom.jpg", caption="DrawRoom, a tool that I wrote around the same time, is a real piece of art. To this day it has five commits and a single Github star (by myself, don't judge...).") }}
+{{ <figure page={page} src="drawroom.jpg" caption="DrawRoom, a tool that I wrote around the same time, is a real piece of art. To this day it has five commits and a single Github star (by myself, don't judge...)." /> }}
 
 What I _do_ know for sure is that I was unhappy with all existing screen
 recorders. They could roughly be categorized into these three groups:
@@ -72,7 +72,7 @@ ffmpeg](https://github.com/mre/timelapse/commit/0b43515037670604143bf3b3eb06061e
 After that, timelapse was ready for prime-time. 🎬 Here is some live action from
 her videos featuring timelapses:
 
-{{ video(url="https://www.youtube.com/embed/vv2CCwEM8Ws", preview="preview.jpg") }}
+{{ <video url="https://www.youtube.com/embed/vv2CCwEM8Ws" preview="preview.jpg" /> }}
 
 At that point, the tool was still very wobbly and could only be used from the
 commandline, but I began to see some potential for building a proper app from

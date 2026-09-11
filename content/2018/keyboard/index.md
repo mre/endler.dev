@@ -15,7 +15,7 @@ For the first three decades of my life, I've exclusively used a German keyboard 
 This post summarizes my thoughts around the topic.
 I was looking for a similar article before jumping the gun, but I couldn't find one &mdash; so I wrote it.
 
-{{ figure(src='keychron.jpg', caption='My current keyboard (as of April 2021), the low-profile, tenkeyless Keychron K1 is close to my favorite input device. Yes, I got the RGB version. &mdash; [Amazon referral link](https://amzn.to/3tRatjU).') }}
+{{ <figure page={page} src='keychron.jpg' caption='My current keyboard (as of April 2021), the low-profile, tenkeyless Keychron K1 is close to my favorite input device. Yes, I got the RGB version. &mdash; [Amazon referral link](https://amzn.to/3tRatjU).' /> }}
 
 ## Why Switch To the US Layout?
 
@@ -23,7 +23,7 @@ I was reasonably efficient when writing prose, but felt like
 a [lemur on a piano](https://www.etsy.com/listing/896826954/funny-piano-art-print-leptodactylous-aye) when programming:
 lots of finger-stretching while trying to reach the special keys like `{`, `;`, or `/`.
 
-{{ figure(src="KB_Germany.svg", caption="German Keyboard Layout", credits="[Image by Wikipedia](https://commons.wikimedia.org/w/index.php?curid=1058095)") }}
+{{ <figure page={page} src="KB_Germany.svg" caption="German Keyboard Layout" credits="[Image by Wikipedia](https://commons.wikimedia.org/w/index.php?curid=1058095)" /> }}
 
 Here's [Wikipedia's polite
 explanation](https://en.wikipedia.org/wiki/German_keyboard_layout) why the
@@ -49,7 +49,7 @@ clicky sound of a mechanical keyboard and the noticeable tactile bump. (I'm usin
 Most mechanical keyboards come with an ANSI US layout only, so I figured, I'd
 finally make the switch.
 
-{{ figure(src='durgod_taurus.jpg', caption='My first mechanical keyboard &mdash; [Durgod Taurus K320](https://www.amazon.de/gp/product/B07QK16RDQ/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B07QK16RDQ&linkId=fb0a782ecbc713f8266b90b941375a5f) (referral link). They also have a fancy [white-pink](https://www.amazon.de/gp/product/B081LZV2QM?ie=UTF8&tag=matthiasendle-21&camp=1638&linkCode=xm2&creativeASIN=B081LZV2QM) ISO version now.') }}
+{{ <figure page={page} src='durgod_taurus.jpg' caption='My first mechanical keyboard &mdash; [Durgod Taurus K320](https://www.amazon.de/gp/product/B07QK16RDQ/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B07QK16RDQ&linkId=fb0a782ecbc713f8266b90b941375a5f) (referral link). They also have a fancy [white-pink](https://www.amazon.de/gp/product/B081LZV2QM?ie=UTF8&tag=matthiasendle-21&camp=1638&linkCode=xm2&creativeASIN=B081LZV2QM) ISO version now.' /> }}
 
 ## How Long Did It Take To Get Accustomed To The New Layout?
 
@@ -111,7 +111,7 @@ in handy in case you already use this tool.
 
 ## Is Switching Between Keyboards Painful?
 
-{{ figure(src="KB_United_States.svg", caption="US keyboard layout" credits="[Wikipedia](https://commons.wikimedia.org/wiki/File:KB_United_States.svg)") }}
+{{ <figure page={page} src="KB_United_States.svg" caption="US keyboard layout" credits="[Wikipedia](https://commons.wikimedia.org/wiki/File:KB_United_States.svg)" /> }}
 
 My built-in MacBook Pro keyboard layout is still German. I was afraid, that switching between
 the internal German and the external English keyboard would confuse me. This

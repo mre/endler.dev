@@ -14,7 +14,7 @@ rich (yet!), but I built my first sustainable side-project with
 I'll talk about this and other projects and the mistakes I made on the road
 towards sustainability.
 
-{{ video(url="https://www.youtube.com/embed/NlKuICiT470", preview="maxresdefault.jpg") }}
+{{ <video url="https://www.youtube.com/embed/NlKuICiT470" preview="maxresdefault.jpg" /> }}
 
 Related links and resources:
 
@@ -58,7 +58,7 @@ models.
 Let's go back all the way to 2010. The world definitely looked a bit different
 back then.
 
-{{ figure(src="github.jpg", caption="Github in 2010") }}
+{{ <figure page={page} src="github.jpg" caption="Github in 2010" /> }}
 
 This was Github, and I was a bit late to the game. I joined in January 2010, and
 by then, Github was already two years old, so my username was taken. I usually

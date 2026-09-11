@@ -31,7 +31,7 @@ credits = [
 ]
 +++
 
-{{ figure(src="scooter.svg", caption="A woman riding a scooter",  credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/).") }}
+{{ <figure page={page} src="scooter.svg" caption="A woman riding a scooter" credits="Illustration created by [freepik](https://www.freepik.com/free-photos-vectors/car), Nomad logo by [HashiCorp](https://www.nomadproject.io/)." /> }}
 
 Kubernetes is the 800-pound gorilla of container orchestration.  
 It powers some of the biggest deployments worldwide, but it comes
@@ -114,7 +114,7 @@ Especially in our team, which runs most services on-premise (because of its
 close connection to trivago's core infrastructure), we didn't want to afford
 running our own Kubernetes cluster; we wanted to ship services instead.
 
-{{ figure(src="nuclear-kubernetes.jpg", alt="Nuclear hot take: nobody will care about Kubernetes in five years. -A tweet by Corey Quinn" link="https://twitter.com/QuinnyPig/status/1093261169614356490") }}
+{{ <figure page={page} src="nuclear-kubernetes.jpg" alt="Nuclear hot take: nobody will care about Kubernetes in five years. -A tweet by Corey Quinn" link="https://twitter.com/QuinnyPig/status/1093261169614356490" /> }}
 
 ## Batteries Not Included
 
@@ -143,6 +143,7 @@ other - completely optional - products like [Consul] (a key-value store) or
 [Vault] (for secrets handling). Inside your Nomad file, you can have sections
 for fetching data from those services:
 
+{% raw %}
 ```bash
 template {
   data = <<EOH
@@ -154,6 +155,7 @@ EOH
   env         = true
 }
 ```
+{% endraw %}
 
 This will read the `service/geo-api/log-verbosity` key from Consul and expose it
 as a `LOG_LEVEL` environment variable inside your job. It's also exposing

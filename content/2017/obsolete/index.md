@@ -11,7 +11,7 @@ excerpt="In December 2015 I was looking for static analysis tools to integrate i
 social_img="2017_obsolete.png"
 +++
 
-{{ figure(src="dinosaur.svg", caption="The Stegosaurus had better days 150 million years ago.", credits="Paleontologists once thought it had a [brain in its butt](https://en.wikipedia.org/wiki/Stegosaurus#.22Second_brain.22).")}}
+{{ <figure page={page} src="dinosaur.svg" caption="The Stegosaurus had better days 150 million years ago." credits="Paleontologists once thought it had a [brain in its butt](https://en.wikipedia.org/wiki/Stegosaurus#.22Second_brain.22)." /> }}
 
 In December 2015 I was looking for static analysis tools to integrate into [trivago](https://tech.trivago.com/)'s CI process.
 The idea was to detect typical programming mistakes automatically.
@@ -40,7 +40,7 @@ What I find particularly motivating is, that now the authors themselves create p
 
 There was one problem though: The list of pull requests got longer and longer, as I was busy doing other things.
 
-{{ figure(src="pull_requests.jpg", caption="The list of Github Pull requests for awesome-static-analysis")}}
+{{ <figure page={page} src="pull_requests.jpg" caption="The list of Github Pull requests for awesome-static-analysis" /> }}
 
 ## Adding contributors
 

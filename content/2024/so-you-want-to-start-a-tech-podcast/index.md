@@ -20,7 +20,7 @@ statistics](https://www.demandsage.com/podcast-statistics/).
 Whether you're considering starting your own podcast or just curious about the
 process, I hope my experiences can offer some valuable insights.
 
-{{ figure(src="cover.jpg", caption="The 'Rust in Production' podcast cover", link="https://corrode.dev/podcast/") }}
+{{ <figure page={page} src="cover.jpg" caption="The 'Rust in Production' podcast cover" link="https://corrode.dev/podcast/" /> }}
 
 ## Do Your Research
 
@@ -71,7 +71,7 @@ Your podcast's cover is equally crucial. It's the first thing people recognize a
 
 What I did was open my podcast app and look at the grid of covers.
 
-{{ figure(src="podcasts.jpg", caption="The grid of podcast covers in my podcast app") }}
+{{ <figure page={page} src="podcasts.jpg" caption="The grid of podcast covers in my podcast app" /> }}
 
 I asked myself which ones stood out and why.
 I also asked a few friends and my partner to do the same. I got some great feedback that way.

@@ -17,7 +17,7 @@ comments = [
 social_img="2022_zerocal.png"
 +++
 
-{{ figure(src="intro.svg") }}
+{{ <figure page={page} src="intro.svg" /> }}
 
 Every once in a while my buddies and I meet for dinner.
 I value these evenings, but the worst part is scheduling these events!
@@ -299,7 +299,7 @@ Nice, it works!
 
 Opening it in the browser creates a new event in the calendar:
 
-{{ figure(src="event.jpg", caption="Of course, it also works on Chrome, but you do [support the open web](https://contrachrome.com/), right?") }}
+{{ <figure page={page} src="event.jpg" caption="Of course, it also works on Chrome, but you do [support the open web](https://contrachrome.com/), right?" /> }}
 
 And for all the odd people who don't use a terminal to create a calendar event, let's also add a form to the website.
 
@@ -358,7 +358,7 @@ async fn calendar(Query(params): Query<HashMap<String, String>>) -> impl IntoRes
 
 After some more tweaking, we got ourselves a nice little form in all of its web 1.0 glory:
 
-{{ figure(src="form.jpg", caption="The form") }}
+{{ <figure page={page} src="form.jpg" caption="The form" /> }}
 
 And that's it! We now have a little web app that can create calendar events.
 Well, almost. We still need to deploy it.

@@ -23,7 +23,6 @@ smart_punctuation = true
 bottom_footnotes = true
 
 [markdown.highlighting]
-code = true
 light_theme = "snazzy-light"
 dark_theme = "dark-plus"
 style = "class"

@@ -13,7 +13,7 @@ open-source and backed by sponsors. If you like to do the same, keep reading!
 
 Yesterday we launched [analysis-tools.dev](https://analysis-tools.dev), and boy had I underestimated the response.
 
-{{figure(src="website.jpg", link="https://analysis-tools.dev")}}
+{{ <figure page={page} src="website.jpg" link="https://analysis-tools.dev" /> }}
 
 It's a side project about comparing static code analysis tools.
 Static analysis helps improve code quality by detecting bugs in source code
@@ -37,8 +37,7 @@ Everyone likes business metrics. Here are some of ours:
 - I had the idea to build a website for years now, but my coworker [Jakub]
   joined in May 2020 to finally make it a reality.
 
-{{ figure(src="star-history.jpg", caption="Github stars over time. That graph screams BUSINESS OPPORTUNITY.",
-credits="[star-history.t9t.io](https://star-history.t9t.io)") }}
+{{ <figure page={page} src="star-history.jpg" caption="Github stars over time. That graph screams BUSINESS OPPORTUNITY." credits="[star-history.t9t.io](https://star-history.t9t.io)" /> }}
 
 "Why did it take five years to build a website!?", I hear you ask. Because I
 thought the idea was so obvious that others must have tried before and failed.
@@ -113,7 +112,7 @@ page](https://github.com/sponsors/analysis-tools-dev/).
 Businesses want reliable partners and a reasonable value proposal,
 so a prerequisite is that the sponsor page has to be meticulously polished.
 
-{{ figure(src="sponsors.jpg", caption="Our Github Sponsors page", link="https://github.com/sponsors/analysis-tools-dev") }}
+{{ <figure page={page} src="sponsors.jpg" caption="Our Github Sponsors page" link="https://github.com/sponsors/analysis-tools-dev" /> }}
 
 Just like _Star Wars Episode IX_, we received mixed reviews: many people never
 replied, others passed the message
@@ -189,9 +188,8 @@ open-source plan (which we didn't know existed). We were back on track!
 > Response times are consistently in the low milliseconds and the integration
 > with Gatsby was quick and easy.
 
-{{ figure(src="tweet.jpg", caption="We got quite a bit of buzz from that
-tweet: 63 retweets, 86 likes and counting",
-link="https://twitter.com/matthiasendler/status/1296162427797671936") }}
+{{ <figure page={page} src="tweet.jpg" caption="We got quite a bit of buzz from that
+tweet: 63 retweets, 86 likes and counting" link="https://twitter.com/matthiasendler/status/1296162427797671936" /> }}
 
 Clearly, everyone knew that we were asking for support here, but we are thankful
 for every single one that liked and retweeted. It's one of these situations
@@ -208,16 +206,16 @@ It helps to cater the message to each audience and stay humble, though.
 
 The response from all of that marketing effort was **nuts**:
 
-{{ figure(src="traffic.jpg", caption="Traffic on launch day") }}
+{{ <figure page={page} src="traffic.jpg" caption="Traffic on launch day" /> }}
 
 Perhaps unsurprisingly, the Cloudflare edge workers didn't break a sweat.
 
-{{ figure(src="worker.jpg", caption="Edge worker CPU time on Cloudflare") }}
+{{ <figure page={page} src="worker.jpg" caption="Edge worker CPU time on Cloudflare" /> }}
 
 My boss [Xoan Vilas](https://twitter.com/xo4n) even did a quick performance
 analysis and he approved. (Thanks boss!)
 
-{{ figure(src="perf.jpg", link="https://twitter.com/xo4n/status/1296432035788193794") }}
+{{ <figure page={page} src="perf.jpg" link="https://twitter.com/xo4n/status/1296432035788193794" /> }}
 
 High fives all around!
 
@@ -239,6 +237,6 @@ for a few tools you like? Hey, and if you feel super generous today
 (or you have a fabulous employer that cares about open-source), why not check out
 our [sponsorship page](https://github.com/sponsors/analysis-tools-dev/)?
 
-{{ figure(src="team.jpg", caption="Jakub and me in Vienna, Austria. I'm not actually that small.") }}
+{{ <figure page={page} src="team.jpg" caption="Jakub and me in Vienna, Austria. I'm not actually that small." /> }}
 
 [jakub]: https://github.com/jakubsacha

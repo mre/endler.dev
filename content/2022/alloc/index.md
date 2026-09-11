@@ -90,7 +90,7 @@ dynamic memory lives on the _stack_ and the _heap_ sections.
 
 Here's a diagram of the memory layout of a program:
 
-{{ figure(src="memory.jpg" invert="true") }}
+{{ <figure page={page} src="memory.jpg" invert={true} /> }}
 
 The `CODE` section (a.k.a. the _text segment_) contains the compiled code, which
 is the set of instructions that the computer follows to execute the program. The
@@ -111,7 +111,7 @@ and the heap work.
 
 ### The Stack
 
-{{ figure(src="stack_heap.jpg" invert="true") }}
+{{ <figure page={page} src="stack_heap.jpg" invert={true} /> }}
 
 The main purpose of the stack is to store data for the function that is currently
 being executed. When a function is called, a new _stack frame_ is created for it.
@@ -464,7 +464,7 @@ and by extension for all other types.
 
 The following video goes into more detail about how the Rust runtime manages memory:
 
-{{ video(url="https://www.youtube.com/embed/rDoqT-a6UFg", preview="yt_visualizing_memory.jpg") }}
+{{ <video url="https://www.youtube.com/embed/rDoqT-a6UFg" preview="yt_visualizing_memory.jpg" /> }}
 
 ## How Do I Prevent Allocations?
 
@@ -553,7 +553,7 @@ named!(parse_user<&str, User>,
 Here's a video that explains how zero-copy parsing works in Rust
 by looking at the `nom` crate:
 
-{{ video(url="https://www.youtube.com/embed/8mA5ZwWB3M0", preview="yt_nom.jpg") }}
+{{ <video url="https://www.youtube.com/embed/8mA5ZwWB3M0" preview="yt_nom.jpg" /> }}
 
 Consider the following example:
 
@@ -775,7 +775,7 @@ basically a new memory segment. brk is used to change the size of an already
 existing memory segment.
 
 `man mmap man brk`
-{{ video(url="https://www.youtube.com/watch?v=HPDBOhiKaD8", preview="yt_malloc.jpg") }}
+{{ <video url="https://www.youtube.com/watch?v=HPDBOhiKaD8" preview="yt_malloc.jpg" /> }}
 
 These syscall might cause a lot of overhead -- e.g. when we don't have enough
 RAM and the system starts swapping.

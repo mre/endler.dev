@@ -10,7 +10,7 @@ subtitle="Let's have some fun with 'Hello, world!'"
 excerpt="In which I look at unconventional ways to print 'Hello, world!' in Rust as an excuse to teach some Rust concepts and foster curiosity. Seemingly simple problems can have surprisingly complex, often humbling solutions. "
 +++
 
-{{ video(url="https://www.youtube.com/embed/qwOlWfYlq0A", preview="maxresdefault.jpg") }}
+{{ <video url="https://www.youtube.com/embed/qwOlWfYlq0A" preview="maxresdefault.jpg" /> }}
 
 There is a famous story about a physicist during an exam at the University of
 Copenhagen. The candidate was asked to describe how to determine a skyscraper's

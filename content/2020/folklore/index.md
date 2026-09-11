@@ -47,10 +47,9 @@ and show personal contribution.
 
 ## Boilerplate
 
-{{ figure(src="bending-roll.jpg",caption="An old machine that bended steel
-plates to water boilers.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).jpg)")
-}}
+{{ <figure page={page} src="bending-roll.jpg" caption="An old machine that bended steel
+plates to water boilers." credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Modern_mechanism,_exhibiting_the_latest_progress_in_machines,_motors,_and_the_transmission_of_power,_being_a_supplementary_volume_to_Appletons'_cyclopaedia_of_applied_mechanics_(1892)_(14583761620).jpg)" /> }}
 
 _Today's meaning: A chunk of code that is copied over and over again with little
 or no changes made to it in the process._
@@ -72,17 +71,15 @@ References:
 - [StackExchange - English Language &
   Usage](https://english.stackexchange.com/questions/464924/boilerplate-versus-template/464929)
 
-{{ figure(src="boilerplate.jpg", caption="The man in the foreground is holding
+{{ <figure page={page} src="boilerplate.jpg" caption="The man in the foreground is holding
 a rounded printing plate. Plates like this were provided by companies such as
-Western Newspaper Union to many smaller newspapers.", credits="[Wikimedia
-Commons](https://english.stackexchange.com/a/464929)") }}
+Western Newspaper Union to many smaller newspapers." credits="[Wikimedia
+Commons](https://english.stackexchange.com/a/464929)" /> }}
 
 ## Boot / Reboot / Bootstrapping
 
-{{ figure(src="muenchhausen.svg", caption="Lithography of Baron M&uuml;nchhausen
-pulling himself out of a swamp by his pigtail",
-credits="[Wikimedia](https://commons.wikimedia.org/wiki/File:Zentralbibliothek_Solothurn_-_M%C3%BCnchhausen_zieht_sich_am_Zopf_aus_dem_Sumpf_-_a0400.tif#filelinks)")
-}}
+{{ <figure page={page} src="muenchhausen.svg" caption="Lithography of Baron M&uuml;nchhausen
+pulling himself out of a swamp by his pigtail" credits="[Wikimedia](https://commons.wikimedia.org/wiki/File:Zentralbibliothek_Solothurn_-_M%C3%BCnchhausen_zieht_sich_am_Zopf_aus_dem_Sumpf_-_a0400.tif#filelinks)" /> }}
 
 The term _boot_ is used in the context of computers to refer to the process of
 starting a computer.
@@ -155,9 +152,9 @@ needed. It would move the paper inside the typewriter up by one line.
 These two operations &mdash; carriage return (CR) and line feed (LF) &mdash;
 were commonly done at once by pushing the carriage return lever.
 
-{{ figure(src="typewriter-top.jpg", caption="A mechanical typewriter. The lever for the carriage return is
-on the outer left side.", credits="Source:
-[piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)") }}
+{{ <figure page={page} src="typewriter-top.jpg" caption="A mechanical typewriter. The lever for the carriage return is
+on the outer left side." credits="Source:
+[piqsels](https://www.piqsels.com/da/public-domain-photo-spbhs)" /> }}
 
 - On Unix systems (like Linux or macOS), a `\n` still stands for a  
   _line feed_ (ASCII symbol: LF) or _newline_.
@@ -168,7 +165,7 @@ on the outer left side.", credits="Source:
 Here is an old video that shows the basic mechanics of carriage return and
 line-feed:
 
-{{ video(url="https://www.youtube.com/embed/EWfElq1vgLA", start="842", preview="typewriter.jpg") }}
+{{ <video url="https://www.youtube.com/embed/EWfElq1vgLA" start="842" preview="typewriter.jpg" /> }}
 
 ## Command key symbol (⌘)
 
@@ -195,13 +192,11 @@ symbol had been picked for its Scandinavian usage due to its resembling the
 shape of a square castle with round corner towers as seen from above looking
 down, notably Borgholm Castle.
 
-{{ figure(src="severdighet.png", caption="Norwegian Severdighet road sign",
-credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)") }}
+{{ <figure page={page} src="severdighet.png" caption="Norwegian Severdighet road sign" credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)" /> }}
 
-{{ figure(src="borgholm.jpg", caption="Aearial view of Borgholm Castle, which could have been the model for the symbol ",
-credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)") }}
+{{ <figure page={page} src="borgholm.jpg" caption="Aearial view of Borgholm Castle, which could have been the model for the symbol " credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)" /> }}
 
 References:
 
@@ -238,9 +233,9 @@ storage mechanism based on a grid of toroid magnets. It has since become
 obsolete, but the term is still used today for getting a snapshot of a computer
 process. [Reference](https://en.wikipedia.org/wiki/Core_dump)
 
-{{ figure(src="corememory.jpg",caption="A 32 x 32 core memory plane storing
-1024 bits (or 128 bytes) of data. The first core dumps were printed on paper, which sounds reasonable given these small amounts of bytes.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:KL_CoreMemory.jpg)") }}
+{{ <figure page={page} src="corememory.jpg" caption="A 32 x 32 core memory plane storing
+1024 bits (or 128 bytes) of data. The first core dumps were printed on paper, which sounds reasonable given these small amounts of bytes." credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:KL_CoreMemory.jpg)" /> }}
 
 ## Cursor
 
@@ -251,11 +246,11 @@ slide engraved with a hairline that is used for marking a point on a slide rule.
 The term was then transferred to computers through analogy.
 [Reference](<https://en.wikipedia.org/wiki/Cursor_(user_interface)>)
 
-{{ figure(src="slide-rule.jpg", credits="A December 1951 advertisement for the
+{{ <figure page={page} src="slide-rule.jpg" credits="A December 1951 advertisement for the
 IBM 604 Electronic Calculating Punch that was first produced in 1948. The
 advertisement claims the IBM 604 can do the work of 150 engineers with slide
 rules. The cursor (or runner) is the transparent part in the middle of the
-slide.") }}
+slide." /> }}
 
 ## Daemon
 
@@ -281,9 +276,8 @@ driver could see them easily. In time, the term became more associated with the
 readouts than the protection it offered.
 [Reference](https://www.quora.com/What-common-phrases-are-derived-from-obsolete-technologies/answer/Geoffrey-Widdison)
 
-{{ figure(src="dashboard.jpg",caption="A dashboard of a horse carriage.",
-credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)") }}
+{{ <figure page={page} src="dashboard.jpg" caption="A dashboard of a horse carriage." credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Dashboard_(PSF).png)" /> }}
 
 ## Firewall
 
@@ -292,9 +286,8 @@ _Today's meaning: A network security system that establishes a barrier between a
 Fire walls are used mainly in terraced houses, but also in individual residential buildings. They prevent fire and smoke from spreading to another part of the building in the event of a fire. Large fires can thus be prevented. The term is used in computing since the 80s.
 [Reference](<https://en.wikipedia.org/wiki/Firewall_(computing)#History>)
 
-{{ figure(src="firewall.jpg",caption="Firewall residential construction, separating the building into two separate residential units, and fire areas.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.jpg)")
-}}
+{{ <figure page={page} src="firewall.jpg" caption="Firewall residential construction, separating the building into two separate residential units, and fire areas." credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Brandwand_2.jpg)" /> }}
 
 ## Firmware
 
@@ -328,9 +321,9 @@ The way I understood it was that they literally had emergency buttons labeled
 `foo` for lack of a better name.
 Maybe related to the original military meaning of FUBAR to indicate that something is going very very wrong.
 
-{{ figure(src="scram.jpg",caption="A scram switch (button), that could be
-pressed to prevent inadvertent operation. Maybe the TMRC had buttons labeled `foo` instead", credits="Source [Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" ) }}
+{{ <figure page={page} src="scram.jpg" caption="A scram switch (button), that could be
+pressed to prevent inadvertent operation. Maybe the TMRC had buttons labeled `foo` instead" credits="Source [Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:EBR-I_-_SCRAM_button.jpg)" /> }}
 
 References:
 
@@ -343,7 +336,7 @@ _Today's meaning: A self-employed person, which is not committed to a particular
 
 The term first appears in the novel [Ivanhoe](https://en.wikipedia.org/wiki/Ivanhoe) by Sir Walter Scott. (The novel also had a [lasting influence](https://en.wikipedia.org/wiki/Ivanhoe#Lasting_influence_on_the_Robin_Hood_legend) on the Robin Hood legend.)
 
-{{ figure(src="ivanhoe.jpg",caption="Cover of a Classic Comics book", credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CC_No_02_Ivanhoe_2.jpg)" ) }}
+{{ <figure page={page} src="ivanhoe.jpg" caption="Cover of a Classic Comics book" credits="[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CC_No_02_Ivanhoe_2.jpg)" /> }}
 
 In it, a Lord offers his paid army of 'free lances' to King Richard:
 
@@ -384,20 +377,19 @@ The ship's speed was important for navigation, so the sailors noted it down in a
 
 [Reference](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm).
 
-{{ figure(src="log-seamen.jpg",caption="Sailors measuring ship speed with a
-log line", credits="[The Pilgrims & Plymouth Colony:1620 by Duane A.
-Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+{{ <figure page={page} src="log-seamen.jpg" caption="Sailors measuring ship speed with a
+log line" credits="[The Pilgrims & Plymouth Colony:1620 by Duane A.
+Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" /> }}
 
-{{ figure(src="log-line.jpg",caption="The parts of a log-line", credits="[The
+{{ <figure page={page} src="log-line.jpg" caption="The parts of a log-line" credits="[The
 Pilgrims & Plymouth Colony:1620 by Duane A.
-Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" ) }}
+Cline](https://sites.rootsweb.com/~mosmd/logln.htm)" /> }}
 
-{{ figure(src="logfile.jpg",caption="Page from the log-file of the British
+{{ <figure page={page} src="logfile.jpg" caption="Page from the log-file of the British
 Winchelsea. The second column denotes the number of knots measured with the
-log-line, which indicates the ship's speed", credits="[Navigation and Logbooks
+log-line, which indicates the ship's speed" credits="[Navigation and Logbooks
 in the Age of Sail by Peter
-Reaveley](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm)")
-}}
+Reaveley](https://www.usna.edu/Users/oceano/pguth/website/shipwrecks/logbooks_lesson/logbooks_lesson.htm)" /> }}
 
 ## Patch
 
@@ -407,9 +399,9 @@ computer program._
 In the early days of computing history, if you made a programming mistake, you'd
 have to fix a paper tape or a punched card by putting a patch on top of a hole.
 
-{{ figure(src="patch.jpg",caption="A program tape with physical patches used
-to correct punched holes by covering them.", credits="[Smithsonian Archives
-Center](https://americanhistory.si.edu/archives)") }}
+{{ <figure page={page} src="patch.jpg" caption="A program tape with physical patches used
+to correct punched holes by covering them." credits="[Smithsonian Archives
+Center](https://americanhistory.si.edu/archives)" /> }}
 
 ## Ping
 
@@ -499,7 +491,7 @@ describe the allocation of a larger chunk of memory.
 
 Here is the original Kellogg's advertisement:
 
-{{ video(url="https://www.youtube.com/embed/A8zYYg8wfmM", preview="kellogs.jpg") }}
+{{ <video url="https://www.youtube.com/embed/A8zYYg8wfmM" preview="kellogs.jpg" /> }}
 
 ## Spam
 
@@ -517,11 +509,11 @@ UK after World War II (a period of rationing in the UK) as the country struggled
 to rebuild its agricultural base.
 [Reference](https://en.wikipedia.org/wiki/Spamming#Etymology)
 
-{{ figure(src="spam.jpg", caption="Vintage Ad: Look What You Can Do With One
-Can of Spam ", credits="By user [Jamie (jbcurio) on
-flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)") }}
+{{ <figure page={page} src="spam.jpg" caption="Vintage Ad: Look What You Can Do With One
+Can of Spam " credits="By user [Jamie (jbcurio) on
+flickr.com](https://www.flickr.com/photos/jbcurio/3878241798)" /> }}
 
-{{ video(url="https://player.vimeo.com/video/329001211", preview="spam_preview.jpg") }}
+{{ <video url="https://player.vimeo.com/video/329001211" preview="spam_preview.jpg" /> }}
 
 [Monty Pythons Flying Circus (1974) - SPAM](https://vimeo.com/329001211) from
 [Testing Tester](https://vimeo.com/user97138516) on [Vimeo](https://vimeo.com).
@@ -535,7 +527,7 @@ computer. The main components were the CPU, memory, and I/O devices. The term
 was used in the 1960s and 1970s when computers were large and required a lot of
 space.
 
-{{ figure(src="mainframe.jpg",caption="This diagram shows how the IBM 701 mainframe swings open for access to the circuitry. From 'Type 701 EDPM [Electronic Data Processing Machine] Installation Manual', IBM. From Computer History Museum archives.") }}
+{{ <figure page={page} src="mainframe.jpg" caption="This diagram shows how the IBM 701 mainframe swings open for access to the circuitry. From 'Type 701 EDPM [Electronic Data Processing Machine] Installation Manual', IBM. From Computer History Museum archives." /> }}
 
 Read more about that on [Ken Shirriff's blog](http://www.righto.com/2025/02/origin-of-mainframe-term.html).
 
@@ -550,10 +542,10 @@ cassette recorders and wearable audio players (the famous "Walkman" and
 similar). And later in VCRs and video cameras.
 [Reference](https://www.jitbit.com/radio-button/)
 
-{{ figure(src="radio-buttons.jpg",caption="An old car radio (left) and CSS
+{{ <figure page={page} src="radio-buttons.jpg" caption="An old car radio (left) and CSS
 radio buttons (right). Only a single option can be selected at any point in
 time. As a kid, I would push two buttons at once so they would interlock. Good
-times.", credits="Images by [Matt Coady](https://twitter.com/themattcoady)") }}
+times." credits="Images by [Matt Coady](https://twitter.com/themattcoady)" /> }}
 
 ## Uppercase and lowercase
 
@@ -564,10 +556,9 @@ Back when typesetting was a manual process where single letters made of led were
 "type set" to form words and sentences, upper- and lowercase letters were kept
 in separate containers &mdash; or cases &mdash; to make this rather tedious process a little faster.
 
-{{ figure(src="printers_cases.jpg",caption="A set of printers cases",
-credits="From the book 'Printing types, their history, forms, and use; a study in
+{{ <figure page={page} src="printers_cases.jpg" caption="A set of printers cases" credits="From the book 'Printing types, their history, forms, and use; a study in
 survivals' by Updike, Daniel Berkeley, 1860-1941. [Freely available on
-archive.org](https://archive.org/details/printingtypesthe01updi/).") }}
+archive.org](https://archive.org/details/printingtypesthe01updi/)." /> }}
 
 ## Honorable mentions
 
@@ -609,8 +600,8 @@ inspired by the musical notation where a sharp indicates that the written note
 should be made a semitone higher in pitch.
 [Reference](<https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Name>)
 
-{{ figure(src="csharp.svg", caption="A C-Sharp note.", credits="[Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Treblecsharp5.svg)") }}
+{{ <figure page={page} src="csharp.svg" caption="A C-Sharp note." credits="[Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Treblecsharp5.svg)" /> }}
 
 ### PNG
 

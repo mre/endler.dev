@@ -34,7 +34,7 @@ Have they been correctly updated?
 Are the tests still testing the right thing?
 Are the changes in the right place?
 
-{% info() %}
+{% <info> %}
 
 Here's a cheat sheet of questions I ask myself when reviewing code:
 - How does this code fit into the rest of the system?
@@ -42,7 +42,7 @@ Here's a cheat sheet of questions I ask myself when reviewing code:
 - How does it affect the overall architecture?
 - Does it impact future planned work?
 
-{% end %}
+{% </info> %}
 
 These questions have more to do with systems design than with the changes themselves.
 Don't neglect the bigger picture because systems become brittle if you accept bad changes.

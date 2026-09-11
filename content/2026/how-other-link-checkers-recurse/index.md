@@ -27,7 +27,7 @@ Every recursive checker I looked at is built from the same three parts:
 
 Diagrammatically, lychee is different from the others: 
 
-{% mermaid() %}
+{% <mermaid> %}
 graph TD
     subgraph crawler["Everyone else: a cycle"]
         direction TB
@@ -42,13 +42,13 @@ graph TD
         LB --> LC[Checker]
         LC --> LD[Results]
     end
-{% end %}
+{% </mermaid> %}
 
 Crawlers have a back-edge baked in. Our pipeline doesn't, and every one of my failed attempts was an effort to bend that back-edge into a graph that was never designed for it. 
 
 Let's look at that graph design more closely: 
 
-{% mermaid() %}
+{% <mermaid> %}
 graph TD
     Seed[Seed URLs] --> Enq["Enqueue step: is URL in visited set?"]
     Enq -->|yes| Skip[Drop]
@@ -59,7 +59,7 @@ graph TD
     FP -->|discovered links| Enq
     FP --> Rec[Results]
     Q -.->|empty AND no worker busy| Stop[Terminate]
-{% end %}
+{% </mermaid> %}
 
 Note that the visited check happens in the **enqueue** step, atomically with the mark, before the worker ever touches the network. That ordering is the entire fix to the deduplication race that haunted lychee's attempts 1–4, where the cache was written *after* checking.
 
@@ -127,13 +127,13 @@ This is the *same counter* I tried (and failed with) in [Attempt 1](@/2026/lyche
 - On extensibility, muffet is a focused CLI, not a library. There's no plugin surface; you get what the flags give you. lychee deliberately ships `lychee-lib` as a reusable crate, which raises the bar, since every architectural choice has to uphold the standards of a public API. 
 - On scalability, unbounded goroutines plus an in-memory visited set scale comfortably to large sites, but there's no disk-backed frontier, so a truly enormous crawl is bounded by RAM. Same as lychee.
 
-{% info(title="Takeaways: muffet") %}
+{% <info title="Takeaways: muffet"> %}
 
 - muffet's termination is a `sync.WaitGroup`, full stop. It's the design lychee converged on after five years; muffet got it for free from Go's standard library on day one.
 - The frontier and the concurrency limiter are separate things. A mutex-guarded set is the frontier; a semaphore plus host throttler bounds concurrency. Conflating them is what deadlocked lychee.
 - Goroutines hide the cost that Rust makes you pay explicitly. The same per-task model that's trivial in Go is where Rust's `Send`/ownership friction shows up.
 
-{% end %}
+{% </info> %}
 
 ## LinkChecker (Python): a joinable unbounded queue 
 
@@ -222,13 +222,13 @@ and `abort()` calls `urlqueue.join(timeout=…)` so a stuck crawl can't hang for
 - Extensibility is excellent. LinkChecker has a real plugin system (`linkcheck/plugins/`: anchor checks, SSL, virus scanning, and more) and many output loggers. This is the most extensible of the bunch, and it pays for that with a large, mature, somewhat old-fashioned codebase.
 - On scalability, it's GIL-bound and thread-limited, so raw throughput is the lowest here, but correctness and feature coverage are high.
 
-{% info(title="Takeaways: LinkChecker") %}
+{% <info title="Takeaways: LinkChecker"> %}
 
 - The unbounded frontier is a deliberate anti-deadlock choice, documented in a one-line comment. It describes the exact problem we hit in lychee in attempt 4.
 - Dedup at `put()` time (a `None` placeholder in the cache) is their synchronization mechanism. The cache must claim the URL *before* the request, not after.
 - Threads buy simplicity at the cost of throughput. A blocking thread pool is the easiest correct model... and the slowest one.
 
-{% end %}
+{% </info> %}
 
 ## linkinator (TypeScript): Single-Threaded `queue.onIdle()`
 
@@ -296,13 +296,13 @@ This is precisely [lychee's remaining open problem](@/2026/lychee-recursion/inde
 - Rate limiting is reactive, not proactive. There's a `delayCache` that backs off per host on a `429` with `Retry-After`, but no general per-host concurrency cap like lychee's `HostPool`. linkinator can hammer a host until it complains; lychee now paces *before* the complaint.
 - For extensibility, it's an `EventEmitter` (`on('link')`, `on('pagestart')`, and so on), so it's embeddable and scriptable, which is nice. It's a library first, like lychee.
 
-{% info(title="Takeaways: linkinator") %}
+{% <info title="Takeaways: linkinator"> %}
 
 - `queue.onIdle()` is the termination mechanism. Simple and provided by the JS runtime.
 - A single-threaded event loop makes request deduplication pretty much free. This is the biggest structural reason recursion is easier in that case.
 - Reactive 429 backoff is not the same as proactive per-host pacing. lychee's `HostPool` aims higher, at the cost of more machinery.
 
-{% end %}
+{% </info> %}
 
 ## broken-link-checker (JavaScript): event-driven, using two queues
 
@@ -361,13 +361,13 @@ And in classic Node.js fashion, the `done` callback is what actually tells the s
 - It's single-threaded, the same ceiling as linkinator, plus the in-memory `URLCache` per site.
 - On maturity versus momentum, it's very widely used (it powers a lot of tooling), but development has slowed. The architecture is still sound and worth studying.
 
-{% info(title="Takeaways: broken-link-checker") %}
+{% <info title="Takeaways: broken-link-checker"> %}
 
 - Termination is a cascade of queue-drain events, not a counter. Same idea, different syntax. 
 - Politeness is built in. robots.txt, `rateLimit`, and `maxSockets` make it the most server-friendly recursive checker by default.
 - Event-driven control flow is the cost. Distributing recursion logic across many handlers is exactly the kind of spread-out complexity that makes the feature hard to reason about.
 
-{% end %}
+{% </info> %}
 
 ## A note on markdown-link-check and the "industrial" crawlers
 
@@ -377,7 +377,7 @@ If you want to see the pattern at full industrial scale, look at [Scrapy](https:
 
 ## Side-by-side
 
-{% wide_table() %}
+{% <wide_table> %}
 | Tool | Lang / runtime | Concurrency model | Frontier | "Done?" signal | Dedup point | Per-host limiting |
 | --- | --- | --- | --- | --- | --- | --- |
 | **muffet** | Go, goroutines | goroutine pool + semaphore + host throttler | mutex-guarded set + daemon channel | `sync.WaitGroup` | visited set at enqueue | host throttler pool |
@@ -385,7 +385,7 @@ If you want to see the pattern at full industrial scale, look at [Scrapy](https:
 | **linkinator** | Node, event loop | single-thread + p-queue (`concurrency`) | p-queue | `queue.onIdle()` | `Set` at enqueue (race-free) | reactive `429` `delayCache` |
 | **broken-link-checker** | Node, event loop | `limited-request-queue` (`maxSockets`) | nested request queues | queue-drain events | `URLCache` at enqueue | `maxSockets` + `rateLimit` |
 | **lychee (2026)** | Rust, Tokio | tasks + `HostPool` | channels + `WaitGroup` | `WaitGroup` | `HostPool` `active_requests` | `HostPool` per-host pool |
-{% end %}
+{% </wide_table> %}
 
 lychee in 2026 finally has a column-for-column match. The `WaitGroup` is muffet's `sync.WaitGroup` and LinkChecker's `join()`. The `HostPool` is BLC's `rateLimit`/`maxSockets` and LinkChecker's `wait_for_host`. The per-URI `active_requests` mutex is everyone's enqueue-time dedup.
 
@@ -408,7 +408,7 @@ Both Node tools dedup with a plain `Set` and zero locking, because the event loo
 None of this is a knock on lychee's design. A unidirectional stream is *the right call* for the common, non-recursive case: it's why lychee is fast and why the 30% channel regression from [Attempt 2](@/2026/lychee-recursion/index.md) was a dealbreaker. The other tools pay for their back-edge on every run, recursive or not. lychee refused to, and that principle is exactly why recursion took five years and why, when it lands, it won't slow down the path everyone actually uses.
 I believe that we can have our cake and eat it too: a crawler architecture that supports recursion without sacrificing the speed of a one-shot pipeline. But it's a harder problem than just "copy what they do," because most link checkers didn't start with uncompromising performance as their top goal. 
 
-{% info(title="Key takeaways") %}
+{% <info title="Key takeaways"> %}
 
 - There is no secret sauce. Every recursive checker is a worklist plus a visited set plus a quiescence detector. The "trick" is being shaped like a crawler from commit one.
 - Termination is always the same idea wearing different clothes: `sync.WaitGroup` (muffet), joinable-queue counter (LinkChecker), `queue.onIdle()` (linkinator), queue-drain events (BLC), `WaitGroup` (lychee 2026). All of them are distributed termination detection.
@@ -416,7 +416,7 @@ I believe that we can have our cake and eat it too: a crawler architecture that 
 - Separate the frontier from the rate limiter. A bounded channel that is both your queue *and* your backpressure will deadlock the instant you add a cycle.
 - There is no free lunch. Node's single thread makes dedup trivial at the cost of performance; Go's goroutines and `WaitGroup` make termination trivial at the cost of a runtime; Rust gives you neither for free but hands you a compiler that refuses to let the races compile and you can get the network card to glow if you know exactly what you are doing. 
 
-{% end %}
+{% </info> %}
 
 So when someone asks "how do other link checkers do recursion?", the real answer is: they made it a part of the architecture from the beginning, and they leaned on a runtime (providing conveniences like a `WaitGroup`, a joinable queue, an idle promise) that solved termination without solving "distributed termination detection."
 

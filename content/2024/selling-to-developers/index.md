@@ -45,7 +45,7 @@ I'll let you be the judge of that. Here are a few products that I have built and
 
 ### [codeprints](https://codeprints.dev/)
 
-{{ figure(src="codeprints.jpg", caption="Homepage of CodePrints with my GitHub profile as a print") }}
+{{ <figure page={page} src="codeprints.jpg" caption="Homepage of CodePrints with my GitHub profile as a print" /> }}
 
 This was a fun experiment during the pandemic. We sold posters of GitHub timelines. Our marketing strategy included posts on Reddit and Hacker News, and we sent free prints to a few "devfluencers." The novelty effect and viral marketing worked well. Eventually, we sold the company to a developer agency because we didn't want to deal with the logistics.
 
@@ -53,7 +53,7 @@ Read more about CodePrints in [this blog post](/2021/codeprints/).
 
 ### [Lychee](https://lychee.cli.rs/)
 
-{{ figure(src="lychee.jpg", caption="Homepage of Lychee's documentation page") }}
+{{ <figure page={page} src="lychee.jpg" caption="Homepage of Lychee's documentation page" /> }}
 
 I built this tool for myself because I needed it. Lychee is a command-line tool that checks for broken links in markdown and HTML files. It has become quite popular on GitHub, with companies like Google and Amazon using it. However, I've never made any money from it. I reached out to some companies to sponsor the project, but it was very hard to get a response or explain why they should sponsor a free tool.
 
@@ -61,7 +61,7 @@ I wrote about [making money with Open Source here](/2021/oss-money/).
 
 ### [Analysis Tools](https://analysis-tools.dev/)
 
-{{ figure(src="analysis-tools-homepage.jpg", caption="Homepage of analysis-tools.dev") }}
+{{ <figure page={page} src="analysis-tools-homepage.jpg" caption="Homepage of analysis-tools.dev" /> }}
 
 This is a directory of tools for developers. It's a side project that I started in 2015 (did I mention you need to be patient?), and it has grown to be a popular resource. Together with two friends, we sell sponsorships and ads on the site, which provides a nice side income.
 
@@ -73,7 +73,7 @@ Sponsoring on Analysis Tools is **extremely cheap** compared to other marketing 
 
 On Analysis Tools, you can reach them for a fraction of that cost. The basic tier is $100 per month, and for that, you get your logo on the site and in every repo. Thousands of developers visit the site every month. It's basically a no-brainer to sponsor the site if you build a linter, a static code analyzer, or any other tool that developers use.
 
-{{ figure(src="analysis-tools-list.jpg", caption="Tools page of analysis-tools.dev") }}
+{{ <figure page={page} src="analysis-tools-list.jpg" caption="Tools page of analysis-tools.dev" /> }}
 
 
 Think of it this way: when was the last time these companies had the chance to reach thousands of developers for $100? What is the total cost of acquisition for a developer? How much would you pay for a developer to try out your tool?

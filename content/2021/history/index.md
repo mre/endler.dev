@@ -14,7 +14,7 @@ in Rust and throw it away again in the end as we uncover the truth.
 """
 +++
 
-{{ figure(src="hero.jpg", credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com") }}
+{{ <figure page={page} src="hero.jpg" credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com" /> }}
 
 As the day is winding down, I have a good hour just to myself.
 Perfect time to listen to some [Billie Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billie Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
@@ -76,7 +76,7 @@ But still, how does `history` _really_ work.
 It must run some code whenever I execute a command
 &mdash; **a hook of some sort**!
 
-{% info() %}
+{% <info> %}
 💥 **Swoooooosh** 💥
 
 Matthias from the future steps out of a blinding ball of light: _Waaait!
@@ -96,7 +96,7 @@ himself into.
 In my defense, Lord of the Rings is also enjoyed primarily for its entertainment
 value, not its _historical_ accuracy.... and just like in this epic story, I
 promise we'll get to the bottom of things in the end.
-{% end %}
+{% </info> %}
 
 I found [add-zsh-hook](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html)
 and a usage example in [atuin's source code](https://github.com/ellie/atuin/blob/main/atuin/src/shell/atuin.zsh).

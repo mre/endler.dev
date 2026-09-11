@@ -19,10 +19,10 @@ Maybe that's a deeply human thing?
 
 ## Screenshots of my blog's design over the years
 
-{{ figure(src="2007.jpg", caption="2007") }}
-{{ figure(src="2011.jpg", caption="2011") }}
-{{ figure(src="2018.jpg", caption="2018") }}
-{{ figure(src="2026.jpg", caption="2026") }}
+{{ <figure page={page} src="2007.jpg" caption="2007" /> }}
+{{ <figure page={page} src="2011.jpg" caption="2011" /> }}
+{{ <figure page={page} src="2018.jpg" caption="2018" /> }}
+{{ <figure page={page} src="2026.jpg" caption="2026" /> }}
 
 ## Obsession and Preference
 

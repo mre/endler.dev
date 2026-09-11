@@ -10,14 +10,14 @@ credits = [
 ]
 +++
 
-{{ figure(src="darkmode.jpg", caption="Reader showing an article in light and dark mode.", link="https://readable.shuttleapp.rs") }}
+{{ <figure page={page} src="darkmode.jpg" caption="Reader showing an article in light and dark mode." link="https://readable.shuttleapp.rs" /> }}
 
-{% info() %}
+{% <info> %}
 _tl;dr:_ I built a service that takes any article and creates a pleasant-to-read, printable version.
 It is similar to Reader View in Firefox/Safari, but also works on older
 browsers, can be shared and has a focus on beautiful typography.
 Check out the [source code](https://github.com/readable-app/readable).
-{% end %}
+{% </info> %}
 
 The web used to be such a fun place.
 
@@ -27,7 +27,7 @@ Trackers, ads, bloat, fullscreen popups, autoplaying videos... it's all so _exha
 I just want to read long-form posts without distractions with a good cup of tea,
 the cat sleeping on the windowsill and some light snow falling in front of the window.
 
-{{ figure(src="lofi.jpg") }}
+{{ <figure page={page} src="lofi.jpg" /> }}
 
 ## The Slow Web
 
@@ -105,6 +105,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 The output already looked surprisingly good.
 Next I added a simple HTML template to wrap the response content.
 
+{% raw %}
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -129,9 +130,10 @@ Next I added a simple HTML template to wrap the response content.
   </body>
 </html>
 ```
+{% endraw %}
 
 No need to use a full-blown template engine for now; we can just use
-`str::replace` to replace the `{{content}}` placeholder with the actual content.
+`str::replace` to replace the {% raw %}`{{content}}`{% endraw %} placeholder with the actual content.
 😉
 
 ## Proxy Setup
@@ -223,7 +225,7 @@ all segments until the end.
 
 ## Typography and Layout
 
-{{ figure(src="nyt.jpg", caption="New York Times website (left) vs reader mode (right)") }}
+{{ <figure page={page} src="nyt.jpg" caption="New York Times website (left) vs reader mode (right)" /> }}
 
 For my first prototype I used a CSS framework called
 [yue.css](https://github.com/typlog/yue.css) because it was the first thing I
@@ -276,7 +278,7 @@ always a great source of inspiration to me.
 
 ## Conclusion
 
-{{ figure(src="kobo.jpg", caption="The browser on my old Kobo eBook reader using the readability proxy.") }}
+{{ <figure page={page} src="kobo.jpg" caption="The browser on my old Kobo eBook reader using the readability proxy." /> }}
 
 In times where [the most popular browser might kill off ad
 blockers](https://tech.co/news/google-chrome-ad-blockers-2023), a little service

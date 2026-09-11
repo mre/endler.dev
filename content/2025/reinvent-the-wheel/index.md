@@ -19,13 +19,13 @@ Even on a surface level, the advice is bad:
 We have much better wheels today than 4500–3300 BCE when the first wheel was invented.
 It was also *crucially* important that wheels got reinvented throughout civilizations and cultures.
 
-{% info() %}
+{% <info> %}
 
 **Note:** When I say "wheel" throughout this post, please replace it with whatever
 tool, protocol, service, technology, or other invention you're personally interested in. 
 
 
-{% end %}
+{% </info> %}
 
 ## Inventing Wheels Is Learning 
 
