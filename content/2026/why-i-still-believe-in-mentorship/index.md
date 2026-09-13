@@ -17,25 +17,25 @@ But until then, I hadn't thought to question it, and more practice hadn't helped
 That single observation improved my game more than any amount of practice because it gave me better control over my forehand play.
 
 Note that I didn't actively seek out advice on my stance.
-Someone had to watch me play, observe, and then point out the single most helpful thing that would set me on the right path. 
+Someone had to watch me play, observe, and then point out the single most helpful thing that would set me on the right path.
 
 ## Mentorship in Software
 
 This is part of why I still believe in mentorship, even now that an LLM can answer so many programming questions.
 
-In software, we are often expected to struggle alone. 
-We're supposed to learn systems design, architecture, testing, and refactoring largely by sitting with the problems. 
-The times when I grew the most as a programmer was through thoughtful code reviews, but they are rare.
+In software, we are often expected to struggle alone.
+We're supposed to learn systems design, architecture, testing, and refactoring largely by sitting with the problems.
+The times when I grew the most as a programmer were through thoughtful code reviews, but they are rare.
 Besides, the reviewer sees the end result but not the (sometimes flawed) reasoning that produced it.
 
 Pair programming gets closer.
 But two equally inexperienced programmers can reinforce each other's bad habits.
 
-An agent can control the keyboard instead of helping you reason through a problem. 
-It may produce better code, but you're not getting much better yourself. 
-A session where a machine fixes everything is productive, but being productive and growing as a programmer are two different things entirely. 
+An agent can control the keyboard instead of helping you reason through a problem.
+It may produce better code without making you much better at writing it.
+A session where a machine fixes everything is productive, but being productive and growing as a programmer are two different things entirely.
 
-## Going beyond the superficial questions 
+## Going beyond the superficial questions
 
 I run a one-on-one [Rust mentorship program](https://corrode.dev/mentorship/), so I have a personal stake in this.
 Most of my mentees come with a concrete question:
@@ -45,17 +45,17 @@ Most of my mentees come with a concrete question:
 - How can I handle this error?
 
 Often, answering the concrete question is beside the point.
-We have to look at the thought process that led to it. 
+We have to look at the thought process that led to it.
 
 Before deciding whether something should be generic, for example, it helps to know what is expected to vary and why.
-Otherwise, we can spend the a long time discussing how to build an abstraction that might unnecessary in the first place.
+Otherwise, we can spend a long time discussing how to build an abstraction that might be unnecessary in the first place.
 
 A mentor has enough distance from the problem to question its framing and enough experience to recognize familiar patterns.
-They notice which details you leave out, which patterns you reach for, and which you ignore. 
-These are things you might not think to mention when asking for help because you lack the vocabulary.
+They notice which details you leave out, which patterns you reach for, and which you ignore.
+You may sense that something is wrong without having the words to describe it.
 
 LLMs can question assumptions, too!
-But I've found they usually work best within the realm of what you already know. 
+But I've found they usually work best when you already know what to ask.
 The difficulty is that we often don't know which of our assumptions need challenging.
 Knowing what to ask can matter more than knowing the answer, and it's hard to ask about something you haven't noticed.
 
@@ -65,21 +65,23 @@ Nobody is surprised when a professional athlete has a coach.
 Musicians keep taking lessons after decades of playing.
 We don't take this as evidence that they haven't learned the basics.
 Quite the contrary: it's an indication that they are serious about improving and that they've outgrown generic advice.
-It requires introspection to recognize that you can benefit from someone who can observe you from the outside. 
+It requires introspection to recognize that you can benefit from someone who can observe you from the outside.
 And in some sense, you put yourself in a vulnerable position.
 The wrong mentor can set you back, while the right one can dramatically accelerate your growth.
 
 Experience doesn't remove the need for mentoring in software either.
 You can become an experienced developer while still carrying counterproductive habits you've never examined.
 If those habits let you finish the work, you may have little reason to suspect them and the problem gets worse because bad habits get reinforced.
-I could play table tennis with the wrong stance, too, just worse. 
+I could play table tennis with the wrong stance, too, just worse.
 
 The people I mentor are *already* experienced software engineers.
 They are perfectly capable of using LLMs in their work.
 Many are in leading positions as staff or principal engineers.
 And yet, they've realized there's something missing that's holding them back.
 They feel like they're not progressing as quickly as they could, and their companies haven't provided the mentorship they need.
-Besides, their day-job leaves little time for deliberate practice. 
+Besides, their day jobs leave little time for deliberate practice.
+Once they commit to mentorship, they tend to make time for learning because it matters to them.
+It helps that they can choose a project close to their day-to-day work.
 
 ## Learning Faster
 
@@ -125,10 +127,10 @@ I pick my mentees very carefully because I want to maximize the value of my own 
 If mentoring is not the right fit for them, I'll let them know.
 
 Easier access to answers hasn't changed any of this.
-You can use "AI" to examine a decision, or you can use it as an echo chamber to justify it. 
+You can use AI to examine a decision, or you can use it as an echo chamber to justify it.
 The second use may feel more rewarding in the moment, but it leaves you where you started.
 
 What I want from mentorship is the kind of help my coach gave me: someone paying enough attention to notice what I couldn't see for myself.
 
-That's what I aim to offer in my [Rust mentorship](https://corrode.dev/mentorship/), at least: we work through hard problems together, explore the design space, and make deliberate choices. 
+That's what I aim to offer in my [Rust mentorship](https://corrode.dev/mentorship/), at least: we work through hard problems together, explore the design space, and make deliberate choices.
 If I do a good job, my mentee will eventually surpass me, and I'd be proud to help them get there.
