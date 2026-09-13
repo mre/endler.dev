@@ -52,7 +52,7 @@ Otherwise, we can spend a long time discussing how to build an abstraction that 
 
 A mentor has enough distance from the problem to question its framing and enough experience to recognize familiar patterns.
 They notice which details you leave out, which patterns you reach for, and which you ignore.
-You may sense that something is wrong without having the words to describe it.
+You may *sense* that something is wrong without having the words to describe it.
 
 LLMs can question assumptions, too!
 But I've found they usually work best when you already know what to ask.
@@ -63,15 +63,15 @@ Knowing what to ask can matter more than knowing the answer, and it's hard to as
 
 Nobody is surprised when a professional athlete has a coach.
 Musicians keep taking lessons after decades of playing.
+
 We don't take this as evidence that they haven't learned the basics.
 Quite the contrary: it's an indication that they are serious about improving and that they've outgrown generic advice.
 It requires introspection to recognize that you can benefit from someone who can observe you from the outside.
-And in some sense, you put yourself in a vulnerable position.
-The wrong mentor can set you back, while the right one can dramatically accelerate your growth.
+And in some sense, you put yourself in a vulnerable position: the wrong mentor can set you back, while the right one can dramatically accelerate your growth.
 
 Experience doesn't remove the need for mentoring in software either.
 You can become an experienced developer while still carrying counterproductive habits you've never examined.
-If those habits let you finish the work, you may have little reason to suspect them and the problem gets worse because bad habits get reinforced.
+If those habits let you get the work done, you may have little reason to suspect them and the problem gets worse because bad habits get reinforced.
 I could play table tennis with the wrong stance, too, just worse.
 
 The people I mentor are *already* experienced software engineers.
@@ -79,11 +79,11 @@ They are perfectly capable of using LLMs in their work.
 Many are in leading positions as staff or principal engineers.
 And yet, they've realized there's something missing that's holding them back.
 They feel like they're not progressing as quickly as they could, and their companies haven't provided the mentorship they need.
-Besides, their day jobs leave little time for deliberate practice.
-Once they commit to mentorship, they tend to make time for learning because it matters to them.
-It helps that they can choose a project close to their day-to-day work.
 
-## Learning Faster
+Besides, their busy day jobs leave little time for deliberate practice anyway.
+They feel the urge to *make time* for learning, however, because they know that the alternative is stagnation. 
+
+## Friction Is Part of the Learning Process 
 
 Another problem is that software gives us very uneven feedback.
 A syntax error gets your attention immediately because the code won't compile.
@@ -119,12 +119,10 @@ If mentorship were only about transferring information, it would be harder to ma
 Personal mentorship becomes valuable when the potential payoff is a multiple of the investment.
 That is typically the case in a professional setting, where focused mentorship can help you land a better job or switch to a different team with a more interesting project.
 
-However, a mentor cannot manufacture curiosity.
 As with going to the gym, paying for help doesn't spare you the exercise.
+A mentor cannot manufacture curiosity.
 One hour of conversation cannot make up for a week without practice.
 You have to try things between sessions if you want the next conversation to be different from the last.
-I pick my mentees very carefully because I want to maximize the value of my own time as well as theirs.
-If mentoring is not the right fit for them, I'll let them know.
 
 Easier access to answers hasn't changed any of this.
 You can use AI to examine a decision, or you can use it as an echo chamber to justify it.
