@@ -21,8 +21,6 @@ Someone had to watch me play, observe, and then point out the single most helpfu
 
 ## Mentorship in Software
 
-This is part of why I still believe in mentorship, even now that an LLM can answer so many programming questions.
-
 In software, we are often expected to struggle alone.
 We're supposed to learn systems design, architecture, testing, and refactoring largely by sitting with the problems.
 The times when I grew the most as a programmer were through thoughtful code reviews, but they are rare.
@@ -34,6 +32,8 @@ But two equally inexperienced programmers can reinforce each other's bad habits.
 An agent can control the keyboard instead of helping you reason through a problem.
 It may produce better code without making you much better at writing it.
 A session where a machine fixes everything is productive, but being productive and growing as a programmer are two different things entirely.
+
+This is part of why I still believe in mentorship, even now that an LLM can answer so many programming questions.
 
 ## Going beyond the superficial questions
 
