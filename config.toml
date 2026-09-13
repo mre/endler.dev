@@ -23,6 +23,6 @@ smart_punctuation = true
 bottom_footnotes = true
 
 [markdown.highlighting]
-light_theme = "snazzy-light"
-dark_theme = "dark-plus"
+light_theme = "catppuccin-latte"
+dark_theme = "catppuccin-mocha"
 style = "class"

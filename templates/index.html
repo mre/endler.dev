@@ -70,8 +70,8 @@ load_data(path="static/logo_font_dark.svg") %}
             }
 
             @font-face {
-                font-family: "JetBrainsMono";
-                src: url("/fonts/JetBrainsMono-Regular.woff2")
+                font-family: "Zed Mono";
+                src: url("/fonts/ZedMono-Extended.woff2")
                     format("woff2");
                 font-weight: normal;
                 font-style: normal;
@@ -253,10 +253,9 @@ load_data(path="static/logo_font_dark.svg") %}
                 const darkLink = document.getElementById("giallo-dark");
 
                 if (lightLink && darkLink) {
-                    lightLink.media = "all";
-                    darkLink.media = "all";
-                    lightLink.disabled = theme !== "light";
-                    darkLink.disabled = theme !== "dark";
+                    // Media queries stay effective even if a stylesheet finishes loading later.
+                    lightLink.media = theme === "light" ? "all" : "not all";
+                    darkLink.media = theme === "dark" ? "all" : "not all";
                 }
             }
 
