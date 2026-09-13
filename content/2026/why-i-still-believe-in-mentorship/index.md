@@ -59,6 +59,9 @@ But I've found they usually work best when you already know what to ask.
 The difficulty is that we often don't know which of our assumptions need challenging.
 Knowing what to ask can matter more than knowing the answer, and it's hard to ask about something you haven't noticed.
 
+You can also use an LLM to examine a decision, or you can use it as an echo chamber to justify it.
+The second use may feel more rewarding in the moment, but it leaves you where you started.
+
 ## Mentoring in Other Fields
 
 Nobody is surprised when a professional athlete has a coach.
@@ -80,8 +83,6 @@ Many are in leading positions as staff or principal engineers.
 And yet, they've realized there's something missing that's holding them back.
 They feel like they're not progressing as quickly as they could, and their companies haven't provided the mentorship they need.
 
-Besides, their busy day jobs leave little time for deliberate practice anyway.
-They feel the urge to *make time* for learning, however, because they know that the alternative is stagnation. 
 
 ## Friction Is Part of the Learning Process 
 
@@ -119,14 +120,14 @@ If mentorship were only about transferring information, it would be harder to ma
 Personal mentorship becomes valuable when the potential payoff is a multiple of the investment.
 That is typically the case in a professional setting, where focused mentorship can help you land a better job or switch to a different team with a more interesting project.
 
+That doesn't mean personal mentorship is a guarantee of success.
+Our busy days leave little time for deliberate practice.
+We have to carve out time for learning, which is hard, but the alternative is stagnation.
+
 As with going to the gym, paying for help doesn't spare you the exercise.
-A mentor cannot manufacture curiosity.
 One hour of conversation cannot make up for a week without practice.
 You have to try things between sessions if you want the next conversation to be different from the last.
-
 Easier access to answers hasn't changed any of this.
-You can use AI to examine a decision, or you can use it as an echo chamber to justify it.
-The second use may feel more rewarding in the moment, but it leaves you where you started.
 
 What I want from mentorship is the kind of help my coach gave me: someone paying enough attention to notice what I couldn't see for myself.
 
