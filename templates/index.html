@@ -152,6 +152,7 @@ load_data(path="static/logo_font_dark.svg") %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="Matthias Endler" />
+        <meta name="robots" content="max-image-preview:large" />
         <meta
             name="description"
             content="Personal website of Matthias Endler, a Software Engineer interested in low-level programming and Backend development. Rust, Go"
@@ -159,6 +160,22 @@ load_data(path="static/logo_font_dark.svg") %}
 
         {%- block header %}
         <title>Matthias Endler</title>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://endler.dev/#website",
+          "url": "https://endler.dev/",
+          "name": "Matthias Endler",
+          "publisher": {
+            "@type": "Person",
+            "@id": "https://endler.dev/about/#person",
+            "name": "Matthias Endler",
+            "url": "https://endler.dev/about/",
+            "image": "https://endler.dev/about/matthias-endler-orig.jpg"
+          }
+        }
+        </script>
         {%- endblock header %}
     </head>
 
