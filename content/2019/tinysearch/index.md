@@ -354,7 +354,7 @@ You can generate this JSON file with any static site generator.
 [Here's my version for Zola](https://github.com/mre/mre.github.io/tree/1c731717b48afb584e54ca4dd5fd649f9b74e51c/templates):
 
 {% raw %}
-```t
+```jinja
 {% set section = get_section(path="_index.md") %}
 
 [
