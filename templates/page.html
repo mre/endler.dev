@@ -51,6 +51,29 @@ social_img = get_url(path=page.path ~ "social.png") -%} {%- endif -%} {%- endfor
 <meta name="twitter:site" content="@matthiasendler" />
 <meta name="twitter:creator" content="@matthiasendler" />
 <meta name="twitter:image" content="{{ social_img | safe }}" />
+<link rel="author" href="https://endler.dev/about/" />
+{% if page.date %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | json_encode | safe }},
+  "url": {{ page.permalink | json_encode | safe }},
+  "mainEntityOfPage": {{ page.permalink | json_encode | safe }},
+  "datePublished": {{ page.date | json_encode | safe }},
+  {% if page.updated %}
+  "dateModified": {{ page.updated | json_encode | safe }},
+  {% endif %}
+  "author": {
+    "@type": "Person",
+    "@id": "https://endler.dev/about/#person",
+    "name": "Matthias Endler",
+    "url": "https://endler.dev/about/",
+    "image": "https://endler.dev/about/matthias-endler-orig.jpg"
+  }
+}
+</script>
+{% endif %}
 {%- endblock header -%} {%- block site_header %}
 <header>
     <div class="site-header">

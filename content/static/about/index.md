@@ -2,6 +2,8 @@
 title = "Hey, it's me!"
 path = "about"
 template = "about.html"
+[extra]
+intro = "I'm Matthias Endler, a Rust consultant and open source maintainer."
 +++
 
 |                 |                                                                                                                                                             |
