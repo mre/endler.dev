@@ -35,7 +35,7 @@ A session where a machine fixes everything is productive, but being productive a
 
 This is part of why I still believe in mentorship, even now that an LLM can answer so many programming questions.
 
-## Going beyond the superficial questions
+## Going beyond the Superficial Questions
 
 I run a one-on-one [Rust mentorship program](https://corrode.dev/mentorship/), so I have a personal stake in this.
 Most of my mentees come with a concrete question:

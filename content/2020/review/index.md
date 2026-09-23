@@ -1,5 +1,5 @@
 +++
-title="What Happened To Programming In The 2010s?"
+title="What Happened to Programming in the 2010s?"
 date=2020-07-02
 updated=2021-10-11
 draft=false
@@ -25,7 +25,7 @@ don't sue me.
 My goal is to reflect on the <u>past</u> so that you can better predict the <u>future</u>.
 {% </info> %}
 
-## Where To Start?
+## Where to Start?
 
 From a mile-high perspective, programming is still the same as a decade ago:
 
@@ -54,7 +54,7 @@ Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) (which only got released in
 
 {{ <figure page={page} src="xkcd_2324.jpg" credits="<a href='https://xkcd.com/2324/'>xkcd #2324</a>" /> }}
 
-## An Explosion Of New Programming Languages
+## An Explosion of New Programming Languages
 
 The last decade saw the creation of a vast number of new and exciting programming
 languages.
@@ -117,7 +117,7 @@ Most languages adopted a quicker release cycle. Here's a list for some popular l
 | Swift                   | 6 months              |
 | Visual Basic .NET       | ~ 24 months           |
 
-## The Slow Death Of Null
+## The Slow Death of Null
 
 Close to the end of the last decade, in a talk from 25<sup>th</sup>of August 2009,
 Tony Hoare described the `null` pointer as his [Billion Dollar
@@ -142,7 +142,7 @@ C++, Go, Kotlin, Swift, and Rust are popular examples with type inference suppor
 can only speak for myself, but I think writing Java has become a lot more
 ergonomic in the last few years.
 
-## Exponential Growth Of Libraries and Frameworks
+## Exponential Growth of Libraries and Frameworks
 
 As of today, npm hosts [1,330,634 packages](https://www.npmjs.com/). That's over a million
 packages that somebody else is maintaining for you. Add another [160,488 Ruby
@@ -177,7 +177,7 @@ It has held up surprisingly well in the last decade:
 There's a catch, though.
 Looking at single-core performance, the curve is flattening:
 
-{{ <figure page={page} src="moore_single.jpg" credits="<a href='https://www.youtube.com/watch?v=Azt8Nc-mtKM&'>Standford University: The Future of Computing (video)</a>" /> }}
+{{ <figure page={page} src="moore_single.jpg" credits="<a href='https://www.youtube.com/watch?v=Azt8Nc-mtKM&'>Stanford University: The Future of Computing (video)</a>" /> }}
 
 The new transistors prophesied by Moore don’t make our CPUs faster but instead
 add other kinds of processing capabilities like more parallelism or hardware
@@ -198,7 +198,7 @@ parallel computations, which caused a renaissance of Machine Learning for practi
 
 _Compute_ is ubiquitous, so in most cases, energy efficiency plays a more prominent role now than raw performance (at least for consumer devices).
 
-## Unlikely Twists Of Fate
+## Unlikely Twists of Fate
 
 - Microsoft is a cool kid now. It acquired Github, announced the [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (which should really be called Linux Subsystem for Windows), open sourced
   [MS-DOS](https://github.com/Microsoft/MS-DOS) and [.NET](http://news.microsoft.com/2014/11/12/microsoft-takes-net-open-source-and-cross-platform-adds-new-development-capabilities-with-visual-studio-2015-net-2015-and-visual-studio-online/).

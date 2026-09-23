@@ -17,7 +17,7 @@ this project's journey. It just took _ten years_ to get here.
 
 {{ <video url="https://www.youtube.com/embed/_QEmxAZqQhE" preview="timelapse.jpg" /> }}
 
-## 2011 - How it all began
+## 2011 - How It All Began
 
 To be honest, I don't remember why I initially wrote the tool. I must have had a
 personal need for a screen recorder, I guess...

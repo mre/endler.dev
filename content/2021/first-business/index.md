@@ -1,5 +1,5 @@
 +++
-title = "Spreadsheets Make For Great Business Ideas"
+title = "Spreadsheets Make for Great Business Ideas"
 date = 2021-03-10
 updated = 2025-04-24
 [taxonomies]

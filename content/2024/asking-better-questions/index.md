@@ -20,7 +20,7 @@ That got me thinking: What makes a good question?
 The other day, I reflected on that. Here's what I came up with.
 
 
-## 1. Good Questions Are Open-ended
+## 1. Good Questions Are Open-Ended
 
 Recently, we did a survey about our podcast, and someone mentioned that some questions I asked the guests were "either-or" type of questions.
 
@@ -38,7 +38,7 @@ A: "Tarantula!"
 We have to ask ourselves what we want out of the answer,
 which leads me to my second observation:
 
-## 2. Never Ask A Question If You Don't Care About The Answer
+## 2. Never Ask a Question If You Don't Care about the Answer
 
 Or to rephrase it, "Only ask things you care about."
 If you don't care about the other person's answer, why even ask?
@@ -71,7 +71,7 @@ Who knows? You might learn a thing or two about your preconceptions.
 
 Which leads to...
 
-## 3. Good Questions Reveal Something About The Person Who Answers; Bad Questions About The Person Who Asks
+## 3. Good Questions Reveal Something about the Person Who Answers; Bad Questions about the Person Who Asks
 
 It's very easy to slip into a role where you're framing people, and that lets your bias speak more about **you** than 
 the person you're talking to.
@@ -94,7 +94,7 @@ So I would even say that a good question is one that reveals something *unique* 
 Q: "As an expert in X, who has been in the field for 20 years, what is one thing that people always get wrong about X?"  
 A: "People always think that X is about Y, but it's really about Z."  
 
-## 4. Good Questions Are Stacked On Top Of Each Other
+## 4. Good Questions Are Stacked on Top of Each Other
 
 Do you know the [*Five Whys*](https://en.wikipedia.org/wiki/Five_whys) technique?
 It's simple: Ask "why" five times to get to the root of the issue.
@@ -167,7 +167,7 @@ The simpler the question, the deeper the answer.
 Answering with "I don't know" is totally fine. 
 The important part is to stay curious and to be genuinely interested in the answer.
 
-## 6. Let The Winners Run And Cut Your Losses Short
+## 6. Let the Winners Run and Cut Your Losses Short
 
 Sometimes, no matter what you try, there's just nothing in a conversation.
 You might have ended up in that weird space where people are simply out of their depth
@@ -193,7 +193,7 @@ Just cut your losses, move on to the next topic.
 
 Similarly, if you notice that you both are really into a topic, just run with it.
 
-## 7. Give People Space To Think
+## 7. Give People Space to Think
 
 Pauses are powerful.
 
@@ -215,7 +215,7 @@ Often, they will stop and follow up with a much more personal answer.
 
 Use pauses to your advantage.
 
-## 8. Obvious Questions Can Be The Best Questions
+## 8. Obvious Questions Can Be the Best Questions
 
 If you look close enough, which question to ask becomes obvious.
 
@@ -264,7 +264,7 @@ The trick is to accept the answer for what it is.
 Don't be mad or angry at people who honestly answer your question.
 Be mad or angry for not asking sooner.
 
-## If You Don't Understand The Answer, Ask Again
+## If You Don't Understand the Answer, Ask Again
 
 In the past, I would often gloss over an answer and pretend I understood it.
 Turns out that it was a bad strategy:
@@ -326,7 +326,7 @@ Learn more about the person you're talking to.
 If you come prepared, you'll have an easier time asking good questions.
 Context makes good questions obvious.
 
-## The Best Follow-up To An Answer Is A Question
+## The Best Follow-Up to an Answer Is a Question
 
 Okay, you got an answer.
 Now what?

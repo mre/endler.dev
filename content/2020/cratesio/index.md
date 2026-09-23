@@ -1,5 +1,5 @@
 +++
-title="Name-squatting on crates.io - Do we have a problem?"
+title="Name-Squatting on crates.io - Do We Have a Problem?"
 date=2020-08-20
 draft=true
 [taxonomies]
@@ -31,7 +31,7 @@ and newcomers have to deal with that. And then it gets deprecated. And then you 
 Using PHP's composer felt like a breath of fresh air in comparison.
 Namespaces made these problems go away.
 
-## What is name squatting?
+## What Is Name Squatting?
 
 Name squatting is like Germans reserving all the loungers near the pool.
 It's become a meme: https://www.youtube.com/watch?v=nzHihXOiNqk
@@ -56,7 +56,7 @@ people can still publish stuff under your "namespace"
 
 https://github.com/google/evcxr
 
-## How many names are squatted?
+## How Many Names Are Squatted?
 
 Squatted names by length
 

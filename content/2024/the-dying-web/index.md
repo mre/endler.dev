@@ -90,7 +90,7 @@ Maybe it's because of Firefox's WebRTC support? Or, [maybe it's because of Chrom
 >
 > If you answered 2, then chances are you know your WebRTC stuff well, but you're probably on a Chromium browser.
 
-## How could Google get free rein?
+## How Could Google Get Free Rein?
 
 Because everyone and their car stopped testing their stuff anywhere else.
 If everyone tweaks their site for Chrome, well, of course the site will work just fine on Chrome!
@@ -99,7 +99,7 @@ More users join the bandwagon because stuff "just works" and the vicious cycle c
 I can't blame them. 
 It's easier to ride a horse in the direction it is going.
 
-## But at what cost?
+## But at What Cost?
 
 \*Elrond voice\*: We've been down this road before. (Okay, I was there.)
 We called it the *Browser Wars*: Netscape vs Internet Explorer. Netscape lost and Microsoft ruled over the web with an iron fist. It wasn't fun.
@@ -114,7 +114,7 @@ All we got in return was quirks mode.
 
 Google is smarter! They break the web, too, but they make you stand inside the fire.
 
-## Why should I care about a browser? They are all the same anyways.
+## Why Should I Care about a Browser? They Are All the Same Anyways.
 
 ...says the developer who gets [tracked by Google](https://www.forbes.com/sites/zakdoffman/2024/06/16/google-chrome-tracking-on-windows-android-iphone-for-200-more-days/) 
 every waking moment.
@@ -131,7 +131,7 @@ Lately, the uBlock Origin team just threw in the towel and [stopped supporting C
 But did anyone decide to jump ship?
 I get the feeling that by now people turn a blind eye to Google's evil practices.
 
-## But shouldn't Brave, Edge, Opera, or Vivaldi be sufficient?
+## But Shouldn't Brave, Edge, Opera, or Vivaldi Be Sufficient?
 
 Unfortunately not. They all use the [same browser engine](https://www.chromium.org/blink/) under the hood.
 Browser makers make mistakes, so this engine is not perfect.

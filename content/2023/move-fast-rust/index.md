@@ -59,7 +59,7 @@ business logic. However, it's not without challenges:
 Serverless has its merits for certain use cases, but for larger applications,
 you might still need some servers.
 
-## Platform-As-A-Service (PaaS)
+## Platform-as-a-Service (PaaS)
 
 Platforms like Heroku and Netlify introduced a third option – managed services
 that handle all infrastructure for you. No more infrastructure concerns; you
@@ -143,7 +143,7 @@ I would also like to mention that someone else built a similar project inspired
 by Zerocal: [kiwi](https://github.com/maheshsundaram/kiwi) by  [Mahesh Sundaram](https://github.com/maheshsundaram/), written in Deno. This is a really cool outcome. 
 
 
-### A Reader Mode For My E-Reader
+### A Reader Mode for My E-Reader
 
 My appreciation for [Firefox's reader view](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages) sparked the creation of a [Reader Mode
 Proxy](/2022/readable/) for a minimalist, JavaScript-free web reading experience, particularly

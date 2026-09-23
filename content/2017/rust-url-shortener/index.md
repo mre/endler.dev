@@ -1,5 +1,5 @@
 +++
-title="Launching a URL Shortener in Rust using Rocket"
+title="Launching a URL Shortener in Rust Using Rocket"
 date=2017-04-09
 updated=2020-08-26
 [taxonomies]
@@ -58,7 +58,7 @@ report back?
 rustup update && rustup override set nightly
 ```
 
-## A first prototype
+## A First Prototype
 
 Now we can start coding our little service.
 First, let's write a simple "hello world" skeleton to get started.
@@ -134,14 +134,14 @@ Sweet! Let's call our service.
 
 So far so good.
 
-## Data storage and lookup
+## Data Storage and Lookup
 
 We need to keep the shortened URLs over many requests... but how?
 In a production scenario, we could use some NoSQL data store like [Redis](https://redis.io/) for that.
 Since the goal is to play with Rocket and learn some Rust, we will simply use an
 in-memory store.
 
-Rocket has a that feature called [managed state](https://rocket.rs/v0.4/guide/state/).
+Rocket has a feature called [managed state](https://rocket.rs/v0.4/guide/state/).
 In our case, we want to manage a _repository_ of URLs.
 
 First, let's create a file named `src/repository.rs`:
@@ -184,7 +184,7 @@ By convention, we implement a `new()` method to create a `Repository` struct wit
 
 Note that we convert the string slices (`&str`) to `String` using the `to_string()` method. This way we don't need to deal with [lifetimes](https://doc.rust-lang.org/book/lifetimes.html). As a beginner, don't think too hard about them.
 
-## Additional remarks (can safely be skipped)
+## Additional Remarks (Can Safely Be Skipped)
 
 A seasoned (Rust) developer™ might do a few things differently here. Did you notice the tight coupling between the repository and the shortener? In a production system, `Repository` and `Shortener` might simply be concrete implementations of traits (which are a bit like interfaces in other languages, but more powerful). For example, `Repository` could implement a `Cache` trait:
 
@@ -197,7 +197,7 @@ trait Cache {
 }
 ```
 
-This way we get clear sepration of concerns, and we can easily switch to a different implementation (e.g. a `RedisCache`). Also, we could have a `MockRepository` to simplify testing. Same for `Shortener`.
+This way we get clear separation of concerns, and we can easily switch to a different implementation (e.g. a `RedisCache`). Also, we could have a `MockRepository` to simplify testing. Same for `Shortener`.
 
 On top of that, you might want to use the `Into` trait to support both, `&str` and `String` as parameters of `store`:
 
@@ -212,7 +212,7 @@ pub fn store<T: Into<String>>(&mut self, url: T) -> String {
 If you're curious about this, read [this article from Herman J. Radtke III](https://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html).
 For now, let's keep it simple.
 
-## Actually shortening URLs
+## Actually Shortening URLs
 
 Let's implement the URL shortener itself.
 You might be surprised how much was written about URL shortening [all over the web](https://blog.codinghorror.com/url-shortening-hashes-in-practice/).
@@ -226,7 +226,7 @@ To use `harsh`, we add it to the dependency section of our `Cargo.toml`:
 harsh = "0.1.2"
 ```
 
-Next, we add the crate to the top of to our `main.rs`:
+Next, we add the crate to the top of our `main.rs`:
 
 ```
 extern crate harsh;
@@ -265,7 +265,7 @@ With `next_id` we retrieve a new `String` id for our URLs.
 
 As you can see, we don't pass the URL to `next_id`. That means we actually _don't shorten anything_. We merely create a short, unique ID. That's because most hashing algorithms produce fairly [long URLs](https://blog.codinghorror.com/url-shortening-hashes-in-practice/) and having short URLs is kind of the whole idea.
 
-## Wiring it up
+## Wiring It Up
 
 So we are done with our shortener and the repository.
 We need to adjust our `src/main.rs` again to make use of the two.

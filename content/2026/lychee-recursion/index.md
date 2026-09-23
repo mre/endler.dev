@@ -125,7 +125,7 @@ In September 2021 we decided to do a bigger rewrite: a stream-based architecture
 
 And one honest aside on the language question, because I get asked it a lot: the counting problem here is **not Rust's fault**. A Go version with goroutines and channels, or a Python asyncio version, would hit the same off-by-one bugs. The race between "response processed" and "new requests discovered" is inherent to any concurrent recursive crawler. Rust's `Stream` trait and the way it plays with ownership made a streaming architecture feel natural, and that's what invalidated the work. So that's perhaps a Rust-specific point. 
 
-## Attempt 2: Feed It Back Through a Channel (January - July 2022)
+## Attempt 2: Feed It Back through a Channel (January - July 2022)
 
 Now that the stream architecture was in place, I took another stab at it. This time, instead of counting requests by hand, I'd [feed discovered URLs back through a *channel* connected to the collector](https://github.com/lycheeverse/lychee/pull/465).
 
@@ -306,7 +306,7 @@ After a burst of energy in January 2025, things slowed. Merge conflicts piled up
 
 > even though I was kinda denying it, it's pretty clear that I've lost motivation to keep working on this [...] I'm sorry T_T
 
-I didn't want her to apologize. She got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. Instead, I'm grateful for the time she invested to push tings forward.
+I didn't want her to apologize. She got further than anyone, on a hard feature, in a complex async codebase, as a volunteer. Instead, I'm grateful for the time she invested to push things forward.
 
 {% <info title="Takeaways"> %}
 

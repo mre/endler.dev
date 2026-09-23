@@ -10,7 +10,7 @@ Programming languages help us describe general solutions for problems; the resul
 
 **tl;dr:** *I think that functional programming is better suited for mathematical computations than the more common imperative approach.*
 
-## Using built-in abstractions for Mathematics
+## Using Built-In Abstractions for Mathematics
 
 The ideas behind a language (the underlying programming paradigms) are distinctive for the community that builds around it. The developers create a unique ecosystem of ready-to-use libraries and frameworks around the language core. As a consequence, some languages are stronger in areas such as business applications (one could think of Cobol), others work great for systems programming (like C or Rust).
 
@@ -18,9 +18,9 @@ When it comes to solving mathematical and numerical problems with computers, For
 
 One reason for its popularity in this area is that it offers some built-in domain-specific keywords to express mathematical concepts, while keeping an eye on performance. For instance, it has a dedicated datatype for complex numbers – `COMPLEX` – and a keyword named `DIMENSION` which is quite similar to the mathematical term and can be used to create arrays and vectors.
 
-## Imperative vs functional style
+## Imperative vs Functional Style
 
-Built-in keywords can help expand the expressiveness of a language into a specific problem space, but this approach is severly limited. It’s not feasible to extend the language core *ad infinitum*; it would just be harder to maintain and take longer to learn. Therefore, most languages provide other ways of abstraction – like *functions*, *subroutines*, *classes* and *objects* – to split a routine into smaller, more manageable parts. These mechanisms might help to control the complexity of a program, but especially when dealing with mathematical problems, one has to be careful not to obfuscate the solution with boilerplate code.
+Built-in keywords can help expand the expressiveness of a language into a specific problem space, but this approach is severely limited. It’s not feasible to extend the language core *ad infinitum*; it would just be harder to maintain and take longer to learn. Therefore, most languages provide other ways of abstraction – like *functions*, *subroutines*, *classes* and *objects* – to split a routine into smaller, more manageable parts. These mechanisms might help to control the complexity of a program, but especially when dealing with mathematical problems, one has to be careful not to obfuscate the solution with boilerplate code.
 
 ### Specimen I - Factorial
 
@@ -61,16 +61,16 @@ fact n = product [1..n]
 
 This is an almost direct translation from the problem definition into code. It needs no explicit types, no temporary variables and no access modifiers (such as public).
 
-### Specimen II - Dot product
+### Specimen II - Dot Product
 
 One could argue that the above Haskell program owes its brevity to the fact, that the language provides just the right abstractions (namely the `product` keyword and the `[1..n]` range syntax) for that specific task.
-Therfore let’s examine a simple function which is neither available in Haskell nor in Java: The dot product of two vectors. The mathematical definition is as follows:
+Therefore let’s examine a simple function which is neither available in Haskell nor in Java: The dot product of two vectors. The mathematical definition is as follows:
 
 ![The mathematical definition of a vector dot product: a·b= aibi =a1b1+a2b2+···+anbn =abT]( ./example_vector_dot.svg) 
 
 For vectors with three dimensions, it can be written as
 
-![Vector dot product for three dimentsions: a·b = a1 * b1 + a2 * b2 + a3* b3]( ./example_vector_3d.svg)
+![Vector dot product for three dimensions: a·b = a1 * b1 + a2 * b2 + a3* b3]( ./example_vector_3d.svg)
 
 First, a Haskell implementation:
 
@@ -119,7 +119,7 @@ public static class Vector<T extends Number> {
 
 For a proper textual representation of Vectors, the toString() Method would also need to be overwritten. In Haskell, one can simply derive from the `Show` typeclass as shown in the code.
 
-## Creating new abstractions
+## Creating New Abstractions
 
 If functions and types are not sufficient to write straightforward programs, Haskell also offers simple constructs to create new operators and keywords which extend the language core itself. This makes domain-specific-languages feasible and enables the developer to work more directly on the actual problem instead of working around peculiarities of the programming language itself (such as memory management or array iteration). Haskell embraces this concept; Java has no such functionality.
 

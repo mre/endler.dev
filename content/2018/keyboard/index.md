@@ -17,7 +17,7 @@ I was looking for a similar article before jumping the gun, but I couldn't find 
 
 {{ <figure page={page} src='keychron.jpg' caption='My current keyboard (as of April 2021), the low-profile, tenkeyless Keychron K1 is close to my favorite input device. Yes, I got the RGB version. &mdash; [Amazon referral link](https://amzn.to/3tRatjU).' /> }}
 
-## Why Switch To the US Layout?
+## Why Switch to the US Layout?
 
 I was reasonably efficient when writing prose, but felt like
 a [lemur on a piano](https://www.etsy.com/listing/896826954/funny-piano-art-print-leptodactylous-aye) when programming:
@@ -51,7 +51,7 @@ finally make the switch.
 
 {{ <figure page={page} src='durgod_taurus.jpg' caption='My first mechanical keyboard &mdash; [Durgod Taurus K320](https://www.amazon.de/gp/product/B07QK16RDQ/ref=as_li_tl?ie=UTF8&tag=matthiasendle-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B07QK16RDQ&linkId=fb0a782ecbc713f8266b90b941375a5f) (referral link). They also have a fancy [white-pink](https://www.amazon.de/gp/product/B081LZV2QM?ie=UTF8&tag=matthiasendle-21&camp=1638&linkCode=xm2&creativeASIN=B081LZV2QM) ISO version now.' /> }}
 
-## How Long Did It Take To Get Accustomed To The New Layout?
+## How Long Did It Take to Get Accustomed to the New Layout?
 
 Working as a Software Engineer, my biggest fear was, that the switch would slow
 down my daily work. This turned out not to be true. I was reasonably productive
@@ -78,7 +78,7 @@ reason why Vim is using `/` for search or why the pipe symbol is `|`: both are
 easy to reach! [It all makes sense!](/2018/ten-years-of-vim)
 (For a fun time, try that on a German keyboard!)
 
-I understand why Mircosoft chose `\` as a directory separator: it's easily
+I understand why Microsoft chose `\` as a directory separator: it's easily
 accessible from a US keyboard. On the German layout, it's&hellip; just&hellip; awful
 (`Alt Gr`+`ß` on Windows, `Shift` + `Option` + `7` on Mac).
 
@@ -109,7 +109,7 @@ me. It allows me to use a single Keyboard layout but insert German umlauts at wi
 [Karabiner](https://www.stefanimhoff.de/) rule which does the same. Might come
 in handy in case you already use this tool.
 
-## Is Switching Between Keyboards Painful?
+## Is Switching between Keyboards Painful?
 
 {{ <figure page={page} src="KB_United_States.svg" caption="US keyboard layout" credits="[Wikipedia](https://commons.wikimedia.org/wiki/File:KB_United_States.svg)" /> }}
 
@@ -118,7 +118,7 @@ the internal German and the external English keyboard would confuse me. This
 turned out not to be a problem. I rarely look at the print anyway.
 (Update: can't remember when I last looked at the print.)
 
-## How Often Do You Switch Back To A German Layout Now?
+## How Often Do You Switch Back to a German Layout Now?
 
 Never. My Girlfriend has a German keyboard and every time I have to use it, I switch to the US layout. It makes her very happy when I do this and forget to switch back to German when I'm done.
 

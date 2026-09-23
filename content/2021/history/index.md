@@ -1,5 +1,5 @@
 +++
-title="How Does The Unix `history` Command Work?"
+title="How Does the Unix `history` Command Work?"
 date=2021-05-31
 draft=false
 [taxonomies]
@@ -17,14 +17,14 @@ in Rust and throw it away again in the end as we uncover the truth.
 {{ <figure page={page} src="hero.jpg" credits="Cozy attic created by [vectorpouch](https://www.freepik.com/vectors/poster) and tux created by [catalyststuff](https://www.freepik.com/vectors/baby) &mdash; freepik.com" /> }}
 
 As the day is winding down, I have a good hour just to myself.
-Perfect time to listen to some [Billie Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billie Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
+Perfect time to listen to some [Billy Joel](https://www.youtube.com/watch?v=cJtL8vWNZ4o) (it's either Billy Joel or Billie Eilish for me these days) and learn how the Unix `history` command works.
 Life is good.
 
 Learning what makes Unix tick is a bit of a hobby of mine.  
 I covered [yes](/2017/yes/), [ls](/2018/ls/), and [cat](/2018/fastcat/) before.
 Don't judge.
 
-## How does history even work?
+## How Does history Even Work?
 
 Every command is tracked, so I see the last few commands on my machine when I run `history`.
 
@@ -37,7 +37,7 @@ Every command is tracked, so I see the last few commands on my machine when I ru
 8685  vim index.md
 ```
 
-## Yeah, but how does it _do_ that?
+## Yeah, but How Does It _Do_ That?
 
 The manpage on my mac is not really helpful &mdash; I also couldn't find much in the first place.
 
@@ -312,7 +312,7 @@ We open a new shell and run a few commands followed by `history`:
 
 ✨ **Yay.** ✨ [The source code for `past` is on Github.](https://github.com/mre/past)
 
-## How it _really_ _really_ works
+## How It _Really_ _Really_ Works
 
 Our experiment was a great success, but I since learned that reality is a bit different.
 
@@ -362,14 +362,14 @@ to prevent the history from getting too big. ([See here](https://github.com/zsh-
 That's smart! Without the ring-buffer, a malicious user could just thrash the history with random commands
 until a buffer overflow is triggered. I never thought of that.
 
-## History time (see what I did there?)
+## History Time (See What I Did There?)
 
 The original `history` command was added to the Unix C shell (csh) in 1978.
 Here's a link to [the paper](https://web.archive.org/web/20220605000427/http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf) by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) (hey, another Bill!).
 He took inspiration from the `REDO` command in Interlisp.
 You can find its specification in the original Interlisp manual in [section 8.7](https://larrymasinter.net/86-interlisp-manual-opt.pdf).
 
-## Lessons learned
+## Lessons Learned
 
 - Rebuild what you don't understand.
 - The history file is human-readable and pretty straightforward.

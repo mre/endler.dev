@@ -44,7 +44,7 @@ For example, if you are a backend engineer and you make heavy use of Kafka,
 I expect you to know a lot about Kafka -- not just things you read on Reddit.
 At least that's what I expect if you want to be one of the best engineers.
 
-## Read The Error Message
+## Read the Error Message
 
 As in **Really Read the Error Message and Try to Understand What's Written**.
 Turns out, if you just sit and meditate about the error message, it starts to speak to you.
@@ -69,7 +69,7 @@ breaking down problems.
 If you do it right, it will feel like cheating:
 you just solve simple problems until you're done.
 
-## Don't Be Afraid To Get Your Hands Dirty 
+## Don't Be Afraid to Get Your Hands Dirty
 
 The best devs I know read a lot of code and they are not afraid to touch it.
 They never say "that's not for me" or "I can't help you here."

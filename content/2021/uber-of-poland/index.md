@@ -50,7 +50,7 @@ customers. While they start as exact copies of their well-known counterparts,
 some of them end up offering better service thanks to their understanding of the
 local market.
 
-## People always find a way
+## People Always Find a Way
 
 With creativity, you can provide great service even without a big budget. The
 important part is to know which corners you can cut while staying true to your

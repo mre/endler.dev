@@ -167,7 +167,7 @@ line-feed:
 
 {{ <video url="https://www.youtube.com/embed/EWfElq1vgLA" start="842" preview="typewriter.jpg" /> }}
 
-## Command key symbol (⌘)
+## Command Key Symbol (⌘)
 
 _Today's meaning: A meta-key available on Apple computers to provide additional
 keyboard combinations._
@@ -195,7 +195,7 @@ down, notably Borgholm Castle.
 {{ <figure page={page} src="severdighet.png" caption="Norwegian Severdighet road sign" credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Severdighet.svg)" /> }}
 
-{{ <figure page={page} src="borgholm.jpg" caption="Aearial view of Borgholm Castle, which could have been the model for the symbol " credits="[Wikimedia
+{{ <figure page={page} src="borgholm.jpg" caption="Aerial view of Borgholm Castle, which could have been the model for the symbol " credits="[Wikimedia
 Commons](https://commons.wikimedia.org/wiki/File:Borgholms_slottsruin_fr%C3%A5n_luften.jpg)" /> }}
 
 References:
@@ -458,7 +458,7 @@ being on the outside, protecting the kernel.
 
 [Reference](https://unix.stackexchange.com/questions/14934/why-was-the-word-shell-used-to-descibe-a-command-line-interface)
 
-## Slab allocator
+## Slab Allocator
 
 _Today's meaning: An efficient memory allocation technique, which reuses
 previous allocations._
@@ -471,7 +471,7 @@ Bonwick](https://www.usenix.org/publications/library/proceedings/bos94/full_pape
 > With slab allocation, a cache for a certain type or size of data object has a
 > number of pre-allocated "slabs" of memory; within each slab there are memory
 > chunks of fixed size suitable for the objects.
-> ([Wikpedia](https://en.wikipedia.org/wiki/Slab_allocation#Basis))
+> ([Wikipedia](https://en.wikipedia.org/wiki/Slab_allocation#Basis))
 
 The name _slab_ comes from a teenage friend of Bonwick. He [tells the
 story](https://blogs.oracle.com/bonwick/now-it-can-be-told) on the Oracle blog:
@@ -547,12 +547,12 @@ radio buttons (right). Only a single option can be selected at any point in
 time. As a kid, I would push two buttons at once so they would interlock. Good
 times." credits="Images by [Matt Coady](https://twitter.com/themattcoady)" /> }}
 
-## Uppercase and lowercase
+## Uppercase and Lowercase
 
 _Today's meaning: Distinction between capital letters and small letters on a
 keyboard._
 
-Back when typesetting was a manual process where single letters made of led were
+Back when typesetting was a manual process where single letters made of lead were
 "type set" to form words and sentences, upper- and lowercase letters were kept
 in separate containers &mdash; or cases &mdash; to make this rather tedious process a little faster.
 
@@ -560,7 +560,7 @@ in separate containers &mdash; or cases &mdash; to make this rather tedious proc
 survivals' by Updike, Daniel Berkeley, 1860-1941. [Freely available on
 archive.org](https://archive.org/details/printingtypesthe01updi/)." /> }}
 
-## Honorable mentions
+## Honorable Mentions
 
 ### 404
 
@@ -576,7 +576,7 @@ This, however, seems to be a myth and the status code was chosen rather
 arbitrarily based on the then well-established FTP status codes.
 [Reference](https://knowyourmeme.com/memes/404)
 
-## Programming languages and Abbreviations
+## Programming Languages and Abbreviations
 
 The etymology of programming language names and common abbreviations would
 probably warrant its own article, but I've decided to note down some of my
@@ -607,7 +607,7 @@ Commons](https://commons.wikimedia.org/wiki/File:Treblecsharp5.svg)" /> }}
 
 Officially, PNG stands for _Portable Network Graphics_. It was born out of
 frustration over a CompuServe announcement in 1994 that programs supporting GIF
-would have to pay licensing fees from now on. A working group lead by hacker
+would have to pay licensing fees from now on. A working group led by hacker
 [Thomas Boutell](https://boutell.dev/) created the `.webp` file format, a
 patent-free replacement for GIF. Therefore I prefer the format's unofficial
 name: _PNG's Not GIF_. Here's a [great

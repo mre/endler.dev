@@ -41,7 +41,7 @@ protocols, cryptography, and web servers come to mind.
 More people should know how these things work. 
 And therefore I think people should not be afraid to recreate them. 
 
-## Everything Is A Rabbit Hole 
+## Everything Is a Rabbit Hole
 
 Too often, fundamental things are taken for granted. 
 For example strings or paths are super complicated concepts in programming.

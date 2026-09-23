@@ -122,13 +122,13 @@ Therefore we would need to add lifetime parameters here. This can make it tediou
   }
   ```
 
-## Putting the tree into a box
+## Putting the Tree into a Box
 
 All three options are totally valid. Which one you should choose, depends on your use-case.
 A rule of thumb is to keep it simple.
 In my case, I chose to use a `Box`, because I did not need any special guarantees.
 
-## Making subtrees optional
+## Making Subtrees Optional
 
 The next problem I faced was that I could not instantiate a tree structure.
 The left and right subtree have the type `Box<Tree>`, but at some
@@ -241,7 +241,7 @@ root(15)
   );
 ```
 
-## Why did it just work in Python?
+## Why Did It Just Work in Python?
 
 Now you might be wondering why our tree implementation worked so flawlessly in Python.
 The reason is that Python *dynamically* allocates memory for the tree object at *runtime*.

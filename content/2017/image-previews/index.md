@@ -31,7 +31,7 @@ I could fix that, by hardcoding the image width and height, but that would be te
 And there would be no preview.
 So I was wondering, what others were doing. 🤔
 
-## Tiny image thumbnails
+## Tiny Image Thumbnails
 
 I vaguely remembered, that [Facebook uses tiny preview thumbnails in their mobile app](https://code.fb.com/uncategorized/the-technology-behind-preview-photos/).
 They extract the quantization table from the JPEG header to render the preview. This information

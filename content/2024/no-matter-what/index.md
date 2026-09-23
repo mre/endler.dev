@@ -18,7 +18,7 @@ There's a nice thing that happens when you have such a golden rule: it has rippl
 
 As a kid, it sounded like one of those "stupid" rules only grown-ups would come up with. And in fact, my parents knew that it was stupid. They did it anyway. As a kid, that made their life look extremely dull and boring. I remember pitying my dad once for being such a slave to society. Yet, they persisted because without it, things would fall apart. Skipping dinner is about way more than skipping dinner.
 
-## These Rules Are Simple, But Not Easy
+## These Rules Are Simple, but Not Easy
 
 It's a simple rule with little room for interpretation. However, it's not easy: there are times when you have to drop something else to make dinner at 6 work. That's when the rule counts the most! That's what makes or breaks it.
 
@@ -36,7 +36,7 @@ I actually suck at running. My pace isn't fast. The distance isn't far, but it's
 
 Some people won't understand when you tell them that you have to do a thing "no matter what." Instead of telling them I have to go for a run, I say I'm busy that evening. Nobody ever asks any questions.
 
-## Isn't this just a habit?
+## Isn't This Just a Habit?
 
 With "no matter what" there can be serious consequences. If you have to take care of a loved one, you can't skip a day. Or if you're an Air Traffic Controller, failure is not an option.
 
@@ -62,7 +62,7 @@ In the past, I never had any plants.
 Now our apartment is full of them.
 I love the companionship and the continuity.
 
-## What's your "NMW"?
+## What's Your "NMW"?
 
 If you already have a "no matter what" rule, you have my deepest respect.
 

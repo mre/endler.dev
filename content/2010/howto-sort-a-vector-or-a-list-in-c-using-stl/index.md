@@ -1,5 +1,5 @@
 +++
-title="Howto Sort a Vector or a List in C++ using STL"
+title="How to Sort a Vector or a List in C++ Using STL"
 date=2010-01-27
 [taxonomies]
 tags=["dev"]
@@ -104,7 +104,7 @@ int main() {
 }
 ```
 
-## Compilation and execution
+## Compilation and Execution
 
 Save the above code inside a file, e.g. `list_vector.cpp` and compile it like so:
 
@@ -118,7 +118,7 @@ To run it, execute the resulting binary.
 ./a.out
 ```
 
-## Program output
+## Program Output
 
 ```
 Vector: 12 5 1

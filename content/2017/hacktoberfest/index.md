@@ -1,5 +1,5 @@
 +++
-title="Learn Some Rust During Hacktoberfest"
+title="Learn Some Rust during Hacktoberfest"
 date=2017-10-15
 [taxonomies]
 tags=["culture", "dev", "oss", "rust"]
@@ -21,7 +21,7 @@ This guide is trying to change that!
 Let me show you, how _everybody_ can contribute code to [Rust](https://www.rust-lang.org/), a safe systems programming language.
 I was inspired to write this by a [tweet from llogiq](https://twitter.com/llogiq/status/915288482314178560).
 
-## 1. Find a great Rust project to work on
+## 1. Find a Great Rust Project to Work On
 
 We all want our work to be appreciated.  
 Therefore I suggest to start contributing to medium-sized projects, because they gained some momentum but are still driven by a small number of maintainers, so help is always welcome. By contrast, tiny projects are mostly useful to the original author only, while large projects can be intimidating at first and have stricter guidelines.
@@ -35,7 +35,7 @@ language:Rust stars:5..100 pushed:>2017-01-01
 
 [Here](https://github.com/search?q=language%3ARust+stars%3A5..100+pushed%3A%3E2017-01-01)'s a list of projects, which match this filter.
 
-## 2. Install the Rust toolchain
+## 2. Install the Rust Toolchain
 
 To start contributing, we need a working Rust compiler and the cargo package manager.
 Fortunately, the installation should be straightforward.
@@ -56,7 +56,7 @@ rustup install nightly
 
 Questions so far? Find more detailed installation instructions [here](https://asquera.de/blog/2017-03-03/setting-up-a-rust-devenv/).
 
-## 3. Fork the project and clone it to your computer
+## 3. Fork the Project and Clone It to Your Computer
 
 First, click on the little _fork_ button on the top right of the Github project page. Then clone your fork to your computer.
 
@@ -66,7 +66,7 @@ git clone git@github.com:yourusername/project.git
 
 For more detailed instructions, go [here](https://guides.github.com/activities/forking/).
 
-## 4. Does it build?
+## 4. Does It Build?
 
 Before we start modifying the codebase, we should make sure that it is in a workable state.
 The following commands should work right away from inside the project folder.
@@ -78,7 +78,7 @@ cargo test
 
 If not, you might want to consult the `README` for further instructions. (But feel free to choose another project.)
 
-## 5. The magic sauce
+## 5. The Magic Sauce
 
 Here's the trick: we use a [linter](<https://en.wikipedia.org/wiki/Lint_(software)>) called [clippy](https://github.com/rust-lang/rust-clippy) to show us improvement areas in any Rust codebase.
 
@@ -138,7 +138,7 @@ Please add a meaningful description and then submit the pull request.
 
 Congratulations! You've contributed to the Rust ecosystem. Thank you! 🎉
 
-## Trophy case
+## Trophy Case
 
 - [m4b/goblin](https://github.com/m4b/goblin/pull/55)
 - [fitzgen/cpp_demangle](https://github.com/gimli-rs/cpp_demangle/pull/100)

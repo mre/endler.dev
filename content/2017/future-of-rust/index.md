@@ -40,7 +40,7 @@ It is not unthinkable that Rust is going to be some healthy competition for C++ 
 The benchmarks of [leaf](https://github.com/autumnai/leaf), a machine learning library written in Rust, are already nothing short of
 impressive.
 
-## Blockbuster games
+## Blockbuster Games
 
 [Games](https://www.reddit.com/r/rust_gamedev/comments/4qlftu/look_our_game_writen_entirely_in_rust/d4tz4r3/) are another area where Rust might shine.
 It's financially attractive for Game Studios to support multiple platforms without much
@@ -57,7 +57,7 @@ That said, the first AAA Rust game might still be far in the future. [Here's Bli
 Maybe &mdash; eventually &mdash; we will also see formal verification of the Rust core. Projects like [RustBelt](https://plv.mpi-sws.org/rustbelt/) would then open new opportunities in safety-focused industries like the Space industry. Wouldn't it be nice to safely land a Spacecraft on Mars that is controlled by Rust? (Or by one of its spiritual successors.)
 I wonder if [SpaceX](https://www.spacex.com/) is experimenting with Rust already...
 
-## Integrating with other languages
+## Integrating with Other Languages
 
 There are many other areas I haven't even mentioned yet. For example, financial and medical software or Scientific Computing, just to name a few.
 In all cases, Rust might be a good fit. Right now the biggest barrier to entry

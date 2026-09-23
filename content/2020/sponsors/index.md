@@ -1,5 +1,5 @@
 +++
-title = "Launching a Side Project Backed by Github Sponsors"
+title = "Launching a Side Project Backed by GitHub Sponsors"
 date = 2020-08-21
 [taxonomies]
 tags=["oss", "business"]
@@ -183,7 +183,7 @@ functionality was broken (of course). Turns out, we hit the free quota limit on
 exchange with Algolia's customer support, and they moved us over to the
 open-source plan (which we didn't know existed). We were back on track!
 
-> Site note: Algolia customer support is top-notch. Responsive, tech-savvy,
+> Side note: Algolia customer support is top-notch. Responsive, tech-savvy,
 > and helpful. Using Algolia turned out to be a great fit for our product.
 > Response times are consistently in the low milliseconds and the integration
 > with Gatsby was quick and easy.
@@ -219,7 +219,7 @@ analysis and he approved. (Thanks boss!)
 
 High fives all around!
 
-## Now what?
+## Now What?
 
 Of course, we'll add new features; of course, we have more plans for the future,
 yada yada yada. Instead, let's reflect on that milestone: a healthy little

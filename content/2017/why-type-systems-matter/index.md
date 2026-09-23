@@ -17,7 +17,7 @@ It began to feel very natural to me; like a totally new way to express myself.
 
 <!-- more -->
 
-## Types are here to help
+## Types Are Here to Help
 
 With types, you communicate your guarantees and expectations. Both, to the machine and other developers. Types express intent.
 
@@ -34,7 +34,7 @@ It gets a little more tricky if the type gets _inferred_ from some other locatio
 sentence = x
 ```
 
-Is `sentence` still a string? Uhm... we don't know. It depends on the type of `x`. Maybe `x` is a number, and so `sentence` is also a number? Maybe `x`used to be a string but during refactoring it is now a byte array? Fun times had by all. 🎉
+Is `sentence` still a string? Uhm... we don't know. It depends on the type of `x`. Maybe `x` is a number, and so `sentence` is also a number? Maybe `x` used to be a string but during refactoring it is now a byte array? Fun times had by all. 🎉
 
 What about this one?
 
@@ -54,7 +54,7 @@ total = file1 + file2
 print(total) # prints '50003000'
 ```
 
-## How can we fix that?
+## How Can We Fix That?
 
 We can safely assume that a file size is always a number.
 To be more precise, it must be a positive, natural number.
@@ -89,7 +89,7 @@ Dare I say it: it becomes an extension of your brain.
 After some time you start to rely on the type checker. "If it compiles, it runs"
 is a powerful mantra.
 
-## Types improve readability and provide context
+## Types Improve Readability and Provide Context
 
 Consider the following Python snippet:
 
@@ -131,7 +131,7 @@ In a larger codebase, `FileStatus.OPEN` is much easier to search for than `0`.
 **Note:** The native enum type was [introduced very late in the history of Python](https://www.python.org/dev/peps/pep-0435/). It serves as a nice
 example of how enhancing the type system can help improve readability.
 
-## When you combine different types, magic happens.
+## When You Combine Different Types, Magic Happens.
 
 All pieces suddenly fall into place when you choose your types wisely. Out of nowhere, the compiler will start
 checking your design decisions and if all your types work well together. It will point out flaws in your mental model.

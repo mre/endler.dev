@@ -17,7 +17,7 @@ I got better at knowing what I value and what I can *take away*.
 Uncluttering brings joy.
 Maybe that's a deeply human thing?
 
-## Screenshots of my blog's design over the years
+## Screenshots of My Blog's Design over the Years
 
 {{ <figure page={page} src="2007.jpg" caption="2007" /> }}
 {{ <figure page={page} src="2011.jpg" caption="2011" /> }}

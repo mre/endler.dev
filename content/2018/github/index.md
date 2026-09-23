@@ -21,7 +21,7 @@ Github got acquired by Microsoft.
 While I think the acquisition was well-deserved, I still wish it didn't happen.
 Let me explain.
 
-## My early days
+## My Early Days
 
 I joined Github on 3rd of January 2010.
 Since I was a bit late to the game, my usual handle ([mre](https://github.com/mre/)) was already taken.
@@ -35,7 +35,7 @@ That was the moment I fell in love with Github.
 I felt encouraged to collaborate on projects, that everybody could contribute something valuable.
 Only later I found out that Chris was one of the founders and the CEO of the company.
 
-## Living on Github
+## Living on GitHub
 
 Before Github, there was [SourceForge](https://sourceforge.net/), and I only went there to download binaries.
 Github showed me, that there was an entire community of like-minded people
@@ -47,7 +47,7 @@ I can still vividly remember getting my [first star](https://github.com/mre/Crea
 
 After so many years, a pull-request still feels like the most personal gift anyone could give to me.
 
-## Github - the culture
+## GitHub - The Culture
 
 After a while, I started to admire some Github employees deeply:
 
@@ -62,7 +62,7 @@ The harassment accusations and letting Zach Holman go are only part of the story
 It has become a company like any other, maintaining a mature product.
 It doesn't _excite_ me anymore.
 
-## An alternative reality
+## An Alternative Reality
 
 There's still a bitter taste in my mouth when I think that Github has fallen prey to one of the tech giants. I loved Github while it was a small, friendly community of passionate developers.
 Could this have been sustainable?
@@ -79,7 +79,7 @@ a front page where you could filter and search for events, a better way to handl
 These features would be targeted at the top 10% of Github users, a group of 3 million people.
 Would this be enough to pay the bills? Probably. Would it be enough to grow? Probably not.
 
-## So what?
+## So What?
 
 I don't think the acquisition will kill the culture. Microsoft is a strong partner and [Nat Friedman](https://nat.github.io/hello/) is one of us.
 On the other side, I'm not as enthusiastic as I used to be.

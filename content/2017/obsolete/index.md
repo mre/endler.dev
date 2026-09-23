@@ -42,7 +42,7 @@ There was one problem though: The list of pull requests got longer and longer, a
 
 {{ <figure page={page} src="pull_requests.jpg" caption="The list of Github Pull requests for awesome-static-analysis" /> }}
 
-## Adding contributors
+## Adding Contributors
 
 I always try to make team members out of regular contributors. My friend and colleague [Andy Grunwald](https://github.com/andygrunwald) as well as [Ouroboros Chrysopoeia](https://github.com/impredicative) are both valuable collaborators. They help me weed out new PRs whenever they find the time.
 
@@ -57,7 +57,7 @@ What needs to be checked for each new tool can be summarized like this:
 
 I guess it's obvious what we should do with that checklist: automate it!
 
-## A linter for linting linters
+## A Linter for Linting Linters
 
 So why not write an analysis tool, which checks our list of analysis tools!
 What sounds pretty meta, is actually pretty straightforward.
@@ -108,7 +108,7 @@ This allowed me to focus on the actual analysis code,
 which makes for a pretty boring read. It mechanically checks for the things mentioned above and could be written in any language.
 If you want to have a look (or even contribute!), [check out the repo](https://github.com/mre/awesome-static-analysis-ci).
 
-## Talking to Github
+## Talking to GitHub
 
 After the analysis code was done, I had a bot, running locally, waiting for incoming pull requests.
 
@@ -247,7 +247,7 @@ Now, whenever a new pull request is coming in, you see that little bot getting a
 
 ![A successful pull request, which was checked by the bot](/2017/obsolete/pull_request_success.jpg)
 
-## Outcome and future plans
+## Outcome and Future Plans
 
 I am very pleased with my choice of tools: afterparty saved me from a lot of manual work, while zeit made deployment really easy.  
 It feels like [Amazon Lambda](https://aws.amazon.com/lambda/features/) on steroids.
@@ -266,7 +266,7 @@ If you like, you can compare the [old](https://github.com/mre/awesome-static-ana
 
 Most everything about that project has changed since then.
 I now use Github Actions to run the CI checks, and the `README.md` is completely auto-generated from the YAML files for each tool.
-We support specia metadata fields like a list of additional resources (tutorials, videos, etc) or the list of paid plans a tool offers.
+We support special metadata fields like a list of additional resources (tutorials, videos, etc) or the list of paid plans a tool offers.
 We have a [fancy website](https://analysis-tools.dev/) now, where we list all 700+ tools and allow people to vote.
 The website is built with Next.js and uses Algolia for search.
 We also have a bunch of sponsors now, who help us pay for hosting and other expenses.

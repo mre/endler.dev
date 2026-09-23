@@ -36,7 +36,7 @@ Shuttle 🚀
 Both languages seem to be competing for the same user base and they both seem to be
 _systems programming_ languages, so there must be a clear winner, right?
 
-## Go: practical, pragmatic, plain
+## Go: Practical, Pragmatic, Plain
 
 {{ <figure page={page} src="go.jpg" caption="The Golang learning curve over time, a straight line." /> }}
 
@@ -47,7 +47,7 @@ But with Go, you _get things done_ &mdash; fast.
 Go is one of the most productive languages I've ever worked with.
 The mantra is: solve real problems today.
 
-## Rust's strong guarantees come at a cost
+## Rust's Strong Guarantees Come at a Cost
 
 {{ <figure page={page} src="rust.jpg" caption="The Rust learning curve over time, a bumpy ride." /> }}
 
@@ -70,7 +70,7 @@ That's because these guarantees come with a cost: ramp-up time.
 You'll need to unlearn bad habits and learn new concepts.
 Chances are, you will [fight with the borrow checker](https://m-decoster.github.io/2017/01/16/fighting-borrowchk/) a lot when you start out.
 
-## Case-study: Primality by trial division
+## Case-Study: Primality by Trial Division
 
 Let's say, you want to check if a number is [prime](https://en.wikipedia.org/wiki/Prime_number).
 The easiest way is to check if we can divide the number by any smaller natural number (without a remainder). If not, we found a prime number! This approach is called [trial division](https://en.wikipedia.org/wiki/Trial_division).
@@ -136,14 +136,14 @@ It might seem a little alien at first, but it will become second-nature after a 
 
 This was just a quick example, of course. I suggest, you browse some code on [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code) to get a better feeling for both languages.
 
-## Case study: Finding duplicate words in text files
+## Case Study: Finding Duplicate Words in Text Files
 
 If you're more like a visual type, here is a video where I write a simple
 concurrent program in Go and Rust to compare both languages:
 
 {{ <video url="https://www.youtube.com/embed/B5xYBrxVSiE" preview="maxresdefault.jpg" /> }}
 
-## Some things I prefer in Go
+## Some Things I Prefer in Go
 
 - Fast compile times
 - Pragmatic problem-solving approach
@@ -153,7 +153,7 @@ concurrent program in Go and Rust to compare both languages:
 - Simple error handling
 - The mascot 😉
 
-## Some things I prefer in Rust
+## Some Things I Prefer in Rust
 
 - Safety: No null pointers, no data races,...
 - Fine-grained system control

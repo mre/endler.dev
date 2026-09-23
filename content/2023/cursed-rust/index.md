@@ -1,5 +1,5 @@
 +++
-title="Cursed Rust: Printing Things The Wrong Way"
+title="Cursed Rust: Printing Things the Wrong Way"
 date=2023-11-01
 updated=2023-11-12
 draft=false
@@ -42,7 +42,7 @@ There is virtue in learning from unconventional answers to conventional question
 To some extent, this fosters new ways of thinking and problem-solving, which is
 an essential part of innovation. 
 
-## Applying The Same Principle To Learning Rust
+## Applying the Same Principle to Learning Rust
 
 One of the first examples in any book on learning Rust is the "Hello, world!"
 program.
@@ -89,7 +89,7 @@ lock `stdout` once and then use `write!`. This avoids the overhead
 of locking `stdout` for each call to `println!`. See [this article on how to write a very
 fast version of `yes`](/2017/yes/) with this trick.
 
-## Solution 2: Iterating Over Characters
+## Solution 2: Iterating over Characters
 
 ```rust
 "Hello, world!".chars().for_each(|c| print!("{}", c));
@@ -241,7 +241,7 @@ which prints the newline character in the end.
 Credit goes to [Wisha Wanichwecharungruang](https://wisha.page/posts/fun-rust-operators/) for this
 solution.
 
-## Solution 9: Unadulterated Control With Assembly
+## Solution 9: Unadulterated Control with Assembly
 
 All of these high-level abstractions stand in the way of printing things
 efficiently. We have to take back control of your CPU. Assembly is the way. No more wasted cycles.
