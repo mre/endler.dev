@@ -8,7 +8,7 @@ tags=["dev"]
 excerpt="""Did I mention that this website is fast?
 Oh yeah, I did, multiple times.
 It's never fast enough, so today I go one step further by adding
-support for the new AVIF image format to the blog. The results were suprising.
+support for the new AVIF image format to the blog. The results were surprising.
 """
 +++
 
@@ -35,7 +35,7 @@ Then again, it's 2020: **everyone** is optimizing their favicons, right? [...rig
 
 Well, it turns out most other sites don't think about their user's data plans as much as I do. Actually, that's an understatement: they don't care at all. But to me, **lean is beautiful**!
 
-## Wait, What About Images?
+## Wait, What about Images?
 
 I prefer SVG for diagrams and illustrations.
 Only if it's a photo, I'll use JPEG or [WebP](https://developers.google.com/speed/webp/).
@@ -89,7 +89,7 @@ If that reads "nope," then you have a few options:
 - **On Chrome**: Make sure to update to the latest version.
 - **On Safari**: I'm not sure what you're doing with your life. Try a real browser instead. 😏
 
-## Workaround I: Fallback For Older Browsers
+## Workaround I: Fallback for Older Browsers
 
 HTML is great in that your browser ignores unknown new syntax.
 So I can use the `<picture>` element to serve the right format to you. (Look ma, no JavaScript!)
@@ -106,7 +106,7 @@ So I can use the `<picture>` element to serve the right format to you. (Look ma,
 thing](https://github.com/mre/endler.dev/blob/master/templates/components/figure.html)
 is a bit more convoluted, but you get the idea.
 
-## Workaround II: Wrong Content-Type On Github Pages
+## Workaround II: Wrong Content-Type on GitHub Pages
 
 There was one ugly problem with Github and AVIF, though: Their server returned a
 `Content-Type: application/octet-stream` header.
@@ -135,7 +135,7 @@ You can read more about modifying response objects [here](https://developers.clo
 
 Another side-effect of Workers Sites is that a production deployment takes [one minute](https://github.com/mre/endler.dev/actions) now.
 
-## Performance Results After Moving To Cloudflare
+## Performance Results after Moving to Cloudflare
 
 {{ <figure page={page} src="cdn_before.jpg" caption="Website response time before" credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)" /> }}
 {{ <figure page={page} src="cdn_after.jpg" caption="Website response time after" credits="[KeyCDN](https://tools.keycdn.com/performance?url=https://endler.dev)" /> }}
@@ -147,7 +147,7 @@ I don't have to hide from a comparison with well-known sites either:
 
 {{ <figure page={page} src="speedcurve.png" caption="Comparison with some other blogs I read" credits="[Speedcurve](https://speedcurve.com)" /> }}
 
-## Further reading
+## Further Reading
 
 - [How to Use AVIF: The New Next-Gen Image Compression Format](https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/) &mdash; Nice introduction that highlights some common pitfalls when integrating AVIF. It inspired me to add AVIF support.
 - [AVIF has landed](https://jakearchibald.com/2020/avif-has-landed/) by Jake Archibald &mdash; Compares image sizes and qualities of different formats: SVG, JPEG, PNG, WebP, and AVIF.

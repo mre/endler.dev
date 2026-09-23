@@ -30,7 +30,7 @@ If everyone has access to the same tools, what sets you apart is your ability to
 Pick a problem, learn the domain, and create a fast feedback loop to iterate on solutions.
 If you can solve problems faster than anyone else, you will be in high demand.
 
-## Have More Than One Skill
+## Have More than One Skill
 
 If all you know is how to code, you will be easily replaceable.
 Try to apply your knowledge in a domain that interests you.

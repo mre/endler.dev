@@ -1,5 +1,5 @@
 +++
-title="The `look` Unix command"
+title="The `look` Unix Command"
 date=2022-08-10
 draft=true
 [taxonomies]
@@ -163,7 +163,7 @@ if ((front = mmap(NULL, (size_t)sb.st_size, PROT_READ, MAP_SHARED, fd, (off_t)0)
 An `mmap` is a read-only memory map backed by a file &mdash; - a "view" into memory if you like.
 
 
-## We can do that, too! 💪
+## We Can Do That, Too! 💪
 
 ...but please without bending pointers along the way.
 Enter [Mmap](https://docs.rs/memmap/latest/memmap/struct.Mmap.html)

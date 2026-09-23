@@ -28,7 +28,7 @@ educational to learn more, however!
 So this is for everyone who wants to know more about <u>allocations</u> in
 <u>Rust</u>.
 
-## Table Of Contents
+## Table of Contents
 
 ## Why Should I Care?
 
@@ -41,7 +41,7 @@ isn't that something that the compiler and runtime takes care of?
 Indeed it is very convenient to use a language that takes care of memory
 management, until you hit a wall:
 And it can be frustrating if to wrangle with the language's limitations in the
-face of a performance bottleneck, a memory leak, or a hardward limitation.
+face of a performance bottleneck, a memory leak, or a hardware limitation.
 You silently might nod in agreement if you've ever been in such a situation.
 
 Rust, in contrast, never hides any low-level details from you.
@@ -57,7 +57,7 @@ around every corner.
 In summary, Rust is a great language to learn more about memory management,
 because it's safe but does not hide any details from you.
 
-## What's An Allocation?
+## What's an Allocation?
 
 The origin of _allocation_ is not widely known, despite being commonly used.
 The word comes from _Vulgar Latin_ [_allocare_](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html), from _ad-_ ("to") + _locus_ ("place").
@@ -338,7 +338,7 @@ Further Reading:
 Rustonomicon - The Perils Of Ownership Based Resource Management (OBRM)
 https://doc.rust-lang.org/nomicon/obrm.html
 
-## Deciding Where To Allocate: The `Sized` Trait
+## Deciding Where to Allocate: The `Sized` Trait
 
 In Rust, anything can be put on the heap. However, if a type implements
 [`Sized`](https://doc.rust-lang.org/std/marker/trait.Sized.html), it can also be
@@ -386,7 +386,7 @@ rg -e 'String::new' \
 On top of that, crates that you use could also allocate, so you have to inspect
 that code as well.
 
-## How Do Allocations Work In Rust?
+## How Do Allocations Work in Rust?
 
 As seen above, there are data structures that implicitly allocate memory on the
 heap.
@@ -591,7 +591,7 @@ What if you need to allocate memory but you want to limit the number of
 allocations?
 In this case you can reuse existing allocations.
 
-#### Trick 1: Allocate The Right Amount Of Memory Up Front
+#### Trick 1: Allocate the Right Amount of Memory Up Front
 
 The first trick is to use methods like `with_capacity`
 if you already know how much memory you'll need.
@@ -614,7 +614,7 @@ fn main() {
 
 `with_capacity` also exists for `Vec`, `HashMap`, `BufWriter`, `PathBuf`, etc.
 
-#### Trick 2: Cache Values To Avoid Allocations
+#### Trick 2: Cache Values to Avoid Allocations
 
 If you find that you repeatedly allocate the same value, you can cache it to
 avoid allocating it multiple times.
@@ -674,7 +674,7 @@ If you need to cache a lot of values, you can use a
 [`lru_cache`](https://docs.rs/lru-cache) to limit the number of values that are
 cached.
 
-#### Trick 3: Use A Memory Pool To Reuse Allocations
+#### Trick 3: Use a Memory Pool to Reuse Allocations
 
 If you need to allocate a lot of objects of the same type, you can use a memory
 pool to reuse the allocations.
@@ -763,7 +763,7 @@ fn main() {
 }
 ```
 
-## The Journey Of A Rust Allocation
+## The Journey of a Rust Allocation
 
 TODO
 
@@ -913,7 +913,7 @@ Furthermore, not all Rust programs are bottlenecked on allocations.
 ## When Can Allocations Be Bad?
 
 - embedded (writing a gameboy game) - high-perf code - gaming - hard realtime
-  code (predicatable performance) like low-latency audio allocations can slow down
+  code (predictable performance) like low-latency audio allocations can slow down
   the system or downright fail at runtime That is, panic on failure
   https://news.ycombinator.com/item?id=15484323
 
@@ -923,9 +923,9 @@ allocations while in-flight because malloc can fail
 So unless you're in a hot loop, you probably won't notice the difference But
 maybe you're just curious
 
-If you use dynamic memory alloc, you're dependend on the state of the system:
-memory fragementation (if you need one block of memory), garbage collection,...
-Not using allocs can make your code more predicatable. The important thing you
+If you use dynamic memory alloc, you're dependent on the state of the system:
+memory fragmentation (if you need one block of memory), garbage collection,...
+Not using allocs can make your code more predictable. The important thing you
 gain is determinism. Malloc can become slow under memory pressure. Calling
 malloc can fail, leading to an out of memory condition. Avoiding allocation
 reduces the set of scenarios where you can encounter performance degradation.
@@ -937,7 +937,7 @@ inherently unsafe and can lead to catastrophic errors if you don't pay very
 close attention. This makes performance optimizations way more fun! See also
 https://brson.github.io/rust-anthology/1/where-rust-really-shines.html
 
-## How To Measure Allocations?
+## How to Measure Allocations?
 
 Before you jump right in and try to avoid all allocations, is crucial to not get trapped by
 premature optimization.
@@ -993,12 +993,12 @@ Instructions on tcmalloc https://github.com/jmcomets/tcmalloc-rs
 
 mimalloc by Microsoft https://github.com/purpleprotocol/mimalloc_rust
 
-## How To Reduce Allocations
+## How to Reduce Allocations
 
-If you reached this point, you're either curios, or you have a real allocation problem.
+If you reached this point, you're either curious, or you have a real allocation problem.
 The easiest way to avoid allocations is to get rid of your code. It sounds obvious, but removing code-paths by cleaning up your codebase is the easiest way to save up on allocations.
 
-## Built-in methods in the standard library
+## Built-in Methods in the Standard Library
 
 common datastructures (a.k.a [collections](https://docs.rust-embedded.org/book/collections/)): String, Vec, HashMap, PathBuf vs &str, slice, Path
 
@@ -1167,7 +1167,7 @@ https://github.com/sebastiencs/shared-arena
 
 helpful with frequent, small allocations with short lifespans
 
-## How To Deny Allocations Altogether
+## How to Deny Allocations Altogether
 
 - cargo plugins to fail on allocs
 
@@ -1189,14 +1189,14 @@ helpful with frequent, small allocations with short lifespans
 
 String interning https://github.com/servo/string-cache
 
-## Real world articles / further reading
+## Real World Articles / Further Reading
 
 - [A Journey in Optimizing
 - `toml_edit`](https://epage.github.io/blog/2021/09/optimizing-toml-edit/)
 - [Making slow Rust code
 - fast](https://patrickfreed.github.io/rust/2021/10/15/making-slow-rust-code-fast.html)
 
-## Can I limit the amount of memory used by my program?
+## Can I Limit the Amount of Memory Used by My Program?
 
 - https://github.com/alecmocatta/cap
 - https://github.com/nnethercote/dhat-rs
@@ -1218,12 +1218,12 @@ https://github.com/cmyr/cargo-instruments
 Heap memory usage estimation (`data_size(&example)` prints an estimate of the number of bytes used by `example` on the heap):
 https://github.com/CasperLabs/datasize-rs
 
-### Logging allocations
+### Logging Allocations
 
 https://github.com/Geal/tracing_allocator
 https://github.com/tobz/tracking-allocator
 
-### Something fun
+### Something Fun
 
 A Rust allocator which makes sound when active, like a Geiger counter.
 https://github.com/cuviper/alloc_geiger
@@ -1232,7 +1232,7 @@ https://github.com/cuviper/alloc_geiger
 
 When a value goes out of scope
 
-## What is the Rust standard allocator
+## What Is the Rust Standard Allocator
 
 As of Rust 2018 it's the system allocator by default.
 On Linux it is
@@ -1241,7 +1241,7 @@ and on macos
 
 Before that it used to be jemalloc, but that...
 
-## Which one is the fastest alternative to the default allocator?
+## Which One Is the Fastest Alternative to the Default Allocator?
 
 It depends on your use-case
 
@@ -1269,7 +1269,7 @@ https://github.com/rust-lang/rust/issues/48043
 You can try to reserve space for a vector now:
 https://doc.rust-lang.org/std/vec/struct.Vec.html#method.try_reserve
 (added it Rust 1.57)
-This will retrun a `Result<(), TryReserveError>`, which you can handle.
+This will return a `Result<(), TryReserveError>`, which you can handle.
 
 There is
 https://docs.rs/fallible_collections/latest/fallible_collections/
@@ -1290,15 +1290,15 @@ fn main() {
 
 In nightly there is a new [set_alloc_error_hook](https://doc.rust-lang.org/std/alloc/fn.set_alloc_error_hook.html) function that you can use to specify a function to call when an allocation fails.
 
-## Where Is The Code For Allocators In Rust?
+## Where Is the Code for Allocators in Rust?
 
 https://github.com/rust-lang/rust/tree/master/library/alloc
 
-## What Is A Memory Leak And Can It Happen In Rust?
+## What Is a Memory Leak and Can It Happen in Rust?
 
 A memory leak is when a program allocates memory but never frees it.
 
-## Can I "see" memory allocations in Rust?
+## Can I "see" Memory Allocations in Rust?
 
 You can look at the MIR (medium intermediate representation)
 https://play.rust-lang.org/?version=nightly&mode=debug&edition=2021&gist=27235b1815171c24c6da8d1e7dc04e8f

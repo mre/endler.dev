@@ -1,5 +1,5 @@
 +++
-title="No, microservices are not embracing the Unix philosophy"
+title="No, Microservices Are Not Embracing the Unix Philosophy"
 date=2019-04-01
 draft=true
 +++
@@ -18,7 +18,7 @@ Glue code between the services: request handling, logging
 You're not building small, composable tools, you're building a distributed system!
 
 
-I'm pretty sure when Thompson, Ritchie, and McIllroy established the Unix Philosphoy, they didn't have microservices in mind.
+I'm pretty sure when Thompson, Ritchie, and McIlroy established the Unix Philosophy, they didn't have microservices in mind.
 From running many microservices in production, they can be very fragile.
 
 Avoid State
@@ -28,7 +28,7 @@ It's true, microservices are easy to write. The hard part is operations.
 This is where they differ from Unix tools.
 
 Unix tools: `cat`, `ls`, `rm`.
-Microservices: Account managemer, cache, geoip service, kiosk service.
+Microservices: Account manager, cache, geoip service, kiosk service.
 A lot more moving parts. A lot more things that can go wrong.
 Other systems instead lump these into a single "account management" service with an internal structure and command language of its own.
 

@@ -16,7 +16,7 @@ As a result I didn't set the correct time, instead, I set a cooking timer... and
 
 {{ <figure page={page} src="kitchen.svg" /> }}
 
-## Let's add a clock to the microwave!
+## Let's Add a Clock to the Microwave!
 
 On occasions like these, I wonder why there's a digital clock on every single household device these days.
 They're integrated into microwaves, fridges, ovens, dishwashers, dryers, mixers &mdash; and that's just the kitchen!
@@ -44,7 +44,7 @@ That's why I constantly need to look after those clocks.
 Let me tell you a secret:
 When I'm not warming stuff in the oven, I don't want it to tell me the local time. I want the stove to be _off_.
 
-## Why I have trouble setting the clock on our oven
+## Why I Have Trouble Setting the Clock on Our Oven
 
 Our oven has three buttons related to time: plus, minus and a clock symbol.
 To set the time, you push the clock symbol. An arrow appears and the display changes to 00:00. You press time again and another arrow appears.

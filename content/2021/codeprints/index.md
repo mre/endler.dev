@@ -1,5 +1,5 @@
 +++
-title="Starting A Print-On-Demand Business As A Software Engineer"
+title="Starting a Print-on-Demand Business as a Software Engineer"
 date=2021-01-22
 [taxonomies]
 tags=["business"]
@@ -15,7 +15,7 @@ It's my first "physical" product, so I decided to share my learnings.
 of our first customers and we are very thankful for this tweet promoting our
 service, which gave us a huge traffic boost." link="https://twitter.com/KrauseFx/status/1348546742644580353" /> }}
 
-## Launching Is Hard, So Launch Early
+## Launching Is Hard, so Launch Early
 
 Even though I knew that launching early was vital, I still didn't want to
 "commit" to the final design shortly before the planned go-live. There was always that last bug to fix or that little extra feature to implement.
@@ -111,7 +111,7 @@ You'll have to say "no" more often than you can say "yes".
 entirely built remotely. More people should give [whereby](https://whereby.com/)
 a try." /> }}
 
-## Getting Traction As A Small Business
+## Getting Traction as a Small Business
 
 It has never been easier to launch a shop. Services like Shopify, Stripe, and a
 host of suppliers make starting out a breeze. On the other hand, there is a lot
@@ -133,7 +133,7 @@ hang out there that much.
 **Lesson learned:** Always know where your customers are and understand their needs.
 {% </info> %}
 
-## Finding A Niche Is Only Half The Job
+## Finding a Niche Is Only Half the Job
 
 [Common market wisdom](https://www.reddit.com/r/startups/comments/53fynp/niche_market_and_peter_thiels_monopoly_theory/) is to find niche and grow from within. With codeprints we definitely found our niche: the audience is very
 narrow but interested in our geeky products. There are 56 million developers on

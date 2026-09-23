@@ -1,5 +1,5 @@
 +++
-title="GitHub Was Never About the Source Code"
+title="GitHub Was Never about the Source Code"
 date=2026-08-17
 draft=false
 +++

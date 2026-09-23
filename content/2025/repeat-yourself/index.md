@@ -25,7 +25,7 @@ Another reason why we avoid repetition is that it makes us feel clever.
 Both reasons are misguided.
 There are many benefits of repeating yourself that might get us closer to our goals in the long run.
 
-## Keeping Up The Momentum
+## Keeping Up the Momentum
 
 When you're writing code, you want to keep the momentum going to get into a flow state.
 If you constantly pause to design the perfect abstraction, it's easy to lose momentum.
@@ -47,7 +47,7 @@ Don't try to do both at the same time.[^1]
 This way, I get the best of both worlds: a quick feedback loop which doesn't block my creativity, and a final product which is more polished and well-structured.
 Of course, I did not invent this approach. I recommend reading "Shitty first drafts" from Anne Lamott's book [Bird by Bird: Instructions on Writing and Life](https://canongate.co.uk/books/3055-bird-by-bird-instructions-on-writing-and-life/) if you want to learn more about this technique. 
 
-## Finding The Right Abstraction Is Hard
+## Finding the Right Abstraction Is Hard
 
 When you start to write code, you don't know the right abstraction just yet.
 But if you copy code, the right abstraction reveals itself; it's too tedious to copy the same code over and over again, at which point you start to look for ways to abstract it away.
@@ -62,7 +62,7 @@ Some typical symptoms include:
 - The abstraction is only used in one or two places
 - Tight coupling to implementation details
 
-## It's Hard To Get Rid Of Wrong Abstractions 
+## It's Hard to Get Rid of Wrong Abstractions
 
 We easily settle for the first abstraction that comes to mind, but most often, it's not the right one.
 And removing the *wrong* abstraction is hard work, because now the data flow depends on it.
@@ -102,7 +102,7 @@ An expert programmer might be able to keep a few levels of abstraction in their 
 When you copy code, you can keep all the logic in one place.
 You can just read the whole thing and understand what it does.
 
-## Resist The Urge Of Premature Abstraction 
+## Resist the Urge of Premature Abstraction
 
 Sometimes, code *looks* similar but serves different purposes.
 
@@ -196,7 +196,7 @@ Often you'll find a better abstraction that fits the problem better.
   <p>—Sandi Metz, <cite><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">The Wrong Abstraction</a></cite></p>
 </div>
 
-## tl;dr
+## TL;DR
 
 It's fine to look for the right abstraction, but don't obsess over it.
 Don't be afraid to copy code when it helps you keep momentum and find the right abstraction.

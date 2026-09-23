@@ -1,5 +1,5 @@
 +++
-title="Go is Simple"
+title="Go Is Simple"
 date=2020-05-29
 draft=true
 +++
@@ -241,7 +241,7 @@ In 99% of the cases, you don't **need** enums so it's better to omit that keywor
 
 Here's something real that I have to do from time to time:
 
-## Finding the unique elements in a slice
+## Finding the Unique Elements in a Slice
 
 ```go
 import "fmt"
@@ -326,7 +326,7 @@ print(google_search_nightmares)
 Oh shut up Python! You share your name with an animal; that won't make searching any easier.
 Oh, it's about the `intersection()` method? Yeah we can totally add that, too in Go.
 We just have to write a few more lines of code.
-And while we're add it we can add `union()` and `member()` and `difference()`, too!
+And while we're at it we can add `union()` and `member()` and `difference()`, too!
 Golang is the only mainstream language that teaches you how to implement basic datastructures yourself.
 
 Wait a sec. Nobody does that in real life. That's what libraries are for!

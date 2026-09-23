@@ -29,7 +29,7 @@ These folks are a small subset of the population, but they have some traits that
 - They hold strong opinions on what works and what doesn't, backed by solid evidence
 - They don't care about investors, quarterly earnings reports, or politics - they purely focus on the technology's value
 
-## Catalysts For Success And Red Flags
+## Catalysts for Success and Red Flags
 
 Of course, not every hyped technology makes it big.
 Remember NFTs or Web3?
@@ -80,7 +80,7 @@ That's why I tell founders to stay slightly conservative when adopting new tech.
 The industry needs time to catch up, and big companies need specialized tools to integrate new tech into their existing systems.
 On the other side, investing early in promising technologies is a calculated risk because the writing is on the wall.
 
-## What Can You Learn From This?
+## What Can You Learn from This?
 
 Hackers are already living in the future.
 You can use that to your advantage.

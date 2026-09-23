@@ -1,5 +1,5 @@
 +++
-title="Afraid of Makefiles? Don't be!"
+title="Afraid of Makefiles? Don't Be!"
 date=2017-08-15
 updated=2022-03-01
 [taxonomies]
@@ -38,7 +38,7 @@ Along the way, they keep making the same basic mistakes:
 
 These are issues Makefiles were invented to solve.
 
-## Makefiles are scary!
+## Makefiles Are Scary!
 
 If you think that `make` is scary, you probably think of complicated build machinery for [big](https://community.kde.org/Guidelines_and_HOWTOs/Build_from_source) [software](https://chromium.googlesource.com/chromium/src/+/master/docs/linux/build_instructions.md) projects.
 It doesn't need to be that way. Let's hear from the author of `make`, [Stuart Feldman](https://en.wikipedia.org/wiki/Stuart_Feldman) himself:
@@ -47,9 +47,9 @@ It doesn't need to be that way. Let's hear from the author of `make`, [Stuart Fe
 >
 > &mdash; [The Art of Unix Programming (2003)](https://nakamotoinstitute.org/static/docs/taoup.pdf)
 
-Make was built in _one weekend_ to solve a reoccuring problem in a simple way.
+Make was built in _one weekend_ to solve a reoccurring problem in a simple way.
 
-## Makefiles are simple!
+## Makefiles Are Simple!
 
 Before I leave the house, I need to get dressed.
 I use the same simple routine every time:
@@ -100,7 +100,7 @@ Putting on jacket.
 All done. Let's go outside!
 ```
 
-## What just happened?
+## What Just Happened?
 
 Noticed how the steps are in the correct order?
 By plainly writing down the dependencies between the steps, `make` helps us to execute them correctly.
@@ -130,7 +130,7 @@ target: [dependencies]
 
 Congratulations! You've learned 90% of what you need to know about `make`.
 
-## Next steps
+## Next Steps
 
 Real `Makefiles` can do much more! They will [only build the files that have changed](https://stackoverflow.com/a/3798609/270334) instead of doing a full rebuild.
 And they will do [as much as possible in parallel](https://stackoverflow.com/a/3841803/270334).

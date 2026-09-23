@@ -22,7 +22,7 @@ The idea was to avoid file handling in unit tests without mocking or using tempo
 I was surprised that I couldn't find a simple explanation on sites like StackOverflow,
 which is why I wrote down some notes myself so that others can refer to it in the future.
 
-## Our example code
+## Our Example Code
 
 The initial version looked like this:
 
@@ -58,7 +58,7 @@ func analyze(file string) error {
 
 As you can see, we take a filename as input, and we open that file inside the `analyze` function to do something with its contents.
 
-## Writing our first test for the code
+## Writing Our First Test for the Code
 
 A typical test harness for that code might look like this:
 
@@ -98,7 +98,7 @@ In my opinion, mocking should be the last resort when it comes to testing. Befor
 Maybe implementing against an interface or using Dependency Injection helps decouple components?
 More often than not, a clear separation of concerns is all you need.
 
-## Refactoring to make testing easier
+## Refactoring to Make Testing Easier
 
 In my case above, we can easily avoid using mocks and temporary files by decoupling file I/O from the analysis.
 We do so by refactoring our `analyze` function to call `doSomething`, which takes an [`io.Reader`](https://golang.org/pkg/io/#Reader).

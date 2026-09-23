@@ -83,7 +83,7 @@ cat myfile | pv -r > /dev/null
 
 Uh oh, [GNU cat](https://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=blob;f=src/cat.c;h=3c319511c767f65d2e420b3bff8fa6197ddbb37b;hb=HEAD) is **ten times faster** than our little Ruby cat. 💎🐈🐌
 
-## Making our Ruby cat a little faster
+## Making Our Ruby cat a Little Faster
 
 Our naive Ruby code can be tweaked a bit.
 Turns out line buffering hurts performance in the end<sup><a href="#fn1" id="ref1">1</a></sup>:
@@ -244,7 +244,7 @@ fcat myfile | pv -r > /dev/null
 
 Holy guacamole. That's **over three times as fast as system cat**.
 
-## Operating System support
+## Operating System Support
 
 - **Linux** and **Android** are fully supported.
 - **[OpenBSD](https://stackoverflow.com/questions/12230316/do-other-operating-systems-implement-the-linux-system-call-splice?lq=1)**
@@ -265,7 +265,7 @@ Nevertheless, in a production-grade
 implementation, the splice support could be activated on systems that support
 it, while using a generic implementation as a fallback.
 
-## Nice, but why on earth would I want that?
+## Nice, but Why on Earth Would I Want That?
 
 I have no idea. Probably you don't, because your bottleneck is somewhere else.
 That said, many people use `cat` for piping data into another process like
@@ -287,7 +287,7 @@ In this case, if you notice that `cat` is the bottleneck try `fcat` (but first,
 With some more work, `fcat` could also be used to directly route packets from one
 network card to another, [similar to netcat](https://nc110.sourceforge.io/).
 
-## Lessons learned
+## Lessons Learned
 
 - The closer we get to bare metal, the more our hard-won abstractions fall
   apart, and we are back to low-level systems programming.

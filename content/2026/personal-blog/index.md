@@ -1,5 +1,5 @@
 +++
-title="Now's The Time To Start That Blog"
+title="Now's the Time to Start That Blog"
 date=2026-01-26
 draft=false
 [taxonomies]

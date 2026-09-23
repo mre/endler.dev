@@ -131,7 +131,7 @@ for lang in ["Ruby", "Rust", "Python", "Cobol"].iter() {
 
 </a>
 
-## Select and filter
+## Select and Filter
 
 Let's say you want to extract only even numbers from a collection in Ruby.
 
@@ -280,7 +280,7 @@ The `filter_map` is similar to the `select` method in Ruby:
 [1, 2, 3, 4, 5].select { |element| element.even? }
 ```
 
-## Random numbers
+## Random Numbers
 
 Here's how to get a random number from an array in Ruby:
 
@@ -351,7 +351,7 @@ With that, we arrive at a solution that rivals Ruby's elegance.
 
 </a>
 
-## Implicit returns and expressions
+## Implicit Returns and Expressions
 
 Ruby methods automatically return the result of the last statement.
 
@@ -510,7 +510,7 @@ To quote _[The Book](https://doc.rust-lang.org/book/second-edition/ch18-03-patte
 
 > This prints `no` since the if condition applies to the whole pattern `4 | 5 | 6`, not only to the last value 6.
 
-## String interpolation
+## String Interpolation
 
 Ruby has [extensive string interpolation support](https://ruby-doc.org/docs/ruby-doc-bundle/ProgrammingRuby/book/ref_m_kernel.html#Kernel.sprintf).
 
@@ -546,7 +546,7 @@ println!("{language} is also a beautiful programming language", language="Rust")
 
 Rust's `println!()` syntax is even more extensive than Ruby's. [Check the docs](https://doc.rust-lang.org/std/fmt/) if you're curious about what else you can do.
 
-## That’s it!
+## That’s It!
 
 Ruby comes with syntactic sugar for many common usage patterns, which allows for very elegant code.
 Low-level programming and raw performance are no primary goals of the language.
@@ -560,4 +560,4 @@ Did I whet your appetite for idiomatic Rust? Have a look at [this Github project
 
 <sup id="fn1">1. Thanks to <a href="https://twitter.com/Argorak">Florian Gilcher</a> for the hint.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>  
 <sup id="fn2">2. Thanks to <a href="https://www.reddit.com/user/masklinn">masklin</a> for pointing out multiple inaccuracies.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>  
-<sup id="fn3">3. In the first version, I sait that `ok()` would convert a `Result` into a `boolean`, which was wrong. Thanks to <a href="https://news.ycombinator.com/item?id=16003080">isaacg</a> for the correction.<a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup>
+<sup id="fn3">3. In the first version, I said that `ok()` would convert a `Result` into a `boolean`, which was wrong. Thanks to <a href="https://news.ycombinator.com/item?id=16003080">isaacg</a> for the correction.<a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup>

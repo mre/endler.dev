@@ -26,11 +26,11 @@ I mean, everyone has a solid grasp on how it works, right?
 
 Exactly one second passes.
 
-## Did exactly one second pass!?
+## Did Exactly One Second Pass!?
 
 Probably? I don't care.
 
-## Why should I care?
+## Why Should I Care?
 
 If you write a shell script then you probably shouldn't care!
 Unless your program depends on precise timing.
@@ -73,7 +73,7 @@ Uh oh.
 If you say that this is ridiculous because no one should be depending on such accurate timings in a shell script, **you're correct**!
 Let's just say it's fun to test the limits okay?
 
-## How long does sleep 1 take?
+## How Long Does sleep 1 Take?
 
 ```sh
 time sleep 1
@@ -82,7 +82,7 @@ sleep 1  0.00s user 0.00s system 0% cpu 1.007 total
 
 Hold on! So both the user time _and_ the system time is 0, but the total time is 1.007 seconds!?
 
-[Here's refresher on the the output](https://stackoverflow.com/a/556411/270334):
+[Here's refresher on the output](https://stackoverflow.com/a/556411/270334):
 
 - User is the amount of CPU time spent in user-mode code (outside the kernel)
 - System is the amount of CPU time spent in the kernel
@@ -101,8 +101,8 @@ ps ax -p 39829 | grep sleep                       ✘
 39829 s011  S      0:00.00 sleep 1000
 ```
 
-## How does it work?
+## How Does It Work?
 
-## How does it really work?
+## How Does It Really Work?
 
-## How does it really really work?
+## How Does It Really Really Work?

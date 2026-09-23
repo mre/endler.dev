@@ -92,7 +92,7 @@ For a newsletter I send irregularly, that's nothing.
 
 {{ <figure page={page} src="plunk-dashboard.jpg" caption="The Plunk dashboard, showing the campaign overview and deliverability report. As you can see, I don't track who opens my emails." credits="[Plunk](https://www.useplunk.com/)" /> }}
 
-## This Feels Like Home!
+## This Feels like Home!
 
 I realized I could write issues as plain markdown files in a folder, version-controlled, with a small CLI for everything else.
 That's where I feel at home.

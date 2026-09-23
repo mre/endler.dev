@@ -1,5 +1,5 @@
 +++
-title="What Is Rust Doing Behind the Curtains?"
+title="What Is Rust Doing behind the Curtains?"
 date=2018-12-02
 [taxonomies]
 tags=["dev", "rust"]
@@ -49,7 +49,7 @@ Motivated by this quick win, I wrapped it up in a cargo subcommand and called it
 
 Let's try cargo-inspect on some real code!
 
-## Example - Desugaring a range expression
+## Example - Desugaring a Range Expression
 
 The following examples can also be found in the project's [`examples`](https://github.com/mre/cargo-inspect/tree/master/examples) folder.
 
@@ -83,7 +83,7 @@ To the compiler backend, these are absolutely the same. So this holds:
 assert_eq!((1..3), std::ops::Range { start: 1, end: 3 });
 ```
 
-## Example - File handling
+## Example - File Handling
 
 _Input:_
 
@@ -128,7 +128,7 @@ fn main() -> Result<(), Error> {
 }
 ```
 
-We can see that the carrier operator `?` gets desugared into a `match` on the `Result` of `File::open`. In case of an error, We apply `std::convert::From::from` to convert between error types. Otherwise, we simply return the `Ok` value.
+We can see that the carrier operator `?` gets desugared into a `match` on the `Result` of `File::open`. In case of an error, we apply `std::convert::From::from` to convert between error types. Otherwise, we simply return the `Ok` value.
 
 ## Talk
 
@@ -137,14 +137,14 @@ Here is the recording:
 
 {{ <video url="https://www.youtube.com/embed/ePiWBGh35q0" preview="/talks/2019-fosdem.jpg" /> }}
 
-## Future work
+## Future Work
 
 I'm not planning to rewrite the compiler here. `rustc` is doing a far greater job than I could. All this functionality already existed before; I'm merely trying to make the compiler more approachable for learners like me.
 
 Right now, the tool is quite fragile. It throws ugly error messages when things go wrong.
 It mostly shines, when you run it on small, isolated example snippets.
 
-## Get involved!
+## Get Involved!
 
 Over on Github, I opened up a few issues for others to get involved.
 Namely, I wish there were options to:

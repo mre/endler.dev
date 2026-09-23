@@ -1,5 +1,5 @@
 +++
-title="Building Up And Sanding Down"
+title="Building Up and Sanding Down"
 date=2025-10-31
 draft=false
 [taxonomies]

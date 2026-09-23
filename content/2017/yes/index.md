@@ -1,5 +1,5 @@
 +++
-title="A Little Story About the `yes` Unix Command"
+title="A Little Story about the `yes` Unix Command"
 date=2017-10-10
 updated=2021-04-29
 [taxonomies]
@@ -222,11 +222,11 @@ Now that's a whole different ballgame!
 
 - We prepare a filled string buffer, which will be reused for each loop.
 - [Stdout is protected by a lock](https://doc.rust-lang.org/std/io/struct.Stdout.html#method.lock). So, instead of constantly acquiring and releasing it, we keep it all the time.
-- We use a the platform-native [`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html) and [`std::borrow::Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html) to avoid unnecessary allocations.
+- We use the platform-native [`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html) and [`std::borrow::Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html) to avoid unnecessary allocations.
 
 The only thing that I could contribute was [removing an unnecessary `mut`](https://github.com/cgati/yes/pull/3/files). 😅
 
-## Lessons learned
+## Lessons Learned
 
 The trivial program `yes` turns out not to be so trivial after all.
 It uses output buffering and memory alignment to improve performance.

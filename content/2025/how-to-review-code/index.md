@@ -1,5 +1,5 @@
 +++
-title="How To Review Code"
+title="How to Review Code"
 date=2025-08-06
 draft=false
 [taxonomies]
@@ -17,7 +17,7 @@ It's what I get paid to do, alongside systems design.
 Over time, I learned a thing or two about how to review code effectively.
 I focus on different things now than when I started.
 
-## Think About The Big Picture
+## Think about the Big Picture
 
 Bad reviews are narrow in scope.
 They focus on syntax, style, and minor issues instead of maintainability and extensibility. 
@@ -124,7 +124,7 @@ fn update_player_stats(player: Player, bonus_points: i32, level_up: bool) -> Pla
 Good names become even more critical in larger codebases where values are declared far away from where they're used 
 and where many developers have to have a shared understanding of the problem domain.
 
-## Don't Be Afraid To Say "No"
+## Don't Be Afraid to Say "No"
 
 I have to decline changes all the time and it's never easy.
 After all someone put in a lot of effort and they want to see their work accepted.
@@ -168,7 +168,7 @@ This way, you can learn from each other's communication style.
 Building trust and getting to know each other works well this way.
 You should repeat that process later if you notice a communication breakdown or misunderstanding.
 
-## Use Multiple Iterations Of Reviews 
+## Use Multiple Iterations of Reviews
 
 "Can you take a quick look at this PR? I want to merge it today."
 There often is an expectation that code reviews are a one-time thing.
@@ -191,7 +191,7 @@ These are invaluable "aha moments" that help you grow as a developer.
 Experts spent their valuable time reviewing *my* code, and I learned a lot from it.
 I think everybody should experience that once in their career.
 
-## Don't Be A Jerk
+## Don't Be a Jerk
 
 From time to time, you'll disagree with the author.
 Being respectful and constructive is important.
@@ -216,7 +216,7 @@ Only add comments that you yourself would be happy to receive.
 From time to time, I like to add positive comments like "I like this" or "this is a great idea."
 Keeping the author motivated and showing that you appreciate their work goes a long way.
 
-## If Possible, Try To Run The Code
+## If Possible, Try to Run the Code
 
 It's easy to miss subtle details when you look at code for too long. 
 Having a local copy of the code that I can play with helps me a lot.
@@ -229,7 +229,7 @@ User-facing changes like UI changes or error messages are often easier to spot w
 After that, I revert the changes and, if needed, write down my findings in a comment.
 Better understanding can come from this approach.
 
-## Be Upfront About Your Availability 
+## Be Upfront about Your Availability
 
 Code reviews are often a bottleneck in the development process, because they can't be fully automated:
 there's a human in the loop who has to look at the code and provide feedback.
@@ -259,7 +259,7 @@ Focus on logic, design, maintainability, and correctness. Avoid subjective prefe
 
 Ask yourself: Does this affect functionality or would it confuse future developers? If not, let it go.
 
-## Focus On The Why, Not The How
+## Focus on the Why, Not the How
 
 When reviewing code, focus on the reasoning behind the changes.
 This has a much better chance of success than pointing out flaws without any reasoning. 
@@ -278,7 +278,7 @@ Which one would you prefer to receive?
 I realize that this requires more time and effort, but it's worth it!
 Most of the time, the author will appreciate it and avoid making the same mistake in the future. There is a compound effect from helpful reviews over time.
 
-## Don't Be Afraid To Ask Stupid Questions
+## Don't Be Afraid to Ask Stupid Questions
 
 Asking is better than assuming.
 If you don't understand something, ask the author to explain it.
@@ -292,7 +292,7 @@ Perhaps there's missing documentation?
 
 [Asking great questions is a superpower.](/2024/asking-better-questions/)
 
-## Ask For Feedback On Your Reviewing Style
+## Ask for Feedback on Your Reviewing Style
 
 From time to time, ask the author for feedback on your feedback: 
 

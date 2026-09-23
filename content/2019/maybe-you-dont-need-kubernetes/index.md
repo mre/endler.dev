@@ -68,7 +68,7 @@ required:
 - Have a common place to share configurations and secrets.
 - Provide an endpoint for metrics and logging.
 
-## Why Kubernetes Was Not A Good Fit For Us
+## Why Kubernetes Was Not a Good Fit for Us
 
 When creating a prototype with Kubernetes, we noticed that we started adding
 ever-more complex layers of logic to operate our services. Logic on which we
@@ -91,7 +91,7 @@ goes on and on. Not all tools are necessary to get started with Kubernetes, but
 it’s hard to know which ones are, so you have to be at least aware of them.
 Because of that, the learning curve is quite steep.
 
-## When To Use Kubernetes
+## When to Use Kubernetes
 
 At trivago specifically, many teams use Kubernetes and are quite happy with it.
 These instances are managed by Google or Amazon however, which have the capacity to do so.
@@ -136,7 +136,7 @@ vendor lock-in because the functionality it provides can easily be integrated
 into any other system that manages services. It just runs as a plain old single
 binary on every machine in your cluster; that's it!
 
-## The Nomad Ecosystem Of Loosely Coupled Components
+## The Nomad Ecosystem of Loosely Coupled Components
 
 The real power of Nomad lies within its ecosystem. It integrates very well with
 other - completely optional - products like [Consul] (a key-value store) or

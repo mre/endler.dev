@@ -1,5 +1,5 @@
 +++
-title="A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly"
+title="A Tiny, Static, Full-Text Search Engine Using Rust and WebAssembly"
 date=2019-10-17
 updated=2022-02-15
 [taxonomies]
@@ -68,7 +68,7 @@ creates a tiny, self-contained search index using this magical data structure
 called a
 ✨*Bloom Filter* ✨.
 
-## Wait, what's a Bloom Filter?
+## Wait, What's a Bloom Filter?
 
 A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a space-efficient way to
 check if an element is in a set.
@@ -152,7 +152,7 @@ clue how to package it for the web... until [wasm-pack came along in
 February
 2018](https://github.com/rustwasm/wasm-pack/commit/125431f97eecb6f3ca5122f8b345ba5b7eee94c7).
 
-## Whoops! I Shipped Some Rust Code To Your Browser.
+## Whoops! I Shipped Some Rust Code to Your Browser.
 
 Now I had all the pieces of the puzzle:
 
@@ -405,7 +405,7 @@ If you get something working for your static site generator, [please let me know
   website, check out [sonic](https://journal.valeriansaliou.name/announcing-sonic-a-super-light-alternative-to-elasticsearch/).
   Also check out [stork](https://github.com/jameslittle230/stork) as an alternative.
 
-## Try it!
+## Try It!
 
 The code for [tinysearch is on Github](https://github.com/mre/tinysearch).
 

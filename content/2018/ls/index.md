@@ -18,7 +18,7 @@ As we will find out, `ls` is actually quite a powerful tool under the hood.
 I'm not going to come up with a full rewrite, but instead only cover the very basic output that you would expect from calling `ls -l` on your command line.
 What is this output? I'm glad you asked.
 
-## Expected output
+## Expected Output
 
 ```
 > ls -l
@@ -44,7 +44,7 @@ For more in-depth information, I can recommend reading the manpage of `ls` from 
 Whew, that's a lot of information for such a tiny tool.
 But then again, it can't be so hard to port that to Rust, right? Let's get started!
 
-## A very basic `ls` in Rust
+## A Very Basic `ls` in Rust
 
 Here is the most bare-bones version of `ls`, which just prints all files in the current directory:
 
@@ -95,7 +95,7 @@ _Pro Tip_: You can install the binary with `cargo install` and call it like any 
 
 But we have higher goals, so let's continue.
 
-## Adding a parameter to specify the directory
+## Adding a Parameter to Specify the Directory
 
 Usually, if we type `ls mydir`, we expect to get the file listing of no other directory than `mydir`. We should add the same functionality to our version.
 
@@ -142,7 +142,7 @@ There are tons of configuration options, so it's worth checking out the [project
 
 Also note, that we changed the type of the path variable from `Path` to `PathBuf`. The difference is, that [`PathBuf` owns the inner path string](https://doc.rust-lang.org/src/std/path.rs.html#1107-1109), while `Path` [simply provides a reference to it](https://doc.rust-lang.org/src/std/path.rs.html#1629-1631). The relationship is similar to `String` and `&str`.
 
-## Reading the modification time
+## Reading the Modification Time
 
 Now let's deal with the metadata.
 First, we try to retrieve the modification time from the file.
@@ -222,7 +222,7 @@ It means "right align this field with a space padding of 5" - just like our bigg
 
 Similarly, we retrieved the size in bytes with `metadata.len()`.
 
-## Unix file permissions are a zoo
+## Unix File Permissions Are a Zoo
 
 Reading the file permissions is a bit more tricky.
 While the `rwx` notation is very common in Unix derivatives such as \*BSD or GNU/Linux, many other operating systems ship their own permission management.
@@ -236,7 +236,7 @@ Wikipedia lists a few extensions to the file permissions that you might encounte
 
 That just goes to show, that there are a lot of important details to be considered when implementing this in real life.
 
-## Implementing very basic file mode
+## Implementing Very Basic File Mode
 
 For now, we just stick to the basics and assume we are on a platform that supports the `rwx` file mode.
 
@@ -313,7 +313,7 @@ fn triplet(mode: u16, read: u16, write: u16, execute: u16) -> String {
 }
 ```
 
-## Wrapping up
+## Wrapping Up
 
 The final output looks like this. Close enough.
 

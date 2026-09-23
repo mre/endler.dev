@@ -56,7 +56,7 @@ It's just that the execution should be deliberate.
 Don't wreak havoc along the way.
 Because the time to fix what you might break rarely comes.
 
-## VCs are Not Your Friends
+## VCs Are Not Your Friends
 
 In ["Why to Not Not Start a Startup"](https://paulgraham.com/notnot.html), Paul Graham writes:
 

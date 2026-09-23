@@ -17,7 +17,7 @@ I went and read the source of the recursive checkers we list in [lychee's README
 
 If you haven't read the [first post](@/2026/lychee-recursion/index.md), the summary is that lychee was architected as a one-shot, unidirectional pipeline (`inputs → extract → check → output`). Recursion needs a *cycle* (responses create new inputs), and cycles in an async, channel-based pipeline are where the [dragons live](@/2026/lychee-recursion/index.md). 🐲 Five years and four attempts later, the pieces we'll need to do it properly only *just* landed.
 
-## DAGs vs. cycles 
+## DAGs vs. Cycles
 
 Every recursive checker I looked at is built from the same three parts:
  
@@ -65,7 +65,7 @@ Note that the visited check happens in the **enqueue** step, atomically with the
 
 Each tool uses a variation on it.
 
-## muffet (Go): a WaitGroup and a Set
+## muffet (Go): A WaitGroup and a Set
 
 [muffet](https://github.com/raviqqe/muffet) is closest in spirit to lychee: a fast, single-binary, concurrent website checker. 
 The dedup + scheduling decision lives in one method (`page_checker.go`):
@@ -93,7 +93,7 @@ go func(u string) {
 }(u)
 ```
 
-### How muffet knows it's done
+### How muffet Knows It's Done
 
 muffet's answer to termination is a little `daemonManager` built around a `sync.WaitGroup` (`daemon_manager.go`):
 
@@ -120,7 +120,7 @@ Every scheduled page increments the group; every completed page decrements it; `
 
 This is the *same counter* I tried (and failed with) in [Attempt 1](@/2026/lychee-recursion/index.md) and [Attempt 4](@/2026/lychee-recursion/index.md). The difference is the invariant: `waitGroup.Add(1)` is only ever called from inside an already-running daemon that holds the count above zero (or from the bootstrap). There is no window where the counter briefly reads zero while work is still pending. Go's `WaitGroup` enforces this invariant so naturally that it doesn't feel like distributed termination detection at all, but that's exactly what it is. It's the moral equivalent of the `WaitGroup` primitive [Kait contributed to lychee in 2026](https://github.com/lycheeverse/lychee/pull/2046).
 
-### Where the tradeoffs are
+### Where the Tradeoffs Are
 
 - Concurrency isn't bounded by the daemon manager. `Run()` does `go f()` for every task, spawning unbounded goroutines. The actual limiting happens downstream in a `semaphore` (a buffered-channel counting semaphore) and a per-host throttler pool. muffet *separates* "the frontier" from "the rate limiter," which is exactly the separation lychee lacked when it tried to use one bounded channel as both in the past.
 - Cheap goroutines do a lot of heavy lifting. Spawning a goroutine per link is "fine" in Go. The equivalent in Rust (`tokio::spawn` per link, each needing `Send + 'static` state) is what pushed me toward `Arc<RwLock<…>>` and the ownership pain I [wrote about](@/2026/lychee-recursion/index.md#attempt-3-semaphores-february-2022).
@@ -135,7 +135,7 @@ This is the *same counter* I tried (and failed with) in [Attempt 1](@/2026/lyche
 
 {% </info> %}
 
-## LinkChecker (Python): a joinable unbounded queue 
+## LinkChecker (Python): A Joinable Unbounded Queue
 
 [LinkChecker](https://github.com/linkchecker/linkchecker) has existed since the year 2000. It's a synchronous, thread-pool crawler.
 
@@ -158,7 +158,7 @@ LinkChecker's answer is brutalist in nature: the frontier is **unbounded**.
 Backpressure is enforced elsewhere (a fixed thread count and per-host throttling), never by blocking a producer that is also a consumer.
 
 
-### Termination by counter, done right
+### Termination by Counter, Done Right
 
 `join()` blocks until `unfinished_tasks` hits zero (`urlqueue.py`):
 
@@ -179,7 +179,7 @@ def join(self, timeout=None):
 
 Again: a counter. But the increment in `_put` and the decrement in `task_done` are both inside the queue's `Condition` lock, and a worker calls `task_done` only after fully processing an item *including enqueuing its children*. So children are counted before the parent is marked done, with no premature zero. It's `WaitGroup` semantics implemented with a mutex and a condition variable.
 
-### Deduplication, before the request
+### Deduplication, before the Request
 
 LinkChecker writes the URL into its result cache at **enqueue** time (`urlqueue.py`):
 
@@ -198,7 +198,7 @@ def _put(self, url_data):
 
 That `add_result(key, None)` sentinel is a "fix" that's missing in lychee's attempts. By the time any worker thread checks the URL, the cache already says "mine," so concurrent discovery from another page is a no-op.
 
-### Per-host politeness and termination guards
+### Per-Host Politeness and Termination Guards
 
 The `Aggregate` (`director/aggregator.py`) throttles per host:
 
@@ -215,7 +215,7 @@ def wait_for_host(self, host):
 
 and `abort()` calls `urlqueue.join(timeout=…)` so a stuck crawl can't hang forever.
 
-### Where the tradeoffs are
+### Where the Tradeoffs Are
 
 - Blocking threads instead of async. Each of the (default 10–100) `Checker` threads does blocking I/O via `requests`. Simple and battle-tested, but the concurrency ceiling is the thread count, and each thread carries a full stack. lychee's Tokio model reaches thousands of concurrent in-flight requests on a handful of OS threads; LinkChecker can't, and doesn't try.
 - The unbounded frontier trades a deadlock for unbounded memory. The explicit "no max size" decision means RAM growth on huge sites. There's a `max_allowed_urls` cap and a periodic `cleanup()` to mitigate it.
@@ -245,7 +245,7 @@ await queue.onIdle();
 
 `onIdle()` is the library's termination detection: it resolves when the queue is empty *and* no task is in flight. Same idea as muffet's `WaitGroup` and LinkChecker's `join()`, just expressed as a promise and backed by a single-threaded runtime, so no Mutex is needed to protect the visited set.
 
-### The back-edge and the race-free dedup
+### The Back-Edge and the Race-Free Dedup
 
 When crawling, `crawl()` GETs the page, extracts links, and for each new URL re-enters the queue (`src/index.ts`):
 
@@ -289,7 +289,7 @@ response = await makeRequest(
 
 This is precisely [lychee's remaining open problem](@/2026/lychee-recursion/index.md#what-proper-recursion-could-look-like): you can only recurse into pages you fetched with a body. linkinator just always GETs when crawling; lychee plans to reuse the body it already has in cache from the check it just performed.
 
-### Where the tradeoffs are
+### Where the Tradeoffs Are
 
 - Single-threaded is both a blessing and a ceiling. No data races, trivially correct dedup, but HTML parsing is CPU work that blocks the one event loop. For thousands of pages, you're bound by a single core. lychee's multi-threaded runtime parses and checks in parallel.
 - It suffers from in-memory result inflation. The source explicitly comments on "massive result inflation for heavily interlinked sites": the `results` array, `cache`, and `relationshipCache` all grow with the crawl. Fine for a docs site, heavy for a giant one.
@@ -304,7 +304,7 @@ This is precisely [lychee's remaining open problem](@/2026/lychee-recursion/inde
 
 {% </info> %}
 
-## broken-link-checker (JavaScript): event-driven, using two queues
+## broken-link-checker (JavaScript): Event-Driven, Using Two Queues
 
 [broken-link-checker](https://github.com/stevenvachon/broken-link-checker) (BLC) takes the event-driven model furthest. It's built on [`limited-request-queue`](https://github.com/stevenvachon/limited-request-queue), a queue with `maxSockets` (concurrency) and `rateLimit`, and it nests **two** of them: a site-level queue feeding a page-level `HtmlUrlChecker`.
 
@@ -339,7 +339,7 @@ Recursion is governed by a filter that decides whether a discovered link becomes
 }
 ```
 
-### Termination by event cascade
+### Termination by Event Cascade
 
 BLC has no counter and no `onIdle()`. It rides the queue's drain events. When the page-level queue empties it fires `END_EVENT`, which makes `SiteChecker` emit `SITE_EVENT` and call the site queue's `done` callback; when the *site* queue drains, it fires `REQUEST_QUEUE_END_EVENT`. That's the public `END_EVENT`:
 
@@ -354,7 +354,7 @@ That's their termination detection, expressed as "the request queue reported emp
 
 And in classic Node.js fashion, the `done` callback is what actually tells the site queue to free up a slot for another site. So the termination of one site is what allows another to start, and the termination of the whole crawl is what allows the process to exit. It's a cascade of events that propagates from the page queue to the site queue to the process.
 
-### Where the tradeoffs are
+### Where the Tradeoffs Are
 
 - It's the best web citizen of the bunch. robots.txt is honored (`getRobotsTxt`, `isAllowed`), `rel=nofollow` is respected, and `rateLimit` plus `maxSockets` are first-class. This is a crawler that's polite by default.
 - Event cascades are powerful but fiddly. Termination is spread across half a dozen event handlers and two nested queues. It works, but the control flow is much harder to follow than `await queue.onIdle()`. This is the JS cousin of the "leaky abstraction" problem I described, where recursion-awareness ends up sprinkled across many handlers.
@@ -369,13 +369,13 @@ And in classic Node.js fashion, the `done` callback is what actually tells the s
 
 {% </info> %}
 
-## A note on markdown-link-check and the "industrial" crawlers
+## A Note on markdown-link-check and the "industrial" Crawlers
 
 Our README marks [markdown-link-check](https://github.com/tcort/markdown-link-check) as supporting recursion, but there's some nuance there: it recurses over *Markdown files*, not by spidering a live website. There's no HTTP frontier and no termination problem in the sense above. Worth a mention so the comparison is honest, not worth a teardown.
 
 If you want to see the pattern at full industrial scale, look at [Scrapy](https://www.scrapy.org/) (Python/Twisted) or [Colly](https://github.com/gocolly/colly) (Go). Both use the same approach: a scheduler (frontier) with a pluggable, optionally disk-backed queue, a dupefilter (often a Bloom filter rather than a `HashSet`), a bounded downloader pool, and explicit "engine idle → close spider" termination. They solve exactly the problems lychee struggled with ([distributed termination detection](https://en.wikipedia.org/wiki/Dijkstra%E2%80%93Scholten_algorithm), backpressure, dedup), just with years of dedicated crawler engineering behind them. The takeaway isn't "lychee should be Scrapy": it's that crawling is a well-trodden architecture, and lychee is simply standing on a different one right now.
 
-## Side-by-side
+## Side-by-Side
 
 {% <wide_table> %}
 | Tool | Lang / runtime | Concurrency model | Frontier | "Done?" signal | Dedup point | Per-host limiting |

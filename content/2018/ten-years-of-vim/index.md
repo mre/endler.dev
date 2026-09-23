@@ -50,7 +50,7 @@ This painful process is what Vim tries to make at least bearable. It helps you k
 It does that, by providing you sharp, effective tools to modify text.
 The core of Vim is a language for editing text.
 
-## Vim, The Language
+## Vim, the Language
 
 The Vim commands are not cryptic, you already know them.
 
@@ -71,7 +71,7 @@ That's why, by default, you are in [normal mode](https://en.wikibooks.org/wiki/L
 
 Once you know this, Vim makes a lot more sense, and that's when you start to be productive.
 
-## How My Workflow Changed Over The Years
+## How My Workflow Changed over the Years
 
 When I was a beginner, I was very interested in how people with more Vim experience would use the editor.
 Now that I'm a long-time user, here's my answer: there's no secret sauce.
@@ -115,7 +115,7 @@ Here are a few things I wish I could do better:
 - **Multiple registers for copy and paste**: Right now I only use one register (like a pastebin) for copying text, but Vim supports multiple registers. That's cool if you want to move around more than one thing at the same time. [Let's use more of those!](https://vim.fandom.com/wiki/Copy%2c_cut_and_paste)
 - **Tabs**: I know [how tabs work](https://vim.fandom.com/wiki/Using_tab_pages), but all the typing feels clunky. That's why I never extensively used them. Instead, I mostly use multiple terminal tabs or an IDE with Vim bindings for bigger projects.
 
-## Would I learn Vim again?
+## Would I Learn Vim Again?
 
 That's a tough question to answer.
 

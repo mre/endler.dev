@@ -45,7 +45,7 @@ Just let me send out an invite and whoever wants can show up.
 - You get the idea:
   I just want to send out an invite and get no response from you.
 
-## The nerdy, introvert engineer's solution
+## The Nerdy, Introvert Engineer's Solution
 
 💡 What we definitely need is yet another calendar app which allows us to create events and send out an invite with a link to that event!
 You probably didn't see that coming now, did you?
@@ -58,7 +58,7 @@ That's how I pitched the idea to my buddies last time.
 The answer was: "I don’t know, sounds like a solution in search of a problem."
 But you know what they say: Never ask a starfish for directions.
 
-## Show, don’t tell
+## Show, Don’t Tell
 
 That night I went home and built a website that would create a calendar entry
 from `GET` parameters.
@@ -93,7 +93,7 @@ You can then save that to a file and open it with your calendar app.
 In a sense, it's a "serverless calendar app", haha.
 There is no state on the server, it just generates a calendar event on the fly and returns it.
 
-## How I built it
+## How I Built It
 
 You probably noticed that the URL contains "shuttleapp.rs".
 That's because I'm using [shuttle.rs](https://github.com/shuttle-hq/shuttle) to host the website.
@@ -159,7 +159,7 @@ Hello World!
 Deploying the first version took less than 5 minutes. Neat!
 We're all set for our custom calendar app.
 
-## Writing the app
+## Writing the App
 
 To create the calendar event, I used the [icalendar](https://github.com/hoodie/icalendar-rs) crate (shout out to [hoodie](https://github.com/hoodie) for creating this nice library!). [iCalendar](https://en.wikipedia.org/wiki/ICalendar) is a standard for creating calendar events that is supported by most calendar apps.
 
@@ -181,7 +181,7 @@ let event = Event::new()
 
 Simple enough.
 
-## How to return a file!?
+## How to Return a File!?
 
 Now that we have a calendar event, we need to return it to the user.
 But how do we return it as a file?
@@ -235,7 +235,7 @@ impl IntoResponse for CalendarResponse {
 We just create a new `Response` object and set the `Content-Type` header to the correct MIME type for iCalendar files: `text/calendar`.
 Then we return the response.
 
-## Add date parsing
+## Add Date Parsing
 
 This part is a bit hacky, so feel free to glance over it.
 We need to parse the date and duration from the query string.
@@ -303,7 +303,7 @@ Opening it in the browser creates a new event in the calendar:
 
 And for all the odd people who don't use a terminal to create a calendar event, let's also add a form to the website.
 
-## Add a form
+## Add a Form
 
 ```html
 <form>
@@ -377,7 +377,7 @@ The calendar app is now available at [zerocal.shuttleapp.rs](https://zerocal.shu
 Now I can finally send my friends a link to a calendar event for our next pub crawl.
 They'll surely appreciate it.<sup>yeah<sup>yeah</sup></sup>
 
-## From zero to calendar in 100 lines of Rust
+## From Zero to Calendar in 100 Lines of Rust
 
 Boy it feels good to be writing some plain HTML again.  
 Building little apps never gets old.

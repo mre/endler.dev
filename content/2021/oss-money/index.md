@@ -1,5 +1,5 @@
 +++
-title="So You Want To Earn Money With Open Source"
+title="So You Want to Earn Money with Open Source"
 date=2021-01-04
 [taxonomies]
 tags=["business"]

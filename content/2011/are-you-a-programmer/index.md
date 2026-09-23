@@ -1,5 +1,5 @@
 +++
-title="Are you a Programmer?"
+title="Are You a Programmer?"
 date=2011-10-20
 [taxonomies]
 tags=["culture", "dev"]

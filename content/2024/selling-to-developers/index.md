@@ -1,5 +1,5 @@
 +++
-title="How To Sell To Developers"
+title="How to Sell to Developers"
 date=2024-05-27
 draft=false
 [taxonomies]
@@ -26,7 +26,7 @@ Here's my advice:
 2. Seriously, don't build a product for developers.
 3. Since you'll likely ignore the first two pieces of advice, at least learn how to market to developers effectively.
 
-## What You Need to Know About Marketing to Developers
+## What You Need to Know about Marketing to Developers
 
 Here's the bitter truth. To sell to developers...
 
@@ -80,7 +80,7 @@ Think of it this way: when was the last time these companies had the chance to r
 
 And still...
 
-### Only 20% Of Companies Immediately Get It
+### Only 20% of Companies Immediately Get It
 
 From the companies I've talked to, only around 20% get it immediately. There are perhaps 30% that need a little handholding. The other 50% see it as an ad placement and want to know the click-through rate.
 
@@ -92,7 +92,7 @@ Your main constraint is the attention of developers!
 
 These folks constantly get bombarded with millions of products and don't have time to evaluate them all. They stopped actively looking for new tools a long time ago. They rely on a handful of trusted sources they follow. 
 
-## Building Trust Is The Only Way
+## Building Trust Is the Only Way
 Getting into their circle of trust is hard, and for that reason, you need to be patient and invest a lot of time into relationship building. If you can afford it, hire a developer advocate. A good one is heavily invested in open source and knows how to write for developers.
 At the very least, you need to be present in the places where developers hang out. So reach out to open source maintainers in your niche and see if you can collaborate or sponsor their projects. Don't waste cash on Google ads or other traditional marketing channels. Go where the developers are.
 

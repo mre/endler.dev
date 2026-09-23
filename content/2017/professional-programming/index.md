@@ -18,7 +18,7 @@ This article aims to save you from a few years of uncertainty.
 
 Before you dig into this, be sure to read the first part of this series titled ["Why I love Programming"](@/2017/why-i-love-programming/index.md).
 
-## What's the difference between "professional" and "hobby" programming?
+## What's the Difference between "professional" and "hobby" Programming?
 
 In one word: _accountability_.  
 You are expected to be responsible.
@@ -44,7 +44,7 @@ Eventually, you'll understand that those neckbeards were not slower than you, bu
 more careful. You learn how to test your code, how to document it. You even begin to
 appreciate UML diagrams.
 
-## Becoming obsolete
+## Becoming Obsolete
 
 "The world is moving too fast. What you learned today is obsolete tomorrow. Why bother?".
 I've heard that saying countless times throughout my career.
@@ -63,7 +63,7 @@ One advice I can give you is not to take it too seriously.
 Drop the project, keep the wisdom.
 Embrace change.
 
-## Writing software in a non-perfect world
+## Writing Software in a Non-Perfect World
 
 A professional programmer has to deal with deficiencies all the time. The game is called "balancing constraints". Deadlines, budgets, and code quality are just a few competing constraints we have to consider.
 Elegant designs fade away in the face of reality.
@@ -77,12 +77,12 @@ For me, I was always leaning more towards elegance.
 That's just a nicer way to say I was a perfectionist.
 I needed to learn the pragmatic part through hard work.
 
-## Mentoring less experienced Programmers
+## Mentoring Less Experienced Programmers
 
 > The better you become at programming, the less you code.
 
 Instead, you will spend more time thinking about Software Architecture,
-high-level designs and splitting up the work into smaller junks for other developers to consume.
+high-level designs and splitting up the work into smaller chunks for other developers to consume.
 You will start mentoring Junior Developers. Recruiting will require a lot of your
 attention. You will spend your time in Meetings, discussing project goals with
 business people.
@@ -107,7 +107,7 @@ Talk to others, listen to their problems. Read books about Software Project
 Management, even though you don't want to be a manager yourself. It will help
 you understand the role of your boss.
 
-## A word about money
+## A Word about Money
 
 There are many good reasons to work in IT, but money is not one of them.
 
@@ -124,7 +124,7 @@ attempts.
 Another way is to stop being a programmer and become a manager instead.
 I've already shared my opinion on that in the last section.
 
-## Final words
+## Final Words
 
 While you should learn to read (and maybe write) code, working as a professional programmer is not for everyone.
 You might ask: "Is it worth it?".

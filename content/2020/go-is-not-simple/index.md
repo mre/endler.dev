@@ -1,5 +1,5 @@
 +++
-title="Go is not Simple"
+title="Go Is Not Simple"
 date=2020-05-29
 draft=true
 [taxonomies]
@@ -237,7 +237,7 @@ Go is the modern C
 
 Leads to bugs and people using Go for projects it was never designed for like Docker.
 
-The Go standard libary
+The Go standard library
 
 "batteries included"
 a terrible builtin json library,
@@ -258,7 +258,7 @@ Go is often misunderstood
 - inside the Google team
 - microservices
 
-If thoes assumptions hold, Go is the way to go.
+If those assumptions hold, Go is the way to go.
 Things start becoming interesting when one or more assumptions are incorrect.
 Writing 100kloc projects in Go will make you miss generics
 
@@ -276,7 +276,7 @@ I'm just from a different school of thought.
 
 imposing a disproportionate cost on users.o
 
-inconsistenjt
+inconsistent
 
     repo := &github.Repository{
     	Name:       github.String("migrate-test"),
@@ -300,7 +300,7 @@ on the other side, errors are hidden when they were used "once"
 response, err := bla()
 response, err := bar() // no new variables
 
-Sometimes yo don't have a better name for a variable...
+Sometimes you don't have a better name for a variable...
 Have to change to `=`
 Especially annoying during debugging
 Why can't I use `:=` in general?
@@ -365,7 +365,7 @@ Concurrency
 
 Typeclasses carry value with them
 
-The lazyness is also part of the build system
+The laziness is also part of the build system
 `go build` and `go run` behave differently...
 
 ```go
