@@ -47,8 +47,8 @@ Most of my mentees come with a concrete question:
 Often, answering the concrete question is beside the point.
 We have to look at the thought process that led to it.
 
-Before deciding whether something should be generic, for example, it helps to know what is expected to vary and why.
-Otherwise, we can spend a long time discussing how to build an abstraction that might be unnecessary in the first place.
+That's related to the [XY problem](https://en.wikipedia.org/wiki/XY_problem) where a person is asking for help with a proposed solution rather than the underlying problem.
+We might discuss how to make something generic before asking whether it *needs to vary at all*.
 
 A mentor has enough distance from the problem to question its framing and enough experience to recognize familiar patterns.
 They notice which details you leave out, which patterns you reach for, and which you ignore.
@@ -56,8 +56,7 @@ You may *sense* that something is wrong without having the words to describe it.
 
 LLMs can question assumptions, too!
 But I've found they usually work best when you already know what to ask.
-The difficulty is that we often don't know which of our assumptions need challenging.
-Knowing what to ask can matter more than knowing the answer, and it's hard to ask about something you haven't noticed.
+**It's hard to ask about a blind spot you haven't noticed.**
 
 You can also use an LLM to examine a decision, or you can use it as an echo chamber to justify it.
 The second use may feel more rewarding in the moment, but it leaves you where you started.
