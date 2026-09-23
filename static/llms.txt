@@ -1,0 +1,39 @@
+# Matthias Endler
+
+> Matthias Endler (also known as mre) is a Rust consultant, open-source maintainer, and founder of corrode Rust Consulting in Düsseldorf, Germany. He created the lychee link checker and hosts the Rust in Production podcast.
+
+endler.dev is Matthias' personal website: essays on software engineering, Rust, open-source maintenance, and building a business. corrode is his consulting company and the home of his professional Rust guides, training, and services. This site provides the personal background and engineering perspective behind that work.
+
+## Work with Matthias
+
+- [Rust Consulting and Training](https://corrode.dev/services/): Code review, architecture, training, and migration support for teams adopting or already using Rust.
+- [1-on-1 Rust Mentorship](https://corrode.dev/mentorship/): Work directly with Matthias on a real Rust project, developing both the code and the judgment to maintain it independently.
+- [Why I Still Believe in Mentorship](https://endler.dev/2026/why-i-still-believe-in-mentorship/): His approach to mentorship, questioning assumptions, and helping experienced engineers grow.
+- [corrode's llms.txt](https://corrode.dev/llms.txt): The companion directory for consulting services, migration guides, workshops, courses, and Rust resources.
+
+## Profile
+
+- [About Matthias Endler](https://endler.dev/about/): Biography, professional background, current projects, and contact details.
+- [Public Speaking](https://endler.dev/talks/): Conference talks and other speaking engagements.
+- [GitHub: mre](https://github.com/mre/): Open-source projects and contributions.
+- [LinkedIn](https://www.linkedin.com/in/matthiasendler/): Professional profile.
+
+## Selected Writing
+
+- [How to Review Code](https://endler.dev/2025/how-to-review-code/): Reviewing architecture, maintainability, and the problem being solved, not just syntax and style.
+- [The Best Programmers I Know](https://endler.dev/2025/best-programmers/): Habits of effective engineers, from reading references to breaking down problems and helping others.
+- [On Choosing Rust](https://endler.dev/2025/choosing-rust/): A personal response to objections about adopting Rust in established software.
+- [Blog Archive](https://endler.dev/archive/): All posts, including older writing on Unix, programming tools, side projects, and open source.
+
+## Open Source and Media
+
+- [lychee](https://lychee.cli.rs/): A fast link checker written in Rust.
+- [Analysis Tools](https://analysis-tools.dev/): A comparison platform for static and dynamic code analysis tools.
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust): A curated collection of articles, talks, and repositories about writing idiomatic Rust.
+- [Rust in Production](https://corrode.dev/podcast/): Matthias' interviews with engineers using Rust in production.
+
+## Optional
+
+- [Profile Photograph](https://endler.dev/about/matthias-endler-orig.jpg): Portrait of Matthias Endler used on the About page.
+- [RSS Feed](https://endler.dev/rss.xml): Subscribe to new posts on the personal blog.
+- [Website Source](https://github.com/mre/endler.dev): Source code and Markdown content for this site.
