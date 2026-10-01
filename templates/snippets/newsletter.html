@@ -138,6 +138,9 @@
         const status = document.getElementById("newsletter-status");
         if (!email || !submit || !challenge || !status) return;
 
+        const local = ["localhost", "127.0.0.1", "0.0.0.0", "[::1]"].includes(
+            window.location.hostname,
+        );
         let loading = false;
         let widgetId = null;
         const disableSubmit = () => {
@@ -152,7 +155,9 @@
             script.async = true;
             script.onload = () => {
                 widgetId = window.turnstile.render(challenge, {
-                    sitekey: "0x4AAAAAAEdVZvjmk2hw9PFR",
+                    sitekey: local
+                        ? "1x00000000000000000000AA"
+                        : "0x4AAAAAAEdVZvjmk2hw9PFR",
                     action: "newsletter",
                     appearance: "interaction-only",
                     theme: "auto",
