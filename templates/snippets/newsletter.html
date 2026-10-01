@@ -132,11 +132,14 @@
 
 <script>
     (() => {
+        const container = document.getElementById("newsletter-subscription");
+        const form = document.getElementById("newsletter-form");
         const email = document.getElementById("tlemail");
         const submit = document.getElementById("newsletter-submit");
         const challenge = document.getElementById("newsletter-turnstile");
         const status = document.getElementById("newsletter-status");
-        if (!email || !submit || !challenge || !status) return;
+        if (!container || !form || !email || !submit || !challenge || !status)
+            return;
 
         const local = ["localhost", "127.0.0.1", "0.0.0.0", "[::1]"].includes(
             window.location.hostname,
@@ -181,6 +184,41 @@
             };
             document.head.appendChild(script);
         };
+
+        const showError = (message) => {
+            status.textContent =
+                message ||
+                "There was a problem with your subscription. Please try again.";
+            submit.textContent = "Subscribe";
+            disableSubmit();
+            window.turnstile.reset(widgetId);
+        };
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            disableSubmit();
+            submit.textContent = "Subscribing…";
+            status.textContent = "";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: new URLSearchParams(new FormData(form)),
+                });
+                const message = (await response.text()).trim();
+                if (!response.ok) {
+                    showError(message);
+                    return;
+                }
+
+                status.textContent = message
+                    ? `🎉 ${message}`
+                    : "🎉 You’re in! Please check your inbox.";
+                container.replaceChildren(status);
+            } catch {
+                showError();
+            }
+        });
 
         email.addEventListener("focus", loadTurnstile);
         email.addEventListener("input", loadTurnstile);
