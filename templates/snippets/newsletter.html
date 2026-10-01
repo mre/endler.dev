@@ -19,6 +19,7 @@
                 type="email"
                 name="email"
                 placeholder="mail@example.com"
+                autocomplete="email"
                 required
             />
             <!-- honeypot: hidden from humans, irresistible to bots -->
@@ -29,18 +30,13 @@
                 tabindex="-1"
                 autocomplete="off"
             />
-            <button type="submit" id="newsletter-submit">
-                <span id="newsletter-button-text">Subscribe</span>
-                <span
-                    id="newsletter-spinner"
-                    class="newsletter-spinner"
-                    style="display: none"
-                    aria-hidden="true"
-                ></span>
-                <span id="newsletter-button-loading" style="display: none">
-                    Subscribing…
-                </span>
+            <button type="submit" id="newsletter-submit" disabled>
+                Subscribe
             </button>
+            <div
+                id="newsletter-turnstile"
+                class="newsletter-turnstile"
+            ></div>
             <p id="newsletter-status" role="status" aria-live="polite"></p>
         </form>
     </div>
@@ -103,18 +99,20 @@
         opacity: 0.9;
     }
     .newsletter-callout button:disabled {
-        cursor: progress;
-        opacity: 0.8;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+    .newsletter-callout .newsletter-turnstile,
+    .newsletter-callout #newsletter-status {
+        width: 100%;
+    }
+    .newsletter-callout #newsletter-status {
+        margin: 0;
+        font-size: 0.95em;
+        color: var(--text-color);
     }
     .newsletter-callout #newsletter-status:empty {
         display: none;
-    }
-    .newsletter-callout #newsletter-status,
-    .newsletter-callout .newsletter-success {
-        width: 100%;
-        margin: 8px 0 0;
-        font-size: 0.95em;
-        color: var(--text-color);
     }
     .newsletter-callout .newsletter-visually-hidden {
         position: absolute !important;
@@ -130,79 +128,56 @@
     .newsletter-callout .newsletter-hpfield {
         display: none;
     }
-    @keyframes newsletter-spin {
-        to {
-            transform: rotate(360deg);
-        }
-    }
-    .newsletter-callout .newsletter-spinner {
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        margin-right: 8px;
-        vertical-align: -2px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: newsletter-spin 0.8s linear infinite;
-    }
 </style>
 
 <script>
-    (function () {
-        const container = document.getElementById("newsletter-subscription");
-        const form = document.getElementById("newsletter-form");
+    (() => {
+        const email = document.getElementById("tlemail");
+        const submit = document.getElementById("newsletter-submit");
+        const challenge = document.getElementById("newsletter-turnstile");
         const status = document.getElementById("newsletter-status");
-        const submitBtn = document.getElementById("newsletter-submit");
-        const buttonText = document.getElementById("newsletter-button-text");
-        const buttonLoading = document.getElementById(
-            "newsletter-button-loading",
-        );
-        const spinner = document.getElementById("newsletter-spinner");
-        if (!container || !form || !status || !submitBtn) return;
+        if (!email || !submit || !challenge || !status) return;
 
-        const setLoading = (loading) => {
-            submitBtn.disabled = loading;
-            buttonText.style.display = loading ? "none" : "";
-            buttonLoading.style.display = loading ? "" : "none";
-            spinner.style.display = loading ? "inline-block" : "none";
+        let loading = false;
+        let widgetId = null;
+        const disableSubmit = () => {
+            submit.disabled = true;
+        };
+        const loadTurnstile = () => {
+            if (loading || widgetId !== null) return;
+            loading = true;
+            const script = document.createElement("script");
+            script.src =
+                "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+            script.async = true;
+            script.onload = () => {
+                widgetId = window.turnstile.render(challenge, {
+                    sitekey: "0x4AAAAAAEdVZvjmk2hw9PFR",
+                    action: "newsletter",
+                    appearance: "interaction-only",
+                    theme: "auto",
+                    callback: () => {
+                        submit.disabled = false;
+                        status.textContent = "";
+                    },
+                    "expired-callback": disableSubmit,
+                    "timeout-callback": disableSubmit,
+                    "error-callback": () => {
+                        disableSubmit();
+                        status.textContent =
+                            "Verification failed. Please try again.";
+                    },
+                });
+            };
+            script.onerror = () => {
+                loading = false;
+                status.textContent =
+                    "Verification could not be loaded. Please try again.";
+            };
+            document.head.appendChild(script);
         };
 
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            status.textContent = "";
-            setLoading(true);
-            try {
-                const res = await fetch(form.action, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: new URLSearchParams(new FormData(form)),
-                });
-                const text = (await res.text()).trim();
-                if (res.ok) {
-                    const message =
-                        text && text !== "Thank you for subscribing"
-                            ? text
-                            : "🎉 You're in! Check your inbox to confirm.";
-                    const p = document.createElement("p");
-                    p.className = "newsletter-success";
-                    p.setAttribute("role", "status");
-                    p.setAttribute("aria-live", "polite");
-                    p.textContent = message;
-                    container.replaceChildren(p);
-                } else {
-                    status.textContent =
-                        text ||
-                        "There was a problem with your subscription. Please try again later.";
-                    setLoading(false);
-                }
-            } catch (err) {
-                status.textContent =
-                    "There was a problem with your subscription. Please try again later.";
-                setLoading(false);
-            }
-        });
+        email.addEventListener("focus", loadTurnstile);
+        email.addEventListener("input", loadTurnstile);
     })();
 </script>
