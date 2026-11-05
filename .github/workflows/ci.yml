@@ -62,14 +62,17 @@ jobs:
         run: sudo npm install -g terser
 
       - name: ⏬ Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
-
+        run: sudo apt-get update && sudo apt-get install -y imagemagick librsvg2-bin
 
       - name: 🔍 Tool versions
         run: make versions
 
       - name: 🏞 Images
         run: make images
+
+      - name: 🖼 Social images
+        # Exercise rendering on PRs even when all images are already committed.
+        run: bash scripts/social.sh ${{ github.event_name == 'pull_request' && '--force' || '' }}
 
       - name: 📖 Build
         run: make build
