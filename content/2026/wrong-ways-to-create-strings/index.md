@@ -26,7 +26,7 @@ let ferris = String::from_utf8(vec![102, 101, 114, 114, 105, 115])
     .unwrap();
 ```
 
-## Ask an Enum
+## Derive Debug 
 
 If we derive `Debug` for an enum, we can format a variant as a string.
 Note that debug output isn't a stable serialization format, so this just happens to work for this particular string. 
@@ -41,7 +41,7 @@ enum Mascot {
 let ferris = format!("{:?}", Mascot::ferris);
 ```
 
-## Take a Detour Through C
+## Use a CString 
 
 This is another very obvious one: we can use `CString` to create a string with a NUL terminator, then convert it back to a `String`.
 Converting it back removes the terminator and checks that the remaining bytes are valid UTF-8.
@@ -53,11 +53,10 @@ let ferris = std::ffi::CString::new("ferris")
     .unwrap();
 ```
 
-## Take the Error Path
+## Use `unwrap_err` 
 
-...but what if we supply the NUL byte for the `CString` ourselves?
-`CString::new` rejects NUL bytes, even at the end. 
-However, we can call `unwrap_err()` on the result to get the error, which **gives us the rejected bytes back**.
+If we supply an invalid string to `CString::new`, it will return an error instead of panicking.
+We can abuse that fact and call `unwrap_err()` on the result to get the error, which **gives us the rejected bytes back**.
 
 ```rust
 let mut bytes = std::ffi::CString::new(b"ferris\0".to_vec())
@@ -65,13 +64,13 @@ let mut bytes = std::ffi::CString::new(b"ferris\0".to_vec())
     .into_vec();
 ```
 
-All we have to do is remove the NUL we added:
+All we have to do now is remove the invalid NUL byte we added: 
 
 ```rust
 bytes.pop();
 ```
 
-`char::from` converts each byte to a character.
+Now can convert each byte back to a character.
 
 ```rust
 let ferris: String = bytes.into_iter().map(char::from).collect();
@@ -82,18 +81,18 @@ It does not decode UTF-8; it simply converts each byte into a Unicode code point
 When collecting these characters into a `String`, Rust automatically encodes them as valid UTF-8.
 Therefore, the conversion cannot fail, but the resulting text may be incorrect if the original bytes represented multibyte UTF-8 characters.
 
-## Read Some “Rust” Source
+## Statically include some text with `include_str!` 
 
 Create a file called `file.rs` containing exactly `ferris`, without a trailing
-newline. Then, in a Rust source file next to it:
+newline.
+In another Rust file, we can include that text at compile time:
 
 ```rust
 let ferris = include_str!("file.rs").to_owned();
 ```
 
-The extension doesn't matter. `include_str!` embeds the file as UTF-8 text at
-compile time; it doesn't try to parse it as Rust. `to_owned()` turns the borrowed
-text into a `String`.
+The extension doesn't matter.
+`include_str!` embeds the file as UTF-8 text at compile time; it doesn't try to parse it as Rust.
 
 ## Thread Shenanigans
 
