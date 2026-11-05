@@ -249,8 +249,11 @@ I like how we use `r>2` to get two `r`s instead of writing `r>1` twice like a pe
 
 ## That was fun!
 
-Did I forget an interesting way to create a string? 
-One more way I didn't have the time to show in the talk is to use `rand` to extract random bytes from memory and hope they form the string you want.
+This little exercise is not completely useless.
+Trying to solve a familiar problem in an unfamiliar way can teach you something new.
 
-In general, I love solving problems in unconventional ways.
+One more way I didn't have the time to show in the talk is to use `rand` to extract random bytes from memory and hope they form the string you want.
+Apart from that, did I forget an interesting way to create a string? 
+Let me know on [Mastodon](https://mastodon.social/@mre).
+
 You might also like my 2023 RustLab lightning talk on [Printing Things The Wrong Way](/2023/cursed-rust).
