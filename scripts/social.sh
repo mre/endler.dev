@@ -13,7 +13,7 @@
 #
 # Requirements:
 #   - ImageMagick 7 (`magick`)
-#   - librsvg (so magick can rasterise SVGs at high quality)
+#   - librsvg (`rsvg-convert` for SVG rasterization)
 #
 set -euo pipefail
 
@@ -129,8 +129,10 @@ generate_social_image() {
 
     # ---- Penguin (top-left of the header row) ---------------------------
     local penguin_size=110
-    magick -background none -density 400 "$PENGUIN_SVG" \
-        -resize "${penguin_size}x${penguin_size}" "PNG32:$penguin"
+    # Use librsvg explicitly; ImageMagick's built-in SVG parser rejects some paths.
+    rsvg-convert --keep-aspect-ratio --width 440 --height 440 \
+        --output "$penguin" "$PENGUIN_SVG"
+    magick "$penguin" -resize "${penguin_size}x${penguin_size}" "PNG32:$penguin"
 
     # ---- "Matthias Endler" wordmark -------------------------------------
     magick -background none -fill "$TEXT_COLOR" \
