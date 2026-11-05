@@ -11,7 +11,7 @@ The talks were not recorded, so I decided to write it up as a blog post.
 
 ## Collect Some Characters
 
-One of the most obvious way to create a string without calling `String::new` is to collect some characters into a string:
+One of the most obvious ways to create a string without calling `String::new` is to collect some characters into a string:
 
 ```rust
 let ferris: String = ['f', 'e', 'r', 'r', 'i', 's']
@@ -55,9 +55,9 @@ let ferris = std::ffi::CString::new("ferris")
 
 ## Take the Error Path
 
-...but what if we supply the NUL byte for the CString ourselves?
+...but what if we supply the NUL byte for the `CString` ourselves?
 `CString::new` rejects NUL bytes, even at the end. 
-However we can get call `unwrap_err()` on the result to get the error, which **gives us the rejected bytes back**.
+However, we can call `unwrap_err()` on the result to get the error, which **gives us the rejected bytes back**.
 
 ```rust
 let mut bytes = std::ffi::CString::new(b"ferris\0".to_vec())
@@ -77,9 +77,9 @@ bytes.pop();
 let ferris: String = bytes.into_iter().map(char::from).collect();
 ```
 
-`char::from(u8)` is safe because every u8 value (0–255) corresponds to a valid Unicode character.
+`char::from(u8)` is safe because every `u8` value (0–255) corresponds to a valid Unicode character.
 It does not decode UTF-8; it simply converts each byte into a Unicode code point.
-When collecting these characters into a String, Rust automatically encodes them as valid UTF-8.
+When collecting these characters into a `String`, Rust automatically encodes them as valid UTF-8.
 Therefore, the conversion cannot fail, but the resulting text may be incorrect if the original bytes represented multibyte UTF-8 characters.
 
 ## Read Some “Rust” Source
@@ -97,7 +97,7 @@ text into a `String`.
 
 ## Thread Shenanigans
 
-Threads can have names and we can read the name of the current thread.
+Threads can have names, and we can read the name of the current thread.
 We can abuse that to create a string by naming a thread and then reading its name from another thread.
 
 ```rust
@@ -119,7 +119,7 @@ The name is borrowed from the thread handle; that's why we copy it into an owned
 
 ## Ask Another Process
 
-Insteaf of threads, you can also spawn a child process and read its output.
+Instead of threads, you can also spawn a child process and read its output.
 
 ```rust
 use std::process::Command;
@@ -165,9 +165,9 @@ Using `to_le_bytes()` makes this independent of the machine's byte order.
 
 All we have to do is format the variables back into a string.
 
-## Assemble A String From Raw Parts
+## Assemble a String From Raw Parts
 
-A String in Rust is just a pointer to a heap allocation, along with a length and capacity.
+A `String` in Rust is just a pointer to a heap allocation, along with a length and capacity.
 We can manually create an instance of that type, but we have to be careful to get the layout, length, capacity, and UTF-8 validity right ourselves.
 
 ```rust
@@ -179,7 +179,7 @@ let ferris = unsafe { String::from_raw_parts(pointer, 6, 6) };
 `Box::into_raw` gives up ownership without freeing the allocation.
 The `String` takes over and will free it when dropped.
 
-## Using The Type Name 
+## Using the Type Name
 
 Every type in Rust has a name.
 We can use `std::any::type_name` to get the name of a type as a string.
@@ -226,7 +226,7 @@ With `panic = "abort"`, the process would just exit instead.
 
 ## Use Only Padding
 
-`format!` is one of the most powerful macro in the Rust standard library.
+`format!` is one of the most powerful macros in the Rust standard library.
 It supports "format specifiers" that let you control how the output is formatted in exactly the way you want.
 
 One feature is `>`, which right-aligns the output and pads it with a fill character.
