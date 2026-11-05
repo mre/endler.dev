@@ -26,7 +26,7 @@ versions: ## Show versions of tools
 	wasm-opt --version
 	terser --version
 	cavif --version
-	convert -version
+	magick -version
 
 .PHONY: content
 content: ## Build the content of the static site with zola

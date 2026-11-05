@@ -64,12 +64,6 @@ jobs:
       - name: ⏬ Install ImageMagick
         run: sudo apt-get update && sudo apt-get install -y imagemagick
 
-      # ImageMagick 6 needs an alias; ImageMagick 7 already provides `magick`.
-      - name: 🔗 Alias ImageMagick
-        run: |
-          if ! command -v magick >/dev/null 2>&1; then
-            sudo ln -s /usr/bin/convert /usr/bin/magick
-          fi
 
       - name: 🔍 Tool versions
         run: make versions
