@@ -70,7 +70,7 @@ All we have to do now is remove the invalid NUL byte we added:
 bytes.pop();
 ```
 
-Now can convert each byte back to a character.
+Now we can convert each byte back to a character.
 
 ```rust
 let ferris: String = bytes.into_iter().map(char::from).collect();
