@@ -62,7 +62,7 @@ jobs:
         run: sudo npm install -g terser
 
       - name: ⏬ Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick librsvg2-bin
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends imagemagick librsvg2-bin
 
       - name: 🔍 Tool versions
         run: make versions
