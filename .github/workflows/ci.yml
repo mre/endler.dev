@@ -67,6 +67,13 @@ jobs:
       - name: 🔍 Tool versions
         run: make versions
 
+      - name: 📦 Cache image helper build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: helpers/img -> target
+          cache-workspace-crates: true
+          cache-bin: false
+
       - name: 🏞 Images
         run: make images
 
