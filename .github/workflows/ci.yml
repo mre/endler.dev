@@ -70,7 +70,7 @@ jobs:
       - name: 📦 Cache image helper build
         uses: Swatinem/rust-cache@v2
         with:
-          workspaces: helpers/img -> target
+          workspaces: helpers/img
           cache-workspace-crates: true
           cache-bin: false
 
