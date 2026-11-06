@@ -966,7 +966,6 @@ footer .body {
     article img,
     article video,
     article iframe,
-    article pre,
     article figure {
         width: 110%;
         max-width: 110%;
@@ -981,9 +980,11 @@ footer .body {
         width: calc(100% - 10%);
     }
 
-    pre {
+    article pre {
+        width: 100%;
+        max-width: 100%;
         padding: 16px;
-        margin: 20px 0px;
+        margin: 20px 0;
     }
 
     blockquote {
@@ -1019,7 +1020,6 @@ footer .body {
     article img,
     article video,
     article iframe,
-    article pre,
     article figure {
         width: 100%;
         max-width: 100%;
